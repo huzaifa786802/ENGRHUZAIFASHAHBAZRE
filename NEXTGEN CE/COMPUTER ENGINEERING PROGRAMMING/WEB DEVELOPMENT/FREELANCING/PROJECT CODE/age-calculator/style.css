@@ -1,0 +1,495 @@
+/* ═══════════════════════════════════════════════════════════════
+   Age Calculator — style.css
+   Author   : ENGR HUZAIFA SHAHBAZ
+   Platform : Fiverr & Workchest
+   ═══════════════════════════════════════════════════════════════ */
+/* ── Reset ────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* ── CSS Variables (Dark Theme) ───────────────────────────────── */
+:root {
+  --bg:           #0C0F14;
+  --surface:      #13171F;
+  --surface2:     #1A2030;
+  --border:       rgba(255, 255, 255, 0.06);
+  --gold:         #C9A84C;
+  --gold-light:   #F0C96A;
+  --gold-dim:     rgba(201, 168, 76, 0.15);
+  --white:        #F5F0E8;
+  --muted:        #8A8F9A;
+  --text:         #E8E2D9;
+  --red:          #E05252;
+  --card-shadow:  0 20px 60px rgba(0, 0, 0, 0.5), 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+/* ── Light Mode Override ──────────────────────────────────────── */
+.light-mode {
+  --bg:           #F5F1EB;
+  --surface:      #FFFFFF;
+  --surface2:     #F0EDE8;
+  --border:       rgba(0, 0, 0, 0.08);
+  --white:        #1A1410;
+  --muted:        #7A7068;
+  --text:         #2C2620;
+  --card-shadow:  0 20px 60px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+/* ── Base ─────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+/* Subtle grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+/* ── Layout ───────────────────────────────────────────────────── */
+.wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+/* ── Header ───────────────────────────────────────────────────── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0 48px;
+}
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+/* Theme toggle button */
+.theme-btn {
+  width: 44px;
+  height: 26px;
+  border-radius: 13px;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s;
+}
+.theme-btn::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold);
+  transition: transform 0.3s ease;
+}
+.light-mode .theme-btn::after {
+  transform: translateX(18px);
+}
+/* ── Hero Section ─────────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  margin-bottom: 52px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--white);
+  animation: fadeUp 0.7s ease both;
+}
+.hero h1 span {
+  color: var(--gold);
+}
+.hero p {
+  margin-top: 14px;
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  animation: fadeUp 0.7s 0.12s ease both;
+}
+/* ── Card ─────────────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 44px;
+  box-shadow: var(--card-shadow);
+  animation: fadeUp 0.7s 0.22s ease both;
+}
+/* ── Input Row ────────────────────────────────────────────────── */
+.input-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.field {
+  flex: 1;
+  min-width: 120px;
+}
+.field--narrow {
+  max-width: 200px;
+}
+.field label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.field input,
+.field select {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--surface2);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+}
+.field input:focus,
+.field select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-dim);
+}
+/* Style the date picker icon */
+.field input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.6) sepia(1) saturate(3) hue-rotate(5deg);
+  cursor: pointer;
+}
+/* Error state */
+.field input.error {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(224, 82, 82, 0.15);
+}
+/* ── Calculate Button ─────────────────────────────────────────── */
+.calc-btn {
+  flex-shrink: 0;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, var(--gold), #A87830);
+  color: #1A1000;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+  white-space: nowrap;
+}
+.calc-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(201, 168, 76, 0.45);
+}
+.calc-btn:active {
+  transform: translateY(0);
+}
+/* ── Error Message ────────────────────────────────────────────── */
+.error-msg {
+  color: var(--red);
+  font-size: 0.82rem;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  display: none;
+}
+.error-msg.show {
+  display: block;
+}
+/* ── Divider ──────────────────────────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 32px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+/* ── Results Section ──────────────────────────────────────────── */
+.age-display {
+  display: none;
+}
+.age-display.visible {
+  display: block;
+}
+/* ── Primary Age Display ──────────────────────────────────────── */
+.primary-age {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.age-unit {
+  text-align: center;
+  padding: 28px 32px;
+  flex: 1;
+  min-width: 120px;
+  position: relative;
+  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.age-unit:nth-child(1) { animation-delay: 0.05s; }
+.age-unit:nth-child(2) { animation-delay: 0.15s; }
+.age-unit:nth-child(3) { animation-delay: 0.25s; }
+.age-unit + .age-unit::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 25%;
+  bottom: 25%;
+  width: 1px;
+  background: var(--border);
+}
+.age-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  font-weight: 900;
+  color: var(--gold-light);
+  line-height: 1;
+  display: block;
+  text-shadow: 0 2px 20px rgba(201, 168, 76, 0.3);
+}
+.age-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 8px;
+  display: block;
+  font-weight: 500;
+}
+/* ── Stats Grid ───────────────────────────────────────────────── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.stat-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+  animation: fadeUp 0.5s ease both;
+}
+.stat-card:nth-child(1) { animation-delay: 0.10s; }
+.stat-card:nth-child(2) { animation-delay: 0.17s; }
+.stat-card:nth-child(3) { animation-delay: 0.24s; }
+.stat-card:nth-child(4) { animation-delay: 0.31s; }
+.stat-card:nth-child(5) { animation-delay: 0.38s; }
+.stat-card:nth-child(6) { animation-delay: 0.45s; }
+.stat-icon {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  display: block;
+}
+.stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--white);
+  display: block;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 5px;
+  display: block;
+}
+/* ── Countdown Card ───────────────────────────────────────────── */
+.countdown-card {
+  background: linear-gradient(135deg, var(--gold-dim), rgba(201, 168, 76, 0.05));
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  animation: fadeUp 0.5s 0.35s ease both;
+}
+.countdown-left h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+.countdown-left p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.countdown-timer {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.cdown-unit {
+  text-align: center;
+}
+.cdown-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+  line-height: 1;
+}
+.cdown-label {
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.cdown-sep {
+  font-size: 1.6rem;
+  color: var(--gold);
+  margin-top: 4px;
+}
+/* ── Extras Row (Zodiac / Birthstone / Generation) ────────────── */
+.extras-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  animation: fadeUp 0.5s 0.45s ease both;
+}
+.extra-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.extra-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.extra-title {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+}
+.extra-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-top: 3px;
+  display: block;
+}
+.extra-sub {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 2px;
+  display: block;
+}
+/* ── Footer ───────────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+/* ── Animations ───────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* ── Custom Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .card {
+    padding: 28px 22px;
+  }
+  .field--narrow {
+    max-width: 100%;
+  }
+  .calc-btn {
+    width: 100%;
+  }
+  .age-unit {
+    padding: 20px 16px;
+  }
+  .countdown-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 380px) {
+  .countdown-timer {
+    gap: 6px;
+  }
+  .cdown-num {
+    font-size: 1.4rem;
+  }
+}

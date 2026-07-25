@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Age Calculator — Know Your Age, Know Your Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="wrapper">
+  <!-- ── HEADER ─────────────────────────────────────────── -->
+  <header>
+    <span class="logo">AgeCalc ✦</span>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark/light mode" title="Toggle theme"></button>
+  </header>
+  <!-- ── HERO ───────────────────────────────────────────── -->
+  <div class="hero">
+    <h1>Know your <span>age</span>,<br>know your story.</h1>
+    <p>Enter your date of birth and discover the full picture of your life in numbers.</p>
+  </div>
+  <!-- ── MAIN CARD ──────────────────────────────────────── -->
+  <div class="card">
+    <div class="input-row">
+      <div class="field">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" max="" />
+      </div>
+      <div class="field field--narrow">
+        <label for="calcDate">Calculate As Of</label>
+        <input type="date" id="calcDate" />
+      </div>
+      <button class="calc-btn" id="calcBtn">Calculate →</button>
+    </div>
+    <p class="error-msg" id="errMsg">Please enter a valid date of birth.</p>
+    <!-- ── RESULTS ─────────────────────────────────────── -->
+    <div class="age-display" id="results">
+      <div class="divider">Your Age</div>
+      <div class="primary-age">
+        <div class="age-unit">
+          <span class="age-number" id="resYears">0</span>
+          <span class="age-label">Years</span>
+        </div>
+        <div class="age-unit">
+          <span class="age-number" id="resMonths">0</span>
+          <span class="age-label">Months</span>
+        </div>
+        <div class="age-unit">
+          <span class="age-number" id="resDays">0</span>
+          <span class="age-label">Days</span>
+        </div>
+      </div>
+      <div class="divider">Life in Numbers</div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-icon">📅</span>
+          <span class="stat-value" id="totalDays">0</span>
+          <span class="stat-label">Total Days Lived</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">⏰</span>
+          <span class="stat-value" id="totalHours">0</span>
+          <span class="stat-label">Total Hours Lived</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">⚡</span>
+          <span class="stat-value" id="totalMinutes">0</span>
+          <span class="stat-label">Total Minutes Lived</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">💓</span>
+          <span class="stat-value" id="heartbeats">0</span>
+          <span class="stat-label">Est. Heartbeats</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">🌙</span>
+          <span class="stat-value" id="totalWeeks">0</span>
+          <span class="stat-label">Total Weeks</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">🌟</span>
+          <span class="stat-value" id="dayOfWeek">—</span>
+          <span class="stat-label">Day You Were Born</span>
+        </div>
+      </div>
+      <!-- Countdown -->
+      <div class="countdown-card" id="countdownCard">
+        <div class="countdown-left">
+          <h3>🎂 Next Birthday Countdown</h3>
+          <p id="countdownDate">Loading...</p>
+        </div>
+        <div class="countdown-timer">
+          <div class="cdown-unit">
+            <span class="cdown-num" id="cdDays">00</span>
+            <span class="cdown-label">Days</span>
+          </div>
+          <span class="cdown-sep">:</span>
+          <div class="cdown-unit">
+            <span class="cdown-num" id="cdHours">00</span>
+            <span class="cdown-label">Hours</span>
+          </div>
+          <span class="cdown-sep">:</span>
+          <div class="cdown-unit">
+            <span class="cdown-num" id="cdMins">00</span>
+            <span class="cdown-label">Mins</span>
+          </div>
+          <span class="cdown-sep">:</span>
+          <div class="cdown-unit">
+            <span class="cdown-num" id="cdSecs">00</span>
+            <span class="cdown-label">Secs</span>
+          </div>
+        </div>
+      </div>
+      <!-- Extras: Zodiac, Birthstone, Generation -->
+      <div class="extras-row">
+        <div class="extra-card">
+          <span class="extra-icon" id="zodiacIcon">♈</span>
+          <div class="extra-info">
+            <span class="extra-title">Zodiac Sign</span>
+            <span class="extra-value" id="zodiacSign">Aries</span>
+            <span class="extra-sub" id="zodiacDates"></span>
+          </div>
+        </div>
+        <div class="extra-card">
+          <span class="extra-icon" id="stoneIcon">💎</span>
+          <div class="extra-info">
+            <span class="extra-title">Birth Stone</span>
+            <span class="extra-value" id="birthStone">Diamond</span>
+            <span class="extra-sub" id="stoneMonth"></span>
+          </div>
+        </div>
+        <div class="extra-card">
+          <span class="extra-icon">🌏</span>
+          <div class="extra-info">
+            <span class="extra-title">Generation</span>
+            <span class="extra-value" id="generation">Millennial</span>
+            <span class="extra-sub" id="generationRange"></span>
+          </div>
+        </div>
+      </div>
+    </div><!-- /age-display -->
+  </div><!-- /card -->
+  <footer>
+    Built with ♥ by <a href="#">ENGR HUZAIFA SHAHBAZ</a> · Available on <a href="#">Fiverr</a> &amp; <a href="#">Workchest</a>
+  </footer>
+</div><!-- /wrapper -->
+<script src="app.js"></script>
+</body>
+</html>
