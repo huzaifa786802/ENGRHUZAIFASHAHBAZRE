@@ -1,0 +1,95 @@
+RealVNC Server
+-----------------------------------------------
+RealVNC® Server 7.17.0 (r5) x64 (Apr 27 2026 15:27:46)
+Mode: service
+Users connected: 0
+Encryption: AlwaysMaximum
+Authentication: VncAuth
+Connection attempts: 0
+Successful connections: 0
+Identity: "Picasso Alfonso samba. Status rover percent" (signature a2-39-73-65-3e-25-6b-57)
+Capture Method: 0
+Update check succeeded on 2026-06-16T19:20:33Z
+Proxy: System
+
+RealVNC services
+-----------------------------------------------
+Server name: HUZAIFASHAHBAZ
+Team name: Huzaifa's Team (Trial)
+Connection: connected as "WSw7pt-9i3wa-btwJUQ"
+Status: Joined and entitled
+Next status check: 2026-06-17T19:20:31.091Z
+
+License
+-----------------------------------------------
+Team ID: yA3OUoi4qejJ14BTCiN
+Subscription: Premium (Trial)
+Subscription model: Per Concurrent Session
+Desktops: 10
+License expiry: 7/1/2026
+License source: Online
+- 128-bit AES encryption
+- 256-bit AES encryption
+- Annotation
+- Audio
+- Chat
+- Cloud connectivity
+- File transfer
+- Granular permissions
+- Printing
+- Privacy mode
+- Session log
+- Session recording
+- Single sign-on authentication
+- System authentication
+- VNC authentication
+
+System
+-----------------------------------------------
+Microsoft Windows 10, version 22H2 on x64
+- Hostname: HUZAIFASHAHBAZ
+- Machine: Precision 3520
+- Intel(R) Core(TM) i7-6820HQ CPU @ 2.70GHz
+- Total physical memory: 16264 MB
+- Free physical memory: 1873 MB
+- Memory in use: 88%
+- System locale: 'en_US'
+
+Network Connectivity
+-----------------------------------------------
+RFB port: 5900
+Addresses: 172.25.128.1, 172.22.64.1, 169.254.253.113, 192.168.18.24, [2407:d000:1c:326:c302:6db:3de6:71f0], [2407:d000:1c:326:2460:d5d6:7a3a:5da2], [2407:d000:1c:326:4cb4:d865:dd30:aa4e], [2407:d000:1c:326:9026:bd84:ea59:75b2], [2407:d000:1c:326:d5cd:96da:2f6d:9e00]
+
+Advertised Services
+-----------------------------------------------
+The Bonjour library is not installed or needs to be updated.
+
+Display
+-----------------------------------------------
+- Displays Connected: 1
+- Display 1, Primary
+    - DisplayDevice ID: \\.\DISPLAY1
+    - Description: Generic PnP Monitor
+    - 32 Bits Per Pixel
+    - Resolution: 1366 x 768
+    - Origin: (0,0)
+- Display Adapters:
+    - Intel(R) HD Graphics 530
+    - Intel(R) HD Graphics 530
+    - Intel(R) HD Graphics 530
+
+Audio render devices
+-----------------------------------------------
+ - Headset Earphone (HP-SPECTRE Hands-Free AG Audio)
+ - Headphones (MIRO TWS Stereo)
+ - Speakers / Headphones (Realtek Audio)
+ - Speakers (HP-SPECTRE Stereo)
+ - Headset (MIRO TWS Hands-Free AG Audio)
+
+Issues
+-----------------------------------------------
+## Info ##
+Trial ends on 7/1/2026
+
+At the end of your trial on 7/1/2026, you must purchase a subscription or remote access will stop.
+
