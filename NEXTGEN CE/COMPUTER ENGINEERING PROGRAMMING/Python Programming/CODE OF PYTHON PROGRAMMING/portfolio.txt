@@ -1,0 +1,7 @@
+Portfolio Summary:
+-----------------------
+AAPL: 10 shares x $1800 = $18000
+TSLA: 5 shares x $2500 = $1250
+GOOGL: 2 shares x $28000 = $5600
+-----------------------
+Total Investment Value: $8650
