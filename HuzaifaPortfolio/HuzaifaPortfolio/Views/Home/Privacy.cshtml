@@ -1,0 +1,163 @@
+﻿@using System.Linq
+@model HuzaifaPortfolio.Models.PortfolioViewModel
+@{
+    ViewData["Title"] = "Portfolio";
+}
+
+<div class="portfolio-container">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-brand">@Model.Name</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <h1>@Model.Name</h1>
+        <h2>@Model.Title</h2>
+        <p>@(!string.IsNullOrWhiteSpace(Model.Description) ? Model.Description : "No description available.")</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+            <a href="#projects" class="btn btn-secondary">View Projects</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <p>@(!string.IsNullOrWhiteSpace(Model.Description) ? Model.Description : "Computer Engineer with expertise in embedded systems, IoT development, and firmware programming. Currently studying at HITEC University, Taxila, consistently ranking in the Top 10% of my class.")</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            @if (Model.Skills != null && Model.Skills.Any())
+            {
+                foreach (var category in Model.Skills)
+                {
+                    <div class="skill-category">
+                        <h3>@category.Name</h3>
+                        <div class="skill-tags">
+                            @foreach (var skill in category.Skills)
+                            {
+                                <span class="skill-tag">@skill</span>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No skills added yet.</p>
+            }
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <h2>Work Experience</h2>
+        @if (Model.Experience != null && Model.Experience.Any())
+        {
+            foreach (var exp in Model.Experience)
+            {
+                <div class="experience-card">
+                    <h3>@exp.Title</h3>
+                    <p class="company">@exp.Company</p>
+                    <p class="period">@exp.Period</p>
+                    <ul>
+                        @foreach (var desc in exp.Description)
+                        {
+                            <li>@desc</li>
+                        }
+                    </ul>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No work experience added yet.</p>
+        }
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            @if (Model.Projects != null && Model.Projects.Any())
+            {
+                foreach (var project in Model.Projects)
+                {
+                    <div class="project-card">
+                        <h3>@project.Name</h3>
+                        <p>@project.Description</p>
+                        <div class="tech-tags">
+                            @foreach (var tech in project.Technologies)
+                            {
+                                <span class="tech-tag">@tech</span>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No projects added yet.</p>
+            }
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Get In Touch</h2>
+        <div class="contact-info">
+            @if (!string.IsNullOrWhiteSpace(Model.Email))
+            {
+                <div class="contact-item">
+                    <strong>Email:</strong>
+                    <a href="mailto:@Model.Email">@Model.Email</a>
+                </div>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.Phone))
+            {
+                <div class="contact-item">
+                    <strong>Phone:</strong>
+                    <a href="tel:+92@Model.Phone">@Model.Phone</a>
+                </div>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.Location))
+            {
+                <div class="contact-item">
+                    <strong>Location:</strong>
+                    <span>@Model.Location</span>
+                </div>
+            }
+        </div>
+        <div class="social-links">
+            @if (!string.IsNullOrWhiteSpace(Model.LinkedIn))
+            {
+                <a href="@Model.LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.GitHub))
+            {
+                <a href="@Model.GitHub" target="_blank" rel="noopener noreferrer">GitHub</a>
+            }
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; @DateTime.UtcNow.Year @Model.Name. All rights reserved.</p>
+        <p>Built with ASP.NET Core &amp; C#</p>
+    </footer>
+</div>

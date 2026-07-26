@@ -1,0 +1,62 @@
+@{
+    var siteName = "Huzaifa Shahbaz - Computer Engineer";
+    var siteDescription = "Computer Engineer specializing in Embedded Systems, IoT Development, and Firmware Programming. Expert in PCB design, circuit analysis, and mobile app development.";
+
+    var siteUrl = $"{Context.Request.Scheme}://{Context.Request.Host}";
+    var canonicalUrl = $"{siteUrl}{Context.Request.Path}";
+
+    // Build JSON-LD as a plain string (Razor-safe)
+    var jsonLd = @"
+    {
+        ""@context"": ""https://schema.org"",
+        ""@type"": ""Person"",
+        ""name"": ""Huzaifa Shahbaz"",
+        ""jobTitle"": ""Computer Engineer"",
+        ""url"": """ + siteUrl + @""",
+        ""email"": ""mailto:huzaifashahbaz767@gmail.com"",
+        ""telephone"": ""+92-301-5606731"",
+        ""address"": {
+            ""@type"": ""PostalAddress"",
+            ""addressLocality"": ""Rawalpindi"",
+            ""addressRegion"": ""Punjab"",
+            ""addressCountry"": ""Pakistan""
+        },
+        ""alumniOf"": {
+            ""@type"": ""EducationalOrganization"",
+            ""name"": ""HITEC University, Taxila""
+        },
+        ""sameAs"": [
+            ""https://www.linkedin.com/in/huzaifa-shahbaz-0aab8b230"",
+            ""https://github.com/huzaifa786802"",
+            ""https://www.instagram.com/huzaifa.shahbaz.786"",
+            ""https://www.facebook.com/huzaifa.shahbaz.7758""
+        ],
+        ""knowsAbout"": [
+            ""Embedded Systems"",
+            ""IoT Development"",
+            ""Firmware Programming"",
+            ""PCB Design""
+        ]
+    }";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - @siteName</title>
+    <meta name="description" content="@siteDescription" />
+    <link rel="canonical" href="@canonicalUrl" />
+
+    <script type="application/ld+json">
+        @Html.Raw(jsonLd)
+    </script>
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+<body>
+    @RenderBody()
+</body>
+</html>

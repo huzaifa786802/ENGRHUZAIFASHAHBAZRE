@@ -1,0 +1,177 @@
+﻿@model PortfolioViewModel
+@{
+    ViewData["Title"] = "Portfolio";
+}
+
+<div class="portfolio-container">
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <div class="nav-brand">@Model.Name</div>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <img src="~/images/profile.jpg" alt="Huzaifa Shahbaz - Computer Engineer" class="hero-avatar-img" />
+            <h1 class="hero-title">@Model.Name</h1>
+            <h2 class="hero-subtitle">@Model.Title</h2>
+            <p class="hero-description">@Model.Description</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a passionate Computer Engineer specializing in Embedded Systems, IoT Development, and Firmware Programming. With hands-on experience in both hardware and software integration, I bring innovative solutions to complex engineering challenges.</p>
+                    <p>Currently pursuing my Bachelor's degree at HITEC University, Taxila, where I've consistently ranked in the Top 10% of my class for four consecutive years.</p>
+                    <p>I have participated in competitive programming events including COMPPEC speed programming competitions and code-wars. Looking forward to launching my own startup in the near future.</p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🎓</div>
+                        <h3>Education</h3>
+                        <p>Top 10% at HITEC University</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">💼</div>
+                        <h3>Experience</h3>
+                        <p>Multiple internships in IoT & R&D</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🏆</div>
+                        <h3>Competitions</h3>
+                        <p>COMPPEC & Code-war participant</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🚀</div>
+                        <h3>Future Goals</h3>
+                        <p>Launching my own startup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                @foreach (var category in Model.Skills)
+                {
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">@category.Name</h3>
+                        <div class="skill-tags">
+                            @foreach (var skill in category.Skills)
+                            {
+                                <span class="skill-tag">@skill</span>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience-section section">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-timeline">
+                @foreach (var exp in Model.Experience)
+                {
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">@exp.Title</h3>
+                                <p class="experience-company">@exp.Company</p>
+                            </div>
+                            <span class="experience-period">@exp.Period</span>
+                        </div>
+                        <ul class="experience-description">
+                            @foreach (var desc in exp.Description)
+                            {
+                                <li>@desc</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                @foreach (var project in Model.Projects)
+                {
+                    <div class="project-card">
+                        <h3 class="project-title">@project.Name</h3>
+                        <p class="project-description">@project.Description</p>
+                        <div class="tech-tags">
+                            @foreach (var tech in project.Technologies)
+                            {
+                                <span class="tech-tag">@tech</span>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-intro">I'm currently looking for new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out!</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:@Model.Email">@Model.Email</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>Phone</h3>
+                    <a href="tel:+92@Model.Phone">@Model.Phone</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>@Model.Location</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="@Model.LinkedIn" target="_blank" rel="noopener noreferrer" class="social-link linkedin">LinkedIn</a>
+                <a href="@Model.GitHub" target="_blank" rel="noopener noreferrer" class="social-link github">GitHub</a>
+                <a href="@Model.Instagram" target="_blank" rel="noopener noreferrer" class="social-link instagram">Instagram</a>
+                <a href="@Model.Facebook" target="_blank" rel="noopener noreferrer" class="social-link facebook">Facebook</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 @Model.Name. All rights reserved.</p>
+            <p>Built with ASP.NET Core & C#</p>
+        </div>
+    </footer>
+</div>

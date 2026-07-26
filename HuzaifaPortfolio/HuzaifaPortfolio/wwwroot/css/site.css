@@ -1,0 +1,18 @@
+.hero-avatar-img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid;
+    border-image: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%) 1;
+    border-radius: 50%;
+    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.5);
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-avatar-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 50px rgba(59, 130, 246, 0.7);
+}

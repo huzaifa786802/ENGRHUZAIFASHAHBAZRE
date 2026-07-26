@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\HuzaifaPortfolio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E4992572-B06B-476E-A2D6-618356EB91A2}|HuzaifaPortfolio\\HuzaifaPortfolio.csproj|d:\\huzaifaportfolio\\huzaifaportfolio\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4992572-B06B-476E-A2D6-618356EB91A2}|HuzaifaPortfolio\\HuzaifaPortfolio.csproj|solutionrelative:huzaifaportfolio\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4992572-B06B-476E-A2D6-618356EB91A2}|HuzaifaPortfolio\\HuzaifaPortfolio.csproj|d:\\huzaifaportfolio\\huzaifaportfolio\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4992572-B06B-476E-A2D6-618356EB91A2}|HuzaifaPortfolio\\HuzaifaPortfolio.csproj|solutionrelative:huzaifaportfolio\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4992572-B06B-476E-A2D6-618356EB91A2}|HuzaifaPortfolio\\HuzaifaPortfolio.csproj|d:\\huzaifaportfolio\\huzaifaportfolio\\models\\middleware\\securityheadersmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4992572-B06B-476E-A2D6-618356EB91A2}|HuzaifaPortfolio\\HuzaifaPortfolio.csproj|solutionrelative:huzaifaportfolio\\models\\middleware\\securityheadersmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4992572-B06B-476E-A2D6-618356EB91A2}|HuzaifaPortfolio\\HuzaifaPortfolio.csproj|d:\\huzaifaportfolio\\huzaifaportfolio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4992572-B06B-476E-A2D6-618356EB91A2}|HuzaifaPortfolio\\HuzaifaPortfolio.csproj|solutionrelative:huzaifaportfolio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4992572-B06B-476E-A2D6-618356EB91A2}|HuzaifaPortfolio\\HuzaifaPortfolio.csproj|d:\\huzaifaportfolio\\huzaifaportfolio\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4992572-B06B-476E-A2D6-618356EB91A2}|HuzaifaPortfolio\\HuzaifaPortfolio.csproj|solutionrelative:huzaifaportfolio\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4992572-B06B-476E-A2D6-618356EB91A2}|HuzaifaPortfolio\\HuzaifaPortfolio.csproj|d:\\huzaifaportfolio\\huzaifaportfolio\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4992572-B06B-476E-A2D6-618356EB91A2}|HuzaifaPortfolio\\HuzaifaPortfolio.csproj|solutionrelative:huzaifaportfolio\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SecurityHeadersMiddleware.cs",
+              "DocumentMoniker": "D:\\HuzaifaPortfolio\\HuzaifaPortfolio\\Models\\Middleware\\SecurityHeadersMiddleware.cs",
+              "RelativeDocumentMoniker": "HuzaifaPortfolio\\Models\\Middleware\\SecurityHeadersMiddleware.cs",
+              "ToolTip": "D:\\HuzaifaPortfolio\\HuzaifaPortfolio\\Models\\Middleware\\SecurityHeadersMiddleware.cs",
+              "RelativeToolTip": "HuzaifaPortfolio\\Models\\Middleware\\SecurityHeadersMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T10:36:04.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\HuzaifaPortfolio\\HuzaifaPortfolio\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "HuzaifaPortfolio\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\HuzaifaPortfolio\\HuzaifaPortfolio\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "HuzaifaPortfolio\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAAALEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T10:35:50.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "D:\\HuzaifaPortfolio\\HuzaifaPortfolio\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "HuzaifaPortfolio\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "D:\\HuzaifaPortfolio\\HuzaifaPortfolio\\Views\\Home\\Privacy.cshtml*",
+              "RelativeToolTip": "HuzaifaPortfolio\\Views\\Home\\Privacy.cshtml*",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAiwJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T10:29:41.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\HuzaifaPortfolio\\HuzaifaPortfolio\\Program.cs",
+              "RelativeDocumentMoniker": "HuzaifaPortfolio\\Program.cs",
+              "ToolTip": "D:\\HuzaifaPortfolio\\HuzaifaPortfolio\\Program.cs*",
+              "RelativeToolTip": "HuzaifaPortfolio\\Program.cs*",
+              "ViewState": "AgIAABwAAAAAAAAAAAAiwCUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T09:23:32.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\HuzaifaPortfolio\\HuzaifaPortfolio\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "HuzaifaPortfolio\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\HuzaifaPortfolio\\HuzaifaPortfolio\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "HuzaifaPortfolio\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAqwLIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T09:26:35.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\HuzaifaPortfolio\\HuzaifaPortfolio\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "HuzaifaPortfolio\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\HuzaifaPortfolio\\HuzaifaPortfolio\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "HuzaifaPortfolio\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAQwAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T09:28:33.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
