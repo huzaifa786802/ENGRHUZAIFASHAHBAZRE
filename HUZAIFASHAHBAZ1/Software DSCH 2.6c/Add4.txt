@@ -1,0 +1,51 @@
+// DSCH 2.6c
+// 5/6/2008 11:52:50 AM
+// C:\Documents and Settings\B\Desktop\jouyemeria\Software DSCH 2.6c\Add4.sch
+
+module Add4( Y0,Y1,Y2,Y3,InitialCarry,X0,X1,X2,
+ X3,out2,digit21,digit22,digit23,digit24);
+ input Y0,Y1,Y2,Y3,InitialCarry,X0,X1,X2;
+ input X3;
+ output out2,digit21,digit22,digit23,digit24;
+ wire w18,w19,w20,w21,w22,w23,w24,w25;
+ wire w26,w27,w28,w29,w30,w31,w32,w33;
+ xor #(10) xor21_fa1(digit24,w18,InitialCarry);
+ xor #(10) xor22_fa2(w18,Y0,X0);
+ nand #(10) nand21_fa3(w19,X0,Y0);
+ nand #(10) nand22_fa4(w20,X0,InitialCarry);
+ nand #(10) nand23_fa5(w21,Y0,InitialCarry);
+ nand #(24) nand31_fa6(w8,w19,w20,w21);
+ xor #(10) xor21_fa7(digit21,w22,w9);
+ xor #(10) xor22_fa8(w22,Y3,X3);
+ nand #(10) nand21_fa9(w23,X3,Y3);
+ nand #(10) nand22_fa10(w24,X3,w9);
+ nand #(10) nand23_fa11(w25,Y3,w9);
+ nand #(10) nand31_fa12(out2,w23,w24,w25);
+ xor #(10) xor21_fa13(digit22,w26,w13);
+ xor #(10) xor22_fa14(w26,Y2,X2);
+ nand #(10) nand21_fa15(w27,X2,Y2);
+ nand #(10) nand22_fa16(w28,X2,w13);
+ nand #(10) nand23_fa17(w29,Y2,w13);
+ nand #(24) nand31_fa18(w9,w27,w28,w29);
+ xor #(10) xor21_fa19(digit23,w30,w8);
+ xor #(10) xor22_fa20(w30,Y1,X1);
+ nand #(10) nand21_fa21(w31,X1,Y1);
+ nand #(10) nand22_fa22(w32,X1,w8);
+ nand #(10) nand23_fa23(w33,Y1,w8);
+ nand #(24) nand31_fa24(w13,w31,w32,w33);
+endmodule
+
+// Simulation parameters in Verilog Format
+always
+#1000 InitialCarry=~InitialCarry;
+
+// Simulation parameters
+// Y0 CLK 10 10
+// Y1 CLK 20 20
+// Y2 GND
+// Y3 GND
+// InitialCarry CLK 30 30
+// X0 CLK 40 40
+// X1 CLK 50 50
+// X2 GND
+// X3 GND

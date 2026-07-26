@@ -1,0 +1,45 @@
+// DSCH 2.4c
+// 03/03/02 21:54:32
+// C:\Dsch2\Book on CMOS\CounterUpDown.sch
+
+module CounterUpDown( UpDown,Reset,Clock,Q3,Q0,Q1,Q2,digit14,
+ digit13,digit12,digit11);
+ input UpDown,Reset,Clock;
+ output Q3,Q0,Q1,Q2,digit14,digit13,digit12,digit11;
+ wire w21,w22,w23,w24,w25,w26,w27,w28;
+ wire w29,w30,w31,w32,w33,w34,w35,w36;
+ not inv_3(w6,UpDown)
+ dreg dreg1_6(digit13,w11,w8,Reset,Clock)
+ dreg dreg2_10(digit11,w15,w13,Reset,Clock)
+ dreg dreg3_11(digit12,w18,w16,Reset,Clock)
+ dreg dreg4_15(digit14,w20,w4,Reset,Clock)
+ xor xor2_1_FullAdder3_1_19(w21,w1,UpDown)
+ xor xor2_2_FullAdder3_2_20(w4,w21,digit14)
+ or or2_7_FullAdder3_3_21(w22,w1,UpDown)
+ and and2_8_FullAdder3_4_22(w23,UpDown,w1)
+ and and2_9_FullAdder3_5_23(w24,w22,digit14)
+ or or2_10_FullAdder3_6_24(w5,w23,w24)
+ xor xor2_1_FullAdder3_7_25(w25,w6,UpDown)
+ xor xor2_2_FullAdder3_8_26(w13,w25,digit11)
+ or or2_7_FullAdder3_9_27(w26,w6,UpDown)
+ and and2_8_FullAdder3_10_28(w27,UpDown,w6)
+ and and2_9_FullAdder3_11_29(w28,w26,digit11)
+ or or2_10_FullAdder3_12_30(w14,w27,w28)
+ xor xor2_1_FullAdder3_13_31(w29,w14,UpDown)
+ xor xor2_2_FullAdder3_14_32(w16,w29,digit12)
+ or or2_7_FullAdder3_15_33(w30,w14,UpDown)
+ and and2_8_FullAdder3_16_34(w31,UpDown,w14)
+ and and2_9_FullAdder3_17_35(w32,w30,digit12)
+ or or2_10_FullAdder3_18_36(w19,w31,w32)
+ xor xor2_1_FullAdder3_19_37(w33,w19,UpDown)
+ xor xor2_2_FullAdder3_20_38(w8,w33,digit13)
+ or or2_7_FullAdder3_21_39(w34,w19,UpDown)
+ and and2_8_FullAdder3_22_40(w35,UpDown,w19)
+ and and2_9_FullAdder3_23_41(w36,w34,digit13)
+ or or2_10_FullAdder3_24_42(w1,w35,w36)
+endmodule
+
+// Simulation parameters
+// UpDown CLK 10 10
+// Reset CLK 20 20
+// Clock CLK 10.000 10.000

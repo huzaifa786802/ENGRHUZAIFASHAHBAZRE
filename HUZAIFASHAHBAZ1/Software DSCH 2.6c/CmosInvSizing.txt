@@ -1,0 +1,16 @@
+// DSCH 2.5c
+// 04/04/02 16:06:23
+// C:\Dsch2\Book on CMOS\CmosInvSizing.sch
+// Inverter with big width to drive strong current
+// W and L are passed to Microwind in the verilog text
+// to create an inverter with large width
+
+module CmosInvSizing( in1,out1);
+ input in1;
+ output out1;
+ nmos nmos(out1,vss,in1); // 1.0u 0.12u
+ pmos pmos(out1,vdd,in1); // 2.0u 0.12u
+endmodule
+
+// Simulation parameters
+// in1 CLK 10 10

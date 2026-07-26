@@ -1,0 +1,34 @@
+// DSCH 2.6c
+// 1/8/2003 4:22:06 AM
+// C:\Documents and Settings\Bear\Desktop\dsch2\A_CLA_c3_sym.sch
+
+module A_CLA_c3_sym( g0,p0,c0,g1,p1,g2,p2,c3);
+ input g0,p0,c0,g1,p1,g2,p2;
+ output c3;
+ wire w11,w12,w13;
+ and #(15) and2_A_1(w11,c0,p0);
+ or #(15) or2_A_2(w4,g0,w11);
+ and #(15) and2_A_3(w12,w4,p1);
+ or #(15) or2_A_4(w7,g1,w12);
+ and #(15) and2_A_5(w13,w7,p2);
+ or #(15) or2_A_6(c3,g2,w13);
+endmodule
+
+// Simulation parameters in Verilog Format
+always
+#1000 g0=~g0;
+#2000 p0=~p0;
+#3000 c0=~c0;
+#4000 g1=~g1;
+#5000 p1=~p1;
+#6000 g2=~g2;
+#7000 p2=~p2;
+
+// Simulation parameters
+// g0 CLK 10 10
+// p0 CLK 20 20
+// c0 CLK 30 30
+// g1 CLK 40 40
+// p1 CLK 50 50
+// g2 CLK 60 60
+// p2 CLK 70 70

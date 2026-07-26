@@ -1,0 +1,29 @@
+// DSCH 2.4c
+// 13/03/02 08:58:28
+// C:\Dsch2\Book on CMOS\Dff.sch
+
+module Dff( d,cp,q);
+ input d,cp;
+ output q;
+ wire w9,w10,w11,w12;
+ buf buf1(w2,cp)
+ buf buf1(q,w3)
+ not not(w8,cp)
+ buf buf1(w6,w7)
+ not not1_tg1(w9,w2)
+ nmos nmos1_tg2(w7,w6,w2)
+ pmos pmos1_tg3(w7,w6,w9)
+ not not1_tg4(w10,w8)
+ nmos nmos1_tg5(w7,d,w8)
+ pmos pmos1_tg6(w7,d,w10)
+ not not1_tg7(w11,w2)
+ nmos nmos1_tg8(w3,w6,w2)
+ pmos pmos1_tg9(w3,w6,w11)
+ not not1_tg10(w12,w8)
+ nmos nmos1_tg11(w3,q,w8)
+ pmos pmos1_tg12(w3,q,w12)
+endmodule
+
+// Simulation parameters
+// d CLK 10 10
+// cp CLK 20 20

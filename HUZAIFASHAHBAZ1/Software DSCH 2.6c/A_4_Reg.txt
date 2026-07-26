@@ -1,0 +1,29 @@
+// DSCH 2.6c
+// 1/9/2003 4:22:49 PM
+// C:\Documents and Settings\Bear\Desktop\dsch2\A_4_Reg.sch
+
+module A_4_Reg( d0,d1,d2,d3,clk2,q3,q2,q1,
+ q0);
+ input d0,d1,d2,d3,clk2;
+ output q3,q2,q1,q0;
+ dreg #(12) dreg1(q2,w5,d2,w2,w3);
+ dreg #(12) dreg2(q3,w9,d3,w7,w3);
+ dreg #(12) dreg3(q1,w13,d1,w11,w3);
+ dreg #(12) dreg4(q0,w17,d0,w15,w3);
+ not #(31) inv(w3,clk2);
+endmodule
+
+// Simulation parameters in Verilog Format
+always
+#1000 d0=~d0;
+#2000 d1=~d1;
+#3000 d2=~d2;
+#4000 d3=~d3;
+#1000 clk2=~clk2;
+
+// Simulation parameters
+// d0 CLK 10 10
+// d1 CLK 20 20
+// d2 CLK 30 30
+// d3 CLK 40 40
+// clk2 CLK 10 10

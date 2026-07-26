@@ -1,0 +1,26 @@
+USER SYMBOL by DSCH 2.6c
+DATE 1/8/2003 4:13:01 AM
+SYM  #A_CLA
+BB(0,0,40,40)
+TITLE 10 10  #A_CLA
+MODEL 6000
+REC(5,5,30,30)
+PIN(0,10,0.00,0.00)g
+PIN(0,20,0.00,0.00)p
+PIN(0,30,0.00,0.00)ci
+PIN(40,10,2.00,1.00)co
+LIG(0,10,5,10)
+LIG(0,20,5,20)
+LIG(0,30,5,30)
+LIG(35,10,40,10)
+LIG(5,5,5,35)
+LIG(5,5,35,5)
+LIG(35,5,35,35)
+LIG(35,35,5,35)
+VLG module A_CLA( g,p,ci,co);
+VLG  input g,p,ci;
+VLG  output co;
+VLG  and #(16) and2(w4,ci,p);
+VLG  or #(16) or2(co,g,w4);
+VLG endmodule
+FSYM

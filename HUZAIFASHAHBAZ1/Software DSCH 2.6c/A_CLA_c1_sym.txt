@@ -1,0 +1,22 @@
+// DSCH 2.6c
+// 1/8/2003 4:06:18 AM
+// C:\Documents and Settings\Bear\Desktop\dsch2\A_CLA_c1_sym.sch
+
+module A_CLA_c1_sym( g0,p0,c0,c1);
+ input g0,p0,c0;
+ output c1;
+ wire w5;
+ and #(15) and2_A_1(w5,c0,g0);
+ or #(15) or2_A_2(c1,p0,w5);
+endmodule
+
+// Simulation parameters in Verilog Format
+always
+#1000 g0=~g0;
+#2000 p0=~p0;
+#3000 c0=~c0;
+
+// Simulation parameters
+// g0 CLK 10 10
+// p0 CLK 20 20
+// c0 CLK 30 30

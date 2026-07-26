@@ -1,0 +1,31 @@
+USER SYMBOL by DSCH 2.6c
+DATE 1/6/2003 4:32:43 PM
+SYM  #1b FA
+BB(0,0,60,40)
+TITLE 10 10  #1b FA
+MODEL 6000
+REC(5,5,50,30)
+PIN(35,0,0.00,0.00)a
+PIN(60,10,0.00,0.00)c_in
+PIN(25,0,0.00,0.00)b
+PIN(15,40,2.00,1.00)sum
+PIN(0,20,2.00,1.00)c_out
+LIG(35,0,35,5)
+LIG(55,10,60,10)
+LIG(25,0,25,5)
+LIG(15,35,15,40)
+LIG(0,20,5,20)
+LIG(5,5,5,35)
+LIG(5,5,55,5)
+LIG(55,5,55,35)
+LIG(55,35,5,35)
+VLG module Logic FA( a,c_in,b,sum,c_out);
+VLG  input a,c_in,b;
+VLG  output sum,c_out;
+VLG  and #(16) and2(w3,w1,c_in);
+VLG  xor #(23) xor2(w1,b,a);
+VLG  xor #(16) xor2(sum,c_in,w1);
+VLG  and #(16) and2(w7,b,a);
+VLG  or #(16) or2(c_out,w3,w7);
+VLG endmodule
+FSYM

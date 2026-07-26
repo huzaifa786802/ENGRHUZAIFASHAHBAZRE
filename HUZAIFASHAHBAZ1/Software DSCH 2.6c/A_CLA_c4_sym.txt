@@ -1,0 +1,42 @@
+// DSCH 2.6c
+// 1/8/2003 4:29:25 AM
+// C:\Documents and Settings\Bear\Desktop\dsch2\A_CLA_c4_sym.sch
+
+module A_CLA_c4_sym( g0,p0,c0,g1,p1,g2,p2,g3,
+ p3,c4);
+ input g0,p0,c0,g1,p1,g2,p2,g3;
+ input p3;
+ output c4;
+ wire w14,w15,w16,w17;
+ and #(15) and2_A_1(w14,c0,p0);
+ or #(15) or2_A_2(w4,g0,w14);
+ and #(15) and2_A_3(w15,w4,p1);
+ or #(15) or2_A_4(w7,g1,w15);
+ and #(15) and2_A_5(w16,c4,p3);
+ or #(22) or2_A_6(c4,g3,w16);
+ and #(15) and2_A_7(w17,w7,p2);
+ or #(8) or2_A_8(w10,g2,w17);
+endmodule
+
+// Simulation parameters in Verilog Format
+always
+#1000 g0=~g0;
+#2000 p0=~p0;
+#3000 c0=~c0;
+#4000 g1=~g1;
+#5000 p1=~p1;
+#6000 g2=~g2;
+#7000 p2=~p2;
+#8000 g3=~g3;
+#9000 p3=~p3;
+
+// Simulation parameters
+// g0 CLK 10 10
+// p0 CLK 20 20
+// c0 CLK 30 30
+// g1 CLK 40 40
+// p1 CLK 50 50
+// g2 CLK 60 60
+// p2 CLK 70 70
+// g3 CLK 80 80
+// p3 CLK 90 90

@@ -1,0 +1,69 @@
+DSCH 2.6c
+VERSION 1/6/2003 5:06:47 PM
+BB(15,0,65,90)
+SYM  #4b
+BB(15,0,65,90)
+TITLE 25 10  #4b Adder 
+MODEL 6000
+PROP                                                                                                                                                                                                           
+REC(20,5,40,80,r)
+VIS 5
+PIN(15,20,0.000,0.000)b2
+PIN(15,60,0.000,0.000)a2
+PIN(15,40,0.000,0.000)b0
+PIN(15,80,0.000,0.000)a0
+PIN(15,50,0.000,0.000)a3
+PIN(15,10,0.000,0.000)b3
+PIN(15,70,0.000,0.000)a1
+PIN(15,30,0.000,0.000)b1
+PIN(65,10,2.000,0.070)s3
+PIN(65,50,2.000,0.070)c4
+PIN(65,40,2.000,0.070)s0
+PIN(65,30,2.000,0.070)s1
+PIN(65,20,2.000,0.070)s2
+LIG(15,20,20,20)
+LIG(15,60,20,60)
+LIG(15,40,20,40)
+LIG(15,80,20,80)
+LIG(15,50,20,50)
+LIG(15,10,20,10)
+LIG(15,70,20,70)
+LIG(15,30,20,30)
+LIG(60,10,65,10)
+LIG(60,50,65,50)
+LIG(60,40,65,40)
+LIG(60,30,65,30)
+LIG(60,20,65,20)
+LIG(20,5,20,85)
+LIG(20,5,60,5)
+LIG(60,5,60,85)
+LIG(60,85,20,85)
+VLG  module 4b Adder Logic I_O( b2,a2,b0,a0,a3,b3,a1,b1,
+VLG   s3,c4,s0,s1,s2);
+VLG   input b2,a2,b0,a0,a3,b3,a1,b1;
+VLG   output s3,c4,s0,s1,s2;
+VLG   wire w18,w19,w20,w21,w22,w23,w24,w25;
+VLG   wire w26,w27,w28,w29;
+VLG   and #(15) and2_Lo1(w19,w18,w2);
+VLG   xor #(26) xor2_Lo2(w18,b2,a2);
+VLG   xor #(15) xor2_Lo3(s2,w2,w18);
+VLG   and #(15) and2_Lo4(w20,b2,a2);
+VLG   or #(22) or2_Lo5(w5,w19,w20);
+VLG   and #(15) and2_Lo6(w22,w21,w5);
+VLG   xor #(26) xor2_Lo7(w21,b3,a3);
+VLG   xor #(15) xor2_Lo8(s3,w5,w21);
+VLG   and #(15) and2_Lo9(w23,b3,a3);
+VLG   or #(15) or2_Lo10(c4,w22,w23);
+VLG   and #(15) and2_Lo11(w25,w24,w11);
+VLG   xor #(26) xor2_Lo12(w24,b1,a1);
+VLG   xor #(15) xor2_Lo13(s1,w11,w24);
+VLG   and #(15) and2_Lo14(w26,b1,a1);
+VLG   or #(22) or2_Lo15(w2,w25,w26);
+VLG   and #(15) and2_Lo16(w28,w27,w15);
+VLG   xor #(26) xor2_Lo17(w27,b0,a0);
+VLG   xor #(15) xor2_Lo18(s0,w15,w27);
+VLG   and #(15) and2_Lo19(w29,b0,a0);
+VLG   or #(22) or2_Lo20(w11,w28,w29);
+VLG  endmodule
+FSYM
+FFIG C:\Documents and Settings\Bear\Desktop\dsch2\4bAdder.sym

@@ -1,0 +1,32 @@
+// DSCH 2.6c
+// 1/6/2003 5:04:18 PM
+// C:\Documents and Settings\Bear\Desktop\dsch2\4bAdder.sym
+
+module 4bAdder( );
+ wire w14,w15,w16,w17,w18,w19,w20,w21;
+ wire w22,w23,w24,w25,w26,w27,w28,w29;
+ and #(15) and2_Lo1_4b1(w16,w14,w15);
+ xor #(27) xor2_Lo2_4b2(w14,w1,w2);
+ xor #(7) xor2_Lo3_4b3(w13,w15,w14);
+ and #(15) and2_Lo4_4b4(w17,w1,w2);
+ or #(25) or2_Lo5_4b5(w18,w16,w17);
+ and #(15) and2_Lo6_4b6(w20,w19,w18);
+ xor #(27) xor2_Lo7_4b7(w19,w6,w5);
+ xor #(7) xor2_Lo8_4b8(w9,w18,w19);
+ and #(15) and2_Lo9_4b9(w21,w6,w5);
+ or #(7) or2_Lo10_4b10(w10,w20,w21);
+ and #(15) and2_Lo11_4b11(w24,w22,w23);
+ xor #(27) xor2_Lo12_4b12(w22,w8,w7);
+ xor #(7) xor2_Lo13_4b13(w12,w23,w22);
+ and #(15) and2_Lo14_4b14(w25,w8,w7);
+ or #(25) or2_Lo15_4b15(w15,w24,w25);
+ and #(15) and2_Lo16_4b16(w28,w26,w27);
+ xor #(27) xor2_Lo17_4b17(w26,w3,w4);
+ xor #(7) xor2_Lo18_4b18(w11,w27,w26);
+ and #(15) and2_Lo19_4b19(w29,w3,w4);
+ or #(25) or2_Lo20_4b20(w23,w28,w29);
+endmodule
+
+// Simulation parameters in Verilog Format
+
+// Simulation parameters

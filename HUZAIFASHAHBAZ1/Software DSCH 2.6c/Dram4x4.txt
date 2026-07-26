@@ -1,0 +1,24 @@
+// DSCH 2.5f
+// 12/16/2002 4:04:33 PM
+// C:\Documents and Settings\Bear\Desktop\dsch2\Dram4x4.sch
+
+module Dram4x4( );
+ nmos #(13) nmos(w3,w1,w2); // 1.5u 0.18u
+ nmos #(13) nmos(w5,w7,w2); // 1.5u 0.18u
+ nmos #(13) nmos(w9,w8,w2); // 1.5u 0.18u
+ nmos #(13) nmos(w11,w13,w2); // 1.5u 0.18u
+ nmos #(13) nmos(w15,w13,w14); // 1.5u 0.18u
+ nmos #(13) nmos(w16,w8,w14); // 1.5u 0.18u
+ nmos #(13) nmos(w17,w7,w14); // 1.5u 0.18u
+ nmos #(13) nmos(w18,w1,w14); // 1.5u 0.18u
+ nmos #(13) nmos(w20,w1,w19); // 1.5u 0.18u
+ nmos #(13) nmos(w21,w7,w19); // 1.5u 0.18u
+ nmos #(13) nmos(w22,w8,w19); // 1.5u 0.18u
+ nmos #(13) nmos(w23,w13,w19); // 1.5u 0.18u
+ nmos #(13) nmos(w25,w13,w24); // 1.5u 0.18u
+ nmos #(13) nmos(w26,w8,w24); // 1.5u 0.18u
+ nmos #(13) nmos(w27,w7,w24); // 1.5u 0.18u
+ nmos #(13) nmos(w28,w1,w24); // 1.5u 0.18u
+endmodule
+
+// Simulation parameters
