@@ -1,0 +1,12 @@
+/* styles.css */
+body { font-family: Arial, sans-serif; background: #f7f8fb; color: #111; margin:0; }
+.container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+h1, h2, h3 { margin: 0 0 10px; }
+a { color: #1f6feb; text-decoration: none; }
+.btn { display:inline-block; padding:10px 16px; border-radius:8px; background:#1f6feb; color:#fff; margin:4px 0; }
+.btn.outline { background:transparent; border:2px solid #1f6feb; color:#1f6feb; }
+.section { padding:40px 0; }
+.section.alt { background:#fff; }
+.hero { padding:50px 0; background:#eef3fb; }
+.site-header { background:#fff; border-bottom:1px solid #ddd; }
+.site-footer { padding:20px; text-align:center; color:#555; font-size:14px; background:#fff; }
