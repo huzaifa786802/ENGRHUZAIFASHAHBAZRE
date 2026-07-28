@@ -1,0 +1,169 @@
+0
+1
+00:00:01,200 --> 00:00:03,120
+Let's recap what's important for us.
+1
+
+2
+00:00:03,780 --> 00:00:09,330
+We understood that the received power needs to be higher than the sensitivity for successful transmission.
+2
+
+3
+00:00:10,320 --> 00:00:11,970
+Let's have a look at two cases.
+3
+
+4
+00:00:12,660 --> 00:00:21,420
+In the first case we'll consider a transmission power of 0 dBm and we'll consider a sensitivity of -100 dBm.
+4
+
+5
+00:00:21,420 --> 00:00:26,340
+In this case, between the transmitted power and the sensitivity,
+5
+
+6
+00:00:26,790 --> 00:00:32,580
+we have a difference of 100 dB and this 100 dB is our budget.
+6
+
+7
+00:00:33,420 --> 00:00:39,450
+This means that it's what we are allowed to lose in the air, in the connectors and cables and all the
+7
+
+8
+00:00:39,450 --> 00:00:40,830
+way along a transmission path.
+8
+
+9
+00:00:42,060 --> 00:00:51,570
+Now, let's take a second case: with a transmitted power of -20 dBm, and we now consider the sensitivity
+9
+
+10
+00:00:51,570 --> 00:00:55,440
+of the receiver of -120 dBm.
+10
+
+11
+00:00:56,280 --> 00:00:59,100
+The difference between the two is still 100 dBm.
+11
+
+12
+00:00:59,610 --> 00:01:01,380
+Which transmission is more interesting?
+12
+
+13
+00:01:01,860 --> 00:01:08,550
+In fact, they are exactly the same because under one hand you have the higher transmitted power but
+13
+
+14
+00:01:08,550 --> 00:01:16,050
+a bad sensitivity, and in the second case you have a lower transmitted power, but also a better sensitivity.
+14
+
+15
+00:01:18,180 --> 00:01:20,520
+Let's make an analogy of what we just said.
+15
+
+16
+00:01:21,150 --> 00:01:27,660
+We can consider that the transmitter and the receiver are on the one hand as speaker and on the other
+16
+
+17
+00:01:27,660 --> 00:01:28,800
+hand a listener.
+17
+
+18
+00:01:30,180 --> 00:01:35,220
+In the first case, the speaker use a loud voice with someone who doesn't hear very well.
+18
+
+19
+00:01:36,210 --> 00:01:43,080
+And in the second case, the speaker whispered to someone who has a very good hearing, and at the end
+19
+
+20
+00:01:43,080 --> 00:01:45,510
+of the day, it's all about your budget.
+20
+
+21
+00:01:46,290 --> 00:01:50,670
+So only the difference between the transmitted power and the sensitivity matters.
+21
+
+22
+00:01:51,270 --> 00:01:54,630
+And again, this difference is called link budget.
+22
+
+23
+00:01:56,130 --> 00:01:57,360
+There is one thing interesting in the
+23
+
+24
+00:01:57,360 --> 00:01:59,730
+second case though, it's that the transmitted
+24
+
+25
+00:01:59,730 --> 00:02:04,440
+power is lower, so it consumes less. In 4G transmission
+25
+
+26
+00:02:04,560 --> 00:02:07,560
+the budget available is around 130 dB.
+26
+
+27
+00:02:08,310 --> 00:02:16,650
+In LoRa, we have a budget of 157 dB and that result of a longer transmission distance. In LoRa, the
+27
+
+28
+00:02:16,650 --> 00:02:22,980
+world record of a transmission between a transmitter and a receiver was broken in april 2020 and it's
+28
+
+29
+00:02:22,980 --> 00:02:25,440
+832 kilometers.
+29
+
+30
+00:02:26,010 --> 00:02:32,070
+They of course complied with the European standars with a maximum transmission power of 15 dBm, which
+30
+
+31
+00:02:32,070 --> 00:02:34,040
+corresponds to 25 mW.
+31
+
+32
+00:02:34,500 --> 00:02:40,050
+This is, of course, something realized in a very specific conditions, and you will never reach this
+32
+
+33
+00:02:40,050 --> 00:02:41,640
+level of performance in the field.
+33
+
+34
+00:02:42,780 --> 00:02:45,990
+So now let's have a look at an example to recap everything.
