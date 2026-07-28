@@ -1,0 +1,194 @@
+0
+1
+00:00:00,660 --> 00:00:06,360
+cURL is a common line tool that will allow us to transfer data to a server using a specific protocol.
+1
+
+2
+00:00:06,720 --> 00:00:10,320
+In our case, we'll use it to send HTTP request.
+2
+
+3
+00:00:10,350 --> 00:00:16,350
+For that we can use the MobaXTerm terminal, but we can use any other Linux terminal with cURL
+3
+
+4
+00:00:16,350 --> 00:00:17,250
+installed.
+4
+
+5
+00:00:17,730 --> 00:00:21,390
+In MobaXTerm, click on start a local terminal.
+5
+
+6
+00:00:22,150 --> 00:00:25,540
+We are now able to type most of the useful Linux command.
+6
+
+7
+00:00:25,810 --> 00:00:31,210
+And if for other purposes than this course you can't find the command you need, then please go on the
+7
+
+8
+00:00:31,210 --> 00:00:34,300
+package manager and check if it's available for this terminal.
+8
+
+9
+00:00:36,050 --> 00:00:42,080
+By default, cURL sends to a server an HTTP GET request and print out the answer.
+9
+
+10
+00:00:42,740 --> 00:00:44,990
+We can cURL Google for example.
+10
+
+11
+00:00:45,440 --> 00:00:48,380
+We receive the content of the HTML front page.
+11
+
+12
+00:00:49,260 --> 00:00:52,200
+I've got another server ready to receive HTTP request.
+12
+
+13
+00:00:52,200 --> 00:00:53,310
+So let's try.
+13
+
+14
+00:00:55,070 --> 00:00:55,760
+On the left.
+14
+
+15
+00:00:55,760 --> 00:00:57,680
+I've got my MobaXTerm terminal.
+15
+
+16
+00:00:58,310 --> 00:01:01,010
+It's from where I'm going to send HTTP request.
+16
+
+17
+00:01:02,070 --> 00:01:02,880
+On the right.
+17
+
+18
+00:01:02,880 --> 00:01:04,830
+I've got an HTTP server.
+18
+
+19
+00:01:04,980 --> 00:01:10,050
+It will just print out the request it received, but it won't send any answer back to the client.
+19
+
+20
+00:01:10,800 --> 00:01:11,790
+The command is easy.
+20
+
+21
+00:01:12,550 --> 00:01:19,780
+It's curl, then I just need to specify the method I want to use with the -- request option.
+21
+
+22
+00:01:20,630 --> 00:01:21,180
+In this
+22
+
+23
+00:01:21,200 --> 00:01:24,170
+example, I will use an HTTP GET request.
+23
+
+24
+00:01:25,450 --> 00:01:28,830
+If the type of request is not mentioned and the default one is GET.
+24
+
+25
+00:01:28,870 --> 00:01:31,690
+But I want to write it down so we don't get confused.
+25
+
+26
+00:01:32,600 --> 00:01:34,820
+Then I enter the server URL.
+26
+
+27
+00:01:35,150 --> 00:01:38,210
+In my case, the server on the right has this address.
+27
+
+28
+00:01:39,260 --> 00:01:45,440
+Finally, if you're getting annoyed with certificates, you can use the -- insecure option.
+28
+
+29
+00:01:46,530 --> 00:01:51,450
+I launched a command, my server receives it, and it updates its log.
+29
+
+30
+00:01:51,450 --> 00:01:52,410
+Really easy.
+30
+
+31
+00:01:53,640 --> 00:01:57,360
+I can try another kind of request, which is the POST request.
+31
+
+32
+00:01:57,360 --> 00:02:04,110
+So if I change, GET by POST, I've got the same kind of result, but this time with the POST method.
+32
+
+33
+00:02:04,710 --> 00:02:07,650
+And finally, I can send some data in the request.
+33
+
+34
+00:02:07,680 --> 00:02:08,940
+Let's say hello.
+34
+
+35
+00:02:10,110 --> 00:02:14,880
+For that, I need to use the -- option with the content of my message.
+35
+
+36
+00:02:15,360 --> 00:02:18,190
+And here we go, in the body section.
+36
+
+37
+00:02:18,210 --> 00:02:20,700
+I've got my message. Later in this
+37
+
+38
+00:02:20,700 --> 00:02:24,220
+course, when we'll have to send some request to a LoRaWAN server,
+38
+
+39
+00:02:24,240 --> 00:02:25,680
+then we'll use these tools.
