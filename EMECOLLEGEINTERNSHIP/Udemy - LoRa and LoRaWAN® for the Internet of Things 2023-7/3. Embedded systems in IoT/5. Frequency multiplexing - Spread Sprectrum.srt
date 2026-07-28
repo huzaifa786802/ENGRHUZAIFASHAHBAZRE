@@ -1,0 +1,239 @@
+0
+1
+00:00:00,480 --> 00:00:03,750
+We've seen that we use the 868 MHz band.
+1
+
+2
+00:00:04,320 --> 00:00:13,890
+But in reality the 868 band is not only one frequency, it's a frequency band that goes from 867 MHz
+2
+
+3
+00:00:14,220 --> 00:00:16,320
+to 869 MHz.
+3
+
+4
+00:00:17,250 --> 00:00:22,710
+In this band, we'll have to find a way for several end devices to communicate at the same time.
+4
+
+5
+00:00:23,640 --> 00:00:27,600
+The first idea is to divide this frequency band into different channels.
+5
+
+6
+00:00:28,260 --> 00:00:35,190
+In LoRaWAN, we have eight channels used for uplink, and downlink. Uplink is the capability to transmit
+6
+
+7
+00:00:35,190 --> 00:00:37,410
+data from the end device to the server.
+7
+
+8
+00:00:37,860 --> 00:00:44,640
+And downlink means that the data comes from the user in the direction of the end device and there is a specific
+8
+
+9
+00:00:44,640 --> 00:00:46,500
+channel only for downlink.
+9
+
+10
+00:00:47,580 --> 00:00:51,240
+The channels we are interested in are actually more uplink ones.
+10
+
+11
+00:00:51,810 --> 00:00:52,470
+Why is that?
+11
+
+12
+00:00:53,370 --> 00:00:58,290
+Because in the world of the Internet of Things, we have many more sensors than actuators.
+12
+
+13
+00:00:58,620 --> 00:01:03,930
+This means that we are more interested in getting data from the end device, than providing some to it.
+13
+
+14
+00:01:04,380 --> 00:01:10,290
+And we will see later that a LoRaWAN infrastructure, has indeed more capabilities in uplink than downlink.
+14
+
+15
+00:01:11,280 --> 00:01:15,270
+8 channels allow us to have 8 end devices transmitting at the same time.
+15
+
+16
+00:01:16,050 --> 00:01:21,060
+That is a really low number compared to what we could expect for an IoT transmission, where we should
+16
+
+17
+00:01:21,060 --> 00:01:24,840
+speak about thousands of devices which would be able to reach a gateway.
+17
+
+18
+00:01:25,470 --> 00:01:27,660
+So we'll have to find other techniques.
+18
+
+19
+00:01:28,020 --> 00:01:31,370
+And the next one we're going to explain is called spread spectrum.
+19
+
+20
+00:01:33,760 --> 00:01:40,120
+Spread spectrum is the capability to have several devices talking in the same channel at the same time.
+20
+
+21
+00:01:40,690 --> 00:01:45,790
+For example, in the first channel that I've presented here, 867.1 MHz.
+21
+
+22
+00:01:46,180 --> 00:01:49,750
+The first device transmits some information, so it chooses the channel.
+22
+
+23
+00:01:50,500 --> 00:01:53,620
+Then the second, third, fourth, and so on.
+23
+
+24
+00:01:54,340 --> 00:01:57,910
+They all can communicate using the same channel at the same time.
+24
+
+25
+00:01:58,630 --> 00:02:00,640
+But there is only one condition for that.
+25
+
+26
+00:02:01,330 --> 00:02:03,220
+They must use a different color.
+26
+
+27
+00:02:03,850 --> 00:02:07,570
+This color in the LoRaWAN modulation is called a spreading factor.
+27
+
+28
+00:02:08,140 --> 00:02:13,780
+For this slide, we speak about colors and we leave for later the explanation of what a spreading factor is,
+28
+
+29
+00:02:13,990 --> 00:02:19,960
+and how it will influence the number of devices that can talk to the gateway at the same time. 
+29
+
+30
+00:02:20,020 --> 00:02:21,730
+In fact, the number of spreading factors,
+30
+
+31
+00:02:21,730 --> 00:02:25,300
+so, the number of available colors we've got, is six.
+31
+
+32
+00:02:26,170 --> 00:02:33,130
+So with six different colors, this means that, for example, in the first channel, we have six devices
+32
+
+33
+00:02:33,400 --> 00:02:34,150
+that can talk at the same time.
+33
+
+34
+00:02:34,150 --> 00:02:41,410
+Knowing that we have eight different channels, we have in fact, 48 end devices
+34
+
+35
+00:02:41,410 --> 00:02:42,940
+that can speak at the same time.
+35
+
+36
+00:02:43,450 --> 00:02:48,670
+Obviously, that only happens if we assume that on a specific channel they all have a different color
+36
+
+37
+00:02:48,670 --> 00:02:52,600
+during the transmission. If there are two similar colors in the same channel,
+37
+
+38
+00:02:53,080 --> 00:02:53,920
+is it serious?
+38
+
+39
+00:02:53,950 --> 00:02:55,960
+Well, there will be a collision.
+39
+
+40
+00:02:56,110 --> 00:03:00,280
+This means that a retransmission would be necessary. In LoRaWAN,
+40
+
+41
+00:03:00,490 --> 00:03:04,650
+we don't target real time application, so it's not so bad to have a collision.
+41
+
+42
+00:03:04,660 --> 00:03:11,530
+But on the other hand, it's necessary to know if both the end device and the user wants to be notified of
+42
+
+43
+00:03:11,530 --> 00:03:13,600
+the fact that the message has arrived or not.
+43
+
+44
+00:03:14,320 --> 00:03:20,350
+To do so we'll have the possibility of having message acknowledgement, but we will see that in another
+44
+
+45
+00:03:20,350 --> 00:03:20,790
+video.
+45
+
+46
+00:03:22,300 --> 00:03:28,030
+So the best we can do so far is to have 48 end devices talking at the same time, which is far less than
+46
+
+47
+00:03:28,030 --> 00:03:28,760
+we expected.
+47
+
+48
+00:03:29,620 --> 00:03:33,910
+So we'll need another technique to increase this number, and that's what we will see next.
