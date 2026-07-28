@@ -1,0 +1,159 @@
+0
+1
+00:00:00,390 --> 00:00:06,480
+When we deploy a service, it's often very convenient to have access to the machine providing this service.
+1
+
+2
+00:00:06,750 --> 00:00:09,630
+It can be a server or set by your cloud provider,
+2
+
+3
+00:00:09,630 --> 00:00:13,860
+it can be a LoRaWAN gateway, it can be a simple Raspberry Pi.
+3
+
+4
+00:00:13,890 --> 00:00:19,170
+Well, there are dozens of examples where we need to get control of the remote machine to configure
+4
+
+5
+00:00:19,170 --> 00:00:19,500
+it.
+5
+
+6
+00:00:20,190 --> 00:00:26,400
+If we don't have this remote access, then we need to have a physical access to this machine with a
+6
+
+7
+00:00:26,400 --> 00:00:28,380
+keyboard, a mouse and a screen.
+7
+
+8
+00:00:28,380 --> 00:00:29,550
+So you get that.
+8
+
+9
+00:00:29,550 --> 00:00:36,030
+It's really hard to do that and sometimes impossible when this remote access is activated and we are
+9
+
+10
+00:00:36,030 --> 00:00:40,230
+logged in, then we end up with a terminal where we can control the machine.
+10
+
+11
+00:00:40,230 --> 00:00:40,950
+Exactly
+11
+
+12
+00:00:40,950 --> 00:00:47,460
+if we were connected directly with it, obviously this remote access must be secure and the most used
+12
+
+13
+00:00:47,460 --> 00:00:50,790
+protocol for a secure remote access is SSH.
+13
+
+14
+00:00:51,060 --> 00:00:53,000
+Using it is very simple.
+14
+
+15
+00:00:53,010 --> 00:00:55,350
+We just need an SSH client.
+15
+
+16
+00:00:55,950 --> 00:00:58,620
+Mobaxterm provides such an SSH client.
+16
+
+17
+00:00:58,620 --> 00:01:03,220
+So let's make an example of an SSH connection on a remote Linux server.
+17
+
+18
+00:01:03,880 --> 00:01:14,140
+In MobaXterm we open a local terminal, then we just need to type SSH followed by the username on our
+18
+
+19
+00:01:14,140 --> 00:01:14,500
+server.
+19
+
+20
+00:01:14,500 --> 00:01:16,180
+The username is debian.
+20
+
+21
+00:01:16,660 --> 00:01:21,880
+Then @, here we need to enter the server IP address or its name.
+21
+
+22
+00:01:21,880 --> 00:01:25,990
+In our case the service name is test.univ-lorawan.fr
+22
+
+23
+00:01:26,440 --> 00:01:29,470
+Then, we just enter the password.
+23
+
+24
+00:01:30,780 --> 00:01:31,740
+And there we go.
+24
+
+25
+00:01:31,770 --> 00:01:34,320
+We are logged in and we can control the server.
+25
+
+26
+00:01:35,150 --> 00:01:38,900
+With MobaXterm, we can also use the graphical user interface.
+26
+
+27
+00:01:39,020 --> 00:01:48,740
+We click on Session, SSH, then we enter the remote control host test.univ-lorawan.fr,
+27
+
+28
+00:01:48,740 --> 00:01:53,360
+the username debian and then, same process again,
+28
+
+29
+00:01:54,890 --> 00:01:56,600
+we enter the password.
+29
+
+30
+00:01:58,110 --> 00:01:58,740
+Great.
+30
+
+31
+00:01:58,740 --> 00:02:04,980
+So during this lecture, when we say that we use a remote SSH connection, then that's exactly what we'll
+31
+
+32
+00:02:04,980 --> 00:02:05,370
+do.
