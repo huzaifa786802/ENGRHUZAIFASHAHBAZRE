@@ -1,0 +1,99 @@
+0
+1
+00:00:01,080 --> 00:00:06,030
+During this course, we're going to play with a no code programming interface called Node-RED.
+1
+
+2
+00:00:06,630 --> 00:00:09,960
+It's very common nowadays to use it for IoT projects.
+2
+
+3
+00:00:10,320 --> 00:00:14,880
+We'll mostly use it to create an IoT platform. To install NodeRED.
+3
+
+4
+00:00:14,910 --> 00:00:16,290
+We're going to use Docker.
+4
+
+5
+00:00:16,680 --> 00:00:23,880
+So we go on the Docker Hub website where we can find all the available services for Docker and we look
+5
+
+6
+00:00:23,880 --> 00:00:25,620
+for the NodeRED service.
+6
+
+7
+00:00:25,860 --> 00:00:29,280
+This one is deprecated, so we're going to use this one.
+7
+
+8
+00:00:30,000 --> 00:00:32,640
+We just need to copy the command and that's it.
+8
+
+9
+00:00:33,060 --> 00:00:35,340
+Let's execute that in our terminal.
+9
+
+10
+00:00:35,940 --> 00:00:41,790
+On the left we've got a mobaXTerm terminal and on the right we have Docker Desktop running.
+10
+
+11
+00:00:42,000 --> 00:00:48,600
+I execute the command I've copied previously and when everything has been downloaded, I can see that
+11
+
+12
+00:00:48,600 --> 00:00:52,920
+a new container has been created locally on my Docker Desktop interface.
+12
+
+13
+00:00:54,300 --> 00:00:58,320
+I can now connect to it with my web browser localhost.
+13
+
+14
+00:00:58,320 --> 00:00:59,460
+1880.
+14
+
+15
+00:01:04,280 --> 00:01:05,250
+Here we are.
+15
+
+16
+00:01:05,270 --> 00:01:07,010
+We are now ready to play with it.
+16
+
+17
+00:01:08,090 --> 00:01:12,440
+And if you want to turn it off, then you just need to stop it from the Docker interface.
+17
+
+18
+00:01:13,220 --> 00:01:15,170
+Don't worry if you don't know how to use it.
+18
+
+19
+00:01:15,200 --> 00:01:15,740
+Of course.
+19
+
+20
+00:01:15,740 --> 00:01:17,090
+We'll explain everything.
