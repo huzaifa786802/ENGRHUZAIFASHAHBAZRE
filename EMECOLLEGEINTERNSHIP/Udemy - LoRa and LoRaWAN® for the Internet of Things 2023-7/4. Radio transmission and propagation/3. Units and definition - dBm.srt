@@ -1,0 +1,169 @@
+0
+1
+00:00:01,110 --> 00:00:03,690
+In the same way we use decibels for power ratio.
+1
+
+2
+00:00:04,020 --> 00:00:06,660
+We're going to use decibels for the power value itself.
+2
+
+3
+00:00:07,290 --> 00:00:08,940
+The unit is dBm.
+3
+
+4
+00:00:09,810 --> 00:00:15,660
+When we speak about power in decimal, we use the value compared to one milliwatts, and that's where
+4
+
+5
+00:00:15,660 --> 00:00:17,160
+the name dBm comes from.
+5
+
+6
+00:00:17,520 --> 00:00:19,110
+The m stands for 
+6
+
+7
+00:00:19,110 --> 00:00:19,410
+milliwatt.
+7
+
+8
+00:00:20,010 --> 00:00:22,920
+That means that if we have a power of 1 mW.
+8
+
+9
+00:00:23,370 --> 00:00:24,180
+What's 1 mW
+9
+
+10
+00:00:24,180 --> 00:00:25,410
+in relation to 
+10
+
+11
+00:00:25,410 --> 00:00:25,890
+1 mW?
+11
+
+12
+00:00:26,070 --> 00:00:26,730
+It's equal.
+12
+
+13
+00:00:27,330 --> 00:00:28,920
+So we have 0 dBm.
+13
+
+14
+00:00:29,640 --> 00:00:34,500
+If we have two milliwatts. What's 2 mW in comparison to 1 mW?
+14
+
+15
+00:00:34,950 --> 00:00:36,180
+It's multiplied by two.
+15
+
+16
+00:00:36,810 --> 00:00:44,190
+So we have 3 dBm, and if we have a multiplication by ten, so ten milliwatts then the power
+16
+
+17
+00:00:44,190 --> 00:00:47,850
+is 10 dBm and we have exactly the same operation
+17
+
+18
+00:00:47,850 --> 00:00:51,450
+for values below 1 mW. If we divide by two?
+18
+
+19
+00:00:51,450 --> 00:01:00,750
+So 0.5 mW we have minus 3 dBm. And if we divide by ten, so 0.1 mW, we have minus
+19
+
+20
+00:01:00,750 --> 00:01:01,560
+-10 dBm.
+20
+
+21
+00:01:02,280 --> 00:01:03,780
+So let's take an example.
+21
+
+22
+00:01:04,290 --> 00:01:09,930
+We'll use the example of the Walkie-Talkie, which has a transmission power of 2 W, and we tried
+22
+
+23
+00:01:09,930 --> 00:01:13,470
+to find a transmission power in dBm.
+23
+
+24
+00:01:13,770 --> 00:01:16,110
+For that, we just have to compare this value to 1 mW.
+24
+
+25
+00:01:16,110 --> 00:01:18,750
+To what is 1 mW
+25
+
+26
+00:01:18,750 --> 00:01:27,210
+multiplied by ten, ten, ten, which makes 1000 and I multiply it again by two, which gives
+26
+
+27
+00:01:27,210 --> 00:01:29,400
+2W.
+27
+
+28
+00:01:29,640 --> 00:01:39,810
+Now what's the value in dBm ? 1 mW is 0 dBm and multiplication by ten gives each time 10 dBm and
+28
+
+29
+00:01:39,840 --> 00:01:42,300
+the multiplication by two gives 3 dBm.
+29
+
+30
+00:01:43,050 --> 00:01:50,370
+So the transmission power of the Walkie-Talkie is therefore 33 dBm. Now that we've understood how decibels
+30
+
+31
+00:01:50,370 --> 00:01:50,730
+work.
+31
+
+32
+00:01:50,940 --> 00:01:56,190
+We can study a LoRa transmission and verify if the values representing this transmission are interesting
+32
+
+33
+00:01:56,190 --> 00:01:57,120
+for long range.
+33
+
+34
+00:01:57,750 --> 00:01:59,670
+That's what we're going to do in the next video.
