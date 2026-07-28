@@ -1,0 +1,186 @@
+0
+1
+00:00:01,440 --> 00:00:06,300
+We're going to check some technical terms that are present in documentation, and we'll use this little
+1
+
+2
+00:00:06,300 --> 00:00:13,410
+diagram as a support for the explanation. 
+First of all, we transmit with a power Pₜ and the fraction
+2
+
+3
+00:00:13,410 --> 00:00:15,780
+of this power will arrive to the receiver.
+3
+
+4
+00:00:17,070 --> 00:00:21,480
+But along a transmission path, some noise has been added to the signal.
+4
+
+5
+00:00:23,500 --> 00:00:31,510
+So at the receiver side, we have Pᵣ, the reserved power, plus Pₙ the noise power.
+5
+
+6
+00:00:33,230 --> 00:00:34,490
+So what do we want?
+6
+
+7
+00:00:34,970 --> 00:00:37,610
+We want to have the highest possible received power.
+7
+
+8
+00:00:38,360 --> 00:00:45,590
+And of course, we also would like the noise to be as low as possible, ideally, and theoretically we would
+8
+
+9
+00:00:45,590 --> 00:00:50,990
+like the received power equal to the transmitted power and the noise power equal to zero.
+9
+
+10
+00:00:51,620 --> 00:00:57,140
+But that's obviously not possible, because that would mean that a transmission path is lossless and
+10
+
+11
+00:00:57,140 --> 00:00:57,920
+noiseless.
+11
+
+12
+00:00:59,600 --> 00:01:04,010
+Now that we have explained these three terms, we can explain almost everything.
+12
+
+13
+00:01:04,970 --> 00:01:10,070
+First of all, the first term that we will see in the documentation is a term called RSSI.
+13
+
+14
+00:01:10,880 --> 00:01:18,830
+RSSI is the abbreviation of receive signal strength indication and it's equivalent to the received power
+14
+
+15
+00:01:18,830 --> 00:01:19,560
+Pᵣ.
+15
+
+16
+00:01:21,080 --> 00:01:23,570
+Then they will speak about the sensitivity.
+16
+
+17
+00:01:24,380 --> 00:01:31,100
+Sensitivity is something that is very important for a receiver because it's the minimum power that it
+17
+
+18
+00:01:31,100 --> 00:01:32,540
+will be able to receive.
+18
+
+19
+00:01:34,010 --> 00:01:36,770
+So a power Pₜ has been emitted.
+19
+
+20
+00:01:37,310 --> 00:01:41,120
+There is an attenuation in the air because there are losses during transmission.
+20
+
+21
+00:01:41,420 --> 00:01:49,520
+And finally, there is more residual power received. 
+If this residual power is high enough for the receiver
+21
+
+22
+00:01:49,520 --> 00:01:51,200
+to demodulate the signal.
+22
+
+23
+00:01:51,860 --> 00:01:55,400
+It means that this power was higher than the receiver sensitivity.
+23
+
+24
+00:01:57,020 --> 00:01:58,610
+Let's recap that one more time.
+24
+
+25
+00:01:59,120 --> 00:02:02,300
+We receive a signal with a power called RSSI.
+25
+
+26
+00:02:03,350 --> 00:02:07,700
+If the RSSI is greater than the sensitivity, then it's okay.
+26
+
+27
+00:02:08,750 --> 00:02:11,870
+If it's lower than the sensitivity, then it's not okay.
+27
+
+28
+00:02:12,980 --> 00:02:15,260
+The third term is related to the noise power.
+28
+
+29
+00:02:16,160 --> 00:02:24,380
+Indeed, we receive Pᵣ, but we also receive Pₙ and we're going to make the ratio between the two of
+29
+
+30
+00:02:24,380 --> 00:02:26,270
+them Pᵣ over Pₙ.
+30
+
+31
+00:02:26,270 --> 00:02:32,720
+And of course, we want this ratio to be as high as possible to indicate that there is more useful signal
+31
+
+32
+00:02:32,720 --> 00:02:33,380
+than noise.
+32
+
+33
+00:02:34,430 --> 00:02:36,980
+These three definitions, they have units.
+33
+
+34
+00:02:37,520 --> 00:02:39,710
+And again, we use decibels.
+34
+
+35
+00:02:40,730 --> 00:02:48,500
+So dBm for RSSI and sensitivity because in both case we speak about power and dB for signal to
+35
+
+36
+00:02:48,500 --> 00:02:51,020
+noise ratio because we speak about power ratio.
+36
+
+37
+00:02:51,800 --> 00:02:57,620
+And the beauty of the decibel representation is that we will be able to add and subtract them each other.
