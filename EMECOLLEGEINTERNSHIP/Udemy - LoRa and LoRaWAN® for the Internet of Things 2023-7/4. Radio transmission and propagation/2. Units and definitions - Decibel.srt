@@ -1,0 +1,239 @@
+0
+1
+00:00:01,350 --> 00:00:02,580
+In radio transmission.
+1
+
+2
+00:00:02,730 --> 00:00:04,980
+We use a new unit, which is the decibel.
+2
+
+3
+00:00:05,850 --> 00:00:07,300
+You're going to tell me: why?
+3
+
+4
+00:00:07,320 --> 00:00:08,040
+a new unit?
+4
+
+5
+00:00:08,820 --> 00:00:14,190
+The decibel has many advantages, which we will see in the next few slide and will makes your life
+5
+
+6
+00:00:14,190 --> 00:00:17,370
+much easier when we will study a specific use case.
+6
+
+7
+00:00:18,360 --> 00:00:22,650
+The first idea is to have a clear value of the relationship between two powers.
+7
+
+8
+00:00:23,610 --> 00:00:29,010
+If we take an example of a transmission with power Pₜ, Pₜ   stands for transmitted power.
+8
+
+9
+00:00:29,820 --> 00:00:34,650
+This signal will spread over the air and arrives at the receiver
+9
+
+10
+00:00:34,660 --> 00:00:35,450
+with the power Pᵣ.
+10
+
+11
+00:00:35,910 --> 00:00:36,330
+.
+11
+
+12
+00:00:36,330 --> 00:00:37,740
+Pᵣ stands for receive power.
+12
+
+13
+00:00:38,910 --> 00:00:43,710
+If Pₜ is equal to Pᵣ, then we said of the gain is zero dB.
+13
+
+14
+00:00:44,430 --> 00:00:52,170
+If Pᵣ is equal to two Pₜ, it means that there was a multiplication by two, it's a gain of three decibels.
+14
+
+15
+00:00:53,160 --> 00:01:01,590
+And finally, if Pᵣ is equal to ten times Pₜ, so a gain of ten times the power transmitted, we
+15
+
+16
+00:01:01,590 --> 00:01:03,780
+say that the gain was ten decibels.
+16
+
+17
+00:01:04,920 --> 00:01:08,980
+I know it sounds a little bit weird, but where does the decibel come from?
+17
+
+18
+00:01:09,720 --> 00:01:15,090
+In reality, it comes from a formula that may seem a little bit complicated, which is that the gain
+18
+
+19
+00:01:15,090 --> 00:01:20,780
+in decibels is equal to ten times the log of Pᵣ over Pₜ.
+19
+
+20
+00:01:21,510 --> 00:01:27,240
+If we do this calculation, we find here ten, three and zero.
+20
+
+21
+00:01:28,290 --> 00:01:33,600
+Now, what's interesting is that we have a received power, which is the power transmitted divided by
+21
+
+22
+00:01:33,630 --> 00:01:34,050
+two.
+22
+
+23
+00:01:34,620 --> 00:01:36,610
+We have minus three dB.
+23
+
+24
+00:01:37,320 --> 00:01:41,910
+And finally, if the received power is the transmitted power divided by ten.
+24
+
+25
+00:01:42,360 --> 00:01:45,570
+We have minus ten dB.
+25
+
+26
+00:01:45,600 --> 00:01:48,240
+Here, we have the first advantage of using decibels.
+26
+
+27
+00:01:49,110 --> 00:01:55,950
+Thanks to decibel calculation in the form of a multiplication and division will be treated with additions
+27
+
+28
+00:01:55,950 --> 00:01:57,060
+and subtractions.
+28
+
+29
+00:01:57,540 --> 00:01:59,790
+Let's have a look at a small example right away.
+29
+
+30
+00:02:02,190 --> 00:02:08,490
+In this example, we use the same representation for Pₜ for the transmitted power and Pᵣ for the
+30
+
+31
+00:02:08,490 --> 00:02:09,390
+received power.
+31
+
+32
+00:02:10,320 --> 00:02:14,340
+And we assume that the received power is 1 billion time lower
+32
+
+33
+00:02:14,360 --> 00:02:18,780
+than the transmitted power, that is very common for short run wireless transmission.
+33
+
+34
+00:02:19,860 --> 00:02:29,700
+This means that Pₜ is equal to 10 power 9 so 1 billion time Pᵣ. So how do we transform this 1 billion
+34
+
+35
+00:02:29,700 --> 00:02:31,290
+power ratio into DB?
+35
+
+36
+00:02:32,310 --> 00:02:34,590
+1 billion is ten power nine.
+36
+
+37
+00:02:35,010 --> 00:02:37,530
+I can represent it with a sequence of zero.
+37
+
+38
+00:02:38,100 --> 00:02:42,510
+So it's actually ten by ten, by ten by ten, nine times.
+38
+
+39
+00:02:43,260 --> 00:02:52,130
+And each time we multiply it by ten, there is an addition of ten dB, ten plus ten plus ten and so on.
+39
+
+40
+00:02:52,140 --> 00:02:54,450
+That gives 90 dB.
+40
+
+41
+00:02:55,380 --> 00:02:57,300
+We can therefore set two things.
+41
+
+42
+00:02:57,960 --> 00:03:04,380
+Pₜ has been attenuated by 90 dB and because it seamlessly work the other way around.
+42
+
+43
+00:03:04,830 --> 00:03:08,940
+You can also say that Pₜ has been amplified by -90 dB.
+43
+
+44
+00:03:09,630 --> 00:03:16,830
+In wireless transmission we use very large values, tens of billions of billions and also very small
+44
+
+45
+00:03:16,830 --> 00:03:17,430
+values.
+45
+
+46
+00:03:18,270 --> 00:03:26,160
+It will be much easier to use numbers that goes from 100 150 dB or -100 -150 dB
+46
+
+47
+00:03:26,520 --> 00:03:33,420
+than these large numbers of billions that have no meaning for us. In the next video will see the use
+47
+
+48
+00:03:33,420 --> 00:03:34,770
+of decibels for power.
