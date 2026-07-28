@@ -1,0 +1,89 @@
+0
+1
+00:00:00,540 --> 00:00:01,500
+Congratulations.
+1
+
+2
+00:00:01,890 --> 00:00:03,490
+We've seen a lot of things so far.
+2
+
+3
+00:00:03,510 --> 00:00:04,410
+So let's recap.
+3
+
+4
+00:00:05,280 --> 00:00:11,340
+First of all, we saw in the first video that the LoRa modulation is a long distance and a low speed transmission.
+4
+
+5
+00:00:12,090 --> 00:00:17,100
+By the way, the word long distance come from its name because LoRa stands for Long Range.
+5
+
+6
+00:00:18,150 --> 00:00:23,970
+Then we saw that if we use LoRaWAN in Europe it transmits on channels belonging to
+6
+
+7
+00:00:23,970 --> 00:00:31,320
+the 868 MHz band. And several end devices can transmit at the same time and on the same channel,
+7
+
+8
+00:00:31,800 --> 00:00:38,310
+if each of them uses a different parameter called spreading factor. This spreading factor can be from
+8
+
+9
+00:00:38,310 --> 00:00:40,320
+SF5 up to SF12.
+9
+
+10
+00:00:41,130 --> 00:00:47,670
+If we use LoRaWAN, which will be the case in this lecture, there are only 6 spreading factors from SF7
+10
+
+11
+00:00:47,670 --> 00:00:49,200
+to SF12.
+11
+
+12
+00:00:50,340 --> 00:00:53,940
+I sometimes use the word LoRa and sometimes LoRaWAN.
+12
+
+13
+00:00:54,630 --> 00:00:55,640
+But no worries,
+13
+
+14
+00:00:55,650 --> 00:01:00,810
+there will be a dedicated video to explain the differences between the modulation and the protocol.
+14
+
+15
+00:01:01,890 --> 00:01:05,520
+However, we will mainly speak about LoRaWAN later in this course.
+15
+
+16
+00:01:06,450 --> 00:01:12,060
+So now in the next chapter, we are going to see what kind of performances we can expect for wireless
+16
+
+17
+00:01:12,060 --> 00:01:18,210
+radio transmission and what terms we need to master to be comfortable with a technical documentation
+17
+
+18
+00:01:18,210 --> 00:01:19,890
+about a LoRa end device.
