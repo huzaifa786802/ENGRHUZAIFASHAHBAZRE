@@ -1,0 +1,319 @@
+0
+1
+00:00:00,180 --> 00:00:03,510
+If we want that these devices can communicate with each other.
+1
+
+2
+00:00:03,780 --> 00:00:05,550
+They must use the same protocols.
+2
+
+3
+00:00:06,030 --> 00:00:13,440
+And, we are used to representing these protocols on a graph along two axis with the bitrate as the ordinate
+3
+
+4
+00:00:13,830 --> 00:00:18,750
+with bit per second as unit and the abscissa represents the range.
+4
+
+5
+00:00:19,500 --> 00:00:24,480
+There range is the distance at which none device can communicate with another device,
+5
+
+6
+00:00:24,510 --> 00:00:27,870
+or with a gateway. To represent all this protocol,
+6
+
+7
+00:00:28,380 --> 00:00:34,470
+we will compare them with each other and we'll start with a very well known one, which is the Wi-Fi.
+7
+
+8
+00:00:35,130 --> 00:00:37,860
+In terms of range, we're about 100 meters.
+8
+
+9
+00:00:38,190 --> 00:00:43,740
+That is to say that we're in the range of a house or an apartment, considering that there is attenuation
+9
+
+10
+00:00:43,740 --> 00:00:51,510
+in the walls, and regarding the bitrate, we're around 100 megabits per second.
+10
+
+11
+00:00:52,350 --> 00:00:54,710
+But there are many Wi-Fi standards.
+11
+
+12
+00:00:54,720 --> 00:01:01,350
+So we start on relatively low bitrate values, and with the latest standards, we are much more than
+12
+
+13
+00:01:01,440 --> 00:01:03,120
+100 megabits per second.
+13
+
+14
+00:01:03,960 --> 00:01:11,100
+Then, another protocol that is widely used in the world of the Internet of Things is Bluetooth.
+14
+
+15
+00:01:11,130 --> 00:01:15,180
+The Bluetooth, in terms of range, it's much less than the Wi-Fi.
+15
+
+16
+00:01:15,690 --> 00:01:22,320
+We're rather on a range of about ten meters and in terms of bitrate, we're more around one gigabit per second.
+16
+
+17
+00:01:22,320 --> 00:01:24,840
+In Bluetooth,
+17
+
+18
+00:01:24,870 --> 00:01:29,640
+What is interesting is that the latest standards are more focused on low power consumption.
+18
+
+19
+00:01:30,270 --> 00:01:35,970
+That's why Bluetooth has been renamed BLE for Bluetooth Low Energy in the latest generation.
+19
+
+20
+00:01:36,990 --> 00:01:43,430
+Then if we continue on this graph, we can stay in the world of home automation with Zigbee and for
+20
+
+21
+00:01:43,440 --> 00:01:47,130
+Zigbee we're more or less with a range of 100 meters.
+21
+
+22
+00:01:48,210 --> 00:01:54,380
+The difference between Wi-Fi and Zigbee is that the bitrate is lower and we are talking of a value around
+22
+
+23
+00:01:54,390 --> 00:01:55,710
+one kilobits per second.
+23
+
+24
+00:01:56,760 --> 00:02:01,620
+Zigbee is often used in home automation for connecting switches, for example.
+24
+
+25
+00:02:02,340 --> 00:02:11,580
+Then we can use the network operators such as 2G then 3G, 4G and 5G with bitrates from low to very high
+25
+
+26
+00:02:11,580 --> 00:02:17,130
+value under future 5G. 2G and 3G will disappear in the near future.
+26
+
+27
+00:02:17,670 --> 00:02:26,100
+And we expect that the 2G service will be stopped by 2025 and for the 3G will be more around 2028, depending
+27
+
+28
+00:02:26,100 --> 00:02:27,750
+on how fast 5G is deployed.
+28
+
+29
+00:02:28,470 --> 00:02:32,670
+So, now we're going to move on the other part of the graph.
+29
+
+30
+00:02:33,720 --> 00:02:38,880
+And on that part, we are dealing with very low bitrate and very short range.
+30
+
+31
+00:02:39,300 --> 00:02:46,230
+Here we find a very well known protocol, NFC that we use for contactless payment or access authorization,
+31
+
+32
+00:02:46,230 --> 00:02:46,860
+for example.
+32
+
+33
+00:02:47,010 --> 00:02:53,940
+And finally, we will go to the right part of the graph to find protocols with very high range but with
+33
+
+34
+00:02:53,940 --> 00:02:55,320
+very low bitrate.
+34
+
+35
+00:02:56,190 --> 00:02:59,820
+And that's where we'll find LPWAN for Low Power WAN.
+35
+
+36
+00:03:00,340 --> 00:03:09,750
+We will find here, protocol such as Sigfox, LoRa, along with the other operating network like NB-IoT
+36
+
+37
+00:03:10,740 --> 00:03:12,300
+and then LTE-M.
+37
+
+38
+00:03:15,270 --> 00:03:19,500
+So when we look at this graph, there is something that is surprising.
+38
+
+39
+00:03:19,710 --> 00:03:26,190
+It's that if I consider myself as a user, I would like to have both high speed and long range, which
+39
+
+40
+00:03:26,190 --> 00:03:31,800
+means that all the protocol that are on the top right of this diagram would be better than the other.
+40
+
+41
+00:03:32,730 --> 00:03:36,570
+And all those that are the bottom left would be useless.
+41
+
+42
+00:03:37,410 --> 00:03:41,130
+This is obviously not true for several reasons.
+42
+
+43
+00:03:42,000 --> 00:03:48,510
+First, if we take the case of NFC, for example, NFC has a very particular characteristic, which is
+43
+
+44
+00:03:48,510 --> 00:03:53,070
+security, and when you make a contactless payment, you don't want long range at all.
+44
+
+45
+00:03:53,220 --> 00:03:58,260
+On the contrary, you really want the range to be as low as possible for security reasons.
+45
+
+46
+00:03:58,440 --> 00:04:02,310
+So having a short range in that case was a feature that we were looking for.
+46
+
+47
+00:04:02,670 --> 00:04:09,930
+For the others, we could wonder why Bluetooth and Zigbee are interesting when with 5G we can have higher speed
+47
+
+48
+00:04:09,930 --> 00:04:10,410
+and range.
+48
+
+49
+00:04:10,760 --> 00:04:15,930
+Well, in fact, to be able to compare them properly, we should add a new axis here.
+49
+
+50
+00:04:16,560 --> 00:04:19,350
+And this axis is the power consumption.
+50
+
+51
+00:04:19,680 --> 00:04:22,870
+If we look again at NFC, what is the consumption?
+51
+
+52
+00:04:22,890 --> 00:04:23,730
+It's zero.
+52
+
+53
+00:04:24,330 --> 00:04:24,930
+Why is that?
+53
+
+54
+00:04:25,110 --> 00:04:28,890
+Because the card we use, they are powered by a magnetic field.
+54
+
+55
+00:04:29,190 --> 00:04:32,080
+So there is no battery used during the data transmission.
+55
+
+56
+00:04:32,100 --> 00:04:35,640
+And on the other hand, how can we compare Wi-Fi with LPWAN?
+56
+
+57
+00:04:35,760 --> 00:04:38,190
+The first advantage is the range, as we've seen before.
+57
+
+58
+00:04:38,550 --> 00:04:43,680
+But overall, it's again, the power consumption that we need to take into consideration.
+58
+
+59
+00:04:43,740 --> 00:04:49,740
+So that's why we have a whole bunch of protocol here for which we consider that the bitrate was not
+59
+
+60
+00:04:49,740 --> 00:04:51,360
+the most important property.
+60
+
+61
+00:04:51,870 --> 00:04:58,050
+But on the other hand, we wish to have a much higher range and also a very, very low consumption.
+61
+
+62
+00:04:59,190 --> 00:05:03,960
+In that course, we are going to focus mainly on LoRa, this protocol here.
+62
+
+63
+00:05:05,460 --> 00:05:08,250
+And now that we've understood what is LoRa compared to the others.
+63
+
+64
+00:05:08,520 --> 00:05:11,700
+We're going to focus on the frequency band at lower values.
