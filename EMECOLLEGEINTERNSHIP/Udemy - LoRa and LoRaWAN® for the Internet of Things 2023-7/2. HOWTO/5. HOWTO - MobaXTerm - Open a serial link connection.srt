@@ -1,0 +1,194 @@
+0
+1
+00:00:01,080 --> 00:00:04,830
+The cellular link is a basic communication between two entities.
+1
+
+2
+00:00:05,310 --> 00:00:12,840
+It's an asynchronous transmission using only two lines: TX for transmitting data and XR for receiving
+2
+
+3
+00:00:12,840 --> 00:00:13,380
+data.
+3
+
+4
+00:00:14,070 --> 00:00:20,100
+In this cellular communication we can use a few parameters and these parameters must be the same on
+4
+
+5
+00:00:20,100 --> 00:00:22,290
+the transmitter and on the receiver.
+5
+
+6
+00:00:22,590 --> 00:00:28,020
+We can't get these parameters, so we need to follow the documentation of the system we want to connect
+6
+
+7
+00:00:28,020 --> 00:00:28,530
+to.
+7
+
+8
+00:00:28,890 --> 00:00:32,750
+In this example, I will try to connect to my LoRaWAN device.
+8
+
+9
+00:00:32,760 --> 00:00:37,140
+Usually when the device is deployed in the field, the logs are disabled.
+9
+
+10
+00:00:37,140 --> 00:00:43,590
+So of course we don't need a cellular link, but in our case we've programmed this specific device with
+10
+
+11
+00:00:43,590 --> 00:00:50,580
+locks activated to show many information. That will allow us to understand its state, what it sends
+11
+
+12
+00:00:50,580 --> 00:00:51,960
+and what it receives.
+12
+
+13
+00:00:53,220 --> 00:00:56,620
+So to connect to this device, I use MobaXTerm.
+13
+
+14
+00:00:56,640 --> 00:01:01,480
+If you don't have it, then you can use the putty software, which is one of the most famous cellular
+14
+
+15
+00:01:01,480 --> 00:01:02,520
+link terminal.
+15
+
+16
+00:01:02,760 --> 00:01:05,640
+That's actually the one embedded in MobaXTerm.
+16
+
+17
+00:01:06,570 --> 00:01:10,800
+So I open a new session and select "serial".
+17
+
+18
+00:01:11,220 --> 00:01:13,740
+I first need to select the port COM number.
+18
+
+19
+00:01:13,740 --> 00:01:14,880
+I want to connect.
+19
+
+20
+00:01:15,180 --> 00:01:17,430
+Your device should appear in the list.
+20
+
+21
+00:01:17,430 --> 00:01:22,290
+Or at least we should see the COM port number where the remote device is connected.
+21
+
+22
+00:01:22,950 --> 00:01:24,570
+Then we select the board
+22
+
+23
+00:01:24,570 --> 00:01:25,080
+Right.
+23
+
+24
+00:01:25,410 --> 00:01:28,470
+In my case, it's 115 200 per second.
+24
+
+25
+00:01:29,280 --> 00:01:33,090
+Most of the time this is the only configuration we need to do.
+25
+
+26
+00:01:33,390 --> 00:01:38,850
+But in case our device has some specific transmission parameters, we can change them in the Advanced
+26
+
+27
+00:01:38,850 --> 00:01:39,680
+Settings tab.
+27
+
+28
+00:01:39,690 --> 00:01:46,490
+We'll be able to specify the number of bit, the number of stop bit, and if there is a parity error
+28
+
+29
+00:01:46,500 --> 00:01:48,120
+bit at the end of the frame.
+29
+
+30
+00:01:48,420 --> 00:01:52,530
+In our case, we don't change anything and we click okay.
+30
+
+31
+00:01:53,940 --> 00:01:54,810
+There we go.
+31
+
+32
+00:01:54,810 --> 00:01:56,970
+We have the logs of our device.
+32
+
+33
+00:01:58,020 --> 00:01:59,130
+One more thing.
+33
+
+34
+00:01:59,130 --> 00:02:04,050
+The most commands speed transmission use is indeed 115 200 feet per second.
+34
+
+35
+00:02:04,590 --> 00:02:09,600
+It might be a good idea to have it preconfigured with this default value when you open a new serial
+35
+
+36
+00:02:09,600 --> 00:02:10,320
+session.
+36
+
+37
+00:02:10,950 --> 00:02:18,270
+For that you need to go to Settings, Edit Session Preset, select your favorite speed.
+37
+
+38
+00:02:18,570 --> 00:02:25,860
+In our case, it's this one and save. The next time you open a serial session, your favorite board
+38
+
+39
+00:02:25,860 --> 00:02:28,290
+rate and other parameters will be applied.
