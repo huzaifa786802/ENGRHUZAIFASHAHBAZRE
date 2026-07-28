@@ -1,0 +1,154 @@
+0
+1
+00:00:00,300 --> 00:00:05,370
+We saw in a previous video the comparison between the LoRa modulation and the other protocols of the
+1
+
+2
+00:00:05,370 --> 00:00:06,210
+Internet of Things.
+2
+
+3
+00:00:06,420 --> 00:00:13,770
+We also saw that the LoRa modulation aims to be long range but with a very low bitrate. For transmission,
+3
+
+4
+00:00:13,920 --> 00:00:15,480
+LoRa use free bands.
+4
+
+5
+00:00:16,170 --> 00:00:19,860
+And in Europe, free bands mean that there is no need for authorisation.
+5
+
+6
+00:00:20,190 --> 00:00:22,230
+And there is also no additional fees.
+6
+
+7
+00:00:22,800 --> 00:00:26,430
+I wrote down in the table below a few of these free bands in Europe.
+7
+
+8
+00:00:26,700 --> 00:00:29,410
+They are not all mentioned, but these are the main ones.
+8
+
+9
+00:00:29,610 --> 00:00:33,240
+And among these free bands, we'll try to see where LoRa is located.
+9
+
+10
+00:00:33,900 --> 00:00:43,170
+So first of all, we have the band commonly used for Wi-Fi, Bluetooth BLE and a 2.4 GHz band is
+10
+
+11
+00:00:43,170 --> 00:00:47,370
+also used for Zigbee protocol, which I remind you is used for home automation.
+11
+
+12
+00:00:48,300 --> 00:00:51,330
+The 5 GHz band is also used for Wi-Fi.
+12
+
+13
+00:00:52,080 --> 00:01:01,680
+NFC used for contactless payment is in the 13.56 MHz band, but there is now the 433 MHz potentially
+13
+
+14
+00:01:01,680 --> 00:01:02,670
+used by LoRa.
+14
+
+15
+00:01:02,970 --> 00:01:09,270
+But of course among a lot of other systems, and in that band there is a very well-known one which is
+15
+
+16
+00:01:09,270 --> 00:01:13,230
+the Walkie-Talkie, but obviously not part of the Internet of Things.
+16
+
+17
+00:01:14,670 --> 00:01:23,160
+LoRa also uses 868 MHz band with its competitor Sigfox and again many other protocols. Between
+17
+
+18
+00:01:23,160 --> 00:01:26,100
+868 and 433,
+18
+
+19
+00:01:26,310 --> 00:01:27,540
+how will you make the choice?
+19
+
+20
+00:01:28,380 --> 00:01:33,510
+You can choose 433 MHz if you only use the LoRa modulation for your transmission.
+20
+
+21
+00:01:33,510 --> 00:01:38,370
+But as soon as you want to use LoRaWAN infrastructure, you don't have a choice because the LoRaWAN
+21
+
+22
+00:01:38,370 --> 00:01:44,820
+protocol needs to follow the frequency plan of its network server and it's always 868 MHz in Europe.
+22
+
+23
+00:01:45,270 --> 00:01:51,690
+There is also the possibility to use LoRaWAN in the 2.4 GHz band, but it's not so common yet.
+23
+
+24
+00:01:52,290 --> 00:01:57,870
+The main advantage of that 2.4 GHz band is that it's a world wide free band, which is not the
+24
+
+25
+00:01:57,870 --> 00:01:59,460
+case for 868.
+25
+
+26
+00:02:00,720 --> 00:02:05,550
+Remember also that we have to be careful with high frequencies because the higher the frequency, the
+26
+
+27
+00:02:05,550 --> 00:02:06,510
+lower the range.
+27
+
+28
+00:02:07,440 --> 00:02:13,530
+So, now that we know more about the frequency use, we will try to understand how hundreds, and even thousands
+28
+
+29
+00:02:13,530 --> 00:02:19,590
+of communicating devices will be able to transmit information on the same 868 MHz band
+29
+
+30
+00:02:19,590 --> 00:02:25,660
+while ensuring that at the end, all messages sent are demodulated without errors.
+30
+
+31
+00:02:26,070 --> 00:02:30,260
+And for that, we'll see three techniques that I'm going to explain in the next chapter.
