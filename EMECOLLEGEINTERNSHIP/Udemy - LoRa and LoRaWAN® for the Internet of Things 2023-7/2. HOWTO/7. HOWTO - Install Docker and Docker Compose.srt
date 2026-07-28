@@ -1,0 +1,309 @@
+0
+1
+00:00:01,830 --> 00:00:07,800
+If we look at any computer system, we can see that there is always a hardware architecture organized
+1
+
+2
+00:00:07,800 --> 00:00:09,060
+around the motherboard.
+2
+
+3
+00:00:09,480 --> 00:00:15,360
+The processor is the central point of this motherboard and depending on its type, it will use different
+3
+
+4
+00:00:15,360 --> 00:00:16,410
+instructions.
+4
+
+5
+00:00:16,920 --> 00:00:21,630
+For example, in tablets and phones, ARM processors are often used.
+5
+
+6
+00:00:22,080 --> 00:00:26,010
+This is also the one used on the famous RaspberryPi computer.
+6
+
+7
+00:00:26,520 --> 00:00:34,770
+In PCs and Macs, we have x86 architecture processors, so they execute other instructions to run programs.
+7
+
+8
+00:00:35,190 --> 00:00:39,810
+Once we've chosen our processor, we install an operating system.
+8
+
+9
+00:00:39,960 --> 00:00:46,050
+It will be the interface between the user application and the hardware. And all of us, depending on
+9
+
+10
+00:00:46,050 --> 00:00:50,790
+our affinities, we will use Windows, Linux or Mac OS.
+10
+
+11
+00:00:51,150 --> 00:00:58,170
+Each time we want to install an application, it will require a certain numbers of libraries and dependencies
+11
+
+12
+00:00:58,500 --> 00:01:03,870
+and to make this application works properly, we have to be sure that these libraries and dependencies
+12
+
+13
+00:01:03,870 --> 00:01:07,530
+are present on the system before the installation process.
+13
+
+14
+00:01:08,010 --> 00:01:14,160
+The problem is that libraries dependencies on the application themselves are specific for an operating
+14
+
+15
+00:01:14,160 --> 00:01:17,580
+system and specific for process type.
+15
+
+16
+00:01:17,820 --> 00:01:23,340
+That means that when we want to install something, we end up by looking for the right binaries and
+16
+
+17
+00:01:23,340 --> 00:01:28,050
+associated libraries, and often we're guided by complicated tutorials.
+17
+
+18
+00:01:28,140 --> 00:01:34,170
+But the other thing is that often when we install libraries for one application, it's possible that
+18
+
+19
+00:01:34,170 --> 00:01:37,950
+the new installation corrupt the previous one which was properly working.
+19
+
+20
+00:01:38,280 --> 00:01:44,340
+So we need to simplify the installation process by providing a complete separated environment for each
+20
+
+21
+00:01:44,340 --> 00:01:45,570
+of our application.
+21
+
+22
+00:01:45,930 --> 00:01:51,750
+We want something independent of the processor type and independent of the operating system we're working
+22
+
+23
+00:01:51,750 --> 00:01:52,230
+on.
+23
+
+24
+00:01:52,590 --> 00:01:58,530
+And that's where Docker comes in, because it's going to manage this interface between the system and
+24
+
+25
+00:01:58,530 --> 00:02:00,780
+the applications. In the end,
+25
+
+26
+00:02:00,810 --> 00:02:06,000
+the only difficulty is to install Docker with installation processes, of course, dependent on each
+26
+
+27
+00:02:06,000 --> 00:02:06,930
+environment.
+27
+
+28
+00:02:06,960 --> 00:02:11,190
+Fortunately, it's very well explained in the official documentation.
+28
+
+29
+00:02:12,480 --> 00:02:16,380
+We'll install it together on Windows and make a small demonstration.
+29
+
+30
+00:02:16,530 --> 00:02:18,630
+It's called Docker Desktop.
+30
+
+31
+00:02:18,870 --> 00:02:21,690
+It's also available for Linux and Mac OS.
+31
+
+32
+00:02:21,720 --> 00:02:27,450
+Later in this course, I will also use it on a remote server, so I will also install it on my public
+32
+
+33
+00:02:27,450 --> 00:02:28,410
+Linux server.
+33
+
+34
+00:02:29,430 --> 00:02:35,070
+So to install Docker on Windows, we just need to download the latest version on the Docker website and
+34
+
+35
+00:02:35,070 --> 00:02:36,160
+to follow the steps.
+35
+
+36
+00:02:36,180 --> 00:02:38,880
+There is nothing special about this installation.
+36
+
+37
+00:02:40,620 --> 00:02:44,250
+Now let's use it to launch new services on our computer.
+37
+
+38
+00:02:44,490 --> 00:02:50,190
+Of course, if you've installed Docker on a remote server then these services will be launch on the
+38
+
+39
+00:02:50,190 --> 00:02:54,510
+remote server once the installation is finished.
+39
+
+40
+00:02:54,510 --> 00:03:00,040
+If there is no container running on Docker Desktop, it proposes to test one called Docker
+40
+
+41
+00:03:00,060 --> 00:03:01,230
+Getting started.
+41
+
+42
+00:03:02,310 --> 00:03:05,310
+We just pick up the command to run it in our terminal.
+42
+
+43
+00:03:06,390 --> 00:03:12,480
+On the left we've got a MobaXTerm terminal and on the right we have Docker desktop running.
+43
+
+44
+00:03:12,990 --> 00:03:18,480
+We'll use the terminal to launch our container and we'll use Docker Desktop to manage them.
+44
+
+45
+00:03:18,960 --> 00:03:21,960
+I just need to execute the command I've copied previously.
+45
+
+46
+00:03:24,060 --> 00:03:29,630
+And when everything has been downloaded, I can see that a new container has been created on my Docker
+46
+
+47
+00:03:29,700 --> 00:03:31,050
+Desktop interface.
+47
+
+48
+00:03:32,200 --> 00:03:33,640
+I can now play with it.
+48
+
+49
+00:03:34,240 --> 00:03:38,890
+This "getting started" container has created a web service on my computer.
+49
+
+50
+00:03:39,250 --> 00:03:42,280
+We can connect to it thanks to any web browser.
+50
+
+51
+00:03:42,910 --> 00:03:43,960
+There we go.
+51
+
+52
+00:03:44,710 --> 00:03:49,390
+This is our new local website on which there is many useful information, by the way.
+52
+
+53
+00:03:50,350 --> 00:03:51,050
+Great.
+53
+
+54
+00:03:51,070 --> 00:03:56,430
+That was the Docker installation and our local Windows machine. For your Linux local machine,
+54
+
+55
+00:03:56,440 --> 00:03:59,950
+Docker Desktop is also available, so no worries.
+55
+
+56
+00:04:00,340 --> 00:04:07,300
+Now remember that during this lecture I will also often use a public Linux server without user interface.
+56
+
+57
+00:04:07,540 --> 00:04:14,020
+So I also set up Docker and Docker compose on my server, but I'm not going to show you the process
+57
+
+58
+00:04:14,020 --> 00:04:17,320
+because it would be different depending on your Linux distribution.
+58
+
+59
+00:04:17,320 --> 00:04:20,290
+So please refer to the documentation for that.
+59
+
+60
+00:04:21,100 --> 00:04:21,440
+Good.
+60
+
+61
+00:04:21,460 --> 00:04:27,220
+So now that we have Docker and Docker compose ready, we will use it many times during this lecture,
+61
+
+62
+00:04:27,550 --> 00:04:30,490
+that will make all installation process very easy.
