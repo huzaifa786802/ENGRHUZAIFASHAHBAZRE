@@ -1,0 +1,134 @@
+0
+1
+00:00:00,780 --> 00:00:05,280
+During this lecture, we're going to use a few tools for different purposes.
+1
+
+2
+00:00:05,460 --> 00:00:08,160
+We will connect to hardware with cellular link.
+2
+
+3
+00:00:08,190 --> 00:00:15,810
+We will open SSH connection and we'll also send different kind of command from a terminal. For each demonstration,
+3
+
+4
+00:00:15,810 --> 00:00:20,070
+we could have used many different tools and I'm sure some of you have your favorites.
+4
+
+5
+00:00:20,100 --> 00:00:25,050
+Well, the content of this lecture is not to provide explanation in the tutorial style.
+5
+
+6
+00:00:25,380 --> 00:00:31,320
+With this course for every demonstration, we will always explain what you absolutely need to know,
+6
+
+7
+00:00:31,320 --> 00:00:34,140
+and we'll also provide one tool to do it.
+7
+
+8
+00:00:34,530 --> 00:00:39,600
+It might not be your favorite one, but there won't be a big difference if you do it in another way.
+8
+
+9
+00:00:41,040 --> 00:00:47,070
+MobaXterm is a tool that gathers everything we need for this lecture: SSH connection, sale
+9
+
+10
+00:00:47,070 --> 00:00:50,310
+link connection, and a terminal to send commands.
+10
+
+11
+00:00:50,430 --> 00:00:52,560
+So that's the one we'll use.
+11
+
+12
+00:00:52,920 --> 00:00:56,220
+Unfortunately, it's only available for Windows.
+12
+
+13
+00:00:56,550 --> 00:01:01,980
+If you work with the Linux operating system, it really doesn't matter and things should be really easy
+13
+
+14
+00:01:01,980 --> 00:01:04,530
+anyway because there is many other options.
+14
+
+15
+00:01:05,010 --> 00:01:10,980
+I will always propose some, but I'm sure that if you're using Linux, you are already familiar with them.
+15
+
+16
+00:01:11,820 --> 00:01:18,330
+So to install MobaXterm toolbox, then you just need to go on the MobaXterm website, download
+16
+
+17
+00:01:18,330 --> 00:01:19,290
+and install it.
+17
+
+18
+00:01:20,460 --> 00:01:25,050
+If you don't want to install anything, there is also a portable edition of the software.
+18
+
+19
+00:01:25,080 --> 00:01:26,700
+Both work perfectly.
+19
+
+20
+00:01:27,390 --> 00:01:30,860
+Once MobaXterm is installed on your computer, then you're ready.
+20
+
+21
+00:01:30,870 --> 00:01:33,120
+Nothing else is required for now.
+21
+
+22
+00:01:33,480 --> 00:01:34,500
+For example.
+22
+
+23
+00:01:34,500 --> 00:01:37,610
+When we need a terminal with some embedded Linux command.
+23
+
+24
+00:01:37,620 --> 00:01:39,990
+Then we'll simply open it here.
+24
+
+25
+00:01:40,470 --> 00:01:48,300
+When we'll use an SSH client or a cellular terminal, then we'll open an SSH session or a cellular session.
+25
+
+26
+00:01:48,810 --> 00:01:50,160
+I'll let you play with this.
+26
+
+27
+00:01:50,160 --> 00:01:53,340
+And anyway, I will explain this tool when we need them.
