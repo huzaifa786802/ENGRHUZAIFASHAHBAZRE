@@ -1,0 +1,49 @@
+0
+1
+00:00:00,630 --> 00:00:07,080
+In this chapter we'll remind you all the basics required for a better understanding of a wireless transmission.
+1
+
+2
+00:00:07,890 --> 00:00:14,170
+For that, we will talk about the unit, the decibel, as it might be a new topic for some of you.
+2
+
+3
+00:00:14,490 --> 00:00:16,740
+We'll discuss its interest and its use.
+3
+
+4
+00:00:17,640 --> 00:00:25,950
+We will then introduce the terms dBm, RSSI, sensitivity, transmitted power, received power and link
+4
+
+5
+00:00:25,950 --> 00:00:26,310
+budget.
+5
+
+6
+00:00:27,150 --> 00:00:33,000
+And finally, we will talk about the influence of noise in LoRa transmission and how LoRa achieved
+6
+
+7
+00:00:33,000 --> 00:00:35,510
+to transmit data when noise become much higher
+7
+
+8
+00:00:35,520 --> 00:00:36,660
+than the data itself.
+8
+
+9
+00:00:37,320 --> 00:00:43,410
+With all these notions we'll be much more comfortable with technical documentation when it comes to discuss
+9
+
+10
+00:00:43,620 --> 00:00:45,480
+about the performances of a transceiver.
