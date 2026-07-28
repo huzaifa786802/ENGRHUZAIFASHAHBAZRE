@@ -1,0 +1,51 @@
+0
+1
+00:00:00,560 --> 00:00:01,520
+In this first chapter,
+1
+
+2
+00:00:01,550 --> 00:00:05,460
+we'll look at the properties and the
+characteristics of an embedded system.
+2
+
+3
+00:00:05,490 --> 00:00:07,300
+We will deal only with the world
+3
+
+4
+00:00:07,330 --> 00:00:12,010
+of the Internet of Things and therefore
+with small low power systems.
+4
+
+5
+00:00:12,040 --> 00:00:16,740
+Before studying in details to LoRaWAN
+protocol, we'll compare it with existing
+5
+
+6
+00:00:16,760 --> 00:00:19,940
+protocol to understand
+what the differences are.
+6
+
+7
+00:00:19,970 --> 00:00:23,840
+We will then see how the LoRa modulation
+can solve the problem of range
+7
+
+8
+00:00:23,870 --> 00:00:28,480
+and consumption,
+but also how can thousands of devices can
+8
+
+9
+00:00:28,510 --> 00:00:31,200
+transmit messages
+on the same frequency band. 
