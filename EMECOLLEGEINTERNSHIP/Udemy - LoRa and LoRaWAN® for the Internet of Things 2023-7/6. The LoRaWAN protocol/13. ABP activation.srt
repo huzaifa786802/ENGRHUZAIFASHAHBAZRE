@@ -1,0 +1,394 @@
+0
+1
+00:00:00,720 --> 00:00:04,590
+The first activation method is called Activation By Personalization (ABP).
+1
+
+2
+00:00:05,280 --> 00:00:11,130
+I repeat once again the purpose of the activation process, which is to have on both sides the same
+2
+
+3
+00:00:11,130 --> 00:00:16,380
+network session key, the same application session key and the same device address.
+3
+
+4
+00:00:17,160 --> 00:00:20,460
+The process is very easy and we can do that in two ways.
+4
+
+5
+00:00:21,480 --> 00:00:27,630
+If the device is already provisioned with the keys and device address, then you just have to register
+5
+
+6
+00:00:27,630 --> 00:00:31,500
+a new ABP device with the same information on the LoRaWAN server.
+6
+
+7
+00:00:32,130 --> 00:00:33,420
+Then it's done.
+7
+
+8
+00:00:34,110 --> 00:00:34,770
+Nothing more.
+8
+
+9
+00:00:35,490 --> 00:00:39,900
+Once you've done this, the end device will start transmitting as soon as it powers up.
+9
+
+10
+00:00:41,820 --> 00:00:44,670
+But you can also do the same process the other way around.
+10
+
+11
+00:00:45,240 --> 00:00:48,860
+This time we start a process on the LoRaWAN server.
+11
+
+12
+00:00:49,620 --> 00:00:52,080
+We register a new ABP device.
+12
+
+13
+00:00:52,830 --> 00:00:58,140
+Then we generate a new set of session keys and a new device address.
+13
+
+14
+00:00:58,530 --> 00:01:02,970
+Then we take these generated information and save them into the end device.
+14
+
+15
+00:01:03,870 --> 00:01:09,660
+For this operation, we have to be able to update the end device firmware so you can do this way
+15
+
+16
+00:01:09,660 --> 00:01:14,340
+only if you can program your end device or at least personalize it with a cellular link.
+16
+
+17
+00:01:14,340 --> 00:01:21,630
+For example, if you have another ABP device to register, then you can do exactly the same process
+17
+
+18
+00:01:21,630 --> 00:01:25,470
+and generate a new set of keys and a new device address.
+18
+
+19
+00:01:27,270 --> 00:01:31,830
+For this demonstration, we'll register a new ABP end device on TTAnetwork server.
+19
+
+20
+00:01:33,000 --> 00:01:33,680
+But the step to register
+20
+
+21
+00:01:33,690 --> 00:01:34,950
+an end device,
+21
+
+22
+00:01:34,980 --> 00:01:37,520
+should be the same for any other LoraWAN server.
+22
+
+23
+00:01:38,730 --> 00:01:41,490
+We'll see later the other functionalities of this server.
+23
+
+24
+00:01:41,760 --> 00:01:48,390
+But for the moment, I will only focus on the registration process and activation process. 
+24
+
+25
+00:01:48,390 --> 00:01:48,930
+I n the device section,
+25
+
+26
+00:01:49,500 --> 00:01:56,550
+I will register a new ABP end device. Even if this device is part of the TTA repository,
+26
+
+27
+00:01:56,970 --> 00:02:00,360
+I will register it manually to show you all the steps.
+27
+
+28
+00:02:00,720 --> 00:02:06,090
+Anyway, there will be a specific video about the registration process and the LoRaWAN server, so
+28
+
+29
+00:02:06,090 --> 00:02:07,500
+don't worry too much about that.
+29
+
+30
+00:02:08,760 --> 00:02:13,930
+So in our case, I choose the European 868 MHz frequency band.
+30
+
+31
+00:02:14,820 --> 00:02:17,940
+I choose the right LoRaWAN version of my end device.
+31
+
+32
+00:02:18,150 --> 00:02:20,550
+In my case, it's 1.0.3.
+32
+
+33
+00:02:21,480 --> 00:02:25,590
+And in this subsection, I select the right activation mode.
+33
+
+34
+00:02:26,460 --> 00:02:29,060
+For this demonstration, we're dealing with ABP.
+34
+
+35
+00:02:30,470 --> 00:02:33,690
+Okay, now I still have to fill out the LoRaWAN information.
+35
+
+36
+00:02:34,110 --> 00:02:36,510
+And first the server ask for the devEUI.
+36
+
+37
+00:02:36,510 --> 00:02:44,760
+This devEUI information is not always compulsory for ABP activation, but still is better to use
+37
+
+38
+00:02:44,760 --> 00:02:48,450
+it because it's a good way to identify an end device on your server.
+38
+
+39
+00:02:48,810 --> 00:02:51,480
+But if you don't want to use it, then leave it empty.
+39
+
+40
+00:02:52,980 --> 00:02:55,890
+In my case, I use the one written on my end device.
+40
+
+41
+00:02:57,120 --> 00:03:00,570
+Then comes the specific LoRaWAN information that we always need.
+41
+
+42
+00:03:01,140 --> 00:03:08,280
+Device address that I can generate, application session key (AppSKey) and network session key (NwkSKey) that I can generate as
+42
+
+43
+00:03:08,280 --> 00:03:08,520
+well.
+43
+
+44
+00:03:09,930 --> 00:03:14,070
+Then finally, I can give the device a name to personalize it.
+44
+
+45
+00:03:15,180 --> 00:03:18,750
+In my case, I will call it device1-abp.
+45
+
+46
+00:03:20,430 --> 00:03:24,810
+These two keys are the secret keys that must never be revealed to anyone.
+46
+
+47
+00:03:25,230 --> 00:03:30,000
+Obviously you can see mine for this demonstration because I will delete it afterwards.
+47
+
+48
+00:03:30,360 --> 00:03:36,060
+But otherwise, if for some reason these keys are exposed, then the security is compromised.
+48
+
+49
+00:03:36,780 --> 00:03:41,820
+So it's this risk parameters that I will have to configure in the end device, and that's what I'm going
+49
+
+50
+00:03:41,820 --> 00:03:42,420
+to do now.
+50
+
+51
+00:03:43,560 --> 00:03:50,100
+My lorawan end device can be configured from a specific head of file, and the first thing I need to do
+51
+
+52
+00:03:50,100 --> 00:03:52,080
+is to choose the application behavior.
+52
+
+53
+00:03:52,950 --> 00:04:00,810
+So for this demonstration, I will use ABP activation mode and I will send a temperature every 10
+53
+
+54
+00:04:00,810 --> 00:04:01,230
+seconds.
+54
+
+55
+00:04:01,500 --> 00:04:02,040
+That's it.
+55
+
+56
+00:04:02,490 --> 00:04:05,130
+You don't have to worry about the other settings for the moment.
+56
+
+57
+00:04:06,300 --> 00:04:08,910
+Now let's copy the lorawan parameters.
+57
+
+58
+00:04:09,510 --> 00:04:11,580
+So, devAddr_ (dev adress)
+58
+
+59
+00:04:14,410 --> 00:04:15,580
+Network session key (nwkSKey),
+59
+
+60
+00:04:19,070 --> 00:04:20,720
+An application session key (appSKey).
+60
+
+61
+00:04:24,260 --> 00:04:24,800
+There we go.
+61
+
+62
+00:04:25,430 --> 00:04:29,210
+Now I compiled the project and Isend it to my device.
+62
+
+63
+00:04:30,980 --> 00:04:38,690
+And finally I can power it up and my applications is now sending the temperature every 10 seconds. On the left,
+63
+
+64
+00:04:38,900 --> 00:04:42,070
+I've got my device log and I can see that it transmitted
+64
+
+65
+00:04:42,070 --> 00:04:48,920
+the temperature right after the start.That is normal because the end device already has all the session
+65
+
+66
+00:04:48,920 --> 00:04:50,540
+keys to transfer its data.
+66
+
+67
+00:04:51,050 --> 00:04:55,730
+That is what we did previously, and that's exactly what ABP activation is.
+67
+
+68
+00:04:56,690 --> 00:05:01,760
+And on the right in the live data console, I can see the uplink packet.
+68
+
+69
+00:05:02,330 --> 00:05:06,320
+If you can see them there, that means that the packet has been authenticated.
+69
+
+70
+00:05:06,650 --> 00:05:09,050
+That is you using the right network session key.
+70
+
+71
+00:05:09,680 --> 00:05:16,700
+And if the temperature is correct, that means that you're using the right application session key. That prove that
+71
+
+72
+00:05:16,700 --> 00:05:19,340
+the overall ABP activation was successful.
+72
+
+73
+00:05:20,570 --> 00:05:23,090
+If you want, you can try a little experiment.
+73
+
+74
+00:05:23,630 --> 00:05:26,180
+Change one byte of your application session key.
+74
+
+75
+00:05:26,180 --> 00:05:31,820
+Either on your server, or your own device, you will see the lLoRaWAN packet on your server, but the
+75
+
+76
+00:05:31,820 --> 00:05:33,560
+value received will be wrong.
+76
+
+77
+00:05:34,100 --> 00:05:37,370
+And you can also try to change one byte of your network session key.
+77
+
+78
+00:05:38,030 --> 00:05:42,560
+You will see your packet into your gateway log, but you won't see it in your application log.
+78
+
+79
+00:05:43,220 --> 00:05:46,130
+That's because the LoRaWAN packet won't be authenticated.
