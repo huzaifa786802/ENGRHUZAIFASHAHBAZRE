@@ -1,0 +1,114 @@
+0
+1
+00:00:00,720 --> 00:00:04,800
+In this example, I proposed to represent two bits for each symbol.
+1
+
+2
+00:00:05,820 --> 00:00:10,710
+Each will represent four symbols, so the overall message will have 8 bits.
+2
+
+3
+00:00:11,760 --> 00:00:17,880
+I just remind you that a symbol is just a chirp, but it just doesn't always start at the bottom frequency.
+3
+
+4
+00:00:19,110 --> 00:00:27,990
+Here are the possible combinations to represent two bits 00, 01, 10 and 11.
+4
+
+5
+00:00:28,710 --> 00:00:31,440
+This makes four symbols to represent all of them.
+5
+
+6
+00:00:32,730 --> 00:00:35,190
+So I have to find four different symbols.
+6
+
+7
+00:00:35,760 --> 00:00:37,710
+The symbols will vary in the following way.
+7
+
+8
+00:00:38,070 --> 00:00:41,040
+We'll start from the reference symbol, which is this one.
+8
+
+9
+00:00:41,910 --> 00:00:46,140
+As we saw earlier, it starts from the bottom frequency up to the highest one.
+9
+
+10
+00:00:46,950 --> 00:00:49,170
+Let's say it represents zero zero.
+10
+
+11
+00:00:50,610 --> 00:00:54,330
+And the second symbol will start from a slightly higher frequency.
+11
+
+12
+00:00:55,020 --> 00:00:59,910
+Go to the highest one and it will differ which the maximum frequency more quickly.
+12
+
+13
+00:01:00,570 --> 00:01:04,050
+So it will finish this sweep by starting again from the lowest frequency.
+13
+
+14
+00:01:04,770 --> 00:01:11,160
+We assigned a binary values 01 to this symbol will then start again from an even higher frequency,
+14
+
+15
+00:01:11,670 --> 00:01:19,260
+then finish the sweep and so on. We will assign the last two combinations which are 10 and 11.
+15
+
+16
+00:01:20,730 --> 00:01:26,340
+These two bits for presentation in LoRa doesn't exist because the number of bit assigned in a symbol
+16
+
+17
+00:01:26,640 --> 00:01:30,720
+is directly linked to the spreading factor.
+17
+
+18
+00:01:30,930 --> 00:01:36,240
+in this example, that would mean that we would have used an SF2 to transmission, but we saw that the spreading factor
+18
+
+19
+00:01:36,240 --> 00:01:38,220
+can go from 5 to 12.
+19
+
+20
+00:01:38,880 --> 00:01:44,730
+So this example with two bits is only a theoretical example that allows us to understand this type
+20
+
+21
+00:01:44,730 --> 00:01:45,540
+of modulation.
+21
+
+22
+00:01:46,050 --> 00:01:48,660
+Anyway, you will not find it in a LoRa transceiver.
+22
+
+23
+00:01:50,120 --> 00:01:52,290
+Now let's have a look at a real example.
