@@ -1,0 +1,199 @@
+0
+1
+00:00:00,780 --> 00:00:05,640
+To start this chapter, we'll see the difference between the LoRa modulation and the LoRaWAN protocol.
+1
+
+2
+00:00:06,360 --> 00:00:10,770
+These terms are sometimes mixed together and one is often used instead of the other.
+2
+
+3
+00:00:11,610 --> 00:00:15,600
+So we'll try to have an overview of these two terms Lora and Lorawan.
+3
+
+4
+00:00:17,160 --> 00:00:18,540
+Lora is the type of modulation.
+4
+
+5
+00:00:19,110 --> 00:00:22,470
+It's the method that is used for two entities to understand each other.
+5
+
+6
+00:00:23,280 --> 00:00:30,390
+We saw that the Lora modulaton uses chirp symbol and in addition to that we defined the Lora frame format,
+6
+
+7
+00:00:30,510 --> 00:00:37,230
+which is mainly a preamble at the beginning to synchronize the receiver and then at the end a code
+7
+
+8
+00:00:37,230 --> 00:00:38,340
+for error detection.
+8
+
+9
+00:00:39,420 --> 00:00:42,600
+These are the only fields required with this kind of frame.
+9
+
+10
+00:00:42,990 --> 00:00:48,390
+We can transmit from an end device to another end device, from an end device to a gateway.
+10
+
+11
+00:00:48,420 --> 00:00:50,820
+And obviously the other way round works as well.
+11
+
+12
+00:00:51,090 --> 00:00:57,930
+So from a gateway to an end device and finally we could imagine a Lora transmission between two gateways.
+12
+
+13
+00:00:58,380 --> 00:01:02,220
+To content of the frame that we call payload does not matter.
+13
+
+14
+00:01:02,760 --> 00:01:04,140
+You can put anything in it.
+14
+
+15
+00:01:04,860 --> 00:01:08,610
+You can build your own application protocol depending on your use case.
+15
+
+16
+00:01:09,150 --> 00:01:15,360
+Now, when you want to transmit information from an end device to a network server, you will probably
+16
+
+17
+00:01:15,360 --> 00:01:17,520
+want to implement some security features.
+17
+
+18
+00:01:17,940 --> 00:01:23,880
+You will also probably want to have a standardize protocol. So your end device could work with any network
+18
+
+19
+00:01:23,880 --> 00:01:24,270
+server.
+19
+
+20
+00:01:25,200 --> 00:01:27,540
+This is what we call interoperability.
+20
+
+21
+00:01:28,620 --> 00:01:32,070
+So we have to define a protocol, a transmission method.
+21
+
+22
+00:01:32,070 --> 00:01:35,850
+And this protocol is called LoRaWAN.
+22
+
+23
+00:01:35,850 --> 00:01:42,060
+The Lorawan protocol involves a network server and an application server. We'll see later what their purposes.
+23
+
+24
+00:01:42,450 --> 00:01:48,210
+But if we want that the network server and the application server can understand what the end device sends.
+24
+
+25
+00:01:48,780 --> 00:01:51,810
+We must add more information inside a LoRa frame.
+25
+
+26
+00:01:52,470 --> 00:01:58,290
+We will review this additional information in details later, but for now we can quote a few of them
+26
+
+27
+00:01:58,290 --> 00:02:05,130
+like the device address for identification, the authentification, information, the frame counter and so
+27
+
+28
+00:02:05,130 --> 00:02:05,250
+on.
+28
+
+29
+00:02:06,090 --> 00:02:11,910
+When we work with Lorawan, we don't have the possibility to transmit from an end device to another end
+29
+
+30
+00:02:12,150 --> 00:02:16,050
+device, but it's exclusively from an end device to a gateway.
+30
+
+31
+00:02:16,050 --> 00:02:22,880
+And then it's the gateway itself that transfers the packet to the network server. 
+31
+
+32
+00:02:23,010 --> 00:02:24,300
+Actually between the end device and the gateway,
+32
+
+33
+00:02:24,660 --> 00:02:29,190
+it's a LoRa packet transmission carrying a lorawan protocol message.
+33
+
+34
+00:02:29,880 --> 00:02:35,160
+So eventually, what are you going to use, Lora modulation or Lorawan protocol?
+34
+
+35
+00:02:35,790 --> 00:02:39,480
+First of all, if you use LoRaWAN, you necessarily use Lora.
+35
+
+36
+00:02:39,810 --> 00:02:45,780
+On the other hand, if you want to use only Lora, it's possible. You would transmit Lora packet, for
+36
+
+37
+00:02:45,780 --> 00:02:50,430
+example, between two end devices, and you will build your own application protocol.
+37
+
+38
+00:02:50,610 --> 00:02:52,230
+There is no problem with that.
+38
+
+39
+00:02:52,830 --> 00:02:58,650
+But when it comes to transfer information to the network server, you will have to use the LoRaWAN protocol.
+39
+
+40
+00:02:59,190 --> 00:03:02,190
+And this is this protocol that we will explain in this chapter.
