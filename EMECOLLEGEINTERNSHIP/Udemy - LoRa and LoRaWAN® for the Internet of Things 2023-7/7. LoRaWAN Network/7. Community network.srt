@@ -1,0 +1,84 @@
+0
+1
+00:00:00,690 --> 00:00:06,990
+We said that during this lecture, at least up to now, we've used a hybrid network because we use our own
+1
+
+2
+00:00:06,990 --> 00:00:10,870
+gateway, but the network server doesn't belong to us.
+2
+
+3
+00:00:10,890 --> 00:00:11,700
+Great.
+3
+
+4
+00:00:11,700 --> 00:00:15,930
+But actually the TTN networks server provides a little bit more.
+4
+
+5
+00:00:16,110 --> 00:00:20,130
+It also provides network coverage in addition to my own coverage.
+5
+
+6
+00:00:20,400 --> 00:00:26,580
+It means that I can, of course, benefit from my gateway coverage, but I can also benefit from all
+6
+
+7
+00:00:26,580 --> 00:00:29,250
+of the gateway registered on this network server.
+7
+
+8
+00:00:30,060 --> 00:00:32,730
+This is called a community network.
+8
+
+9
+00:00:33,210 --> 00:00:38,060
+The more user they are in the community, the more coverage there is for everyone.
+9
+
+10
+00:00:38,070 --> 00:00:40,380
+And sometimes it's even free.
+10
+
+11
+00:00:42,390 --> 00:00:46,890
+If we come back to the Alliance website, then we can select the area, 
+11
+
+12
+00:00:46,890 --> 00:00:47,730
+we're interested in.
+12
+
+13
+00:00:50,340 --> 00:00:55,830
+And for example, in France, there is two community network available so far.
+13
+
+14
+00:00:56,370 --> 00:01:01,020
+And if you register on this instance, then you will know the coverage you can expect.
+14
+
+15
+00:01:02,370 --> 00:01:10,470
+So now that we know everything about network type, public private, hybrid community, then we'll see
+15
+
+16
+00:01:10,470 --> 00:01:16,560
+that whatever type of network the user will need to use, a loved one network is always the same.
+16
+
+17
+00:01:16,920 --> 00:01:23,010
+So in the next video, we'll try to provide a clear explanation on the network configuration.
