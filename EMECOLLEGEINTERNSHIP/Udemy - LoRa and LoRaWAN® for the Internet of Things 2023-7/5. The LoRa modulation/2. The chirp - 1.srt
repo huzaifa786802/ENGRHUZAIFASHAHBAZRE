@@ -1,0 +1,174 @@
+0
+1
+00:00:01,080 --> 00:00:02,730
+As we saw in a previous chapter.
+1
+
+2
+00:00:03,100 --> 00:00:05,160
+LoRa is a spread spectrum modulation.
+2
+
+3
+00:00:05,970 --> 00:00:06,300
+There are may ways,
+3
+
+4
+00:00:06,300 --> 00:00:08,490
+to produce spread spectrum modulation.
+4
+
+5
+00:00:08,850 --> 00:00:12,180
+And a specific one we use is called chirp spread spectrum.
+5
+
+6
+00:00:12,720 --> 00:00:16,380
+That's because we use a special symbol to create the radio frequency message.
+6
+
+7
+00:00:16,950 --> 00:00:17,910
+It's a chirp.
+7
+
+8
+00:00:18,690 --> 00:00:20,130
+So what is it exactly?
+8
+
+9
+00:00:20,940 --> 00:00:22,950
+I've simulated a chirp here in MATLAB.
+9
+
+10
+00:00:23,550 --> 00:00:28,290
+This is simply a sinusoidal that switched from 0 to 125 kilohertz.
+10
+
+11
+00:00:29,190 --> 00:00:33,120
+125 kilohertz is the most common situation used in LoRaWAN.
+11
+
+12
+00:00:33,660 --> 00:00:37,650
+But in reality, it can also go up to 500 kilohertz.
+12
+
+13
+00:00:38,430 --> 00:00:43,920
+That is what we call the bandwidth and the higher the bandwidth, the more information we can transmit.
+13
+
+14
+00:00:44,160 --> 00:00:45,450
+So that increases the bitrate.
+14
+
+15
+00:00:45,510 --> 00:00:51,570
+Producing a higher bandwidth also has its counterpart, because if you use a larger band for one transmission,
+15
+
+16
+00:00:52,110 --> 00:00:54,060
+then we have less room for the others.
+16
+
+17
+00:00:55,930 --> 00:00:59,500
+This symbol, as it's represented here, is not very convenient.
+17
+
+18
+00:01:00,340 --> 00:01:05,080
+Actually, we are not really interested in the amplitude, but we would rather know the frequency.
+18
+
+19
+00:01:06,340 --> 00:01:08,650
+We therefore use another representation.
+19
+
+20
+00:01:09,280 --> 00:01:13,150
+This representation draws the chirp frequency instead of its amplitude.
+20
+
+21
+00:01:13,990 --> 00:01:23,470
+The 125 kilohertz band is centered of what we called the channel, and I remind you that we are in the 868 MHz band
+21
+
+22
+00:01:23,470 --> 00:01:25,210
+.
+22
+
+23
+00:01:25,960 --> 00:01:35,260
+So there I've choosen a random channel of 868.1 megahertz. We'll see later that this specific channel must
+23
+
+24
+00:01:35,260 --> 00:01:37,450
+be known by all LoRaWAN devices in Europe.
+24
+
+25
+00:01:38,290 --> 00:01:48,580
+So how a frequency sweep starts at 868.1 megahertz minus half of 125 kHz, so -62.5 kilohertz.
+25
+
+26
+00:01:49,420 --> 00:01:57,010
+That gives this frequency to 868.1 megahertz plus 62.5 kilohertz.
+26
+
+27
+00:01:57,490 --> 00:01:59,200
+And that gives this frequency.
+27
+
+28
+00:02:01,040 --> 00:02:06,140
+So the chip starts from the low frequency and sweeps until reaching this high frequency.
+28
+
+29
+00:02:07,670 --> 00:02:13,700
+Soon we'll see that this chirp, even if it has the same shape, it doesn't always start at the same frequency.
+29
+
+30
+00:02:14,450 --> 00:02:19,700
+So the basic shape of the chirp will be renamed a symbol when we come to talk about all the different
+30
+
+31
+00:02:19,700 --> 00:02:24,140
+form it can have. And a time to send a symbol,
+31
+
+32
+00:02:24,410 --> 00:02:28,480
+so a specific chirp, is represented here on the graph.
+32
+
+33
+00:02:29,480 --> 00:02:33,950
+Now, what we want to know is what does this symbol represent exactly?
+33
+
+34
+00:02:34,580 --> 00:02:38,660
+How can we use these symbols to represent the binary data of our messages?
+34
+
+35
+00:02:39,440 --> 00:02:41,360
+That's what we will see in the next video.
