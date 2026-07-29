@@ -1,0 +1,84 @@
+0
+1
+00:00:00,870 --> 00:00:01,250
+Hey.
+1
+
+2
+00:00:01,260 --> 00:00:02,880
+I'm so happy you're still here.
+2
+
+3
+00:00:03,300 --> 00:00:04,650
+We finished a new chapter.
+3
+
+4
+00:00:04,800 --> 00:00:06,750
+So let's recap what we've learned in this one.
+4
+
+5
+00:00:07,500 --> 00:00:11,370
+First, Decibel is a unit that has to represent a ratio and power.
+5
+
+6
+00:00:11,940 --> 00:00:15,060
+It prevents to use very small or very large values.
+6
+
+7
+00:00:15,540 --> 00:00:20,520
+And it transforms multiplications into sums and divisions into subtractions.
+7
+
+8
+00:00:21,450 --> 00:00:28,890
+The RSSI is the received power, and if the RSSI is above the receiver sensitivity, the transmission
+8
+
+9
+00:00:28,890 --> 00:00:29,640
+is successful.
+9
+
+10
+00:00:31,020 --> 00:00:35,910
+Next, we saw that the SNR is the ratio between the signal under noise.
+10
+
+11
+00:00:36,540 --> 00:00:42,510
+The Link Budget evaluates the potential of the transmission and we saw Real Link Budget Values for two different
+11
+
+12
+00:00:42,510 --> 00:00:43,410
+lower transceiver.
+12
+
+13
+00:00:43,920 --> 00:00:49,320
+And finally, when digging into the documentation, we found out that changing the spreading factor
+13
+
+14
+00:00:49,320 --> 00:00:51,750
+hold your chance to reception capacities.
+14
+
+15
+00:00:52,080 --> 00:00:58,320
+We spoke about being able of receiving a signal drawn in a noise 100 times stronger than the signal itself.
+15
+
+16
+00:00:59,310 --> 00:01:03,000
+But changing the spreading factor has also an influence on the bitrate.
+16
+
+17
+00:01:03,210 --> 00:01:05,580
+And that's what we're going to see in the next chapter.
