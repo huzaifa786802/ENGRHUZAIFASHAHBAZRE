@@ -1,0 +1,144 @@
+0
+1
+00:00:00,810 --> 00:00:03,660
+We now dive into the Lorawan network infrastructure.
+1
+
+2
+00:00:04,260 --> 00:00:11,280
+First on the left, this diagram represents the Lorawan, end devices. End devices don't specifically
+2
+
+3
+00:00:11,280 --> 00:00:16,230
+transmit to the gateway, but they transmit to all gateways present in the coverage area.
+3
+
+4
+00:00:17,340 --> 00:00:23,610
+Gateways will be responsible of the transmission between on one side, the lora modulation and on
+4
+
+5
+00:00:23,610 --> 00:00:25,560
+the other side the IP network,
+5
+
+6
+00:00:25,570 --> 00:00:32,640
+so basically Internet. To be understood by the network server and the application server, the LoRaWAN
+6
+
+7
+00:00:32,640 --> 00:00:39,480
+frame arriving from the end device must contain not only the user payload but also all input and data for
+7
+
+8
+00:00:39,480 --> 00:00:41,070
+keeping the transmission secured.
+8
+
+9
+00:00:41,520 --> 00:00:47,850
+These two servers have very specific rules and will see them later in detail in another video.
+9
+
+10
+00:00:48,600 --> 00:00:53,340
+So the structure of the overall Lorawan network is quite simple and stops here.
+10
+
+11
+00:00:54,090 --> 00:01:00,240
+This means that once a data is stored in the application server, the Lorawan protocol doesn't apply
+11
+
+12
+00:01:00,240 --> 00:01:00,690
+anymore.
+12
+
+13
+00:01:01,680 --> 00:01:07,020
+So everything that happened on the right side of the diagram has nothing to do with LoRaWAN.
+13
+
+14
+00:01:08,040 --> 00:01:15,030
+Here, on the left we have the Lorawan protocol, and here on the right we have the usual WEB protocols.
+14
+
+15
+00:01:15,480 --> 00:01:21,030
+These protocols will be used to export the user data from the application server into, for example,
+15
+
+16
+00:01:21,030 --> 00:01:28,140
+an IoT platform or any cloud services to compute the data and probably at the end make them available
+16
+
+17
+00:01:28,140 --> 00:01:28,980
+to the end user.
+17
+
+18
+00:01:30,000 --> 00:01:36,900
+So how can we export the user payload ? That would be done mainly using two protocols which are HTTP and
+18
+
+19
+00:01:36,900 --> 00:01:37,860
+MQTT.
+19
+
+20
+00:01:38,460 --> 00:01:42,900
+But once again, that has nothing to do with Lorawan. For the end user.
+20
+
+21
+00:01:42,930 --> 00:01:50,400
+The only thing that interests him is to see is data on chart table nicely represented in a web page,
+21
+
+22
+00:01:51,150 --> 00:01:54,330
+so he doesn't want to have anything to do with the Lorawan server.
+22
+
+23
+00:01:55,290 --> 00:02:02,100
+So that's why there are two steps : one dealing only with the Lorawan protocol and the other one with
+23
+
+24
+00:02:02,100 --> 00:02:03,300
+the user services.
+24
+
+25
+00:02:04,110 --> 00:02:09,240
+In the following video will first see the role of the network server and the applications server.
+25
+
+26
+00:02:10,260 --> 00:02:16,680
+Then in a second time will have a look at the gateways and finally will go on the end device side and explain
+26
+
+27
+00:02:16,680 --> 00:02:19,200
+the different classes A, B, and C.
+27
+
+28
+00:02:20,190 --> 00:02:26,880
+Later, in another chapter, we'll also see how we manage to export data using HTTP or MQTT.
+28
+
+29
+00:02:27,150 --> 00:02:30,630
+So the payload sends by the end device will be available to the user.
