@@ -1,0 +1,289 @@
+0
+1
+00:00:00,780 --> 00:00:05,640
+The Northern Gateway is now configured and registered in the Lorawan network server of your choice.
+1
+
+2
+00:00:06,060 --> 00:00:08,820
+There is one more step to be done on the network server.
+2
+
+3
+00:00:08,850 --> 00:00:11,100
+It's the device registration.
+3
+
+4
+00:00:11,700 --> 00:00:16,950
+By doing this, our network server will authorize our device LoRaWAN frame to reach the application
+4
+
+5
+00:00:16,950 --> 00:00:19,230
+server. In a network server,
+5
+
+6
+00:00:19,260 --> 00:00:25,920
+we can register thousands of devices, but if you want to keep things tidy, then we can grab devices that
+6
+
+7
+00:00:25,920 --> 00:00:27,480
+belongs to the same use case.
+7
+
+8
+00:00:27,930 --> 00:00:34,290
+Usually the group created is called an application, but on other networks servers, you might find
+8
+
+9
+00:00:34,290 --> 00:00:36,390
+other names. Anyway,
+9
+
+10
+00:00:36,420 --> 00:00:43,020
+in our example, we'll create an application, and in this application we will register two devices,
+10
+
+11
+00:00:43,200 --> 00:00:48,750
+one with ABP activation mode and another one with a OTAA activation mode.
+11
+
+12
+00:00:49,170 --> 00:00:49,710
+Great.
+12
+
+13
+00:00:49,710 --> 00:00:53,110
+So let's go, on the TTN server.
+13
+
+14
+00:00:53,130 --> 00:01:00,720
+Last time we used the Gateway Section, but now we need to go on the Application Section, and to create
+14
+
+15
+00:01:00,720 --> 00:01:04,650
+an application, we just need to hit the "create application" button.
+15
+
+16
+00:01:05,610 --> 00:01:12,900
+Our application name will be training-usmb, and we press the creation application button.
+16
+
+17
+00:01:15,040 --> 00:01:15,850
+That's it.
+17
+
+18
+00:01:15,880 --> 00:01:17,470
+It's that simple.
+18
+
+19
+00:01:17,800 --> 00:01:20,140
+And now we can add new devices.
+19
+
+20
+00:01:20,500 --> 00:01:22,540
+So I click on my new application.
+20
+
+21
+00:01:24,160 --> 00:01:29,310
+In the device section, I will register a new ABP end device.
+21
+
+22
+00:01:29,320 --> 00:01:33,200
+Even if this end device is part of the TTN repository.
+22
+
+23
+00:01:33,220 --> 00:01:37,000
+I will register it manually to show you all the steps.
+23
+
+24
+00:01:37,360 --> 00:01:42,850
+So in our case, I choose the European 868 megahertz frequency band.
+24
+
+25
+00:01:43,450 --> 00:01:46,810
+I choose the right LoRaWAN version of my end device.
+25
+
+26
+00:01:46,840 --> 00:01:54,370
+In my case, it's 1.0.3 and in this subsection, isolate the right activation mode.
+26
+
+27
+00:01:55,180 --> 00:01:58,000
+For this demonstration, we're dealing with ABP.
+27
+
+28
+00:01:59,710 --> 00:02:02,710
+Now, I still have to fill out the LoRaWAN information.
+28
+
+29
+00:02:02,710 --> 00:02:05,620
+And first, the server ask for the DevEUI.
+29
+
+30
+00:02:07,270 --> 00:02:10,450
+In my case, I use the one written on my end device.
+30
+
+31
+00:02:11,320 --> 00:02:17,830
+Then comes the specific LoRaWAN information that we always need : Device Address? that I can generate.
+31
+
+32
+00:02:18,340 --> 00:02:22,990
+Application Session Key and Networks Session Key that I can generate as well.
+32
+
+33
+00:02:24,160 --> 00:02:28,480
+Then finally, I can give the device a name to personalize it.
+33
+
+34
+00:02:29,440 --> 00:02:33,190
+In my case, I will call it device1-abp.
+34
+
+35
+00:02:34,660 --> 00:02:40,000
+So it's these three parameters that I will have to configure in the end device, and that's what I will
+35
+
+36
+00:02:40,000 --> 00:02:40,870
+do later.
+36
+
+37
+00:02:41,200 --> 00:02:47,140
+First, I will register another and device, but this time with a OTAA activation Mode.
+37
+
+38
+00:02:49,480 --> 00:02:58,330
+So I'm back on my console and in the device section, I'm going to manually register a new OTAA and device.
+38
+
+39
+00:02:58,810 --> 00:03:03,820
+In our case, I choose the European 868 megahertz frequency band.
+39
+
+40
+00:03:04,450 --> 00:03:08,210
+I choose the right LoRaWAN version of my device.
+40
+
+41
+00:03:08,230 --> 00:03:10,660
+In my case, it's 1.0.3.
+41
+
+42
+00:03:14,450 --> 00:03:18,050
+I can check that I'm already in the OTAA activation mode.
+42
+
+43
+00:03:19,070 --> 00:03:21,500
+First, I need to give the devEUI.
+43
+
+44
+00:03:21,920 --> 00:03:25,790
+I've got one for my device already so I can copy it here.
+44
+
+45
+00:03:25,820 --> 00:03:27,740
+Otherwise, I could have generated it.
+45
+
+46
+00:03:28,820 --> 00:03:31,640
+Secondly, I need to provide the AppEUI.
+46
+
+47
+00:03:31,880 --> 00:03:34,580
+As I said, we won't use it much.
+47
+
+48
+00:03:34,580 --> 00:03:35,540
+And this LoRaWAN server
+48
+
+49
+00:03:35,580 --> 00:03:38,870
+even propose me to fill it in with zeros.
+49
+
+50
+00:03:39,230 --> 00:03:40,490
+That's what I'm going to do.
+50
+
+51
+00:03:41,150 --> 00:03:44,690
+So now we still have to provide the App Key.
+51
+
+52
+00:03:45,530 --> 00:03:47,780
+In my case, I generate one.
+52
+
+53
+00:03:48,410 --> 00:03:54,410
+Finally, I can personalize my device with a name, and I call it device1-otaa.
+53
+
+54
+00:03:56,060 --> 00:04:02,540
+When I hit the register and device button, I've got the overview of my device information and obviously
+54
+
+55
+00:04:02,540 --> 00:04:04,490
+I can find the EUI.
+55
+
+56
+00:04:04,520 --> 00:04:07,180
+The app EUI and of course, the AppKey.
+56
+
+57
+00:04:08,370 --> 00:04:13,170
+So it's these three parameters that I will have to configure in my end device.
+57
+
+58
+00:04:13,380 --> 00:04:16,500
+And that's what we're going to do now with these two LoRaWAN devices.
