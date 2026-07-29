@@ -1,0 +1,44 @@
+0
+1
+00:00:00,720 --> 00:00:01,830
+Welcome back.
+1
+
+2
+00:00:01,890 --> 00:00:06,540
+In this chapter, we see that the LoRaWAN networks can have many architectures.
+2
+
+3
+00:00:06,690 --> 00:00:09,850
+The choice will depend on our ability to build a network.
+3
+
+4
+00:00:09,870 --> 00:00:16,020
+The number of devices we want to deploy, their location and also the overall cost.
+4
+
+5
+00:00:16,050 --> 00:00:22,410
+We'll detail four different types of LoRaWAN network, but once the network architecture is selected,
+5
+
+6
+00:00:22,530 --> 00:00:27,150
+we'll see that the user journey to configure the network is always the same.
+6
+
+7
+00:00:27,600 --> 00:00:34,830
+We'll configure everything : the device, the gateway and the server to make everything work fine, either
+7
+
+8
+00:00:34,830 --> 00:00:36,660
+in ABP or in OTAA.
+8
+
+9
+00:00:36,960 --> 00:00:38,010
+Let's start.
