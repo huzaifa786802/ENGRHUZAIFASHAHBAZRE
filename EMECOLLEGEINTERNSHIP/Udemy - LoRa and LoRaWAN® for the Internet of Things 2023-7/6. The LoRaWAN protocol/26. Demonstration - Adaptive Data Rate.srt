@@ -1,0 +1,519 @@
+0
+1
+00:00:00,810 --> 00:00:04,110
+In this video, we're going to show you three demonstrations.
+1
+
+2
+00:00:04,380 --> 00:00:09,240
+For the three demonstrations, we are only going to focus on the spreading factor parameter.
+2
+
+3
+00:00:09,960 --> 00:00:11,760
+The application is very simple.
+3
+
+4
+00:00:11,760 --> 00:00:20,040
+We configure an OTAA end device to send a frame every 5 seconds with SF9. For the first demonstration,
+4
+
+5
+00:00:20,040 --> 00:00:27,090
+the ADR flag is disabled so the network server will not send the best spreading factor and power transmission
+5
+
+6
+00:00:27,090 --> 00:00:31,140
+so the end device will carry on, transmitting with SF9 whatever happens.
+6
+
+7
+00:00:31,140 --> 00:00:37,980
+For the second demonstration, we will enable the ADR algorithm and send unconfirmed data frames
+7
+
+8
+00:00:37,980 --> 00:00:45,000
+and for a third demonstration, we will enable the ADR algorithm and send confirmed
+8
+
+9
+00:00:45,000 --> 00:00:45,750
+data frames.
+9
+
+10
+00:00:46,500 --> 00:00:48,090
+OK. Let's start !
+10
+
+11
+00:00:48,180 --> 00:00:51,780
+I'm still using the same configuration file for my end device.
+11
+
+12
+00:00:52,080 --> 00:00:59,850
+For the first application, I setup the OTAA activation mode and I send every five seconds one byte of temperature
+12
+
+13
+00:00:59,850 --> 00:01:01,830
+in an unconfirmed data frame.
+13
+
+14
+00:01:02,880 --> 00:01:05,820
+I also use the default spreading factor nine.
+14
+
+15
+00:01:06,390 --> 00:01:07,100
+Great.
+15
+
+16
+00:01:07,560 --> 00:01:16,140
+I now go on my network server and as usual I've got on the left my device log and on the right, one tab
+16
+
+17
+00:01:16,140 --> 00:01:19,350
+for my gateway logs and the other one for the application.
+17
+
+18
+00:01:19,860 --> 00:01:23,460
+But for this demonstration I will mostly use the gateway logs.
+18
+
+19
+00:01:24,870 --> 00:01:26,850
+I start my end device.
+19
+
+20
+00:01:27,360 --> 00:01:29,220
+There is the join procedure.
+20
+
+21
+00:01:32,490 --> 00:01:34,050
+And the opening data.
+21
+
+22
+00:01:34,950 --> 00:01:37,410
+I can see that the LoRa transmission is done in SF9.
+22
+
+23
+00:01:38,250 --> 00:01:40,560
+That's exactly what I expected.
+23
+
+24
+00:01:40,950 --> 00:01:46,110
+The end device will never change the spreading factor and never check if it still have a connection to the
+24
+
+25
+00:01:46,110 --> 00:01:47,070
+network server.
+25
+
+26
+00:01:49,670 --> 00:01:50,000
+Okay.
+26
+
+27
+00:01:50,510 --> 00:01:55,970
+So now for the second demonstration, I will enable the ADR on the device.
+27
+
+28
+00:01:56,750 --> 00:02:00,110
+I programmed the new firmware and I started.
+28
+
+29
+00:02:07,550 --> 00:02:11,600
+Once again, there is a join procedure and I can see the uplink data.
+29
+
+30
+00:02:12,260 --> 00:02:17,120
+The first frame uses SF9 because I configured SF9 as a default value.
+30
+
+31
+00:02:17,450 --> 00:02:22,880
+But if I wait for a few frames, then I can see that an optimization occurred.
+31
+
+32
+00:02:23,660 --> 00:02:29,600
+The networks sent a new value for the spreading factor and it assumed that the best value would
+32
+
+33
+00:02:29,600 --> 00:02:30,620
+be SF7.
+33
+
+34
+00:02:31,100 --> 00:02:38,930
+That is quite normal because if we look at the RSSI and the SNR value, we can guess that in my case
+34
+
+35
+00:02:38,930 --> 00:02:42,990
+my device is very close for my gateway. Ok.
+35
+
+36
+00:02:43,010 --> 00:02:49,880
+Now what happens if the device goes further from the gateway. So far away that it goes out of the gateway
+36
+
+37
+00:02:49,880 --> 00:02:50,600
+coverage?
+37
+
+38
+00:02:51,110 --> 00:02:52,700
+I can simulate that.
+38
+
+39
+00:02:52,850 --> 00:02:58,340
+I just have to unplug my gateway, so the device won't be connected to the network server anymore.
+39
+
+40
+00:02:58,850 --> 00:03:00,710
+Well, let's try that.
+40
+
+41
+00:03:01,740 --> 00:03:02,200
+Okay.
+41
+
+42
+00:03:02,210 --> 00:03:03,890
+We don't see many things.
+42
+
+43
+00:03:04,310 --> 00:03:09,860
+Actually, the networks server can't tell the device to change the spreading factor because the network
+43
+
+44
+00:03:09,860 --> 00:03:14,090
+server doesn't even know that the device is trying to send data.
+44
+
+45
+00:03:14,630 --> 00:03:20,540
+So the device doesn't know that it can't reach the network server and the network server doesn't know
+45
+
+46
+00:03:20,540 --> 00:03:22,280
+that the end-device tries to reach it.
+46
+
+47
+00:03:22,850 --> 00:03:30,680
+This situation could last for a long time, but fortunately, from that point, the ADR algorithm will
+47
+
+48
+00:03:30,680 --> 00:03:31,700
+work as follow.
+48
+
+49
+00:03:33,560 --> 00:03:37,400
+In the stack, there are two values that manage the ADR behavior.
+49
+
+50
+00:03:37,820 --> 00:03:40,760
+First, there is the ADR limit value.
+50
+
+51
+00:03:41,390 --> 00:03:48,350
+If an end device hasn't had any news from the network for ADR Limit number of frames, then the device
+51
+
+52
+00:03:48,350 --> 00:03:50,960
+itself will ask for an optimization.
+52
+
+53
+00:03:51,470 --> 00:03:56,840
+And secondly, if an end device has asked for an optimization for more than ADR delay number of
+53
+
+54
+00:03:56,840 --> 00:04:02,210
+frames, then it consider that the network is not reachable anymore and it has to change its spreading
+54
+
+55
+00:04:02,210 --> 00:04:03,740
+factor with a higher value.
+55
+
+56
+00:04:03,920 --> 00:04:08,970
+The default value for limit and delay are 64 and 32.
+56
+
+57
+00:04:08,990 --> 00:04:14,450
+That means that if you send a message not so often, it can take a very long time to optimize the spreading
+57
+
+58
+00:04:14,450 --> 00:04:15,050
+factor.
+58
+
+59
+00:04:15,330 --> 00:04:20,870
+Ok, in our case it will be shorter because I send that out very quickly and anyway for this demonstration
+59
+
+60
+00:04:20,870 --> 00:04:28,040
+that will even be quicker because I modified the stack to have limit at 8 and delay at 4.
+60
+
+61
+00:04:28,580 --> 00:04:30,890
+So I have: limit plus delay.
+61
+
+62
+00:04:30,890 --> 00:04:34,730
+So 12 frames the optimization process should appear.
+62
+
+63
+00:04:35,060 --> 00:04:35,810
+Great.
+63
+
+64
+00:04:35,810 --> 00:04:39,710
+So back to our demonstration that is still running in the background.
+64
+
+65
+00:04:39,800 --> 00:04:45,260
+I can see that the last time the end device heard about the network server was frame number 2.
+65
+
+66
+00:04:45,920 --> 00:04:49,580
+So there should be an optimization after frame count to 14.
+66
+
+67
+00:04:52,790 --> 00:04:53,630
+Yes.
+67
+
+68
+00:04:53,840 --> 00:04:54,800
+There we go.
+68
+
+69
+00:04:55,160 --> 00:05:01,280
+The end-device changed the value to SF8 and another 4 frames later.
+69
+
+70
+00:05:05,850 --> 00:05:09,270
+It's changed to SF9 and so on.
+70
+
+71
+00:05:12,660 --> 00:05:13,060
+Okay.
+71
+
+72
+00:05:13,170 --> 00:05:16,350
+Now I turn my gateway back on.
+72
+
+73
+00:05:17,160 --> 00:05:21,240
+It can take a few seconds and there we go.
+73
+
+74
+00:05:21,360 --> 00:05:27,060
+As soon as the gateway reconnects to the network server, it notifies the end device for an optimisation
+74
+
+75
+00:05:27,270 --> 00:05:29,280
+and you can see the value by yourself.
+75
+
+76
+00:05:29,310 --> 00:05:36,100
+The spreading factor goes straight back to spreading factor seven. Ok. Now, for the last demonstration,
+76
+
+77
+00:05:36,120 --> 00:05:41,250
+the end-device will use confirmed data frames instead of unconfirmed data frames.
+77
+
+78
+00:05:41,550 --> 00:05:47,160
+That means that the end device will receive optimisation value after each uplink.
+78
+
+79
+00:05:47,580 --> 00:05:48,540
+Let's try that.
+79
+
+80
+00:05:49,140 --> 00:05:51,000
+I power up my end device.
+80
+
+81
+00:05:54,100 --> 00:05:55,810
+And I can see the join procedure.
+81
+
+82
+00:05:59,380 --> 00:06:06,070
+After each uplink, there is now an acknowledgement and in the same frame the network server sends
+82
+
+83
+00:06:06,070 --> 00:06:07,270
+the ADR  value.
+83
+
+84
+00:06:07,540 --> 00:06:13,930
+So right after the start we can see the optimization process from SF9 to SF7.
+84
+
+85
+00:06:14,470 --> 00:06:21,500
+And of course, if I don't move the end device, the spreading factor value SF7 remains. Ok.
+85
+
+86
+00:06:21,520 --> 00:06:28,120
+Now after the frame number 4, I move my end device outside of the network coverage.
+86
+
+87
+00:06:29,080 --> 00:06:34,840
+Once again, I simulate that by deconnecting my gateway. My end device seams stuck.
+87
+
+88
+00:06:35,440 --> 00:06:37,150
+Actually, it's not.
+88
+
+89
+00:06:37,150 --> 00:06:41,380
+But the logs that you can see only represents the valid frames.
+89
+
+90
+00:06:41,380 --> 00:06:47,350
+And the frame number 5 has probably been sent, but an acknowledgement hasn't been received, so
+90
+
+91
+00:06:47,350 --> 00:06:48,760
+the log doesn't show it.
+91
+
+92
+00:06:49,120 --> 00:06:54,880
+Actually, the end device is trying again and again, and each time it tries, it increases its 
+92
+
+93
+00:06:54,880 --> 00:06:55,450
+Spreading Factor.
+93
+
+94
+00:06:55,840 --> 00:07:00,370
+So we wait a little bit and I reconnect the gateway.
+94
+
+95
+00:07:03,820 --> 00:07:04,930
+And here we go.
+95
+
+96
+00:07:04,960 --> 00:07:08,140
+The frame number 5 arrives on the network server.
+96
+
+97
+00:07:08,440 --> 00:07:13,120
+We can see that the spreading factor used when the transmission succeeded was SF10.
+97
+
+98
+00:07:13,450 --> 00:07:20,230
+And of course, right after, the network server will again optimize the spreading factor until reaching
+98
+
+99
+00:07:20,230 --> 00:07:24,340
+SF7, because my end device is now closed from my gateway.
+99
+
+100
+00:07:25,180 --> 00:07:25,880
+Great.
+100
+
+101
+00:07:25,930 --> 00:07:30,070
+That was a long demonstration, but ADR is very important.
+101
+
+102
+00:07:30,280 --> 00:07:31,540
+One last point.
+102
+
+103
+00:07:31,570 --> 00:07:37,650
+The ADR process is specified by the LoRa Alliance, but the algorithm itself is not standardized.
+103
+
+104
+00:07:37,660 --> 00:07:41,710
+So you can write your own calculation depending on your application.
