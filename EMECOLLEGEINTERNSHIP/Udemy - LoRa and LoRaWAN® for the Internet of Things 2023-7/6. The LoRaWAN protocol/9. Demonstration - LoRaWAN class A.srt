@@ -1,0 +1,469 @@
+0
+1
+00:00:00,900 --> 00:00:04,220
+So now let's make a demonstration about this lorawan device classes.
+1
+
+2
+00:00:04,230 --> 00:00:10,770
+We will start with a class A end device, and then after we'll switch to class C.
+2
+
+3
+00:00:11,670 --> 00:00:18,000
+So first let me explain the application we're going to use. Again we will consider a one byte transmission
+3
+
+4
+00:00:18,000 --> 00:00:19,650
+representing a temperature sensor.
+4
+
+5
+00:00:20,460 --> 00:00:27,420
+This temperature is sent on the application server each time we press the button. So we have a total
+5
+
+6
+00:00:27,420 --> 00:00:33,110
+control of when the end device would transmit. Then we'll focus on the downlink capabilities.
+6
+
+7
+00:00:33,120 --> 00:00:37,320
+So basically we'll program the downlink on the application server.
+7
+
+8
+00:00:38,400 --> 00:00:41,280
+It will be scheduled on the network server.
+8
+
+9
+00:00:42,240 --> 00:00:46,770
+and here comes the big question. When will the downlink frame be sent?
+9
+
+10
+00:00:47,730 --> 00:00:53,100
+Obviously, the behavior will be different when we use a class A or class C end device.
+10
+
+11
+00:00:53,910 --> 00:00:59,880
+You get to the class A end device will be able to receive only on the RX1 or RX2 slot.
+11
+
+12
+00:01:00,330 --> 00:01:02,160
+So just after transmission.
+12
+
+13
+00:01:02,700 --> 00:01:07,140
+And on the other hand, the Class C end device will be able to receive whenever it wants.
+13
+
+14
+00:01:07,410 --> 00:01:11,250
+That is, there is no specific time slot for the reception of downlink packet.
+14
+
+15
+00:01:12,030 --> 00:01:12,420
+What ever
+15
+
+16
+00:01:12,420 --> 00:01:14,130
+a device on the network server.
+16
+
+17
+00:01:14,460 --> 00:01:20,850
+If you want to set up a Class A Lorawan transmission, we have to first register a class A end device
+17
+
+18
+00:01:20,850 --> 00:01:22,020
+on the network server.
+18
+
+19
+00:01:22,980 --> 00:01:27,060
+Secondly, configure the end device as a class A on the device itself.
+19
+
+20
+00:01:29,520 --> 00:01:35,760
+To prepare this demonstration, we have enregister the class A end device called device one OTAA on the Lorawan server.
+20
+
+21
+00:01:35,760 --> 00:01:42,240
+On this part of Lorawan server call TTN class A is the default class.
+21
+
+22
+00:01:42,600 --> 00:01:47,820
+So there is no need to explicitly specify. On the device side,
+22
+
+23
+00:01:47,940 --> 00:01:50,880
+I configured it as a class A end device.
+23
+
+24
+00:01:51,510 --> 00:01:54,750
+Again, the configuration method depends on your end device.
+24
+
+25
+00:01:54,960 --> 00:01:57,420
+In my case is just a text.
+25
+
+26
+00:01:57,420 --> 00:01:57,860
+file.
+26
+
+27
+00:01:57,870 --> 00:02:02,220
+So I just have to define the macro class A in the corresponding field.
+27
+
+28
+00:02:03,540 --> 00:02:09,360
+and you can see that I've also written all the Lorawan information, but for that part, we'll explain
+28
+
+29
+00:02:09,360 --> 00:02:09,900
+it later.
+29
+
+30
+00:02:10,320 --> 00:02:12,690
+So right now we just need to concentrate on the class.
+30
+
+31
+00:02:13,290 --> 00:02:17,520
+We are now ready. For demonstration,
+31
+
+32
+00:02:17,520 --> 00:02:21,090
+I have the following Windows organization. On the left,
+32
+
+33
+00:02:21,450 --> 00:02:24,060
+I have my device log for my cellular link.
+33
+
+34
+00:02:24,780 --> 00:02:31,710
+Thanks to that, i will know exactly when it sends uplink data. And as soon as there will be a reception
+34
+
+35
+00:02:32,520 --> 00:02:33,900
+that will also be ready
+35
+
+36
+00:02:33,940 --> 00:02:40,290
+on a log. When it would be the case, it will tell me exactly when and what was received.
+36
+
+37
+00:02:40,710 --> 00:02:41,670
+Now ont the right,
+37
+
+38
+00:02:41,880 --> 00:02:43,590
+I have a window with two tops.
+38
+
+39
+00:02:43,980 --> 00:02:49,770
+The first tops represents the getway traffic and the second tops is represent the traffic on my registered end
+39
+
+40
+00:02:49,770 --> 00:02:51,120
+device on the server.
+40
+
+41
+00:02:52,410 --> 00:02:53,250
+So let's go,
+41
+
+42
+00:02:53,670 --> 00:02:55,260
+I pull up my end device.
+42
+
+43
+00:02:56,550 --> 00:02:58,860
+When it starts up, there is a joint procedure.
+43
+
+44
+00:02:58,860 --> 00:02:59,970
+We'll see that later.
+44
+
+45
+00:03:00,900 --> 00:03:02,850
+Then it falls in my application.
+45
+
+46
+00:03:03,570 --> 00:03:05,250
+It's a very simple application.
+46
+
+47
+00:03:05,250 --> 00:03:10,580
+It's just wait for me to press the push button each time I press it, then a temperature data is sent.
+47
+
+48
+00:03:10,590 --> 00:03:17,760
+This frame is transmitted from my device here, it goes all the way through my gateway.
+48
+
+49
+00:03:18,210 --> 00:03:24,780
+I can see it in my gateway log here, my network server and finally my application server here.
+49
+
+50
+00:03:26,310 --> 00:03:29,160
+On this version of TTN, I see two frames.
+50
+
+51
+00:03:29,370 --> 00:03:31,590
+It's a little bit confusing, but don't worry.
+51
+
+52
+00:03:31,770 --> 00:03:32,840
+They have the sames,
+52
+
+53
+00:03:33,000 --> 00:03:34,290
+There is only one to consider.
+53
+
+54
+00:03:35,930 --> 00:03:43,790
+Each time a frame is sent, a counter increments, we can see the different value here one, two, three
+54
+
+55
+00:03:43,800 --> 00:03:44,600
+and so on.
+55
+
+56
+00:03:45,290 --> 00:03:51,040
+And on the end device, we have exactly the same counter one, two, three.
+56
+
+57
+00:03:51,050 --> 00:03:54,230
+and so. There is no downlink for the moment.
+57
+
+58
+00:03:54,290 --> 00:03:57,260
+Since I haven't transmitted anything from my application server.
+58
+
+59
+00:03:57,710 --> 00:03:58,970
+But that's what I'm going to do now.
+59
+
+60
+00:03:59,420 --> 00:04:06,530
+For that, all of Lorawan server offer a downlink messaging to.  We need to go to the messaging tab and
+60
+
+61
+00:04:06,920 --> 00:04:08,060
+downlink tab.
+61
+
+62
+00:04:08,930 --> 00:04:13,210
+With this tool, you can choose the application port number called export.
+62
+
+63
+00:04:13,820 --> 00:04:20,720
+And there is another field with the value you want to send called payload. For the port number and the
+63
+
+64
+00:04:20,720 --> 00:04:21,290
+payload.
+64
+
+65
+00:04:21,290 --> 00:04:23,300
+We can choose any value right now.
+65
+
+66
+00:04:23,780 --> 00:04:31,820
+So let's choose, for example, Fport is equal to 20, this is a decimal value and a payload of AA.
+66
+
+67
+00:04:31,970 --> 00:04:33,620
+This is a negative symbol value.
+67
+
+68
+00:04:34,100 --> 00:04:35,630
+Then it discard all downlink.
+68
+
+69
+00:04:35,630 --> 00:04:35,870
+bytes.
+69
+
+70
+00:04:39,090 --> 00:04:40,070
+On the end device,
+70
+
+71
+00:04:40,110 --> 00:04:42,750
+do we see any data coming from the network server?
+71
+
+72
+00:04:43,380 --> 00:04:48,330
+Of course not, because we know that we have to send if we want to receive data.
+72
+
+73
+00:04:49,020 --> 00:04:54,750
+Moreover, on the server we can see that a new downlink has been scheduled ready to be sounds.
+73
+
+74
+00:04:55,830 --> 00:04:59,580
+So I just hit the end device push button to launch a new uplink.
+74
+
+75
+00:05:01,010 --> 00:05:07,910
+And right after I get my downlink, I can check the right value and the right port.
+75
+
+76
+00:05:08,360 --> 00:05:12,710
+I can also see that this downlink has been received on the RX1 window.
+76
+
+77
+00:05:13,340 --> 00:05:19,700
+It could have been either RX1  or RX2, but it's up to the network server to choose and there is nothing
+77
+
+78
+00:05:19,700 --> 00:05:20,600
+I can do about it.
+78
+
+79
+00:05:21,440 --> 00:05:21,800
+Okay.
+79
+
+80
+00:05:22,190 --> 00:05:26,750
+Now I'm wondering how the downlink message can find its way through the network.
+80
+
+81
+00:05:27,260 --> 00:05:32,900
+In other words, how the network server knew that my device was under these gateway coverage.
+81
+
+82
+00:05:33,860 --> 00:05:39,500
+Because you can imagine that this downlink message hasn't been broadcasted on all gateway on earth
+82
+
+83
+00:05:39,500 --> 00:05:46,460
+fortunately. The answer is that the network server simply choose the gateway used during the uplink,
+83
+
+84
+00:05:47,060 --> 00:05:53,600
+and if there were several then the network server would choose the one with the best RSSI during the
+84
+
+85
+00:05:53,600 --> 00:05:57,620
+uplink reception. That will increase the chance of receiving.
+85
+
+86
+00:05:59,210 --> 00:06:01,130
+Let's try another downlink frame.
+86
+
+87
+00:06:01,520 --> 00:06:05,810
+I hit the end device push button and here we go.
+87
+
+88
+00:06:06,230 --> 00:06:06,800
+It's here.
+88
+
+89
+00:06:07,400 --> 00:06:09,620
+I can check the gateway used for my uplink.
+89
+
+90
+00:06:10,310 --> 00:06:11,120
+That's this one.
+90
+
+91
+00:06:11,810 --> 00:06:13,790
+And I can take the gateway during the downlink.
+91
+
+92
+00:06:14,360 --> 00:06:15,680
+It's indeed the same one.
+92
+
+93
+00:06:16,850 --> 00:06:22,790
+So we are done with this demonstration with Class A end device, and in the next video we'll see what
+93
+
+94
+00:06:22,790 --> 00:06:24,110
+happens for the Class C.
