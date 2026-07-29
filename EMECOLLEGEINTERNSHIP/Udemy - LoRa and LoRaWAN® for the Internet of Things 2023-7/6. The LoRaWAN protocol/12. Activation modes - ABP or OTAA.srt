@@ -1,0 +1,134 @@
+0
+1
+00:00:00,720 --> 00:00:03,090
+When we want to use a LoRaWAN end device,
+1
+
+2
+00:00:03,420 --> 00:00:04,890
+we must first activate it.
+2
+
+3
+00:00:05,940 --> 00:00:07,890
+But what does activation really mean ?
+3
+
+4
+00:00:08,580 --> 00:00:10,410
+Actually, it's quite simple.
+4
+
+5
+00:00:11,040 --> 00:00:15,900
+Activation means that the end device is ready to send or receive LoRaWAN packet.
+5
+
+6
+00:00:16,830 --> 00:00:23,520
+For that, we saw that we need to network session key for authentication, the application session key
+6
+
+7
+00:00:23,520 --> 00:00:30,000
+for encryption on the device adress for identification. And these 3 sessions information
+7
+
+8
+00:00:30,000 --> 00:00:34,110
+has to be both on the device and the server.
+8
+
+9
+00:00:35,490 --> 00:00:39,690
+The question is how do the end device and the server can get these keys?
+9
+
+10
+00:00:40,560 --> 00:00:44,220
+That's where the activation mode comes because there are two possible methods.
+10
+
+11
+00:00:45,210 --> 00:00:48,870
+One is called ABP for Activation By Personalization.
+11
+
+12
+00:00:49,350 --> 00:00:53,100
+It's supposed to be the simplest method, but it has also a lot of disadvantages.
+12
+
+13
+00:00:53,850 --> 00:00:58,290
+There's also a second method called OTAA for Over The Air Activation.
+13
+
+14
+00:00:59,100 --> 00:01:04,860
+And in that case, the activation procedure is a little bit more complex, but there are many advantages.
+14
+
+15
+00:01:05,730 --> 00:01:08,790
+In both cases, the purpose is exactly the same.
+15
+
+16
+00:01:09,480 --> 00:01:16,140
+We want to have the same network session key, application session key and the same device address in the end
+16
+
+17
+00:01:16,140 --> 00:01:17,970
+device and on the server.
+17
+
+18
+00:01:19,110 --> 00:01:20,400
+Now one more thing before diving in the activation process.
+18
+
+19
+00:01:20,400 --> 00:01:27,510
+When we register a device on the LoRaWAN server, this device
+19
+
+20
+00:01:27,510 --> 00:01:29,430
+must be uniquely identified.
+20
+
+21
+00:01:30,330 --> 00:01:33,570
+This identification number is called the devEUI.
+21
+
+22
+00:01:34,260 --> 00:01:37,080
+This devEUI is not supposed to be used twice.
+22
+
+23
+00:01:37,980 --> 00:01:44,550
+Even if the ABP activation doesn't use it, the networks never will ask for this devEUI for the registration
+23
+
+24
+00:01:44,550 --> 00:01:51,390
+because it can be helpful to identify your device on your server. Like any other LoRaWAN information
+24
+
+25
+00:01:51,720 --> 00:01:54,120
+you can generate it on the network server.
+25
+
+26
+00:01:54,690 --> 00:01:59,190
+But often, the devEUI is written on the box because it's not a secret number.
+26
+
+27
+00:02:00,570 --> 00:02:07,080
+So now we're ready to study these two activation methods and in the next video let's start with ABP.
