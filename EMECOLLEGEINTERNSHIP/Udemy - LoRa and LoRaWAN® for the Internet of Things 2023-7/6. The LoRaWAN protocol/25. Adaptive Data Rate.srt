@@ -1,0 +1,199 @@
+0
+1
+00:00:00,870 --> 00:00:06,120
+When you deploy end devices, you have to select the power and the spreading factor.
+1
+
+2
+00:00:06,810 --> 00:00:08,790
+This is really not an easy task.
+2
+
+3
+00:00:09,090 --> 00:00:14,820
+If you choose a high transmission power and a high spreading factor, then obviously you have more chances
+3
+
+4
+00:00:14,820 --> 00:00:19,200
+to reach your gateway, but you are also considerably reducing your device battery life.
+4
+
+5
+00:00:19,740 --> 00:00:25,470
+So the trick is to find the closest value so the device can reach a gateway without wasting power.
+5
+
+6
+00:00:26,070 --> 00:00:34,410
+So what we need to do is to place the end device at its final location, then go on the gateway logs and
+6
+
+7
+00:00:34,410 --> 00:00:37,890
+check the power received, which is what we call the RSSI.
+7
+
+8
+00:00:38,100 --> 00:00:44,220
+You can also check the SNR and depending on the margin you apply, then the LoRa transmission will have a
+8
+
+9
+00:00:44,220 --> 00:00:45,450
+certain robustness.
+9
+
+10
+00:00:45,540 --> 00:00:51,600
+Then once you are done with the specific end device, you check another one and you apply the same process.
+10
+
+11
+00:00:52,110 --> 00:00:57,270
+Obviously that can't be done for a large fleet because it will take ages.
+11
+
+12
+00:00:57,900 --> 00:01:04,680
+So what we can do is to use the network intelligence and the network intelligence for that is called
+12
+
+13
+00:01:04,680 --> 00:01:05,730
+the ADR.
+13
+
+14
+00:01:06,210 --> 00:01:13,170
+ADR stands for Adaptive Data Rate, and adaptive data rate is a little algorithm which runs on the network
+14
+
+15
+00:01:13,170 --> 00:01:13,690
+server.
+15
+
+16
+00:01:13,980 --> 00:01:20,850
+If the end device is set up to use ADR, then that's the network server which will give the information
+16
+
+17
+00:01:20,850 --> 00:01:23,250
+of the power and the spreading factor.
+17
+
+18
+00:01:23,610 --> 00:01:29,610
+So the device will be able to transmit with the most optimized power and spreading factor values.
+18
+
+19
+00:01:30,090 --> 00:01:33,270
+So how does the adaptive data rate works?
+19
+
+20
+00:01:33,810 --> 00:01:36,780
+The first thing we need to do is to activate it.
+20
+
+21
+00:01:36,990 --> 00:01:38,250
+It's very simple.
+21
+
+22
+00:01:38,250 --> 00:01:42,240
+We just have to enable the ADR flag in the uplink frame.
+22
+
+23
+00:01:42,240 --> 00:01:48,690
+When the networks server sees the ADR flags, then it runs the ADR algorithm. And as soon as it finds
+23
+
+24
+00:01:48,690 --> 00:01:53,130
+a better value for power and spreading factor, then it transmit to the end device.
+24
+
+25
+00:01:53,490 --> 00:01:55,440
+To transmit the ADR value.
+25
+
+26
+00:01:55,440 --> 00:02:02,430
+The network server uses a MAC command called LinkADRReq and when the end device receives and accepts the new
+26
+
+27
+00:02:02,430 --> 00:02:05,340
+parameters then it will answer with a
+27
+
+28
+00:02:05,370 --> 00:02:06,690
+LinkADRAns.
+28
+
+29
+00:02:06,690 --> 00:02:07,620
+That's it.
+29
+
+30
+00:02:07,620 --> 00:02:08,340
+Great.
+30
+
+31
+00:02:08,340 --> 00:02:11,850
+Now there is one last thing that we need to explain.
+31
+
+32
+00:02:11,850 --> 00:02:15,840
+It's when exactly the network server will send a request with the values.
+32
+
+33
+00:02:15,840 --> 00:02:19,200
+When this ADR Link MAC command will be sent.
+33
+
+34
+00:02:19,500 --> 00:02:25,830
+Of course it will be great to send a value right after the algorithm has calculated them, but sometimes
+34
+
+35
+00:02:25,830 --> 00:02:28,290
+the network server just can't send them.
+35
+
+36
+00:02:28,290 --> 00:02:34,410
+That's the case if the end-device has been moved outside of the Gateway coverage, imagine you're using
+36
+
+37
+00:02:34,470 --> 00:02:38,730
+SF7 and your device is moved to the other side of the lake.
+37
+
+38
+00:02:38,760 --> 00:02:44,010
+If the device can't reach the gateway, obviously the network server won't even know that it transmits.
+38
+
+39
+00:02:44,490 --> 00:02:50,760
+To explain the ADR behavior, we're going to make three demonstrations for the ADR algorithm, and that's what
+39
+
+40
+00:02:50,760 --> 00:02:52,440
+we're going to do in the next video.
