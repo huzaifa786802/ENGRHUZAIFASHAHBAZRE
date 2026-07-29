@@ -1,0 +1,149 @@
+0
+1
+00:00:00,810 --> 00:00:01,500
+Welcome back.
+1
+
+2
+00:00:01,770 --> 00:00:06,750
+This chapter is probably one of the most important because we dive into the Lorawan protocol.
+2
+
+3
+00:00:07,680 --> 00:00:12,180
+There will be different parts in this chapter, and the first one will be about the overall Lorawan ecosystem.
+3
+
+4
+00:00:12,180 --> 00:00:12,870
+.
+4
+
+5
+00:00:13,590 --> 00:00:17,700
+This includes the Lorawan version specification provided by the Lorawan Alliance.
+5
+
+6
+00:00:18,300 --> 00:00:24,810
+And in that part, we take the opportunity to explain the differences between the Lora modulation and
+6
+
+7
+00:00:24,810 --> 00:00:25,200
+the Lorawan protocol.
+7
+
+8
+00:00:25,200 --> 00:00:29,960
+Obviously will also see the three main parts of the Lorawan
+8
+
+9
+00:00:30,000 --> 00:00:37,920
+infrastructure, which are the end devices, the gateways and the Lorawan server.
+9
+
+10
+00:00:37,920 --> 00:00:45,570
+The Lorawan infrastructure is a secure network and as every secure networks, it needs confidentiality, authentication
+10
+
+11
+00:00:45,900 --> 00:00:47,190
+and data integrity.
+11
+
+12
+00:00:47,580 --> 00:00:54,110
+and we will therefore explain what solutions have been implemented to make it work.
+12
+
+13
+00:00:54,120 --> 00:01:00,650
+On the device size we will see the different classes name A, B or C with these end device will do some tests to highlight
+13
+
+14
+00:01:00,840 --> 00:01:01,740
+their capabilities.
+14
+
+15
+00:01:03,120 --> 00:01:08,100
+The second part is about the two different methods to activate an end device on the network server.
+15
+
+16
+00:01:08,940 --> 00:01:12,140
+There are two types called ABP or OTAA.
+16
+
+17
+00:01:13,110 --> 00:01:17,520
+When we begin with Lorawan network, it's quite difficult to understand what are they for.
+17
+
+18
+00:01:18,090 --> 00:01:24,060
+That's why in the third part will present a series of "how to" to present demand situation you will have
+18
+
+19
+00:01:24,060 --> 00:01:30,990
+to deal with when implementing a Lorawan infrastructure, how to prevent replay attack, then second
+19
+
+20
+00:01:30,990 --> 00:01:36,090
+how to change the communication parameters, and third, how to change network operators.
+20
+
+21
+00:01:36,810 --> 00:01:42,000
+And we will see that depending on your activation method, the answer of this question would be different.
+21
+
+22
+00:01:43,020 --> 00:01:49,170
+Finally, you remember that Lora transmission parameters like the spreading factor or the power transmission
+22
+
+23
+00:01:49,530 --> 00:01:52,260
+have a huge influence on the end device consumption.
+23
+
+24
+00:01:53,070 --> 00:01:58,260
+But it's not that easy to find a trade off between the power consumption, the range and the bitrate.
+24
+
+25
+00:01:58,800 --> 00:02:00,870
+So how can we do it now?
+25
+
+26
+00:02:00,900 --> 00:02:05,220
+I want provide a solution called ADR for adaptive data rate.
+26
+
+27
+00:02:05,760 --> 00:02:12,810
+ADR is an automatic way to optimize end device autonomy while being sure that it can always reach the
+27
+
+28
+00:02:12,810 --> 00:02:13,410
+network.
+28
+
+29
+00:02:14,610 --> 00:02:18,660
+So that's a very challenging agenda, but I'm sure we can do it together.
+29
+
+30
+00:02:18,990 --> 00:02:19,920
+Let's get to work.
