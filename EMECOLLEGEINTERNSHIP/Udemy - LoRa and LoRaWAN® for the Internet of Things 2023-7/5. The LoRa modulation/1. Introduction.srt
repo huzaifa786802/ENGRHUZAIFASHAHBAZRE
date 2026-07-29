@@ -1,0 +1,64 @@
+0
+1
+00:00:01,080 --> 00:00:04,170
+In this chapter, we'll dive into the LoRa-modulation.
+1
+
+2
+00:00:04,680 --> 00:00:11,700
+We need to understand how the binary data are transmitted in the air, then we'll estimate the bitrate of transmission
+2
+
+3
+00:00:12,240 --> 00:00:18,450
+first by using theoretical values from the datasheet and then practical value that we can really expect
+3
+
+4
+00:00:18,450 --> 00:00:19,080
+in the field.
+4
+
+5
+00:00:20,010 --> 00:00:26,880
+That will depend on parameters such as: the Spreading Factor, the Coding Rate, the Bandwidth, the
+5
+
+6
+00:00:26,880 --> 00:00:28,950
+Time-On-Air and the Duty Cycle.
+6
+
+7
+00:00:29,070 --> 00:00:32,670
+But of course, all these terms will be defined and explained in detail.
+7
+
+8
+00:00:33,960 --> 00:00:40,410
+Then, we'll simulate a LoRa packet transmission with a software called LoRa Calculator, and this will
+8
+
+9
+00:00:40,410 --> 00:00:42,810
+allow us to confirm the previous results.
+9
+
+10
+00:00:43,230 --> 00:00:47,430
+Finally, we'll learn how to estimate the power consumption of LoRa device.
+10
+
+11
+00:00:47,820 --> 00:00:48,780
+This consumption.
+11
+
+12
+00:00:48,780 --> 00:00:52,950
+So the autonomy of the device depends on several transmission parameters.
+12
+
+13
+00:00:53,310 --> 00:00:57,150
+Once again, for this explanation we will see this through an example.
