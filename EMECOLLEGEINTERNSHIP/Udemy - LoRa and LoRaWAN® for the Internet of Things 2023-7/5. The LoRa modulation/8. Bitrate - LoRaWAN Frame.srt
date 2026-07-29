@@ -1,0 +1,279 @@
+0
+1
+00:00:01,080 --> 00:00:08,520
+We saw in the previous video that the real bitrate, when sending one byte LoRa payload is 309.3 bits per
+1
+
+2
+00:00:08,520 --> 00:00:13,590
+second at SF7 and 9.6 bit per second at SF12.
+2
+
+3
+00:00:14,490 --> 00:00:21,420
+So we're far from the documentation values.  The temperature used, as the LoRa payload, is called the phy payload in the
+3
+
+4
+00:00:21,420 --> 00:00:22,320
+specification.
+4
+
+5
+00:00:23,070 --> 00:00:28,860
+That's what the gateway is interested in. The gateway takes the phy payload and sends it to the server.
+5
+
+6
+00:00:29,250 --> 00:00:34,770
+So if you are using a point to point LoRa transmission, everything is fine and you can keep a one byte
+6
+
+7
+00:00:34,770 --> 00:00:35,310
+payload.
+7
+
+8
+00:00:35,610 --> 00:00:38,150
+But what we want to do is not a LoRa transmission.
+8
+
+9
+00:00:38,460 --> 00:00:40,290
+It's a LoRaWAN transmission.
+9
+
+10
+00:00:40,560 --> 00:00:42,030
+And there is a big difference.
+10
+
+11
+00:00:43,140 --> 00:00:45,960
+LoRaWAN will set up new services for the device.
+11
+
+12
+00:00:46,200 --> 00:00:54,120
+For example, there will be special fields relative to its security, to its identification or to its application
+12
+
+13
+00:00:54,120 --> 00:00:54,840
+parameters.
+13
+
+14
+00:00:55,440 --> 00:00:57,870
+This means that there will be a LoRaWAN header.
+14
+
+15
+00:00:58,560 --> 00:01:03,780
+This LoRaWAN header will increase the number of bit transmitted through the network. And the user
+15
+
+16
+00:01:03,780 --> 00:01:04,320
+data,
+16
+
+17
+00:01:04,350 --> 00:01:09,870
+our temperature, will be encapsulated into the LoRa Header and the LoRaWAN Header.
+17
+
+18
+00:01:10,620 --> 00:01:16,770
+Obviously the extra data in the LoRaWAN Header will necessarily increase the transmission time of
+18
+
+19
+00:01:16,770 --> 00:01:24,300
+the whole frame. The previous phy payload is now the user data, our temperature, and the LoRaWAN header.
+19
+
+20
+00:01:25,530 --> 00:01:32,040
+So now to calculate the new bitrate, we need to know the new Time On Air of the entire LoRaWAN frame.
+20
+
+21
+00:01:32,580 --> 00:01:39,180
+For that, I could dive into the specifications and find out the size of the LoRaWAN Header, but we
+21
+
+22
+00:01:39,180 --> 00:01:40,440
+haven't spoken much about
+22
+
+23
+00:01:40,440 --> 00:01:44,400
+the LoRaWAN specifications so far. So let's do it in another way.
+23
+
+24
+00:01:45,330 --> 00:01:52,710
+I'm going to send a LoRaWAN frame with one byte user payload for my device. One time with SF7, 125 kHz
+24
+
+25
+00:01:52,710 --> 00:01:56,190
+and a second time with SF12.
+25
+
+26
+00:01:57,060 --> 00:02:00,630
+And on my gateway log, I'm going to take the Time On Air.
+26
+
+27
+00:02:01,230 --> 00:02:01,890
+Let's do that.
+27
+
+28
+00:02:02,640 --> 00:02:05,490
+I go on my gateway log and I send a frame.
+28
+
+29
+00:02:06,150 --> 00:02:13,800
+We can see here that the first frame uses SF7, 125 kHz bandwidth and four over five coding
+29
+
+30
+00:02:13,800 --> 00:02:14,220
+rate.
+30
+
+31
+00:02:14,880 --> 00:02:21,180
+And the second one, SF 12, 125 kHz bandwidth and four over five coding rate.
+31
+
+32
+00:02:21,720 --> 00:02:22,770
+And what do we see?
+32
+
+33
+00:02:23,220 --> 00:02:24,600
+We see that the airtime,
+33
+
+34
+00:02:24,780 --> 00:02:26,310
+that's just another word for Time On Air,
+34
+
+35
+00:02:26,310 --> 00:02:35,640
+is 46.3 milliseconds, when we use SF 7 and 1155.1 milliseconds when we use SF
+35
+
+36
+00:02:35,640 --> 00:02:36,060
+12.
+36
+
+37
+00:02:37,050 --> 00:02:43,350
+These are the two time I will use to calculate my LoRaWAN bitrate right after. When I transmit it with
+37
+
+38
+00:02:43,350 --> 00:02:44,550
+my LoRaWAN device,
+38
+
+39
+00:02:44,700 --> 00:02:51,690
+I transmitted only one byte as we agreed, so you can be very surprised to see that the payload size
+39
+
+40
+00:02:51,690 --> 00:02:53,130
+is 14 bytes.
+40
+
+41
+00:02:54,030 --> 00:02:55,860
+What do these 14 bytes include?
+41
+
+42
+00:02:56,340 --> 00:02:58,890
+These 14 bytes are the fee payload.
+42
+
+43
+00:02:59,130 --> 00:03:03,690
+The include my one byte temperature and of course, the LoRaWAN Header.
+43
+
+44
+00:03:04,560 --> 00:03:10,380
+We can therefore said that the LoRaWAN Header has in that case a size of 13 bytes.
+44
+
+45
+00:03:11,520 --> 00:03:18,120
+In the LoRaWAN Header, there will be the device address, integraty message, the application port and
+45
+
+46
+00:03:18,120 --> 00:03:20,070
+so on, but no stress,
+46
+
+47
+00:03:20,200 --> 00:03:21,150
+we'll see that soon.
+47
+
+48
+00:03:22,170 --> 00:03:24,420
+So same calculation as before,
+48
+
+49
+00:03:24,660 --> 00:03:31,740
+but we take into consideration the new frame duration. Here for SF 7, I transmitted 8 bits divided
+49
+
+50
+00:03:31,740 --> 00:03:36,930
+by 46.3 millisecond and that gives 172.7 bits per second.
+50
+
+51
+00:03:37,710 --> 00:03:45,870
+And when we use SF 12, I still have 8 bits transmitted, but a duration of 1155.1 milliseconds,
+51
+
+52
+00:03:46,050 --> 00:03:49,780
+and that gives a result of 6.9 bits per second.
+52
+
+53
+00:03:50,460 --> 00:03:54,360
+So again, the bitrate has been significantly reduced.
+53
+
+54
+00:03:55,140 --> 00:04:01,830
+Unfortunately, it's not over yet because the European standard on the 868 MHz band has another
+54
+
+55
+00:04:01,830 --> 00:04:08,040
+restriction which will reduce even more the final bitrate. That will be the last step, and we're
+55
+
+56
+00:04:08,040 --> 00:04:09,900
+going to see that in the next video.
