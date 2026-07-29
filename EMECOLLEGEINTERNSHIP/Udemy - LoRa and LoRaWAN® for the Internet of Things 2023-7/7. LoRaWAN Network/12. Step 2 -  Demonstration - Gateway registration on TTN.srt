@@ -1,0 +1,154 @@
+0
+1
+00:00:00,750 --> 00:00:03,300
+For this demonstration, we'll use TTN network server.
+1
+
+2
+00:00:03,900 --> 00:00:08,190
+But the registration process is very similar if you use another one.
+2
+
+3
+00:00:08,670 --> 00:00:16,980
+So we go on the TTN console and there I can see two sections, one on the right, the gateway section
+3
+
+4
+00:00:17,100 --> 00:00:20,040
+and one on the left, the application section.
+4
+
+5
+00:00:20,790 --> 00:00:22,700
+We'll see soon the application part.
+5
+
+6
+00:00:22,710 --> 00:00:25,590
+But for the moment we're dealing with gateways.
+6
+
+7
+00:00:26,130 --> 00:00:30,810
+So on this page here you can see all my registered gateway.
+7
+
+8
+00:00:31,680 --> 00:00:35,400
+I've got a lot, but only a few are really connected at the moment.
+8
+
+9
+00:00:35,820 --> 00:00:38,610
+Anyway, I'm going to register a new one.
+9
+
+10
+00:00:39,000 --> 00:00:46,800
+So I hit the register gateway button and I enter a new page asking me for my gateway EUI.
+10
+
+11
+00:00:46,980 --> 00:00:51,960
+This is the number we talked about just before, so you just have to enter it here.
+11
+
+12
+00:00:52,770 --> 00:00:53,790
+I confirm.
+12
+
+13
+00:00:54,870 --> 00:00:57,960
+Then we need to enter a gateway ID that you can make up.
+13
+
+14
+00:00:58,410 --> 00:01:02,100
+Be careful because we are only allowed to use lowercase letters.
+14
+
+15
+00:01:02,880 --> 00:01:08,070
+And finally, we need to specify the frequency plan, depending of the region where the gateway will
+15
+
+16
+00:01:08,070 --> 00:01:09,030
+be installed.
+16
+
+17
+00:01:09,360 --> 00:01:14,160
+I'm in Europe, so I will use the 868 megahertz frequency plan.
+17
+
+18
+00:01:14,940 --> 00:01:21,740
+And for some reason, TTN prefers SF9 for RX2, which is not the default value in the 
+18
+
+19
+00:01:21,750 --> 00:01:22,920
+LoRaWAN specification.
+19
+
+20
+00:01:23,490 --> 00:01:25,740
+So I follow their recommendations.
+20
+
+21
+00:01:26,820 --> 00:01:30,790
+I hit the button register gateway, and here we go.
+21
+
+22
+00:01:30,810 --> 00:01:33,540
+We are done with the gateway registration part.
+22
+
+23
+00:01:34,770 --> 00:01:37,060
+We can now see it in the gateway section.
+23
+
+24
+00:01:37,080 --> 00:01:43,890
+And as soon as the gateway will receive a LoRaWAN packet, it will appear in the live data area here.
+24
+
+25
+00:01:44,850 --> 00:01:50,460
+But remember, all packets received by the Gateway don't necessarily belong to you because your gateway
+25
+
+26
+00:01:50,490 --> 00:01:57,450
+is able to receive any LoRaWANpacket and only the network server will identify and let them go to the application
+26
+
+27
+00:01:57,450 --> 00:01:57,960
+server.
+27
+
+28
+00:01:58,800 --> 00:02:05,820
+So look here, for example, we've received something the frame from a device sending data in the vicinity.
+28
+
+29
+00:02:06,300 --> 00:02:12,600
+And if we wanted it the network server to be able to identify the specific device, then we need to register
+29
+
+30
+00:02:12,600 --> 00:02:13,020
+it.
+30
+
+31
+00:02:13,200 --> 00:02:16,050
+And it is exactly what we're going to do in the next step.
