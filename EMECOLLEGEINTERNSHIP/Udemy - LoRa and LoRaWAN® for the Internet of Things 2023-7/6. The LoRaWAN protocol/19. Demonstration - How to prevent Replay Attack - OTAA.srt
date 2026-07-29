@@ -1,0 +1,154 @@
+0
+1
+00:00:00,660 --> 00:00:01,860
+For this demonstration,
+1
+
+2
+00:00:01,860 --> 00:00:06,930
+I've got an end device registered in OTAA on the network server. On the left,
+2
+
+3
+00:00:06,930 --> 00:00:14,430
+I always have my end device log and on the right one tab with my gateway logs and my application server. 
+3
+
+4
+00:00:14,430 --> 00:00:14,910
+Let's try it.
+4
+
+5
+00:00:15,510 --> 00:00:21,960
+I power up my device and a few seconds later I can see that the join procedure have succeeded.
+5
+
+6
+00:00:22,410 --> 00:00:27,810
+When we use OTAA, everything is simple because we don't have to worry about the frame counter.
+6
+
+7
+00:00:28,380 --> 00:00:28,970
+Why ?
+7
+
+8
+00:00:29,610 --> 00:00:35,400
+Because during the join procedure, the network server and the device reset their frame counters.
+8
+
+9
+00:00:36,510 --> 00:00:40,260
+But one could said that we also did it in ABP.
+9
+
+10
+00:00:40,740 --> 00:00:41,810
+We did it manually.
+10
+
+11
+00:00:41,820 --> 00:00:43,710
+But was it very different from here ?
+11
+
+12
+00:00:44,100 --> 00:00:46,530
+Actually, yes, there was a big difference.
+12
+
+13
+00:00:46,830 --> 00:00:53,400
+The thing is that in OTAA, every time the join procedure restarts, a new set of session keys is shared
+13
+
+14
+00:00:53,400 --> 00:00:55,530
+between the end device and the network server.
+14
+
+15
+00:00:56,640 --> 00:01:02,080
+So they both have a new network session key and a new application session key.
+15
+
+16
+00:01:03,000 --> 00:01:08,370
+So there is no problem to reset the frame counter because no frame counter values have already been used within
+16
+
+17
+00:01:08,370 --> 00:01:08,940
+this session.
+17
+
+18
+00:01:10,020 --> 00:01:16,410
+So of course, at the beginning, each time I send a packet, the frame counter increments and everything
+18
+
+19
+00:01:16,410 --> 00:01:18,330
+is received on my application server.
+19
+
+20
+00:01:22,100 --> 00:01:23,360
+And now what happened
+20
+
+21
+00:01:23,360 --> 00:01:25,310
+if for some reason my end device reset.
+21
+
+22
+00:01:25,700 --> 00:01:28,180
+That's what I will do now by pressing my reset button.
+22
+
+23
+00:01:31,030 --> 00:01:31,600
+There we go.
+23
+
+24
+00:01:31,690 --> 00:01:35,470
+There is a new join procedure, and new keys are exchanged.
+24
+
+25
+00:01:35,830 --> 00:01:41,080
+And if I start a new packet, everything is received on my application, even if the frame counter is
+25
+
+26
+00:01:41,080 --> 00:01:41,830
+back to one.
+26
+
+27
+00:01:46,740 --> 00:01:52,500
+What I want to point out with this demonstration is that we've seen a first advantage of using OTAA instead
+27
+
+28
+00:01:52,500 --> 00:01:53,340
+of ABP.
+28
+
+29
+00:01:54,120 --> 00:01:56,790
+That's not the only one and we'll see many others.
+29
+
+30
+00:01:57,570 --> 00:02:03,840
+So even if sometimes we can consider that a join procedure is a bit complicated, then we should keep
+30
+
+31
+00:02:03,840 --> 00:02:08,160
+in mind that at the end of the day, we will find a lot of benefits to use OTAA.
