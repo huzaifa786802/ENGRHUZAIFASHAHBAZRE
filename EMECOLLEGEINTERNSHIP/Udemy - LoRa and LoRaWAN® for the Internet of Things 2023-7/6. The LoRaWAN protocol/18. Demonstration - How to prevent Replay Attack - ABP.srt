@@ -1,0 +1,409 @@
+0
+1
+00:00:01,440 --> 00:00:02,520
+For this demonstration,
+1
+
+2
+00:00:02,760 --> 00:00:09,570
+I've got an ABP end device and before starting it I opened several windows to take the logs on several
+2
+
+3
+00:00:09,570 --> 00:00:10,620
+part of my network.
+3
+
+4
+00:00:11,280 --> 00:00:18,600
+On the left, I've got my end device log and on the right, there's one tab representing my gateway logs and
+4
+
+5
+00:00:18,600 --> 00:00:22,620
+the other one is my application server. We'll see there the decrypted data.
+5
+
+6
+00:00:23,490 --> 00:00:24,480
+So let's go.
+6
+
+7
+00:00:25,140 --> 00:00:26,520
+I start my end device.
+7
+
+8
+00:00:27,240 --> 00:00:33,120
+We know that because it's an ABP end device, it already has the session keys so it can transmit right away.
+8
+
+9
+00:00:33,870 --> 00:00:35,700
+For that, I use the push button.
+9
+
+10
+00:00:36,720 --> 00:00:37,290
+There we go.
+10
+
+11
+00:00:37,710 --> 00:00:44,970
+We can see the frame on my device log, then I can see them on my gateway log and finally I can see
+11
+
+12
+00:00:44,970 --> 00:00:46,650
+them on my application logs.
+12
+
+13
+00:00:49,270 --> 00:00:56,080
+We can also check that the packet includes a frame counter and obviously I found the same frame counter
+13
+
+14
+00:00:56,080 --> 00:01:01,450
+value and the end device on my gateway and again on my application server.
+14
+
+15
+00:01:02,650 --> 00:01:03,640
+Everything works well.
+15
+
+16
+00:01:03,940 --> 00:01:07,120
+So let's send ten of these frames and I come back to you.
+16
+
+17
+00:01:17,830 --> 00:01:18,190
+Okay.
+17
+
+18
+00:01:18,340 --> 00:01:20,080
+That's been ten frames send.
+18
+
+19
+00:01:20,380 --> 00:01:24,430
+So now let's say that for some reasons, I need to reset my end device.
+19
+
+20
+00:01:24,580 --> 00:01:25,660
+What's going to happen?
+20
+
+21
+00:01:26,350 --> 00:01:27,130
+Let's try that.
+21
+
+22
+00:01:27,850 --> 00:01:33,970
+So I clear my device logs, my gateway logs and my application logs, and I press the reset button.
+22
+
+23
+00:01:35,050 --> 00:01:35,470
+Right.
+23
+
+24
+00:01:35,860 --> 00:01:42,550
+So now my end device start back from the beginning and its application will send exactly the same data.
+24
+
+25
+00:01:43,210 --> 00:01:46,030
+But of course, the frame counter is back to one.
+25
+
+26
+00:01:46,750 --> 00:01:47,080
+Fine.
+26
+
+27
+00:01:47,080 --> 00:01:52,690
+We can see the frame on the gateway, but when we look at the application logs, there is nothing.
+27
+
+28
+00:01:53,230 --> 00:01:54,100
+What happened?
+28
+
+29
+00:01:54,430 --> 00:01:55,270
+That is simple.
+29
+
+30
+00:01:55,270 --> 00:02:01,600
+The network server simply detected a replay attack because it has already received the frame counter one,
+30
+
+31
+00:02:01,840 --> 00:02:03,850
+two and so on up to ten.
+31
+
+32
+00:02:04,600 --> 00:02:08,620
+So it dropped my frame because it considered that it already received it.
+32
+
+33
+00:02:09,430 --> 00:02:12,040
+When will the reception process go back to normal?
+33
+
+34
+00:02:12,820 --> 00:02:18,580
+That will be when the frame counter will reach the value 11 because the network server considered all
+34
+
+35
+00:02:18,580 --> 00:02:20,440
+previous values as replay attack.
+35
+
+36
+00:02:21,130 --> 00:02:23,410
+So I send all frame up to ten,
+36
+
+37
+00:02:23,470 --> 00:02:24,640
+thanks to the push button.
+37
+
+38
+00:02:34,210 --> 00:02:35,470
+Here is the number ten.
+38
+
+39
+00:02:36,400 --> 00:02:38,260
+And now comes the 11th.
+39
+
+40
+00:02:38,710 --> 00:02:41,320
+And the 11th is now accepted on the server.
+40
+
+41
+00:02:47,140 --> 00:02:51,370
+So obviously this behavior is not acceptable for an application.
+41
+
+42
+00:02:52,180 --> 00:02:55,070
+If you consider an end device with a very high frame counter,
+42
+
+43
+00:02:55,400 --> 00:03:00,340
+we're not going to wait for ages that it takes all value before being able to transmit again.
+43
+
+44
+00:03:01,210 --> 00:03:02,890
+So what our options?
+44
+
+45
+00:03:03,760 --> 00:03:09,940
+The first option is to change end device firmware and to make an application which keeps a frame value
+45
+
+46
+00:03:09,940 --> 00:03:11,470
+in a nonvolatile memory.
+46
+
+47
+00:03:12,190 --> 00:03:15,400
+Each time it sends a frame, then the frame counter is set.
+47
+
+48
+00:03:15,760 --> 00:03:21,190
+So if for any reason it resets, then it will easily restore the last frame counter used.
+48
+
+49
+00:03:21,700 --> 00:03:23,470
+No LoRaWAN packet will be lost.
+49
+
+50
+00:03:23,740 --> 00:03:28,390
+Actually, this option is the only acceptable solution if you want to use ABP.
+50
+
+51
+00:03:28,870 --> 00:03:33,130
+And that's the one described into 1.0.4 LoRaWAN specification.
+51
+
+52
+00:03:34,870 --> 00:03:39,730
+The second option is to go on the server. And when the end device reset,
+52
+
+53
+00:03:40,030 --> 00:03:46,630
+then we also reset the frame counter on the server side, we can try that, but of course we'll not be
+53
+
+54
+00:03:46,630 --> 00:03:52,810
+protected from the replay attack anymore and that we'll build the case as long as the device has not reach
+54
+
+55
+00:03:52,810 --> 00:03:55,630
+its old value, which in this case was 11.
+55
+
+56
+00:03:56,590 --> 00:03:59,620
+So I delete my logs on, and I reset the end device.
+56
+
+57
+00:04:14,960 --> 00:04:17,780
+Obviously nothing happens on the application server.
+57
+
+58
+00:04:18,680 --> 00:04:26,090
+Now if I want to reset the frame counter, I need to go on the general settings then network layer.
+58
+
+59
+00:04:29,600 --> 00:04:35,000
+Expand and at the bottom there is an option called session and MAC state reset.
+59
+
+60
+00:04:35,630 --> 00:04:37,970
+This option resets the frame counter value.
+60
+
+61
+00:04:38,390 --> 00:04:40,850
+So if I click on that and accept the warning.
+61
+
+62
+00:04:46,110 --> 00:04:46,350
+Then now,
+62
+
+63
+00:04:46,350 --> 00:04:50,400
+I've got the packet coming in the application server again.
+63
+
+64
+00:04:59,100 --> 00:05:03,510
+This option is not secure and as we can see, is not easily manageable.
+64
+
+65
+00:05:03,870 --> 00:05:06,270
+We use this possibility only on rare occasions.
+65
+
+66
+00:05:07,170 --> 00:05:15,060
+Right, now if you work on a ABPLoRaWAN end device, then during development or of testing purposes,
+66
+
+67
+00:05:15,480 --> 00:05:19,080
+it would be nice to be able to reset our end device as much as we will.
+67
+
+68
+00:05:19,800 --> 00:05:25,440
+So there is another option available, but this one completely removed the replay attack protection.
+68
+
+69
+00:05:25,920 --> 00:05:28,740
+You should never use this option in the real device deployment.
+69
+
+70
+00:05:29,400 --> 00:05:36,930
+So if you are sure that you want to do this, you have to go to the general settings tab, then network
+70
+
+71
+00:05:36,930 --> 00:05:45,420
+layer, expand, and at the bottom advanced MAC settings and hit the option reset frame counter.
+71
+
+72
+00:05:46,440 --> 00:05:52,830
+You can notice that when you think this box then warning appear saying that resetting is insecure and
+72
+
+73
+00:05:52,830 --> 00:05:55,170
+makes your device susceptible for replay attacks.
+73
+
+74
+00:05:55,980 --> 00:06:00,750
+So yes, it's now possible to reset your device, but be really careful.
+74
+
+75
+00:06:01,020 --> 00:06:05,310
+You're now not protected from replay attack and you have to be aware of that.
+75
+
+76
+00:06:06,240 --> 00:06:08,160
+We can now reset our end device.
+76
+
+77
+00:06:13,570 --> 00:06:16,030
+And see that all frames are received.
+77
+
+78
+00:06:20,240 --> 00:06:22,700
+Even if the frame counter went back to one.
+78
+
+79
+00:06:25,710 --> 00:06:33,570
+Finally, there is one last option and that's probably the best choice as we have seen the ABP activation
+79
+
+80
+00:06:33,570 --> 00:06:37,170
+mode has his first drawback, about the way it deals with the frame counter.
+80
+
+81
+00:06:37,740 --> 00:06:42,780
+So the best solution is to change and to use OTAA instead of ABP.
+81
+
+82
+00:06:43,680 --> 00:06:45,900
+And that's what I'm going to show you in the next video.
