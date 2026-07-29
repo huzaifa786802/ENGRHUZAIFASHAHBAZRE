@@ -1,0 +1,279 @@
+0
+1
+00:00:01,260 --> 00:00:05,160
+For this example, we will again consider a transmitter and a receiver.
+1
+
+2
+00:00:05,730 --> 00:00:09,210
+The transmitter sends a message with a power of 13 dBm.
+2
+
+3
+00:00:10,440 --> 00:00:14,760
+It's transmitted through an antenna with a gain of 2 dBi.
+3
+
+4
+00:00:15,330 --> 00:00:17,910
+These are specific decibels for antennas.
+4
+
+5
+00:00:18,570 --> 00:00:21,750
+They are isotropic decibels, but they are decibels.
+5
+
+6
+00:00:21,750 --> 00:00:27,570
+And again, you can add or subtract them with the other decibels value dB or dBm.
+6
+
+7
+00:00:28,440 --> 00:00:31,260
+So you don't have to worry about the i in the dBi.
+7
+
+8
+00:00:31,590 --> 00:00:35,700
+And if it bothers you, just forget it and consider it simply as dB.
+8
+
+9
+00:00:36,240 --> 00:00:40,140
+So here we have a gain of 2 dB which is associated with the antenna.
+9
+
+10
+00:00:40,800 --> 00:00:46,110
+Then we have the signal going into the transmission path in the air, which has an estimated loss of
+10
+
+11
+00:00:46,110 --> 00:00:47,190
+60 dB.
+11
+
+12
+00:00:47,910 --> 00:00:49,160
+This is a loss.
+12
+
+13
+00:00:49,170 --> 00:00:57,270
+So in the calculation, don't forget to use -60 dB and not 60 dB and the antenna at a receiver side has a
+13
+
+14
+00:00:57,270 --> 00:00:58,440
+gain of 2 dB.
+14
+
+15
+00:00:59,430 --> 00:01:06,360
+Finally, the receiver has a sensitivity of -80 dBm, so it would be necessary that the received signal
+15
+
+16
+00:01:06,360 --> 00:01:10,230
+is higher than -80 dBm for the message to be received.
+16
+
+17
+00:01:10,860 --> 00:01:11,910
+Is it going to work?
+17
+
+18
+00:01:12,360 --> 00:01:22,230
+We just have to add all gains and attenuation, the 13 dB power, the 2 dB gain, the air losses and a 2 dB
+18
+
+19
+00:01:22,230 --> 00:01:23,850
+gain of the receiver's antenna.
+19
+
+20
+00:01:24,450 --> 00:01:26,460
+And we compare it to the sensitivity.
+20
+
+21
+00:01:27,090 --> 00:01:29,940
+Is it greater than -80 dBm or not?
+21
+
+22
+00:01:30,540 --> 00:01:31,590
+If so, it's good.
+22
+
+23
+00:01:31,980 --> 00:01:33,600
+If not, it doesn't work.
+23
+
+24
+00:01:34,800 --> 00:01:45,600
+If we do the calculation 13 + 2 - 60 + 2, we find -43 dBm and this is indeed higher than
+24
+
+25
+00:01:45,600 --> 00:01:47,220
+the -80 dBm.
+25
+
+26
+00:01:47,730 --> 00:01:53,400
+This -43 dBm is the received power, so it's the RSSI.
+26
+
+27
+00:01:54,540 --> 00:01:56,130
+So we've answered a first question.
+27
+
+28
+00:01:56,400 --> 00:01:58,050
+The transmission is successful.
+28
+
+29
+00:01:58,710 --> 00:02:00,810
+Let's go now on the second part of the problem.
+29
+
+30
+00:02:01,830 --> 00:02:06,960
+For the second part, we're interested in SNR, signal of noise ratio.
+30
+
+31
+00:02:07,650 --> 00:02:11,700
+And we consider that a noise power as a value of -50 dBm.
+31
+
+32
+00:02:12,750 --> 00:02:16,500
+As we saw earlier, a ratio in decibels become a subtraction.
+32
+
+33
+00:02:17,310 --> 00:02:22,860
+So the SNR is simply the received signal power minus the noise power.
+33
+
+34
+00:02:23,670 --> 00:02:31,560
+It's therefore the RSSI, -43 dBm, minus the noise power, -50 DB.
+34
+
+35
+00:02:32,280 --> 00:02:33,780
+This is an easy calculation.
+35
+
+36
+00:02:33,780 --> 00:02:35,250
+It gives 7 dB.
+36
+
+37
+00:02:36,180 --> 00:02:37,830
+Are we satisfied with this value?
+37
+
+38
+00:02:37,860 --> 00:02:42,250
+Well, I can tell. You will need to check the documentation of yout LoRa transceiver.
+38
+
+39
+00:02:42,270 --> 00:02:47,580
+And it will tell you the minimum SNR needed for a successful reception.
+39
+
+40
+00:02:48,660 --> 00:02:52,200
+We can come back to the speaker and listener analogy.
+40
+
+41
+00:02:52,200 --> 00:02:55,110
+Now we can consider that a speaker use a very loud voice.
+41
+
+42
+00:02:56,010 --> 00:02:57,540
+Does the listener understand?
+42
+
+43
+00:02:58,170 --> 00:03:04,050
+Again, I can't be sure, because even if we assume that the voice will be above the listener sensitivity
+43
+
+44
+00:03:04,050 --> 00:03:07,740
+level, then what happens if it's a noisy environment?
+44
+
+45
+00:03:08,040 --> 00:03:13,170
+If the noise exceeds a certain threshold, the signal over noise ratio will go down.
+45
+
+46
+00:03:13,380 --> 00:03:19,110
+And the listener, in spite of the fact that the speaker speaks loudly, might not get the message.
+46
+
+47
+00:03:23,480 --> 00:03:26,960
+And finally we can calculate the link budget.
+47
+
+48
+00:03:27,860 --> 00:03:31,200
+This is the transmitted power minus the sensitivity.
+48
+
+49
+00:03:31,820 --> 00:03:39,110
+So that's the difference between 13 dBm and -80 dBm, and the result is 93 dBm.
+49
+
+50
+00:03:40,310 --> 00:03:41,750
+So we have a three notions here.
+50
+
+51
+00:03:42,350 --> 00:03:48,050
+First, it's sensitivity and a signal to noise ratio that are both important to have a successful transmission
+51
+
+52
+00:03:48,890 --> 00:03:54,140
+and the link budget, which is very useful to characterize the potential of a radio transmission.
+52
+
+53
+00:03:54,920 --> 00:04:01,220
+Now that we've understood what's the RSSI, what's the sensitivity, the signal over noise and finally
+53
+
+54
+00:04:01,220 --> 00:04:05,390
+the link budget, we'll be able to go and see a real LoRa frame on a gateway.
+54
+
+55
+00:04:06,050 --> 00:04:10,460
+After that, thanks to what we've learned, we will study a little bit of a LoRa transceiver
+55
+
+56
+00:04:10,460 --> 00:04:11,240
+documentation.
