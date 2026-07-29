@@ -1,0 +1,304 @@
+0
+1
+00:00:00,840 --> 00:00:04,890
+In this part, we're going to handle a complete lorawan network configuration.
+1
+
+2
+00:00:05,220 --> 00:00:09,690
+But to do that, we first need to have an operational network available.
+2
+
+3
+00:00:10,200 --> 00:00:13,320
+So maybe you have a private network in operation.
+3
+
+4
+00:00:13,650 --> 00:00:16,860
+It's not the most common situation when you start playing with Lorawan.
+4
+
+5
+00:00:16,860 --> 00:00:23,340
+But anyway, if it's your situation, then your gateway must be connected to internet and you must have
+5
+
+6
+00:00:23,340 --> 00:00:25,290
+set up the LoRaWAN server yourself.
+6
+
+7
+00:00:25,800 --> 00:00:31,980
+If you choose a hybrid network infrastructure, then your gateway must be also connected to internet and
+7
+
+8
+00:00:31,980 --> 00:00:34,620
+you must have subscribed to a LoRaWAN provider.
+8
+
+9
+00:00:34,710 --> 00:00:37,260
+It can be, for example, a community network.
+9
+
+10
+00:00:37,260 --> 00:00:43,320
+Community network are often a nice solution when you start, because if you don't have a gateway, you can
+10
+
+11
+00:00:43,320 --> 00:00:46,050
+even rely on the community onces available.
+11
+
+12
+00:00:46,080 --> 00:00:52,230
+But be careful because depending on the area you're staying, there is not necessarily a coverage with
+12
+
+13
+00:00:52,230 --> 00:00:56,580
+the community Gateway registered, so please check it before starting.
+13
+
+14
+00:00:56,940 --> 00:01:03,060
+Then finally, if you don't want to deploy anything but you end-device, then for a few euros you can
+14
+
+15
+00:01:03,060 --> 00:01:04,830
+subscribe to a public network.
+15
+
+16
+00:01:04,860 --> 00:01:10,980
+The coverage with public network is usually quite good, but again, please check it on the public operator
+16
+
+17
+00:01:10,980 --> 00:01:11,760
+website.
+17
+
+18
+00:01:12,390 --> 00:01:19,170
+Okay, so the nice thing now is that from this point we will only have a four steps configuration to
+18
+
+19
+00:01:19,170 --> 00:01:20,460
+make everything work.
+19
+
+20
+00:01:20,610 --> 00:01:26,130
+And if you choose someone else gateway, in the case of community network or public network, then
+20
+
+21
+00:01:26,130 --> 00:01:28,740
+they will be only two steps to carry out.
+21
+
+22
+00:01:29,010 --> 00:01:30,300
+So let's start.
+22
+
+23
+00:01:32,030 --> 00:01:34,430
+The first step is the gateway configuration.
+23
+
+24
+00:01:34,610 --> 00:01:41,030
+This configuration will allow the gateway to be aware of the targeting network server and also the protocol
+24
+
+25
+00:01:41,030 --> 00:01:41,720
+used.
+25
+
+26
+00:01:41,750 --> 00:01:47,720
+Unfortunately, Lorawan doesn't specify one protocol between the gateway and the network server.
+26
+
+27
+00:01:48,170 --> 00:01:52,790
+So many LoRaWAN players have developed their own solution.
+27
+
+28
+00:01:53,570 --> 00:02:00,590
+The protocol use between the gateway and the network server is handled by what we call a packet forwarder.
+28
+
+29
+00:02:01,010 --> 00:02:07,190
+So when you hear about a packet forwarder software just think about a small piece of software installed
+29
+
+30
+00:02:07,190 --> 00:02:13,670
+on the gateway in order to communicate to the network server the most commonly used protocol is the old
+30
+
+31
+00:02:13,670 --> 00:02:20,300
+Semtech packet forwarder. I said old because this protocol was the first packet forwarder created a long
+31
+
+32
+00:02:20,300 --> 00:02:20,960
+time ago.
+32
+
+33
+00:02:20,990 --> 00:02:25,010
+The funny thing is that it was not originally supposed to last that much.
+33
+
+34
+00:02:25,280 --> 00:02:31,550
+It has only a few functionalities, but it's still a very common packet forwarder nowadays because it's
+34
+
+35
+00:02:31,550 --> 00:02:32,480
+very simple.
+35
+
+36
+00:02:32,510 --> 00:02:39,870
+You will also probably hear about LoRa basic station also created by Semtech and LRR by Actility
+36
+
+37
+00:02:40,010 --> 00:02:40,390
+.
+37
+
+38
+00:02:40,400 --> 00:02:45,920
+Loriot your packet forwarder, for Loriot network and so on. But be careful,
+38
+
+39
+00:02:45,950 --> 00:02:49,040
+Network servers don't support all packet forwarders.
+39
+
+40
+00:02:49,040 --> 00:02:54,500
+So before choosing a packet forwarder for your gateway, you need to check if it's supported on the
+40
+
+41
+00:02:54,500 --> 00:02:55,910
+network server side.
+41
+
+42
+00:02:56,630 --> 00:03:02,600
+OK, and once you have your packet forwarder ready, then its configuration is very easy.
+42
+
+43
+00:03:02,990 --> 00:03:09,860
+You just enter the network server IP address as well as the UDP or TCP port of the protocol used.
+43
+
+44
+00:03:09,950 --> 00:03:15,170
+And if you have a secure transmission, you will also have to provide a private keys and certificate
+44
+
+45
+00:03:15,170 --> 00:03:16,190
+for the connection.
+45
+
+46
+00:03:17,440 --> 00:03:21,040
+The second step is the gateway registration on the network server.
+46
+
+47
+00:03:21,340 --> 00:03:21,910
+We'll see 
+47
+
+48
+00:03:21,910 --> 00:03:23,560
+that's a pretty easy task.
+48
+
+49
+00:03:23,590 --> 00:03:27,880
+It basically says that this gateway is allowed to talk to the server.
+49
+
+50
+00:03:28,480 --> 00:03:33,730
+Next, for the third step, we're going to register our device on the network server.
+50
+
+51
+00:03:33,940 --> 00:03:36,610
+You can register thousands of devices.
+51
+
+52
+00:03:36,640 --> 00:03:42,760
+Each of them will have a particular configuration and we'll enter the LoRaWAN parameters depending
+52
+
+53
+00:03:42,760 --> 00:03:43,990
+on the activation mode,
+53
+
+54
+00:03:43,990 --> 00:03:47,230
+we want to use ABP or OTAA.
+54
+
+55
+00:03:47,530 --> 00:03:53,290
+Sometimes on network server there is a possibility to organize devices by groups.
+55
+
+56
+00:03:53,440 --> 00:04:00,850
+The groups are created to gather devices of the same use case, and these groups are often called applications.
+56
+
+57
+00:04:01,390 --> 00:04:07,270
+You can just consider an application as a folder or a box in which you store your devices.
+57
+
+58
+00:04:08,350 --> 00:04:12,520
+And finally, the fourth step is the device configuration.
+58
+
+59
+00:04:12,550 --> 00:04:17,620
+This is done on the device itself by programming a new firmware to enter the LoRaWAN.
+59
+
+60
+00:04:17,620 --> 00:04:22,840
+Parameters will see both activation methods, ABP and OTAA.
+60
+
+61
+00:04:23,140 --> 00:04:24,820
+So let's get started.
