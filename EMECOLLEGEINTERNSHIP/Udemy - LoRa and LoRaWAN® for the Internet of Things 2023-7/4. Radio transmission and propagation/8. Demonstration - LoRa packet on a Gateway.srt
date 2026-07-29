@@ -1,0 +1,154 @@
+0
+1
+00:00:01,230 --> 00:00:06,480
+We're going to focus here on the LoRa transmission from one end device to a gateway.
+1
+
+2
+00:00:07,110 --> 00:00:13,350
+For the moment, you can consider the gateway as a simple LoRa receiver, and I picked up randomly one
+2
+
+3
+00:00:13,350 --> 00:00:15,420
+of the receiver frame on the gateway logs.
+3
+
+4
+00:00:16,500 --> 00:00:18,510
+What kind of information do we have here?
+4
+
+5
+00:00:19,320 --> 00:00:26,220
+First of all, we can check that we use the 868 megahertz band on a specific channel, which is in this
+5
+
+6
+00:00:26,220 --> 00:00:30,840
+case, 867.9.
+6
+
+7
+00:00:30,840 --> 00:00:32,100
+There is also the spreading factor.
+7
+
+8
+00:00:32,490 --> 00:00:35,340
+The one used for this packet is SF12.
+8
+
+9
+00:00:36,510 --> 00:00:40,260
+And finally there is the data size of 52 bytes.
+9
+
+10
+00:00:40,740 --> 00:00:43,290
+This is simply the payload carried by the lower frame.
+10
+
+11
+00:00:44,250 --> 00:00:47,610
+If I click on this packet, I have some additional details.
+11
+
+12
+00:00:48,180 --> 00:00:51,960
+First, I see that this device is operated by Bouygues Telecom.
+12
+
+13
+00:00:52,410 --> 00:00:53,700
+It doesn't belong to me.
+13
+
+14
+00:00:53,880 --> 00:00:56,310
+And yet I received the packet on my gateway.
+14
+
+15
+00:00:56,460 --> 00:00:59,430
+Yes, my gateway is the LoRa receiver
+15
+
+16
+00:00:59,850 --> 00:01:03,060
+And it receives every LoRaWAN frames in its range.
+16
+
+17
+00:01:03,750 --> 00:01:09,000
+It will be up to the server to verify if it will accept it or not, but we will see that later.
+17
+
+18
+00:01:09,900 --> 00:01:11,730
+I have also the detail of the payload.
+18
+
+19
+00:01:11,850 --> 00:01:18,000
+However, it's obviously encrypted and I can't understand it because of course I don't have the corresponding
+19
+
+20
+00:01:18,000 --> 00:01:18,870
+encryption keys.
+20
+
+21
+00:01:20,100 --> 00:01:25,350
+If I go into the details of the transmission, I have information that is related to the radio frequency
+21
+
+22
+00:01:25,350 --> 00:01:26,100
+transmission.
+22
+
+23
+00:01:26,850 --> 00:01:32,280
+I find that the received power of my gateway is -121 dBm.
+23
+
+24
+00:01:33,000 --> 00:01:34,680
+This is the RSSI.
+24
+
+25
+00:01:35,400 --> 00:01:42,450
+I also have the information that the signal over noise ratio on my gateway is minus 2 dB and again,
+25
+
+26
+00:01:42,600 --> 00:01:48,060
+my gateway reminds me the channel used: 867.9 megahertz.
+26
+
+27
+00:01:49,310 --> 00:01:56,490
+There are also other information that we will have to explain: "air time", "bandwidth", "frame counter", "device adress"
+27
+
+28
+00:01:56,490 --> 00:02:00,690
+and "CR" for Coding Rate.
+28
+
+29
+00:02:00,690 --> 00:02:05,550
+Some information are part of the LoRa modulation and some others are part of the LoRaWAN protocol.
+29
+
+30
+00:02:05,850 --> 00:02:07,380
+But again, no worries.
+30
+
+31
+00:02:07,380 --> 00:02:08,580
+We'll take it step by step.
