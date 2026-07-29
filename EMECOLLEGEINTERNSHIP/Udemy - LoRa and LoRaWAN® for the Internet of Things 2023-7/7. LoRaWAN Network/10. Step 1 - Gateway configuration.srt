@@ -1,0 +1,284 @@
+0
+1
+00:00:00,750 --> 00:00:06,030
+When we want to configure our gateway, we first need to select the packet forwarder what we want to use.
+1
+
+2
+00:00:06,570 --> 00:00:11,640
+We usually don't have a lot of choice because the gateway may not support all packet forwarder.
+2
+
+3
+00:00:11,940 --> 00:00:17,040
+And on the other side, the network server also doesn't support all packet forwarder .
+3
+
+4
+00:00:18,090 --> 00:00:24,900
+Once we've chosen the most appropriate packet forwarder, we need to install it on the gateway. All packet
+4
+
+5
+00:00:24,900 --> 00:00:28,300
+forwarder designers provide information to manage this process.
+5
+
+6
+00:00:28,320 --> 00:00:34,140
+For example, if you've chosen a Loriot packet forwarder, then you need to go on their website to follow
+6
+
+7
+00:00:34,140 --> 00:00:35,970
+the procedure to install the software.
+7
+
+8
+00:00:36,570 --> 00:00:37,410
+On this page,
+8
+
+9
+00:00:37,410 --> 00:00:43,440
+for example, they provide the instructions for Kerlink iFemtocell gateway and we'll have to follow
+9
+
+10
+00:00:43,440 --> 00:00:45,240
+the steps described in this section.
+10
+
+11
+00:00:46,350 --> 00:00:52,380
+And for the same Kerlink iFemtocell gateway, if you want to use or to connect your gateway on
+11
+
+12
+00:00:52,380 --> 00:00:58,200
+Actility network server, then again, you need to go on the network server website and they will
+12
+
+13
+00:00:58,200 --> 00:01:00,600
+provide a way to set up the packet forwarder.
+13
+
+14
+00:01:01,230 --> 00:01:06,870
+In that case, you can download the new gateway firmware to connect Thingpark, which is the Actility's
+14
+
+15
+00:01:06,870 --> 00:01:07,740
+network server.
+15
+
+16
+00:01:09,060 --> 00:01:09,650
+Okay.
+16
+
+17
+00:01:09,870 --> 00:01:16,170
+But for our lecture, we'll often use the most common and probably the easiest packet forwarder to configure.
+17
+
+18
+00:01:16,530 --> 00:01:21,960
+Indeed, it's pretty convenient to make the demonstration with the original Semtech packet forwarder
+18
+
+19
+00:01:21,960 --> 00:01:29,100
+because it's supported by almost all network servers. And most of the time this packet forwarder is also
+19
+
+20
+00:01:29,100 --> 00:01:31,020
+active by default on the gateways.
+20
+
+21
+00:01:31,530 --> 00:01:37,440
+So even if we will show you later in this course a demonstration with other packet forwarder, we just
+21
+
+22
+00:01:37,440 --> 00:01:42,330
+let you know that most of the configuration demonstration will be made with the original Semtech 
+22
+
+23
+00:01:42,330 --> 00:01:42,840
+packet forwarder.
+23
+
+24
+00:01:43,900 --> 00:01:48,480
+Okay, so now what are the two important information we need to enter?
+24
+
+25
+00:01:48,960 --> 00:01:51,660
+First, it's the IP address of the network server,
+25
+
+26
+00:01:51,690 --> 00:01:53,610
+then the UDP port.
+26
+
+27
+00:01:55,670 --> 00:01:59,270
+These can be done in several ways, depending on the gateway you have.
+27
+
+28
+00:01:59,510 --> 00:02:05,660
+Some gateways have a small web service and we can connect to our gateway with our computer, thanks
+28
+
+29
+00:02:05,660 --> 00:02:07,160
+to a classic web page.
+29
+
+30
+00:02:07,610 --> 00:02:10,580
+Here is an example of an indoor gateway from Strataggem.
+30
+
+31
+00:02:11,030 --> 00:02:14,420
+I just need to push a small button to enter the web service.
+31
+
+32
+00:02:14,990 --> 00:02:19,430
+Then I can even use the gateway name in the URL to access the website.
+32
+
+33
+00:02:20,000 --> 00:02:24,470
+I just need to change these four characters to specify my own hardware.
+33
+
+34
+00:02:24,980 --> 00:02:30,200
+Or if I wanted, I could have used the gateway IP address if it was more convenient.
+34
+
+35
+00:02:31,190 --> 00:02:38,300
+And anyway, we end up on the configuration web page and in this corresponding section here, there
+35
+
+36
+00:02:38,300 --> 00:02:40,130
+is the LoRaWAN configuration.
+36
+
+37
+00:02:40,790 --> 00:02:44,630
+We have fields where we can enter the IP address of the network server.
+37
+
+38
+00:02:44,900 --> 00:02:49,430
+We can even use the network server URL if the gateway uses a DNS server.
+38
+
+39
+00:02:49,520 --> 00:02:54,650
+And of course, there is also the fields for the port numbers. Right?
+39
+
+40
+00:02:54,680 --> 00:02:57,440
+That was the first kind of gateway configuration.
+40
+
+41
+00:02:57,770 --> 00:03:01,910
+Another method is often to connect to the gateway with an ssh client.
+41
+
+42
+00:03:02,300 --> 00:03:08,180
+Once connected, there will be either a command or a file to modify to change the name of the targeted
+42
+
+43
+00:03:08,180 --> 00:03:09,080
+network server.
+43
+
+44
+00:03:09,620 --> 00:03:13,280
+Let's try an example with an indoor Kerlink iFemtocell gateway.
+44
+
+45
+00:03:14,030 --> 00:03:21,560
+I'm connected with my client and in the prompt here is the command to modify the targeted network server.
+45
+
+46
+00:03:25,680 --> 00:03:29,970
+Finally, a third possibility is to connect to the gateway with a serial link.
+46
+
+47
+00:03:30,120 --> 00:03:33,960
+For that, we need to use a serial terminal and to send the right command.
+47
+
+48
+00:03:39,440 --> 00:03:40,160
+Here.
+48
+
+49
+00:03:40,160 --> 00:03:43,990
+I've got an 1832 nuclear gateway for this hardware.
+49
+
+50
+00:03:44,000 --> 00:03:47,300
+We have to send a specific command provided in the documentation.
+50
+
+51
+00:03:47,780 --> 00:03:54,560
+By default, we can see that the network server configured is Loriot with port number 1780.
+51
+
+52
+00:03:55,310 --> 00:04:01,820
+And with this gateway, if we want to charge the server, I need to use the following command.
+52
+
+53
+00:04:01,850 --> 00:04:08,060
+AT+PKTFWD= the IP address of the network server.
+53
+
+54
+00:04:08,150 --> 00:04:10,790
+Then we enter the port number we want.
+54
+
+55
+00:04:11,660 --> 00:04:16,190
+If we reset the gateway, we can see that it's been saved with the right network server.
+55
+
+56
+00:04:16,550 --> 00:04:24,410
+In this example TTN. I'm done with the gateway configuration so we can carry on with the second step,
+56
+
+57
+00:04:24,410 --> 00:04:27,110
+which is the gateway registration on the network server.
