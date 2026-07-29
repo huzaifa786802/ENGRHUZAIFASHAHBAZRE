@@ -1,0 +1,129 @@
+0
+1
+00:00:00,390 --> 00:00:05,100
+In the previous video, we saw the first type of network, which was the private network.
+1
+
+2
+00:00:05,340 --> 00:00:11,610
+But if you or your team don't have enough knowledge about the technology or if you just don't want to
+2
+
+3
+00:00:11,610 --> 00:00:17,730
+build a private network because it's not relevant, then you can ask the service to a public operator.
+3
+
+4
+00:00:18,090 --> 00:00:20,860
+The LoRaWANoperator will give us the network coverage.
+4
+
+5
+00:00:20,880 --> 00:00:27,570
+It has a high number of gateways spread all over the country and those gateways are all configured to
+5
+
+6
+00:00:27,570 --> 00:00:30,120
+send their data to an operator network server.
+6
+
+7
+00:00:30,570 --> 00:00:34,740
+And that's great because we'll also have access to this network server.
+7
+
+8
+00:00:35,280 --> 00:00:38,120
+So the server infrastructure is also provided.
+8
+
+9
+00:00:38,130 --> 00:00:44,010
+So in the case of a public network, everything is owned by the operator except your own device.
+9
+
+10
+00:00:44,910 --> 00:00:49,650
+However, there are two drawbacks that we can notice if you use a public network.
+10
+
+11
+00:00:49,890 --> 00:00:55,560
+First, if you have a large number of devices, then the subscription will be expensive.
+11
+
+12
+00:00:55,590 --> 00:01:01,980
+And secondly, even if we deploy devices where it's supposed to be covered by the network, we'll always
+12
+
+13
+00:01:01,980 --> 00:01:04,830
+find a situation where it doesn't work.
+13
+
+14
+00:01:04,980 --> 00:01:10,440
+It can be because your device is in a basement or behind big concrete walls.
+14
+
+15
+00:01:10,800 --> 00:01:16,410
+But because you use a public network and you can't assign yourself a specific location for the gateways,
+15
+
+16
+00:01:16,410 --> 00:01:19,710
+then there is nothing much you can do about this situation.
+16
+
+17
+00:01:20,640 --> 00:01:23,760
+Now, I'm sure you want to know how much is it for a subscription?
+17
+
+18
+00:01:24,090 --> 00:01:28,980
+Well, that depends on the number of uplink messages you will be able to send per days.
+18
+
+19
+00:01:29,040 --> 00:01:32,640
+And that also depends on the number of downlink messages.
+19
+
+20
+00:01:32,760 --> 00:01:35,640
+Because downlink flows in lorawan is very limited.
+20
+
+21
+00:01:35,640 --> 00:01:39,960
+So you will probably be charged more if you use a lot of downlink data.
+21
+
+22
+00:01:40,350 --> 00:01:44,910
+Anyway, it's roughly around â‚¬1.5 per month and per device.
+22
+
+23
+00:01:46,080 --> 00:01:51,620
+And if you want to know which public operator is available in your country, then you can go on the
+23
+
+24
+00:01:51,870 --> 00:01:53,130
+alliance website.
+24
+
+25
+00:01:56,210 --> 00:01:58,580
+And select the country you're interested in.
+25
+
+26
+00:02:01,760 --> 00:02:05,780
+In France, for example, there are two public operators available right now.
