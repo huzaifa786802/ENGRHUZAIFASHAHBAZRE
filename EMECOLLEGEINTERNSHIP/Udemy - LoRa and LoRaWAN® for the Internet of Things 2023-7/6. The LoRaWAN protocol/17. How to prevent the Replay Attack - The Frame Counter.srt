@@ -1,0 +1,239 @@
+0
+1
+00:00:00,780 --> 00:00:07,590
+The REPLAY attack is a well known attack in the world of radio transmission, and unfortunately the LoRaWAN
+1
+
+2
+00:00:07,590 --> 00:00:08,850
+protocol is no exception.
+2
+
+3
+00:00:10,050 --> 00:00:15,480
+We could find it quite strange because the LoRaWAN is done with keys, so it's supposed to be encrypted
+3
+
+4
+00:00:15,900 --> 00:00:17,040
+and really secured.
+4
+
+5
+00:00:17,730 --> 00:00:19,290
+Don't worry, that's the case.
+5
+
+6
+00:00:19,950 --> 00:00:21,540
+But what about the security level?
+6
+
+7
+00:00:21,960 --> 00:00:28,170
+We can't prevent anyone to listen to a LoRa transmission because listening to a LoRa transmission
+7
+
+8
+00:00:28,170 --> 00:00:28,980
+is really easy.
+8
+
+9
+00:00:29,460 --> 00:00:32,010
+And the best tool to do it is probably a gateway.
+9
+
+10
+00:00:32,610 --> 00:00:37,890
+Indeed, the gateway can listen on all channels with all spreading factor at the same time.
+10
+
+11
+00:00:38,970 --> 00:00:45,780
+But even if we can listen to a LoRa modulation, is it serious ? Because the communication is encrypted,
+11
+
+12
+00:00:46,140 --> 00:00:47,670
+so that shouldn't be a problem.
+12
+
+13
+00:00:48,450 --> 00:00:53,960
+Actually, encryption is good for confidentiality, but that doesn't help for authenticity.
+13
+
+14
+00:00:54,660 --> 00:00:56,730
+We can explain that with the following example.
+14
+
+15
+00:00:57,690 --> 00:01:02,640
+We can imagine that a lower transmitter sends an encrypted frame to open a door.
+15
+
+16
+00:01:03,570 --> 00:01:09,360
+A hacker listens to the radio transmission, but obviously we can consider that he does not understand
+16
+
+17
+00:01:09,360 --> 00:01:10,080
+the content.
+17
+
+18
+00:01:10,680 --> 00:01:18,570
+However, he can steal the payload. And he notices that when his frame is sent, the garage door opens.
+18
+
+19
+00:01:19,500 --> 00:01:21,060
+Why is it dangerous?
+19
+
+20
+00:01:21,570 --> 00:01:25,800
+Because if the hacker comes back a few months later and we play the same frame
+20
+
+21
+00:01:26,280 --> 00:01:32,100
+Even if he doesn't understand anything about it, then there is a good chance that the garage door would
+21
+
+22
+00:01:32,100 --> 00:01:32,730
+open again.
+22
+
+23
+00:01:33,420 --> 00:01:37,150
+The hacker has simply replayed a frame, nothing more.
+23
+
+24
+00:01:38,610 --> 00:01:41,670
+There is, of course, a simple way to prevent this REPLAY attack.
+24
+
+25
+00:01:42,240 --> 00:01:45,750
+The trick is to make sure that we never transmit twice the same frame.
+25
+
+26
+00:01:46,740 --> 00:01:51,780
+Even if we have the same command to send, the content of the LoRaWAN frame must be different.
+26
+
+27
+00:01:52,170 --> 00:01:58,980
+For that we use a simple counter called frame counter and this counter starts from zero, but increases
+27
+
+28
+00:01:58,980 --> 00:02:01,860
+by one each time the end-device sends a new frame.
+28
+
+29
+00:02:02,850 --> 00:02:06,030
+On the other side, the server takes the frame counter.
+29
+
+30
+00:02:06,600 --> 00:02:11,250
+It simply checks that the frame counter received is greater than the one received previously.
+30
+
+31
+00:02:12,000 --> 00:02:14,010
+Otherwise the server should drop it.
+31
+
+32
+00:02:15,420 --> 00:02:20,520
+So let's make a little demonstration with an end-device that has just started after registration.
+32
+
+33
+00:02:21,060 --> 00:02:25,710
+We suppose that all frames use the right Network Session Key so that they are all authenticated.
+33
+
+34
+00:02:27,270 --> 00:02:33,600
+So at the beginning, when the first frame is sent with a frame counter one then the server ask itself is
+34
+
+35
+00:02:33,600 --> 00:02:36,210
+the frame counter received higher than the previous one?
+35
+
+36
+00:02:36,540 --> 00:02:38,430
+Of course this case is yes.
+36
+
+37
+00:02:38,640 --> 00:02:45,700
+So the server accept it. Then, the end-device send frame counter two. Again the server accept it.
+37
+
+38
+00:02:46,230 --> 00:02:50,070
+Even if for some reason the end-device frame don't reach the server.
+38
+
+39
+00:02:50,610 --> 00:02:51,630
+It doesn't matter.
+39
+
+40
+00:02:52,020 --> 00:02:53,820
+Let's say the frame 3 to 9 are lost.
+40
+
+41
+00:02:53,820 --> 00:02:58,800
+If the server received a frame counter ten, then it accepts it.
+41
+
+42
+00:02:59,580 --> 00:03:06,480
+And finally, what happens if a hacker has thought of frame number five and tries to reply nothing because
+42
+
+43
+00:03:06,480 --> 00:03:09,510
+it detects a replay attack and drop it silently?
+43
+
+44
+00:03:10,020 --> 00:03:10,380
+Great.
+44
+
+45
+00:03:10,830 --> 00:03:12,990
+We are now protect it from replay attack.
+45
+
+46
+00:03:12,990 --> 00:03:14,160
+And that's a good news.
+46
+
+47
+00:03:14,790 --> 00:03:23,190
+So now we'll take two end devices, one in ABP and one in OTAA and will see what happened on the network
+47
+
+48
+00:03:23,190 --> 00:03:23,550
+server.
