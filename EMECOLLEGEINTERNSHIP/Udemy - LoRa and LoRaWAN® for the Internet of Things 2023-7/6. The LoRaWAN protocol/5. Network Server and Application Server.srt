@@ -1,0 +1,369 @@
+0
+1
+00:00:00,600 --> 00:00:06,150
+In this video, we'll explain the role of the network server and the application server and we'll see
+1
+
+2
+00:00:06,150 --> 00:00:09,540
+how end devices manage to transmit information to these servers.
+2
+
+3
+00:00:10,470 --> 00:00:16,650
+First of all, we said in a previous video that end devices transmit information to all gateways present
+3
+
+4
+00:00:16,650 --> 00:00:23,790
+in the coverage area. After the gateway, the message transmit on internet all the way to the application
+4
+
+5
+00:00:23,790 --> 00:00:24,210
+server.
+5
+
+6
+00:00:25,410 --> 00:00:28,800
+When we design a protocol, security is fundamental.
+6
+
+7
+00:00:29,670 --> 00:00:32,820
+You don't want anyone to understand what the end device says.
+7
+
+8
+00:00:33,660 --> 00:00:38,310
+You don't want anyone to be able to change only one bit of the transmitted frame.
+8
+
+9
+00:00:39,090 --> 00:00:45,270
+And finally, you want to be sure that the data comes from an end device allowed to speak to the server.
+9
+
+10
+00:00:46,590 --> 00:00:54,390
+These three security features are not specific to LoRaWAN. Any software, any network and also any end device 
+10
+
+11
+00:00:54,390 --> 00:00:57,570
+internal firmware has the same security requirements.
+11
+
+12
+00:00:58,530 --> 00:01:03,690
+We call these features : confidentiality, integrity and authencity.
+12
+
+13
+00:01:05,690 --> 00:01:08,840
+So now the question is, how does Lorawan handle it?
+13
+
+14
+00:01:09,500 --> 00:01:16,250
+So first, if you want your data to be confidential, so nobody can understand it, you need to use encryption.
+14
+
+15
+00:01:16,580 --> 00:01:22,720
+This is done by a key stored on the end device and on the applications server.
+15
+
+16
+00:01:23,210 --> 00:01:26,740
+In Lorawan, the key used for encryption is called application session key.
+16
+
+17
+00:01:27,890 --> 00:01:30,440
+And of course, they must be the same on each side.
+17
+
+18
+00:01:31,430 --> 00:01:32,540
+Let's take an example.
+18
+
+19
+00:01:32,930 --> 00:01:38,810
+We will again use the same example of an end device sending one byte of temperature. Let's say that
+19
+
+20
+00:01:38,810 --> 00:01:45,740
+the device sent temperature of 25 degrees with an application session key named application session key
+20
+
+21
+00:01:45,740 --> 00:01:46,070
+one.
+21
+
+22
+00:01:47,060 --> 00:01:52,220
+This data will go through the Lora network and will reach the application server.
+22
+
+23
+00:01:52,550 --> 00:01:56,570
+And in our case, the application server as the same AppSKey_1.
+23
+
+24
+00:01:56,570 --> 00:01:57,170
+AppSKey_1.
+24
+
+25
+00:01:58,100 --> 00:02:04,370
+This means that after the decryption process, the temperature data will reach the user with the right
+25
+
+26
+00:02:04,370 --> 00:02:04,850
+value.
+26
+
+27
+00:02:05,540 --> 00:02:08,690
+All the way the confidentiality is respected.
+27
+
+28
+00:02:09,200 --> 00:02:10,130
+That's perfect.
+28
+
+29
+00:02:11,090 --> 00:02:14,150
+But from a security point of view, is that enough?
+29
+
+30
+00:02:14,600 --> 00:02:17,540
+Let's take an example of a second temperature device.
+30
+
+31
+00:02:17,690 --> 00:02:25,580
+So obviously, with another Application Session Key chosen randomly in the end-device. It will transmit another
+31
+
+32
+00:02:25,580 --> 00:02:26,390
+temperature value.
+32
+
+33
+00:02:26,780 --> 00:02:28,670
+Let's say 100 degrees.
+33
+
+34
+00:02:29,690 --> 00:02:35,840
+This temperature would transit to the gateway through the network server and then the application server
+34
+
+35
+00:02:35,840 --> 00:02:36,440
+decrypts it.
+35
+
+36
+00:02:37,430 --> 00:02:43,170
+Obviously with the wrong application session key, the temperature decrypted will be wrong.
+36
+
+37
+00:02:44,120 --> 00:02:47,630
+Of course there would be a temperature resulting from the decryption process.
+37
+
+38
+00:02:47,960 --> 00:02:51,860
+I can't tell you what it would be 10, 20 or whatever.
+38
+
+39
+00:02:52,040 --> 00:02:57,350
+And by the way, it could be a real danger because the wrong temperature can lead to wrong decision
+39
+
+40
+00:02:57,350 --> 00:03:00,350
+and to use your application inside. Anyway,
+40
+
+41
+00:03:00,740 --> 00:03:02,000
+why does it happen?
+41
+
+42
+00:03:02,870 --> 00:03:05,510
+Because there was no authentication.
+42
+
+43
+00:03:06,020 --> 00:03:11,120
+It has not been defined whether the device has the right to send data to the application server.
+43
+
+44
+00:03:11,630 --> 00:03:14,630
+And this is exactly what the network server does.
+44
+
+45
+00:03:15,320 --> 00:03:19,880
+This means that we will need another set of key dealing with authentication.
+45
+
+46
+00:03:19,890 --> 00:03:22,250
+This key is the network session key.
+46
+
+47
+00:03:22,550 --> 00:03:29,420
+So there has to be a network system key present in the device, I call it networks session key one and
+47
+
+48
+00:03:29,420 --> 00:03:31,430
+the same on the network server.
+48
+
+49
+00:03:32,090 --> 00:03:36,520
+Now, if I come to the second end device, it doesn't have the same network session key.
+49
+
+50
+00:03:36,530 --> 00:03:39,470
+Let's call it network session key two.
+50
+
+51
+00:03:40,190 --> 00:03:46,370
+So when this end device will sends his temperature, it will transfer its information to the network server.
+51
+
+52
+00:03:46,580 --> 00:03:50,840
+But on this network server, there won't be this undividual registered.
+52
+
+53
+00:03:51,110 --> 00:03:56,180
+The consequence is that these network server will discard this packet silently because it's simply
+53
+
+54
+00:03:56,180 --> 00:03:59,180
+assumed that this and device doesn't belong to this network.
+54
+
+55
+00:03:59,900 --> 00:04:07,010
+We, therefore, need two parameters on the server and on the end device : network session key and application
+55
+
+56
+00:04:07,010 --> 00:04:13,400
+session key. The network session key is for authentication and the application session key is for encryption.
+56
+
+57
+00:04:14,270 --> 00:04:15,680
+But what about integrity?
+57
+
+58
+00:04:16,220 --> 00:04:21,140
+We said that the last requirement of a secure transmission was that we must be sure that no one can
+58
+
+59
+00:04:21,140 --> 00:04:22,190
+modify the message.
+59
+
+60
+00:04:22,730 --> 00:04:26,180
+Then it's done already, thanks to the same network session key.
+60
+
+61
+00:04:26,180 --> 00:04:32,420
+Indeed the networks session key insure both the authentification and the integrity of the transmission.
+61
+
+62
+00:04:32,720 --> 00:04:34,850
+So we don't need another credential for that.
+62
+
+63
+00:04:35,300 --> 00:04:36,290
+We're just missing one 
+63
+
+64
+00:04:36,290 --> 00:04:37,010
+thing though.
+64
+
+65
+00:04:37,310 --> 00:04:39,560
+It's the identification address.
+65
+
+66
+00:04:39,920 --> 00:04:43,160
+Not confidential, but still has to be on both side.
+66
+
+67
+00:04:43,670 --> 00:04:46,670
+So in the end device and on the server.
+67
+
+68
+00:04:46,880 --> 00:04:48,860
+It's called the device address.
+68
+
+69
+00:04:49,880 --> 00:04:57,200
+In short, we have three parameters : the network session key, the application session key and the device
+69
+
+70
+00:04:57,200 --> 00:04:57,680
+address.
+70
+
+71
+00:04:57,950 --> 00:05:03,080
+If these configurations are correct, then we don't need any other settings to have a successful 
+71
+
+72
+00:05:03,080 --> 00:05:03,830
+Lorawan transmission.
+72
+
+73
+00:05:04,790 --> 00:05:09,140
+Well, this session key explanation is really a key point of Lorawan protocol.
+73
+
+74
+00:05:09,140 --> 00:05:11,420
+So I'm glad everything is clear for you now.
