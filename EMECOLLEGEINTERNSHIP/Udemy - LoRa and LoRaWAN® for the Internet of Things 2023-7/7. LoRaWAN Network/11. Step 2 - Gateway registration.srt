@@ -1,0 +1,184 @@
+0
+1
+00:00:00,570 --> 00:00:04,170
+We validated the first step, which was the gateway configuration.
+1
+
+2
+00:00:04,530 --> 00:00:10,160
+We are now going to register this gateway on our network server. To complete the registration,
+2
+
+3
+00:00:10,170 --> 00:00:16,650
+we assume that we are using Semtech packet fowarder, but later in this course will also show a demonstration
+3
+
+4
+00:00:16,650 --> 00:00:17,730
+with other ones.
+4
+
+5
+00:00:18,270 --> 00:00:20,820
+For the registration we need 3 information.
+5
+
+6
+00:00:21,210 --> 00:00:27,090
+First the gateway EUI, then you need a name or an ID and sometimes you need both.
+6
+
+7
+00:00:27,090 --> 00:00:33,240
+But anyway, these fields are chosen by the user and it just helps the network server to classify your
+7
+
+8
+00:00:33,240 --> 00:00:33,810
+gateway.
+8
+
+9
+00:00:34,290 --> 00:00:38,580
+And finally, you also need to specify your region for your frequency plan.
+9
+
+10
+00:00:39,360 --> 00:00:40,020
+Okay.
+10
+
+11
+00:00:40,050 --> 00:00:44,580
+The most important information among these is the Gateway EUI.
+11
+
+12
+00:00:44,910 --> 00:00:51,480
+This is a unique number to identify the gateway, and this number is provided with your gateway when
+12
+
+13
+00:00:51,480 --> 00:00:52,230
+you buy it.
+13
+
+14
+00:00:52,890 --> 00:00:59,310
+Sometimes it can be changed, but to be unique, it's often generated thanks to the MAC address of the
+14
+
+15
+00:00:59,310 --> 00:01:02,580
+network interface associated with a random number.
+15
+
+16
+00:01:03,330 --> 00:01:05,580
+Anyway, we need to find this gateway 
+16
+
+17
+00:01:05,580 --> 00:01:05,810
+EUI.
+17
+
+18
+00:01:07,170 --> 00:01:13,380
+First of all, most of the time this gateway EUI is written on the package itself, so you can just copy
+18
+
+19
+00:01:13,380 --> 00:01:13,650
+it.
+19
+
+20
+00:01:14,580 --> 00:01:19,680
+If for some reasons it's not given, then you need to dive in the gateway to find it.
+20
+
+21
+00:01:20,310 --> 00:01:26,130
+So let's go back on a three type of gateway we used previously. For the Strataggem Gateway,
+21
+
+22
+00:01:26,130 --> 00:01:30,690
+there was an embedded website for the configuration, so I get back to it.
+22
+
+23
+00:01:31,020 --> 00:01:36,180
+Then I hit the LoRaWAN configuration tab and there it is.
+23
+
+24
+00:01:36,180 --> 00:01:41,790
+I can copy the Gateway EUI and I can even change it. For the Kerlink
+24
+
+25
+00:01:41,790 --> 00:01:49,290
+IFemtoCell gateway, I use an ssh client access. I connect to it and I end up on the Linux terminal
+25
+
+26
+00:01:49,440 --> 00:01:51,120
+to get the Gateway EUI.
+26
+
+27
+00:01:51,150 --> 00:01:54,750
+I just need to read the right file and here we go.
+27
+
+28
+00:01:54,780 --> 00:01:58,740
+We can find the same gateway EUI that the one written on the Gateway package.
+28
+
+29
+00:01:59,490 --> 00:02:02,910
+And if I edit this file then I can even change it.
+29
+
+30
+00:02:03,330 --> 00:02:11,340
+And finally, with the STM32 LRWAN gateway, I connect through my serial link and right at the beginning I
+30
+
+31
+00:02:11,340 --> 00:02:13,410
+can find field called Gateway I.D.
+31
+
+32
+00:02:14,070 --> 00:02:19,890
+I must admit that the name Gateway ID is really confusing because it's not an ID but an EUI.
+32
+
+33
+00:02:20,310 --> 00:02:24,660
+And again, if we use the right command on our keyboard, then we can change it.
+33
+
+34
+00:02:25,140 --> 00:02:27,750
+In our case, we'll just leave it like this.
+34
+
+35
+00:02:28,350 --> 00:02:29,010
+Great.
+35
+
+36
+00:02:29,010 --> 00:02:34,500
+We now have the get what EUI so we can go on our network server and register the gateway.
+36
+
+37
+00:02:34,710 --> 00:02:35,340
+Let's go.
