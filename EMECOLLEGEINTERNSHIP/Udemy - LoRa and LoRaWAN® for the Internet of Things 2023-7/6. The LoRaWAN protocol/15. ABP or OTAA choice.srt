@@ -1,0 +1,239 @@
+0
+1
+00:00:00,630 --> 00:00:02,490
+We saw two activation methods.
+1
+
+2
+00:00:03,030 --> 00:00:06,110
+One is called ABP, and the other one is called OTAA.
+2
+
+3
+00:00:06,120 --> 00:00:12,120
+Now, when we register a device, we have to choose between these two methods.
+3
+
+4
+00:00:12,450 --> 00:00:15,990
+And for that, we need to understand the advantages of each of them.
+4
+
+5
+00:00:16,320 --> 00:00:18,150
+But also their differences.
+5
+
+6
+00:00:18,900 --> 00:00:24,300
+ABP and OTAA work with keys, they're called session keys for ADP,
+6
+
+7
+00:00:24,720 --> 00:00:27,750
+and it OTAA, the key is called the root key.
+7
+
+8
+00:00:28,470 --> 00:00:32,430
+It's good root key because the session keys will be derived from this root key.
+8
+
+9
+00:00:33,240 --> 00:00:35,190
+All these keys are the weakest point.
+9
+
+10
+00:00:35,760 --> 00:00:42,180
+That means that if for some reason they appear to be exposed, then it compromises the overall security
+10
+
+11
+00:00:42,180 --> 00:00:42,870
+of the system.
+11
+
+12
+00:00:43,980 --> 00:00:49,950
+So the common point of these two activation methods is that the key will be kept secret as soon as they
+12
+
+13
+00:00:49,950 --> 00:00:50,790
+are generated.
+13
+
+14
+00:00:51,510 --> 00:00:57,570
+This is not always easy because these keys are sometimes exchanged between several parties involved
+14
+
+15
+00:00:57,570 --> 00:00:58,920
+in the LoRaWAN communication.
+15
+
+16
+00:00:59,700 --> 00:01:02,070
+Let's take an example of a common situation.
+16
+
+17
+00:01:02,460 --> 00:01:05,700
+This situation works for both ABP and OTAA.
+17
+
+18
+00:01:06,780 --> 00:01:11,850
+First, the device maker provisions the end device with new generated keys.
+18
+
+19
+00:01:12,480 --> 00:01:16,830
+It can be root keys or session keys depending on your activation methods.
+19
+
+20
+00:01:17,760 --> 00:01:20,370
+So he is the first who possesses the keys.
+20
+
+21
+00:01:21,090 --> 00:01:27,330
+Then when the device is sold, the owner needs to receive the keys to register the end device.
+21
+
+22
+00:01:27,960 --> 00:01:30,900
+So the owner will also have a copy of these keys.
+22
+
+23
+00:01:31,710 --> 00:01:38,250
+Finally, the third entity which possesses the keys is the network server itself after the end device registration.
+23
+
+24
+00:01:39,300 --> 00:01:44,250
+So as we can see, keys are possessed by several person or entities.
+24
+
+25
+00:01:45,030 --> 00:01:48,460
+So for each of them we need a way to protect this key storage.
+25
+
+26
+00:01:49,230 --> 00:01:52,800
+On the end device we use what we call secure element.
+26
+
+27
+00:01:53,550 --> 00:01:57,780
+A secure element is a small component that you cannot access by reverse engineering.
+27
+
+28
+00:01:58,050 --> 00:02:05,490
+As soon as an intrusion is detected, keys are erased. On the server, there's the same kind of system called
+28
+
+29
+00:02:05,490 --> 00:02:08,040
+KMS for Key Management System.
+29
+
+30
+00:02:08,580 --> 00:02:13,740
+Again, these systems are the more secure servers specifically used for key storage.
+30
+
+31
+00:02:14,760 --> 00:02:19,910
+So having a secure keys storage is the common point between a ABP or OTAA.
+31
+
+32
+00:02:20,970 --> 00:02:25,980
+Now, assuming that these keys are security stored, there's still one difference.
+32
+
+33
+00:02:26,640 --> 00:02:32,730
+While an OTAAend devices can regenerate session keys each time it sends join request,
+33
+
+34
+00:02:33,300 --> 00:02:37,440
+an ABP end device will keep its session keys all its life.
+34
+
+35
+00:02:37,680 --> 00:02:40,290
+It's therefore more subject to brute force attack.
+35
+
+36
+00:02:40,590 --> 00:02:43,830
+And that could be the case if you don't use ABP properly.
+36
+
+37
+00:02:44,640 --> 00:02:47,640
+Okay, now I'm going to ask three questions.
+37
+
+38
+00:02:48,570 --> 00:02:55,350
+First, how LoRaWAN prevents Replay-Attack in the next video we'll explain what the replay attack is
+38
+
+39
+00:02:55,620 --> 00:02:57,240
+and how LoRaWAN prevents it.
+39
+
+40
+00:02:58,460 --> 00:03:01,730
+Secondly, how can we manage the communication parameters ?
+40
+
+41
+00:03:02,120 --> 00:03:08,150
+We will see that they are communication parameters and how're their exchange between the end device and the networks
+41
+
+42
+00:03:08,150 --> 00:03:08,390
+server.
+42
+
+43
+00:03:09,470 --> 00:03:12,920
+And finally, how can we change the LoRaWAN networks server ?
+43
+
+44
+00:03:13,940 --> 00:03:15,830
+Why do I ask these three questions?
+44
+
+45
+00:03:16,400 --> 00:03:21,020
+Because whether you use ABP or OTAA, then the answers will be different.
+45
+
+46
+00:03:21,470 --> 00:03:27,500
+And while ABP is a bit easier to set up, we will see that these three questions are much easier to answer
+46
+
+47
+00:03:27,500 --> 00:03:28,870
+if you use OTAA.
+47
+
+48
+00:03:29,990 --> 00:03:34,340
+So let's start with the Replay-Attack topic and the LoRaWAN frame counter.
