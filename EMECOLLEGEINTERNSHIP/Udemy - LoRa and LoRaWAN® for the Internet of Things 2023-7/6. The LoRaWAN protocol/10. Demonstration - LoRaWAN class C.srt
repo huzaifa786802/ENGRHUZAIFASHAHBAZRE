@@ -1,0 +1,423 @@
+1
+1
+
+00:00:01,680  -->  00:00:06,740
+Let's do exactly the same demonstration,
+but this time for a class C end-device.
+2
+
+2
+
+00:00:06,770  -->  00:00:09,170
+Whatever the device and network Server, if
+3
+
+3
+
+00:00:09,200  -->  00:00:14,340
+you want to set up a class C LoRaWAN
+transmission, we have to : First register
+4
+
+4
+
+00:00:14,370  -->  00:00:17,260
+a class C end-device
+on the Network Server.
+5
+
+5
+
+00:00:17,290  -->  00:00:20,020
+In my case, I'm still with my class A end
+6
+
+6
+
+00:00:20,040  -->  00:00:24,100
+device, so I just need to
+switch from class A to class C.
+7
+
+7
+
+00:00:24,130  -->  00:00:29,660
+Secondly, we have to configure the end
+device as a class C, on the device itself.
+8
+
+8
+
+00:00:29,690  -->  00:00:32,620
+Okay, so let's do this.
+9
+
+9
+
+00:00:32,640  -->  00:00:35,100
+I set up exactly the same environment with
+10
+
+10
+
+00:00:35,130  -->  00:00:40,740
+once again my device log on the left
+and on the right two tabs.
+11
+
+11
+
+00:00:40,770  -->  00:00:46,580
+The first tab is the gateway log and
+the second tab is my application.
+12
+
+12
+
+00:00:46,610  -->  00:00:51,900
+As I said, I'm still with my class
+A end device called device1-OTAA.
+13
+
+13
+
+00:00:51,930  -->  00:00:54,620
+So I need to change its class. On the
+14
+
+14
+
+00:00:54,650  -->  00:00:56,820
+network server used for
+this demonstration.
+15
+
+15
+
+00:00:56,850  -->  00:00:59,860
+I can do that in general settings.
+16
+
+16
+
+00:00:59,890  -->  00:01:07,820
+Go down to network layer section and we
+can find the LoRaWAN class capabilities.
+17
+
+17
+
+00:01:07,850  -->  00:01:12,540
+Keep in mind that even if the procedure is
+different on the network server you use,
+18
+
+18
+
+00:01:12,570  -->  00:01:18,410
+if your LoRaWAN server supports class C,
+then you just have to find where in the
+19
+
+19
+
+00:01:18,440  -->  00:01:22,920
+user interface you can
+change this parameter.
+20
+
+20
+
+00:01:25,600  -->  00:01:29,900
+On the device side, it was a class A
+end device for the last demonstration.
+21
+
+21
+
+00:01:29,930  -->  00:01:34,260
+So I just have to change class A
+to class C in the config file.
+22
+
+22
+
+00:01:34,290  -->  00:01:38,180
+Then I compile and program my end device.
+23
+
+23
+
+00:01:38,210  -->  00:01:40,900
+And now we're ready.
+24
+
+24
+
+00:01:40,930  -->  00:01:47,140
+I can now power up my end device
+and the Join procedure starts.
+25
+
+25
+
+00:01:47,170  -->  00:01:48,060
+Once again,
+26
+
+26
+
+00:01:48,090  -->  00:01:52,850
+when the join procedure is completed, the
+device application waits for the user to
+27
+
+27
+
+00:01:52,880  -->  00:01:57,760
+press the push button to send a
+temperature through the lower network.
+28
+
+28
+
+00:01:58,000  -->  00:02:00,930
+However, at this point there is one last
+29
+
+29
+
+00:02:00,960  -->  00:02:04,210
+requirement before using
+class C capabilities.
+30
+
+30
+
+00:02:04,240  -->  00:02:06,200
+Because, we could think that if I send a
+31
+
+31
+
+00:02:06,230  -->  00:02:11,020
+downlink from the network right now,
+it would arrive to the end device.
+32
+
+32
+
+00:02:11,050  -->  00:02:15,420
+Actually, this is not
+true, at least not yet.
+33
+
+33
+
+00:02:15,450  -->  00:02:17,980
+Because the specification says that the
+34
+
+34
+
+00:02:18,010  -->  00:02:22,140
+device must validate its
+activation to the network server.
+35
+
+35
+
+00:02:22,170  -->  00:02:23,580
+What does it mean?
+36
+
+36
+
+00:02:23,610  -->  00:02:25,680
+It means that the network server wants to
+37
+
+37
+
+00:02:25,710  -->  00:02:31,940
+be sure that the device has finished its
+activation and is running a valid session.
+38
+
+38
+
+00:02:31,970  -->  00:02:33,820
+Doing that is very easy.
+39
+
+39
+
+00:02:33,850  -->  00:02:38,020
+It only has to send one
+uplink and that's okay.
+40
+
+40
+
+00:02:38,050  -->  00:02:43,540
+This activation validation is just a way
+to prevent the network server to send down
+41
+
+41
+
+00:02:43,570  -->  00:02:48,220
+link data to a device for which
+the join procedure has failed.
+42
+
+42
+
+00:02:48,250  -->  00:02:51,860
+Because in that case, all
+downlink would be useless.
+43
+
+43
+
+00:02:51,890  -->  00:02:57,020
+The downlink transmission on a gateway is
+shared between all LoRaWAN device, so it's
+44
+
+44
+
+00:02:57,050  -->  00:03:03,240
+very limited and there is no need to
+waste it with useless transmission.
+45
+
+45
+
+00:03:04,200  -->  00:03:06,340
+So I launched an uplink with the push
+46
+
+46
+
+00:03:06,370  -->  00:03:10,980
+button and I can check that everything
+has been transmitted to my application.
+47
+
+47
+
+00:03:11,010  -->  00:03:16,260
+So now the network server knows
+that my device has a valid session.
+48
+
+48
+
+00:03:16,290  -->  00:03:17,540
+Great.
+49
+
+49
+
+00:03:17,570  -->  00:03:23,660
+Now I go back to the downlink messaging
+tool, messaging tab and downlink.
+50
+
+50
+
+00:03:23,690  -->  00:03:24,740
+Let's choose again
+51
+
+51
+
+00:03:24,770  -->  00:03:29,740
+Fport equal 20 and AA for the payload.
+52
+
+52
+
+00:03:29,770  -->  00:03:33,020
+Then I hit the schedule downlink button.
+53
+
+53
+
+00:03:33,050  -->  00:03:35,280
+As soon as I hit the button, then the
+54
+
+54
+
+00:03:35,310  -->  00:03:41,260
+message goes all the way to my gateway
+and IoT is received on my end device.
+55
+
+55
+
+00:03:41,290  -->  00:03:44,540
+And I didn't have to send
+any uplink frame for that.
+56
+
+56
+
+00:03:44,570  -->  00:03:49,460
+I can also see that this packet has
+been received in the Class C time slot.
+57
+
+57
+
+00:03:49,490  -->  00:03:53,240
+This time slot is actually the time
+between two uplinks where the radio has
+58
+
+58
+
+00:03:53,270  -->  00:03:59,380
+been kept power up to receive data, so
+I can send as many downlinks as I want.
+59
+
+59
+
+00:03:59,410  -->  00:04:01,560
+The only restriction you have is the
+60
+
+60
+
+00:04:01,590  -->  00:04:08,500
+regional reglementation, for example
+the 1%  duty-cycle on the 868 MHz band.
+61
+
+61
+
+00:04:08,530  -->  00:04:10,700
+And there can also be some restriction
+62
+
+62
+
+00:04:10,730  -->  00:04:14,780
+depending on the subscription you have
+with your network server operator.
+63
+
+63
+
+00:04:14,810  -->  00:04:17,320
+For example, they can limit the number of
+64
+
+64
+
+00:04:17,340  -->  00:04:20,480
+downlink, or they can charge
+you an extra fee for this.
