@@ -1,0 +1,274 @@
+0
+1
+00:00:00,750 --> 00:00:07,200
+We're still trying to figure out why the OTAA activation mode is better than ABP. When an end-device is
+1
+
+2
+00:00:07,200 --> 00:00:09,090
+activated on a specific network,
+2
+
+3
+00:00:09,120 --> 00:00:14,550
+it has a network session key, an application session key and a device address.
+3
+
+4
+00:00:14,790 --> 00:00:19,410
+Now, let's say that for some reasons you want to charge your network operator.
+4
+
+5
+00:00:19,590 --> 00:00:26,070
+For example, you had a subscription on the Helium network, but now you want to charge for Actility
+5
+
+6
+00:00:26,070 --> 00:00:26,790
+or for TTN (The Things Network).
+6
+
+7
+00:00:27,090 --> 00:00:28,950
+So what are your options?
+7
+
+8
+00:00:29,850 --> 00:00:32,190
+If your end device is in ABP,
+8
+
+9
+00:00:32,220 --> 00:00:38,160
+then you just have to copy the device address, the network session key and the application session
+9
+
+10
+00:00:38,160 --> 00:00:39,990
+key into the new network server.
+10
+
+11
+00:00:40,500 --> 00:00:42,720
+That's easy and it works well.
+11
+
+12
+00:00:43,560 --> 00:00:50,220
+If your end device is in OTAA, then you just have to copy the active LoRaWAN session into the new network
+12
+
+13
+00:00:50,220 --> 00:00:50,850
+server.
+13
+
+14
+00:00:51,450 --> 00:00:56,790
+The session is once again the current device address, the network session key and the application session
+14
+
+15
+00:00:56,800 --> 00:00:57,240
+key.
+15
+
+16
+00:00:57,840 --> 00:01:01,260
+Again, that's easy and it works very well.
+16
+
+17
+00:01:01,260 --> 00:01:05,550
+Anyway, it's the only option if your device is not able to rejoin the network server.
+17
+
+18
+00:01:06,030 --> 00:01:08,550
+But there is something wrong with these two solutions.
+18
+
+19
+00:01:08,760 --> 00:01:11,190
+The device adress copied from the old network
+19
+
+20
+00:01:11,190 --> 00:01:14,970
+server doesn't belong to the range of the new network server.
+20
+
+21
+00:01:15,840 --> 00:01:19,290
+Okay, that's something new that we haven't explained yet.
+21
+
+22
+00:01:19,290 --> 00:01:22,020
+So let's take a few seconds to talk about this.
+22
+
+23
+00:01:22,500 --> 00:01:29,220
+If you are a network operator, you can ask the LoRa Alliance to have a specific range of device address.
+23
+
+24
+00:01:29,220 --> 00:01:31,050
+You should be the only one to use it.
+24
+
+25
+00:01:31,050 --> 00:01:38,040
+However, if some other end device uses this range, this is not a security threat. When an end device belongs
+25
+
+26
+00:01:38,040 --> 00:01:39,330
+to a specific range,
+26
+
+27
+00:01:39,360 --> 00:01:42,330
+we said that it belongs to a specific network.
+27
+
+28
+00:01:42,540 --> 00:01:49,320
+For example, when you use TTN, the device adress provided always starts with the same prefix or
+28
+
+29
+00:01:49,320 --> 00:01:51,720
+0x26 or 0x27.
+29
+
+30
+00:01:52,320 --> 00:02:03,340
+At the University we bought 1024 addresses starting from 0xFC014800 to 0XFC014BFF.
+30
+
+31
+00:02:03,450 --> 00:02:08,250
+So we should be the only one to use it when we set up our own network server.
+31
+
+32
+00:02:09,000 --> 00:02:09,220
+Okay.
+32
+
+33
+00:02:09,390 --> 00:02:11,340
+But when is it important?
+33
+
+34
+00:02:11,730 --> 00:02:15,810
+It's important when we set up a roaming agreement with another network.
+34
+
+35
+00:02:15,810 --> 00:02:16,680
+That could be the case.
+35
+
+36
+00:02:16,680 --> 00:02:23,730
+For example, if you need a coverage extension or a gateway densification, we are not going to dive into the roaming
+36
+
+37
+00:02:23,730 --> 00:02:25,860
+features because it's an advanced topic.
+37
+
+38
+00:02:25,860 --> 00:02:31,290
+But if you're interested, you will find everything you need to know in our free e-book on our website.
+38
+
+39
+00:02:31,290 --> 00:02:38,010
+Anyway, if we come back to our two previous solutions, then we kept the old device address, which
+39
+
+40
+00:02:38,010 --> 00:02:39,930
+belongs to the old network.
+40
+
+41
+00:02:40,230 --> 00:02:46,020
+It means that you can't have a new roaming agreement with anyone because your partner would think that
+41
+
+42
+00:02:46,020 --> 00:02:48,780
+you still belong to the old network operator.
+42
+
+43
+00:02:49,110 --> 00:02:51,840
+However, if you don't do any roaming, it works.
+43
+
+44
+00:02:51,840 --> 00:02:54,570
+It's not a really nice solution, but it works.
+44
+
+45
+00:02:55,230 --> 00:02:56,820
+Do we have a better option ?
+45
+
+46
+00:02:56,820 --> 00:03:04,620
+Yes, but only if we use OTAA. In that case, instead of copying the session information, we only copy
+46
+
+47
+00:03:04,620 --> 00:03:10,110
+the entire device profile devEUI, appEUI, joinEUI and app Key.
+47
+
+48
+00:03:10,470 --> 00:03:15,060
+However, that works only if you are able to ask you end device to rejoin.
+48
+
+49
+00:03:15,060 --> 00:03:20,670
+And in that case a new session is going to be shared between the network server and the end device with
+49
+
+50
+00:03:20,670 --> 00:03:25,680
+a new device address, a new network session key and a new application session key.
+50
+
+51
+00:03:25,920 --> 00:03:30,420
+And obviously the new device address will belong to the new network server range.
+51
+
+52
+00:03:31,140 --> 00:03:35,880
+So we pointed out another advantage of using OTAA instead of ABP.
+52
+
+53
+00:03:36,090 --> 00:03:42,720
+However, even in OTAA, changing network operator is not an easy task if you really want to have a
+53
+
+54
+00:03:42,720 --> 00:03:48,330
+seamless process for changing operator in LoRaWAN you should consider to use a join server.
+54
+
+55
+00:03:48,480 --> 00:03:51,900
+But again, it's an advanced topic that you can find in our book.
