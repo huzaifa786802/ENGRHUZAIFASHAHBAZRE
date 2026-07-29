@@ -1,0 +1,149 @@
+0
+1
+00:00:00,930 --> 00:00:06,780
+So we have successfully registered two devices in the server and now we're going to do the last step,
+1
+
+2
+00:00:06,780 --> 00:00:08,580
+which is: to configure the device.
+2
+
+3
+00:00:09,090 --> 00:00:12,570
+I'll start with the device called device1-abp.
+3
+
+4
+00:00:12,840 --> 00:00:21,160
+Then right after, I do the same process with the device called device1-OTAA. Let's start.
+4
+
+5
+00:00:21,210 --> 00:00:24,840
+My LoRaWAN end-device can be configured from a specific header file.
+5
+
+6
+00:00:25,470 --> 00:00:29,490
+And the first thing I need to do is to choose the application behavior.
+6
+
+7
+00:00:30,030 --> 00:00:38,620
+So for this demonstration, I will use ABP activation mode and I will send a temperature every 10 seconds.
+7
+
+8
+00:00:38,640 --> 00:00:39,450
+That's it.
+8
+
+9
+00:00:39,510 --> 00:00:42,510
+You don't have to worry about the other settings for the moment.
+9
+
+10
+00:00:43,380 --> 00:00:46,350
+Now let's copy the LoRaWAN parameters.
+10
+
+11
+00:00:46,620 --> 00:00:49,050
+So, that address.
+11
+
+12
+00:00:51,560 --> 00:00:53,030
+Network Station key.
+12
+
+13
+00:00:56,190 --> 00:00:58,070
+And application session key.
+13
+
+14
+00:01:00,360 --> 00:01:01,230
+There we go.
+14
+
+15
+00:01:01,440 --> 00:01:05,610
+Now, I compile the project and I send it to my device.
+15
+
+16
+00:01:07,140 --> 00:01:11,760
+We can now do the same process with the second device with OTAA activation mode.
+16
+
+17
+00:01:12,570 --> 00:01:13,980
+My LoRaWAN end device.
+17
+
+18
+00:01:13,980 --> 00:01:16,830
+Use again the same header file for its configuration.
+18
+
+19
+00:01:17,490 --> 00:01:25,500
+So, for this demonstration I will use OTAA activation mode and I will send a temperature every 10 seconds.
+19
+
+20
+00:01:25,770 --> 00:01:29,220
+That's actually the same demonstration that we use for ABP.
+20
+
+21
+00:01:30,150 --> 00:01:34,440
+Then for the LoRaWAN parameters, I can copy the dev EUI.
+21
+
+22
+00:01:37,790 --> 00:01:39,530
+The app EUI.
+22
+
+23
+00:01:42,790 --> 00:01:43,960
+On the Application Key.
+23
+
+24
+00:01:46,570 --> 00:01:49,690
+I compile the project and send it to my own device.
+24
+
+25
+00:01:51,160 --> 00:01:56,320
+Now, as soon as I power up my device, then the transmission starts right away.
+25
+
+26
+00:01:56,800 --> 00:02:02,800
+If it's a OTAA end device, then at the beginning there will be the activation procedure, as
+26
+
+27
+00:02:02,800 --> 00:02:04,180
+we explained previously.
+27
+
+28
+00:02:04,720 --> 00:02:07,030
+But whatever the network server  were using
+28
+
+29
+00:02:07,030 --> 00:02:08,410
+From that point,
+29
+
+30
+00:02:08,410 --> 00:02:11,890
+We should be able to see the data in the live data section.
