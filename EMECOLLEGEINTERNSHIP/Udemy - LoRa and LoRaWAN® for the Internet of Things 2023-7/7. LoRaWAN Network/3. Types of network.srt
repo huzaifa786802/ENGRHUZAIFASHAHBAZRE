@@ -1,0 +1,74 @@
+0
+1
+00:00:00,870 --> 00:00:07,260
+When we want to launch a fleet of devices in the IoT world, we first think of operators and subscriptions.
+1
+
+2
+00:00:07,770 --> 00:00:14,040
+But in LoRaWAN, things are different because the frequencies use all over the world are free bands.
+2
+
+3
+00:00:14,430 --> 00:00:16,740
+It means that everyone can use them.
+3
+
+4
+00:00:17,280 --> 00:00:26,030
+This frequency in Europe is 868 megahertz, but in other region, in the US, for example, it's 915
+4
+
+5
+00:00:26,040 --> 00:00:26,940
+megahertz.
+5
+
+6
+00:00:27,180 --> 00:00:31,050
+Or in China it's 470 megahertz and so on.
+6
+
+7
+00:00:31,980 --> 00:00:36,870
+There are now ten frequency bands that covers almost all the different regions of the world.
+7
+
+8
+00:00:37,260 --> 00:00:43,190
+So in the Lorawan specification, we have to refer to the document called regional parameters.
+8
+
+9
+00:00:43,200 --> 00:00:46,530
+If you want to know the frequency band used for a specific region.
+9
+
+10
+00:00:47,340 --> 00:00:53,760
+So as anyone can use the lorawan bands, they won't be only operators to provide lorawan connectivity.
+10
+
+11
+00:00:54,210 --> 00:00:58,950
+Actually, there are many different architecture that we're going to see in the next video.
+11
+
+12
+00:00:59,460 --> 00:01:07,110
+There will be public operators network, private network, hybrid network and finally community network.
+12
+
+13
+00:01:07,380 --> 00:01:12,870
+All we need to know are the advantages and disadvantages of all these architectures so we can choose
+13
+
+14
+00:01:12,870 --> 00:01:15,300
+the best solution for our use case.
+14
+
+15
+00:01:15,780 --> 00:01:19,290
+So let's dive into the details of the first architecture.
