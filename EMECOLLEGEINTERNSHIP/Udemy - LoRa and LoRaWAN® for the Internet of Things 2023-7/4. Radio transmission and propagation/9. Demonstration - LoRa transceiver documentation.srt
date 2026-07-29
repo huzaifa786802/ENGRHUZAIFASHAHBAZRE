@@ -1,0 +1,284 @@
+0
+1
+00:00:01,200 --> 00:00:06,810
+We now look at several LoRa's transceiver documentation, and we will start by looking at the 
+1
+
+2
+00:00:06,810 --> 00:00:07,950
+SX1272.
+2
+
+3
+00:00:08,640 --> 00:00:11,130
+It's not a recent transceiver, but never mind.
+3
+
+4
+00:00:11,670 --> 00:00:13,370
+We'll see a new one after this.
+4
+
+5
+00:00:13,380 --> 00:00:14,460
+You'll see the differences.
+5
+
+6
+00:00:15,390 --> 00:00:24,840
+So, we'll do a quick Google search for the SX1272 and the first result heads us to Semtech website.
+6
+
+7
+00:00:25,860 --> 00:00:28,650
+And we can have a lot of information about this company.
+7
+
+8
+00:00:30,300 --> 00:00:33,840
+So we'll immediately download the documentation in PDF format.
+8
+
+9
+00:00:35,070 --> 00:00:40,650
+In this documentation, very quickly in the first page, we have the key product features.
+9
+
+10
+00:00:41,520 --> 00:00:48,240
+In this key product features, we learn that it is a LoRa modem and that's exactly what we wanted.
+10
+
+11
+00:00:49,320 --> 00:00:57,810
+We also learn that the maximum link budget is 157 dB, means that this transceiver will have a maximum transmitted
+11
+
+12
+00:00:57,810 --> 00:01:06,060
+power of 20 dBm, and that if we want to respect the standard, we'll use the maximum power of 14 dBm
+12
+
+13
+00:01:07,080 --> 00:01:15,390
+and finally we'll also learn that the sensitivity is -137 dBm. And what can we notice ?
+13
+
+14
+00:01:15,840 --> 00:01:22,140
+We can notice that the link budget that has been calculated here has simply been found by subtracting
+14
+
+15
+00:01:22,140 --> 00:01:33,960
+the maximum transmitted power with the sensitivity that is 20 dBm minus -137 dBm, which is 157 dB.
+15
+
+16
+00:01:35,520 --> 00:01:41,790
+Let's now see a component of the same range, but a little more recent, the SX1276.
+16
+
+17
+00:01:42,690 --> 00:01:50,490
+So we do another quick search on Google SX1276. Of course again, we fall on Semtech's website. And
+17
+
+18
+00:01:50,490 --> 00:01:55,820
+this time we'll not download the documentation but we'll simply note that we're still dealing with a LoRa
+18
+
+19
+00:01:55,830 --> 00:01:56,220
+modem,
+19
+
+20
+00:01:57,120 --> 00:01:59,280
+but the link budget is better.
+20
+
+21
+00:02:00,150 --> 00:02:05,370
+We went from 157 dB to 168 dB.
+21
+
+22
+00:02:06,480 --> 00:02:13,530
+Indeed, the transmitted power is still 20 dBm and if we want to respect the standard, it's still 14 dBm.
+22
+
+23
+00:02:13,530 --> 00:02:18,300
+But this time the sensitivity is -148 dBm.
+23
+
+24
+00:02:19,050 --> 00:02:24,870
+And of course if we make the same calculation, substracting the transmitted power with the sensitivity,
+24
+
+25
+00:02:25,230 --> 00:02:33,690
+we find 20 dBm minus -148, which is in that case 168 dB of link budget.
+25
+
+26
+00:02:33,700 --> 00:02:42,750
+Now we'll see what is said about the Signal Over Noise Ratio. So we can go on any transceivers documentation
+26
+
+27
+00:02:43,200 --> 00:02:45,750
+and we'll see a table with the following information.
+27
+
+28
+00:02:46,380 --> 00:02:51,000
+This table present the Signal Over Noise Ratio according to the Spreading Factor.
+28
+
+29
+00:02:51,990 --> 00:02:57,750
+We've already talked about this Spreading Factor and we've said that we could take any value between 5
+29
+
+30
+00:02:57,750 --> 00:03:01,080
+and 12. In this specific transceiver,
+30
+
+31
+00:03:01,440 --> 00:03:03,360
+the lowest Spreading Factor is 6.
+31
+
+32
+00:03:03,360 --> 00:03:09,330
+But anyway, when we'll speak about LoRaWAN, the Spreading Factor will have to be between 7 to 12.
+32
+
+33
+00:03:09,330 --> 00:03:12,360
+And obviously all LoRa transceiver will be fine.
+33
+
+34
+00:03:12,390 --> 00:03:13,380
+So no worries.
+34
+
+35
+00:03:14,370 --> 00:03:15,990
+So let's take a first example.
+35
+
+36
+00:03:15,990 --> 00:03:22,590
+If I take a Spreagin Factor of 8, the LoRa demodualtor  will be able to work at -10
+36
+
+37
+00:03:22,590 --> 00:03:23,040
+dB.
+37
+
+38
+00:03:23,760 --> 00:03:25,050
+So what's -10dB ?
+38
+
+39
+00:03:25,050 --> 00:03:29,790
+-10dB is ten times more noise than signal.
+39
+
+40
+00:03:29,790 --> 00:03:36,210
+It means that the LoRa demodulator is able to find a transmitted signal in spite of the fact that
+40
+
+41
+00:03:36,210 --> 00:03:40,710
+there is ten times more noise than signal, which is quite considerable.
+41
+
+42
+00:03:41,610 --> 00:03:48,450
+Just imagine you're talking to someone and there is noise around and the noise is ten times louder
+42
+
+43
+00:03:48,450 --> 00:03:50,040
+than the person talking to you.
+43
+
+44
+00:03:50,040 --> 00:03:52,650
+And yet, you can understand what's being said.
+44
+
+45
+00:03:53,340 --> 00:03:59,610
+If you now take the spreading factor 12 you can demodulate a signal with SNR ratio of -20 dB.
+45
+
+46
+00:04:00,300 --> 00:04:06,240
+This means that you able to find a signal that is drawn in a noise that is 100 times stronger.
+46
+
+47
+00:04:07,050 --> 00:04:09,960
+You're talking to someone, you have noise around.
+47
+
+48
+00:04:10,440 --> 00:04:12,870
+This noise is 100 times louder.
+48
+
+49
+00:04:12,870 --> 00:04:15,000
+And yet, you can consider that
+49
+
+50
+00:04:15,000 --> 00:04:16,590
+you can understand what's being said.
+50
+
+51
+00:04:17,220 --> 00:04:18,540
+That is really amazing.
+51
+
+52
+00:04:19,710 --> 00:04:22,050
+Of course, there is some counterpart to that.
+52
+
+53
+00:04:22,530 --> 00:04:27,900
+Actually, in the second column there is another information and we'll get back to it later.
+53
+
+54
+00:04:28,290 --> 00:04:34,710
+But what it does basically say is that every time we use the highest Spreading Factor, we send more information
+54
+
+55
+00:04:34,710 --> 00:04:35,400
+in the frame.
+55
+
+56
+00:04:35,970 --> 00:04:39,000
+So in other words, that we'll have an influence on the bitrate.
+56
+
+57
+00:04:39,000 --> 00:04:41,520
+But once again, we'll see that in the next chapter.
