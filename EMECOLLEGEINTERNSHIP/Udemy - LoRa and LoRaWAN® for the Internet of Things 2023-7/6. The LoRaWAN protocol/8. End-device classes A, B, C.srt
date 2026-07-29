@@ -1,0 +1,374 @@
+0
+1
+00:00:00,570 --> 00:00:02,160
+On the Lorawan infrastructure,
+1
+
+2
+00:00:02,430 --> 00:00:07,470
+we've already explained the network and application server. On the previous video,
+2
+
+3
+00:00:07,480 --> 00:00:09,180
+we've also worked on gateways.
+3
+
+4
+00:00:09,780 --> 00:00:12,270
+Now we will focus on the end device itself.
+4
+
+5
+00:00:13,110 --> 00:00:15,510
+On the end device, there are two kinds of frames.
+5
+
+6
+00:00:15,810 --> 00:00:22,290
+The ones that go to the gateway and network server, that's what we call the uplink frames. And the ones that
+6
+
+7
+00:00:22,290 --> 00:00:24,690
+come from the network server then gateways
+7
+
+8
+00:00:24,900 --> 00:00:26,880
+and finally reach the end device.
+8
+
+9
+00:00:27,420 --> 00:00:29,610
+That's what we call downlink frames.
+9
+
+10
+00:00:30,270 --> 00:00:33,870
+So let's see how the communication is handled from the end device side.
+10
+
+11
+00:00:34,590 --> 00:00:39,750
+We remind that when the end device want to transmit, it will power up its radio and send a packet.
+11
+
+12
+00:00:40,440 --> 00:00:43,650
+The packet transmission time is what we call the time on air.
+12
+
+13
+00:00:44,340 --> 00:00:48,660
+And then after a certain time, it will be able to transmit a new message.
+13
+
+14
+00:00:49,080 --> 00:00:52,650
+In Europe, it has to be in respect with the 1% duty cycle.
+14
+
+15
+00:00:53,580 --> 00:00:57,090
+On this diagram, we can't see how to downlink is carried out.
+15
+
+16
+00:00:57,510 --> 00:01:02,640
+In other words, when it's the right time for the gateway to transmit the packet coming from the server.
+16
+
+17
+00:01:03,520 --> 00:01:07,290
+Actually, to understand when downlink frame can be transmitted,
+17
+
+18
+00:01:07,740 --> 00:01:14,430
+we need to introduce the end device classes and we have to know that there are three classes A, B or
+18
+
+19
+00:01:14,430 --> 00:01:14,760
+C.
+19
+
+20
+00:01:15,540 --> 00:01:20,280
+So for the class A end device, its downlink capabilities are very limited.
+20
+
+21
+00:01:21,030 --> 00:01:25,320
+The class A end device is the one that want to use the less power as possible.
+21
+
+22
+00:01:25,950 --> 00:01:29,640
+So most of the time it want to stay in low power mode.
+22
+
+23
+00:01:30,240 --> 00:01:34,860
+The problem is that while a device is in low power mode then it can't receive.
+23
+
+24
+00:01:35,190 --> 00:01:42,420
+So the only opportunity that the end device offers to receive a packet from the network is to open 2 small
+24
+
+25
+00:01:42,510 --> 00:01:48,630
+time slot that we call RX1 and RX2. They occur right after each uplink.
+25
+
+26
+00:01:49,050 --> 00:01:54,410
+The default value of RX1 and RX2 are 1 second and 2 seconds.
+26
+
+27
+00:01:54,720 --> 00:02:02,100
+But for solving network latency issue in certain situation, it's often set to 5 and 6 seconds.
+27
+
+28
+00:02:02,820 --> 00:02:08,340
+That's the network server that decides delays and obviously it has to be the same on the end device
+28
+
+29
+00:02:08,340 --> 00:02:09,750
+and on the network server.
+29
+
+30
+00:02:10,710 --> 00:02:14,430
+Finally, what will the device do outside of this timeslot?
+30
+
+31
+00:02:14,700 --> 00:02:16,980
+Of course, go to low power mode.
+31
+
+32
+00:02:17,820 --> 00:02:25,770
+So I want to highlight a very important feature of class A end device. It is able to receive only if it has transmitted
+32
+
+33
+00:02:26,610 --> 00:02:29,400
+so that make a very few downlink opportunities.
+33
+
+34
+00:02:29,670 --> 00:02:32,820
+But on the other hand, it has a low power consumption.
+34
+
+35
+00:02:33,810 --> 00:02:35,790
+Can we improve the drownlink capability?
+35
+
+36
+00:02:35,880 --> 00:02:36,780
+Of course, yes.
+36
+
+37
+00:02:37,050 --> 00:02:43,770
+By using a class B, the class B as exactly the same behavior in place A, except that there are other
+37
+
+38
+00:02:43,770 --> 00:02:45,300
+timeslot between uplinks.
+38
+
+39
+00:02:45,600 --> 00:02:51,060
+But a setup is a bit tricky because end device up to be perfectly synchronized with the gateway.
+39
+
+40
+00:02:51,900 --> 00:02:58,490
+So periodically there are time beacons that are emitted by the gateway to synchronize Lorawan end
+40
+
+41
+00:02:58,500 --> 00:02:59,040
+device.
+41
+
+42
+00:02:59,490 --> 00:03:04,710
+And another thing is that we can configure the time between each timeslot, so you can configure the
+42
+
+43
+00:03:04,710 --> 00:03:06,690
+downlink opportunities for the network.
+43
+
+44
+00:03:07,530 --> 00:03:13,560
+Again, what we on device do outside of this timeslot of course go to low power mode.
+44
+
+45
+00:03:14,340 --> 00:03:20,910
+So finally, if we compare the Class B with the Class A, then class B has more possiblity to receive
+45
+
+46
+00:03:20,910 --> 00:03:22,710
+a lorawan message from the network.
+46
+
+47
+00:03:23,400 --> 00:03:30,300
+But obviously because it opens more reception windows and it will consume more power. Can we again
+47
+
+48
+00:03:30,300 --> 00:03:32,040
+improve the downlink capability?
+48
+
+49
+00:03:32,520 --> 00:03:33,070
+Yes.
+49
+
+50
+00:03:33,420 --> 00:03:40,590
+And this time by using a class C end device, the Class C has exactly the same behavior of Class A. But,
+50
+
+51
+00:03:40,590 --> 00:03:47,460
+when the end device is not transmitting or receiving on the classic RX1 or RX2 timeslot, then it keeps
+51
+
+52
+00:03:47,460 --> 00:03:48,390
+the radio on.
+52
+
+53
+00:03:49,200 --> 00:03:53,130
+So the end device is always able to receive between two uplinks.
+53
+
+54
+00:03:53,670 --> 00:03:56,940
+Of course there is a huge consequence on the power consumption.
+54
+
+55
+00:03:57,810 --> 00:04:03,390
+So we can summarize these three classes with this little diagram, and for each of them we want to know
+55
+
+56
+00:04:03,390 --> 00:04:10,500
+on the one hand and downing capability and on the other hand, the power consumption. Class A is definitely
+56
+
+57
+00:04:10,500 --> 00:04:13,470
+the one that has the best power consumption performances.
+57
+
+58
+00:04:14,320 --> 00:04:18,360
+On the other hand, you can reach device only if it has transmitted.
+58
+
+59
+00:04:19,500 --> 00:04:21,750
+Class B allows to add a reception slot.
+59
+
+60
+00:04:22,140 --> 00:04:26,280
+This means that we will have more chances to send Lorawan messages from the network.
+60
+
+61
+00:04:26,970 --> 00:04:32,250
+And finally, the Class C can be reached at any time except when it's transmitting.
+61
+
+62
+00:04:32,880 --> 00:04:36,570
+But obviously the consequence is that it consumes a lot of power.
+62
+
+63
+00:04:37,380 --> 00:04:44,040
+So on a battery powered device, what can be done is that we leave as much as we can Lorawan end device
+63
+
+64
+00:04:44,040 --> 00:04:50,430
+in a class A and as an end device doesn't have to sit all is life in a specific class.
+64
+
+65
+00:04:51,030 --> 00:04:57,330
+Then we can switch from class A to B or from A to C only when it's necessary.
+65
+
+66
+00:04:59,130 --> 00:04:59,580
+Now.
+66
+
+67
+00:04:59,790 --> 00:05:04,620
+When we look back at the entire Lorawan network, what do we need to be sure for the transmission
+67
+
+68
+00:05:04,620 --> 00:05:05,640
+to be successful?
+68
+
+69
+00:05:06,290 --> 00:05:11,760
+Every part of the network has to support the class you want to use. For class A,
+69
+
+70
+00:05:11,910 --> 00:05:12,800
+No worries.
+70
+
+71
+00:05:12,810 --> 00:05:15,390
+Everyone supports it. For the others,
+71
+
+72
+00:05:15,540 --> 00:05:20,970
+We have to make sure that the end device, the Gateway and the networks server have provide this service.
+72
+
+73
+00:05:21,630 --> 00:05:27,960
+And that statement applies especially for Class B, because you will need a specific gateway able to
+73
+
+74
+00:05:27,960 --> 00:05:35,370
+provide an absolute timestamp that is often made thanks to G.P.S. So now we'll give a demonstration
+74
+
+75
+00:05:35,370 --> 00:05:37,440
+of this classes on the Lorawan network.
