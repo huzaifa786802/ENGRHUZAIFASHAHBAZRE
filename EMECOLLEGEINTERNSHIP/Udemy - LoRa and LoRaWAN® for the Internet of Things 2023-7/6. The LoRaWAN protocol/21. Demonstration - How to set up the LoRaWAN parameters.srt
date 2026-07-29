@@ -1,0 +1,419 @@
+0
+1
+00:00:00,810 --> 00:00:06,450
+We saw in the previous video that an end device must shared LoRaWAN parameters for a successful transmission.
+1
+
+2
+00:00:07,020 --> 00:00:12,510
+We talked about the RX delay, which was the time that the networks have as to wait before sending
+2
+
+3
+00:00:12,510 --> 00:00:13,560
+the downlink frame.
+3
+
+4
+00:00:14,100 --> 00:00:19,770
+And we also talk about the channel frequency list, which is basically the frequency plan of your network
+4
+
+5
+00:00:19,770 --> 00:00:27,660
+server. For this demonstration will only focus on the frequency plan topic and to check whether the demonstration
+5
+
+6
+00:00:27,660 --> 00:00:28,370
+works,
+6
+
+7
+00:00:28,380 --> 00:00:31,650
+we will verify the channel use by the end device.
+7
+
+8
+00:00:32,130 --> 00:00:38,070
+If the end device uses only the default channel, then it means that the LoRaWAN parameters haven't been
+8
+
+9
+00:00:38,070 --> 00:00:38,730
+shared.
+9
+
+10
+00:00:39,300 --> 00:00:45,090
+But if it uses the complete frequency plan, which in our case is composed of eight channels, then
+10
+
+11
+00:00:45,090 --> 00:00:47,880
+it means that the parameters have been shared properly.
+11
+
+12
+00:00:48,840 --> 00:00:54,330
+So we're going to set up three little demonstrations, and for each of them we'll check the channel
+12
+
+13
+00:00:54,330 --> 00:00:55,440
+during transmission.
+13
+
+14
+00:00:55,950 --> 00:01:01,110
+The first demonstration is with an ABP end device programmed with the default LoRaWAN parameters.
+14
+
+15
+00:01:01,200 --> 00:01:10,290
+So obviously with the default channels : 868.1 MHz 868.3 MHz and 868.5 MHz
+15
+
+16
+00:01:10,710 --> 00:01:11,640
+That will work.
+16
+
+17
+00:01:11,640 --> 00:01:18,540
+But in that case, the end device will never know the other channels, so it will limit its transmission
+17
+
+18
+00:01:18,540 --> 00:01:19,320
+capacity.
+18
+
+19
+00:01:20,100 --> 00:01:26,790
+The second demonstration will use the same ABP end device, but this time we'll ask the network server
+19
+
+20
+00:01:26,790 --> 00:01:30,120
+to send a MAC command with the frequency plan.
+20
+
+21
+00:01:30,480 --> 00:01:36,300
+So in that case, the end device should be able to send uplink frames using all channels.
+21
+
+22
+00:01:37,140 --> 00:01:43,680
+And finally, for the last demonstration, we'll use an OTAA end device, and we'll check that after
+22
+
+23
+00:01:43,680 --> 00:01:47,550
+the join procedure, all the channels are properly configured.
+23
+
+24
+00:01:48,820 --> 00:01:53,520
+Okay, so I started the first demonstration with the ABP end device.
+24
+
+25
+00:01:53,700 --> 00:01:56,030
+Here you can see my application server.
+25
+
+26
+00:01:56,040 --> 00:02:02,970
+So that's where I receive the frames sent. I power up my end-device and I send a few uplink frames.
+26
+
+27
+00:02:03,180 --> 00:02:04,680
+Let's say eight.
+27
+
+28
+00:02:08,410 --> 00:02:09,220
+Here we go.
+28
+
+29
+00:02:09,250 --> 00:02:13,330
+Now for each uplink frames, I'm interested in the channel use.
+29
+
+30
+00:02:13,330 --> 00:02:19,000
+So I click on the frame and I go on the JSON details. In there,
+30
+
+31
+00:02:19,000 --> 00:02:21,130
+I'm looking for the frequency field.
+31
+
+32
+00:02:21,440 --> 00:02:23,230
+Okay, here it is.
+32
+
+33
+00:02:23,350 --> 00:02:27,940
+So for the first frame, the channel used is 868.3 MHz.
+33
+
+34
+00:02:28,180 --> 00:02:34,120
+That corresponds to one of the three default channels, but that may be by chance.
+34
+
+35
+00:02:34,120 --> 00:02:36,010
+So let's go over the other ones.
+35
+
+36
+00:02:36,280 --> 00:02:43,360
+The second frame use 868.5 MHz, the third one 816.1 MHz, and so on.
+36
+
+37
+00:02:43,600 --> 00:02:46,600
+So all frame use three default channels.
+37
+
+38
+00:02:46,870 --> 00:02:48,760
+Of course, this is normal,
+38
+
+39
+00:02:48,790 --> 00:02:53,200
+as the end-device had no way to be aware of the frequency plan.
+39
+
+40
+00:02:53,740 --> 00:03:01,450
+But it's not efficient because it should be able to use five more channels. Right.
+40
+
+41
+00:03:01,450 --> 00:03:03,130
+Now, let's try the second example.
+41
+
+42
+00:03:03,370 --> 00:03:09,670
+It's still with the same ABP and device, but this time I'm going to ask the network server to send a
+42
+
+43
+00:03:09,670 --> 00:03:11,590
+MAC command to the device.
+43
+
+44
+00:03:11,830 --> 00:03:14,680
+For that, I go in the register device section.
+44
+
+45
+00:03:20,210 --> 00:03:22,250
+Then general settings.
+45
+
+46
+00:03:25,700 --> 00:03:27,020
+Network layer.
+46
+
+47
+00:03:29,640 --> 00:03:36,200
+Advanced Mac settings, and in this section I can configure the actual LoRaWAN parameters of the end
+47
+
+48
+00:03:36,240 --> 00:03:36,990
+device.
+48
+
+49
+00:03:37,530 --> 00:03:41,400
+In my case, the ned device is configured with the default value.
+49
+
+50
+00:03:41,400 --> 00:03:47,340
+So one second for RX delay and I want RX delay of 5 seconds.
+50
+
+51
+00:03:48,000 --> 00:03:52,830
+With this information, the network server will send the LoRaWAN parameters to the end device.
+51
+
+52
+00:03:53,520 --> 00:03:59,370
+As we said earlier, this process is a bit time consuming if you have a large rate, but that's the
+52
+
+53
+00:03:59,370 --> 00:04:01,590
+only way to send a MAC command on startup.
+53
+
+54
+00:04:02,520 --> 00:04:10,230
+So after saving changes, I can go back on my application server live data and erase the logs.
+54
+
+55
+00:04:15,280 --> 00:04:15,760
+Okay.
+55
+
+56
+00:04:15,850 --> 00:04:19,000
+Now, I send a few uplink frames.
+56
+
+57
+00:04:26,650 --> 00:04:29,650
+And I click on the frames to check the channel used.
+57
+
+58
+00:04:30,340 --> 00:04:31,000
+Right.
+58
+
+59
+00:04:32,850 --> 00:04:40,290
+The first channel uses 867.5, so we can already notice that the configuration worked because for this
+59
+
+60
+00:04:40,290 --> 00:04:45,090
+first uplink, the device used another channel than the compulsory one.
+60
+
+61
+00:04:45,780 --> 00:04:47,130
+Let's see the others.
+61
+
+62
+00:04:50,010 --> 00:04:52,080
+867.7.
+62
+
+63
+00:04:53,940 --> 00:04:56,250
+867.1.
+63
+
+64
+00:04:57,460 --> 00:04:59,980
+867.1 again.
+64
+
+65
+00:05:00,610 --> 00:05:03,490
+868.1 and so on.
+65
+
+66
+00:05:04,090 --> 00:05:09,490
+So now the ABP end device can use the entire frequency plan.
+66
+
+67
+00:05:10,870 --> 00:05:11,500
+Okay.
+67
+
+68
+00:05:11,530 --> 00:05:15,910
+Now, for the last demonstration, we'll use another end device.
+68
+
+69
+00:05:16,180 --> 00:05:20,020
+This time the activation mode is OTAA instead of ABP.
+69
+
+70
+00:05:26,770 --> 00:05:32,500
+Ok, I erased the logs again and go back to my application server live data.
+70
+
+71
+00:05:33,040 --> 00:05:39,220
+When I power up my end-device, I can see the join procedure with the join request and the join access.
+71
+
+72
+00:05:39,790 --> 00:05:42,190
+Then of course, my uplink data.
+72
+
+73
+00:05:43,030 --> 00:05:45,910
+I will send a few uplink using the push buttons.
+73
+
+74
+00:05:52,590 --> 00:05:53,190
+Okay.
+74
+
+75
+00:05:53,580 --> 00:05:56,790
+And I click on the frame to check the channel used.
+75
+
+76
+00:06:00,060 --> 00:06:02,190
+867.3.
+76
+
+77
+00:06:03,150 --> 00:06:07,560
+868.1, 868.3.
+77
+
+78
+00:06:07,590 --> 00:06:09,800
+867.9,
+78
+
+79
+00:06:09,810 --> 00:06:10,650
+And so on.
+79
+
+80
+00:06:11,160 --> 00:06:17,550
+So first, we can verify that the end device is fully aware of the entire frequency plan, which is
+80
+
+81
+00:06:17,550 --> 00:06:25,920
+great, but we can also guess that all the other LoRaWAN parameters have been configured properly. So we don't
+81
+
+82
+00:06:25,920 --> 00:06:28,050
+have to set up anything manually.
+82
+
+83
+00:06:28,650 --> 00:06:36,330
+So once again, we demonstrated another advantage of OTAA and this is another reason for why OTAA should
+83
+
+84
+00:06:36,330 --> 00:06:38,130
+be your favorite activation mode.
