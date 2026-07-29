@@ -1,0 +1,129 @@
+0
+1
+00:00:00,540 --> 00:00:05,700
+We spent quite a long time explaining the difference between ABP and OTAA activation modes.
+1
+
+2
+00:00:05,760 --> 00:00:08,070
+Now it's time for a quick summary.
+2
+
+3
+00:00:08,670 --> 00:00:13,080
+In this table we have the two activation modes and in the different rows we have the topic that has
+3
+
+4
+00:00:13,080 --> 00:00:13,980
+been addressed.
+4
+
+5
+00:00:14,340 --> 00:00:16,260
+So first about security.
+5
+
+6
+00:00:16,680 --> 00:00:22,290
+We saw that both activation mode are secured, but there is a little advantage using OTAA.
+6
+
+7
+00:00:22,560 --> 00:00:27,210
+That's because the session keys are regenerated each time the end device will join the network.
+7
+
+8
+00:00:28,260 --> 00:00:30,960
+The second point is the management of the frame counter.
+8
+
+9
+00:00:31,410 --> 00:00:34,890
+Managing the frame counter in ABP is a little bit more difficult.
+9
+
+10
+00:00:35,370 --> 00:00:40,140
+ABP requires to save the frame counter value in a non volatile memory.
+10
+
+11
+00:00:40,590 --> 00:00:46,500
+Otherwise, if the end device reset, the network server would take the replay attack and all frames
+11
+
+12
+00:00:46,500 --> 00:00:48,890
+would be discarded. In OTAA,
+12
+
+13
+00:00:48,900 --> 00:00:54,810
+It's more simple because the frame counter is automatically reset to zero after each join procedure.
+13
+
+14
+00:00:56,070 --> 00:01:01,350
+Then the two activation mode are also different in the way they manage the LoRaWAN parameters.
+14
+
+15
+00:01:01,530 --> 00:01:06,240
+We gave the example of two parameters RX delay and the frequency plan.
+15
+
+16
+00:01:06,720 --> 00:01:13,200
+In ABP, we had to settle everything in the original firmware or we had to use MAC commands for each
+16
+
+17
+00:01:13,200 --> 00:01:19,350
+end-devices configuration that was time consuming and eventually that was not that easy.
+17
+
+18
+00:01:19,950 --> 00:01:25,380
+In OTAA, everything was settled during the join procedure, so we had nothing to do.
+18
+
+19
+00:01:25,860 --> 00:01:28,080
+Regarding the challenge of network operator,
+19
+
+20
+00:01:28,110 --> 00:01:34,050
+you can do it with both activation modes, but with ABP you will not be able to use roaming anymore.
+20
+
+21
+00:01:34,470 --> 00:01:39,330
+Roaming in LoRaWAN will be used a lot in the coming years, so you should probably consider these features
+21
+
+22
+00:01:39,330 --> 00:01:40,320
+with attention.
+22
+
+23
+00:01:41,400 --> 00:01:49,110
+So as you have guessed, even if ABP seems to be easier to set up, OTAA has definitely so many advantages,
+23
+
+24
+00:01:49,560 --> 00:01:55,380
+OTAA can be used with a Join Server which increase again the interoperability and the overall security
+24
+
+25
+00:01:55,380 --> 00:01:56,370
+of the network.
+25
+
+26
+00:01:56,760 --> 00:02:02,760
+As a conclusion, always use OTAA unless you have very good reason to use ABP.
