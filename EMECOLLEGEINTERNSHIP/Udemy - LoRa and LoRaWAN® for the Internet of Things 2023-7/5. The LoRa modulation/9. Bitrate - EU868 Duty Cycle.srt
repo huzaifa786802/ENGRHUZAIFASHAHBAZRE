@@ -1,0 +1,129 @@
+0
+1
+00:00:01,050 --> 00:00:03,840
+A LoRa transmission uses 8 frequency channels.
+1
+
+2
+00:00:04,200 --> 00:00:09,870
+We also discussed that several devices could transmit at the same time on the same channel, but there
+2
+
+3
+00:00:09,870 --> 00:00:11,280
+was only one condition.
+3
+
+4
+00:00:11,970 --> 00:00:16,620
+They had to use a different Spreading Factor. But that was not all,
+4
+
+5
+00:00:17,130 --> 00:00:20,370
+and we said that the device had to limit its transmission time.
+5
+
+6
+00:00:21,090 --> 00:00:22,020
+How exactly?
+6
+
+7
+00:00:22,620 --> 00:00:29,630
+There is a rule in the 868 MHz band which says that you can transmit only 1% of the time
+7
+
+8
+00:00:30,330 --> 00:00:35,820
+if you transmit during 1 second, then you have to remain silence during 99 seconds.
+8
+
+9
+00:00:36,570 --> 00:00:38,130
+What does that mean in our case?
+9
+
+10
+00:00:38,700 --> 00:00:46,350
+It means that our device transmitting at SF7 during 46.3 millisecond has to stay silent during
+10
+
+11
+00:00:46,350 --> 00:00:49,200
+a minimum of 4.63 seconds.
+11
+
+12
+00:00:49,890 --> 00:00:51,810
+And what's the impact on the bitrate ?
+12
+
+13
+00:00:52,470 --> 00:00:59,640
+It will be considerably affected because as usual, we are interested in the average bitrate and this
+13
+
+14
+00:00:59,640 --> 00:01:03,870
+1% rule simply reduce the average bitrate by 100.
+14
+
+15
+00:01:04,710 --> 00:01:15,030
+So for the first case at SF7, the previous 173 bits per second are divided by 100 and are now 1.73
+15
+
+16
+00:01:15,030 --> 00:01:15,750
+bits per second.
+16
+
+17
+00:01:16,710 --> 00:01:26,910
+And for the second case at SF12, the 6.9 bits per second, are divided by 100 and are now 0.07 bit per second.
+17
+
+18
+00:01:26,910 --> 00:01:34,800
+LoRaWAN is an extremely low speed network, much slower than we can imagine when we quickly
+18
+
+19
+00:01:34,800 --> 00:01:35,940
+read the documentation.
+19
+
+20
+00:01:37,110 --> 00:01:43,500
+So before stepping into LoRaWAN, you have to make a complete evaluation of your use case and to be
+20
+
+21
+00:01:43,500 --> 00:01:45,240
+very careful with what LoRaWAN
+21
+
+22
+00:01:45,240 --> 00:01:51,450
+can promise in terms of range and low power. In these two domains, it's probably one of the best
+22
+
+23
+00:01:51,450 --> 00:01:52,230
+of the market.
+23
+
+24
+00:01:52,590 --> 00:01:57,150
+But on the other hand, for the bitrate, we've just seen that it's extremely limited.
+24
+
+25
+00:01:57,810 --> 00:02:01,830
+All right, then tell me your application and I will tell you if LoRaWAN is suitable for your
+25
+
+26
+00:02:01,830 --> 00:02:02,460
+use case.
