@@ -1,0 +1,264 @@
+0
+1
+00:00:01,320 --> 00:00:08,490
+On a previous video, we made a warning on the fact that when we had a symbol that was SFX that
+1
+
+2
+00:00:08,490 --> 00:00:10,350
+symbol represented X bits.
+2
+
+3
+00:00:11,850 --> 00:00:17,160
+And so you could have the feeling that the higher the spreading factor, the higher the number of bits
+3
+
+4
+00:00:17,160 --> 00:00:21,170
+contained in the symbol and therefore the higher bitrate.
+4
+
+5
+00:00:21,840 --> 00:00:23,160
+This is not true.
+5
+
+6
+00:00:23,970 --> 00:00:25,320
+Why is it not true?
+6
+
+7
+00:00:25,740 --> 00:00:29,670
+Because we didn't take into account the duration of this symbol.
+7
+
+8
+00:00:30,600 --> 00:00:32,340
+This graph represent the symbol.
+8
+
+9
+00:00:32,340 --> 00:00:32,910
+Duration.
+9
+
+10
+00:00:33,090 --> 00:00:34,560
+According to the spreading factor.
+10
+
+11
+00:00:35,160 --> 00:00:39,090
+And what do we see ? We can see that each time we increase the spreading factor by one.
+11
+
+12
+00:00:39,090 --> 00:00:42,840
+we double the symbol's transmission time.
+12
+
+13
+00:00:43,980 --> 00:00:51,300
+For example, the symbol transmission time at SF12 is equal to twice the symbols transmission time
+13
+
+14
+00:00:51,300 --> 00:00:52,590
+at SF11.
+14
+
+15
+00:00:53,520 --> 00:01:00,390
+So we can clearly see that we start with the fast symbol transmission time at SF7 to a very slow
+15
+
+16
+00:01:00,390 --> 00:01:01,950
+one at SF12.
+16
+
+17
+00:01:02,700 --> 00:01:04,950
+What is the exact value of this duration?
+17
+
+18
+00:01:05,880 --> 00:01:14,850
+The time of a symbol is equal to two power spreading factor divided by the bandwidth. The higher bandwidth
+18
+
+19
+00:01:15,090 --> 00:01:16,140
+the lower the time.
+19
+
+20
+00:01:16,140 --> 00:01:17,190
+And that makes sense.
+20
+
+21
+00:01:18,120 --> 00:01:23,880
+But on the other hand, the higher the spreading factor, the higher the time using a power of two.
+21
+
+22
+00:01:24,570 --> 00:01:30,090
+So as we said, if the spreading factor increases by one then the time increases by two.
+22
+
+23
+00:01:30,720 --> 00:01:33,600
+So how do we link the bitrate to the symbol time?
+23
+
+24
+00:01:33,900 --> 00:01:37,970
+Because at the end there is only one value that matters for the user.
+24
+
+25
+00:01:37,980 --> 00:01:39,030
+It's the bitrate.
+25
+
+26
+00:01:39,540 --> 00:01:45,510
+The bitrate is in this calculation and is always the number of bit transmitted divided by the time to
+26
+
+27
+00:01:45,510 --> 00:01:46,440
+transmit these bits.
+27
+
+28
+00:01:47,160 --> 00:01:50,640
+So it's the number of bit in each symbols divided by the symbol time.
+28
+
+29
+00:01:51,930 --> 00:01:54,360
+So the higher the bandwidth, the higher the bitrate.
+29
+
+30
+00:01:54,780 --> 00:01:56,940
+That was the first point, the higher the spreading factor
+30
+
+31
+00:01:56,940 --> 00:01:59,880
+the higher the number of bit in each symbol.
+31
+
+32
+00:01:59,880 --> 00:02:05,370
+But overall the higher a symbol transmission time using a power of two.
+32
+
+33
+00:02:06,000 --> 00:02:09,810
+So using a higher spreading factor would drastically reduce the bitrate.
+33
+
+34
+00:02:09,990 --> 00:02:12,180
+And this is what we must remember.
+34
+
+35
+00:02:13,620 --> 00:02:14,820
+Let's take an example.
+35
+
+36
+00:02:15,240 --> 00:02:21,900
+We'll take a first case with a transmission at SF7 with a 125 kHz bandwidth, which is
+36
+
+37
+00:02:21,900 --> 00:02:22,980
+a very common case.
+37
+
+38
+00:02:23,370 --> 00:02:29,970
+And then we will also take a second case at SF12 with the same bandwidth. First
+38
+
+39
+00:02:30,000 --> 00:02:35,700
+we're going to verify the bitrate given in all LoRa transceiver technical documentation, and step
+39
+
+40
+00:02:35,700 --> 00:02:41,010
+by step we'll consider a real case by taking into account the LoRa transmission parameters,
+40
+
+41
+00:02:41,790 --> 00:02:48,960
+then the European Regulation and the 868 megahertz band and the LoRaWAN protocol itself at the end.
+41
+
+42
+00:02:49,950 --> 00:02:52,200
+So let's start with the basic calculation.
+42
+
+43
+00:02:52,980 --> 00:03:02,580
+If we take SF7 at 125 kilohertz the bitrate is therefore : SFx bandwidth/2^SF
+43
+
+44
+00:03:02,590 --> 00:03:03,100
+SFx bandwidth/2^SF
+44
+
+45
+00:03:03,780 --> 00:03:09,540
+So seven times 125 kilohertz divided by two power seven.
+45
+
+46
+00:03:10,080 --> 00:03:13,830
+The result is 6 836 kbit per second.
+46
+
+47
+00:03:14,880 --> 00:03:16,010
+In SF12, 
+47
+
+48
+00:03:16,020 --> 00:03:22,710
+we have the same formula, except that this time we'll replace the spreading factor by 12 so 12 multiply by
+48
+
+49
+00:03:22,710 --> 00:03:29,970
+125 kilohertz divided by two power 12, which gives 366 bit per second.
+49
+
+50
+00:03:31,110 --> 00:03:36,750
+We see here that using a different spreading factor as a huge influence on the bitrate and as we said,
+50
+
+51
+00:03:36,760 --> 00:03:39,510
+the higher the spreading factor the lower the bitrate.
+51
+
+52
+00:03:39,930 --> 00:03:44,610
+And that's obviously something that you absolutely have to keep in mind when you design a LoRaWAN
+52
+
+53
+00:03:44,610 --> 00:03:45,180
+device.
