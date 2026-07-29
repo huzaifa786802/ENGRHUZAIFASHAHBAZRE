@@ -1,0 +1,109 @@
+0
+1
+00:00:00,840 --> 00:00:07,080
+So as anyone can use free bands if we want, we can build our own private network.
+1
+
+2
+00:00:07,560 --> 00:00:14,010
+This means that we can position our own gateways, integrate our own network server and application
+2
+
+3
+00:00:14,010 --> 00:00:17,370
+server, and we can even build our own Iot platform.
+3
+
+4
+00:00:17,700 --> 00:00:19,950
+It's called a "Private Network".
+4
+
+5
+00:00:20,490 --> 00:00:26,190
+Obviously, if you want to set that up, then you need a very good knowledge about the technology to
+5
+
+6
+00:00:26,190 --> 00:00:32,280
+configure the gateway to install an administrator servers, and it also costs quite a lot of money at
+6
+
+7
+00:00:32,280 --> 00:00:35,880
+the beginning because you need to buy expensive hardware for gateways.
+7
+
+8
+00:00:36,120 --> 00:00:40,260
+The price of the gateway varies a lot depending on the type and the features.
+8
+
+9
+00:00:40,260 --> 00:00:43,530
+But let's say that's for a good outdoor gateway.
+9
+
+10
+00:00:43,530 --> 00:00:49,510
+It's around 800 â‚¬ plus the installation fees and the installation can be quite expensive.
+10
+
+11
+00:00:49,530 --> 00:00:52,050
+If you want to install them on rooftops.
+11
+
+12
+00:00:52,170 --> 00:00:57,600
+On the other hand, we not have to pay for a subscription to use the network and we are not subject
+12
+
+13
+00:00:57,600 --> 00:01:04,710
+to any restriction that an operator can apply, like a limit on the number of uplink or a limit on the
+13
+
+14
+00:01:04,710 --> 00:01:06,420
+number of downlink frames.
+14
+
+15
+00:01:07,410 --> 00:01:10,650
+Later in this course, we'll install a private network.
+15
+
+16
+00:01:10,650 --> 00:01:17,760
+So obviously with our own gateway and we'll also install two different LoRa network server stacks called
+16
+
+17
+00:01:17,760 --> 00:01:19,230
+ChirpStack first.
+17
+
+18
+00:01:19,230 --> 00:01:22,410
+Then there will be another one called The Things stack.
+18
+
+19
+00:01:22,800 --> 00:01:28,410
+These two stacks are free and open source, but we could also have chosen a proprietary network server
+19
+
+20
+00:01:28,410 --> 00:01:30,270
+like Actility, for example.
+20
+
+21
+00:01:30,480 --> 00:01:36,660
+They are all compliant with the LoRaWAN specification, but the pricing depends on the level of service
+21
+
+22
+00:01:36,660 --> 00:01:39,630
+and the level of support that you need to set up your network.
