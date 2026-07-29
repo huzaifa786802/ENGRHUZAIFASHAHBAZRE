@@ -1,0 +1,269 @@
+0
+1
+00:00:00,990 --> 00:00:03,990
+We know that Lorawan targets long range transmissions.
+1
+
+2
+00:00:04,140 --> 00:00:10,730
+At our university we set up three gateways on rooftops. And we've achieved a successful 57 kilometres LoRa
+2
+
+3
+00:00:10,920 --> 00:00:11,790
+transmission.
+3
+
+4
+00:00:12,480 --> 00:00:19,020
+This is a huge distance if you consider that the end device transmits with a maximum power of 14 dBm.
+4
+
+5
+00:00:19,440 --> 00:00:23,310
+Obviously, your gateway coverage depends on many parameters.
+5
+
+6
+00:00:23,430 --> 00:00:28,980
+It depends on your environment on the weather, on your gateway location and so on.
+6
+
+7
+00:00:29,520 --> 00:00:35,430
+When we look at our university campus, we are pretty sure that any end device deployed in this area will
+7
+
+8
+00:00:35,430 --> 00:00:37,810
+be able to reach one of the three gateways.
+8
+
+9
+00:00:37,830 --> 00:00:39,480
+But let's take an example.
+9
+
+10
+00:00:39,480 --> 00:00:46,260
+If we consider only one gateway, let's say this one. We now imagine that we want to deploy a device
+10
+
+11
+00:00:46,260 --> 00:00:52,050
+a little bit further than the campus area, let's say in the city on the other side of the lake, it's
+11
+
+12
+00:00:52,050 --> 00:00:53,700
+about ten kilometers from the campus.
+12
+
+13
+00:00:53,700 --> 00:00:57,870
+And of course, I would like to connect this end device to my LoRaWAN network.
+13
+
+14
+00:00:58,500 --> 00:00:59,940
+What are my options?
+14
+
+15
+00:01:00,510 --> 00:01:03,540
+The first idea is to increase the power transmission.
+15
+
+16
+00:01:03,720 --> 00:01:05,050
+That's something obvious.
+16
+
+17
+00:01:05,070 --> 00:01:11,160
+You can do it in your own device configuration, but you can only do it up to 14 dBm .
+17
+
+18
+00:01:11,280 --> 00:01:18,510
+That's because the European regulation limits the transmission to 14 dBm in the 868 megahertz band.
+18
+
+19
+00:01:18,750 --> 00:01:24,020
+Obviously, if you increase the power, you will also reduce your device battery life.
+19
+
+20
+00:01:24,030 --> 00:01:26,160
+But this option works.
+20
+
+21
+00:01:26,640 --> 00:01:32,100
+There is also another possibility you can increase the spreading factor.
+21
+
+22
+00:01:32,520 --> 00:01:39,390
+So I've designed some circles on the picture and each circle represents the coverage area for a specific
+22
+
+23
+00:01:39,390 --> 00:01:40,410
+spreading factor.
+23
+
+24
+00:01:40,950 --> 00:01:46,470
+You can notice that if I increase the spreading factor, then I increase my gateway coverage.
+24
+
+25
+00:01:46,860 --> 00:01:52,860
+Actually, when I increase the spreading factor during transmission, it becomes easier for the gateway
+25
+
+26
+00:01:52,860 --> 00:01:54,360
+to demodulate the signal.
+26
+
+27
+00:01:54,810 --> 00:02:01,200
+So we can say that the gateway can receive a LoRa frame with a lower power transmission if the spreading
+27
+
+28
+00:02:01,200 --> 00:02:02,250
+factor is higher.
+28
+
+29
+00:02:03,210 --> 00:02:05,190
+Let's take a very simple example.
+29
+
+30
+00:02:05,670 --> 00:02:10,740
+If you transmit a message from the other side of the lake, then the gateway can demodulate it.
+30
+
+31
+00:02:10,770 --> 00:02:18,330
+If you use an SF12 transmission but with the same power, it doesn't work if you use an SF11, 10 or
+31
+
+32
+00:02:18,330 --> 00:02:18,750
+lower.
+32
+
+33
+00:02:19,740 --> 00:02:25,350
+Let's use again the analogy we've previously used with one speaker and one listener.
+33
+
+34
+00:02:25,620 --> 00:02:30,900
+We imagine that the speaker uses his usual voice, so with a certain level.
+34
+
+35
+00:02:30,930 --> 00:02:37,590
+Then if you are a listener, it will be always easier for you to understand the speaker if he speaks
+35
+
+36
+00:02:37,590 --> 00:02:38,320
+clearly.
+36
+
+37
+00:02:38,340 --> 00:02:45,330
+Taking time to articulate each syllables of the sentence and on the contrary, with the same voice,
+37
+
+38
+00:02:45,360 --> 00:02:47,130
+it would be harder for you to understand.
+38
+
+39
+00:02:47,130 --> 00:02:49,380
+The Speaker If he talks very quickly.
+39
+
+40
+00:02:50,400 --> 00:02:54,150
+The way the speaker talks is exactly what the spreading factor is.
+40
+
+41
+00:02:54,150 --> 00:02:56,640
+So to make things easier to understand.
+41
+
+42
+00:02:56,760 --> 00:03:02,480
+You can just consider that sending a message to a higher spreading factor is just taking time to send
+42
+
+43
+00:03:02,490 --> 00:03:04,980
+clear message bit after bit.
+43
+
+44
+00:03:05,160 --> 00:03:07,650
+That's exactly what happened on our gateway.
+44
+
+45
+00:03:07,800 --> 00:03:11,490
+If the signal is received with a very low power, that's the case.
+45
+
+46
+00:03:11,490 --> 00:03:17,580
+If the device is far away on the other side of the lake, then the gateway can understand it only if
+46
+
+47
+00:03:17,580 --> 00:03:21,810
+it was clearly and slowly modulated, which is the case with the spreading factor.
+47
+
+48
+00:03:21,810 --> 00:03:22,440
+12.
+48
+
+49
+00:03:23,220 --> 00:03:29,910
+So one could say, why don't we always use spreading factor 12 so we can reach further devices?
+49
+
+50
+00:03:30,120 --> 00:03:36,510
+Yes, but if you think that, then you forget that an end device using a spreading factor 12 will take
+50
+
+51
+00:03:36,510 --> 00:03:37,830
+longer to transmit.
+51
+
+52
+00:03:37,890 --> 00:03:41,580
+Because if you speak clearly, then it takes longer to say your message.
+52
+
+53
+00:03:41,580 --> 00:03:47,430
+And obviously the longer your transmission time, what we call the time on air, the more energy the
+53
+
+54
+00:03:47,430 --> 00:03:48,660
+device consumes.
