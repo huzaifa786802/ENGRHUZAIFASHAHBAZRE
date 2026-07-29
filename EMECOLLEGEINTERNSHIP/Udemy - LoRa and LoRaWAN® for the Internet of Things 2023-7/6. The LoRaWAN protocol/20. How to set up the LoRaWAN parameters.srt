@@ -1,0 +1,299 @@
+0
+1
+00:00:00,330 --> 00:00:05,970
+When a LoRaWAN end device and a network server want to communicate with each other, they have to agree
+1
+
+2
+00:00:05,970 --> 00:00:07,410
+on several parameters.
+2
+
+3
+00:00:07,860 --> 00:00:11,460
+We'll give two examples of these parameters, but there are many more.
+3
+
+4
+00:00:11,580 --> 00:00:16,260
+The first one we'll talk about is the channels that the end device is allowed to use.
+4
+
+5
+00:00:16,530 --> 00:00:20,100
+There are three mandatory channels that all end devices must know.
+5
+
+6
+00:00:20,490 --> 00:00:28,080
+These are 868.1 MHz, 868.3 MHz and 868.5 MHz.
+6
+
+7
+00:00:28,380 --> 00:00:31,320
+But there can be up to eight channels overall.
+7
+
+8
+00:00:31,740 --> 00:00:36,720
+So the question is how can the network server can share the other channels with the end device?
+8
+
+9
+00:00:37,320 --> 00:00:41,730
+This LoRaWAN parameter is called the CF list for channel frequency list.
+9
+
+10
+00:00:41,730 --> 00:00:45,870
+And the overall channel list is what we call the frequency plan.
+10
+
+11
+00:00:46,290 --> 00:00:51,660
+The second parameter we'll talk about is the time between the uplink frame and the downlink slot.
+11
+
+12
+00:00:52,080 --> 00:00:57,930
+We saw earlier that when the network server wants to send data to the end device, the gateway must transmit
+12
+
+13
+00:00:57,930 --> 00:01:01,500
+the downlink frame during the RX1 or RX2 slot.
+13
+
+14
+00:01:01,680 --> 00:01:08,550
+The different time between the uplink frame and the RX slot are 1 second for RX1 and 2 seconds
+14
+
+15
+00:01:08,550 --> 00:01:09,720
+for RX2.
+15
+
+16
+00:01:10,590 --> 00:01:14,010
+But what if the network server is configured with other values?
+16
+
+17
+00:01:14,190 --> 00:01:19,590
+The end device will turn on its radio at one and 2 seconds because it is the default value.
+17
+
+18
+00:01:19,620 --> 00:01:21,410
+Then it will turn it off.
+18
+
+19
+00:01:21,420 --> 00:01:27,720
+If the gateway transmits outside of these slots using another RX delay, then the packet is lost.
+19
+
+20
+00:01:27,810 --> 00:01:33,270
+This could happen with many network servers, because the default one second delay is often too short
+20
+
+21
+00:01:33,270 --> 00:01:36,690
+in case of network overload or in case of roaming.
+21
+
+22
+00:01:37,440 --> 00:01:42,240
+So these values are often updated to five and six seconds.
+22
+
+23
+00:01:42,690 --> 00:01:48,030
+So the question is the same How do network server can share these parameters called RX delay with the
+23
+
+24
+00:01:48,030 --> 00:01:48,840
+end device ?
+24
+
+25
+00:01:49,990 --> 00:01:55,960
+Well, the first idea is to set up the parameters in the device firmware for a specific network.
+25
+
+26
+00:01:56,410 --> 00:02:01,570
+If you know your network server frequency plan and if you know the RX delay used, then you can
+26
+
+27
+00:02:01,570 --> 00:02:03,940
+configure these parameters during development.
+27
+
+28
+00:02:03,940 --> 00:02:09,490
+When your end device will power up, everything will already be configured and the LoRaWAN communication
+28
+
+29
+00:02:09,490 --> 00:02:10,660
+will be successful.
+29
+
+30
+00:02:11,400 --> 00:02:18,370
+Okay, but what if now you want to use your device with another network server, then you will have
+30
+
+31
+00:02:18,370 --> 00:02:19,840
+to update all your assets.
+31
+
+32
+00:02:19,840 --> 00:02:23,710
+And that could be a big challenge because maybe you've deployed thousands of them.
+32
+
+33
+00:02:24,710 --> 00:02:27,910
+Okay, so let's find another way to share these parameters.
+33
+
+34
+00:02:28,480 --> 00:02:35,260
+The second idea is to configure the network server in order to send a specific frame to the end device with
+34
+
+35
+00:02:35,260 --> 00:02:37,000
+the LoRaWAN parameters inside.
+35
+
+36
+00:02:37,540 --> 00:02:38,960
+And you know what ?
+36
+
+37
+00:02:38,980 --> 00:02:45,790
+You don't have to invent such a frame because the LoRaWAN specification already provides it. It's called
+37
+
+38
+00:02:45,790 --> 00:02:47,380
+a LoRaWAN MAC command.
+38
+
+39
+00:02:47,980 --> 00:02:54,370
+There are many of them for different purposes and we'll detail them later, but they are one for specifying
+39
+
+40
+00:02:54,370 --> 00:02:59,290
+the frequency plan and there is also another one for specifying the RX delay.
+40
+
+41
+00:02:59,800 --> 00:03:00,520
+Great.
+41
+
+42
+00:03:00,550 --> 00:03:02,020
+That sounds good.
+42
+
+43
+00:03:02,050 --> 00:03:03,250
+It's a good solution.
+43
+
+44
+00:03:03,250 --> 00:03:04,750
+But there is something wrong.
+44
+
+45
+00:03:05,080 --> 00:03:10,330
+How can I send a frame to a device if I don't even know when I can reach it?
+45
+
+46
+00:03:10,330 --> 00:03:12,510
+Because we don't know its RX delay.
+46
+
+47
+00:03:13,300 --> 00:03:21,100
+So if we want to set up this solution, we first need to know the original RX delay of the device and use
+47
+
+48
+00:03:21,100 --> 00:03:22,960
+it to send the new parameters.
+48
+
+49
+00:03:23,500 --> 00:03:28,270
+This process has to be done for all of them, and once again, we can do it.
+49
+
+50
+00:03:28,270 --> 00:03:31,360
+But it's definitely time consuming, right?
+50
+
+51
+00:03:31,450 --> 00:03:34,090
+There is one last possibility for that.
+51
+
+52
+00:03:34,090 --> 00:03:36,070
+We need to change the activation mode.
+52
+
+53
+00:03:36,550 --> 00:03:41,590
+While in ABP, there was no specific procedure on startup, in OTAA,
+53
+
+54
+00:03:41,620 --> 00:03:47,290
+there is the join procedure and during this join procedure, a join accept frame is transmitted from
+54
+
+55
+00:03:47,290 --> 00:03:49,300
+the network server to the end device.
+55
+
+56
+00:03:49,750 --> 00:03:54,760
+The main purpose of this frame is to give the end device all the needed informations to compute the session keys.
+56
+
+57
+00:03:54,760 --> 00:04:01,840
+But it also sends the LoRaWAN parameters and this is definitely the easiest way to share this
+57
+
+58
+00:04:01,840 --> 00:04:02,950
+value without trouble.
+58
+
+59
+00:04:03,220 --> 00:04:10,840
+So what we need to understand here is that once again, the OTAA activation mode is more powerful than ABP.
+59
+
+60
+00:04:11,170 --> 00:04:15,850
+That's probably the activation mode you should consider when you want a seamless configuration.
