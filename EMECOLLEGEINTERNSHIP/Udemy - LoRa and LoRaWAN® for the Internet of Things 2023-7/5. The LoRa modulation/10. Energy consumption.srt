@@ -1,0 +1,234 @@
+0
+1
+00:00:00,420 --> 00:00:04,470
+To conclude this chapter, I would like to discuss a little bit about energy consumption.
+1
+
+2
+00:00:05,250 --> 00:00:11,280
+Obviously, the energy consumption is directly linked to the autonomy of the device, and we need to
+2
+
+3
+00:00:11,280 --> 00:00:13,950
+understand which parameter influence its value.
+3
+
+4
+00:00:15,060 --> 00:00:17,460
+The main parameter is the Time On Air,
+4
+
+5
+00:00:17,940 --> 00:00:24,660
+so the time used by the transceiver to send data. The Higher the Time On Air the higher consumption.
+5
+
+6
+00:00:24,660 --> 00:00:28,230
+And the Time On Air is directly linked to the Spreading Factor.
+6
+
+7
+00:00:28,500 --> 00:00:32,790
+As we already said, the higher the Spreading Factor the higher the symbol time.
+7
+
+8
+00:00:32,790 --> 00:00:36,620
+So the higher the Time On Air. 
+8
+
+9
+00:00:36,620 --> 00:00:41,040
+Then the number of data to transmit and finally the bandwidth and coding rate.
+9
+
+10
+00:00:42,030 --> 00:00:46,440
+Another element that will influence consumption is the fact that it can be collisions.
+10
+
+11
+00:00:47,280 --> 00:00:49,020
+What happened when they are collisions?
+11
+
+12
+00:00:49,620 --> 00:00:55,500
+Actually, nothing if you don't ask for an acknowledgement. And in that case the frame is just lost.
+12
+
+13
+00:00:56,430 --> 00:00:58,170
+But if you ask for a confirmation,
+13
+
+14
+00:00:58,620 --> 00:01:05,520
+so the protocol will spend time to confirm or retransmit in case of a packet loss.
+14
+
+15
+00:01:05,640 --> 00:01:07,110
+And all this transmission will consume energy.
+15
+
+16
+00:01:07,650 --> 00:01:10,050
+Then, there is a duty cycle parameter.
+16
+
+17
+00:01:10,620 --> 00:01:12,150
+1% is the maximum.
+17
+
+18
+00:01:12,390 --> 00:01:16,230
+But obviously there are many use cases where only a few LoRaWAN packets a day are enough.
+18
+
+19
+00:01:16,230 --> 00:01:20,740
+And then you can save power.
+19
+
+20
+00:01:20,760 --> 00:01:23,100
+Next of course, there will be the transmitted power.
+20
+
+21
+00:01:23,580 --> 00:01:27,750
+In Europe, the limit is 14 dBm, which correspond to 25 milliwatts.
+21
+
+22
+00:01:27,930 --> 00:01:32,220
+But of course, if you close to a gateway, there is no need to send this much power.
+22
+
+23
+00:01:33,120 --> 00:01:37,050
+And finally, what does a LoRaWAN device do between two transmission ?
+23
+
+24
+00:01:37,530 --> 00:01:38,820
+Usually nothing.
+24
+
+25
+00:01:39,210 --> 00:01:41,640
+And the LoRaWAN transceiver and the application MCU (Microprocessor Unit).
+25
+
+26
+00:01:41,640 --> 00:01:46,440
+should reach the deepest sleep mode to reduce the power as much as possible.
+26
+
+27
+00:01:48,150 --> 00:01:54,390
+So to illustrate the power consumption point, we can just play with a little online calculator to get an idea of the autonomy we can expect.
+27
+
+28
+00:01:54,390 --> 00:02:00,420
+In this calculator, we have to enter a few parameters.
+28
+
+29
+00:02:01,260 --> 00:02:07,080
+I will keep my temperature sensor with one byte and assume that I need to send my data every one hour.
+29
+
+30
+00:02:07,950 --> 00:02:11,520
+Finally, I will use a well known AA-type battery.
+30
+
+31
+00:02:12,270 --> 00:02:17,700
+When we look at the results, the Time On Air generated are the one we had for LoRaWAN transmission.
+31
+
+32
+00:02:18,360 --> 00:02:24,390
+For a LoRaWAN transmission, we need to had the LoRaWAN Header, which is 13 bytes.
+32
+
+33
+00:02:24,390 --> 00:02:26,820
+So there are actually 14 bytes in the LoRa frame.
+33
+
+34
+00:02:27,300 --> 00:02:32,100
+So I just change this value and I've got now the right Time On Air.
+34
+
+35
+00:02:32,280 --> 00:02:37,770
+And the calculation gives the following result in the worst case will have 4 years and 11 months
+35
+
+36
+00:02:37,770 --> 00:02:38,640
+for autonomy.
+36
+
+37
+00:02:39,420 --> 00:02:44,220
+And in the best case, 17 years and two months, which is huge.
+37
+
+38
+00:02:45,030 --> 00:02:46,950
+What does these figures actually represent?
+38
+
+39
+00:02:47,520 --> 00:02:50,160
+They represent the consumption of the LoRa module.
+39
+
+40
+00:02:50,850 --> 00:02:54,120
+We should also add the consumption that is linked to the application.
+40
+
+41
+00:02:54,420 --> 00:03:00,300
+For example, if you're processing data for a long time, obviously if you have many sensors and so on.
+41
+
+42
+00:03:00,300 --> 00:03:07,110
+Because they haven't been taken into account in this simulation. Then what's the worst case ?
+42
+
+43
+00:03:07,470 --> 00:03:12,180
+The worst case would be a high Spreading Factor and a high transmission power.
+43
+
+44
+00:03:12,990 --> 00:03:15,870
+Obviously, the best case would be exactly the contrary.
+44
+
+45
+00:03:16,230 --> 00:03:22,520
+So a low Spreading Factor and a low transmission power, well, this still gives you a rough idea,
+45
+
+46
+00:03:22,530 --> 00:03:23,850
+so just play along with it.
+46
+
+47
+00:03:23,940 --> 00:03:28,470
+Change the parameters and try to see what's the autonomy you can expect for a LoRaWAN device.
