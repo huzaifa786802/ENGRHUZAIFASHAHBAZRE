@@ -1,0 +1,105 @@
+0
+1
+00:00:00,670 --> 00:00:06,760
+Once again, I represent at the top of the LoRaWAN server and at the bottom the IoT platform.
+1
+
+2
+00:00:07,090 --> 00:00:12,520
+We want to connect them with the MQTT protocol, but this time the broker is not on the LoRaWAN
+2
+
+3
+00:00:12,520 --> 00:00:18,940
+server, as we've seen before, it's a complete independent entity between the LoRaWAN server and
+3
+
+4
+00:00:18,940 --> 00:00:20,080
+the IoT platform.
+4
+
+5
+00:00:20,800 --> 00:00:23,620
+In that case, we need to install and configure it.
+5
+
+6
+00:00:24,190 --> 00:00:30,070
+Of course, we could use a public MQTT broker and try this configuration, but keep in mind that
+6
+
+7
+00:00:30,070 --> 00:00:36,370
+if you do so, all datas are public, so please try that only for testing purposes.
+7
+
+8
+00:00:37,350 --> 00:00:37,950
+Great.
+8
+
+9
+00:00:37,950 --> 00:00:40,060
+So now same question as before.
+9
+
+10
+00:00:40,080 --> 00:00:42,900
+Who is the subscriber and who is the publisher?
+10
+
+11
+00:00:43,170 --> 00:00:48,340
+Let's separate the uplink stream and the downlink stream.
+For the uplink stream,
+11
+
+12
+00:00:48,360 --> 00:00:51,030
+there is one publisher on the LoRaWAN server.
+12
+
+13
+00:00:51,270 --> 00:00:57,780
+It will publish on the Broker all uplink messages on a specific topic that you can often choose yourself
+13
+
+14
+00:00:57,780 --> 00:00:59,700
+or at least customize.
+14
+
+15
+00:01:00,450 --> 00:01:03,930
+And there is one subscriber on the IoT platform.
+15
+
+16
+00:01:04,050 --> 00:01:07,650
+It's going to receive data of its favorite topic on the broker.
+16
+
+17
+00:01:08,640 --> 00:01:13,010
+For the downlink stream, there is one publisher on the IoT platform.
+17
+
+18
+00:01:13,020 --> 00:01:17,370
+It will publish on the broker all downlink messages on a specific topic.
+18
+
+19
+00:01:17,670 --> 00:01:20,700
+And there is one subscriber on the LoRaWAN server.
+19
+
+20
+00:01:20,910 --> 00:01:27,150
+It will receive all messages sent by the IoT platform and depending on the topic, the messages will
+20
+
+21
+00:01:27,150 --> 00:01:28,440
+have a different meaning.
