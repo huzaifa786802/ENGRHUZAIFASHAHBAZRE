@@ -1,0 +1,74 @@
+0
+1
+00:00:00,900 --> 00:00:07,140
+Until now, we focused on the LoRaWAN protocol and we've explained the transmission from the end-device
+1
+
+2
+00:00:07,140 --> 00:00:08,700
+to the Application Server.
+2
+
+3
+00:00:09,090 --> 00:00:14,580
+So, now that the data is decrypted on the Application Server, we'll focus on retrieving this data and
+3
+
+4
+00:00:14,580 --> 00:00:18,870
+storing it in our application that we call the IoT Platform.
+4
+
+5
+00:00:19,170 --> 00:00:23,880
+This IoT platform is where the data will be stored and available to the end user.
+5
+
+6
+00:00:24,150 --> 00:00:30,060
+It's a kind of supervision system and it can be, for example, a mobile application or a simple web
+6
+
+7
+00:00:30,060 --> 00:00:30,690
+page.
+7
+
+8
+00:00:31,140 --> 00:00:36,240
+The dialogue between the LoRa server and the IoT platform can be done in many different ways.
+8
+
+9
+00:00:36,540 --> 00:00:42,900
+We'll explain the most common situation, which are HTTP on MQTT protocols.
+9
+
+10
+00:00:43,170 --> 00:00:48,390
+For each of these two solutions, we'll make some demonstration to receive data from the end-device.
+10
+
+11
+00:00:48,420 --> 00:00:50,610
+This is what we call the Uplink stream.
+11
+
+12
+00:00:50,940 --> 00:00:56,230
+And of course, we will also work the other way around; from the IoT platform to the end-device. 
+12
+
+13
+00:00:56,250 --> 00:00:58,530
+It's what we call the downlink stream.
+13
+
+14
+00:00:59,040 --> 00:01:04,110
+But before diving into these two protocols, we'll explain clearly what the IoT platform is.
+14
+
+15
+00:01:04,140 --> 00:01:06,480
+And it's what we're going to do in the next video.
