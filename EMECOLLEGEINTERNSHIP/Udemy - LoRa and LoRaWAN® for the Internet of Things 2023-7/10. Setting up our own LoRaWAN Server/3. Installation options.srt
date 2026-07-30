@@ -1,0 +1,224 @@
+0
+1
+00:00:00,410 --> 00:00:05,300
+We are now about to install our private LoRaWAN Network Server and Application Server.
+1
+
+2
+00:00:05,510 --> 00:00:08,900
+For that, we need to find the best hardware to support it.
+2
+
+3
+00:00:09,230 --> 00:00:13,190
+It can take different forms and we will see that we have many choices.
+3
+
+4
+00:00:13,780 --> 00:00:16,840
+It will depends on the type of project you want to set up.
+4
+
+5
+00:00:17,110 --> 00:00:22,870
+Obviously, we won't have the same concern if we just want to set up a Proof of Concept with very few
+5
+
+6
+00:00:22,870 --> 00:00:28,690
+devices on Gateway, or if we want to install a wired infrastructure with guarantee of availability.
+6
+
+7
+00:00:29,110 --> 00:00:32,440
+In our case, we'll start with a small infrastructure.
+7
+
+8
+00:00:32,470 --> 00:00:38,140
+Then, when every functionalities will work properly, we'll have the opportunity to scale it to deal
+8
+
+9
+00:00:38,140 --> 00:00:40,090
+with more devices and gateway.
+9
+
+10
+00:00:40,420 --> 00:00:46,390
+So, that leaves us with a lot of choices for the hardware architecture because any basic computer system
+10
+
+11
+00:00:46,390 --> 00:00:47,050
+will do.
+11
+
+12
+00:00:47,410 --> 00:00:54,070
+For this lecture, the only constraint we require is that this computer system must support Docker container.
+12
+
+13
+00:00:54,700 --> 00:00:58,300
+At the beginning of this course, we explained what is Docker and why
+13
+
+14
+00:00:58,300 --> 00:01:01,810
+it's a nice way to get rid of all the installation issues.
+14
+
+15
+00:01:01,960 --> 00:01:08,140
+Actually, thanks to Docker, the installation process would often be done only with a single command.
+15
+
+16
+00:01:08,830 --> 00:01:11,710
+Okay, so what are our choices?
+16
+
+17
+00:01:11,920 --> 00:01:15,710
+First, we can install our LoRaWAN server on our own PC.
+17
+
+18
+00:01:16,400 --> 00:01:22,010
+That is a very good solution when we want to test something because we have a direct access to the server
+18
+
+19
+00:01:22,040 --> 00:01:28,850
+on our local machine, whether we have a Windows, Linux or Mac OS operating system, it doesn't matter.
+19
+
+20
+00:01:28,940 --> 00:01:33,650
+Again, the only concern is to install Docker, and everything should work.
+20
+
+21
+00:01:33,680 --> 00:01:40,260
+Now, if you want to stay on our own PC, but for some reason we can't or we don't want to install the
+21
+
+22
+00:01:40,490 --> 00:01:46,670
+LoRaWAN  server on our own operating system, then a good choice is to work with a virtual machine.
+22
+
+23
+00:01:46,880 --> 00:01:51,950
+To do this, we can use software such as VirtualBox or VMware.
+23
+
+24
+00:01:51,980 --> 00:01:57,740
+They will allow us to work with a system that is completely independent of our environment, but which
+24
+
+25
+00:01:57,740 --> 00:01:59,450
+runs on the same hardware.
+25
+
+26
+00:02:00,320 --> 00:02:06,950
+Now, if we want to isolate even more the LoRaWAN server services or if we need to let it run permanently
+26
+
+27
+00:02:06,950 --> 00:02:11,420
+and autonomously, then we must run it on a standalone machine.
+27
+
+28
+00:02:11,750 --> 00:02:13,280
+Any PC will do.
+28
+
+29
+00:02:13,460 --> 00:02:18,140
+We can even use a tiny computer like a Raspberry Pi or something equivalent.
+29
+
+30
+00:02:18,170 --> 00:02:22,850
+It's cheap, efficient and it has a reasonable power consumption.
+30
+
+31
+00:02:23,530 --> 00:02:25,920
+Again, we just need to install Docker.
+31
+
+32
+00:02:25,930 --> 00:02:27,270
+And guess what?
+32
+
+33
+00:02:27,280 --> 00:02:30,400
+There is a Docker version for the Raspberry Pi environment.
+33
+
+34
+00:02:30,520 --> 00:02:36,070
+The installation process is very well documented on internet, so again, things should be really easy
+34
+
+35
+00:02:36,070 --> 00:02:36,700
+to set up.
+35
+
+36
+00:02:37,330 --> 00:02:43,090
+Finally, after the proof of concept period, or if we want to get rid of a lot of difficulties concerning
+36
+
+37
+00:02:43,090 --> 00:02:46,600
+the hardware, then we can run the server to a cloud provider.
+37
+
+38
+00:02:46,960 --> 00:02:49,720
+The cost depends on the resources we require.
+38
+
+39
+00:02:49,900 --> 00:02:56,110
+During this course, the server we use only costs 4 euros per month and its resources are more than enough
+39
+
+40
+00:02:56,110 --> 00:02:57,370
+for what we want to do.
+40
+
+41
+00:02:57,670 --> 00:03:04,210
+And then, when we need to increase our server capability, then we just need to upgrade the configuration.
+41
+
+42
+00:03:04,210 --> 00:03:10,180
+So, that choice is definitely the best for scalability and maximum availability of our server.
+42
+
+43
+00:03:11,170 --> 00:03:12,100
+Okay, great.
+43
+
+44
+00:03:12,130 --> 00:03:14,440
+We are now ready to install our first server.
+44
+
+45
+00:03:14,470 --> 00:03:16,480
+Let's do that in the next video.
