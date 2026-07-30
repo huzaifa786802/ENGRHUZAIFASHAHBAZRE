@@ -1,0 +1,679 @@
+0
+1
+00:00:00,680 --> 00:00:06,980
+First, if you want to know more about the HTTP protocol, I advise you to go back to the previous chapter
+1
+
+2
+00:00:06,980 --> 00:00:10,670
+where we explain everything about the HTTP protocol itself.
+2
+
+3
+00:00:11,060 --> 00:00:16,740
+And I'm going to use exactly the same diagram for the explanation about the HTTP integration with Chirpstack,
+3
+
+4
+00:00:16,760 --> 00:00:20,390
+because it works exactly in the same way.
+4
+
+5
+00:00:20,720 --> 00:00:26,630
+Actually, HTTP integration always looks similar whatever the Lorawan server used.
+5
+
+6
+00:00:26,660 --> 00:00:31,880
+So if you're comfortable with the previous demonstration, this one should be easy.
+6
+
+7
+00:00:32,750 --> 00:00:38,730
+We are going to use the HTTP post request to get the data from the application server.
+7
+
+8
+00:00:38,750 --> 00:00:41,630
+So that refers to the uplink stream.
+8
+
+9
+00:00:41,900 --> 00:00:46,040
+Then, of course we will also send some data to the end device.
+9
+
+10
+00:00:46,070 --> 00:00:48,860
+This action refers to the downlink stream.
+10
+
+11
+00:00:50,120 --> 00:00:50,690
+Okay.
+11
+
+12
+00:00:50,690 --> 00:00:53,030
+First, let's talk about the uplink.
+12
+
+13
+00:00:53,450 --> 00:00:59,060
+As usual, for this demonstration, I will send a temperature from my end device.
+13
+
+14
+00:00:59,420 --> 00:01:06,300
+In that case, my LoRaWAN server, it's the HTTP client that pushes the data to my HTTP server.
+14
+
+15
+00:01:06,630 --> 00:01:10,080
+And this HTTP server is my IOT platform.
+15
+
+16
+00:01:10,680 --> 00:01:15,850
+To simulate the HTTP server, we will use the same web application we used before.
+16
+
+17
+00:01:15,870 --> 00:01:19,740
+It's called rbaskets, but there are many others.
+17
+
+18
+00:01:19,770 --> 00:01:26,370
+The idea is just to display the request sent by the client and in this situation the request should
+18
+
+19
+00:01:26,370 --> 00:01:28,080
+contain the uplink data.
+19
+
+20
+00:01:28,350 --> 00:01:33,000
+Once again, get back to the corresponding video for more details about that.
+20
+
+21
+00:01:33,810 --> 00:01:37,380
+Okay, let's make this first demonstration for the uplink part.
+21
+
+22
+00:01:38,730 --> 00:01:42,260
+On the left, there is our HTTP post client, which is Chirpstack.
+22
+
+23
+00:01:42,300 --> 00:01:45,360
+And, on the right, we have our HTTP server.
+23
+
+24
+00:01:45,390 --> 00:01:47,370
+In that case, rbaskets.
+24
+
+25
+00:01:48,000 --> 00:01:50,460
+In Chirpstack, we need to set up the client.
+25
+
+26
+00:01:50,580 --> 00:01:53,310
+For that we go in our application.
+26
+
+27
+00:01:53,340 --> 00:01:55,770
+Then, we go on the integration tab.
+27
+
+28
+00:01:55,800 --> 00:01:58,690
+We can see all integration available in Chirpstack.
+28
+
+29
+00:01:58,710 --> 00:02:07,590
+In this demonstration we want to use the generic HTTP integration here and the configuration is really
+29
+
+30
+00:02:07,590 --> 00:02:08,140
+easy.
+30
+
+31
+00:02:08,160 --> 00:02:12,720
+We just need to fill in the endpoint URL where we want to pass the uplink data.
+31
+
+32
+00:02:12,960 --> 00:02:16,580
+Endpoint is just another name for the HTTP server.
+32
+
+33
+00:02:16,590 --> 00:02:18,700
+But first, we need to create it.
+33
+
+34
+00:02:18,720 --> 00:02:24,270
+So, we go on rbaskets on the right window and we create a new endpoint.
+34
+
+35
+00:02:24,630 --> 00:02:31,470
+Of course we could reuse the one we created during the TTN demonstration, but I don't want to mix up everything,
+35
+
+36
+00:02:31,470 --> 00:02:33,750
+so, I prefer to create a new one.
+36
+
+37
+00:02:34,470 --> 00:02:39,010
+And if you want to come back on this server later, you can save the token.
+37
+
+38
+00:02:39,030 --> 00:02:41,400
+In my case, it's not necessary.
+38
+
+39
+00:02:42,090 --> 00:02:42,600
+Right.
+39
+
+40
+00:02:42,600 --> 00:02:44,070
+So now the endpoint.
+40
+
+41
+00:02:44,070 --> 00:02:46,680
+So the HTTP server instance is ready.
+41
+
+42
+00:02:46,770 --> 00:02:50,640
+We just need to copy the URL to the client and that's it.
+42
+
+43
+00:02:52,600 --> 00:02:55,780
+On the left, I have a window representing my own device.
+43
+
+44
+00:02:55,900 --> 00:03:02,680
+When I press the button, the temperature is sent, is received by the network server, application server,
+44
+
+45
+00:03:02,710 --> 00:03:05,200
+then sent in HTTP to my server.
+45
+
+46
+00:03:05,200 --> 00:03:06,450
+And there we go.
+46
+
+47
+00:03:06,460 --> 00:03:08,680
+It's displayed in the log here.
+47
+
+48
+00:03:09,100 --> 00:03:09,760
+Great.
+48
+
+49
+00:03:09,760 --> 00:03:12,670
+So we are done with the uplink integration using HTTP.
+49
+
+50
+00:03:13,000 --> 00:03:17,590
+Now, let's focus on the downlink. For the downlink stream,
+50
+
+51
+00:03:17,590 --> 00:03:21,760
+I want to send data from my IoT platform to the application server.
+51
+
+52
+00:03:22,060 --> 00:03:27,610
+In that case, our IoT platform is the client that pushes data to the HTTP server.
+52
+
+53
+00:03:28,060 --> 00:03:30,160
+And where is this HTTP server?
+53
+
+54
+00:03:30,280 --> 00:03:35,950
+It's Chirpstack itself, so Chirpstack will have to handle the HTTP post request.
+54
+
+55
+00:03:36,190 --> 00:03:42,250
+And, on the other side we'll have to send the http post request with an HTTP client.
+55
+
+56
+00:03:42,550 --> 00:03:47,110
+In the previous chapter we use Curl for our HTTP client.
+56
+
+57
+00:03:47,140 --> 00:03:52,610
+We will use the same tool again for this demonstration, but you will see that we will use something
+57
+
+58
+00:03:52,610 --> 00:03:53,600
+even easier.
+58
+
+59
+00:03:54,440 --> 00:04:01,400
+So we'll start by installing the server and it's going to be extremely easy because actually it's already
+59
+
+60
+00:04:01,400 --> 00:04:01,940
+done.
+60
+
+61
+00:04:02,300 --> 00:04:09,320
+In fact, when we set up the HTTP integration for uplink, then a server has also been enabled.
+61
+
+62
+00:04:09,860 --> 00:04:13,310
+This service is therefore ready and running.
+62
+
+63
+00:04:13,820 --> 00:04:21,440
+Okay, so the only thing I need to do with this HTTP server is to handle the authentication, because
+63
+
+64
+00:04:21,440 --> 00:04:25,190
+what I did earlier for the uplink was extremely insecure.
+64
+
+65
+00:04:25,340 --> 00:04:31,610
+Indeed, when I configured the integration to send data to my HTTP endpoint, there was no authentication
+65
+
+66
+00:04:31,610 --> 00:04:32,300
+at all.
+66
+
+67
+00:04:32,600 --> 00:04:35,660
+Actually, everyone could send data to this endpoint.
+67
+
+68
+00:04:35,690 --> 00:04:36,950
+It doesn't matter.
+68
+
+69
+00:04:36,950 --> 00:04:40,520
+It was just a demo, but hopefully you wouldn't do that during deployment.
+69
+
+70
+00:04:40,970 --> 00:04:44,990
+Of course, for the other way around, Chip Stack won't allow it.
+70
+
+71
+00:04:45,290 --> 00:04:50,570
+So in the API key section I need to generate a new key.
+71
+
+72
+00:04:51,050 --> 00:05:01,250
+So I click on Add API key, I give it a name, my key, and when the token is generated I copy it.
+72
+
+73
+00:05:01,670 --> 00:05:07,220
+Be careful because when you press the button back then there is no way to retrieve the token anymore.
+73
+
+74
+00:05:08,240 --> 00:05:08,720
+Okay.
+74
+
+75
+00:05:08,720 --> 00:05:14,770
+Now, to send the right HTTP post command, then I could go and check the documentation on Chirpstack
+75
+
+76
+00:05:14,780 --> 00:05:15,500
+website.
+76
+
+77
+00:05:15,800 --> 00:05:22,370
+But there is an easier way because when we install Chirpstack with Docker, another service has been
+77
+
+78
+00:05:22,370 --> 00:05:24,170
+included during the installation.
+78
+
+79
+00:05:24,320 --> 00:05:26,630
+It's called Stack REST API.
+79
+
+80
+00:05:27,200 --> 00:05:29,420
+So what is the REST API?
+80
+
+81
+00:05:29,450 --> 00:05:36,140
+It's just another name for the set of HTTP requests to use to access data on the LoRaWAN server.
+81
+
+82
+00:05:36,680 --> 00:05:44,180
+In our case, the REST API is handle on the LoRaWAN server and any client who read the REST API in the
+82
+
+83
+00:05:44,180 --> 00:05:47,030
+documentation can send requests.
+83
+
+84
+00:05:47,270 --> 00:05:51,530
+But the fact that the network server handles a set of HTTP command,
+84
+
+85
+00:05:51,530 --> 00:05:57,860
+so a REST API is not something new because it exists in all LoRaWAN server.
+85
+
+86
+00:05:58,010 --> 00:06:04,670
+However, what is nice here is that instead of digging into the documentation, there is a tool with
+86
+
+87
+00:06:04,670 --> 00:06:08,240
+a user interface to send and try all requests.
+87
+
+88
+00:06:08,360 --> 00:06:10,460
+This tool is called Swagger.
+88
+
+89
+00:06:12,020 --> 00:06:14,600
+To connect to the swagger user interface.
+89
+
+90
+00:06:14,630 --> 00:06:18,860
+We use the same role on Port 1890.
+90
+
+91
+00:06:19,340 --> 00:06:20,450
+Here we go.
+91
+
+92
+00:06:20,780 --> 00:06:24,380
+Here is the interactive documentation of the REST API.
+92
+
+93
+00:06:24,410 --> 00:06:28,670
+So, all the HTTP requests we can possibly send to our server are here.
+93
+
+94
+00:06:29,360 --> 00:06:35,540
+Of course, to use it we need to be identified, so we will need the API key we've just created.
+94
+
+95
+00:06:35,840 --> 00:06:44,120
+So we click on the Authorize button here. We enter the word Bearer followed by the API key and click
+95
+
+96
+00:06:44,120 --> 00:06:46,550
+again on Authorize and Close.
+96
+
+97
+00:06:46,730 --> 00:06:49,610
+And now we have access to all requests.
+97
+
+98
+00:06:50,000 --> 00:06:57,050
+The one we're interested in is the one which provides downlink data to our Application Server. So, we
+98
+
+99
+00:06:57,050 --> 00:06:59,300
+can look for the keyword downlink.
+99
+
+100
+00:06:59,960 --> 00:07:06,050
+And here at the last line of this section, there is indeed the right command to enqueue some data in
+100
+
+101
+00:07:06,050 --> 00:07:08,000
+the LoRaWAN server downlink queue.
+101
+
+102
+00:07:08,210 --> 00:07:09,470
+Let's try that.
+102
+
+103
+00:07:09,560 --> 00:07:15,170
+We click on try it out and we now have access to the field required for this request.
+103
+
+104
+00:07:15,200 --> 00:07:18,680
+The devEui and the data JSON object.
+104
+
+105
+00:07:19,070 --> 00:07:26,180
+So I just fill the first field with the devEui I want to send data to and for the JSON object we'll
+105
+
+106
+00:07:26,180 --> 00:07:28,310
+use the same demonstration as before.
+106
+
+107
+00:07:28,580 --> 00:07:31,460
+We want to set the LED on on our board.
+107
+
+108
+00:07:31,460 --> 00:07:35,870
+So for that we need to send 1 on port 15.
+108
+
+109
+00:07:36,110 --> 00:07:43,280
+The value needs to be written in base 64, which is AQ== and the port 15.
+109
+
+110
+00:07:43,880 --> 00:07:49,340
+We can also simplify this object because there are some fields that we don't need, but otherwise we
+110
+
+111
+00:07:49,340 --> 00:07:50,720
+can leave it like this.
+111
+
+112
+00:07:51,050 --> 00:07:51,890
+Great.
+112
+
+113
+00:07:51,890 --> 00:07:54,130
+And now we click on Execute.
+113
+
+114
+00:07:54,140 --> 00:08:00,230
+If the request is sent properly, then in return we have an identifier of the new item queued on the
+114
+
+115
+00:08:00,230 --> 00:08:01,250
+network server.
+115
+
+116
+00:08:01,280 --> 00:08:03,220
+We can check that on the Network Server
+116
+
+117
+00:08:03,230 --> 00:08:05,300
+everything has been received properly.
+117
+
+118
+00:08:05,480 --> 00:08:12,750
+So, we go on Chirpstack and in the corresponding device section there is a tab called Queue and there
+118
+
+119
+00:08:12,750 --> 00:08:13,170
+we go.
+119
+
+120
+00:08:13,200 --> 00:08:16,950
+We can see our downlink data waiting to be sent to the device.
+120
+
+121
+00:08:17,100 --> 00:08:18,660
+When will it be sent?
+121
+
+122
+00:08:18,690 --> 00:08:20,970
+When the device transmits, of course.
+122
+
+123
+00:08:21,450 --> 00:08:27,750
+On the left, I've got one window with my end-device logs and on the right I've got one window with my
+123
+
+124
+00:08:27,750 --> 00:08:29,610
+live data of my LoRaWAN server.
+124
+
+125
+00:08:30,720 --> 00:08:33,960
+I press the push button on the right.
+125
+
+126
+00:08:33,960 --> 00:08:40,380
+I can see that I've received a new uplink frame and on the left I've received the data 1 on Port 15
+126
+
+127
+00:08:40,620 --> 00:08:42,000
+and the LED is on.
+127
+
+128
+00:08:42,360 --> 00:08:44,220
+Everything works perfectly.
+128
+
+129
+00:08:44,760 --> 00:08:48,690
+You can use this tool for many other requests than just signing downlinks.
+129
+
+130
+00:08:48,690 --> 00:08:54,450
+And once you've tested it, you can even pick up the Curl command and sign it from wherever you want.
+130
+
+131
+00:08:54,480 --> 00:08:57,930
+In my case, I can take the one I used already,
+131
+
+132
+00:08:57,960 --> 00:09:02,100
+go on MobaXterm and send this Curl command from my terminal.
+132
+
+133
+00:09:02,550 --> 00:09:05,070
+The result is exactly the same.
+133
+
+134
+00:09:09,990 --> 00:09:10,530
+Great.
+134
+
+135
+00:09:10,530 --> 00:09:13,260
+That's all for the HTTP integration with Chirpstack.
+135
+
+136
+00:09:13,260 --> 00:09:15,570
+So now, let's try MQTT.
