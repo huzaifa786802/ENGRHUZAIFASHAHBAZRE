@@ -1,0 +1,44 @@
+0
+1
+00:00:00,840 --> 00:00:05,780
+This chapter is about the visualization of the LoRa modulation and the representation of the LoRa
+1
+
+2
+00:00:05,850 --> 00:00:06,450
+frame.
+2
+
+3
+00:00:06,660 --> 00:00:12,300
+It will be quite short and it's not essential, but we really think that it helps to understand the
+3
+
+4
+00:00:12,300 --> 00:00:16,530
+LoRaWAN specification because there are many terms that we often mixed up.
+4
+
+5
+00:00:17,370 --> 00:00:23,220
+At the end of this chapter, we would like you to be able to make the difference between the LoRa radio modulation,
+5
+
+6
+00:00:23,220 --> 00:00:25,650
+the PHY payload and the frame payload.
+6
+
+7
+00:00:25,980 --> 00:00:30,360
+For that we'll make some demonstration to check the LoRa signal before the gateway.
+7
+
+8
+00:00:30,690 --> 00:00:34,800
+We'll take the IP packet transmitted by the gateway to the network server.
+8
+
+9
+00:00:34,950 --> 00:00:40,650
+And finally, we'll check the message received on the network server and the application server.
