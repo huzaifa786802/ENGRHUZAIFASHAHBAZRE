@@ -1,0 +1,800 @@
+0
+1
+00:00:00,540 --> 00:00:06,150
+We've succeeded to export our data from the application server to our own application.
+1
+
+2
+00:00:06,570 --> 00:00:11,820
+We've done nothing with this data yet, but this is the first step to our journey to build a complete
+2
+
+3
+00:00:11,820 --> 00:00:12,930
+IoT platform.
+3
+
+4
+00:00:13,590 --> 00:00:18,630
+So later in this course, this application will be called an IoT platform.
+4
+
+5
+00:00:19,260 --> 00:00:25,680
+So far we've just received a simple JSON object representing the content of the uplink data sent by
+5
+
+6
+00:00:25,680 --> 00:00:26,820
+the end device.
+6
+
+7
+00:00:27,420 --> 00:00:33,390
+In this JSON object, the uplink message is stored in a field usually called frame payload.
+7
+
+8
+00:00:34,140 --> 00:00:40,380
+The content of this field is written in base 64 because it's a very convenient way to optimize the representation
+8
+
+9
+00:00:40,380 --> 00:00:41,670
+of binary data.
+9
+
+10
+00:00:42,270 --> 00:00:44,640
+But what does this data represent?
+10
+
+11
+00:00:45,210 --> 00:00:48,990
+Is it the value of a temperature sensor humidity sensor?
+11
+
+12
+00:00:49,170 --> 00:00:51,350
+Is it the character or a number?
+12
+
+13
+00:00:51,360 --> 00:00:53,570
+We absolutely don't know.
+13
+
+14
+00:00:54,450 --> 00:01:00,390
+To decode the binary data received, we need to read the entire end-device documentation and check
+14
+
+15
+00:01:00,390 --> 00:01:02,100
+the meaning of each byte.
+15
+
+16
+00:01:02,130 --> 00:01:05,180
+It can be a very long and difficult process.
+16
+
+17
+00:01:05,190 --> 00:01:12,300
+That's why some IoT platform have device registry, and in this device registry, there are many ready-to-use
+17
+
+18
+00:01:12,300 --> 00:01:16,140
+decoder for the major LoRaWAN device manufacturers.
+18
+
+19
+00:01:17,040 --> 00:01:24,450
+So decoding means: having new fields in the JSON object with the name and corresponding values of all
+19
+
+20
+00:01:24,450 --> 00:01:26,250
+data present in the payload.
+20
+
+21
+00:01:27,000 --> 00:01:33,930
+So, the application server first generate JSON object with a frame payload field containing all the binary
+21
+
+22
+00:01:33,960 --> 00:01:36,330
+data, in base 64.
+22
+
+23
+00:01:36,990 --> 00:01:44,670
+Then, if we now use a decoder, the application server will add an explicit field usually called 
+23
+
+24
+00:01:44,670 --> 00:01:47,010
+"decoded payload" in this JSON object.
+24
+
+25
+00:01:47,610 --> 00:01:49,680
+And that will be very helpful.
+25
+
+26
+00:01:51,240 --> 00:01:56,250
+The process is exactly the same for downlink. From our application,
+26
+
+27
+00:01:56,250 --> 00:02:04,110
+the downlink message sent by our HTTP client or our MQTT publisher is a JSON object with a field called
+27
+
+28
+00:02:04,110 --> 00:02:05,580
+frame payload.
+28
+
+29
+00:02:06,150 --> 00:02:12,630
+And again, this field is written in base 64 and describes the raw binary data we want to transmit to
+29
+
+30
+00:02:12,630 --> 00:02:13,680
+our device.
+30
+
+31
+00:02:14,490 --> 00:02:20,490
+During our previous demonstration, when we wanted to send the LED on or off command,
+31
+
+32
+00:02:20,670 --> 00:02:23,910
+we had to find a corresponding base 64 values.
+32
+
+33
+00:02:23,910 --> 00:02:31,800
+For example, the JSON object to send for an LED off command was this one, this 64 base value doesn't help
+33
+
+34
+00:02:31,800 --> 00:02:34,590
+to have a clear representation of our command.
+34
+
+35
+00:02:35,100 --> 00:02:39,660
+We would rather provide a JSON object with a decoded payload field.
+35
+
+36
+00:02:40,170 --> 00:02:44,910
+Indeed, it's much clearer to write the explicit LED value in the message.
+36
+
+37
+00:02:45,030 --> 00:02:48,060
+That means to send this kind of JSON object.
+37
+
+38
+00:02:49,530 --> 00:02:50,970
+So let's recap.
+38
+
+39
+00:02:51,300 --> 00:02:57,600
+When we receive binary data, we need to decode their meaning to produce a clear JSON object.
+39
+
+40
+00:02:58,200 --> 00:03:05,010
+And when we send a clear JSON object, we need to encode it to produce the corresponding binary data.
+40
+
+41
+00:03:06,810 --> 00:03:12,240
+So, the first possibility is to do this decoding and coding on the IoT platform.
+41
+
+42
+00:03:12,780 --> 00:03:19,200
+But there is a second solution all LoRaWAN application server provide a tool to decode the message.
+42
+
+43
+00:03:19,920 --> 00:03:24,780
+That can be very useful in some situation and I would like to present this option.
+43
+
+44
+00:03:25,410 --> 00:03:29,850
+We will see that it works in both ways uplink and downlink.
+44
+
+45
+00:03:30,900 --> 00:03:35,560
+Does it mean that for each sensor I need to write a specific decoder and encoder?
+45
+
+46
+00:03:35,580 --> 00:03:36,660
+Yes.
+46
+
+47
+00:03:36,750 --> 00:03:37,410
+Yes,
+47
+
+48
+00:03:37,410 --> 00:03:40,080
+If they have their own data representation.
+48
+
+49
+00:03:40,350 --> 00:03:46,260
+And in that case, we'll have to dive into the end device documentation, and that could be very time
+49
+
+50
+00:03:46,260 --> 00:03:47,220
+consuming.
+50
+
+51
+00:03:47,430 --> 00:03:53,970
+There are some existing payload structures like Cayenne, Low Power Payload: LPP, and of course they
+51
+
+52
+00:03:53,970 --> 00:03:54,720
+can be used.
+52
+
+53
+00:03:54,720 --> 00:04:00,720
+But if the device manufacturer has built its own payload structure, then yes, we'll have to decode
+53
+
+54
+00:04:00,720 --> 00:04:01,590
+it by ourselves.
+54
+
+55
+00:04:02,490 --> 00:04:04,320
+However, there is a good news.
+55
+
+56
+00:04:04,470 --> 00:04:10,920
+Since 2022, the LoRaWAN  alliance has standardized the way the decoder and the encoder works.
+56
+
+57
+00:04:10,950 --> 00:04:17,490
+It means that if we have a decoding function for one device, it should work on all application servers.
+57
+
+58
+00:04:17,910 --> 00:04:18,450
+Great.
+58
+
+59
+00:04:18,450 --> 00:04:19,440
+Let's try it.
+59
+
+60
+00:04:20,820 --> 00:04:27,240
+For this demonstration, I will use TTN as a LoRaWAN server, MQTT for the connection and node-red for
+60
+
+61
+00:04:27,240 --> 00:04:28,380
+my application.
+61
+
+62
+00:04:29,070 --> 00:04:35,130
+As I said earlier, if the application server we use follows the LoRaWAN  standard, the decoding and
+62
+
+63
+00:04:35,130 --> 00:04:38,920
+encoding code should be the same on any other application server.
+63
+
+64
+00:04:38,940 --> 00:04:42,330
+So the demonstration here is not specific to TTN.
+64
+
+65
+00:04:42,330 --> 00:04:45,450
+However, it's specific to the device we're using.
+65
+
+66
+00:04:46,650 --> 00:04:50,700
+First, let's have a look at the uplink JSON object message received.
+66
+
+67
+00:04:50,700 --> 00:04:58,980
+When my end device sends an uplink frame in my network application, I need to find the field frame payload.
+67
+
+68
+00:04:59,460 --> 00:04:59,730
+I.
+68
+
+69
+00:04:59,800 --> 00:05:05,830
+I Just remind you that my device sends a simulated temperature between 20 and 25 degrees.
+69
+
+70
+00:05:06,250 --> 00:05:12,700
+I can check that if I get this value and I convert it from the base 64 format into a decimal format.
+70
+
+71
+00:05:13,030 --> 00:05:18,250
+Then in that case, I've got 21 degree.
+71
+
+72
+00:05:18,310 --> 00:05:26,410
+Ok, now what I want is to have the same JSON object here, but with an explicit field for the temperature
+72
+
+73
+00:05:26,410 --> 00:05:27,430
+it represents.
+73
+
+74
+00:05:27,790 --> 00:05:30,490
+Because I know that it's a temperature.
+74
+
+75
+00:05:30,820 --> 00:05:34,690
+So here I want to fill called temperature as well as its value:
+75
+
+76
+00:05:34,720 --> 00:05:35,770
+21.
+76
+
+77
+00:05:36,370 --> 00:05:39,190
+So I go on the TTN application server.
+77
+
+78
+00:05:39,760 --> 00:05:45,460
+I select my device and I choose the payload formatters tab for uplink.
+78
+
+79
+00:05:46,330 --> 00:05:51,610
+In this section, I will be able to write a custom JavaScript code to decode my payload.
+79
+
+80
+00:05:51,970 --> 00:05:57,310
+I'm not going to explain how JavaScript works because it's completely outside of the scope of this course.
+80
+
+81
+00:05:57,340 --> 00:06:02,590
+However, the good news is that we can easily play with the code example proposed here.
+81
+
+82
+00:06:04,120 --> 00:06:12,670
+The only thing we need to know is that input is a JSON object and it contains two fields, one field
+82
+
+83
+00:06:12,670 --> 00:06:19,780
+called "fPort" representing the port number used, and one field called "bytes", which is an array of all
+83
+
+84
+00:06:19,780 --> 00:06:21,970
+bytes received during the transmission.
+84
+
+85
+00:06:23,050 --> 00:06:30,610
+So for example, when my device sends a temperature of, let's say, 21 degrees on port 15, then the
+85
+
+86
+00:06:30,610 --> 00:06:35,170
+input argument of the decode uplink function is actually like this:
+86
+
+87
+00:06:35,560 --> 00:06:41,440
+fPort is equal to 15 and bytes is an array with the unique value 21.
+87
+
+88
+00:06:42,010 --> 00:06:50,860
+So the temperature here is at the first index of the array named bytes, so it's "input.bytes[0]".
+88
+
+89
+00:06:52,480 --> 00:06:59,260
+And the purpose of the decode uplink function here is just to return a new JSON object called data that
+89
+
+90
+00:06:59,260 --> 00:07:01,810
+only contains the field we want to display.
+90
+
+91
+00:07:02,260 --> 00:07:10,270
+So in my case, I just want field called temperature and the corresponding value is, as I said,
+91
+
+92
+00:07:10,270 --> 00:07:11,920
+input.bytes[0].
+92
+
+93
+00:07:13,120 --> 00:07:17,920
+Sometimes on LoRaWAN  server you can even try out your decode uplink function.
+93
+
+94
+00:07:17,920 --> 00:07:19,180
+And that's the case in TTN.
+94
+
+95
+00:07:20,230 --> 00:07:23,210
+We need to enter the payload in hexadecimal format.
+95
+
+96
+00:07:23,230 --> 00:07:28,810
+So 21 degrees in hexadecimal is 15 and our port number is 15.
+96
+
+97
+00:07:30,440 --> 00:07:33,270
+We launched the decoder and here we go.
+97
+
+98
+00:07:33,290 --> 00:07:39,020
+Now, in our JSON object that will be sent to my application, there will be the same frame payload
+98
+
+99
+00:07:39,020 --> 00:07:45,860
+as before in base 64, but there will be also a new field called temperature with the right decimal
+99
+
+100
+00:07:45,860 --> 00:07:46,520
+value.
+100
+
+101
+00:07:47,570 --> 00:07:51,920
+So now if I go back on node-red, I can test that for real.
+101
+
+102
+00:07:52,310 --> 00:07:54,800
+I send an uplink with my device.
+102
+
+103
+00:07:55,160 --> 00:08:00,230
+And there I can find the decoded payload field corresponding to my temperature.
+103
+
+104
+00:08:00,560 --> 00:08:05,870
+We see here it's much easier to read than this frame Payload above.
+104
+
+105
+00:08:06,760 --> 00:08:08,830
+So that was for the uplink.
+105
+
+106
+00:08:08,860 --> 00:08:12,130
+Now, there is exactly the same process for downlink.
+106
+
+107
+00:08:12,970 --> 00:08:17,860
+So in the payload formatted tab, I now choose the downlink section.
+107
+
+108
+00:08:18,280 --> 00:08:24,040
+I'll be able to write a custom JavaScript function that will handle the JSON object received from my
+108
+
+109
+00:08:24,040 --> 00:08:24,910
+application.
+109
+
+110
+00:08:25,240 --> 00:08:29,020
+And it will generate the binary data to send to the device.
+110
+
+111
+00:08:30,130 --> 00:08:38,380
+The only thing we need to know is that the input is a JSON object and it contains two fields: one field
+111
+
+112
+00:08:38,380 --> 00:08:45,670
+called data representing the object sent by our application, and fPort representing the application port
+112
+
+113
+00:08:45,670 --> 00:08:46,390
+number.
+113
+
+114
+00:08:47,020 --> 00:08:55,210
+So for example, when my application sends a command on port 15 to turn on or off the LED, then the
+114
+
+115
+00:08:55,210 --> 00:09:05,920
+input argument of the encode downlink function is actually like this: data is a JSON object {"led" : 1} and fPort
+115
+
+116
+00:09:05,950 --> 00:09:07,540
+is obviously 15.
+116
+
+117
+00:09:08,410 --> 00:09:16,030
+In my case, if I want to send a binary data equal to one when the JSON LED value is one, then my binary
+117
+
+118
+00:09:16,030 --> 00:09:22,060
+data has to be equal to the value: input.data.led.
+118
+
+119
+00:09:24,130 --> 00:09:31,120
+And the purpose of the encode downlink function is just to return a new JSON object with a field called
+119
+
+120
+00:09:31,120 --> 00:09:31,870
+byte.
+120
+
+121
+00:09:32,290 --> 00:09:38,560
+It's an array corresponding to the value to send, and the other field is fPort.
+121
+
+122
+00:09:38,890 --> 00:09:47,680
+So in my case, as I said byte text value: "input.data.led" because I want a binary that are equal
+122
+
+123
+00:09:47,680 --> 00:09:54,160
+to 1 when led is equal to 1, and the binary data equal to 0 when the LED is equal to 0.
+123
+
+124
+00:09:54,580 --> 00:10:01,990
+And finally, fport takes the value "input.fPort" again before testing it
+124
+
+125
+00:10:01,990 --> 00:10:05,830
+for real, we can simulate the proper operation of this function.
+125
+
+126
+00:10:06,280 --> 00:10:12,220
+I will provide a JSON object with the following content:
+led : 1.
+126
+
+127
+00:10:13,390 --> 00:10:21,310
+The input object is created, the encoded downlink function is executed and the data JSON object generated.
+127
+
+128
+00:10:21,400 --> 00:10:25,720
+There will be a field called byte, which the content is displayed here.
+128
+
+129
+00:10:26,410 --> 00:10:28,330
+Yes, it works.
+129
+
+130
+00:10:28,510 --> 00:10:34,600
+When we provide 1 for the LED, it sends the binary data 1 and if I provide 0,
+130
+
+131
+00:10:36,910 --> 00:10:38,080
+It sends 0.
+131
+
+132
+00:10:38,630 --> 00:10:42,120
+Okay, let's try it out now with node-red.
+132
+
+133
+00:10:42,160 --> 00:10:43,300
+I copy this node.
+133
+
+134
+00:10:47,630 --> 00:10:50,420
+I will call it: LED ON Decoded.
+134
+
+135
+00:10:53,190 --> 00:10:56,670
+Because this node was previously sending this JSON object.
+135
+
+136
+00:10:57,150 --> 00:11:00,270
+It was the frame payload in 64 base format.
+136
+
+137
+00:11:00,630 --> 00:11:03,540
+Now I need to provide a decoded payload.
+137
+
+138
+00:11:03,930 --> 00:11:11,910
+So I erase this field and I replace it by decoded payload LED 1.
+138
+
+139
+00:11:20,910 --> 00:11:27,240
+When the application server will receive this command, it will run the ENCODE downlink function and
+139
+
+140
+00:11:27,240 --> 00:11:29,310
+generate the binary data to send.
+140
+
+141
+00:11:30,330 --> 00:11:34,500
+So I send an LED ON decoded command from my application.
+141
+
+142
+00:11:35,160 --> 00:11:41,550
+First there is a good news, it's that my application server understood my command because it tells me that
+142
+
+143
+00:11:41,550 --> 00:11:43,440
+this downlink message has been queued.
+143
+
+144
+00:11:44,070 --> 00:11:46,500
+Now I go on my device.
+144
+
+145
+00:11:48,410 --> 00:11:53,060
+And if I want to receive the downlink message, I know that I need to send an uplink.
+145
+
+146
+00:11:53,150 --> 00:11:55,280
+So I press the push button.
+146
+
+147
+00:11:57,380 --> 00:12:04,400
+And yes, I've received the binary data 1, and my device application turned on the LED.
+147
+
+148
+00:12:05,270 --> 00:12:06,890
+Everything works perfectly.
+148
+
+149
+00:12:07,520 --> 00:12:08,690
+One more thing.
+149
+
+150
+00:12:08,810 --> 00:12:11,210
+If I have a look at the application server.
+150
+
+151
+00:12:11,420 --> 00:12:15,470
+Previously I saw the binary value displayed in the log console.
+151
+
+152
+00:12:15,890 --> 00:12:22,370
+But now I can see that for an uplink, the JSON object created is displayed with the temperature field.
+152
+
+153
+00:12:23,090 --> 00:12:24,990
+And same thing for downlink.
+153
+
+154
+00:12:25,010 --> 00:12:28,280
+I've got the JSON object with the LED value.
+154
+
+155
+00:12:28,550 --> 00:12:34,880
+Things are much clearer now and it will be very helpful to know which data we exactly send and receive.
+155
+
+156
+00:12:35,600 --> 00:12:36,200
+Fine.
+156
+
+157
+00:12:36,200 --> 00:12:37,390
+I hope it helps.
+157
+
+158
+00:12:37,400 --> 00:12:39,230
+That's the end of this chapter.
+158
+
+159
+00:12:39,350 --> 00:12:43,020
+Now we'll even go deeper in the LoRaWAN world and build our own LoRaWAN 
+159
+
+160
+00:12:43,040 --> 00:12:45,890
+private network server and application server.
