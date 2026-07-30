@@ -1,0 +1,89 @@
+0
+1
+00:00:00,950 --> 00:00:06,140
+The first step of the LoRaWAN Network configuration is the Gateway configuration.
+1
+
+2
+00:00:06,320 --> 00:00:12,590
+This will allow the Gateway to be aware of the targeted Network Server and also the protocol used.
+2
+
+3
+00:00:12,950 --> 00:00:19,760
+We saw previously that unfortunately LoRaWAN doesn't specify one protocol between the gateway and the
+3
+
+4
+00:00:19,760 --> 00:00:20,540
+Network Server.
+4
+
+5
+00:00:20,930 --> 00:00:25,220
+So, many LoRaWAN players have developed their own solutions.
+5
+
+6
+00:00:25,790 --> 00:00:32,030
+The protocol used between the Gateway and the Network Server is handled by what we call a packet forwarder.
+6
+
+7
+00:00:32,840 --> 00:00:39,260
+The most commonly used protocol is UDP SEMTECH packet forwarder, but there are many others like
+7
+
+8
+00:00:39,260 --> 00:00:41,990
+LoRa Basic Station, also created by Semtech,
+8
+
+9
+00:00:42,190 --> 00:00:44,300
+LRR created by Actility,
+9
+
+10
+00:00:44,330 --> 00:00:48,410
+LORIOT packet forwarder uses for LORIOT Network Server and so on.
+10
+
+11
+00:00:49,010 --> 00:00:53,480
+The problem is that all Network Servers don't support all packet forwarders.
+11
+
+12
+00:00:53,660 --> 00:00:59,300
+Fortunately, most Gateways support several packet forwarders, so in that case you're pretty sure that
+12
+
+13
+00:00:59,300 --> 00:01:02,190
+at least one will be compatible with the Network Server.
+13
+
+14
+00:01:03,120 --> 00:01:08,980
+So, before choosing a Gateway with its packet forwarder, we need to check on the Network Server documentation
+14
+
+15
+00:01:09,000 --> 00:01:15,780
+the compatibilities they offer. At the time we posted this video, Chirpstack and The Things Stack can both support
+15
+
+16
+00:01:15,780 --> 00:01:23,820
+Semtech UDP packet forwarder and Basic Station packet forwarder. And in our case, for our private network
+16
+
+17
+00:01:23,820 --> 00:01:27,300
+configuration, we will use Semtech UDP packet forwarder.
+17
+
+18
+00:01:27,300 --> 00:01:29,850
+So, everything should work with both Network Servers.
