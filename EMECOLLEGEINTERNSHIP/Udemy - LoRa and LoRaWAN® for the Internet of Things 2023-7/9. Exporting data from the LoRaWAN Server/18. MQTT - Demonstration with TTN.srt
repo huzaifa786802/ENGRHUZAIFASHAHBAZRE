@@ -1,0 +1,837 @@
+0
+1
+00:00:00,930 --> 00:00:02,460
+On the things stack community.
+1
+
+2
+00:00:02,460 --> 00:00:11,310
+So on TTN, the MQTT broker is exposed and already available so we can make a demonstration to connect two clients:
+2
+
+3
+00:00:11,310 --> 00:00:13,890
+One publisher and one subscriber.
+3
+
+4
+00:00:14,610 --> 00:00:20,070
+The second architecture we explained where the broker is an independent entity between the LoRaWAN sever
+4
+
+5
+00:00:20,070 --> 00:00:26,250
+and the IoT platform is not available on TTN, at least not at the time of this demonstration.
+5
+
+6
+00:00:26,550 --> 00:00:30,990
+However, it's available if we install our own the things stack server.
+6
+
+7
+00:00:31,560 --> 00:00:33,150
+That's what we'll do later.
+7
+
+8
+00:00:33,150 --> 00:00:36,690
+But for the time being, we'll stick with the community network.
+8
+
+9
+00:00:36,690 --> 00:00:42,050
+So we will only be able to explain the first architecture, the one with the broker exposed in TTN
+9
+
+10
+00:00:42,060 --> 00:00:42,750
+itself.
+10
+
+11
+00:00:43,080 --> 00:00:48,420
+Anyway, it's the simplest architecture, so we won't mind.
+For this demonstration,
+11
+
+12
+00:00:48,420 --> 00:00:52,710
+my device is going to send a temperature each time I press the user button.
+12
+
+13
+00:00:54,330 --> 00:00:55,200
+On the left,
+13
+
+14
+00:00:55,200 --> 00:01:01,740
+I've got my end device logs, and on the right I've got my application and I can check that everything
+14
+
+15
+00:01:01,740 --> 00:01:02,490
+works well.
+15
+
+16
+00:01:08,640 --> 00:01:14,430
+Okay, so where do I need to connect my subscriber for the uplink and my publisher for the downlink?
+16
+
+17
+00:01:14,910 --> 00:01:18,840
+I need to connect them to the MQTT broker embeded on TTN.
+17
+
+18
+00:01:19,320 --> 00:01:26,670
+What is great is that this broker is already available and enabled so I don't have to do anything to
+18
+
+19
+00:01:26,670 --> 00:01:28,110
+check its configuration.
+19
+
+20
+00:01:28,110 --> 00:01:33,050
+I go in my application > integration > MQTT.
+20
+
+21
+00:01:34,380 --> 00:01:38,010
+1. First, I need to know the server to which we want to connect to.
+21
+
+22
+00:01:38,310 --> 00:01:45,210
+In this case it's TTN, the server address is this one, so I copy it to use it later.
+22
+
+23
+00:01:45,720 --> 00:01:49,890
+2. Secondly, we said that we would need some credentials to connect to this broker.
+23
+
+24
+00:01:50,040 --> 00:01:51,270
+There they are.
+24
+
+25
+00:01:51,300 --> 00:01:55,390
+The username will be this one and the password must be generated.
+25
+
+26
+00:01:55,410 --> 00:01:58,920
+It's an API key specific for the MQTT protocol.
+26
+
+27
+00:01:58,950 --> 00:02:02,340
+Again, I copy it because I will use it later.
+27
+
+28
+00:02:03,210 --> 00:02:09,540
+3. Third, I need a topic, so I will make it easy for the subscriber because I'm going to use the wild card
+28
+
+29
+00:02:09,540 --> 00:02:10,410
+#.
+29
+
+30
+00:02:10,890 --> 00:02:12,540
+What happens if I do that?
+30
+
+31
+00:02:12,540 --> 00:02:17,430
+I will receive all event from all sensors of all applications.
+31
+
+32
+00:02:17,700 --> 00:02:23,850
+Of course, if you want the data from a specific end-device of a specific application, then we need
+32
+
+33
+00:02:23,850 --> 00:02:28,260
+the exact topic and we'll find this information in the documentation.
+33
+
+34
+00:02:28,560 --> 00:02:29,820
+Let's have a look.
+34
+
+35
+00:02:30,090 --> 00:02:35,550
+We go on the things stack website and we look for information about MQTT.
+35
+
+36
+00:02:35,790 --> 00:02:36,660
+Great.
+36
+
+37
+00:02:36,900 --> 00:02:39,840
+In this section, we have everything we need.
+37
+
+38
+00:02:39,870 --> 00:02:42,990
+They explain the credential with the generation of the key.
+38
+
+39
+00:02:43,020 --> 00:02:45,750
+We've done this before, so it's okay for us.
+39
+
+40
+00:02:46,200 --> 00:02:51,220
+And in this paragraph, we see all topics concerning the upstream traffic.
+40
+
+41
+00:02:51,240 --> 00:02:53,550
+Let's say we want the uplink messages.
+41
+
+42
+00:02:53,550 --> 00:02:57,540
+Then we need to use this topic and of course, to replace the application item.
+42
+
+43
+00:02:58,080 --> 00:03:02,830
+In our case, it's training-usmb. And to replace the device ID.
+43
+
+44
+00:03:02,850 --> 00:03:05,720
+In our case, it's device1-abp.
+44
+
+45
+00:03:06,480 --> 00:03:08,130
+And now for the publisher.
+45
+
+46
+00:03:08,130 --> 00:03:12,270
+So to send downlink messages, the information is just below.
+46
+
+47
+00:03:12,480 --> 00:03:14,100
+The topic is this one.
+47
+
+48
+00:03:14,220 --> 00:03:19,020
+Again, we need to replace application ID and device ID with the right values.
+48
+
+49
+00:03:19,320 --> 00:03:21,390
+The topic is just different at the end.
+49
+
+50
+00:03:21,420 --> 00:03:22,290
+It's down/push.
+50
+
+51
+00:03:22,290 --> 00:03:22,830
+...
+51
+
+52
+00:03:22,830 --> 00:03:23,670
+Or
+52
+
+53
+00:03:23,670 --> 00:03:24,360
+down/replace.
+53
+
+54
+00:03:24,360 --> 00:03:28,020
+Depending if you want to erase the downlink queue or not.
+54
+
+55
+00:03:28,530 --> 00:03:32,220
+So again, I copy these topics because I will use them later.
+55
+
+56
+00:03:33,020 --> 00:03:34,860
+4. OK, we're almost done.
+56
+
+57
+00:03:34,860 --> 00:03:37,560
+We need one last information for the publisher.
+57
+
+58
+00:03:37,860 --> 00:03:40,650
+That's the format of the downlink message.
+58
+
+59
+00:03:40,800 --> 00:03:44,610
+The payload of the message has to respect a specific JSON format.
+59
+
+60
+00:03:45,030 --> 00:03:50,310
+Again, if we come back in the documentation, we can find an example of this JSON payload.
+60
+
+61
+00:03:50,790 --> 00:03:55,170
+Basically, we'll assign an application port and of course a frame payload.
+61
+
+62
+00:03:55,560 --> 00:03:56,970
+Just be careful.
+62
+
+63
+00:03:56,970 --> 00:03:58,920
+It's a 64 base format.
+63
+
+64
+00:03:59,700 --> 00:04:03,000
+I also copy this JSON object because I will also use it.
+64
+
+65
+00:04:03,750 --> 00:04:04,500
+Great.
+65
+
+66
+00:04:04,530 --> 00:04:06,660
+We're ready for our demonstration.
+66
+
+67
+00:04:06,750 --> 00:04:07,830
+Let's start with Node-red.
+67
+
+68
+00:04:07,830 --> 00:04:08,390
+...
+68
+
+69
+00:04:08,400 --> 00:04:12,270
+And after I'll show you the same demonstration with MQTT Explorer.
+69
+
+70
+00:04:12,780 --> 00:04:15,630
+We'll need all the information copied previously.
+70
+
+71
+00:04:15,630 --> 00:04:17,700
+So I saved everything here.
+71
+
+72
+00:04:18,720 --> 00:04:21,600
+I come back on my node-red user interface.
+72
+
+73
+00:04:21,840 --> 00:04:28,980
+I will keep this tab with my public mosquitto test so I open a new tab.
+But the flow I'm going to use
+73
+
+74
+00:04:28,980 --> 00:04:30,290
+is very similar.
+74
+
+75
+00:04:30,300 --> 00:04:34,350
+So I copy all nodes and I pass them on my new flow.
+75
+
+76
+00:04:41,280 --> 00:04:43,230
+> I changed the name of the tab.
+76
+
+77
+00:04:43,260 --> 00:04:49,650
+This test is about an MQTT connection with TTN, so the name will be MQTT TTN.
+77
+
+78
+00:04:53,490 --> 00:04:55,560
+> The broker is now TTN.
+78
+
+79
+00:04:55,890 --> 00:04:59,310
+Again, this is just a common so don't worry about that.
+79
+
+80
+00:04:59,310 --> 00:05:03,330
+But I think it's clearer if we keep in mind that it's TTN the broker here.
+80
+
+81
+00:05:04,500 --> 00:05:07,410
+1. Okay, so now let's configure the subscriber.
+81
+
+82
+00:05:07,560 --> 00:05:11,910
+So I click on the subscriber node and I'm going to add a new broker.
+82
+
+83
+00:05:18,420 --> 00:05:21,060
+I fill in the sever name that I've copied before.
+83
+
+84
+00:05:23,600 --> 00:05:27,380
+And in the security tab, I need to enter the credentials.
+84
+
+85
+00:05:27,380 --> 00:05:30,080
+So username and password.
+85
+
+86
+00:05:30,530 --> 00:05:33,950
+Again, these are all the information I've copied before.
+86
+
+87
+00:05:34,370 --> 00:05:39,110
+Then I add the broker to the list available when the configuration is done.
+87
+
+88
+00:05:39,530 --> 00:05:43,460
+Now I've got the new broker available in the list.
+88
+
+89
+00:05:44,090 --> 00:05:44,840
+Great.
+89
+
+90
+00:05:44,840 --> 00:05:46,600
+2. So now the topic.
+90
+
+91
+00:05:46,610 --> 00:05:48,560
+I said that I would use the # wild card.
+91
+
+92
+00:05:49,520 --> 00:05:52,220
+But if you want, you can specify one.
+92
+
+93
+00:05:52,700 --> 00:05:53,860
+And there we go.
+93
+
+94
+00:05:53,870 --> 00:05:55,730
+We are done with the subscriber.
+94
+
+95
+00:05:55,940 --> 00:05:58,850
+So we can try that part and it should work.
+95
+
+96
+00:05:59,000 --> 00:06:02,250
+I click on deploy. For this test,
+96
+
+97
+00:06:02,270 --> 00:06:04,600
+I'm only interested in the subscriber part.
+97
+
+98
+00:06:04,610 --> 00:06:09,830
+So don't look at the publisher because this is just the one I copied from the previous demonstration.
+98
+
+99
+00:06:10,130 --> 00:06:12,560
+And I hit the push button of my own device.
+99
+
+100
+00:06:13,340 --> 00:06:17,270
+Then I receive the message on my application.
+100
+
+101
+00:06:18,080 --> 00:06:25,100
+This message has traveled all the way from my device, my gateways, the network server, the application
+101
+
+102
+00:06:25,100 --> 00:06:30,200
+server, the TTN broker, and finally has been pushed on my subscriber here.
+102
+
+103
+00:06:31,160 --> 00:06:36,270
+If you want the exact topic for your device, then you can find it here in the debug window.
+103
+
+104
+00:06:36,290 --> 00:06:41,960
+We just need to copy that and change the topic of our subscriber with this one if you wish.
+104
+
+105
+00:06:43,340 --> 00:06:46,970
+So the right part of this flow is working for the upstream traffic.
+105
+
+106
+00:06:47,270 --> 00:06:52,460
+Now on the left I'm going to take care of the publisher part for the downlink traffic.
+106
+
+107
+00:06:53,780 --> 00:06:56,480
+So I click on the publisher here.
+107
+
+108
+00:06:56,480 --> 00:07:01,250
+I choose the broker I want to connect to, which is this one.
+108
+
+109
+00:07:01,670 --> 00:07:06,050
+And for the topic I can paste the topic I took from the documentation.
+109
+
+110
+00:07:06,320 --> 00:07:08,180
+Or I can also take it from here.
+110
+
+111
+00:07:08,210 --> 00:07:14,330
+And if you remember well, I just have to change "up" by down/push.
+111
+
+112
+00:07:14,990 --> 00:07:15,770
+All right.
+112
+
+113
+00:07:15,860 --> 00:07:18,560
+We are done with the publisher configuration.
+113
+
+114
+00:07:19,010 --> 00:07:23,490
+Now I need to select the content of the JSON object to send in the downlink message.
+114
+
+115
+00:07:24,230 --> 00:07:28,010
+So the payload is not a string anymore, but it is an object.
+115
+
+116
+00:07:28,010 --> 00:07:31,160
+And the content is what I picked up from the documentation.
+116
+
+117
+00:07:31,490 --> 00:07:36,920
+So I just open the JSON editor here and I paste the content.
+117
+
+118
+00:07:37,520 --> 00:07:44,870
+In this example, I'm going to send the command 1 on the application Port 15 to turn on the LED of
+118
+
+119
+00:07:44,870 --> 00:07:46,040
+my end device.
+119
+
+120
+00:07:49,390 --> 00:07:54,910
+The text edition is done, and I just changed the name of my node to make things clearer in my flow.
+120
+
+121
+00:07:55,360 --> 00:07:57,040
+(LED on.)
+121
+
+122
+00:07:57,610 --> 00:07:58,320
+Great.
+122
+
+123
+00:07:58,330 --> 00:08:00,820
+So let's deploy and test this application.
+123
+
+124
+00:08:01,930 --> 00:08:04,840
+Both publisher and subscriber are connected.
+124
+
+125
+00:08:04,900 --> 00:08:08,470
+If there were any problem, I would have them reported here.
+125
+
+126
+00:08:08,800 --> 00:08:11,050
+So now everything seems fine.
+126
+
+127
+00:08:11,170 --> 00:08:13,270
+For the moment, nothing happens.
+127
+
+128
+00:08:13,270 --> 00:08:17,940
+And then I press the downlink button on my window.
+128
+
+129
+00:08:17,950 --> 00:08:22,000
+I've got a message from the LoRaWAN server telling me that the message has been queued.
+129
+
+130
+00:08:22,180 --> 00:08:27,550
+It hasn't been sent yet because I remind you that this device is a Class A end device.
+130
+
+131
+00:08:27,550 --> 00:08:31,240
+So I need to send an uplink message before sending a downlink.
+131
+
+132
+00:08:31,870 --> 00:08:37,960
+And for that I need to press my end-device push button.
+On my application,
+132
+
+133
+00:08:37,960 --> 00:08:42,070
+I receive a new message telling me that an uplink data has been received.
+133
+
+134
+00:08:42,370 --> 00:08:44,590
+So let's go on the device.
+134
+
+135
+00:08:44,920 --> 00:08:50,950
+And yes, indeed, I've received one and I can check that the LED is turned on.
+135
+
+136
+00:08:51,880 --> 00:08:57,940
+If I now want to turn it off, then I just need to modify the downlink frame payload of my injection
+136
+
+137
+00:08:57,940 --> 00:09:05,560
+node or I can have both on the same flow, one for the LED ON, and one for the LED OFF.
+137
+
+138
+00:09:07,800 --> 00:09:10,920
+I copy it and I just modify the name.
+138
+
+139
+00:09:10,950 --> 00:09:12,330
+(LED off.)
+139
+
+140
+00:09:15,430 --> 00:09:21,310
+And the payload with AA== , which is 0 coded in base 64.
+140
+
+141
+00:09:23,500 --> 00:09:24,970
+So we are done with node-red.
+141
+
+142
+00:09:25,000 --> 00:09:29,110
+Now we can try to do the same application with MQTT Explorer.
+142
+
+143
+00:09:29,500 --> 00:09:34,780
+Now that we know the broker address credential and payload to send, I guess it would be much quicker.
+143
+
+144
+00:09:37,230 --> 00:09:41,040
+On my explorer, I create a new connection.
+144
+
+145
+00:09:41,370 --> 00:09:44,790
+I call it TTN and I enter the broker address
+145
+
+146
+00:09:47,940 --> 00:09:49,230
+and credentials.
+146
+
+147
+00:09:49,680 --> 00:09:52,560
+These are exactly the same ones I use previously.
+147
+
+148
+00:09:55,640 --> 00:09:56,540
+For the topic,
+148
+
+149
+00:09:56,540 --> 00:10:01,460
+I leave it like this because if you remember, the default topic is #.
+149
+
+150
+00:10:01,460 --> 00:10:08,060
+So that means that if we don't change this configuration, I will receive all messages sent to all topics.
+150
+
+151
+00:10:08,990 --> 00:10:14,340
+I connect my client to the broker and I can send an uplink message from my device.
+151
+
+152
+00:10:14,360 --> 00:10:17,210
+For that I just need to press the push button.
+152
+
+153
+00:10:17,930 --> 00:10:18,980
+There we go.
+153
+
+154
+00:10:20,970 --> 00:10:25,710
+The content is here and I can see the frame payload in base 64.
+154
+
+155
+00:10:26,610 --> 00:10:28,200
+That was the uplink traffic.
+155
+
+156
+00:10:28,200 --> 00:10:31,230
+So now how do we send a downlink message?
+156
+
+157
+00:10:32,850 --> 00:10:34,980
+We go on the publisher part.
+157
+
+158
+00:10:35,070 --> 00:10:37,320
+We assign the right topic.
+158
+
+159
+00:10:37,710 --> 00:10:46,020
+Again, it's the same one, but I change "up" by "down/push" and I enter the JSON object message with the
+159
+
+160
+00:10:46,020 --> 00:10:47,100
+right payload.
+160
+
+161
+00:10:47,610 --> 00:10:53,040
+My LED is on, so I want to turn it off with AA== payload.
+161
+
+162
+00:10:56,150 --> 00:10:57,770
+As soon as I publish it.
+162
+
+163
+00:10:57,770 --> 00:11:02,390
+A new message is received from the broker telling us that the message is queued.
+163
+
+164
+00:11:02,900 --> 00:11:08,360
+And when I press the push button, I receive a new uplink on my subscriber.
+164
+
+165
+00:11:13,950 --> 00:11:20,010
+And obviously on the device side, I've received the command and the LED is now off.
+165
+
+166
+00:11:20,460 --> 00:11:22,090
+That's that simple.
+166
+
+167
+00:11:22,110 --> 00:11:27,180
+So try these demonstrations, and tell us if you manage to connect your LoRaWAN server with MQTT.
