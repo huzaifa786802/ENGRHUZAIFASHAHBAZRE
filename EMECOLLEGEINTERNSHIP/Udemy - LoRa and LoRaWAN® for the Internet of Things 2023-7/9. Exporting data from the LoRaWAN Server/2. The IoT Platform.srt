@@ -1,0 +1,191 @@
+0
+1
+00:00:00,360 --> 00:00:04,980
+We've seen so far how to send data from an end-device to the Network Server.
+1
+
+2
+00:00:05,340 --> 00:00:08,370
+First, the end-device sends a packet to a gateway.
+2
+
+3
+00:00:08,670 --> 00:00:14,610
+Then, the gateway transfers it on the Internet to a Network Server and an Application Server.
+3
+
+4
+00:00:14,640 --> 00:00:15,540
+That's it.
+4
+
+5
+00:00:15,810 --> 00:00:17,910
+The LoRaWAN protocol stops here.
+5
+
+6
+00:00:18,060 --> 00:00:23,880
+From this point, we have the user data decrypted. In the LoRaWAN protocol,
+6
+
+7
+00:00:23,910 --> 00:00:27,030
+this user data is called the frame payload.
+7
+
+8
+00:00:27,630 --> 00:00:34,140
+If your Network Server provides a more secure environment with end-to-end security, you might have
+8
+
+9
+00:00:34,140 --> 00:00:37,740
+a different architecture, but it doesn't change the overall explanation.
+9
+
+10
+00:00:38,250 --> 00:00:44,370
+Indeed, you Application Server use to decrypt your data with the Application Session Key would be on
+10
+
+11
+00:00:44,370 --> 00:00:46,860
+the same location as your IoT platform.
+11
+
+12
+00:00:47,130 --> 00:00:51,480
+But really, what we're going to explain would be exactly the same.
+12
+
+13
+00:00:52,430 --> 00:00:56,030
+The question is now, what are we going to do with this data?
+13
+
+14
+00:00:56,210 --> 00:01:01,900
+Because we've set up a successful LoRaWAN transmission, and for that, we can be very glad indeed.
+14
+
+15
+00:01:01,910 --> 00:01:05,600
+But now, we need to give some value to this data:
+15
+
+16
+00:01:05,690 --> 00:01:08,240
+We want to save everything in the database.
+16
+
+17
+00:01:08,270 --> 00:01:13,700
+We want to perform calculation, prediction and possibly to apply Artificial Intelligence.
+17
+
+18
+00:01:13,970 --> 00:01:18,830
+We want to present things in tables, graphs or anything that suits our clients.
+18
+
+19
+00:01:19,310 --> 00:01:26,210
+And finally, we want to make these data available through a web service. So the user will be able to
+19
+
+20
+00:01:26,210 --> 00:01:29,000
+access and visualize these data from anywhere.
+20
+
+21
+00:01:29,630 --> 00:01:30,280
+Great.
+21
+
+22
+00:01:30,290 --> 00:01:36,260
+So, the good news is that this chapter is completely independent from the LoRa modulation and the LoRaWAN
+22
+
+23
+00:01:36,260 --> 00:01:38,150
+standards we have studied so far.
+23
+
+24
+00:01:38,450 --> 00:01:43,730
+That means that the following explanation can be easily transposed to any other protocols related to
+24
+
+25
+00:01:43,730 --> 00:01:44,960
+the Internet of Things.
+25
+
+26
+00:01:45,490 --> 00:01:52,340
+Okay, so before starting, let's remind some basic vocabulary:
+- A frame that comes from the end device, and
+26
+
+27
+00:01:52,340 --> 00:01:53,730
+that  goes to the network server.
+27
+
+28
+00:01:53,750 --> 00:01:57,320
+then to the Iot platform is called a uplink frame.
+28
+
+29
+00:01:57,950 --> 00:02:02,440
+And, 
+-A  the frame that comes from the IoT platform and that goes to the LoRaWAN server,
+29
+
+30
+00:02:02,450 --> 00:02:06,530
+then towards the end-device is called a downlink frame.
+30
+
+31
+00:02:06,890 --> 00:02:07,550
+Great.
+31
+
+32
+00:02:07,550 --> 00:02:11,510
+We already saw everything concerning the LoRaWAN protocol in the previous chapter.
+32
+
+33
+00:02:11,540 --> 00:02:17,300
+So, now we want to deal with the dialogue between the LoRaWAN server and the IoT platform.
+33
+
+34
+00:02:17,930 --> 00:02:24,980
+And in this chapter, we're going to see in details two protocols which are HTTP and MQTT.
+34
+
+35
+00:02:25,310 --> 00:02:29,510
+For now, we are just focusing only on the data transmission on the IoT platform.
+35
+
+36
+00:02:29,510 --> 00:02:33,890
+But later in this course, we'll build a complete IoT platform ourselves.
+36
+
+37
+00:02:33,890 --> 00:02:37,520
+So we'll be able to save data and visualize them in a nice way.
+37
+
+38
+00:02:37,970 --> 00:02:40,340
+Let's start with the HTTP protocol.
