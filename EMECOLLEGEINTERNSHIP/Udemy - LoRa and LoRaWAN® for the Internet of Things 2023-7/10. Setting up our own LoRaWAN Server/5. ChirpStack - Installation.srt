@@ -1,0 +1,489 @@
+0
+1
+00:00:00,530 --> 00:00:03,170
+The ChirpStack installation will be very fast.
+1
+
+2
+00:00:03,200 --> 00:00:06,260
+Whatever the hardware we've chosen to install the server,
+2
+
+3
+00:00:06,290 --> 00:00:11,360
+the fact that we use a Docker container will make it very easy. For us,
+3
+
+4
+00:00:11,390 --> 00:00:14,300
+it's time now to choose where we will set up our server.
+4
+
+5
+00:00:14,660 --> 00:00:16,900
+We've seen many possible options.
+5
+
+6
+00:00:16,910 --> 00:00:24,890
+It can be our local PC, a Raspberry Pi, a virtual machine, but in my case I'm going to use a public
+6
+
+7
+00:00:24,890 --> 00:00:28,100
+server that I've rented from a cloud provider.
+7
+
+8
+00:00:28,670 --> 00:00:35,900
+It's a simple machine with very few capabilities: 2 Giga Bytes of RAM and only one virtual Core.
+8
+
+9
+00:00:36,200 --> 00:00:39,200
+But it will be more than enough for our demonstration.
+9
+
+10
+00:00:39,380 --> 00:00:45,110
+Of course, as our network increases because for example we have new clients, then we can scale
+10
+
+11
+00:00:45,110 --> 00:00:46,850
+it to increase its capacity.
+11
+
+12
+00:00:47,150 --> 00:00:51,550
+If you've chosen to set up your server on another platform, no problem,
+12
+
+13
+00:00:51,560 --> 00:00:54,020
+the demonstration will exactly be the same.
+13
+
+14
+00:00:54,020 --> 00:00:57,160
+So, no worries. On my server,
+14
+
+15
+00:00:57,170 --> 00:01:00,390
+I've installed a Basic Linux Debian Operating System.
+15
+
+16
+00:01:00,510 --> 00:01:03,390
+Actually, to be honest I haven't done it myself
+16
+
+17
+00:01:03,390 --> 00:01:10,710
+as my server provider propose many ready to use operating system and I picked up debian. And, the only
+17
+
+18
+00:01:10,710 --> 00:01:16,680
+thing I've installed is as we've said several times, Docker and Docker-compose.
+18
+
+19
+00:01:16,980 --> 00:01:18,960
+In addition to this private server,
+19
+
+20
+00:01:18,960 --> 00:01:20,850
+I also have a domain name.
+20
+
+21
+00:01:20,850 --> 00:01:29,730
+So if we want, instead of using the server IP address we can use the URL chirpstack.univ-lorawan.fr.
+21
+
+22
+00:01:29,760 --> 00:01:33,810
+It's not compulsory, but I reckon it's clearer and more convenient.
+22
+
+23
+00:01:34,080 --> 00:01:37,710
+If you only have an IP address available then no worries,
+23
+
+24
+00:01:37,710 --> 00:01:39,450
+you can obviously use it.
+24
+
+25
+00:01:41,430 --> 00:01:45,830
+So for this demonstration I connect to my Linux machine using SSH.
+25
+
+26
+00:01:46,020 --> 00:01:51,540
+If you don't remember how to connect a remote machine using SSH, then please see the specific video
+26
+
+27
+00:01:51,540 --> 00:01:54,060
+in the HOW TO section at the beginning of this course.
+27
+
+28
+00:01:54,090 --> 00:01:55,080
+Here we go.
+28
+
+29
+00:01:55,110 --> 00:01:57,900
+I've got a terminal from my remote Linux.
+29
+
+30
+00:01:58,590 --> 00:01:59,100
+Okay.
+30
+
+31
+00:01:59,100 --> 00:02:02,100
+Now if we look at the ChirpStack documentation.
+31
+
+32
+00:02:04,250 --> 00:02:08,150
+Basically, the installation process is composed of three steps.
+32
+
+33
+00:02:08,390 --> 00:02:13,970
+First, we need to download the ChirpStack container configuration file called docker-compose.yml.
+33
+
+34
+00:02:14,240 --> 00:02:20,270
+We will also need the other configuration file that Docker will use to build the LoRaWAN server as it's
+34
+
+35
+00:02:20,270 --> 00:02:21,470
+an open source server.
+35
+
+36
+00:02:21,500 --> 00:02:24,950
+All these files are on the ChirpStack GitHub repository.
+36
+
+37
+00:02:25,250 --> 00:02:28,610
+This step is easy. In ChirpStack documentation,
+37
+
+38
+00:02:28,610 --> 00:02:31,770
+they provide the right command to download all files.
+38
+
+39
+00:02:31,790 --> 00:02:33,500
+We just need to use it.
+39
+
+40
+00:02:34,620 --> 00:02:37,630
+git clone and the repository address.
+40
+
+41
+00:02:37,650 --> 00:02:39,870
+Then we enter the downloaded folder.
+41
+
+42
+00:02:41,220 --> 00:02:41,970
+Right.
+42
+
+43
+00:02:42,000 --> 00:02:47,820
+Now that we have all the necessary files, the second step is to apply our specific configuration.
+43
+
+44
+00:02:48,120 --> 00:02:51,780
+We could configure the credentials to connect to the LoRaWAN  server.
+44
+
+45
+00:02:51,810 --> 00:02:58,590
+We could enable or disable some region, but in our case that's going to be extremely easy because if
+45
+
+46
+00:02:58,590 --> 00:03:03,270
+we leave the default values, these default configuration works out of the box.
+46
+
+47
+00:03:03,570 --> 00:03:04,610
+Great.
+47
+
+48
+00:03:04,620 --> 00:03:07,230
+So, let's launch the installation process.
+48
+
+49
+00:03:07,260 --> 00:03:11,520
+We just need to use the command docker compose up.
+49
+
+50
+00:03:11,640 --> 00:03:14,220
+I'm just going to add two things in the command.
+50
+
+51
+00:03:14,250 --> 00:03:20,490
+First, the keyword sudo, because I use a Linux environment and I need to ask for privileges to execute
+51
+
+52
+00:03:20,490 --> 00:03:22,110
+the docker compose command.
+52
+
+53
+00:03:22,350 --> 00:03:28,410
+Secondly, I'm using the option -d because I want to leave ChirpStack running in the background,
+53
+
+54
+00:03:28,650 --> 00:03:31,890
+otherwise I wouldn't be able to get my terminal back.
+54
+
+55
+00:03:32,730 --> 00:03:34,570
+Okay, let's try that.
+55
+
+56
+00:03:34,990 --> 00:03:36,820
+It takes a few seconds.
+56
+
+57
+00:03:37,240 --> 00:03:43,720
+All containers are downloaded, extracted and created and my ChirpStack server is now ready.
+57
+
+58
+00:03:44,020 --> 00:03:46,300
+It's not more complicated than that.
+58
+
+59
+00:03:46,570 --> 00:03:49,310
+Now, we have all services running.
+59
+
+60
+00:03:49,330 --> 00:03:51,610
+We can check them with another command.
+60
+
+61
+00:03:51,640 --> 00:03:53,410
+docker ps.
+61
+
+62
+00:03:53,830 --> 00:03:54,920
+There we go.
+62
+
+63
+00:03:54,940 --> 00:03:59,860
+Everything is up and running. By default on ChirpStack,
+63
+
+64
+00:03:59,890 --> 00:04:05,500
+if we want to have access to the user interface, then we need to use a web browser with the server
+64
+
+65
+00:04:05,530 --> 00:04:07,860
+URL on port 8080.
+65
+
+66
+00:04:08,050 --> 00:04:11,320
+But of course I could have used the IP address.
+66
+
+67
+00:04:11,620 --> 00:04:12,790
+Okay, great.
+67
+
+68
+00:04:12,820 --> 00:04:20,770
+And the default login and password is admin/admin and we are now logged on our new Network Server. As
+68
+
+69
+00:04:20,770 --> 00:04:21,880
+it's a public server,
+69
+
+70
+00:04:21,910 --> 00:04:25,330
+the first thing we need to do is obviously to update our password.
+70
+
+71
+00:04:25,660 --> 00:04:26,290
+Okay.
+71
+
+72
+00:04:26,290 --> 00:04:31,690
+Now that the installation process is done, let's present the ChirpStack network server interface.
+72
+
+73
+00:04:32,170 --> 00:04:35,920
+On the left, the user interface has a menu with two parts.
+73
+
+74
+00:04:36,160 --> 00:04:38,740
+On the top, it's the administrator menu.
+74
+
+75
+00:04:38,830 --> 00:04:42,430
+It means that it's only available if we have privileges.
+75
+
+76
+00:04:42,550 --> 00:04:49,060
+It's called the network server menu and of course we can access it because we have the administrator
+76
+
+77
+00:04:49,060 --> 00:04:49,750
+login.
+77
+
+78
+00:04:50,170 --> 00:04:56,710
+In this menu, we can configure the tenant, users and many other network properties.
+78
+
+79
+00:04:56,890 --> 00:05:00,040
+There is already one tenant available by default.
+79
+
+80
+00:05:00,070 --> 00:05:02,110
+It's called ChirpStack.
+80
+
+81
+00:05:02,290 --> 00:05:10,330
+A tenant is a group of users and for each group, so for each tenant we can decide the number of gateways
+81
+
+82
+00:05:10,330 --> 00:05:13,090
+and the number of devices it can register.
+82
+
+83
+00:05:13,450 --> 00:05:16,720
+So, of course we can create another tenant.
+83
+
+84
+00:05:16,720 --> 00:05:22,780
+And below, there is the number of gateway and devices the Network Server administrator will allow for
+84
+
+85
+00:05:22,780 --> 00:05:23,410
+this tenant.
+85
+
+86
+00:05:23,710 --> 00:05:29,020
+We can also change it later if we need to update some privileges to a specific tenant.
+86
+
+87
+00:05:29,620 --> 00:05:30,310
+Okay.
+87
+
+88
+00:05:30,310 --> 00:05:36,280
+In my case, I'm not going to add a new tenant to the list because for this demonstration we'll keep
+88
+
+89
+00:05:36,280 --> 00:05:38,650
+the default value one called ChirpStack.
+89
+
+90
+00:05:38,890 --> 00:05:40,750
+If we select a specific tenant.
+90
+
+91
+00:05:40,750 --> 00:05:47,320
+So in our case ChirpStack, as it's the only one available, then we'll be able to create users.
+91
+
+92
+00:05:47,350 --> 00:05:52,330
+In my case, I use the administrator login, so I don't need to create users.
+92
+
+93
+00:05:52,330 --> 00:05:57,790
+But if you're a company and need several accounts on this server, then you will need to create as many
+93
+
+94
+00:05:57,790 --> 00:06:01,960
+users as you want and assign specific rights and privileges.
+94
+
+95
+00:06:02,350 --> 00:06:03,190
+Great.
+95
+
+96
+00:06:03,220 --> 00:06:10,210
+Now, with the bottom menu, we'll be able to complete the usual process to register gateways, applications
+96
+
+97
+00:06:10,210 --> 00:06:11,710
+and end-devices.
+97
+
+98
+00:06:11,800 --> 00:06:14,260
+And that's what we're going to do in the next video.
