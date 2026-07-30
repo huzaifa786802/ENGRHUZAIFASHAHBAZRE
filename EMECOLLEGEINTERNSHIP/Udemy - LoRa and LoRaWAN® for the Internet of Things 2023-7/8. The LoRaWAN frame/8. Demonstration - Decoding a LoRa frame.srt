@@ -1,0 +1,484 @@
+0
+1
+00:00:00,540 --> 00:00:01,250
+Right.
+1
+
+2
+00:00:01,290 --> 00:00:07,200
+So now that we've understood the content of the IP frame, we can try a little demonstration.
+2
+
+3
+00:00:07,650 --> 00:00:15,900
+For this I will use an ABP end-device with the following configuration device address, Network session
+3
+
+4
+00:00:15,900 --> 00:00:18,390
+key and Application Session key.
+4
+
+5
+00:00:19,260 --> 00:00:25,230
+This gateway is in the gateway coverage so it will receive all packet from the device.
+5
+
+6
+00:00:25,650 --> 00:00:30,450
+And finally, this device is also registered on the Network Server.
+6
+
+7
+00:00:31,260 --> 00:00:38,130
+For this demonstration I will once again use TTNv2 and as usual, I've got one tab for my gateway
+7
+
+8
+00:00:38,130 --> 00:00:41,700
+console and one tab for my device like data.
+8
+
+9
+00:00:42,300 --> 00:00:44,610
+Let's start. My device transmits a message
+9
+
+10
+00:00:44,610 --> 00:00:46,710
+representing a temperature.
+10
+
+11
+00:00:47,070 --> 00:00:54,360
+And once this packet is transmitted and my gateway as the modulated signal, an IP frame is received
+11
+
+12
+00:00:54,360 --> 00:00:55,670
+on the network  server.
+12
+
+13
+00:00:56,490 --> 00:01:04,710
+It appears here in both my gateway and my device live data. I stop the log so we won't be disturbed by
+13
+
+14
+00:01:04,710 --> 00:01:05,940
+any other frames.
+14
+
+15
+00:01:06,780 --> 00:01:08,880
+Now I'm going to analyze this frame.
+15
+
+16
+00:01:09,450 --> 00:01:13,170
+If I want more information, I just have to click on it.
+16
+
+17
+00:01:15,970 --> 00:01:19,810
+Then I copy paste it on my presentation for the sake of clarity.
+17
+
+18
+00:01:21,770 --> 00:01:25,820
+We can see here that JSON text message transmitted by the gateway.
+18
+
+19
+00:01:26,210 --> 00:01:27,350
+What do we have?
+19
+
+20
+00:01:27,590 --> 00:01:29,240
+There are two parts.
+20
+
+21
+00:01:30,020 --> 00:01:31,850
+First, the PHYpayload.
+21
+
+22
+00:01:31,940 --> 00:01:34,280
+It's often called the RAW payload.
+22
+
+23
+00:01:34,400 --> 00:01:36,770
+This is the content of the LoRa frame.
+23
+
+24
+00:01:36,800 --> 00:01:40,580
+Somewhere in this payload there is my frame payload.
+24
+
+25
+00:01:40,580 --> 00:01:42,680
+So my encrypted user data.
+25
+
+26
+00:01:43,190 --> 00:01:45,290
+In this case, my temperature.
+26
+
+27
+00:01:46,010 --> 00:01:51,170
+But in this payload, there is also many other fields which are not encrypted, like the dev address,
+27
+
+28
+00:01:51,170 --> 00:01:52,010
+for example.
+28
+
+29
+00:01:52,820 --> 00:01:57,080
+And secondly, there is the radio frequency transmission information.
+29
+
+30
+00:01:57,110 --> 00:02:05,990
+Here we have an SF7 transmission with 125 kilohertz bandwidth, four over five coding rate, RSSI,
+30
+
+31
+00:02:06,170 --> 00:02:07,310
+SNR and so on.
+31
+
+32
+00:02:08,540 --> 00:02:13,100
+In this demonstration, I will focus on the PHY payload or the raw payload.
+32
+
+33
+00:02:13,490 --> 00:02:19,430
+So I copy it and I will try to decode it thanks to a web application available on the Internet.
+33
+
+34
+00:02:22,710 --> 00:02:25,860
+I copy the payload given any 64 base format.
+34
+
+35
+00:02:26,340 --> 00:02:32,940
+If you don't know what the 64 base representation is and why, it's a nice way to represent data, then
+35
+
+36
+00:02:32,940 --> 00:02:37,200
+you can refer to our LoRaWAN book for Beginners available on our website.
+36
+
+37
+00:02:37,230 --> 00:02:41,340
+You will find a chapter dedicated on this point with many examples.
+37
+
+38
+00:02:42,150 --> 00:02:42,780
+Right.
+38
+
+39
+00:02:42,780 --> 00:02:47,100
+So what I give to the code is this message in 64 base form.
+39
+
+40
+00:02:47,370 --> 00:02:49,560
+Let's check what the decoder returns.
+40
+
+41
+00:02:50,220 --> 00:02:53,700
+First, it returns the message in a decimal format.
+41
+
+42
+00:02:54,090 --> 00:02:57,570
+Then there are several section for each part of the frame.
+42
+
+43
+00:02:58,410 --> 00:03:07,050
+The payload, as we saw in the previous video, consists of Mac header, a mac payload and a message
+43
+
+44
+00:03:07,050 --> 00:03:09,840
+and a Message Integrity Control field for authentication.
+44
+
+45
+00:03:10,710 --> 00:03:18,060
+The MAC payload itself also consists of another header called frame header, a frame port and a frame
+45
+
+46
+00:03:18,060 --> 00:03:18,810
+payload.
+46
+
+47
+00:03:19,200 --> 00:03:25,800
+And finally, the frame header is the device address, a field called frame control.
+47
+
+48
+00:03:25,830 --> 00:03:28,500
+The frame counter and some options.
+48
+
+49
+00:03:29,250 --> 00:03:35,040
+What we need to understand here is that most of the information given in this frame are not encrypted.
+49
+
+50
+00:03:35,520 --> 00:03:41,780
+It's the case of the message integrity control the frame port and the device address starting with oh
+50
+
+51
+00:03:41,790 --> 00:03:43,620
+0x2601.
+51
+
+52
+00:03:44,400 --> 00:03:46,530
+Let's check this value on the console.
+52
+
+53
+00:03:47,760 --> 00:03:49,470
+Yes, that's it.
+53
+
+54
+00:03:49,860 --> 00:03:53,310
+The device address also starts with 2601.
+54
+
+55
+00:03:53,640 --> 00:03:57,960
+And there is also the frame counter zero because it was the first frame.
+55
+
+56
+00:03:58,800 --> 00:04:00,180
+Yes, that's it.
+56
+
+57
+00:04:00,510 --> 00:04:02,580
+The decoder exposes the same information.
+57
+
+58
+00:04:02,580 --> 00:04:04,170
+Zero for the frame content.
+58
+
+59
+00:04:05,190 --> 00:04:11,850
+The frame is an unconfirmed data up, which means that this frame comes from the device and doesn't ask
+59
+
+60
+00:04:11,850 --> 00:04:13,170
+for acknowledgement.
+60
+
+61
+00:04:13,770 --> 00:04:18,960
+What is surprising is that the gateway managed to get the frame payload that represent my temperature.
+61
+
+62
+00:04:19,830 --> 00:04:21,540
+Is it really my temperature?
+62
+
+63
+00:04:21,960 --> 00:04:24,720
+No, it's not exactly that.
+63
+
+64
+00:04:25,140 --> 00:04:28,920
+It's just a number that's been decoded, but it's still encrypted.
+64
+
+65
+00:04:29,070 --> 00:04:34,560
+The real temperature value that was transmitted by my device and received in my application should be
+65
+
+66
+00:04:34,560 --> 00:04:35,070
+two.
+66
+
+67
+00:04:39,700 --> 00:04:41,900
+Can I find this value with my decoder?
+67
+
+68
+00:04:41,920 --> 00:04:45,130
+Because right now the frame payload value is the wrong one.
+68
+
+69
+00:04:45,130 --> 00:04:49,780
+And by the way, I don't even know if this frame has been authenticated.
+69
+
+70
+00:04:50,860 --> 00:04:58,180
+Okay, So you know that if I want the authentication and encryption, I need the session keys : Network
+70
+
+71
+00:04:58,180 --> 00:05:00,400
+session key and Application session key.
+71
+
+72
+00:05:00,820 --> 00:05:06,640
+I just pick up the ones I had saved in my presentation, and I decode the frame one more time.
+72
+
+73
+00:05:10,860 --> 00:05:13,980
+This time I have additional information.
+73
+
+74
+00:05:14,370 --> 00:05:19,950
+First, information is about the message and quality control that decoder provides to message integrity
+74
+
+75
+00:05:19,950 --> 00:05:20,610
+control.
+75
+
+76
+00:05:20,640 --> 00:05:27,630
+The one transmitted by the device and the one calculated at the reception for the authentication.
+76
+
+77
+00:05:27,630 --> 00:05:30,900
+To be successful, both value must be the same.
+77
+
+78
+00:05:30,900 --> 00:05:32,640
+And that's the case here.
+78
+
+79
+00:05:33,600 --> 00:05:37,290
+The second information is about the encryption of the frame payload.
+79
+
+80
+00:05:37,710 --> 00:05:45,510
+I've received 2D, but it was encrypted and just under there is the decrypted value 02.
+80
+
+81
+00:05:46,140 --> 00:05:46,870
+Excellent.
+81
+
+82
+00:05:46,890 --> 00:05:48,950
+That's the one we expected.
+82
+
+83
+00:05:48,960 --> 00:05:51,120
+And what happens if I change the keys?
+83
+
+84
+00:05:51,150 --> 00:05:51,750
+Let's try.
+84
+
+85
+00:05:51,750 --> 00:05:54,900
+By changing only one digit of the network session key.
+85
+
+86
+00:05:55,050 --> 00:05:56,640
+This one, for example.
+86
+
+87
+00:05:59,650 --> 00:06:05,410
+Then the message integrity control becomes invalid and this frame would have never reached the application
+87
+
+88
+00:06:05,410 --> 00:06:06,040
+server.
+88
+
+89
+00:06:07,450 --> 00:06:14,500
+Now if I reset the network station key with the right value, but I modify the application session key.
+89
+
+90
+00:06:16,360 --> 00:06:19,510
+Then this time the frame is authenticated.
+90
+
+91
+00:06:20,260 --> 00:06:25,870
+But the frame payload is decrypted at 7A, whereas it's supposed to be 02.
+91
+
+92
+00:06:26,200 --> 00:06:28,900
+This value is not the correct one.
+92
+
+93
+00:06:29,800 --> 00:06:30,370
+Okay.
+93
+
+94
+00:06:30,580 --> 00:06:37,030
+So if we need to remember one important thing from this chapter is that the gateway only takes the
+94
+
+95
+00:06:37,030 --> 00:06:44,770
+LoRA packet, demodulated and send it to the LoRaWAN server. The gateway doesn't need an anyway, it can't
+95
+
+96
+00:06:44,770 --> 00:06:46,870
+check the authenticity of the frame.
+96
+
+97
+00:06:47,200 --> 00:06:50,020
+And of course it can decrypt the message needs.
