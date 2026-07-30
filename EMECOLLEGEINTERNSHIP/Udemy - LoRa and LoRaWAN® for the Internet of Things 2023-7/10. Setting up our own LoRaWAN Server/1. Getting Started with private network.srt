@@ -1,0 +1,274 @@
+0
+1
+00:00:00,350 --> 00:00:04,680
+The LoRaWAN network we've worked so far was a hybrid network.
+1
+
+2
+00:00:04,730 --> 00:00:08,510
+We've used it for all demonstrations since the beginning of this course.
+2
+
+3
+00:00:08,630 --> 00:00:14,960
+In a previous video, we already explained what a hybrid network is, but we can briefly remind it.
+3
+
+4
+00:00:15,230 --> 00:00:21,620
+It's when we use our own Gateway, but with a LoRaWAN server that doesn't belong to us.
+4
+
+5
+00:00:21,950 --> 00:00:25,790
+In our case, we mostly use TTN as a Network Server.
+5
+
+6
+00:00:25,820 --> 00:00:30,170
+But, there were also some demonstrations with Loriot or Actility.
+6
+
+7
+00:00:30,800 --> 00:00:34,480
+Anyway, none of these are managed by our organization.
+7
+
+8
+00:00:34,490 --> 00:00:40,940
+It wasn't set up on our premises, and we didn't have to care about the server administration and its
+8
+
+9
+00:00:40,940 --> 00:00:42,020
+availability.
+9
+
+10
+00:00:42,290 --> 00:00:49,190
+What we want now is to do the installation of our own Network Server and our own Application Server.
+10
+
+11
+00:00:49,640 --> 00:00:55,670
+If we set up such a network, we'll have the full control of every part of the LoRaWAN transmission.
+11
+
+12
+00:00:55,940 --> 00:00:58,370
+We'll have our own End-device.
+12
+
+13
+00:00:58,400 --> 00:01:04,820
+We'll have our own Gateways and finally our own Network Server and Application Server.
+13
+
+14
+00:01:05,390 --> 00:01:11,390
+And that's exactly the definition of a private network, since all entities will belong to us.
+14
+
+15
+00:01:11,930 --> 00:01:18,860
+In some situations, having a private LoRaWAN network can indeed be a really good choice because
+15
+
+16
+00:01:18,860 --> 00:01:24,740
+even if it requires a lot of effort to build it, we will end up with a complete confidential network with
+16
+
+17
+00:01:24,740 --> 00:01:27,500
+no data transferred on public infrastructure.
+17
+
+18
+00:01:28,130 --> 00:01:30,950
+Besides, we'll administrate our server,
+18
+
+19
+00:01:31,340 --> 00:01:35,720
+that means that we can scale its capability as much as we want.
+19
+
+20
+00:01:36,230 --> 00:01:43,760
+We can also be especially careful of its availability and on top of that, with a private network,
+20
+
+21
+00:01:43,760 --> 00:01:49,070
+we don't need to pay any subscription fee to a provider, as it's the case with a hybrid network or
+21
+
+22
+00:01:49,070 --> 00:01:50,390
+a public network.
+22
+
+23
+00:01:50,900 --> 00:01:56,570
+So, for all these reasons, it can be interesting to set up a Network Server and Application Server
+23
+
+24
+00:01:56,570 --> 00:01:57,650
+by yourself.
+24
+
+25
+00:01:57,830 --> 00:02:04,440
+And apart from installing the server as we'll see in the next video, the only other configuration we'll
+25
+
+26
+00:02:04,440 --> 00:02:07,740
+have to do is to modify the Gateway parameters.
+26
+
+27
+00:02:07,980 --> 00:02:12,720
+Because from now on, our Gateway will have to point to the new network server.
+27
+
+28
+00:02:12,750 --> 00:02:18,210
+Whereas before they forwarded the message to TTN, Actility or Loriot Network Server.
+28
+
+29
+00:02:19,230 --> 00:02:25,800
+In the next videos, we'll present and explain in detail the installation and configuration of two LoRaWAN 
+29
+
+30
+00:02:25,800 --> 00:02:26,610
+servers.
+30
+
+31
+00:02:26,820 --> 00:02:28,470
+First, we'll use Chirpstack.
+31
+
+32
+00:02:28,470 --> 00:02:29,160
+...
+32
+
+33
+00:02:29,190 --> 00:02:35,790
+Chirpstack is a project led by Orne Brocaar. He is the initial author and the main contributor of this LoRaWAN 
+33
+
+34
+00:02:35,790 --> 00:02:36,270
+server.
+34
+
+35
+00:02:36,900 --> 00:02:40,440
+Then, after we will try The Things Stack.
+35
+
+36
+00:02:40,470 --> 00:02:46,380
+The Things Stack is the one used by the community network called The Things Network, so it's the same
+36
+
+37
+00:02:46,380 --> 00:02:48,420
+one we use in our demonstrations.
+37
+
+38
+00:02:48,540 --> 00:02:52,980
+But of course this time it will be installed on our own server.
+38
+
+39
+00:02:53,250 --> 00:02:58,980
+This Lorawan server is supported by The Things Industry, a big player in the LoRaWAN ecosystem.
+39
+
+40
+00:02:59,400 --> 00:03:05,340
+Both are free, both are open source and they both have a strong and reliable community.
+40
+
+41
+00:03:05,370 --> 00:03:10,680
+You will see that it's very comfortable to rely on a solid community of developers, professionals and
+41
+
+42
+00:03:10,680 --> 00:03:11,370
+hobbyists.
+42
+
+43
+00:03:11,370 --> 00:03:17,190
+But of course for both of them you can also have a commercial support. As a company,
+43
+
+44
+00:03:17,190 --> 00:03:22,290
+if you're stuck with a configuration or if you need a special development, then you can contact them
+44
+
+45
+00:03:22,290 --> 00:03:23,310
+for support.
+45
+
+46
+00:03:23,970 --> 00:03:29,460
+Okay, so before starting the server installation, we need to speak about two things.
+46
+
+47
+00:03:29,910 --> 00:03:35,820
+First, we need to speak of the Gateway configuration, because even if most Gateway are compatible
+47
+
+48
+00:03:35,820 --> 00:03:39,240
+with all network servers, there might be some exceptions.
+48
+
+49
+00:03:39,240 --> 00:03:41,850
+So, I just want to check that before we start.
+49
+
+50
+00:03:42,480 --> 00:03:47,430
+And secondly, in another video, I want to present the different solutions
+50
+
+51
+00:03:47,430 --> 00:03:49,140
+we have to set up the Network Server.
+51
+
+52
+00:03:49,260 --> 00:03:56,250
+There are many possibilities, including using our own computer, but some options are easier to set up.
+52
+
+53
+00:03:56,250 --> 00:03:56,670
+...
+53
+
+54
+00:03:57,300 --> 00:04:03,030
+Anyway, we'll go through all the possibilities and I'm sure there will be at least one which will suit
+54
+
+55
+00:04:03,030 --> 00:04:03,480
+you.
