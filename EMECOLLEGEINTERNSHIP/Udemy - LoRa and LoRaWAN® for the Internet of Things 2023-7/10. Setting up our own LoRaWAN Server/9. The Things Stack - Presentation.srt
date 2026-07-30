@@ -1,0 +1,129 @@
+0
+1
+00:00:00,820 --> 00:00:06,700
+After the ChirpStack Network Server installation, we will see a second LoRaWAN server called the Things
+1
+
+2
+00:00:06,700 --> 00:00:07,300
+Stack.
+2
+
+3
+00:00:07,480 --> 00:00:10,750
+It's exactly the one we've used at the beginning of this course.
+3
+
+4
+00:00:10,780 --> 00:00:14,350
+When we use The Things Network, we use The Things Stack.
+4
+
+5
+00:00:14,650 --> 00:00:19,660
+Actually, there are many versions of The Things Stack, but they all use the same software.
+5
+
+6
+00:00:20,140 --> 00:00:23,230
+The Things Stack Community is the one we've used.
+6
+
+7
+00:00:23,260 --> 00:00:26,440
+The common name for this edition is the Thing Network.
+7
+
+8
+00:00:26,650 --> 00:00:29,630
+The Things Stack Cloud is the commercial edition.
+8
+
+9
+00:00:29,650 --> 00:00:36,700
+Of course you will have to pay subscription fees to use it, but if we want we can install The Things
+9
+
+10
+00:00:36,700 --> 00:00:38,920
+Stack on our own server for free.
+10
+
+11
+00:00:39,040 --> 00:00:42,460
+This is called The Things Stack Open Source.
+11
+
+12
+00:00:42,580 --> 00:00:48,880
+All these editions are actually based on the same open source software and the source code is available
+12
+
+13
+00:00:48,910 --> 00:00:49,690
+on GitHub.
+13
+
+14
+00:00:50,020 --> 00:00:57,460
+But like all Lorawan architecture, there will be a Network Server for authentication and an Application
+14
+
+15
+00:00:57,460 --> 00:00:58,960
+Server for the encryption.
+15
+
+16
+00:00:59,140 --> 00:01:02,810
+We've seen this architecture many times already in this course.
+16
+
+17
+00:01:03,080 --> 00:01:09,650
+When we installed ChirpStack in the previous video, we saw a new service in front of the Network Server
+17
+
+18
+00:01:09,650 --> 00:01:11,630
+called Gateway Bridge.
+18
+
+19
+00:01:11,870 --> 00:01:17,930
+We have exactly the same service in The Things Stack, but here it's called Gateway Server.
+19
+
+20
+00:01:18,470 --> 00:01:25,370
+You can go to the previous video to understand the role of this service, but if you want a little reminder,
+20
+
+21
+00:01:25,400 --> 00:01:31,190
+we just need to know that the gateway server is here to keep alive the communication with gateways.
+21
+
+22
+00:01:31,640 --> 00:01:38,630
+So the gateway server knows all packets forwarder used by The Things Stack. On the other side, the Network
+22
+
+23
+00:01:38,630 --> 00:01:41,300
+Server will only focus on the loRaWAN stack.
+23
+
+24
+00:01:41,750 --> 00:01:48,590
+Finally, on the right we have multiple interfaces with the Iot platforms and user applications.
+24
+
+25
+00:01:48,860 --> 00:01:54,530
+In The Things Stack we'll one more time find the MQTT or HTTP protocols.
+25
+
+26
+00:01:55,220 --> 00:02:01,580
+Okay, so now in the next video we'll see how to install The Things Stack on our own server.
