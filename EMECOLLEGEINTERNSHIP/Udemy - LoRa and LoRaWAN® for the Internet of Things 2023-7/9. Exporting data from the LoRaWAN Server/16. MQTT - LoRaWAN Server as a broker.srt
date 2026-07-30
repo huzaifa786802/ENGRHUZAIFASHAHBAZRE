@@ -1,0 +1,100 @@
+0
+1
+00:00:00,810 --> 00:00:04,230
+Before connecting the LoRaWAN server to our IoT platform.
+1
+
+2
+00:00:04,230 --> 00:00:09,270
+We need to understand who is going to be the subscriber, the publisher, and the broker.
+2
+
+3
+00:00:09,750 --> 00:00:13,890
+Actually, it's not that straightforward because there are two possibilities.
+3
+
+4
+00:00:13,890 --> 00:00:16,950
+So we'll see both of them on this figure.
+4
+
+5
+00:00:16,980 --> 00:00:22,410
+I represent at the top the LoRaWAN server and at the bottom the IoTplatform.
+5
+
+6
+00:00:23,040 --> 00:00:27,930
+Most of the time the LoRaWAN server exposes by default a MQTT broker.
+6
+
+7
+00:00:28,080 --> 00:00:33,150
+So we don't need to configure anything and the broker is already available and enabled.
+7
+
+8
+00:00:33,840 --> 00:00:35,120
+If you want to use it,
+8
+
+9
+00:00:35,130 --> 00:00:40,680
+so if a publisher on the subscriber wants to connect to this broker, then we just need to check the
+9
+
+10
+00:00:40,680 --> 00:00:43,500
+credentials and the topic hierarchy of this broker.
+10
+
+11
+00:00:44,310 --> 00:00:49,770
+Everything is in the documentation of each LoRaWAN server and that is definitely the easiest way to
+11
+
+12
+00:00:49,770 --> 00:00:50,550
+proceed.
+12
+
+13
+00:00:51,090 --> 00:00:58,260
+So in that case, who is the subscriber and who is the publisher? 
+For both its the IoT platform.
+13
+
+14
+00:00:58,590 --> 00:01:04,830
+The subscriber on the IoT platform is going to check its favorite topic on the broker, usually the uplink
+14
+
+15
+00:01:04,830 --> 00:01:11,790
+stream, and the publisher is going to send messages to the broker, usually messages for the device,
+15
+
+16
+00:01:11,790 --> 00:01:13,320
+so the downlink stream.
+16
+
+17
+00:01:14,290 --> 00:01:20,350
+The nice thing with this architecture is that we don't need to set up an MQTT broker, but only two
+17
+
+18
+00:01:20,350 --> 00:01:24,250
+clients, one subscriber and one publisher.
+18
+
+19
+00:01:24,970 --> 00:01:27,270
+We'll make a demonstration for this architecture.
+19
+
+20
+00:01:27,280 --> 00:01:31,390
+But before I would like to present you a second architecture that you might find.
