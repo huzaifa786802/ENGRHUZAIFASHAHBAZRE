@@ -1,0 +1,564 @@
+0
+1
+00:00:00,530 --> 00:00:06,530
+Installing The Things Stack from the documentation is a little bit more complicated than the usual process
+1
+
+2
+00:00:06,530 --> 00:00:07,820
+we've used so far.
+2
+
+3
+00:00:08,210 --> 00:00:14,750
+Indeed, when we wanted to launch a new service, we've used Docker with a predefined configuration
+3
+
+4
+00:00:14,750 --> 00:00:17,780
+file called docker-compose.yml.
+4
+
+5
+00:00:18,110 --> 00:00:23,000
+Then we just had to use the command docker-compose up.
+5
+
+6
+00:00:23,360 --> 00:00:25,430
+That was simple and easy.
+6
+
+7
+00:00:25,820 --> 00:00:32,180
+The problem is that by default, The Things Stack comes up with a secure connection to access the console.
+7
+
+8
+00:00:32,390 --> 00:00:34,340
+What is a secure connection?
+8
+
+9
+00:00:34,460 --> 00:00:39,560
+It's exactly the same one we use when we connect to any website on the internet.
+9
+
+10
+00:00:39,890 --> 00:00:45,210
+A few years ago, we used to navigate on the internet using the HTTP protocol.
+10
+
+11
+00:00:45,230 --> 00:00:51,680
+But actually nowadays we only connect to website with HTTPS protocol.
+11
+
+12
+00:00:51,800 --> 00:00:58,760
+The "S" in HTTPS stands for Secure, so that's exactly this type of connection that we need to set up.
+12
+
+13
+00:00:58,760 --> 00:01:05,700
+But for that we need a domain name and we need to specify it to The Things Stack configuration file.
+13
+
+14
+00:01:06,240 --> 00:01:13,320
+To understand why HTTPS is useful, then you can check the video called "How to set up a secure connection
+14
+
+15
+00:01:13,320 --> 00:01:17,700
+with certificate" in the "HOW TO" section at the beginning of this course.
+15
+
+16
+00:01:18,600 --> 00:01:24,170
+Okay, so if we want to set up The Things Stack, then we need a domain name.
+16
+
+17
+00:01:24,180 --> 00:01:29,700
+Without it, it will not be possible to set up a proper HTTPS connection to the console.
+17
+
+18
+00:01:30,300 --> 00:01:35,670
+Once we have this domain name, then we can start looking at the documentation to install The Things
+18
+
+19
+00:01:35,670 --> 00:01:36,360
+Stack.
+19
+
+20
+00:01:36,390 --> 00:01:38,730
+There are many steps to follow.
+20
+
+21
+00:01:38,760 --> 00:01:42,180
+It's not very hard, but it's not easy either.
+21
+
+22
+00:01:42,720 --> 00:01:48,630
+Okay, but don't worry because I don't want to dive into the documentation and explain step by step
+22
+
+23
+00:01:48,630 --> 00:01:50,010
+the installation process.
+23
+
+24
+00:01:50,190 --> 00:01:52,950
+It's what we should do for a commercial deployment.
+24
+
+25
+00:01:52,950 --> 00:01:59,040
+But there is a good chance that my demonstration will be outdated in a few months if I do it this way.
+25
+
+26
+00:01:59,820 --> 00:02:02,190
+So, there is another option.
+26
+
+27
+00:02:02,490 --> 00:02:09,630
+It's not as secure because we'll provide our own certificate to satisfy the HTTPS protocol, but at
+27
+
+28
+00:02:09,630 --> 00:02:12,360
+least it will work with many hardware.
+28
+
+29
+00:02:12,780 --> 00:02:20,190
+So whether you use your own PC, a Raspberry Pi, a remote server with or without a personal domain
+29
+
+30
+00:02:20,190 --> 00:02:22,290
+name, it will work.
+30
+
+31
+00:02:22,440 --> 00:02:29,100
+And what is nice with this solution is that we'll be able to use our favorite command to install the
+31
+
+32
+00:02:29,340 --> 00:02:32,190
+LoRaWAN Server: "docker-compose up".
+32
+
+33
+00:02:33,000 --> 00:02:35,160
+So, what is this solution?
+33
+
+34
+00:02:35,460 --> 00:02:41,100
+This is the one proposed by Balena, an expert company for IoT deployment solution.
+34
+
+35
+00:02:41,400 --> 00:02:45,390
+They provide a Docker installation package on their GitHub repository.
+35
+
+36
+00:02:45,720 --> 00:02:51,810
+We could even deploy this solution in one click on many remote hardware at the same time if we use the
+36
+
+37
+00:02:51,810 --> 00:02:53,640
+Balena Cloud application.
+37
+
+38
+00:02:53,670 --> 00:02:59,760
+But in our case, we'll just follow the installation process on our own architecture.
+38
+
+39
+00:03:00,510 --> 00:03:06,380
+In this video, that's the only method I'm going to show you because I want to remain consistent with
+39
+
+40
+00:03:06,380 --> 00:03:09,230
+the tool we've used since the beginning of this lecture.
+40
+
+41
+00:03:09,590 --> 00:03:13,280
+You will see that the overall installation process is really easy.
+41
+
+42
+00:03:13,430 --> 00:03:19,670
+So for this demonstration, I'm going to use a public server that I've rented from a cloud provider.
+42
+
+43
+00:03:20,120 --> 00:03:28,010
+It's a simple machine with very few capabilities, two gigabyte of RAM and only one virtual core.
+43
+
+44
+00:03:28,430 --> 00:03:31,330
+But it will be more than enough for our demonstration.
+44
+
+45
+00:03:31,340 --> 00:03:37,880
+If you've chosen to set up your server on another platform localhost, Raspberry Pi or whatever.
+45
+
+46
+00:03:38,030 --> 00:03:39,330
+No problem.
+46
+
+47
+00:03:39,350 --> 00:03:44,870
+The demonstration is exactly the same, so no worries. On my server,
+47
+
+48
+00:03:45,320 --> 00:03:48,560
+I've installed a Basic Linux Debian Operating System.
+48
+
+49
+00:03:48,980 --> 00:03:55,730
+It's the same one that I've used for ChirpStack installation and the only thing I've installed is as
+49
+
+50
+00:03:55,730 --> 00:03:58,760
+usual, Docker and docker-compose.
+50
+
+51
+00:03:59,300 --> 00:04:03,720
+In addition to this private server, I also have a domain name.
+51
+
+52
+00:04:03,990 --> 00:04:13,860
+So if we want, instead of using the server IP address we can use the URL "tts.univ lorawan.fr".
+52
+
+53
+00:04:14,100 --> 00:04:18,270
+It's not compulsory, but I reckon it's clearer and more convenient.
+53
+
+54
+00:04:18,310 --> 00:04:20,700
+And of course you can use your own domain name.
+54
+
+55
+00:04:21,300 --> 00:04:26,250
+If you only have an IP address available then no worries, you can obviously use it.
+55
+
+56
+00:04:26,850 --> 00:04:31,740
+So for this demonstration I connect to my linux machine using SSH.
+56
+
+57
+00:04:31,770 --> 00:04:37,230
+If you don't remember how to connect a remote machine using SSH, then please see the specific video
+57
+
+58
+00:04:37,230 --> 00:04:39,810
+in the "HOW TO" section at the beginning of this course.
+58
+
+59
+00:04:40,590 --> 00:04:41,160
+Okay.
+59
+
+60
+00:04:41,160 --> 00:04:45,780
+Now the installation process is composed of three simple steps.
+60
+
+61
+00:04:46,410 --> 00:04:52,350
+First, we need to download the content of the repository with the container configuration file called
+61
+
+62
+00:04:52,350 --> 00:04:54,330
+docker-compose.yml.
+62
+
+63
+00:04:54,510 --> 00:04:56,550
+This step is easy.
+63
+
+64
+00:04:56,670 --> 00:04:59,310
+git clone the GitHub repository.
+64
+
+65
+00:05:00,930 --> 00:05:03,210
+Then we enter the downloaded folder.
+65
+
+66
+00:05:03,990 --> 00:05:07,270
+Right, now that we have all the necessary files,
+66
+
+67
+00:05:07,290 --> 00:05:10,740
+the second step is to apply our specific configuration.
+67
+
+68
+00:05:11,310 --> 00:05:14,790
+There is one specific configuration that we need to provide.
+68
+
+69
+00:05:14,820 --> 00:05:18,660
+It's the IP address or the domain name if we have one.
+69
+
+70
+00:05:18,960 --> 00:05:26,010
+So we need to edit the docker-compose.yml file and add the corresponding environment variable
+70
+
+71
+00:05:26,010 --> 00:05:27,510
+TTS_DOMAIN.
+71
+
+72
+00:05:27,720 --> 00:05:30,330
+We fill in the IP address of our server.
+72
+
+73
+00:05:30,690 --> 00:05:35,640
+In our case it's tts.univ-lorawan.fr 
+73
+
+74
+00:05:36,360 --> 00:05:41,580
+Apart from that there is nothing to do because the default configuration works out of the box.
+74
+
+75
+00:05:42,310 --> 00:05:43,050
+Great.
+75
+
+76
+00:05:43,050 --> 00:05:46,790
+So the third step is just to launch the installation process.
+76
+
+77
+00:05:46,800 --> 00:05:50,760
+We just need to use the command docker-compose up.
+77
+
+78
+00:05:51,420 --> 00:05:54,050
+I'm just going to add two things in this command.
+78
+
+79
+00:05:54,060 --> 00:05:59,650
+First, the keyword "sudo", because I use in the Linux environment and I need to ask for privileges to
+79
+
+80
+00:05:59,650 --> 00:06:01,720
+execute the "docker-compose" command.
+80
+
+81
+00:06:01,720 --> 00:06:07,180
+And secondly, I'm using the option "-d" because I want to leave The Things Stack running in the background.
+81
+
+82
+00:06:08,290 --> 00:06:10,180
+Okay, let's try that.
+82
+
+83
+00:06:10,210 --> 00:06:12,040
+It takes a few seconds.
+83
+
+84
+00:06:12,220 --> 00:06:19,420
+All containers are downloaded, extracted and created and The Things Stack Server is now ready.
+84
+
+85
+00:06:19,540 --> 00:06:21,970
+It's not more complicated than that.
+85
+
+86
+00:06:22,540 --> 00:06:25,260
+Now we have all services running.
+86
+
+87
+00:06:25,270 --> 00:06:30,640
+We can check them with another command "docker ps" and there we go.
+87
+
+88
+00:06:30,670 --> 00:06:37,780
+Everything is up and running. With The Things Stack, if we want to access the console, then we need to
+88
+
+89
+00:06:37,780 --> 00:06:43,930
+use a web browser with the server URL tts.univ-lorawan.fr
+89
+
+90
+00:06:44,230 --> 00:06:47,410
+But of course I could have used the IP address.
+90
+
+91
+00:06:48,250 --> 00:06:49,330
+Okay, great.
+91
+
+92
+00:06:49,330 --> 00:06:52,930
+And the default login and password is written in the README file.
+92
+
+93
+00:06:52,930 --> 00:06:56,680
+It's admin for the login and changeme for the password.
+93
+
+94
+00:06:56,980 --> 00:07:01,600
+And of course, as the password suggests, we obviously need to change it right away.
+94
+
+95
+00:07:02,410 --> 00:07:02,860
+Okay.
+95
+
+96
+00:07:02,860 --> 00:07:05,950
+But there is something strange coming up from my web client.
+96
+
+97
+00:07:06,190 --> 00:07:08,440
+That's a security alert.
+97
+
+98
+00:07:08,620 --> 00:07:14,770
+Of course, we explained earlier that we've built an HTTPS connection with The Things Stack, but when
+98
+
+99
+00:07:14,770 --> 00:07:19,120
+we built the server, we created our own certificate.
+99
+
+100
+00:07:19,210 --> 00:07:22,600
+So our web client can't authenticate the server.
+100
+
+101
+00:07:23,080 --> 00:07:28,510
+Of course I knew that it would happen, so I can just ask my web client to ignore it because I know
+101
+
+102
+00:07:28,510 --> 00:07:32,110
+that this server is safe. For a proof of concept,
+102
+
+103
+00:07:32,110 --> 00:07:34,090
+this is not a problem to do so.
+103
+
+104
+00:07:34,090 --> 00:07:39,850
+But of course for a real deployment, both Chirpstack and The Things Stack need to be set up with TLS
+104
+
+105
+00:07:39,850 --> 00:07:42,940
+certificates provided by the Certificate Authority.
+105
+
+106
+00:07:43,300 --> 00:07:49,300
+Once we've dealt with this problem, then we finally end up on The Things Stack console.
+106
+
+107
+00:07:49,840 --> 00:07:53,380
+We know this console because we've used it many times already.
+107
+
+108
+00:07:53,740 --> 00:07:58,900
+Starting from here, there is no difference between the Community version of The Things Stack or this
+108
+
+109
+00:07:58,900 --> 00:08:01,390
+version called the Open Source edition.
+109
+
+110
+00:08:02,440 --> 00:08:03,010
+Okay.
+110
+
+111
+00:08:03,010 --> 00:08:09,460
+Now that the installation process is done, let's finish the configuration of our entire private network.
+111
+
+112
+00:08:09,490 --> 00:08:16,570
+We'll complete the usual process to register gateways, applications and end-devices, and that's what we're
+112
+
+113
+00:08:16,570 --> 00:08:18,370
+going to do in the next video.
