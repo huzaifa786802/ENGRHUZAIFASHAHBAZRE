@@ -1,0 +1,668 @@
+0
+1
+00:00:00,900 --> 00:00:03,510
+For this demonstration of the MQTT protocol.
+1
+
+2
+00:00:03,510 --> 00:00:09,780
+We need a broker and at least one publisher and one subscriber.
+For the broker,
+2
+
+3
+00:00:09,810 --> 00:00:11,120
+there are many choices:
+3
+
+4
+00:00:11,130 --> 00:00:13,530
+First, we could set up our own.
+4
+
+5
+00:00:13,560 --> 00:00:14,640
+That's possible.
+5
+
+6
+00:00:14,640 --> 00:00:18,900
+But I won't be the choice for this demonstration because we want to keep things very simple,
+6
+
+7
+00:00:19,530 --> 00:00:21,570
+so we'll use a public broker.
+7
+
+8
+00:00:21,870 --> 00:00:26,220
+A public broker is a broker available in an Internet to test the MQTT protocol.
+8
+
+9
+00:00:26,670 --> 00:00:31,140
+They are maintained by companies or foundation and are sometimes open source.
+9
+
+10
+00:00:31,620 --> 00:00:37,320
+The most famous is probably mosquitto, but there are also others like HiveMq that we might also use
+10
+
+11
+00:00:37,320 --> 00:00:37,980
+later.
+11
+
+12
+00:00:38,520 --> 00:00:38,880
+Right.
+12
+
+13
+00:00:38,880 --> 00:00:40,860
+So for the broker, that will be very easy.
+13
+
+14
+00:00:41,310 --> 00:00:46,260
+Now, we also need to set up an MQTT client for the subscriber and the publisher.
+14
+
+15
+00:00:46,680 --> 00:00:49,040
+There are also many clients available.
+15
+
+16
+00:00:49,050 --> 00:00:53,520
+Some clients can be directly controlled with a Command Line Interface in the terminal.
+16
+
+17
+00:00:53,550 --> 00:00:56,280
+Another option is to set up an MQTT using node-red.
+17
+
+18
+00:00:56,280 --> 00:00:56,880
+...
+18
+
+19
+00:00:56,910 --> 00:01:01,230
+And finally, some other clients have a standalone user interface.
+19
+
+20
+00:01:01,680 --> 00:01:08,100
+I don't really have a favorite choice among all these methods, so I will show you two possibilities.
+20
+
+21
+00:01:08,370 --> 00:01:10,730
+The first one is using node-red,
+21
+
+22
+00:01:10,740 --> 00:01:13,800
+because, we'll use Node-red anyway later in this course.
+22
+
+23
+00:01:14,040 --> 00:01:20,820
+And the second one is the MQTT Explorer Client that we find very useful in some situation and often
+23
+
+24
+00:01:20,820 --> 00:01:22,320
+a bit quicker to set up than node-red.
+24
+
+25
+00:01:22,320 --> 00:01:22,860
+...
+25
+
+26
+00:01:24,300 --> 00:01:29,700
+But whatever MQTT client we're using, the configuration is always the same.
+26
+
+27
+00:01:30,090 --> 00:01:38,310
+We need to specify:
+- whichever we want to connect to,
+- the login and password for the connection,
+27
+
+28
+00:01:38,820 --> 00:01:45,180
+- the topic we want to target:  if we are a subscriber, the topic refers to the topic we want to read and
+28
+
+29
+00:01:45,180 --> 00:01:49,150
+if we are a publisher, then it refers to the topic we want to write.
+29
+
+30
+00:01:49,230 --> 00:01:52,770
+- And one last thing, only for the publisher.
+30
+
+31
+00:01:52,800 --> 00:01:55,620
+It needs to provide a message to send to the topic.
+31
+
+32
+00:01:57,030 --> 00:02:00,570
+So let's try that first with the node-red MQTT client.
+32
+
+33
+00:02:00,570 --> 00:02:05,310
+Then after I will also make a demonstration with the MQTT Explorer client.
+33
+
+34
+00:02:05,340 --> 00:02:09,630
+In both cases, we're going to use the public broker called Mosquitto.
+34
+
+35
+00:02:11,760 --> 00:02:12,450
+Right.
+35
+
+36
+00:02:12,450 --> 00:02:13,770
+Let's start with node-red.
+36
+
+37
+00:02:14,190 --> 00:02:16,560
+I'm not going to explain how to install it.
+37
+
+38
+00:02:16,590 --> 00:02:17,910
+We've done it before,
+38
+
+39
+00:02:17,910 --> 00:02:22,620
+and I just remind you that you can find all the useful explanation at the beginning of this course in
+39
+
+40
+00:02:22,620 --> 00:02:24,000
+the HOW TO section.
+40
+
+41
+00:02:24,390 --> 00:02:29,520
+For this demonstration, I assume that you're already logged on the node-red user interface.
+41
+
+42
+00:02:29,820 --> 00:02:30,590
+Great.
+42
+
+43
+00:02:30,600 --> 00:02:36,420
+We need to find 2 nodes, one for the publisher and one for the subscriber.
+43
+
+44
+00:02:36,690 --> 00:02:40,080
+We can look for the MQTT node in the filter field here.
+44
+
+45
+00:02:40,740 --> 00:02:47,160
+"MQTT out" is our publisher and "MQTT in" is our subscriber.
+45
+
+46
+00:02:47,670 --> 00:02:53,460
+So I place them in the center and I will just change their names because right now it's a little bit
+46
+
+47
+00:02:53,460 --> 00:02:54,390
+confusing.
+47
+
+48
+00:03:01,660 --> 00:03:06,760
+And we need to imagine here, that there is the Mosquitto broker in the middle.
+48
+
+49
+00:03:07,240 --> 00:03:08,920
+That is just a comment.
+49
+
+50
+00:03:11,540 --> 00:03:12,050
+The node
+50
+
+51
+00:03:12,050 --> 00:03:14,060
+configuration is pretty easy.
+51
+
+52
+00:03:14,390 --> 00:03:20,090
+As we said earlier, we need to configure the publisher and subscriber with the broker address, the
+52
+
+53
+00:03:20,090 --> 00:03:22,760
+credential for the connection, and the topic.
+53
+
+54
+00:03:23,030 --> 00:03:23,750
+Great.
+54
+
+55
+00:03:23,750 --> 00:03:27,200
+Let's start with the publisher. In the server section,
+55
+
+56
+00:03:27,200 --> 00:03:29,990
+I need to add a new MQTT broker.
+56
+
+57
+00:03:34,950 --> 00:03:36,330
+I give it a name.
+57
+
+58
+00:03:39,420 --> 00:03:46,410
+And I specify the address which is "test.mosquitto.org" on port 1883.
+58
+
+59
+00:03:47,220 --> 00:03:52,980
+For this public broker there is no credentials, so we don't have to fill any of these fields.
+59
+
+60
+00:03:53,280 --> 00:03:59,610
+So now the new mosquito broker is configured and we just have to specify the topic here.
+60
+
+61
+00:03:59,610 --> 00:04:01,560
+I will use the topic LoRaWAN.
+61
+
+62
+00:04:02,010 --> 00:04:02,420
+Okay.
+62
+
+63
+00:04:02,670 --> 00:04:04,350
+This publisher is ready.
+63
+
+64
+00:04:04,650 --> 00:04:09,120
+The only thing missing is to feed this node with the message we would like to send.
+64
+
+65
+00:04:09,270 --> 00:04:12,900
+For that we take a new node called "Inject Node".
+65
+
+66
+00:04:13,200 --> 00:04:16,020
+We could leave it like this. By default,
+66
+
+67
+00:04:16,020 --> 00:04:19,800
+it will send a timestamp, so the actual time.
+67
+
+68
+00:04:19,800 --> 00:04:23,310
+But in my case I will change it to send a string instead.
+68
+
+69
+00:04:23,310 --> 00:04:24,930
+Let's say "hello".
+69
+
+70
+00:04:28,500 --> 00:04:31,140
+Okay, We are done with the publisher part.
+70
+
+71
+00:04:31,170 --> 00:04:35,370
+Now, for the subscriber, I also need to configure the broker.
+71
+
+72
+00:04:35,640 --> 00:04:41,850
+We simply reuse the Mosquitto broker that we registered previously and I specify the topic.
+72
+
+73
+00:04:41,850 --> 00:04:43,860
+In my case, it's LoRaWAN.
+73
+
+74
+00:04:44,460 --> 00:04:44,990
+Great.
+74
+
+75
+00:04:45,000 --> 00:04:46,810
+The subscriber is ready as well.
+75
+
+76
+00:04:46,830 --> 00:04:50,790
+And the last thing is to direct the output of the subscriber to the debug node.
+76
+
+77
+00:04:51,450 --> 00:04:56,250
+Thanks to the debug node, anything coming out of this node will be written in the debug message window
+77
+
+78
+00:04:56,250 --> 00:04:58,950
+and right when the flow will be deployed.
+78
+
+79
+00:05:00,180 --> 00:05:02,100
+So I deploy my flow.
+79
+
+80
+00:05:02,310 --> 00:05:06,570
+I can see that both my publisher and subscriber are connected to the broker.
+80
+
+81
+00:05:06,600 --> 00:05:08,010
+That's a good news.
+81
+
+82
+00:05:08,400 --> 00:05:13,410
+I click on the debug window here and I can try to publish a message.
+82
+
+83
+00:05:13,740 --> 00:05:20,130
+Yes, I can see here that as soon as I've published the message on the LoRaWAN topic, then it's sent
+83
+
+84
+00:05:20,130 --> 00:05:21,680
+to all subscribers.
+84
+
+85
+00:05:21,750 --> 00:05:25,460
+So this one, in that case, great.
+85
+
+86
+00:05:25,470 --> 00:05:28,560
+We are done with this MQTT demonstration with node-red.
+86
+
+87
+00:05:28,740 --> 00:05:32,130
+This is saved already, so I don't need to do anything else.
+87
+
+88
+00:05:32,130 --> 00:05:35,520
+But I'm going to change the tab name in case we need it later.
+88
+
+89
+00:05:35,670 --> 00:05:38,190
+I call it MQTT Mosquitto.
+89
+
+90
+00:05:40,270 --> 00:05:43,110
+Okay, so that's the node-red client demonstration.
+90
+
+91
+00:05:43,120 --> 00:05:47,590
+I'm also going to show you how it works a more user friendly MQTT application.
+91
+
+92
+00:05:47,980 --> 00:05:51,100
+There are a lot available so we could use any of them.
+92
+
+93
+00:05:51,100 --> 00:05:57,280
+But MQTT Explorer is free, open source, and supports many platforms.
+93
+
+94
+00:05:57,610 --> 00:06:02,020
+We can download the installation file from their website and it's very easy to set up.
+94
+
+95
+00:06:02,950 --> 00:06:07,870
+Once we've launched the User Interface, we end up on the connection tab.
+95
+
+96
+00:06:08,260 --> 00:06:11,500
+This is where we enter the broker address and the credential.
+96
+
+97
+00:06:11,950 --> 00:06:17,380
+There is already two brokers registers and the second one is the test mosquitto broker.
+97
+
+98
+00:06:17,740 --> 00:06:19,960
+Everything is already configured properly.
+98
+
+99
+00:06:20,320 --> 00:06:26,230
+If not, then we just add a new connection at the top and fill in this field with the same information.
+99
+
+100
+00:06:26,950 --> 00:06:29,620
+To define the topic we want to subscribe to,
+100
+
+101
+00:06:29,650 --> 00:06:32,260
+we need to go on the advanced section.
+101
+
+102
+00:06:32,680 --> 00:06:38,260
+There we can see that the default configuration subscribes to all topic of the mosquitto public broker.
+102
+
+103
+00:06:38,890 --> 00:06:45,370
+While it would be a good idea when we only use our own broker, using the # wild card on a public broker
+103
+
+104
+00:06:45,370 --> 00:06:52,120
+is complicated because we receive thousands of messages on our clients.
+Actually we'll receive all mixed
+104
+
+105
+00:06:52,150 --> 00:06:55,070
+messages sent by all publishers around the world.
+105
+
+106
+00:06:55,090 --> 00:06:56,470
+That's huge.
+106
+
+107
+00:06:56,650 --> 00:06:57,970
+Let's try anyway.
+107
+
+108
+00:06:58,930 --> 00:07:03,340
+I go back on the connections section and I connect the client to the broker.
+108
+
+109
+00:07:03,640 --> 00:07:04,330
+Great.
+109
+
+110
+00:07:05,950 --> 00:07:08,290
+I can see all topics and messages used.
+110
+
+111
+00:07:09,780 --> 00:07:16,080
+Now I will disconnect and go back on the advanced section to subscribe only on a topic called LoRaWAN.
+111
+
+112
+00:07:16,560 --> 00:07:21,510
+First, I delete the # topic and I can also delete the $SYS topic.
+112
+
+113
+00:07:21,720 --> 00:07:27,360
+SYS is a specific topic to subscribe to some information on the broker itself, like the number
+113
+
+114
+00:07:27,360 --> 00:07:30,990
+of client connected, the number of topic available and so on.
+114
+
+115
+00:07:31,500 --> 00:07:36,750
+You can leave it if you want, but for this demonstration we don't need it, so I will delete it.
+115
+
+116
+00:07:37,530 --> 00:07:40,020
+Now I can add the LoRaWAN topic.
+116
+
+117
+00:07:42,260 --> 00:07:45,200
+Go back and save my configuration.
+117
+
+118
+00:07:49,030 --> 00:07:51,910
+On the left there is my subscribe section.
+118
+
+119
+00:07:51,910 --> 00:07:55,390
+So if anything arrives on the topic LoRaWAN, it should be here.
+119
+
+120
+00:07:55,750 --> 00:07:59,050
+And on the right, I've got the publisher section.
+120
+
+121
+00:07:59,470 --> 00:08:01,810
+I enter a value in the topic LoRaWAN.
+121
+
+122
+00:08:01,810 --> 00:08:03,250
+Let's say hello.
+122
+
+123
+00:08:06,270 --> 00:08:07,270
+And there we go.
+123
+
+124
+00:08:07,290 --> 00:08:09,240
+We receive it on the subscriber.
+124
+
+125
+00:08:09,660 --> 00:08:15,660
+The nice thing with MQTT Explorer is that we can even plot these values if we send numbers.
+125
+
+126
+00:08:15,900 --> 00:08:21,000
+For example, if I send several data is like 2, then 5,
+126
+
+127
+00:08:23,910 --> 00:08:25,200
+and 4.
+127
+
+128
+00:08:28,740 --> 00:08:34,860
+I can click on the history and have a quick overview of the previous data received on this topic.
+128
+
+129
+00:08:36,690 --> 00:08:40,800
+We are done with the basic functionalities of both MQTT clients.
+129
+
+130
+00:08:40,950 --> 00:08:47,580
+Now, what we would like to do is exactly the same demonstration, but this time we're going to connect
+130
+
+131
+00:08:47,580 --> 00:08:50,010
+the client to our LoRaWAN server.
+131
+
+132
+00:08:50,190 --> 00:08:56,870
+Thanks to that, we'll get the uplink messages of our devices and we'll also be able to send downlink
+132
+
+133
+00:08:56,880 --> 00:08:57,810
+messages.
