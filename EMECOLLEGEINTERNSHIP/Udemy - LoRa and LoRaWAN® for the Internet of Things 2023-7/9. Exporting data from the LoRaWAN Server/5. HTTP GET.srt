@@ -1,0 +1,176 @@
+0
+1
+00:00:00,540 --> 00:00:02,910
+We're going to start with the uplink stream.
+1
+
+2
+00:00:03,180 --> 00:00:08,940
+That is the most common situation since the LoRaWAN end-device usually sends much more data than it
+2
+
+3
+00:00:08,940 --> 00:00:11,700
+receives. From the user side,
+3
+
+4
+00:00:11,730 --> 00:00:17,400
+we want to retrieve the message sent by the end-device and now stored on the LoRaWAN  server.
+4
+
+5
+00:00:17,940 --> 00:00:22,290
+The first idea is to make a request from our user application,
+5
+
+6
+00:00:22,290 --> 00:00:27,900
+so from the IoT platform. We can do this by making an HTTP GET request.
+6
+
+7
+00:00:28,440 --> 00:00:35,880
+When we make an HTTP GET request to a web server, it returns the content of the HTML page requested.
+7
+
+8
+00:00:36,480 --> 00:00:43,050
+Now, in the same way, when we make an HTTP GET request to the LoRaWAN  server, then it will return
+8
+
+9
+00:00:43,050 --> 00:00:44,820
+the last message received.
+9
+
+10
+00:00:44,850 --> 00:00:49,800
+The most common way to present the answer is to use the widely used JSON format.
+10
+
+11
+00:00:50,190 --> 00:00:57,300
+It's not the more efficient way to represent things in terms of size, but a text format is very convenient.
+11
+
+12
+00:00:57,870 --> 00:01:06,060
+So, if we analyze this situation, who is doing what?
+The IoT platform is the HTTP client, it requests
+12
+
+13
+00:01:06,060 --> 00:01:08,940
+the message. And the LoRaWAN server,
+13
+
+14
+00:01:08,940 --> 00:01:10,750
+iIs the HTTP server.
+14
+
+15
+00:01:10,770 --> 00:01:14,400
+It answers the request with the corresponding messages.
+15
+
+16
+00:01:15,120 --> 00:01:15,870
+Great.
+16
+
+17
+00:01:15,870 --> 00:01:17,660
+I think it's clear for the uplink.
+17
+
+18
+00:01:17,670 --> 00:01:23,100
+Let's talk about downlink. From the LoRaWAN server, we now want to retrieve
+18
+
+19
+00:01:23,100 --> 00:01:28,440
+if a command LED ON or LED OFF has been used on IoT platform.
+19
+
+20
+00:01:29,160 --> 00:01:36,210
+So we can imagine that the IoT platform has a virtual switch on the mobile application, for example, and
+20
+
+21
+00:01:36,210 --> 00:01:41,670
+regularly the LoRaWAN server requests the IoT platform to check if a command is pending.
+21
+
+22
+00:01:42,450 --> 00:01:48,990
+So, the idea here is to make the request from the LoRaWAN server and the IoT platform replies with the
+22
+
+23
+00:01:48,990 --> 00:01:53,070
+switch command statue: basically ON or OFF.
+23
+
+24
+00:01:53,520 --> 00:01:57,450
+In that case: the LoRaWAN server is the HTTP client,
+24
+
+25
+00:01:57,450 --> 00:01:59,120
+it requests for the user switch status.
+25
+
+26
+00:01:59,130 --> 00:02:03,200
+And the IoT platform is the HTTP server,
+26
+
+27
+00:02:03,210 --> 00:02:07,950
+it answers the request with the corresponding switch status.
+27
+
+28
+00:02:07,980 --> 00:02:13,630
+Now, the last thing we need to know is how to send an HTTP request if we are a client.
+28
+
+29
+00:02:13,650 --> 00:02:19,170
+And of course, how do we build an answer if we are a server. 
+For the request,
+29
+
+30
+00:02:19,170 --> 00:02:26,700
+The HTTP GET format is really simple because what we need is the URL corresponding to the request.
+30
+
+31
+00:02:26,700 --> 00:02:29,370
+One request > one URL.
+31
+
+32
+00:02:29,820 --> 00:02:35,880
+But we can't guess which URL we need to use, so we have to dive in the documentation and read it.
+32
+
+33
+00:02:36,060 --> 00:02:42,570
+We'll do it, and find out the right URL and maybe some other nice option that we could add in the request.
+33
+
+34
+00:02:42,840 --> 00:02:49,500
+And of course, not everyone is allowed to make this request, so we'll need a way to be authentified.
+34
+
+35
+00:02:49,980 --> 00:02:52,830
+Let's now make a demonstration of this integration.
