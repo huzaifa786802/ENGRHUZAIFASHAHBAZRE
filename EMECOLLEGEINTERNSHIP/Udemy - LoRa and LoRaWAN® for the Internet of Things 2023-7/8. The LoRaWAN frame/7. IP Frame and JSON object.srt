@@ -1,0 +1,169 @@
+0
+1
+00:00:00,780 --> 00:00:05,010
+If we want that the gateway can reach the network server, we need to configure it.
+1
+
+2
+00:00:05,430 --> 00:00:09,600
+That was the first step of the Lorawan network configuration in the previous chapter.
+2
+
+3
+00:00:10,200 --> 00:00:16,650
+The configuration depends on the packet forwarder we use, but basically the gateway needs to know the
+3
+
+4
+00:00:16,650 --> 00:00:19,590
+IP address and port used by the network server.
+4
+
+5
+00:00:20,190 --> 00:00:24,240
+And if we want that, this gateway has the right to talk to the network server.
+5
+
+6
+00:00:24,270 --> 00:00:26,460
+We also need to register it.
+6
+
+7
+00:00:26,490 --> 00:00:29,850
+That was the second step of the network configuration.
+7
+
+8
+00:00:30,900 --> 00:00:37,170
+The internet connection between the gateway and the network server is called the backhaul connectivity.
+8
+
+9
+00:00:37,800 --> 00:00:45,780
+It can rely on Ethernet, WiFi, 4G, LTE, and these are the most common.
+9
+
+10
+00:00:46,620 --> 00:00:50,310
+It depends on the kind of connectivity you've bought with your gateway.
+10
+
+11
+00:00:51,490 --> 00:00:56,450
+The LoRaWAN gateway is the key point of the transmission on one side.
+11
+
+12
+00:00:56,470 --> 00:00:59,620
+On the left, it takes the lower radio signal.
+12
+
+13
+00:00:59,740 --> 00:01:04,720
+And on the other side, it sends the demodulated information to the network server.
+13
+
+14
+00:01:04,750 --> 00:01:06,610
+Thanks to an IP frame.
+14
+
+15
+00:01:07,390 --> 00:01:13,420
+When the LoRa packet leaves the device and reaches the gateway, the gateway extract the content called
+15
+
+16
+00:01:13,420 --> 00:01:14,560
+PHY payload.
+16
+
+17
+00:01:14,890 --> 00:01:23,110
+Then this whole PHY payload is encapsulated in an IP frame and sent to the network server. In the IP
+17
+
+18
+00:01:23,110 --> 00:01:23,720
+frame,
+18
+
+19
+00:01:23,740 --> 00:01:28,330
+everything is transmitted as text, usually using a JSON object.
+19
+
+20
+00:01:29,020 --> 00:01:32,560
+JSON is a simple way to transfer data as text format.
+20
+
+21
+00:01:32,860 --> 00:01:36,010
+But what do we exactly find in this data?
+21
+
+22
+00:01:36,700 --> 00:01:39,820
+First there is the PHY payload, as we said earlier.
+22
+
+23
+00:01:40,150 --> 00:01:48,880
+This PHY  payload is transmitted as plaintext, but some part like the frame payload is encrypted. Anyway,
+23
+
+24
+00:01:48,910 --> 00:01:55,000
+the gateway doesn't need the LoRaWAN information, so it usually doesn't check any of these fields.
+24
+
+25
+00:01:55,390 --> 00:02:01,720
+But the PHY payload is not the only useful information, the network server also needs information about
+25
+
+26
+00:02:01,720 --> 00:02:02,860
+radio transmission.
+26
+
+27
+00:02:03,010 --> 00:02:05,620
+What was the RSI in the receiver?
+27
+
+28
+00:02:05,860 --> 00:02:11,020
+The SNR, the spreading factor used, channel, bandwidth coding
+28
+
+29
+00:02:11,020 --> 00:02:11,560
+rate.
+29
+
+30
+00:02:11,590 --> 00:02:14,140
+That is something that the network server should know.
+30
+
+31
+00:02:14,620 --> 00:02:20,980
+The user might be interested, but above all, the network server needs it to process the LoRaWAN
+31
+
+32
+00:02:20,980 --> 00:02:21,550
+stack.
+32
+
+33
+00:02:21,880 --> 00:02:26,840
+For example, the stack needs it for the computation of the best LoRaWAN parameters.
+33
+
+34
+00:02:26,860 --> 00:02:29,770
+When we use the adaptive datarate algorithm.
