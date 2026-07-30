@@ -1,0 +1,149 @@
+0
+1
+00:00:00,780 --> 00:00:06,450
+We've seen that the HTTP POST protocol is very convenient to connect our LoRaWAN server to the IoT
+1
+
+2
+00:00:06,450 --> 00:00:07,200
+platform.
+2
+
+3
+00:00:07,830 --> 00:00:12,030
+It works for the uplink stream and also to send downlink messages.
+3
+
+4
+00:00:12,540 --> 00:00:17,910
+Now let's stop for a few second and try to analyze the HTTP POST behavior.
+4
+
+5
+00:00:18,450 --> 00:00:22,500
+First, let's imagine that we want to connect another IoT platform.
+5
+
+6
+00:00:22,860 --> 00:00:28,830
+In that case, we need to go on the LoRaWAN server and to configure a new server that needs to be
+6
+
+7
+00:00:28,830 --> 00:00:29,760
+connected.
+7
+
+8
+00:00:30,000 --> 00:00:36,180
+It was not very complicated because we just had to provide the URL endpoint, but still we have to do
+8
+
+9
+00:00:36,180 --> 00:00:36,390
+it.
+9
+
+10
+00:00:37,200 --> 00:00:44,250
+Secondly, when we created this integration on the LoRaWAN server we defined which event had to be sent.
+10
+
+11
+00:00:44,610 --> 00:00:47,820
+In our case, we decided to send all uplink data.
+11
+
+12
+00:00:48,360 --> 00:00:54,150
+If your application needs more information, let's say the join accept frames, or acknowledgment,
+12
+
+13
+00:00:54,510 --> 00:00:57,640
+then we need to go back on the server to configure it.
+13
+
+14
+00:00:57,660 --> 00:01:01,680
+Again, it's not complicated, but still you have to do it.
+14
+
+15
+00:01:02,430 --> 00:01:08,970
+The third point is that if for some reason your IoT platform is disconnected for a few seconds, then
+15
+
+16
+00:01:08,970 --> 00:01:11,850
+the HTTP request will not reach your endpoint.
+16
+
+17
+00:01:12,210 --> 00:01:15,570
+There is a good chance that your data will be definitely lost.
+17
+
+18
+00:01:16,050 --> 00:01:22,050
+And finally, in some situation, the HTTP client can think that the request has not been received,
+18
+
+19
+00:01:22,050 --> 00:01:25,080
+whereas the endpoint had received the message.
+19
+
+20
+00:01:25,350 --> 00:01:28,590
+That could lead to duplicate messages on the IoT platform.
+20
+
+21
+00:01:29,310 --> 00:01:36,420
+However, the HTTP POST method is widely used, so we absolutely not consider it's a bad way to connect
+21
+
+22
+00:01:36,420 --> 00:01:38,670
+the LoRaWAN server with the IoT platform.
+22
+
+23
+00:01:39,180 --> 00:01:40,110
+But we'll see now,
+23
+
+24
+00:01:40,110 --> 00:01:42,180
+another way to connect them.
+24
+
+25
+00:01:42,390 --> 00:01:45,360
+It's actually a new protocol that we are going to explain.
+25
+
+26
+00:01:45,390 --> 00:01:49,140
+It supports duplicate messages, the disconnection.
+26
+
+27
+00:01:49,140 --> 00:01:54,360
+I will also be a lightweight protocol in order to deal with thousands of potential connection at the
+27
+
+28
+00:01:54,360 --> 00:01:55,200
+same time.
+28
+
+29
+00:01:55,560 --> 00:01:58,350
+This protocol is called MQTT.
+29
+
+30
+00:01:58,860 --> 00:02:01,250
+It's going to be the topic of the next video.
