@@ -1,0 +1,255 @@
+0
+1
+00:00:00,930 --> 00:00:02,460
+In the LoRaWAN frame,
+1
+
+2
+00:00:02,460 --> 00:00:05,430
+The Frame Payload is the encrypted user data.
+2
+
+3
+00:00:05,880 --> 00:00:13,110
+So, for example, if the device sends a one-byte temperature, then the Frame Payload is also on one
+3
+
+4
+00:00:13,110 --> 00:00:16,200
+byte, but encrypted with the Application Session Key.
+4
+
+5
+00:00:17,160 --> 00:00:22,350
+Of course, the only way to decrypt the payload is to use the same Application Session Key that the
+5
+
+6
+00:00:22,350 --> 00:00:24,000
+one used during encryption.
+6
+
+7
+00:00:24,600 --> 00:00:29,310
+This is the role of the application server. And it also works the other way around:
+7
+
+8
+00:00:29,580 --> 00:00:35,930
+So when the user wants to send the data from the application, just before passing it to the LoRa MAC layer,
+8
+
+9
+00:00:35,940 --> 00:00:41,010
+the LoRaWAN protocol encrypts the data to be transmitted.
+9
+
+10
+00:00:41,850 --> 00:00:47,610
+When the device receives the frame payload, it will decrypt it with the same Application Session Key.
+10
+
+11
+00:00:48,520 --> 00:00:49,070
+Okay.
+11
+
+12
+00:00:49,080 --> 00:00:54,120
+Now that we have the overall LoRaWAN frame, let's check how many bytes are in there.
+12
+
+13
+00:00:54,720 --> 00:00:58,260
+Of course, for that, we need to dive into the LoRaWAN specification.
+13
+
+14
+00:00:58,620 --> 00:01:01,470
+But I will do it for you for this little example.
+14
+
+15
+00:01:02,130 --> 00:01:10,920
+The MAC Header is an 1 byte, plus 4byte for the Device Address, plus 1 byte for the Frame Control,
+15
+
+16
+00:01:11,820 --> 00:01:14,010
+plus 2 for the frame counter.
+16
+
+17
+00:01:14,640 --> 00:01:21,900
+We'll consider a frame without options, plus 1 byte for the frame port, 1 byte for a Frame Payload,
+17
+
+18
+00:01:21,900 --> 00:01:23,790
+which in our case is the temperature.
+18
+
+19
+00:01:24,150 --> 00:01:28,290
+And finally, 4 bytes for the Message Integrity Control.
+19
+
+20
+00:01:28,830 --> 00:01:31,260
+That gives it a total of 14 bytes.
+20
+
+21
+00:01:32,110 --> 00:01:32,730
+Okay.
+21
+
+22
+00:01:32,850 --> 00:01:34,290
+That's the theory.
+22
+
+23
+00:01:34,380 --> 00:01:39,660
+Now, I would like to show you that it can be verified with demonstration because it's exactly what
+23
+
+24
+00:01:39,660 --> 00:01:40,890
+happens in reality.
+24
+
+25
+00:01:42,060 --> 00:01:47,790
+So I'll show you a very small demonstration of a LoRaWAN transmission of 1 bite of temperature.
+25
+
+26
+00:01:48,480 --> 00:01:54,220
+This demonstration uses a TTN version 2 Network Server that is no longer available on the Web.
+26
+
+27
+00:01:54,240 --> 00:01:58,140
+But the logs were so clear that I would like to use it for the sake of clarity.
+27
+
+28
+00:01:58,260 --> 00:02:02,160
+Of course, this demonstration can be done with any other Network Server.
+28
+
+29
+00:02:03,720 --> 00:02:06,180
+For this demonstration, I've got on the left
+29
+
+30
+00:02:06,180 --> 00:02:08,070
+a window with the gateway traffic.
+30
+
+31
+00:02:08,190 --> 00:02:12,840
+And on the right, the decrypted frame when they arrived on the Application Server.
+31
+
+32
+00:02:13,680 --> 00:02:15,780
+So I start my end device.
+32
+
+33
+00:02:16,620 --> 00:02:22,710
+And right after the first transmitted frame, I pause the live data event on the Gateway.
+33
+
+34
+00:02:23,070 --> 00:02:25,890
+And I also stop it on the Application Server.
+34
+
+35
+00:02:26,640 --> 00:02:29,670
+What do we see ?
+On the gateway,
+35
+
+36
+00:02:29,760 --> 00:02:33,060
+the payload size is 14 bytes.
+36
+
+37
+00:02:33,540 --> 00:02:37,320
+Yes, that's exactly what we've calculated before.
+37
+
+38
+00:02:37,950 --> 00:02:42,510
+14 byte is what we call the raw payload of physical payload.
+38
+
+39
+00:02:43,320 --> 00:02:50,010
+There are many things in there: the devadrr, the Message Integrity Control, the Frame Counter
+39
+
+40
+00:02:50,010 --> 00:02:50,790
+and so on...
+40
+
+41
+00:02:51,180 --> 00:02:54,540
+But there is also the encrypted user payload.
+41
+
+42
+00:02:55,230 --> 00:02:55,890
+Great.
+42
+
+43
+00:02:56,130 --> 00:03:01,210
+Now, what do we see on the right on the application server side?
+43
+
+44
+00:03:01,230 --> 00:03:03,250
+There is only one byte.
+44
+
+45
+00:03:03,270 --> 00:03:05,400
+That's my temperature data.
+45
+
+46
+00:03:06,240 --> 00:03:13,230
+I don't see here the 14 bytes, because among these 14 bytes, only one corresponded to the user payload.
+46
+
+47
+00:03:13,260 --> 00:03:15,000
+It was the frame payload.
+47
+
+48
+00:03:15,600 --> 00:03:18,930
+It's been decrypted and reported here in the console.
+48
+
+49
+00:03:20,190 --> 00:03:20,910
+Right.
+49
+
+50
+00:03:21,090 --> 00:03:26,130
+So we've seen here in details the content of the LoRa modulation and the LoRaWAN  frame.
+50
+
+51
+00:03:26,310 --> 00:03:31,350
+Now let's have a look at the transmission between the gateway and the network server.
