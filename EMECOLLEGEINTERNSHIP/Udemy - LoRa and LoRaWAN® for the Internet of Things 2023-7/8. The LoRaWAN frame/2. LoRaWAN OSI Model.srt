@@ -1,0 +1,205 @@
+0
+1
+00:00:00,600 --> 00:00:05,850
+When we want to explain how a protocol works, we 
+usually use layers to represent it.
+1
+
+2
+00:00:06,390 --> 00:00:12,990
+The bottom layer called LoRa modulation is also often called PHY layers for physical layer.
+2
+
+3
+00:00:13,680 --> 00:00:18,120
+It represents the modulation used to transfer data from one point to another.
+3
+
+4
+00:00:18,720 --> 00:00:25,130
+We saw earlier that this modulation is called Chirp Spread Spectrum, but in short, we call it LoRa
+4
+
+5
+00:00:25,140 --> 00:00:25,920
+modulation.
+5
+
+6
+00:00:26,610 --> 00:00:32,940
+With this kind of modulation, you can send and receive data from a device to another device, or in
+6
+
+7
+00:00:32,940 --> 00:00:38,040
+most cases, from a device to a gateway. That has nothing to do with LoRaWAN.
+7
+
+8
+00:00:38,220 --> 00:00:42,510
+And if you want, you can only use the LoRa modulation for your application.
+8
+
+9
+00:00:43,170 --> 00:00:49,410
+But as security is a major concern in Iot, we need to add new services to this LoRa modulation.
+9
+
+10
+00:00:50,040 --> 00:00:55,710
+Any secure device need to take care about confidentiality, authenticity and integrity.
+10
+
+11
+00:00:55,710 --> 00:01:01,900
+And there are other concerns because we also need a way to identify the device to acknowledge data,
+11
+
+12
+00:01:01,920 --> 00:01:04,590
+specify the application port and so on.
+12
+
+13
+00:01:05,190 --> 00:01:09,540
+You can obviously build your own protocol that support all the requirements we've listed.
+13
+
+14
+00:01:09,810 --> 00:01:14,380
+But actually this is exactly what LoRaWAN does.
+14
+
+15
+00:01:14,400 --> 00:01:21,630
+So yes, we can design our own protocol, but we'll probably end up with something similar to LoRaWAN
+15
+
+16
+00:01:21,630 --> 00:01:23,460
+and certainly not as good.
+16
+
+17
+00:01:23,490 --> 00:01:27,360
+We said that the LoRaWAN protocol stands on top of the LoRa modulation.
+17
+
+18
+00:01:27,390 --> 00:01:30,600
+This is called the Mac layer or LoRa Mac.
+18
+
+19
+00:01:30,750 --> 00:01:36,780
+So when you see LoRa Mac in the specification, it's just a way to speak about the LoRaWAN protocol
+19
+
+20
+00:01:36,780 --> 00:01:37,410
+part.
+20
+
+21
+00:01:37,980 --> 00:01:41,490
+LoRa Mac implement services up to the application layer.
+21
+
+22
+00:01:41,820 --> 00:01:48,360
+Then as an output, it provides an encrypted payload to the user, and that's up to the last layer to
+22
+
+23
+00:01:48,360 --> 00:01:49,230
+decrypt it.
+23
+
+24
+00:01:49,260 --> 00:01:52,500
+This top layer is called the application layer.
+24
+
+25
+00:01:53,010 --> 00:01:55,620
+This representation works in both ways.
+25
+
+26
+00:01:55,680 --> 00:02:01,170
+It means that if you want to send data, then the application layer will encrypt it.
+26
+
+27
+00:02:01,530 --> 00:02:03,760
+It will be carried out by the LoRa mac.
+27
+
+28
+00:02:03,780 --> 00:02:10,720
+And finally, the LoRa modulation, which transmit the radiofrequency message. In this layer representation,
+28
+
+29
+00:02:10,740 --> 00:02:17,340
+it's also interesting to notice that these layers also help to understand each part of the LoRa frame over
+29
+
+30
+00:02:17,340 --> 00:02:17,880
+the air.
+30
+
+31
+00:02:17,910 --> 00:02:21,900
+Indeed, the LoRa frame begin with information on the LoRa protocol.
+31
+
+32
+00:02:21,930 --> 00:02:27,090
+There is a preamble, a LoRa header, and at the end there is a CRC.
+32
+
+33
+00:02:27,480 --> 00:02:30,660
+Then there are many fields concerning the Mac layer.
+33
+
+34
+00:02:30,660 --> 00:02:32,130
+So the LoRaWAN protocol.
+34
+
+35
+00:02:32,220 --> 00:02:37,410
+We already talked about these fields, about the identification, authentication, acknowledgement and
+35
+
+36
+00:02:37,410 --> 00:02:37,980
+so on.
+36
+
+37
+00:02:38,400 --> 00:02:44,730
+And finally, there is the application field of the LoRaWAN protocol, which is basically the user data.
+37
+
+38
+00:02:45,500 --> 00:02:45,780
+Okay.
+38
+
+39
+00:02:45,780 --> 00:02:52,200
+So now in the next video, I will dive on each part of the frame to see the relevance of each field
+39
+
+40
+00:02:52,200 --> 00:02:53,100
+of this frame.
+40
+
+41
+00:02:53,250 --> 00:02:55,530
+Let's begin with the LoRa modulation layer.
