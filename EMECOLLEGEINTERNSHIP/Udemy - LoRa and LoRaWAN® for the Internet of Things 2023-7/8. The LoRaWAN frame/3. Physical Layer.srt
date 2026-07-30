@@ -1,0 +1,420 @@
+0
+1
+00:00:00,450 --> 00:00:04,500
+In this video, I'm going to show you the LoRa modulation and the LoRa frame.
+1
+
+2
+00:00:04,620 --> 00:00:08,850
+We know that the modulation is made with Chirp. 
+It's a sweep frequency,
+2
+
+3
+00:00:08,850 --> 00:00:13,920
+and the difference between the bottom frequency and the top one represents the Bandwidth.
+3
+
+4
+00:00:14,650 --> 00:00:15,760
+In the LoRa frame,
+4
+
+5
+00:00:15,760 --> 00:00:21,110
+there is first a preamble, and an optional Header.
+At the tail of the frame,
+5
+
+6
+00:00:21,130 --> 00:00:24,160
+there is a CRC to check if there was an error in the frame.
+6
+
+7
+00:00:24,310 --> 00:00:29,380
+And finally, the most important part is what we call the PHY Payload.
+7
+
+8
+00:00:29,860 --> 00:00:32,740
+This is the LoRaWAN message carried by the frame.
+8
+
+9
+00:00:33,010 --> 00:00:38,710
+The preambule part, header, the presence or not of the CRC can be configured the way we want.
+9
+
+10
+00:00:39,100 --> 00:00:45,100
+The only requirement is that this information should be the same on the transmitter and on the receiver.
+10
+
+11
+00:00:45,580 --> 00:00:51,340
+So if you want to use the LoRa modulation and comply with the LoRa frame format, then you can do your own
+11
+
+12
+00:00:51,340 --> 00:00:52,990
+configuration of these fields.
+12
+
+13
+00:00:53,170 --> 00:00:59,770
+However, if you aim to use the LoRaWAN protocol on top of the LoRa modulation, then you don't have the
+13
+
+14
+00:00:59,770 --> 00:01:02,980
+choice and these fields must have a specific value.
+14
+
+15
+00:01:03,420 --> 00:01:04,020
+Right.
+15
+
+16
+00:01:04,030 --> 00:01:08,740
+So for this transmission, I have programmed a simple LoRa message of the string:
+16
+
+17
+00:01:08,740 --> 00:01:17,170
+"Hello". 
+I'm using SF12, 125kHz bandwidth, 868.1Mhz channel,
+17
+
+18
+00:01:17,410 --> 00:01:24,190
+And for the frame, I've selected the preamble of 8 symbols, with a header and a CRC. About the
+18
+
+19
+00:01:24,190 --> 00:01:24,780
+preamble.
+19
+
+20
+00:01:24,790 --> 00:01:31,900
+We just need to remember that the specification says that there is always 4.25, so 4 plus a quarter
+20
+
+21
+00:01:31,900 --> 00:01:35,140
+of a symbol in addition to the number of preambule configuration.
+21
+
+22
+00:01:35,710 --> 00:01:40,380
+So in our case, that will make 12.25 symbols overall.
+22
+
+23
+00:01:40,630 --> 00:01:46,570
+There is probably a good reason for this additional 4.25 symbols, but I've got no idea where it comes from.
+23
+
+24
+00:01:46,570 --> 00:01:48,700
+To be exact,
+24
+
+25
+00:01:48,700 --> 00:01:54,650
+in these 4.25 symbols, there will be 2 upchirps and 2.25 downchirps.
+25
+
+26
+00:01:55,150 --> 00:01:57,850
+That makes indeed 4.25.
+26
+
+27
+00:01:58,000 --> 00:01:58,590
+Great.
+27
+
+28
+00:01:58,600 --> 00:02:05,200
+So first to try this LoRa modulation, I'm going to use the transceiver of a LoRa device to send a hello
+28
+
+29
+00:02:05,200 --> 00:02:06,010
+characters.
+29
+
+30
+00:02:06,010 --> 00:02:13,330
+And on the other side, I'm going to use an SDR.
+An SDR is a Software Defined Radio managed by an application.
+30
+
+31
+00:02:13,630 --> 00:02:19,690
+The one I'm using for this demonstration is the ADAM-PLUTO mainly used for education, and the software
+31
+
+32
+00:02:19,690 --> 00:02:22,640
+that I use is the Open Source SDR Angel.
+32
+
+33
+00:02:23,890 --> 00:02:28,750
+Okay, so in the SDR Angel software, I need to configure my receiver.
+33
+
+34
+00:02:28,960 --> 00:02:31,960
+So 868.1 Mhz.
+34
+
+35
+00:02:33,580 --> 00:02:40,420
+And I will decrease the gain because in my situation, my LoRa device is very close from my receiver.
+35
+
+36
+00:02:40,420 --> 00:02:41,200
+I start it.
+36
+
+37
+00:02:42,160 --> 00:02:42,850
+Here we go.
+37
+
+38
+00:02:42,880 --> 00:02:45,850
+We can perfectly see the LoRa modulation here.
+38
+
+39
+00:02:46,330 --> 00:02:49,540
+I will try to stop the visualization when the frame starts.
+39
+
+40
+00:02:50,860 --> 00:02:51,420
+Great.
+40
+
+41
+00:02:51,430 --> 00:02:52,270
+Perfect.
+41
+
+42
+00:02:52,540 --> 00:02:54,460
+Here we can see the preambules.
+42
+
+43
+00:02:54,670 --> 00:02:56,510
+They are 8 upchirps.
+43
+
+44
+00:02:56,530 --> 00:03:01,900
+One, two, three, four, five, six, seven and eight.
+44
+
+45
+00:03:02,290 --> 00:03:04,470
+Then there are another 2 upchirps.
+45
+
+46
+00:03:04,480 --> 00:03:07,630
+One, two.
+And finally two.
+46
+
+47
+00:03:07,630 --> 00:03:09,370
+And a quarter  downchips.
+47
+
+48
+00:03:09,370 --> 00:03:10,540
+One, two.
+48
+
+49
+00:03:10,540 --> 00:03:13,210
+And this little bit here.
+Right,
+49
+
+50
+00:03:13,330 --> 00:03:18,250
+of course, it's very difficult with this representation to analyze the frame and its content.
+50
+
+51
+00:03:18,460 --> 00:03:21,310
+So we're going to use a little pluggin.
+51
+
+52
+00:03:21,340 --> 00:03:24,250
+This plugin is called ChirpChat demodulator.
+52
+
+53
+00:03:29,650 --> 00:03:33,760
+The first thing I need to do is to configure the parameters used for the transmission:
+53
+
+54
+00:03:34,270 --> 00:03:38,530
+The most important one are the SF12 and the bandwidth.
+54
+
+55
+00:03:39,460 --> 00:03:45,550
+Then, now, when I run the demodulator, I can see the Raw Payload of the LoRa packet.
+55
+
+56
+00:03:46,030 --> 00:03:51,670
+This is exactly the same "Hello" string that I sent with my device and we can check on each transmission the
+56
+
+57
+00:03:51,670 --> 00:03:55,930
+CRC status to see if there was some errors during the modulation process.
+57
+
+58
+00:03:56,440 --> 00:03:58,690
+That obviously happened when the  RSSI,
+58
+
+59
+00:03:58,720 --> 00:04:03,600
+so the power of the signal received is very low, or if the SNR is low as well.
+59
+
+60
+00:04:03,610 --> 00:04:05,590
+But that's not my case here.
+60
+
+61
+00:04:05,920 --> 00:04:06,520
+Okay.
+61
+
+62
+00:04:06,520 --> 00:04:09,640
+So now I would like to present a second demonstration.
+62
+
+63
+00:04:10,000 --> 00:04:13,840
+Let's say that for some reason we would like to debug a transmission.
+63
+
+64
+00:04:14,290 --> 00:04:20,320
+For example, you have doubts about the value sent by your device and you want to visualize the LoRa
+64
+
+65
+00:04:20,380 --> 00:04:21,380
+packet around you.
+65
+
+66
+00:04:21,400 --> 00:04:27,640
+It's a kind of LoRa sniffer that we want with the same purpose as an oscilloscope when we do some electronic
+66
+
+67
+00:04:27,640 --> 00:04:28,320
+debugging.
+67
+
+68
+00:04:28,330 --> 00:04:31,600
+And what is a LoRa packet sniffer? a gateway?
+68
+
+69
+00:04:31,630 --> 00:04:35,570
+Yes, because a gateway is able to demodulate any LoRa packet.
+69
+
+70
+00:04:35,590 --> 00:04:42,310
+And the nice thing with a gateway is that it can demodulate many channels and all spreading factors at
+70
+
+71
+00:04:42,310 --> 00:04:43,930
+the same time.
+71
+
+72
+00:04:44,530 --> 00:04:50,470
+So, for this last demonstration, I'm going to use a gateway and look at the Log to see what happens.
+72
+
+73
+00:04:50,650 --> 00:04:51,730
+On my gateway,
+73
+
+74
+00:04:51,730 --> 00:04:55,060
+to see the Log I need to connect thanks to a serial link.
+74
+
+75
+00:04:58,570 --> 00:05:00,450
+And I can now see all packet.
+75
+
+76
+00:05:00,460 --> 00:05:01,390
+It's uplink,
+76
+
+77
+00:05:01,390 --> 00:05:06,170
+if it comes from my device, and it's downlink, if it's sent to my device.
+77
+
+78
+00:05:06,190 --> 00:05:12,970
+Of course, if I send the "hello" string then my gateway can demodulate the packet and print the characters
+78
+
+79
+00:05:12,970 --> 00:05:13,690
+in the Log.
+79
+
+80
+00:05:14,470 --> 00:05:15,150
+Great.
+80
+
+81
+00:05:15,160 --> 00:05:23,830
+So now we don't just want to send "hello" with a LoRa modulation, but instead we need to send all the information
+81
+
+82
+00:05:23,830 --> 00:05:25,120
+of the LoRaWAN protocol.
+82
+
+83
+00:05:25,660 --> 00:05:27,820
+That's what we're going to do in the next video.
