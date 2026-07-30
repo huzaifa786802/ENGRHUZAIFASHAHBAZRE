@@ -1,0 +1,424 @@
+0
+1
+00:00:00,570 --> 00:00:04,380
+Once again, I'm going to use the same diagram that we saw earlier.
+1
+
+2
+00:00:04,530 --> 00:00:07,440
+For now, I will focus on the Uplink stream.
+2
+
+3
+00:00:07,920 --> 00:00:14,820
+In this figure, the client, so the LoRaWAN server generates a HTTP POST request to the server,
+3
+
+4
+00:00:14,820 --> 00:00:22,170
+(so our IoT platform.) The particularity of this request is that they don't really request something,
+4
+
+5
+00:00:22,170 --> 00:00:25,680
+but instead they carry the message they want to provide.
+5
+
+6
+00:00:26,130 --> 00:00:31,560
+The response from the server is a simple acknowledgement to let the client know that everything went
+6
+
+7
+00:00:31,560 --> 00:00:32,070
+well.
+7
+
+8
+00:00:32,820 --> 00:00:33,240
+Great.
+8
+
+9
+00:00:33,240 --> 00:00:36,720
+So now we need to set up the client and the server.
+9
+
+10
+00:00:36,960 --> 00:00:38,580
+Let's start with the server.
+10
+
+11
+00:00:39,060 --> 00:00:43,350
+What I need to set up is a server able to handle HTTP POST requests.
+11
+
+12
+00:00:43,740 --> 00:00:49,590
+There are many possibilities in order to have a functional HTTP server, but we have chosen one already
+12
+
+13
+00:00:49,590 --> 00:00:53,340
+available on the internet so you have nothing to install.
+13
+
+14
+00:00:53,790 --> 00:00:59,610
+This utility will play the role of an HTTP server and will show us the content of the HTTP POST request
+14
+
+15
+00:00:59,610 --> 00:01:00,690
+that has been received.
+15
+
+16
+00:01:01,080 --> 00:01:03,540
+I advise to use the online rbaskets.in endpoint,
+16
+
+17
+00:01:03,780 --> 00:01:09,750
+but if you're not happy with the online version, then you can install it on your own
+17
+
+18
+00:01:09,750 --> 00:01:11,160
+server using docker.
+18
+
+19
+00:01:11,460 --> 00:01:14,640
+All the documentation is available on their Docker Hub web page.
+19
+
+20
+00:01:15,000 --> 00:01:22,080
+If for some reasons rbasket is offline, then there are other ones like beeceptor.com and they work pretty
+20
+
+21
+00:01:22,080 --> 00:01:23,190
+much in the same way.
+21
+
+22
+00:01:24,030 --> 00:01:27,570
+So, to start we need to create a end point.
+22
+
+23
+00:01:27,930 --> 00:01:29,820
+It's what they call a basket.
+23
+
+24
+00:01:30,000 --> 00:01:35,850
+It's just the URL of an instance of the HTTP server to which will send the request.
+24
+
+25
+00:01:36,240 --> 00:01:38,010
+So we create it.
+25
+
+26
+00:01:38,760 --> 00:01:44,790
+The one proposed suits me, so I just need to click on "create" as the server is on the public network
+26
+
+27
+00:01:44,790 --> 00:01:49,410
+and there wasn't any registration or authentication before creating this end point.
+27
+
+28
+00:01:49,620 --> 00:01:51,630
+Then a token is provided.
+28
+
+29
+00:01:52,050 --> 00:01:57,090
+This token is here to prove that it belongs to me in case I want to retrieve this endpoint later.
+29
+
+30
+00:01:57,240 --> 00:02:01,800
+In my case, I won't use it because I've created this basket just for this demo.
+30
+
+31
+00:02:02,310 --> 00:02:07,170
+So I close this window and I go to my endpoint web interface.
+31
+
+32
+00:02:07,710 --> 00:02:08,380
+Excellent.
+32
+
+33
+00:02:08,400 --> 00:02:11,460
+Our HTTP server is ready to receive requests.
+33
+
+34
+00:02:11,700 --> 00:02:12,690
+Let's try it.
+34
+
+35
+00:02:13,620 --> 00:02:16,560
+So what do you think the LoRaWAN server should send?
+35
+
+36
+00:02:16,740 --> 00:02:20,900
+It will send an HTTP POST request within the body section,
+36
+
+37
+00:02:20,910 --> 00:02:23,910
+all the useful information of the message.
+37
+
+38
+00:02:24,300 --> 00:02:29,310
+Actually, a bit more information because there will be the overall JSON text message.
+38
+
+39
+00:02:29,340 --> 00:02:30,030
+Exactly
+39
+
+40
+00:02:30,030 --> 00:02:31,920
+the one we received with the GET method.
+40
+
+41
+00:02:32,640 --> 00:02:39,330
+Now I need to configure the LoRaWAN server, so it will send this HTTP POST request before going on the
+41
+
+42
+00:02:39,330 --> 00:02:40,380
+LoRaWAN server.
+42
+
+43
+00:02:40,410 --> 00:02:44,430
+I need to save the endpoint address of where I need to send the request.
+43
+
+44
+00:02:44,550 --> 00:02:45,300
+There.
+44
+
+45
+00:02:45,570 --> 00:02:46,860
+I copy it.
+45
+
+46
+00:02:46,890 --> 00:02:51,650
+So now let's go on TTN.
+46
+
+47
+00:02:51,660 --> 00:02:58,590
+I need to go on my application and once again, exporting data is possible thanks to what we call integrations.
+47
+
+48
+00:02:59,010 --> 00:03:04,350
+I used the storage integration earlier, but this time I'm going to use a Webhook.
+48
+
+49
+00:03:04,710 --> 00:03:06,210
+I had a new one,
+49
+
+50
+00:03:07,800 --> 00:03:11,010
+and I end up with a choice of many predefined webhook.
+50
+
+51
+00:03:11,790 --> 00:03:16,560
+They are here to connect TTN to a specific IoT platform just in one click.
+51
+
+52
+00:03:16,710 --> 00:03:21,990
+Some are free but limited, and for some others there is a registration fees.
+52
+
+53
+00:03:22,020 --> 00:03:24,420
+We'll try those later, for the moment,
+53
+
+54
+00:03:24,450 --> 00:03:27,810
+I've got my specific HTTP endpoint that I created.
+54
+
+55
+00:03:27,930 --> 00:03:30,270
+So I choose "custom webhhook".
+55
+
+56
+00:03:31,110 --> 00:03:33,070
+The configuration is very easy.
+56
+
+57
+00:03:33,090 --> 00:03:35,250
+First, we can give it a name.
+57
+
+58
+00:03:35,490 --> 00:03:38,010
+Let's say webhook-http.
+58
+
+59
+00:03:38,490 --> 00:03:40,650
+Then we'll use the JSON format,
+59
+
+60
+00:03:41,130 --> 00:03:44,610
+and then we specify the HTTP URL.
+60
+
+61
+00:03:44,910 --> 00:03:47,700
+That's the one we've created in rbasket.
+61
+
+62
+00:03:48,180 --> 00:03:49,050
+This one: https://rbaskets.in/92ru9ec.
+62
+
+63
+00:03:50,220 --> 00:03:53,240
+And I choose the type of event that will launch the request.
+63
+
+64
+00:03:53,250 --> 00:03:56,750
+In my case, I choose only the uplink message.
+64
+
+65
+00:03:56,760 --> 00:03:59,280
+But you can ask for more even if you want.
+65
+
+66
+00:03:59,400 --> 00:04:00,870
+Let's try it now.
+66
+
+67
+00:04:03,180 --> 00:04:08,070
+I've got one window representing my device on the left, and on the right,
+67
+
+68
+00:04:08,070 --> 00:04:09,960
+it's my HTTP server.
+68
+
+69
+00:04:10,140 --> 00:04:12,510
+My enddevice is going to send the string:
+69
+
+70
+00:04:12,510 --> 00:04:13,200
+"Hello."
+70
+
+71
+00:04:13,230 --> 00:04:15,270
+Every time I press the push button.
+71
+
+72
+00:04:15,480 --> 00:04:16,590
+So let's go.
+72
+
+73
+00:04:17,160 --> 00:04:18,780
+I press the push button.
+73
+
+74
+00:04:20,100 --> 00:04:23,970
+And then, here, I can see the POST request on my server.
+74
+
+75
+00:04:24,810 --> 00:04:27,720
+I just stop the auto update to see what's in there.
+75
+
+76
+00:04:28,020 --> 00:04:31,500
+I can see that I've got the same information we saw earlier.
+76
+
+77
+00:04:31,590 --> 00:04:35,220
+The most important section is again, the Frame Payload.
+77
+
+78
+00:04:35,310 --> 00:04:41,370
+So the message sent by my device. Here it's the string hello presenting it base 64.
+78
+
+79
+00:04:41,670 --> 00:04:45,140
+And you can use your favorite base 64 decoder to check.
+79
+
+80
+00:04:45,150 --> 00:04:47,550
+We've done it already in the previous video.
+80
+
+81
+00:04:48,000 --> 00:04:48,630
+Great.
+81
+
+82
+00:04:48,630 --> 00:04:49,710
+That's excellent.
+82
+
+83
+00:04:49,830 --> 00:04:53,490
+We're now able to export our data to an external IoT platform.
+83
+
+84
+00:04:53,700 --> 00:04:58,740
+For now, we are done with the uplink. So we can do exactly the same thing with downlink.
+84
+
+85
+00:04:58,740 --> 00:05:00,870
+We're going to do that in the next video.
