@@ -1,0 +1,294 @@
+0
+1
+00:00:01,100 --> 00:00:08,420
+Okay, so now that our LoRaWAN Server is ready, we'll be able to configure our Private Network, and for
+1
+
+2
+00:00:08,450 --> 00:00:12,320
+that we'll use exactly the same four steps that we've explained earlier.
+2
+
+3
+00:00:12,590 --> 00:00:15,050
+The first step is the Gateway configuration.
+3
+
+4
+00:00:15,080 --> 00:00:18,440
+It tells the Gateway how to reach the Network Server.
+4
+
+5
+00:00:19,070 --> 00:00:24,770
+The second step is the Gateway registration, because only a registered Gateway is allowed to talk to
+5
+
+6
+00:00:24,770 --> 00:00:25,970
+the Network Server.
+6
+
+7
+00:00:26,120 --> 00:00:32,090
+And for the third step, we're going to register our end-device on the Network Server.
+7
+
+8
+00:00:32,960 --> 00:00:38,540
+I'm going to do it quickly because we've done it already with TTN, which is the community edition of
+8
+
+9
+00:00:38,540 --> 00:00:39,560
+The Things Stack.
+9
+
+10
+00:00:39,620 --> 00:00:42,530
+And it's exactly the same process.
+10
+
+11
+00:00:42,980 --> 00:00:46,400
+And finally, the fourth step is the device configuration.
+11
+
+12
+00:00:47,030 --> 00:00:47,740
+All right.
+12
+
+13
+00:00:47,750 --> 00:00:51,170
+Let's start with the first step, the Gateway registration.
+13
+
+14
+00:00:51,620 --> 00:00:56,210
+Our The Things Stack Server listens on Port 1700.
+14
+
+15
+00:00:56,480 --> 00:01:02,880
+We could also use Basic Station packet forwarder, but again, I will do it in the easy way and keep
+15
+
+16
+00:01:02,880 --> 00:01:05,850
+the UDP Semtech packet forwarder for this demonstration.
+16
+
+17
+00:01:06,390 --> 00:01:11,070
+As we said earlier, the service in charge of this is called the Gateway Server.
+17
+
+18
+00:01:11,490 --> 00:01:17,720
+So in our case we need to configure the Gateway to send its LoRaWAN data to the address
+18
+
+19
+00:01:18,960 --> 00:01:26,700
+tts.univ-lorawan.fr on Port 1700. Depending on the Gateway we have,
+19
+
+20
+00:01:26,730 --> 00:01:29,250
+there are several options to configure it.
+20
+
+21
+00:01:29,370 --> 00:01:35,640
+In my case, in the gateway configuration web page, I change the destination address.
+21
+
+22
+00:01:36,060 --> 00:01:38,400
+I save the settings and that's it.
+22
+
+23
+00:01:38,430 --> 00:01:39,570
+First step is done.
+23
+
+24
+00:01:40,440 --> 00:01:47,070
+Okay, but just before leaving this configuration page, I'm just going to copy the Gateway EUI because
+24
+
+25
+00:01:47,070 --> 00:01:50,100
+I will need it in a few seconds for the Gateway Registration.
+25
+
+26
+00:01:50,490 --> 00:01:54,300
+Now I go back on The Things Stack Server for the second step.
+26
+
+27
+00:01:54,450 --> 00:01:56,820
+I'm going to register my Gateway.
+27
+
+28
+00:01:56,970 --> 00:02:02,460
+We've done it already, so please go back on the corresponding video to see the process in detail.
+28
+
+29
+00:02:02,910 --> 00:02:05,790
+From the console we go on the Gateway section.
+29
+
+30
+00:02:06,030 --> 00:02:13,950
+We hit the register Gateway button and we enter a new page asking us the Gateway EUI and frequency plan.
+30
+
+31
+00:02:16,200 --> 00:02:18,210
+I hit the button "Register gateway".
+31
+
+32
+00:02:18,360 --> 00:02:19,620
+And here we go.
+32
+
+33
+00:02:19,650 --> 00:02:22,290
+We're done with the Gateway Registration part.
+33
+
+34
+00:02:22,530 --> 00:02:25,020
+Okay, so we're done with the second step.
+34
+
+35
+00:02:25,020 --> 00:02:29,160
+So now we need to register an end-device on the Network Server.
+35
+
+36
+00:02:29,490 --> 00:02:32,490
+That is the third step. From the console,
+36
+
+37
+00:02:32,490 --> 00:02:43,110
+we go on the "Applications" section, we create an application training-usmb and we validate. In this application,
+37
+
+38
+00:02:43,110 --> 00:02:46,560
+I'm going to manually register an OTAA end-device.
+38
+
+39
+00:02:46,860 --> 00:02:55,500
+So in my application, I click on "Register end-device", I select the frequency plan and the LoRaWAN version.
+39
+
+40
+00:02:58,860 --> 00:03:01,150
+And I provide the AppEUI/JoinEUI.
+40
+
+41
+00:03:01,710 --> 00:03:04,590
+I use zero as I'm not using a Join Server.
+41
+
+42
+00:03:05,070 --> 00:03:10,020
+Then as usual I provide my DevEUI and I generate an AppKey.
+42
+
+43
+00:03:10,710 --> 00:03:14,200
+This is the same parameters that I will set up in my device.
+43
+
+44
+00:03:14,220 --> 00:03:18,960
+And to finish the process I click on "Register end-device".
+44
+
+45
+00:03:19,110 --> 00:03:19,770
+Great.
+45
+
+46
+00:03:19,770 --> 00:03:23,070
+So now the last step is the device configuration.
+46
+
+47
+00:03:23,250 --> 00:03:27,660
+I just need to configure my end-device with the OTAA activation mode.
+47
+
+48
+00:03:27,690 --> 00:03:32,340
+The same DevEUI, the same AppKey and the same JoinEUI/AppEUI.
+48
+
+49
+00:03:32,790 --> 00:03:35,850
+And when it's done, I start my end-device.
+49
+
+50
+00:03:36,840 --> 00:03:38,970
+If we go in the live data section.
+50
+
+51
+00:03:40,140 --> 00:03:43,140
+We can see the frames decrypted in the Application Server.
+51
+
+52
+00:03:43,650 --> 00:03:44,640
+Excellent.
+52
+
+53
+00:03:44,760 --> 00:03:47,220
+Our LoRaWAN Server works perfectly.
+53
+
+54
+00:03:47,250 --> 00:03:53,430
+Again, we were a bit fast for this last demonstration because we've done it before with many more details.
+54
+
+55
+00:03:53,430 --> 00:03:58,640
+So if you want more information, go back in the corresponding video we did with the Thing Network,
+55
+
+56
+00:03:58,650 --> 00:04:01,430
+that's exactly the same process.
+56
+
+57
+00:04:01,440 --> 00:04:08,310
+There might be some tiny changes because obviously this is a continuously improving project, but the
+57
+
+58
+00:04:08,310 --> 00:04:09,840
+idea remains the same.
+58
+
+59
+00:04:10,200 --> 00:04:13,320
+Please give it a try and tell us if you've managed to do it.
