@@ -1,0 +1,194 @@
+0
+1
+00:00:00,740 --> 00:00:02,950
+ChirpStack is an open source project.
+1
+
+2
+00:00:02,960 --> 00:00:06,470
+It's free to use if we install it on our own infrastructure.
+2
+
+3
+00:00:06,830 --> 00:00:13,280
+If we check its documentation, we find out that it supports all regions, all end-device classes,
+3
+
+4
+00:00:13,280 --> 00:00:18,650
+so A, B or C, and also supports the latest LoRaWAN specification.
+4
+
+5
+00:00:19,040 --> 00:00:22,580
+Like all LoRaWAN servers, ChirpStack has a Network Server.
+5
+
+6
+00:00:23,090 --> 00:00:25,730
+That's the main core of the LoRaWAN infrastructure.
+6
+
+7
+00:00:25,730 --> 00:00:28,850
+But ChirpStack also provides an application server.
+7
+
+8
+00:00:29,670 --> 00:00:34,020
+They are packaged together so we don't have to bother to install them separately.
+8
+
+9
+00:00:34,260 --> 00:00:40,170
+What is new in this diagram is the entity in front of the Network Server, which is called the Gateway
+9
+
+10
+00:00:40,170 --> 00:00:40,920
+Bridge.
+10
+
+11
+00:00:40,950 --> 00:00:47,100
+We will see that this entity also exists in The Things Stack, which is the next LoRaWAN server we will install.
+11
+
+12
+00:00:47,220 --> 00:00:49,900
+So it's not specific to ChirpStack.
+12
+
+13
+00:00:49,920 --> 00:00:55,860
+In fact, this Gateway Bridge doesn't implement any additional LoRaWAN service, but it's only there
+13
+
+14
+00:00:55,860 --> 00:00:57,960
+to simplify the message processing.
+14
+
+15
+00:00:58,380 --> 00:01:03,930
+We saw earlier that the communication between the Gateway and the Network Server could be done with
+15
+
+16
+00:01:03,930 --> 00:01:05,550
+many different protocols.
+16
+
+17
+00:01:05,700 --> 00:01:10,680
+We spoke about UDP Semtech packet forwarder, Basic Station and others.
+17
+
+18
+00:01:11,100 --> 00:01:14,670
+So the Gateway Bridge must know all these protocols.
+18
+
+19
+00:01:14,700 --> 00:01:20,400
+It means that when we build a LoRaWAN server like ChirpStack, we have two solutions:
+19
+
+20
+00:01:20,610 --> 00:01:24,620
+We can ask the Network Server to handle the communication with the gateway.
+20
+
+21
+00:01:24,630 --> 00:01:30,370
+In that case, the Network Server itself must know all the packet forwarders it supports and keep alive
+21
+
+22
+00:01:30,370 --> 00:01:32,620
+the communication with all gateways.
+22
+
+23
+00:01:32,950 --> 00:01:35,710
+Otherwise, there is another solution.
+23
+
+24
+00:01:35,890 --> 00:01:41,140
+Because when we built a complete infrastructure, we like to separate services.
+24
+
+25
+00:01:41,320 --> 00:01:48,400
+So, instead of integrating the Gateway communication in the Network Server, then most of the time software
+25
+
+26
+00:01:48,400 --> 00:01:52,570
+engineers decide to leave that job to a specific entity.
+26
+
+27
+00:01:52,960 --> 00:01:55,840
+In our case, it's the Gateway Bridge.
+27
+
+28
+00:01:56,110 --> 00:02:02,140
+And that's pretty interesting because if tomorrow ChirpStack decides to implement a new packet forwarder,
+28
+
+29
+00:02:02,170 --> 00:02:07,450
+then they will be working on an update to the Gateway Bridge and not the Network Server.
+29
+
+30
+00:02:08,140 --> 00:02:13,090
+The network server will focus only on the Lorawan stack, and that's exactly what it's been built for.
+30
+
+31
+00:02:13,090 --> 00:02:13,690
+...
+31
+
+32
+00:02:14,440 --> 00:02:15,150
+Okay.
+32
+
+33
+00:02:15,160 --> 00:02:22,150
+And finally, on the right, we have the multiple interfaces with many Iot platform or user applications.
+33
+
+34
+00:02:22,480 --> 00:02:23,710
+In chip stack,
+34
+
+35
+00:02:23,740 --> 00:02:30,820
+we'll obviously find the MQTT and HTTP integration and of course for these two protocols we will make a
+35
+
+36
+00:02:30,820 --> 00:02:31,870
+demonstration.
+36
+
+37
+00:02:32,170 --> 00:02:37,720
+And finally, depending on Chirpstack partnership with other platforms, we'll be able to connect to
+37
+
+38
+00:02:37,720 --> 00:02:39,310
+many other applications.
+38
+
+39
+00:02:39,760 --> 00:02:44,260
+Okay, so now in the next video, we'll start the installation.
