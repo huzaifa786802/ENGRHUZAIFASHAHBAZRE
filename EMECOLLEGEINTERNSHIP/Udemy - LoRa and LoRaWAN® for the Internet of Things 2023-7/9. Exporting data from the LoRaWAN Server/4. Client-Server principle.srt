@@ -1,0 +1,205 @@
+0
+1
+00:00:00,960 --> 00:00:07,020
+Like all protocols, HTTP involves a transfer of information between a client and a server.
+1
+
+2
+00:00:07,320 --> 00:00:12,000
+The client and server are two remote entities that wish to communicate with each other.
+2
+
+3
+00:00:12,450 --> 00:00:15,960
+The client makes request and the server answers.
+3
+
+4
+00:00:16,380 --> 00:00:18,700
+There are many types of client and server.
+4
+
+5
+00:00:18,720 --> 00:00:23,640
+For example, they are mail clients when we use POP and SMTP protocol.
+5
+
+6
+00:00:23,820 --> 00:00:30,000
+There are files client and server when we use FTP protocol and of course there are web client and server
+6
+
+7
+00:00:30,000 --> 00:00:35,470
+when we use HTTP protocols. In a client-server communication,
+7
+
+8
+00:00:35,490 --> 00:00:40,050
+it's very important to know who is the client and who is the server.
+8
+
+9
+00:00:40,500 --> 00:00:48,600
+In our case, we have two entities: the LoRaWAN server and the IoT platform, and depending on the situation,
+9
+
+10
+00:00:48,600 --> 00:00:50,370
+we'll have to assign a role:
+10
+
+11
+00:00:50,370 --> 00:00:56,790
+Sometimes the LoRaWAN Server will be the client and the IoT platform, the server, and sometimes it will be
+11
+
+12
+00:00:56,790 --> 00:00:58,460
+the other way around.
+12
+
+13
+00:00:58,470 --> 00:01:02,370
+The LoRaWAN Server will be the server and the IoT platform, the client.
+13
+
+14
+00:01:03,540 --> 00:01:04,310
+Great.
+14
+
+15
+00:01:04,320 --> 00:01:11,580
+So, I agree it's a little bit confusing because sometimes, the LoRaWAN Server can be the client, but
+15
+
+16
+00:01:11,580 --> 00:01:16,950
+the term "server" in LoRaWAN Server only means that it serves the LoRaWAN protocol.
+16
+
+17
+00:01:17,250 --> 00:01:22,920
+Once again here, we're not dealing with LoRaWAN anymore, but only with the transmission of the user
+17
+
+18
+00:01:22,920 --> 00:01:24,960
+payload to the IoT platform.
+18
+
+19
+00:01:25,740 --> 00:01:31,470
+OK, so each time we're going to deal with the dialogue between the LoRaWAN server on the IoT platform,
+19
+
+20
+00:01:31,470 --> 00:01:36,870
+we will represent the LoRaWAN server at the top and the IoT platform at the bottom.
+20
+
+21
+00:01:37,560 --> 00:01:41,430
+The LoRaWAN server can be any of the existing one.
+21
+
+22
+00:01:41,430 --> 00:01:48,450
+So, TTN, Actility, LORIOT, ChirpStack, or any others, it really doesn't matter.
+22
+
+23
+00:01:48,840 --> 00:01:56,490
+And at the bottom, the IoT platform can be the one we've built ourselves or any open sources or proprietary
+23
+
+24
+00:01:56,490 --> 00:01:57,540
+ones available.
+24
+
+25
+00:01:58,050 --> 00:02:03,180
+I'm not going to list the IoT platform available here, because there will be a specific chapter to build
+25
+
+26
+00:02:03,180 --> 00:02:04,110
+our own.
+26
+
+27
+00:02:04,440 --> 00:02:10,260
+Anyway, we now need to understand "who is requesting?" and "who is serving?"
+27
+
+28
+00:02:10,470 --> 00:02:15,990
+For our explanation, we'll again use the same application described in the video at the beginning of this
+28
+
+29
+00:02:15,990 --> 00:02:16,560
+lecture.
+29
+
+30
+00:02:16,680 --> 00:02:18,780
+Sometimes, we'll send the string
+30
+
+31
+00:02:18,780 --> 00:02:19,560
+"Hello".
+31
+
+32
+00:02:19,650 --> 00:02:22,740
+But for some other demonstration we'll send the temperature.
+32
+
+33
+00:02:23,340 --> 00:02:29,610
+And, when we'll deal with downlink, then we'll use the ability to turn an LED on or off.
+33
+
+34
+00:02:29,790 --> 00:02:33,450
+Of course, the command will be managed from the IoT platform.
+34
+
+35
+00:02:33,570 --> 00:02:36,180
+So, there are two situations to consider:
+35
+
+36
+00:02:36,690 --> 00:02:44,190
+- UpLink: when the "hello" string or the temperature comes from the end-device.
+And - Downlink: when a switch
+36
+
+37
+00:02:44,190 --> 00:02:47,880
+command comes from the user application on the IoT platform.
+37
+
+38
+00:02:48,930 --> 00:02:54,060
+So, now we'll see in the next video two flavors of the HTTP protocol.
+38
+
+39
+00:02:54,570 --> 00:02:56,950
+First, we can use the GET method.
+39
+
+40
+00:02:56,970 --> 00:03:00,240
+Then we'll see the POST method of the HTTP protocol.
+40
+
+41
+00:03:00,600 --> 00:03:03,690
+Let's start with the first method called HTTP GET.
