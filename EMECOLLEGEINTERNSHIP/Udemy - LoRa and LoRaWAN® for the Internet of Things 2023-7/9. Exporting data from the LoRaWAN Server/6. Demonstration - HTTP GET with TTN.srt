@@ -1,0 +1,639 @@
+0
+1
+00:00:01,200 --> 00:00:07,890
+I'm going to use exactly the same figure we use previously, and for now we'll deal with the uplink
+1
+
+2
+00:00:07,890 --> 00:00:08,580
+data.
+2
+
+3
+00:00:08,610 --> 00:00:13,380
+And for this part, we're focusing only on the HTTP GET request.
+3
+
+4
+00:00:13,860 --> 00:00:17,880
+For this demonstration, we'll use TTN community for our network server.
+4
+
+5
+00:00:18,570 --> 00:00:24,570
+Actually, this is the only one that I know which can handle HTTP GET request for the uplink data.
+5
+
+6
+00:00:24,570 --> 00:00:28,530
+So we won't have many choices, but we'll explain later.
+6
+
+7
+00:00:28,530 --> 00:00:32,520
+That HTTP GET request are probably not the best idea.
+7
+
+8
+00:00:33,300 --> 00:00:38,970
+There are other ways to send uplink data to the IoT platform, but anyway, we'll see that later.
+8
+
+9
+00:00:39,150 --> 00:00:41,910
+And for now we'll just make a small demonstration.
+9
+
+10
+00:00:43,550 --> 00:00:51,680
+For the server part, I need to go on TTN console and to activate an integration called "Storage Integration".
+10
+
+11
+00:00:52,280 --> 00:00:59,480
+So, I click on the Application Section and on the application used for this course, which is "training-usmb"
+11
+
+12
+00:00:59,480 --> 00:01:07,700
+and on the left I can expand the integration tab and here I will find the storage integration.
+12
+
+13
+00:01:08,630 --> 00:01:14,630
+What is nice with this integration is that TTN saves our uplink data in a persistent database.
+13
+
+14
+00:01:14,630 --> 00:01:17,060
+We can request it whenever we want.
+14
+
+15
+00:01:17,330 --> 00:01:24,470
+In the TTN community server we have a 24h storage, but obviously you will have more if you register
+15
+
+16
+00:01:24,470 --> 00:01:25,700
+on the cloud version.
+16
+
+17
+00:01:26,660 --> 00:01:30,140
+So, I hit the "activated storage integration" button.
+17
+
+18
+00:01:30,530 --> 00:01:31,550
+There we go.
+18
+
+19
+00:01:31,730 --> 00:01:33,920
+TTN is now ready to store my data.
+19
+
+20
+00:01:35,360 --> 00:01:41,090
+So now, before leaving the server, I would like to deal with the authentification procedure.
+20
+
+21
+00:01:41,690 --> 00:01:46,190
+Because, of course, not all requests from any client will be authorized.
+21
+
+22
+00:01:46,610 --> 00:01:53,030
+Actually, only the client with a valid API Key will be able to use this server in each application
+22
+
+23
+00:01:53,030 --> 00:01:54,310
+of your LoRaWAN  server,
+23
+
+24
+00:01:54,320 --> 00:01:57,350
+you can generate these keys, here.
+24
+
+25
+00:01:57,350 --> 00:01:58,790
+It's at the bottom.
+25
+
+26
+00:01:58,970 --> 00:02:01,070
+In the API Key section.
+26
+
+27
+00:02:01,550 --> 00:02:03,890
+We add a new API Key.
+27
+
+28
+00:02:04,250 --> 00:02:10,280
+We can give an expiry date or some other restriction. In our demonstration,
+28
+
+29
+00:02:10,280 --> 00:02:16,490
+let's grant all privileges. Then the API Key provided needs to be copied.
+29
+
+30
+00:02:16,700 --> 00:02:22,580
+Be careful because once you've left this page there is no way you can retrieve the API Key previously
+30
+
+31
+00:02:22,580 --> 00:02:23,270
+generated.
+31
+
+32
+00:02:24,560 --> 00:02:28,070
+So, I copy it and I store it in the text file.
+32
+
+33
+00:02:28,100 --> 00:02:31,250
+I'm going to use it in a few seconds with the client.
+33
+
+34
+00:02:31,850 --> 00:02:38,870
+So, the last thing I need to do is to send an HTTP GET request, but there is no way I can guess the
+34
+
+35
+00:02:38,870 --> 00:02:40,810
+target URL of this request.
+35
+
+36
+00:02:40,820 --> 00:02:45,500
+So, the method is always to check the documentation. We use TTN,
+36
+
+37
+00:02:46,370 --> 00:02:48,860
+so I go on the TTN website.
+37
+
+38
+00:02:48,890 --> 00:02:54,530
+TTN is the famous name for the community network, but it relies on the LoRaWAN  stack called The Thing
+38
+
+39
+00:02:54,800 --> 00:02:55,390
+Stack.
+39
+
+40
+00:02:55,550 --> 00:03:00,080
+So the documentation we are looking for, is the documentation of The Thing Stack.
+40
+
+41
+00:03:00,440 --> 00:03:05,360
+We'll need it again later when we will install this network server for our private network.
+41
+
+42
+00:03:05,360 --> 00:03:09,560
+But for now, we just need the documentation of the Application Server.
+42
+
+43
+00:03:10,760 --> 00:03:18,200
+So, obviously website, network servers, and documentation are updated on a daily basis, so I'm not going
+43
+
+44
+00:03:18,200 --> 00:03:24,320
+to give you the direct link to the answer, but instead I would like us to experiment the user journey
+44
+
+45
+00:03:24,320 --> 00:03:26,110
+to find the right information.
+45
+
+46
+00:03:26,120 --> 00:03:33,140
+So on The Thing Stack documentation website, we'll use the search bar to look for the HTTP request.
+46
+
+47
+00:03:33,500 --> 00:03:38,750
+If you hit HTTP queries here, then you will already be at the right place.
+47
+
+48
+00:03:38,750 --> 00:03:47,690
+But maybe we could have been more precise by typing HTTP GET and we'll end up directly in the right
+48
+
+49
+00:03:47,690 --> 00:03:48,620
+paragraph.
+49
+
+50
+00:03:48,860 --> 00:03:51,470
+So any of these keywords works fine.
+50
+
+51
+00:03:51,920 --> 00:03:52,480
+Great.
+51
+
+52
+00:03:52,490 --> 00:03:56,900
+So, here we're going to learn how to send an HTTP request.
+52
+
+53
+00:03:57,230 --> 00:04:01,940
+It's not yet the exact request we want to send, but it's a good start.
+53
+
+54
+00:04:02,180 --> 00:04:09,020
+And like many documentation, when they want to give an example of a request, they provide the corresponding
+54
+
+55
+00:04:09,020 --> 00:04:11,780
+cURL command so you can try it out quickly.
+55
+
+56
+00:04:12,260 --> 00:04:17,570
+You maybe wonder what is cURL and why do we use it. For this explanation,
+56
+
+57
+00:04:17,570 --> 00:04:20,780
+please go back to the video at the beginning of this lecture.
+57
+
+58
+00:04:20,780 --> 00:04:25,220
+This video explained "How to send HTTP requests with cURL."
+58
+
+59
+00:04:25,310 --> 00:04:28,820
+You will learn everything you need to know on this essential tool.
+59
+
+60
+00:04:29,600 --> 00:04:33,470
+In our case, we'll use once again mobaXterm to send the cURL command.
+60
+
+61
+00:04:33,470 --> 00:04:41,120
+But of course, you can use any terminal with cURL with the HTTP GET example, we'll get the names, description
+61
+
+62
+00:04:41,120 --> 00:04:43,220
+and location of devices
+62
+
+63
+00:04:43,220 --> 00:04:45,890
+dev1 in application app1.
+63
+
+64
+00:04:46,610 --> 00:04:50,090
+So, I will just copy the command in a text editor.
+64
+
+65
+00:04:50,510 --> 00:04:52,790
+I replace the right API key.
+65
+
+66
+00:04:54,860 --> 00:04:58,670
+I change the target URL of the network server.
+66
+
+67
+00:04:58,790 --> 00:05:01,850
+Here it's the community TTN network.
+67
+
+68
+00:05:01,880 --> 00:05:03,800
+The address is the following one.
+68
+
+69
+00:05:04,730 --> 00:05:08,990
+We will actually do the same thing later with our private network.
+69
+
+70
+00:05:09,020 --> 00:05:11,690
+That's why this address can be different.
+70
+
+71
+00:05:12,350 --> 00:05:16,220
+Then we change app1 by the name of our application.
+71
+
+72
+00:05:16,400 --> 00:05:24,920
+Ours is called training-usmb, finally our device is called device1-abp.
+72
+
+73
+00:05:25,610 --> 00:05:29,720
+We copy this cURL command and we send it in the terminal.
+73
+
+74
+00:05:32,330 --> 00:05:33,080
+All right.
+74
+
+75
+00:05:33,200 --> 00:05:34,790
+We got an answer.
+75
+
+76
+00:05:35,150 --> 00:05:39,710
+That's a good news, because it means that first the request has been authenticated.
+76
+
+77
+00:05:40,100 --> 00:05:44,480
+And secondly, it means that our requests had the right format.
+77
+
+78
+00:05:45,350 --> 00:05:46,670
+Let's see the answer:
+78
+
+79
+00:05:47,180 --> 00:05:48,650
+It a JSON format,
+79
+
+80
+00:05:48,650 --> 00:05:51,230
+and as you know, we can pretty print it.
+80
+
+81
+00:05:51,740 --> 00:05:53,480
+We just have to use a pipe,
+81
+
+82
+00:05:53,480 --> 00:05:59,040
+(So, the vertical bar) and the JQ command at the end. Here we are,
+82
+
+83
+00:05:59,060 --> 00:06:00,710
+it's much more readable.
+83
+
+84
+00:06:01,400 --> 00:06:08,270
+Indeed, we have our device, within its application and with its name and description.
+84
+
+85
+00:06:09,740 --> 00:06:11,600
+Now, we want more.
+85
+
+86
+00:06:11,750 --> 00:06:19,550
+We want to send a request to get the uplink-data of an entire application or of a specific device.
+86
+
+87
+00:06:19,910 --> 00:06:24,770
+What we've done so far, is just a basic HTTP GET format to ask information.
+87
+
+88
+00:06:24,770 --> 00:06:33,080
+But The Thing Stack has a specific API, so a specific set of command called "Storage Integration API."
+88
+
+89
+00:06:33,500 --> 00:06:40,460
+And when we click on this section, the documentation provides the HTTP GET request to ask for the data
+89
+
+90
+00:06:40,460 --> 00:06:44,060
+received by any devices of any application.
+90
+
+91
+00:06:44,600 --> 00:06:45,830
+Let's try that.
+91
+
+92
+00:06:46,130 --> 00:06:54,200
+In this demonstration, I will ask for any received packet of all devices of my application called 
+92
+
+93
+00:06:54,200 --> 00:06:54,530
+training-usmb.
+93
+
+94
+00:06:55,610 --> 00:06:59,630
+So I need to use the second URL, this one.
+94
+
+95
+00:07:00,710 --> 00:07:06,950
+And if we go deeper in the documentation, we'll find out that this field has to be changed by our
+95
+
+96
+00:07:06,950 --> 00:07:11,770
+application ID. Type field can have several possible values.
+96
+
+97
+00:07:11,780 --> 00:07:15,350
+In our case, it will be "uplink_message."
+97
+
+98
+00:07:15,620 --> 00:07:17,660
+So, I build a new request.
+98
+
+99
+00:07:19,280 --> 00:07:20,930
+And I replaced the URL.
+99
+
+100
+00:07:23,200 --> 00:07:24,370
+One last thing.
+100
+
+101
+00:07:24,370 --> 00:07:30,010
+The documentation has to use this option in the request "Accept: text/event-stream."
+101
+
+102
+00:07:30,220 --> 00:07:32,830
+So we'll add it in the command.
+102
+
+103
+00:07:34,770 --> 00:07:38,670
+So, now that my request is ready, I can try it up.
+103
+
+104
+00:07:38,880 --> 00:07:40,050
+I copy it.
+104
+
+105
+00:07:42,240 --> 00:07:43,890
+And there it is.
+105
+
+106
+00:07:43,920 --> 00:07:50,190
+I've got all the uplink messages that has been received on the network server for the last 24 hours.
+106
+
+107
+00:07:50,430 --> 00:07:53,280
+Let's check the frame payload, here.
+107
+
+108
+00:07:53,280 --> 00:07:54,390
+It's this one.
+108
+
+109
+00:07:54,870 --> 00:07:59,850
+Just to let you know, during the last uplink message, I sent the message.
+109
+
+110
+00:07:59,850 --> 00:08:00,570
+"Hello"
+110
+
+111
+00:08:00,720 --> 00:08:03,900
+So in the frame payload, we should get the message.
+111
+
+112
+00:08:03,900 --> 00:08:04,500
+"Hello"
+112
+
+113
+00:08:04,830 --> 00:08:08,450
+As you can see, this message is in a base 64 format.
+113
+
+114
+00:08:08,460 --> 00:08:14,040
+So ,we copy it and we can use any online base 64 decoder.
+114
+
+115
+00:08:14,400 --> 00:08:16,140
+This one, for example.
+115
+
+116
+00:08:16,950 --> 00:08:18,090
+And there we go.
+116
+
+117
+00:08:18,120 --> 00:08:19,950
+This is the "hello" string.
+117
+
+118
+00:08:21,290 --> 00:08:21,710
+Okay.
+118
+
+119
+00:08:22,130 --> 00:08:28,880
+And if in the documentation you searched for" storage integration", then maybe you ended up directly here
+119
+
+120
+00:08:29,270 --> 00:08:36,140
+and in the retrieve message section, there are a few examples of cURL command to send HTTP GET request
+120
+
+121
+00:08:36,140 --> 00:08:38,210
+with many other nice options.
+121
+
+122
+00:08:38,450 --> 00:08:39,050
+Limit.
+122
+
+123
+00:08:39,050 --> 00:08:44,870
+If you want to limit the number of new messages in the answer or "after", if you want some specific messages
+123
+
+124
+00:08:44,870 --> 00:08:46,310
+received after the date.
+124
+
+125
+00:08:47,000 --> 00:08:47,750
+Right.
+125
+
+126
+00:08:47,930 --> 00:08:51,890
+You can play with all the fields available and tell me if it works well.
+126
+
+127
+00:08:52,730 --> 00:08:58,970
+In the next video, we'll speak about the efficiency of the HTTP GET request and see if we could find
+127
+
+128
+00:08:58,970 --> 00:09:02,900
+another ID to retrieve the message received on the network server.
