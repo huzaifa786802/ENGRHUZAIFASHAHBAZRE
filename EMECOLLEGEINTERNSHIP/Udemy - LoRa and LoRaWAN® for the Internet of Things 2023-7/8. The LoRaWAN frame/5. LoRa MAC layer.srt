@@ -1,0 +1,130 @@
+0
+1
+00:00:00,810 --> 00:00:01,920
+In the LoRa frame,
+1
+
+2
+00:00:01,920 --> 00:00:08,310
+The field PHY payload carries the upper layer protocol. 
+And in our case, the protocol carried by the LoRa
+2
+
+3
+00:00:08,580 --> 00:00:10,620
+packet is the LoRa MAC,
+3
+
+4
+00:00:10,890 --> 00:00:12,750
+so the LoRaWAN protocol.
+4
+
+5
+00:00:13,380 --> 00:00:14,610
+Let's see what's in there.
+5
+
+6
+00:00:15,270 --> 00:00:21,810
+If we look at the specification, we can see that the PHY payload is composed of three fields: A MAC Header,
+6
+
+7
+00:00:22,380 --> 00:00:24,600
+a MAC Payload, and a MIC.
+7
+
+8
+00:00:25,140 --> 00:00:32,520
+The MAC Header is used to indicate the type of frame (a Join, Data up or down, if it's confirmed or unconfirmed...
+8
+
+9
+00:00:32,520 --> 00:00:33,240
+and so on.)
+9
+
+10
+00:00:33,360 --> 00:00:37,410
+It's been calculated on the device and will be checked on the server.
+10
+
+11
+00:00:37,440 --> 00:00:38,090
+Great.
+11
+
+12
+00:00:38,100 --> 00:00:41,880
+So now, we can ask ourselves what is in the MAC payload?
+12
+
+13
+00:00:41,910 --> 00:00:48,840
+Well, in the MAC payload there is another header called Frame Header, a field called Frame Port, and
+13
+
+14
+00:00:48,840 --> 00:00:51,060
+the last field call Frame Payload.
+14
+
+15
+00:00:51,630 --> 00:00:56,940
+The Frame Header contains many useful information like the device adress for identification in the
+15
+
+16
+00:00:56,940 --> 00:00:57,490
+network.
+16
+
+17
+00:00:57,510 --> 00:01:03,420
+The Frame Counter that we explained earlier used for replay attack and a few other information to indicate
+17
+
+18
+00:01:03,420 --> 00:01:06,510
+if the device needs to use the ADR algorithm.
+18
+
+19
+00:01:06,540 --> 00:01:10,170
+If the frame is acknowledging a previous transmission and so on.
+19
+
+20
+00:01:11,190 --> 00:01:17,640
+But between all these fields, the most important one for the end user is the Frame Payload. Because
+20
+
+21
+00:01:17,640 --> 00:01:18,960
+it's the user data.
+21
+
+22
+00:01:19,530 --> 00:01:26,010
+So here, we have the overall LoRaWAN frame and the user data is in the top right corner of my figure.
+22
+
+23
+00:01:26,160 --> 00:01:32,940
+But there is one last thing to explain, because right now if we read the Frame Payload in this LoRa frame,
+23
+
+24
+00:01:32,940 --> 00:01:37,530
+then there is no way to understand its content because it's encrypted.
+24
+
+25
+00:01:37,890 --> 00:01:41,160
+That will be the job of the last layer, which is the Application Layer.
+25
+
+26
+00:01:41,310 --> 00:01:43,320
+And we'll see that in the next video.
