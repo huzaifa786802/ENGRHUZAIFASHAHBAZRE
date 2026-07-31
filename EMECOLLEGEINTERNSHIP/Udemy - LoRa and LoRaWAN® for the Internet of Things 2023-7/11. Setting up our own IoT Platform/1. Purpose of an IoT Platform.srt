@@ -1,0 +1,259 @@
+0
+1
+00:00:00,590 --> 00:00:06,950
+So far, we've worked on the complete LoRaWAN transmission from the end-device to the Application Server.
+1
+
+2
+00:00:07,190 --> 00:00:13,100
+Once the user data have reached the Application Server, we studied in a previous chapter how to export
+2
+
+3
+00:00:13,100 --> 00:00:13,670
+them.
+3
+
+4
+00:00:13,970 --> 00:00:18,380
+For that, we use the HTTP and the MQTT protocols.
+4
+
+5
+00:00:18,830 --> 00:00:21,380
+We did exactly the same thing for the downlink stream.
+5
+
+6
+00:00:21,380 --> 00:00:27,720
+So on the other way around, we transmitted some command to the LoRaWAN server in order to reach the LoRaWAN 
+6
+
+7
+00:00:27,720 --> 00:00:28,670
+end-device.
+7
+
+8
+00:00:28,820 --> 00:00:30,560
+This is the downlink stream.
+8
+
+9
+00:00:31,100 --> 00:00:37,730
+But what we did was a little bit bare metal because we received the uplink JSON data directly in a terminal
+9
+
+10
+00:00:37,730 --> 00:00:39,020
+or in a debug window.
+10
+
+11
+00:00:39,170 --> 00:00:44,990
+And in the same way for the downlink, we wrote the JSON object from our terminal using CURL command.
+11
+
+12
+00:00:45,170 --> 00:00:50,780
+That was okay to test and try the connection with our LoRaWAN server, but I bet that your client won't
+12
+
+13
+00:00:50,780 --> 00:00:52,460
+like it if we leave it this way.
+13
+
+14
+00:00:52,940 --> 00:00:57,590
+So from now on, we need to improve the data representation.
+14
+
+15
+00:00:58,160 --> 00:01:02,160
+So let's see all the services that an IoT platform needs to run.
+15
+
+16
+00:01:02,280 --> 00:01:04,680
+We'll first look at the uplink stream.
+16
+
+17
+00:01:05,640 --> 00:01:10,980
+The first step that the IoT platform needs to do is to retrieve the data from the LoRaWAN server.
+17
+
+18
+00:01:11,490 --> 00:01:13,310
+We've seen that already.
+18
+
+19
+00:01:13,320 --> 00:01:18,990
+So the IoT platform needs to support the MQTT or the HTTP protocol.
+19
+
+20
+00:01:19,920 --> 00:01:23,340
+Then secondly, we need to store the data.
+20
+
+21
+00:01:23,910 --> 00:01:28,470
+What we usually do is to save the value with their timestamp in a database.
+21
+
+22
+00:01:29,010 --> 00:01:34,470
+Third, when the data is saved, we may have to process the census value.
+22
+
+23
+00:01:34,500 --> 00:01:40,650
+For example, we may want to extract a specific value or to compute a calculation with all the data
+23
+
+24
+00:01:40,650 --> 00:01:41,460
+received.
+24
+
+25
+00:01:41,940 --> 00:01:46,860
+And finally, the final user always wants to have an easy access to this data.
+25
+
+26
+00:01:47,280 --> 00:01:50,670
+So we need to represent them in a relevant format.
+26
+
+27
+00:01:50,760 --> 00:01:57,390
+It can be a table, a graph, a goat or whatever, but all these representations have to be displayed
+27
+
+28
+00:01:57,390 --> 00:02:03,030
+and accessible through a web interface, or even better, with the mobile application.
+28
+
+29
+00:02:03,750 --> 00:02:06,750
+This front end is the only interface with the user.
+29
+
+30
+00:02:06,750 --> 00:02:11,340
+So here, there must be only relevant information targeting the client use case.
+30
+
+31
+00:02:11,340 --> 00:02:16,770
+And that's definitely here that developers needs to be really careful with the user experience.
+31
+
+32
+00:02:17,670 --> 00:02:24,060
+Now, when we go through the downlink stream, we'll have exactly the same journey, but of course in
+32
+
+33
+00:02:24,060 --> 00:02:25,140
+the other way around.
+33
+
+34
+00:02:25,530 --> 00:02:31,890
+From a graphic user interface, the user should be able to send a specific value to the End-device.
+34
+
+35
+00:02:31,920 --> 00:02:36,780
+It can be as simple as clicking a button or moving a slide bar.
+35
+
+36
+00:02:37,140 --> 00:02:43,190
+Then we'll probably want to record the transmitted value so we can store them in a database.
+36
+
+37
+00:02:43,200 --> 00:02:49,320
+And once this request is processed, the IoT platform must again be able to send the data over MQTT
+37
+
+38
+00:02:49,560 --> 00:02:51,600
+or HTPP to the LoRaWAN server.
+38
+
+39
+00:02:52,230 --> 00:02:58,710
+So in this chapter we'll work on all these different steps, but there is something important that we
+39
+
+40
+00:02:58,710 --> 00:03:00,690
+need to understand before we start.
+40
+
+41
+00:03:00,900 --> 00:03:04,500
+Is that all these services have nothing to do with LoRaWAN .
+41
+
+42
+00:03:04,830 --> 00:03:10,080
+As soon as we are on the other side of the Application Server, the payload is decrypted.
+42
+
+43
+00:03:10,500 --> 00:03:15,270
+So when this is done, the LoRaWAN  protocol has its job completed.
+43
+
+44
+00:03:15,420 --> 00:03:21,150
+So from that point we leave the LoRaWAN  world and we use other protocols like MQTT.
+44
+
+45
+00:03:21,840 --> 00:03:27,930
+However, if our network is designed with what we call End-to-End security, that means that the decryption
+45
+
+46
+00:03:27,930 --> 00:03:30,290
+is executed on the IoT platform itself.
+46
+
+47
+00:03:30,360 --> 00:03:36,720
+In that situation only, we could say that the IoT platform runs the LoRaWAN  protocol, but most of
+47
+
+48
+00:03:36,720 --> 00:03:39,030
+the time this is not the case.
+48
+
+49
+00:03:39,120 --> 00:03:45,330
+Finally, during our demonstration, we'll often use the same application that we've used so far.
+49
+
+50
+00:03:45,780 --> 00:03:49,170
+Our own device will send a temperature on one byte.
+50
+
+51
+00:03:49,530 --> 00:03:50,190
+Great.
+51
+
+52
+00:03:50,190 --> 00:03:54,870
+So let's now see the solution that we can consider to design our IoT platform.
