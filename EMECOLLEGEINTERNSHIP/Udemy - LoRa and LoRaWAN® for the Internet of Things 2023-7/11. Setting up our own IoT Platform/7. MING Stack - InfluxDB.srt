@@ -1,0 +1,519 @@
+0
+1
+00:00:01,040 --> 00:00:04,850
+Influxdb has been installed with Docker and is already running.
+1
+
+2
+00:00:05,090 --> 00:00:08,510
+If we want to see what's inside, then we can connect to it.
+2
+
+3
+00:00:08,510 --> 00:00:13,010
+Thanks to a user interface available on port 8086.
+3
+
+4
+00:00:13,340 --> 00:00:21,280
+If you've used my configuration file, the username and password are "admin" for the login and "univ-lorawan"
+4
+
+5
+00:00:21,350 --> 00:00:23,060
+for the password.
+5
+
+6
+00:00:23,450 --> 00:00:29,660
+We could even build dashboard with this influxdb container, but it's not widely used, so we're going
+6
+
+7
+00:00:29,660 --> 00:00:34,610
+to stick with the original ID to use Grafana to build our dashboard for us.
+7
+
+8
+00:00:34,640 --> 00:00:41,660
+This simple interface is just going to be useful to dive into the database and verify the stored data.
+8
+
+9
+00:00:42,380 --> 00:00:50,120
+On the left menu, we can click on the Data Explorer section where we'll find our bucket called IoT-platform
+9
+
+10
+00:00:50,150 --> 00:00:50,900
+...
+10
+
+11
+00:00:51,410 --> 00:00:57,110
+This bucket has been created during installation exactly as it was instructed in the Docker compose
+11
+
+12
+00:00:57,110 --> 00:00:58,520
+configuration file.
+12
+
+13
+00:00:58,790 --> 00:01:04,830
+A bucket is just a name of a place where we're going to store our data called measurements.
+13
+
+14
+00:01:04,920 --> 00:01:11,460
+Of course, our bucket is empty right now because we haven't stored anything yet, so let's do it.
+14
+
+15
+00:01:12,450 --> 00:01:20,910
+So back in Node-RED, we need to use a node called Influxdb out and that is with this node that we're
+15
+
+16
+00:01:20,910 --> 00:01:25,140
+going to feed the database with the data received by our subscriber.
+16
+
+17
+00:01:25,500 --> 00:01:32,790
+So the first idea is to connect directly the MQTT subscriber to the influxdb node.
+17
+
+18
+00:01:33,210 --> 00:01:39,180
+If this inflow node wants to be able to connect to the database, we need to configure it so it can
+18
+
+19
+00:01:39,180 --> 00:01:40,500
+have the credentials.
+19
+
+20
+00:01:40,680 --> 00:01:47,550
+So we click on the influxdb out node, we give a name to the node, let's call it InfluxDB.
+20
+
+21
+00:01:48,600 --> 00:01:51,300
+Then we have to add the information of the influxdb
+21
+
+22
+00:01:51,300 --> 00:01:52,890
+instance, exactly
+22
+
+23
+00:01:52,890 --> 00:01:59,200
+in the same way we add a new MQTT broker earlier, but this time this is where stands our database.
+23
+
+24
+00:01:59,220 --> 00:02:01,680
+So we click on Add a new influxdb.
+24
+
+25
+00:02:02,400 --> 00:02:07,800
+Let's give again a name to this influxdb instance, and we choose the version.
+25
+
+26
+00:02:07,800 --> 00:02:10,440
+In our case, we're using version two.
+26
+
+27
+00:02:10,980 --> 00:02:22,080
+We now need the database URL, Iot-app.univ-lorawan.fr on port 8086 and the token again, you need to provide
+27
+
+28
+00:02:22,080 --> 00:02:26,490
+the one we put in the configuration file or the one you've created in influxdb.
+28
+
+29
+00:02:27,210 --> 00:02:31,860
+The organization is training-usmb and the bucket is iot-platform.
+29
+
+30
+00:02:32,220 --> 00:02:35,130
+Again, same information that is in the Docker compose file.
+30
+
+31
+00:02:35,430 --> 00:02:40,040
+And this time we'll ask him to store a new set of data.
+31
+
+32
+00:02:40,050 --> 00:02:43,850
+We'll ask it to do it in a measurement called LoRaWAN sensor.
+32
+
+33
+00:02:43,860 --> 00:02:46,950
+But of course you can choose your own measurement name.
+33
+
+34
+00:02:47,520 --> 00:02:51,720
+So now, what happens if a new uplink frame is received?
+34
+
+35
+00:02:51,870 --> 00:02:57,030
+Nothing much except that we still receive the debug information from the MQTT subscriber.
+35
+
+36
+00:02:57,030 --> 00:03:03,090
+So let's see what has been stored in the database in the IoT platform bucket.
+36
+
+37
+00:03:03,360 --> 00:03:06,480
+A new measurement called lorawan-sensors has appeared.
+37
+
+38
+00:03:06,510 --> 00:03:08,380
+That is a very good news.
+38
+
+39
+00:03:08,400 --> 00:03:12,420
+That means that we didn't meet any issues to connect to our database.
+39
+
+40
+00:03:12,420 --> 00:03:17,160
+But if we try to see what's in our measurement, there is nothing.
+40
+
+41
+00:03:17,370 --> 00:03:23,520
+Actually, this is quite normal because of course we can't just send the overall object from the MQTT
+41
+
+42
+00:03:23,760 --> 00:03:29,880
+subscriber with everything in it influxdb doesn't understand what we really want to do, and when
+42
+
+43
+00:03:29,880 --> 00:03:35,730
+it tries to guess, then it mostly finds string value and influxdb can only deal with numbers.
+43
+
+44
+00:03:36,510 --> 00:03:42,690
+I remind you that we only want to store the temperature and the RSSI of the LoRaWAN device, so we need to
+44
+
+45
+00:03:42,690 --> 00:03:48,630
+extract this data from this object and we want that the number stored in the database is stored with
+45
+
+46
+00:03:48,630 --> 00:03:54,720
+the name of the value, which will be "temperature" or "RSSI", depending on the value we store.
+46
+
+47
+00:03:55,440 --> 00:03:59,610
+If we want to do that, then we need to provide a clear message to the database.
+47
+
+48
+00:03:59,820 --> 00:04:04,290
+This is not complicated at all, but we need to comply with a specific format.
+48
+
+49
+00:04:04,830 --> 00:04:09,780
+So we need to put a new node between the MQTT subscriber and Influxdb.
+49
+
+50
+00:04:10,260 --> 00:04:16,320
+This new node is going to build the message to send to the Influxdb with only the relevant value.
+50
+
+51
+00:04:16,530 --> 00:04:18,810
+This node is called function.
+51
+
+52
+00:04:24,880 --> 00:04:28,540
+And inside we have to provide some JavaScript code.
+52
+
+53
+00:04:28,990 --> 00:04:34,900
+We could have done this in no code by using only nodes, but in the end I think it's more complicated.
+53
+
+54
+00:04:34,900 --> 00:04:39,310
+So to make things easy, I provide a template which is this one.
+54
+
+55
+00:04:40,240 --> 00:04:42,450
+This is an array of two objects.
+55
+
+56
+00:04:42,460 --> 00:04:44,950
+One is here and the other one is there.
+56
+
+57
+00:04:45,370 --> 00:04:49,860
+The first one at the top is a list of the value we want to store in the database.
+57
+
+58
+00:04:49,870 --> 00:04:55,350
+For each of them, we need to provide a name and where to find the value.
+58
+
+59
+00:04:55,360 --> 00:05:00,490
+So, for example, the first value we're going to store will be called "temperature".
+59
+
+60
+00:05:00,850 --> 00:05:06,730
+And to get the corresponding temperature value, we need to follow the corresponding path of the object
+60
+
+61
+00:05:06,730 --> 00:05:09,010
+coming from the MQTT subscriber.
+61
+
+62
+00:05:09,190 --> 00:05:15,460
+So if we look at the object provided by the subscriber, then we see that to get the temperature we
+62
+
+63
+00:05:15,460 --> 00:05:16,900
+need to select the field:
+63
+
+64
+00:05:17,050 --> 00:05:21,610
+"Msg.payload" It's the standard preamble for an output object.
+64
+
+65
+00:05:23,950 --> 00:05:29,020
+Then "uplink message", "decoded payload", "temperature."
+65
+
+66
+00:05:29,770 --> 00:05:32,350
+This is what we need to provide on the first line.
+66
+
+67
+00:05:38,720 --> 00:05:41,960
+In Node-RED there is a very useful button.
+67
+
+68
+00:05:41,960 --> 00:05:48,290
+We want to pick up the path of a value called copy path so we don't have to remember all the object
+68
+
+69
+00:05:48,320 --> 00:05:49,160
+hierarchy.
+69
+
+70
+00:05:49,610 --> 00:05:57,470
+If we follow the same process, then for the second line we can call the value RSSI and to pick up the
+70
+
+71
+00:05:57,470 --> 00:06:00,860
+value we go back on the object and we copy the path.
+71
+
+72
+00:06:08,250 --> 00:06:09,300
+There we go.
+72
+
+73
+00:06:09,660 --> 00:06:13,860
+Now there is another object at the bottom for Influxdb.
+73
+
+74
+00:06:13,890 --> 00:06:17,310
+This object represents the tag that we want to provide.
+74
+
+75
+00:06:17,340 --> 00:06:24,510
+It's optional, but maybe it could be very useful to know from which device ID or from which application
+75
+
+76
+00:06:24,510 --> 00:06:25,740
+the data comes from.
+76
+
+77
+00:06:26,070 --> 00:06:31,770
+So the tags are often information that can't be represented in a graph because it's usually a string
+77
+
+78
+00:06:31,770 --> 00:06:32,130
+anyway.
+78
+
+79
+00:06:32,130 --> 00:06:37,770
+But for example, it can be very useful to filter a range of value among a dataset.
+79
+
+80
+00:06:37,950 --> 00:06:44,280
+So when we query the database, if we use tags, then we'll be able to select only the temperature of
+80
+
+81
+00:06:44,280 --> 00:06:46,110
+a specific device, for example.
+81
+
+82
+00:06:46,920 --> 00:06:47,570
+Great.
+82
+
+83
+00:06:47,580 --> 00:06:48,540
+Let's try that.
+83
+
+84
+00:06:48,900 --> 00:06:54,510
+For each temperature on our RSSI value stored in the database, we're going to store the name of the
+84
+
+85
+00:06:54,510 --> 00:06:55,050
+device.
+85
+
+86
+00:06:55,050 --> 00:06:57,420
+So we write here "device".
+86
+
+87
+00:07:01,060 --> 00:07:03,500
+And the corresponding name can be found here.
+87
+
+88
+00:07:03,520 --> 00:07:08,020
+So once again, we copy the path and we provide it to our JSON object.
+88
+
+89
+00:07:08,560 --> 00:07:10,030
+Okay, we're done.
+89
+
+90
+00:07:14,210 --> 00:07:21,500
+So now each time a temperature is sent of a LoRaWAN, a JSON object with this specific format is built
+90
+
+91
+00:07:21,500 --> 00:07:25,310
+using this function and it contains these informations:
+91
+
+92
+00:07:25,350 --> 00:07:29,030
+Temperature, RSSI and the device name.
+92
+
+93
+00:07:29,990 --> 00:07:33,800
+Of course, you can add as many values as you want in the function.
+93
+
+94
+00:07:34,910 --> 00:07:37,430
+So let's have a look at the database now.
+94
+
+95
+00:07:37,550 --> 00:07:43,430
+We select the bucket, the measurement, and here we can see all the stored data.
+95
+
+96
+00:07:43,460 --> 00:07:47,840
+Temperature, RSSI and the corresponding device name.
+96
+
+97
+00:07:48,290 --> 00:07:50,210
+And that's exactly what we wanted.
+97
+
+98
+00:07:50,510 --> 00:07:56,660
+If we submit the query corresponding to the selected field, then we can have the data overview.
+98
+
+99
+00:07:56,900 --> 00:08:01,550
+If you're not happy with the query, then you can change the settings and submit a new one.
+99
+
+100
+00:08:01,580 --> 00:08:02,390
+Great.
+100
+
+101
+00:08:02,390 --> 00:08:06,860
+So now let's finish the most interesting part of our IoT platform.
+101
+
+102
+00:08:06,860 --> 00:08:12,620
+We're going to create a dashboard with two charts the temperature and the RSSI.
+102
+
+103
+00:08:12,650 --> 00:08:15,060
+And for that, we're going to use Grafana.
+103
+
+104
+00:08:15,930 --> 00:08:18,210
+Let's see how it works in the next video.
