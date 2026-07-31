@@ -1,0 +1,104 @@
+0
+1
+00:00:00,560 --> 00:00:05,930
+Okay, so now that the installation process is done, let's build our IoT platform.
+1
+
+2
+00:00:06,230 --> 00:00:09,510
+But first of all, what are our requirements?
+2
+
+3
+00:00:09,530 --> 00:00:15,560
+What we want to do is to have a simple dashboard with two datas: the temperature, which is the user
+3
+
+4
+00:00:15,560 --> 00:00:19,010
+payload sent by the device and the RSSI
+4
+
+5
+00:00:19,040 --> 00:00:23,690
+so we can track the signal power received on the gateway for a specific device.
+5
+
+6
+00:00:23,990 --> 00:00:26,540
+We're going to do this in three steps.
+6
+
+7
+00:00:26,690 --> 00:00:31,970
+First, we're going to build an MQTT subscriber on Node-RED to get the uplink data.
+7
+
+8
+00:00:32,240 --> 00:00:37,130
+We've done it already in the previous chapter, but we'll do it quickly again.
+8
+
+9
+00:00:37,640 --> 00:00:44,840
+And at any time, if we want to check if the Node-RED configuration is correct, we'll use a debug node
+9
+
+10
+00:00:44,870 --> 00:00:48,200
+to display the logs and verify that everything works well.
+10
+
+11
+00:00:49,100 --> 00:00:55,190
+Secondly, among all the data received on the subscriber node, we're going to extract the exact value
+11
+
+12
+00:00:55,220 --> 00:00:57,380
+we want to use for our dashboard.
+12
+
+13
+00:00:57,770 --> 00:01:01,680
+In our case it will be the temperature and the RSSI.
+13
+
+14
+00:01:02,310 --> 00:01:09,780
+And finally we'll send the temperature on the RSSI value to the Influxdb database. To check that the values
+14
+
+15
+00:01:09,780 --> 00:01:11,070
+have been stored properly,
+15
+
+16
+00:01:11,100 --> 00:01:17,460
+we'll connect the database thanks to the Influxdb user interface and check that our data are available.
+16
+
+17
+00:01:18,000 --> 00:01:22,440
+The third and last step is to tell Grafana how it can access the database.
+17
+
+18
+00:01:22,590 --> 00:01:26,680
+So we'll configure it with all the required value and credentials.
+18
+
+19
+00:01:26,700 --> 00:01:32,100
+Then we'll just have to create a new request with the name and the range of time of the needed value.
+19
+
+20
+00:01:32,850 --> 00:01:36,690
+Again, our value will be the temperature and the RSSI.
+20
+
+21
+00:01:37,350 --> 00:01:39,900
+Let's start with the first step in the next video.
