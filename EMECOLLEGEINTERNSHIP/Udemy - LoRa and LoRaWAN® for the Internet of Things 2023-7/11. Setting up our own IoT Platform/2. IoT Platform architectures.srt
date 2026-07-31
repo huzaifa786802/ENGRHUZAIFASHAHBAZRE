@@ -1,0 +1,234 @@
+0
+1
+00:00:00,320 --> 00:00:06,050
+In this chapter, we'll speak about the solutions to consider to design our IoT platform.
+1
+
+2
+00:00:06,410 --> 00:00:08,810
+But I'll be straight with you from the start.
+2
+
+3
+00:00:09,020 --> 00:00:12,660
+I will never be able to present all the available solutions.
+3
+
+4
+00:00:12,680 --> 00:00:17,780
+I will not even pretend to present a tiny part of them because there are so many.
+4
+
+5
+00:00:18,170 --> 00:00:24,050
+Nevertheless, I want to propose here some solution that we could use to build our own IoT platform.
+5
+
+6
+00:00:24,380 --> 00:00:30,350
+Most of these solutions are free and open source, and most of them can work in both directions.
+6
+
+7
+00:00:30,350 --> 00:00:32,540
+So uplink and downlink.
+7
+
+8
+00:00:32,750 --> 00:00:37,130
+But we know that in the IoT world we mostly gather data from sensors.
+8
+
+9
+00:00:37,130 --> 00:00:41,150
+So the stream we are more interested in is the uplink stream.
+9
+
+10
+00:00:41,300 --> 00:00:46,460
+And this is even more true with LoRaWAN  than with any other protocols because as we have seen in the
+10
+
+11
+00:00:46,460 --> 00:00:50,570
+previous chapter, LoRaWAN  has very limited downlink capability.
+11
+
+12
+00:00:51,200 --> 00:00:56,750
+So we need to find services capable to execute each action that our IoT platform needs to run.
+12
+
+13
+00:00:57,020 --> 00:01:03,330
+Some services like Node-RED, for example, have the ability to do almost everything, not what can
+13
+
+14
+00:01:03,330 --> 00:01:06,900
+easily be connected to any LoRaWAN  server using MQTT.
+14
+
+15
+00:01:07,230 --> 00:01:13,890
+It can provide a graphical user interface and it works in both direction, uplink and downlink.
+15
+
+16
+00:01:14,280 --> 00:01:18,540
+We've started to work with Node-RED already and that's indeed a very good solution.
+16
+
+17
+00:01:18,720 --> 00:01:25,380
+But in our case we'll use Node-RED only for one part of this stream, let's explain right away the solution
+17
+
+18
+00:01:25,380 --> 00:01:26,460
+that we'll use.
+18
+
+19
+00:01:26,820 --> 00:01:35,100
+First, we'll use Node-RED to connect our IoT platform to our LoRaWAN server: TTN, Actility, Chirpstack or whatever.
+19
+
+20
+00:01:35,340 --> 00:01:39,330
+And Node-RED will also help us to select the data we want to store.
+20
+
+21
+00:01:39,900 --> 00:01:45,390
+Then with a special node, we'll send these data to an influxdb database.
+21
+
+22
+00:01:45,960 --> 00:01:52,080
+Once the data is stored, we're going to create a dashboard and customize the user interface.
+22
+
+23
+00:01:52,230 --> 00:01:54,780
+For that we will use Grafana.
+23
+
+24
+00:01:55,530 --> 00:02:03,810
+So at the end we'll use three services for our IoT platform Node-RED, Influxdb and Grafana.
+24
+
+25
+00:02:04,740 --> 00:02:10,410
+And if we need a broker for the MQTT connection with the LoRaWAN  server, then we'll use mosquitto.
+25
+
+26
+00:02:10,830 --> 00:02:12,450
+Mosquitto, Influxdb,
+26
+
+27
+00:02:12,480 --> 00:02:13,710
+Node-RED, and Grafana.
+27
+
+28
+00:02:13,890 --> 00:02:20,760
+This service used is called the MING Stack and of course M stands for Mosquitto I for Influxdb,
+28
+
+29
+00:02:21,090 --> 00:02:22,410
+N for Node-RED,
+29
+
+30
+00:02:22,410 --> 00:02:23,880
+And G for Grafana.
+30
+
+31
+00:02:24,810 --> 00:02:27,430
+Obviously this is not the only choice.
+31
+
+32
+00:02:27,450 --> 00:02:33,630
+For example, we could have used the ELK Stack: Elasticsearch, Logstash and Kibana.
+32
+
+33
+00:02:33,930 --> 00:02:38,220
+But I would like to stick with the first choice because it's a very good solution when dealing with
+33
+
+34
+00:02:38,220 --> 00:02:39,330
+timestamps data.
+34
+
+35
+00:02:39,990 --> 00:02:45,900
+On top of that, we have already started to work with Node-RED, so I guess it's more consistent.
+35
+
+36
+00:02:46,590 --> 00:02:47,160
+Great.
+36
+
+37
+00:02:47,160 --> 00:02:52,950
+So this is what we can use to create things by ourselves, but we might just want to use an IoT platform
+37
+
+38
+00:02:52,950 --> 00:02:54,450
+without creating one.
+38
+
+39
+00:02:54,480 --> 00:02:57,080
+Of course there are many available.
+39
+
+40
+00:02:57,090 --> 00:03:01,920
+They are often proposed as a complete package to be installed on a server, but there's often a cloud
+40
+
+41
+00:03:01,920 --> 00:03:03,480
+version available as well.
+41
+
+42
+00:03:03,870 --> 00:03:07,950
+Of course this is a professional service, so it's not free.
+42
+
+43
+00:03:08,100 --> 00:03:13,980
+But there is usually a free online edition with limited functionalities so you can try it out.
+43
+
+44
+00:03:14,430 --> 00:03:19,950
+Usually we allow to register only a few devices and to create a few dashboards.
+44
+
+45
+00:03:19,950 --> 00:03:25,170
+So indeed a professional IoT platform can be a good choice if you have a big project.
+45
+
+46
+00:03:25,560 --> 00:03:27,930
+Of course this is not the purpose of this course.
+46
+
+47
+00:03:27,930 --> 00:03:31,850
+So in our case we'll set up each service by ourselves.
