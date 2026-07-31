@@ -1,0 +1,431 @@
+1
+00:00:00,860 --> 00:00:01,190
+Hello.
+
+2
+00:00:01,380 --> 00:00:01,950
+Welcome back.
+
+3
+00:00:02,350 --> 00:00:05,960
+And this lesson we are going to install our esteemed Thatta to Cuba makes.
+
+4
+00:00:06,450 --> 00:00:08,850
+So this is the complete download package.
+
+5
+00:00:08,910 --> 00:00:09,870
+I'm going to right.
+
+6
+00:00:09,900 --> 00:00:13,590
+Click over here to extract it or extract here.
+
+7
+00:00:15,670 --> 00:00:18,780
+And it's Finnish extract in order will click over here.
+
+8
+00:00:18,860 --> 00:00:26,090
+There's a content interest in a may have downloaded the.
+
+9
+00:00:29,260 --> 00:00:36,100
+I may have done that, the Mac OS version, so I'm sure you downloaded a Windows version, so I'm going
+
+10
+00:00:36,100 --> 00:00:37,350
+to download a Windows version.
+
+11
+00:00:37,360 --> 00:00:39,940
+No, see, OK.
+
+12
+00:00:40,040 --> 00:00:40,370
+No.
+
+13
+00:00:40,510 --> 00:00:44,500
+The download package comes with the Windows version.
+
+14
+00:00:44,530 --> 00:00:45,310
+The Mac version.
+
+15
+00:00:45,310 --> 00:00:46,270
+And the Linux version.
+
+16
+00:00:46,330 --> 00:00:51,670
+The reason why I think it's just a Mac version is does the only folder I see over here.
+
+17
+00:00:52,130 --> 00:01:02,200
+I'm going to sort of create a new photo here, hear a call in my in my downloads for DLC Cube Imex.
+
+18
+00:01:06,450 --> 00:01:13,290
+And I'm going to extract into the fold rather than have it mixed up with everything else over here.
+
+19
+00:01:14,180 --> 00:01:15,850
+Just fix this clean up.
+
+20
+00:01:15,910 --> 00:01:18,200
+Yeah, okay.
+
+21
+00:01:18,510 --> 00:01:19,290
+Just bear with me.
+
+22
+00:01:19,800 --> 00:01:21,240
+So this the Cuba mix.
+
+23
+00:01:22,020 --> 00:01:23,380
+Come over here now.
+
+24
+00:01:23,660 --> 00:01:24,990
+Oh, extract it in here.
+
+25
+00:01:31,960 --> 00:01:34,360
+OK, so we have the Windows version here.
+
+26
+00:01:34,410 --> 00:01:39,780
+The mock version and a Linux double click in the Windows version here to install it.
+
+27
+00:01:40,420 --> 00:01:41,580
+So, yes, over here.
+
+28
+00:01:47,570 --> 00:01:47,860
+OK.
+
+29
+00:01:48,170 --> 00:01:51,710
+It says the application requires Java runtime environment.
+
+30
+00:01:51,740 --> 00:01:52,090
+This.
+
+31
+00:01:52,520 --> 00:01:56,120
+So if you don't have Java runtime environment, you would have to install that.
+
+32
+00:01:56,900 --> 00:01:59,220
+So that's a different computer than the one I use every.
+
+33
+00:01:59,390 --> 00:02:01,160
+So I don't have Java here.
+
+34
+00:02:01,960 --> 00:02:04,820
+So I would have to install this Java runtime environment.
+
+35
+00:02:04,890 --> 00:02:05,520
+GRV.
+
+36
+00:02:06,930 --> 00:02:07,270
+Okay.
+
+37
+00:02:08,330 --> 00:02:13,100
+So it's bringing me to the Java Web site to download a GRV.
+
+38
+00:02:17,340 --> 00:02:18,950
+Okay, download.
+
+39
+00:02:23,830 --> 00:02:28,270
+It's open in Internet Explorer, so just bear with me.
+
+40
+00:02:35,450 --> 00:02:39,680
+Click here to download, click it to save.
+
+41
+00:02:44,610 --> 00:02:45,670
+Click here to run it.
+
+42
+00:02:49,930 --> 00:02:50,470
+Install.
+
+43
+00:02:57,610 --> 00:02:58,460
+It's installed in.
+
+44
+00:03:09,190 --> 00:03:09,790
+Okay.
+
+45
+00:03:10,930 --> 00:03:11,380
+Right.
+
+46
+00:03:15,910 --> 00:03:17,170
+See what happens next.
+
+47
+00:03:17,840 --> 00:03:21,070
+So I'm gonna go back to our makes row.
+
+48
+00:03:23,420 --> 00:03:24,680
+Try to install it again.
+
+49
+00:03:26,090 --> 00:03:29,090
+Double click, this is team 32.
+
+50
+00:03:29,130 --> 00:03:30,140
+Cuba makes five.
+
+51
+00:03:34,760 --> 00:03:37,050
+Java hasn't completed installation yet.
+
+52
+00:03:37,920 --> 00:03:43,800
+She wants to leave the Java the show.
+
+53
+00:03:47,160 --> 00:03:47,750
+Let's see.
+
+54
+00:03:49,690 --> 00:03:50,780
+Gerri still running.
+
+55
+00:03:50,850 --> 00:03:57,250
+Do it's currently installing is just taking a bit a bit longer than I expected.
+
+56
+00:03:57,330 --> 00:03:58,500
+So let's wait for it.
+
+57
+00:04:00,710 --> 00:04:03,880
+It says it says you have successfully installed Java.
+
+58
+00:04:04,170 --> 00:04:04,500
+Okay.
+
+59
+00:04:04,590 --> 00:04:08,880
+Should be fine, though, if we're still unable to get access to it.
+
+60
+00:04:08,910 --> 00:04:10,890
+We may have to restart the computer.
+
+61
+00:04:11,880 --> 00:04:12,360
+Okay.
+
+62
+00:04:12,530 --> 00:04:13,110
+I mean, stalling.
+
+63
+00:04:13,110 --> 00:04:13,660
+Keep that makes.
+
+64
+00:04:13,770 --> 00:04:14,300
+Now click.
+
+65
+00:04:14,330 --> 00:04:15,120
+Yes, right here.
+
+66
+00:04:15,610 --> 00:04:15,950
+OK.
+
+67
+00:04:16,140 --> 00:04:21,870
+For LA it started and a click next over here.
+
+68
+00:04:23,220 --> 00:04:29,380
+I've read this before so I just click to accept it next and then step this.
+
+69
+00:04:31,410 --> 00:04:38,150
+So you can kinda take a look at the um the privacy policy as well as the terms of use before you accept
+
+70
+00:04:38,150 --> 00:04:39,570
+it like this.
+
+71
+00:04:39,570 --> 00:04:40,110
+Over here.
+
+72
+00:04:40,880 --> 00:04:42,680
+A click over here.
+
+73
+00:04:42,810 --> 00:04:48,690
+And this installation foda or keep it the same click next target.
+
+74
+00:04:48,760 --> 00:04:48,960
+Right.
+
+75
+00:04:49,470 --> 00:04:52,890
+Uh, it says away the target directory will be created a click.
+
+76
+00:04:52,950 --> 00:04:53,400
+Okay.
+
+77
+00:04:54,390 --> 00:04:56,290
+And a click next to over here.
+
+78
+00:04:58,500 --> 00:05:00,840
+And this is installed and now it's gonna take a while.
+
+79
+00:05:09,760 --> 00:05:10,990
+It's still in stolen.
+
+80
+00:05:12,650 --> 00:05:16,100
+Okay, so I'm going to click next.
+
+81
+00:05:19,000 --> 00:05:21,130
+And then I'm going to click done over here.
+
+82
+00:05:21,220 --> 00:05:22,570
+The installation is complete.
+
+83
+00:05:26,210 --> 00:05:26,630
+Right.
+
+84
+00:05:27,260 --> 00:05:30,330
+So next, I'm going to install the keep IP.
+
+85
+00:05:34,080 --> 00:05:35,360
+That's my downloads folder.
+
+86
+00:05:35,510 --> 00:05:43,510
+I'm going to create a folder to extract it into a Korda's Cube IDC Raw.
+
+87
+00:05:49,020 --> 00:05:58,460
+I'm simply going to crack the Kubi into this folder and then extract it over here.
+
+88
+00:06:02,670 --> 00:06:03,630
+It's a structure in.
+
+89
+00:06:14,600 --> 00:06:15,590
+Still extracting.
+
+90
+00:06:23,870 --> 00:06:25,130
+Don't extract him.
+
+91
+00:06:25,250 --> 00:06:28,320
+I'm going to install it by double click on this over here.
+
+92
+00:06:34,030 --> 00:06:35,190
+Quick, yes, over here.
+
+93
+00:06:40,090 --> 00:06:41,510
+Click next over here.
+
+94
+00:06:42,190 --> 00:06:47,730
+I agree, but keep the, um, the destination forward at the same click next.
+
+95
+00:06:48,560 --> 00:06:49,520
+Click it or kick it.
+
+96
+00:06:50,150 --> 00:06:50,550
+Oh.
+
+97
+00:06:50,690 --> 00:06:51,670
+Keep everything here.
+
+98
+00:06:51,710 --> 00:06:52,910
+The same next.
+
+99
+00:06:54,160 --> 00:06:55,640
+And it started.
+
+100
+00:07:00,030 --> 00:07:01,060
+It's still in stolen.
+
+101
+00:07:06,490 --> 00:07:08,180
+This would take a while, so I just post.
+
+102
+00:07:10,310 --> 00:07:10,900
+Okay.
+
+103
+00:07:11,020 --> 00:07:12,460
+The installation is complete.
+
+104
+00:07:13,030 --> 00:07:17,590
+Click next over here, create a desktop shortcut.
+
+105
+00:07:18,280 --> 00:07:18,970
+Click finish.
+
+106
+00:07:20,020 --> 00:07:20,380
+Right.
+
+107
+00:07:20,860 --> 00:07:22,480
+So that's all there is for this lesson.
+
+108
+00:07:22,570 --> 00:07:24,970
+And I shall see you in the next lesson.
