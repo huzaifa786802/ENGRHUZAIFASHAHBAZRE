@@ -1,0 +1,249 @@
+0
+1
+00:00:00,860 --> 00:00:06,620
+The first step is to build an MQTT subscriber with Node-RED so we can receive the uplink stream.
+1
+
+2
+00:00:06,920 --> 00:00:13,250
+This is exactly what we did in the chapter about MQTT, so you will find many more details if you go
+2
+
+3
+00:00:13,250 --> 00:00:15,140
+back to the corresponding video.
+3
+
+4
+00:00:15,500 --> 00:00:18,890
+However, I will quickly do it one more time.
+4
+
+5
+00:00:19,220 --> 00:00:28,640
+We will need only two nodes the MQTT in node, so our subscriber and the debug node we'll always use it
+5
+
+6
+00:00:28,640 --> 00:00:30,950
+to check that everything works as expected.
+6
+
+7
+00:00:31,430 --> 00:00:36,170
+We connect them together and we can now configure the MQTT node.
+7
+
+8
+00:00:36,200 --> 00:00:42,050
+We have to set the broker address and its credentials and the topic.
+8
+
+9
+00:00:42,500 --> 00:00:45,980
+So we add a new MQTT broker called TTN.
+9
+
+10
+00:00:47,230 --> 00:00:53,800
+With the URL and the credentials, we can find this information on our network server documentation.
+10
+
+11
+00:00:53,890 --> 00:01:00,670
+In my case, I use TTN for this demonstration so I can find this information in the MQTT integration
+11
+
+12
+00:01:00,670 --> 00:01:01,450
+section.
+12
+
+13
+00:01:02,200 --> 00:01:07,660
+So that's the address, the username and the password that I need to generate.
+13
+
+14
+00:01:08,530 --> 00:01:16,630
+So the server address and in the security tab, the username and the password.
+14
+
+15
+00:01:17,590 --> 00:01:18,250
+Okay.
+15
+
+16
+00:01:18,250 --> 00:01:22,180
+And for the topic, I will subscribe to everything at the beginning.
+16
+
+17
+00:01:22,180 --> 00:01:24,370
+So I'm going to use the # wildcard.
+17
+
+18
+00:01:25,300 --> 00:01:27,850
+There is one more configuration for this node.
+18
+
+19
+00:01:27,880 --> 00:01:34,810
+It has nothing to do with MQTT, but if we want to have a nice output then it's better to select here:
+19
+
+20
+00:01:34,810 --> 00:01:36,680
+Parsed JSON object.
+20
+
+21
+00:01:36,700 --> 00:01:41,170
+Otherwise the output will be sent as text and it's not very convenient.
+21
+
+22
+00:01:41,920 --> 00:01:44,920
+I can also set a name TTN.
+22
+
+23
+00:01:45,640 --> 00:01:46,470
+Great.
+23
+
+24
+00:01:46,480 --> 00:01:48,140
+Let's deploy that.
+24
+
+25
+00:01:48,410 --> 00:01:54,410
+My subscriber is connected, which is a good news and I can see the log in the debug window.
+25
+
+26
+00:01:56,580 --> 00:02:00,540
+What I'm going to do before going forward is to change the topic.
+26
+
+27
+00:02:00,540 --> 00:02:06,120
+Because as we can see, there are more debug messages than uplink frames because I subscribe to all
+27
+
+28
+00:02:06,120 --> 00:02:12,150
+events on the network server, but the only one I'm interested in is the uplink event.
+28
+
+29
+00:02:12,240 --> 00:02:20,970
+And this is one: "v3/training-usmb@ttn/devices/device1-otaa/up"
+29
+
+30
+00:02:21,360 --> 00:02:25,290
+So I quickly modify the subscriber node with this topic.
+30
+
+31
+00:02:28,360 --> 00:02:30,790
+And I deploy my flow once again.
+31
+
+32
+00:02:31,270 --> 00:02:36,370
+This time when I transmit a frame, there is only one debug message.
+32
+
+33
+00:02:37,630 --> 00:02:42,520
+If I open the debug message, I can find everything I need in the uplink-
+33
+
+34
+00:02:42,520 --> 00:02:45,130
+message object: the payload,
+34
+
+35
+00:02:45,520 --> 00:02:50,200
+And further in the rx_metadata array, the RSSI.
+35
+
+36
+00:02:50,440 --> 00:02:51,370
+Fine.
+36
+
+37
+00:02:51,370 --> 00:02:54,520
+But there is one more thing that won't be very convenient here.
+37
+
+38
+00:02:54,550 --> 00:02:58,410
+It's that the payload is a string in base 64.
+38
+
+39
+00:02:58,420 --> 00:03:00,580
+Rather, I would rather have a number.
+39
+
+40
+00:03:01,210 --> 00:03:02,890
+I know that it's a temperature.
+40
+
+41
+00:03:02,890 --> 00:03:06,220
+So here I want a number representing that temperature.
+41
+
+42
+00:03:06,490 --> 00:03:09,130
+We have also done it in a previous video.
+42
+
+43
+00:03:09,280 --> 00:03:12,430
+The trick is to use the payload decoder of the network server.
+43
+
+44
+00:03:12,670 --> 00:03:19,210
+So we go on TTN, but of course you will find a similar payload decoder on all other network server.
+44
+
+45
+00:03:23,820 --> 00:03:29,150
+And in the uplink payload formatter section, then we can specify that the first byte.
+45
+
+46
+00:03:29,160 --> 00:03:33,570
+So byte zero is the data called temperature.
+46
+
+47
+00:03:38,750 --> 00:03:46,670
+If we do that, then now the LoRaWAN server will send a new object called decoded payload to our subscriber.
+47
+
+48
+00:03:46,910 --> 00:03:52,190
+And in this object we'll find our field temperature and its value.
+48
+
+49
+00:03:53,060 --> 00:03:54,950
+Okay, so first step is done.
+49
+
+50
+00:03:55,040 --> 00:03:59,030
+Now let's save this temperature on our side in the database.
