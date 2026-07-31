@@ -1,0 +1,304 @@
+0
+1
+00:00:00,590 --> 00:00:04,070
+Grafana is a very powerful visualization platform.
+1
+
+2
+00:00:04,250 --> 00:00:12,140
+We can build nice representation of our data with graphs, goals, charts, tables and many more possibilities.
+2
+
+3
+00:00:15,260 --> 00:00:20,420
+The first thing that Grafana needs is a connection to a database in Grafana.
+3
+
+4
+00:00:20,450 --> 00:00:22,310
+It's called datasource.
+4
+
+5
+00:00:22,700 --> 00:00:29,390
+There are already many predefined connections to these sources, and obviously in our situation we're
+5
+
+6
+00:00:29,390 --> 00:00:31,640
+going to use the source called Influxdb.
+6
+
+7
+00:00:32,120 --> 00:00:38,330
+From there, Grafana proposes a configuration web page where we can fill in all the information of our
+7
+
+8
+00:00:38,330 --> 00:00:39,140
+database.
+8
+
+9
+00:00:39,140 --> 00:00:40,820
+So let's do it.
+9
+
+10
+00:00:41,240 --> 00:00:43,790
+We can provide a name for the data source.
+10
+
+11
+00:00:43,820 --> 00:00:47,780
+Let's call it "influxdb", for the query language,
+11
+
+12
+00:00:47,780 --> 00:00:50,860
+we're going to use "flux" because it's more powerful.
+12
+
+13
+00:00:50,870 --> 00:00:55,970
+But anyway, the queries will be generated, so we won't have to bother much about that.
+13
+
+14
+00:00:56,600 --> 00:00:58,940
+Then comes the database location.
+14
+
+15
+00:00:58,940 --> 00:01:03,270
+So here we need to provide the URL where influxdb has been installed.
+15
+
+16
+00:01:03,290 --> 00:01:12,200
+In my case I can provide my server name Iot-app.univ-lorawan.fr on port 8086.
+16
+
+17
+00:01:12,800 --> 00:01:18,390
+Now for all the other information, everything has been filled in in the Docker compose configuration
+17
+
+18
+00:01:18,390 --> 00:01:19,050
+file.
+18
+
+19
+00:01:19,470 --> 00:01:25,050
+As often I used "admin" for the username and "univ-lorawan" for the password.
+19
+
+20
+00:01:26,190 --> 00:01:28,860
+The organization is "training-usmb".
+20
+
+21
+00:01:29,670 --> 00:01:33,210
+The token is this one, but you might have change it.
+21
+
+22
+00:01:33,510 --> 00:01:36,480
+And the bucket is "iot-platform".
+22
+
+23
+00:01:37,020 --> 00:01:40,380
+Once everything is done we can test the database connection.
+23
+
+24
+00:01:40,380 --> 00:01:46,380
+So we click on the save and test button and it should return a green message saying that the datasource
+24
+
+25
+00:01:46,410 --> 00:01:47,040
+is working.
+25
+
+26
+00:01:48,690 --> 00:01:52,940
+Now we want to explore the database to create a graph with the temperature.
+26
+
+27
+00:01:52,950 --> 00:01:59,490
+So we go on the explore section and there we can provide a script with the queries for the database.
+27
+
+28
+00:01:59,490 --> 00:02:05,610
+So we'll provide a corresponding bucket where the data needs to be extracted, the measurement and the
+28
+
+29
+00:02:05,610 --> 00:02:06,900
+field we want to plot.
+29
+
+30
+00:02:06,930 --> 00:02:12,600
+But of course the script is a specific language and we are not going to learn this in this course.
+30
+
+31
+00:02:12,750 --> 00:02:18,980
+And we actually don't need because if we come back to influxdb, in the Data Explorer section we left
+31
+
+32
+00:02:18,990 --> 00:02:24,720
+a few minutes ago, then let's say that we selected a temperature for this device called device1-otaa.
+32
+
+33
+00:02:24,720 --> 00:02:33,150
+Or in my case, then we just need to click on script editor and influxdb generates the query.
+33
+
+34
+00:02:33,720 --> 00:02:37,380
+This is exactly this query that we need to provide to Grafana.
+34
+
+35
+00:02:37,770 --> 00:02:42,180
+So I just copy it and I paste it in Grafana.
+35
+
+36
+00:02:44,100 --> 00:02:50,850
+Now, if I auto update this page, then each time a new value is sent from one device, it's stored
+36
+
+37
+00:02:50,850 --> 00:02:51,390
+in the database
+37
+
+38
+00:02:51,420 --> 00:02:55,020
+thanks to Node-RED and it's displayed here thanks to Grafana.
+38
+
+39
+00:02:55,650 --> 00:02:57,190
+So that's our temperature.
+39
+
+40
+00:02:57,210 --> 00:03:03,360
+If we're happy with this chart, then we can add it to our dashboard by clicking on "Add to Dashboard."
+40
+
+41
+00:03:03,390 --> 00:03:07,830
+I haven't created any dashboard yet, so I will add it in a new one.
+41
+
+42
+00:03:11,930 --> 00:03:13,160
+And I can save it.
+42
+
+43
+00:03:13,520 --> 00:03:15,710
+I call it lorawan sensors.
+43
+
+44
+00:03:18,950 --> 00:03:20,360
+For the RSSI.
+44
+
+45
+00:03:20,570 --> 00:03:22,610
+It's exactly the same story.
+45
+
+46
+00:03:24,590 --> 00:03:28,180
+In Influxdb I go back in the query builder.
+46
+
+47
+00:03:28,210 --> 00:03:30,520
+Select the query I want to create.
+47
+
+48
+00:03:30,760 --> 00:03:32,890
+I select the RSSIvalue.
+48
+
+49
+00:03:33,100 --> 00:03:35,480
+I can verify if it's what I expected.
+49
+
+50
+00:03:35,500 --> 00:03:38,440
+Then I copy the query from the script editor.
+50
+
+51
+00:03:39,340 --> 00:03:45,250
+Okay, now I go in Grafana explorer and I past the query.
+51
+
+52
+00:03:50,300 --> 00:03:51,140
+Great.
+52
+
+53
+00:03:51,140 --> 00:03:54,920
+And if it's fine, then we can add it to the existing dashboard.
+53
+
+54
+00:04:00,700 --> 00:04:01,630
+There we go.
+54
+
+55
+00:04:01,660 --> 00:04:02,750
+We are done.
+55
+
+56
+00:04:02,770 --> 00:04:07,210
+Now you can explore Grafana and see which representations fits you the best.
+56
+
+57
+00:04:07,330 --> 00:04:11,410
+We can quickly switch between visualization using the edit button.
+57
+
+58
+00:04:12,990 --> 00:04:14,880
+And in the top right corner.
+58
+
+59
+00:04:14,910 --> 00:04:16,270
+Change the option.
+59
+
+60
+00:04:16,290 --> 00:04:20,040
+For example, you can use a gauge if you want to see only the last value.
+60
+
+61
+00:04:20,640 --> 00:04:25,740
+There are hundreds of plugins and different settings that will make your dashboard very nice.
