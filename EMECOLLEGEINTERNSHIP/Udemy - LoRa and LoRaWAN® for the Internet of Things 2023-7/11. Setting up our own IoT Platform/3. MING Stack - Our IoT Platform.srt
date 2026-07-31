@@ -1,0 +1,304 @@
+0
+1
+00:00:00,230 --> 00:00:02,760
+Let's now speak about our application.
+1
+
+2
+00:00:02,780 --> 00:00:06,980
+We'll use three different services to set up the overall IoT platform.
+2
+
+3
+00:00:07,100 --> 00:00:08,030
+Node-RED,
+3
+
+4
+00:00:08,030 --> 00:00:08,900
+Influxdb,
+4
+
+5
+00:00:08,900 --> 00:00:10,370
+And finally Grafana.
+5
+
+6
+00:00:11,180 --> 00:00:13,130
+First we have Node-RED.
+6
+
+7
+00:00:13,250 --> 00:00:15,740
+This is our No code programming tool.
+7
+
+8
+00:00:15,980 --> 00:00:21,590
+We've used it several times already and we're going to use it again for the MQTT connection with our
+8
+
+9
+00:00:21,590 --> 00:00:22,580
+LoRaWAN  server.
+9
+
+10
+00:00:23,150 --> 00:00:30,290
+So node-RED will be an MQTT client acting as a subscriber to get the uplink data from the end-device
+10
+
+11
+00:00:30,290 --> 00:00:34,580
+or as a publisher to provide data to the end-device.
+11
+
+12
+00:00:34,580 --> 00:00:40,190
+And on the other side, Node-RED will also be connected to the Influxdb database.
+12
+
+13
+00:00:40,550 --> 00:00:47,360
+Of course, Influxdb is not the only choice and we could have used many others, but it's a perfect
+13
+
+14
+00:00:47,360 --> 00:00:49,610
+solution to manage time series data.
+14
+
+15
+00:00:50,300 --> 00:00:57,290
+In our case, that's exactly what we need because with a LoRaWAN device we'll mostly display timestamp
+15
+
+16
+00:00:57,290 --> 00:00:58,760
+data from sensors.
+16
+
+17
+00:00:59,180 --> 00:01:06,510
+So Node-RED will receive the census data on one side and simply feed the database on the other side.
+17
+
+18
+00:01:06,810 --> 00:01:14,430
+But where is this database? Actually influxdb is not a simple node in Node-RED because of course there will
+18
+
+19
+00:01:14,430 --> 00:01:17,520
+be a node to provide the interface between Node-RED and Influxdb.
+19
+
+20
+00:01:18,060 --> 00:01:22,680
+But Influxdb is a real piece of software that needs to be installed separately.
+20
+
+21
+00:01:23,010 --> 00:01:25,980
+Of course we'll explain how we can do that later.
+21
+
+22
+00:01:26,790 --> 00:01:27,480
+Great.
+22
+
+23
+00:01:27,480 --> 00:01:33,900
+So, so far we have retrieved our data from the LoRaWAN  server and we have stored them in a database.
+23
+
+24
+00:01:34,050 --> 00:01:36,600
+Now we need to build the dashboard.
+24
+
+25
+00:01:36,810 --> 00:01:38,910
+And that's what Grafana is all about.
+25
+
+26
+00:01:38,940 --> 00:01:42,010
+It's a free and open source visualization tool.
+26
+
+27
+00:01:42,030 --> 00:01:48,420
+It can be used on top of a variety of different databases, but as you've guessed, we're going to use
+27
+
+28
+00:01:48,420 --> 00:01:49,860
+it on top of Influxdb.
+28
+
+29
+00:01:50,310 --> 00:01:57,510
+So with Grafana, we'll create dashboards and depending on what we want to display, then Grafana will
+29
+
+30
+00:01:57,510 --> 00:02:01,110
+request all data it needs directly to the database.
+30
+
+31
+00:02:01,110 --> 00:02:08,850
+Then when we're happy with tables, graphs or chart created, then we'll gather them in a dashboard.
+31
+
+32
+00:02:09,360 --> 00:02:12,600
+So how will we set up these three services?
+32
+
+33
+00:02:12,690 --> 00:02:16,980
+I'm sure you know, because once again, we'll use Docker.
+33
+
+34
+00:02:17,280 --> 00:02:20,040
+So the installation will be very easy.
+34
+
+35
+00:02:20,130 --> 00:02:23,070
+And where can we set up this IoT platform?
+35
+
+36
+00:02:23,310 --> 00:02:24,300
+Anywhere.
+36
+
+37
+00:02:24,450 --> 00:02:27,150
+That's exactly the same story as the installation of
+37
+
+38
+00:02:27,160 --> 00:02:29,100
+our own private LoRaWAN server.
+38
+
+39
+00:02:29,580 --> 00:02:35,700
+We can use our own PC, a virtual machine, a public server, or even a Raspberry Pi.
+39
+
+40
+00:02:36,750 --> 00:02:39,690
+In our case, we'll use a public server.
+40
+
+41
+00:02:40,020 --> 00:02:44,640
+Exactly the same as the one used for ChirpStack on The Thing Stack installation.
+41
+
+42
+00:02:45,210 --> 00:02:48,930
+And we're going to install these three services on the same machine.
+42
+
+43
+00:02:49,200 --> 00:02:54,800
+We could imagine that for a bigger deployment, services would be set up on different servers.
+43
+
+44
+00:02:54,810 --> 00:03:00,630
+For example, a specific server would be used for the database and another one for Grafana.
+44
+
+45
+00:03:01,200 --> 00:03:01,740
+Great.
+45
+
+46
+00:03:01,740 --> 00:03:07,350
+So anyway, whether we install everything on the same server or on different machines doesn't change
+46
+
+47
+00:03:07,350 --> 00:03:15,510
+anything because in both cases, containers told to each other thanks to an IP address on a specific port.
+47
+
+48
+00:03:15,540 --> 00:03:20,820
+Let's see how it looks like in our situation where everything is on the same public server with only
+48
+
+49
+00:03:20,820 --> 00:03:22,230
+one IP address.
+49
+
+50
+00:03:22,260 --> 00:03:24,540
+It's like this most of the time.
+50
+
+51
+00:03:25,110 --> 00:03:32,520
+Node-RED will open an MQTT communication on Port 1883 on the LoRaWAN server. To access the Node-RED user
+51
+
+52
+00:03:32,520 --> 00:03:33,270
+interface,
+52
+
+53
+00:03:33,300 --> 00:03:36,030
+We'll use the Port 1880.
+53
+
+54
+00:03:36,750 --> 00:03:37,470
+Node-RED
+54
+
+55
+00:03:37,470 --> 00:03:41,040
+will use the port 8086 to access influxdb.
+55
+
+56
+00:03:41,760 --> 00:03:46,650
+We'll also use the port 8086 to access the influxdb web interface.
+56
+
+57
+00:03:46,650 --> 00:03:50,430
+That will be very useful to check that our data are stored properly.
+57
+
+58
+00:03:50,820 --> 00:03:57,450
+Grafana will also use the port 8086 to access the database and get all data it needs in order to produce
+58
+
+59
+00:03:57,450 --> 00:03:58,560
+its dashboard.
+59
+
+60
+00:03:58,650 --> 00:04:05,340
+And finally, we'll access the Grafana web interface on Port 3000 so we can build our dashboard.
+60
+
+61
+00:04:05,490 --> 00:04:07,800
+So now let's install everything.
