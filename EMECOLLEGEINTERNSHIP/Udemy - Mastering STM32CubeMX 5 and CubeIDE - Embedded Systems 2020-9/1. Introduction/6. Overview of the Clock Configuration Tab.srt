@@ -1,0 +1,375 @@
+1
+00:00:00,300 --> 00:00:00,810
+Welcome back.
+
+2
+00:00:00,990 --> 00:00:04,920
+And this lesson, we shall give an overview of the clock configuration tab.
+
+3
+00:00:05,660 --> 00:00:06,390
+It's over here.
+
+4
+00:00:06,960 --> 00:00:10,230
+We use this type of right here to figure out a system clock.
+
+5
+00:00:13,380 --> 00:00:20,310
+So based on what board you selected during the board selection, if you selected the nuclear board or
+
+6
+00:00:20,310 --> 00:00:23,100
+the disco board, the default setting will be different.
+
+7
+00:00:23,970 --> 00:00:27,630
+Right over here, the default is nine to six megahertz.
+
+8
+00:00:27,720 --> 00:00:31,550
+This the nuclear broad, it's nine to six mega heads.
+
+9
+00:00:31,560 --> 00:00:33,740
+And the maximum can be one hundred megahertz.
+
+10
+00:00:33,780 --> 00:00:35,170
+If you have the disco body could.
+
+11
+00:00:35,610 --> 00:00:37,260
+The default is 16 megahertz.
+
+12
+00:00:37,620 --> 00:00:42,090
+If you have a different version of the F4 microcontroller, you could have a different value here.
+
+13
+00:00:42,620 --> 00:00:47,220
+But in any case, it's always indicates the, um, the maximum down here.
+
+14
+00:00:47,640 --> 00:00:53,670
+So unless I want to said this to the maximum, I can simply type one hundred and hit enter over here
+
+15
+00:00:53,670 --> 00:01:00,930
+like this and is going to search for the solution because he has to update all the various parts in
+
+16
+00:01:00,930 --> 00:01:03,120
+order to be able to work with this frequency.
+
+17
+00:01:03,420 --> 00:01:10,000
+So it's been able to find a configuration out, provide me with its Yoki of 100.
+
+18
+00:01:10,350 --> 00:01:14,300
+And by doing that, it's adjusted the frequencies here as well.
+
+19
+00:01:15,710 --> 00:01:16,090
+Right.
+
+20
+00:01:16,940 --> 00:01:24,410
+So any one of that and you can see it, there are parts that are great out, this party is great out.
+
+21
+00:01:25,640 --> 00:01:30,880
+And if you want to know what the great out part belongs to, you, just put your point out there.
+
+22
+00:01:30,980 --> 00:01:32,390
+You will receive the info.
+
+23
+00:01:32,780 --> 00:01:34,450
+This is for the eye, too, as cloak.
+
+24
+00:01:34,760 --> 00:01:36,320
+And it's not it's not set.
+
+25
+00:01:36,710 --> 00:01:43,190
+So if we go to our pin out and enable the eye to us, then we expect this part to be enabled.
+
+26
+00:01:43,580 --> 00:01:44,570
+Let's check out and see.
+
+27
+00:01:44,600 --> 00:01:49,220
+I'll come back to pin out and then I'll come to multimedia.
+
+28
+00:01:49,970 --> 00:01:51,350
+So I'll see eye to us.
+
+29
+00:01:52,090 --> 00:01:54,200
+And then word I'll just select.
+
+30
+00:01:56,160 --> 00:01:57,320
+Healthmaster duplex.
+
+31
+00:02:00,260 --> 00:02:00,640
+Right.
+
+32
+00:02:00,730 --> 00:02:02,990
+Once that is done, I'll go to Kolok Conflagration.
+
+33
+00:02:03,900 --> 00:02:07,480
+And because I change something now, the clock on immigration has a conflict.
+
+34
+00:02:08,290 --> 00:02:12,550
+So it's asks, do you want to run automatic clock issues solver?
+
+35
+00:02:12,670 --> 00:02:13,770
+I can click, yes.
+
+36
+00:02:13,810 --> 00:02:15,670
+And then you will solve the issues for me.
+
+37
+00:02:19,430 --> 00:02:21,030
+So, yes, I cannot find a solution.
+
+38
+00:02:23,180 --> 00:02:27,260
+OK, so the reason I cannot find a solution is I would have to.
+
+39
+00:02:28,440 --> 00:02:32,090
+Just some of the settings here, which can be done from the.
+
+40
+00:02:33,520 --> 00:02:35,560
+These cities as well.
+
+41
+00:02:36,010 --> 00:02:36,390
+Right.
+
+42
+00:02:36,790 --> 00:02:40,480
+So, OK, what I wanted to show you is that this pilot was disabled.
+
+43
+00:02:40,510 --> 00:02:43,600
+Known that we've been unable to pay for that requires this plot.
+
+44
+00:02:43,960 --> 00:02:47,380
+We can see that this part of the clock is enabled robot here.
+
+45
+00:02:48,160 --> 00:02:54,340
+This this multiplex belongs to the RTC, the real time clock.
+
+46
+00:02:54,790 --> 00:02:59,740
+So it because we're not using the real time clock in our project, we see that it is disabled as well.
+
+47
+00:03:00,570 --> 00:03:02,140
+Right over here.
+
+48
+00:03:03,430 --> 00:03:07,770
+This one belongs to this one says MCE oh to source UKCS.
+
+49
+00:03:08,500 --> 00:03:11,830
+If we want to get more information about it, we can just drop all modes.
+
+50
+00:03:13,650 --> 00:03:18,040
+And when I put my mouse here, it keeps me information as to how to enable this.
+
+51
+00:03:18,520 --> 00:03:21,870
+It says MCO output is not available to enable it.
+
+52
+00:03:22,150 --> 00:03:26,650
+One of the following RACC modes or IP moves need to be set.
+
+53
+00:03:27,570 --> 00:03:27,900
+Right?
+
+54
+00:03:27,940 --> 00:03:32,410
+So because we know using this part, that is why it is great out as well as this part.
+
+55
+00:03:33,010 --> 00:03:36,720
+We can also adjust the clock off the various passes.
+
+56
+00:03:37,540 --> 00:03:45,460
+So if we want to adjust the clock for the APB to time up, it may be two bros four times, meaning all
+
+57
+00:03:45,460 --> 00:03:47,190
+the time is connected to EPB two.
+
+58
+00:03:47,270 --> 00:03:50,040
+If you want to adjust the crop for them, you can simply type here.
+
+59
+00:03:50,140 --> 00:03:52,400
+So let's say I type 50 megahertz.
+
+60
+00:03:52,870 --> 00:03:54,940
+Because I want to set a plan B, two is two.
+
+61
+00:03:54,940 --> 00:03:59,860
+This is gonna find a solution that works and by itself it would adjust the for me.
+
+62
+00:04:00,310 --> 00:04:02,710
+I can do it for all of these over here.
+
+63
+00:04:03,220 --> 00:04:07,140
+And one other thing whereby here we have high speed internal or neighborhood.
+
+64
+00:04:07,750 --> 00:04:12,010
+That is why we have this year because of a high speed extend or is disabled.
+
+65
+00:04:12,280 --> 00:04:13,960
+We don't have the option to select this.
+
+66
+00:04:14,410 --> 00:04:20,560
+So let's see how to enable high speed extend or I'll come back to a PIN configuration over here.
+
+67
+00:04:20,740 --> 00:04:27,740
+Come to System four and then RACC and then high speed, high speed quelque HFC.
+
+68
+00:04:27,840 --> 00:04:28,510
+I'll see.
+
+69
+00:04:29,730 --> 00:04:31,880
+Ceramic crystal or resonator?
+
+70
+00:04:33,180 --> 00:04:34,780
+And this this one here.
+
+71
+00:04:34,840 --> 00:04:36,120
+The nuclear board hasn't got.
+
+72
+00:04:37,740 --> 00:04:41,010
+The nuclear board hasn't got a ceramic crystal.
+
+73
+00:04:41,040 --> 00:04:45,030
+So this won't be required for a new clue.
+
+74
+00:04:45,660 --> 00:04:51,510
+But if you have that described as a ceramic resonator on the body, reason why Cube makes it allows
+
+75
+00:04:51,510 --> 00:04:57,300
+us to make this option is that the idea is you buy this microcontroller and order to a project.
+
+76
+00:04:57,330 --> 00:05:01,110
+And if I and it's your project, you add your own ceramic resonator.
+
+77
+00:05:02,100 --> 00:05:03,390
+It's not going to be a dev board.
+
+78
+00:05:03,420 --> 00:05:05,480
+This is for you in.
+
+79
+00:05:05,730 --> 00:05:06,570
+You know, production.
+
+80
+00:05:06,570 --> 00:05:08,430
+Great solutions.
+
+81
+00:05:08,850 --> 00:05:10,450
+So anyway, I've enabled this.
+
+82
+00:05:10,560 --> 00:05:12,090
+Let's go to the clock and see.
+
+83
+00:05:13,130 --> 00:05:14,400
+So Nundah often neighborhood.
+
+84
+00:05:14,600 --> 00:05:17,610
+I can choose HSC as my clock source.
+
+85
+00:05:17,670 --> 00:05:20,820
+Now I have the option to select both of them.
+
+86
+00:05:21,570 --> 00:05:21,960
+Right.
+
+87
+00:05:22,290 --> 00:05:25,620
+So there's a very quick overview of the clock configuration.
+
+88
+00:05:25,650 --> 00:05:26,760
+There isn't much here.
+
+89
+00:05:27,690 --> 00:05:31,050
+We just use it to adjust our clock as well as the peripheral clocks.
+
+90
+00:05:31,350 --> 00:05:32,580
+That's all you need to know with us.
+
+91
+00:05:32,610 --> 00:05:38,640
+Well, if we have any more information regarding the configuration of clock for a particular peripheral,
+
+92
+00:05:38,640 --> 00:05:40,140
+we'll talk more when we get it.
+
+93
+00:05:40,500 --> 00:05:41,100
+So that's it.
+
+94
+00:05:41,190 --> 00:05:42,210
+I'll show you the next lesson.
