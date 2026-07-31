@@ -1,0 +1,231 @@
+1
+00:00:00,890 --> 00:00:05,880
+Hello, welcome to the SDM 32, Cuba makes five on cube I.D. Eco's.
+
+2
+00:00:06,500 --> 00:00:12,800
+I'm glad you've made a decision to join thousands of other student who have enjoyed millions of quality
+
+3
+00:00:12,800 --> 00:00:14,870
+training minutes on this channel.
+
+4
+00:00:15,470 --> 00:00:20,630
+This course teaches you how to build embedded systems, firmware unpaired for drivers using the SDM
+
+5
+00:00:20,630 --> 00:00:26,540
+data, Cuban Mics five framework and the SDM 32 Kupe IDP development environment.
+
+6
+00:00:26,930 --> 00:00:32,300
+This course has many sections, but primarily the cause can be divided into three parts.
+
+7
+00:00:32,480 --> 00:00:35,570
+The first parts, those with perforin driver development.
+
+8
+00:00:35,750 --> 00:00:41,720
+In this part, we master how to use the SDM headed to Cuba, mix framework to set up clocks and Reges
+
+9
+00:00:41,720 --> 00:00:45,590
+the parameters of our peripheral drivers and then go on to the cube.
+
+10
+00:00:45,660 --> 00:00:47,420
+IDG Development Environment.
+
+11
+00:00:47,720 --> 00:00:55,160
+To complete the development and testing of the peripheral drivers, we show master different setup configurations
+
+12
+00:00:55,250 --> 00:00:56,600
+of our peripheral drivers.
+
+13
+00:00:56,690 --> 00:01:04,410
+In this part, the inspired Froese include the the USP, the P.W. and the S.P.I, the ADC, a U.
+
+14
+00:01:04,490 --> 00:01:06,790
+OT, the DME, etc..
+
+15
+00:01:07,880 --> 00:01:13,970
+The second part of this must of course, deals with developing embedded firmware applications using
+
+16
+00:01:13,970 --> 00:01:20,180
+some of the middleware provided by the SDM 32 queue remix framework, one of psychomotor where we sure
+
+17
+00:01:20,180 --> 00:01:23,210
+must not use the free Arktos real time canno.
+
+18
+00:01:23,750 --> 00:01:29,830
+We shall see how to use SDM headed to Cuba mix to create tasks, semaphores and other cannel components
+
+19
+00:01:29,840 --> 00:01:31,850
+for real time firmware development.
+
+20
+00:01:32,540 --> 00:01:38,900
+We should also see how to develop these canno components from scratch using only the cube IP development
+
+21
+00:01:38,900 --> 00:01:39,620
+environment.
+
+22
+00:01:39,950 --> 00:01:44,120
+Finally, the third part of the course deals with working with the Cube.
+
+23
+00:01:44,300 --> 00:01:50,150
+IDG as a standalone development environment over here, we shall see how to develop a metal embedded
+
+24
+00:01:50,150 --> 00:01:52,920
+C firmware and drivers without using any libraries.
+
+25
+00:01:53,270 --> 00:01:59,180
+We shall literally download the microcontrollers data sheet and develop our firmware and drive us using
+
+26
+00:01:59,180 --> 00:02:01,280
+information from the data sheets only.
+
+27
+00:02:01,790 --> 00:02:06,650
+We should then go on to use this same data sheet information to develop firmware and perfect drivers
+
+28
+00:02:06,700 --> 00:02:08,330
+using arm assembly language.
+
+29
+00:02:08,510 --> 00:02:14,990
+By the end of this course, you'd learn how to develop USP drivers and firmware and some of the practical
+
+30
+00:02:14,990 --> 00:02:15,700
+examples we showed.
+
+31
+00:02:15,860 --> 00:02:23,570
+Take a look at is building a USP, HD Mauer's device and a keyboard USP device, as well as configuring
+
+32
+00:02:23,570 --> 00:02:25,640
+your USP for virtual import.
+
+33
+00:02:26,570 --> 00:02:30,530
+Also, you would master the ADC driver and firmware development.
+
+34
+00:02:30,800 --> 00:02:34,220
+And we're going to take a look at different configurations of the ATC.
+
+35
+00:02:34,280 --> 00:02:40,940
+We're going to see how to convert, use and interrupt using the DMA and how to use multiple channels
+
+36
+00:02:41,000 --> 00:02:41,920
+of the ADC.
+
+37
+00:02:42,770 --> 00:02:49,820
+Further, you would also mosta time driver development and over here as well, which shall see different
+
+38
+00:02:49,820 --> 00:02:56,780
+configurations of the time timer configurations such as input, capture, interrupt mode and using the
+
+39
+00:02:56,840 --> 00:02:58,490
+time to count event.
+
+40
+00:02:59,240 --> 00:03:06,530
+Also, you'll be able to develop drivers for the S.P.I peripheral and just like the other peripherals,
+
+41
+00:03:06,560 --> 00:03:09,410
+we shall see different modes of configuration.
+
+42
+00:03:10,040 --> 00:03:14,720
+We shall see how to transfer, use and interrupt using the DMA and use in pooling.
+
+43
+00:03:15,920 --> 00:03:23,420
+Furthermore, you would be able to build bare metal embedded C firmware and drivers without using any
+
+44
+00:03:23,420 --> 00:03:25,790
+libraries using the Kubi D E only.
+
+45
+00:03:26,510 --> 00:03:32,690
+Also, you'll be able to create embedded drivers using arm assembly language from scratch without using
+
+46
+00:03:32,690 --> 00:03:33,470
+any libraries.
+
+47
+00:03:34,190 --> 00:03:38,660
+You will also be able to build Real-Time Firmware using the free Archos.
+
+48
+00:03:38,670 --> 00:03:40,430
+You'd be able to create your own tasks.
+
+49
+00:03:40,670 --> 00:03:42,380
+You'll be able to synchronize tasks.
+
+50
+00:03:42,410 --> 00:03:47,420
+You'll be able to use semaphores Mbewe takes and in fact, you'll be able to send notification between
+
+51
+00:03:47,420 --> 00:03:47,930
+tasks.
+
+52
+00:03:48,710 --> 00:03:54,350
+And then lastly, you'll be able to beaute other drivers, such as the you auto driver, and you'll
+
+53
+00:03:54,350 --> 00:04:00,500
+be able to configure it to work in different configuration modes such as DMA, poulain, interrupt,
+
+54
+00:04:00,640 --> 00:04:01,210
+etc..
+
+55
+00:04:01,520 --> 00:04:03,490
+Please take a look at the full course curriculum.
+
+56
+00:04:04,190 --> 00:04:06,080
+I have no doubt you would love this course.
+
+57
+00:04:06,680 --> 00:04:09,560
+Also, it comes with a full money back guarantee for 30 days.
+
+58
+00:04:09,860 --> 00:04:11,450
+So you've got nothing to lose.
