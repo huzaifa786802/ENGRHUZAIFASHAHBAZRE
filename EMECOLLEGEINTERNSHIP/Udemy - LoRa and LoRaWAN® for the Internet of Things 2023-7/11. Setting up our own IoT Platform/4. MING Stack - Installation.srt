@@ -1,0 +1,214 @@
+0
+1
+00:00:00,740 --> 00:00:02,810
+For the IoT platform installation.
+1
+
+2
+00:00:02,810 --> 00:00:07,640
+We're going to use a remote Linux server that we have rented in a cloud provider.
+2
+
+3
+00:00:08,120 --> 00:00:14,010
+For this example, the server name will be: iot-app.univ-lorawan.fr.
+3
+
+4
+00:00:14,480 --> 00:00:18,650
+If you don't have a remote server or a domain name, then don't worry.
+4
+
+5
+00:00:18,680 --> 00:00:21,200
+You can do it on your own machine if you want.
+5
+
+6
+00:00:21,500 --> 00:00:23,390
+We've prepared everything.
+6
+
+7
+00:00:23,420 --> 00:00:28,970
+The only thing you need to do is to download the configuration code from our GitHub repository.
+7
+
+8
+00:00:29,240 --> 00:00:32,570
+Git clone the repository called LoRaWAN.
+8
+
+9
+00:00:33,310 --> 00:00:40,650
+The configuration is in a file called Docker-compose.yml in the folder LoRaWAN/application/IoT-app
+9
+
+10
+00:00:40,690 --> 00:00:41,830
+...
+10
+
+11
+00:00:44,570 --> 00:00:51,860
+If you look at this Docker-compose.yml  file, then you can see the three services Node-RED, influxdb
+11
+
+12
+00:00:52,460 --> 00:00:53,360
+and Grafana.
+12
+
+13
+00:00:54,020 --> 00:01:00,170
+Obviously if you already have a Node-RED instance running because you installed it earlier in this course,
+13
+
+14
+00:01:00,170 --> 00:01:04,280
+then you have to command the Node-RED part using the # symbol.
+14
+
+15
+00:01:04,820 --> 00:01:09,530
+Otherwise you can stop your active Node-RED container and start everything over.
+15
+
+16
+00:01:10,130 --> 00:01:15,810
+Anyway, we're going to give the explanation from a fresh installation, so we'll build everything from
+16
+
+17
+00:01:15,810 --> 00:01:16,640
+the ground up.
+17
+
+18
+00:01:16,910 --> 00:01:20,420
+Let's see in detail what we have prepared for these three services.
+18
+
+19
+00:01:20,930 --> 00:01:27,740
+For Node-RED we've used the default Node-RED container, but we added the dashboard library, so we'll
+19
+
+20
+00:01:27,740 --> 00:01:31,040
+be able to create dashboard in Node-RED if you don't want to use Grafana.
+20
+
+21
+00:01:31,550 --> 00:01:38,030
+We also added a basic authentication to access the Node-RED web page with a login and password.
+21
+
+22
+00:01:38,420 --> 00:01:44,670
+The login is "admin" and the password is "univ-lorawan."
+22
+
+23
+00:01:44,730 --> 00:01:48,420
+For influxdb, there is also a username and a password to access the database.
+23
+
+24
+00:01:48,660 --> 00:01:53,910
+Again, it's "admin" for the username and "univ-lorawan" for the password.
+24
+
+25
+00:01:54,060 --> 00:01:56,490
+You can easily change it here if you want.
+25
+
+26
+00:01:56,940 --> 00:01:57,960
+For influxdb.
+26
+
+27
+00:01:58,170 --> 00:02:04,530
+We'll also see later that we need to provide the name of an organization, a bucket and a token.
+27
+
+28
+00:02:04,920 --> 00:02:10,260
+You can choose your own value here so that it will be applied during the container creation.
+28
+
+29
+00:02:10,590 --> 00:02:13,800
+If you don't provide these values, then it doesn't matter.
+29
+
+30
+00:02:13,800 --> 00:02:16,920
+You will be able to create them from the user interface later.
+30
+
+31
+00:02:17,430 --> 00:02:24,950
+And finally, to enter the Grafana user interface on Port 3000, we'll need the same username and password.
+31
+
+32
+00:02:24,960 --> 00:02:27,840
+And again, you can see that you can change it here.
+32
+
+33
+00:02:27,960 --> 00:02:28,560
+Great.
+33
+
+34
+00:02:28,560 --> 00:02:34,740
+So you can use the default value from this file and use it exactly as you've downloaded it without modifying
+34
+
+35
+00:02:34,740 --> 00:02:35,610
+anything.
+35
+
+36
+00:02:35,880 --> 00:02:37,770
+But be careful.
+36
+
+37
+00:02:37,890 --> 00:02:43,230
+Please check this configuration when you download the repository from GitHub because there might be
+37
+
+38
+00:02:43,230 --> 00:02:45,540
+little changes or updates on this file.
+38
+
+39
+00:02:46,230 --> 00:02:52,680
+When we're happy with the configuration, then we just need to use the command "sudo docker compose up -d"
+39
+
+40
+00:02:52,680 --> 00:02:53,430
+...
+40
+
+41
+00:02:54,510 --> 00:03:01,260
+All images are downloaded, containers are created and after a few seconds everything is up and running.
+41
+
+42
+00:03:01,830 --> 00:03:08,490
+As usual, we can check the running services with the command "sudo docker ps" and there we go.
+42
+
+43
+00:03:08,520 --> 00:03:12,870
+We have all the information on Node-RED, influxdb and Grafana.
