@@ -1,0 +1,351 @@
+1
+00:00:00,720 --> 00:00:00,990
+Hello.
+
+2
+00:00:01,110 --> 00:00:01,590
+Welcome back.
+
+3
+00:00:01,980 --> 00:00:08,180
+In this lesson, we shall see how to install some third packages into our estimate, 32 Chebet mix.
+
+4
+00:00:08,250 --> 00:00:10,980
+I'm going to open the Cuban mics we installed earlier.
+
+5
+00:00:11,700 --> 00:00:15,360
+Simply come over here a steam 32 and it's a piesse.
+
+6
+00:00:15,380 --> 00:00:16,110
+You click here.
+
+7
+00:00:17,960 --> 00:00:26,150
+And it says, cha cha cha cha re 32 bits detected Java G 64 bit as strongly advised with order to some
+
+8
+00:00:26,150 --> 00:00:27,650
+features might not be available.
+
+9
+00:00:27,830 --> 00:00:29,660
+So please install 64 bit.
+
+10
+00:00:30,090 --> 00:00:33,770
+So, Eddie, Jay, everyone's thought was a 32 bit.
+
+11
+00:00:33,800 --> 00:00:35,810
+The one that the link led us to.
+
+12
+00:00:36,140 --> 00:00:37,970
+So we've got to install 64 bit.
+
+13
+00:00:38,380 --> 00:00:41,930
+If you experience this sort of issue, then it's simple.
+
+14
+00:00:42,380 --> 00:00:44,000
+You simply need to install 64.
+
+15
+00:00:44,190 --> 00:00:50,370
+It is good that we are doing all of these things together so that you don't end up having roadblocks.
+
+16
+00:00:51,410 --> 00:00:59,750
+So you just come to Google, search Java or download GRV 64 bit in Google and or just.
+
+17
+00:00:59,750 --> 00:01:00,020
+Right.
+
+18
+00:01:00,020 --> 00:01:02,030
+Click on the first link to see what shows up.
+
+19
+00:01:06,560 --> 00:01:07,400
+Let's see.
+
+20
+00:01:15,370 --> 00:01:16,990
+Okay, it brings me here.
+
+21
+00:01:17,250 --> 00:01:20,760
+If it brings you to the documentation tab, just click on the download stuff.
+
+22
+00:01:22,120 --> 00:01:23,040
+Then let's see.
+
+23
+00:01:23,460 --> 00:01:25,010
+Download to pro me here.
+
+24
+00:01:31,230 --> 00:01:36,990
+Okay, so this that download tab, when you come here, the first time, it would look like this to
+
+25
+00:01:37,010 --> 00:01:40,170
+you, just scroll down to the bit where you see GRV over here.
+
+26
+00:01:40,710 --> 00:01:42,570
+Click Jeary Download.
+
+27
+00:01:52,030 --> 00:01:53,770
+And it brings us over here.
+
+28
+00:01:53,950 --> 00:01:54,220
+Oh.
+
+29
+00:01:54,340 --> 00:01:56,740
+Click here to accept the license agreement.
+
+30
+00:01:57,220 --> 00:01:59,200
+You can read up on this over here.
+
+31
+00:02:00,670 --> 00:02:01,570
+So click here.
+
+32
+00:02:03,010 --> 00:02:12,430
+Once it's accepted, come over here to download the O, download the dot e e version, Windows X 64
+
+33
+00:02:12,640 --> 00:02:13,240
+over here.
+
+34
+00:02:13,450 --> 00:02:15,350
+That's actually so click.
+
+35
+00:02:15,370 --> 00:02:16,120
+This one here.
+
+36
+00:02:20,960 --> 00:02:22,350
+It requires signing
+
+37
+00:02:25,020 --> 00:02:27,300
+a see.
+
+38
+00:02:35,440 --> 00:02:40,600
+We may have to create an account for or a coup or a coup.
+
+39
+00:02:41,370 --> 00:02:42,050
+Interesting.
+
+40
+00:02:42,760 --> 00:02:43,160
+OK.
+
+41
+00:02:43,240 --> 00:02:46,790
+So you've got to create an account and then proceed to download Chiari.
+
+42
+00:02:49,060 --> 00:02:51,970
+So I just locked in and to Jerry.
+
+43
+00:02:52,040 --> 00:02:54,610
+I started downloading as soon as I locked it.
+
+44
+00:02:55,090 --> 00:03:02,200
+So it turns out now even Oracle requires you to sign up before you can download things like the runtime
+
+45
+00:03:02,200 --> 00:03:02,990
+environments.
+
+46
+00:03:03,180 --> 00:03:04,210
+Bit ridiculous.
+
+47
+00:03:05,080 --> 00:03:05,720
+That's anyway.
+
+48
+00:03:06,070 --> 00:03:06,600
+Here we go.
+
+49
+00:03:19,250 --> 00:03:19,540
+Okay.
+
+50
+00:03:21,110 --> 00:03:21,610
+Okay.
+
+51
+00:03:21,980 --> 00:03:26,180
+The installation is the download is complete, a double click here to install it.
+
+52
+00:03:27,200 --> 00:03:28,350
+Click Yes, over here.
+
+53
+00:03:31,740 --> 00:03:36,880
+This is from the Cuba mixed message, which is, of course, Cuba mix when it opens.
+
+54
+00:03:36,950 --> 00:03:39,110
+Course, we are installing that geography now.
+
+55
+00:03:41,090 --> 00:03:42,450
+It's hidden behind here.
+
+56
+00:03:42,570 --> 00:03:43,260
+We're just close.
+
+57
+00:03:43,290 --> 00:03:44,490
+Cuba makes it from here.
+
+58
+00:03:45,840 --> 00:03:46,490
+This terms.
+
+59
+00:03:46,630 --> 00:03:48,350
+Okay, quick next.
+
+60
+00:03:50,670 --> 00:03:52,470
+It's going to go through the same process again.
+
+61
+00:04:06,370 --> 00:04:06,790
+Right.
+
+62
+00:04:06,850 --> 00:04:11,200
+So now the download is complete list, check out Cubitt mix again.
+
+63
+00:04:11,580 --> 00:04:13,120
+Now that the download is complete.
+
+64
+00:04:17,000 --> 00:04:17,900
+Come over here.
+
+65
+00:04:20,320 --> 00:04:23,500
+And then I'm going to start SDM 32.
+
+66
+00:04:23,570 --> 00:04:24,350
+Cuba makes.
+
+67
+00:04:32,360 --> 00:04:34,080
+Okay, now we've been over.
+
+68
+00:04:34,550 --> 00:04:37,580
+No, we've been able to open successfully without that warning.
+
+69
+00:04:38,120 --> 00:04:40,030
+I'm gonna come over here to help.
+
+70
+00:04:40,190 --> 00:04:40,590
+Help.
+
+71
+00:04:40,870 --> 00:04:44,990
+Top over here and I'll click manage and better software packages.
+
+72
+00:04:47,050 --> 00:04:49,180
+And over here, we given a list of packages.
+
+73
+00:04:49,210 --> 00:04:54,880
+We've got iStore packages for the day microcontrollers that we're going to be generating code for.
+
+74
+00:04:55,210 --> 00:05:00,360
+So if you are going to be using your cube that makes for F zero, f1, f2, F3, F4, F.
+
+75
+00:05:00,640 --> 00:05:02,860
+You've got to install packages for each and every one of them.
+
+76
+00:05:03,860 --> 00:05:06,520
+You're going to be using EF four in this course.
+
+77
+00:05:06,590 --> 00:05:13,480
+So I'll come down here and I'm going to download the package for the esteemed 32 EF four series.
+
+78
+00:05:14,060 --> 00:05:16,620
+Well, right here, they've got different versions of the package.
+
+79
+00:05:16,630 --> 00:05:22,540
+I'm going to select the latest version over here by clicking here and I'll click install now.
+
+80
+00:05:23,840 --> 00:05:28,720
+And this is going to take a while squaddies to download this and then extract it.
+
+81
+00:05:29,200 --> 00:05:30,350
+So we've got a wait.
+
+82
+00:05:32,500 --> 00:05:40,210
+So to install other packages, I can come to the, um, tub to install The Simpsons package over here
+
+83
+00:05:40,250 --> 00:05:42,670
+on the SDM 32 MCU packages.
+
+84
+00:05:42,730 --> 00:05:49,330
+I installed the one for F for O come to arm and then I'm going to select the latest Simms's package
+
+85
+00:05:49,330 --> 00:05:54,250
+available and I'll click install now and it's going to go through the same process.
+
+86
+00:05:57,080 --> 00:05:57,490
+Right.
+
+87
+00:05:57,680 --> 00:06:04,630
+The installation of the packages is complete now, so click over here to close this or there was for
+
+88
+00:06:04,640 --> 00:06:07,220
+this lesson and I shall see you in the next lesson.
