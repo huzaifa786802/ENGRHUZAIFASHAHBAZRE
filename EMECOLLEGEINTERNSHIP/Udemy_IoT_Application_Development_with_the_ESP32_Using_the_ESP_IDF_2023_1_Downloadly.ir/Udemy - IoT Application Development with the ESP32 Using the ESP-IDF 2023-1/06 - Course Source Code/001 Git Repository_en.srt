@@ -1,0 +1,40 @@
+1
+00:00:06,630 --> 00:00:10,080
+OK, so just a brief word about the jet repository for this course.
+
+2
+00:00:10,560 --> 00:00:15,480
+The link within the resources here will take you to the master branch, which contains the finalized
+
+3
+00:00:15,480 --> 00:00:19,650
+source code everything that was typed and shown in the course in its final state.
+
+4
+00:00:20,130 --> 00:00:25,180
+And if you go to the dropdown here, there was another branch called Contribution Station Improvements.
+
+5
+00:00:26,130 --> 00:00:30,900
+And I created this branch in the case that anyone happens to find ways to improve the source code.
+
+6
+00:00:31,470 --> 00:00:37,020
+So if you do find something that can be improved, please feel free to message me with details and I'll
+
+7
+00:00:37,020 --> 00:00:40,710
+test it out as soon as I can and then add the changes to this branch here.
+
+8
+00:00:42,020 --> 00:00:47,480
+And if you'd like to get notifications about the course repository, just come here and adjust the watch
+
+9
+00:00:47,480 --> 00:00:48,350
+notifications.
+
+10
+00:00:48,980 --> 00:00:49,340
+OK?
+
