@@ -1,0 +1,216 @@
+1
+00:00:07,410 --> 00:00:11,160
+Now we need to update the Web page files in order to display the time.
+
+2
+00:00:11,790 --> 00:00:16,710
+So let's start off at the top of index HTML and under the header here.
+
+3
+00:00:17,310 --> 00:00:18,450
+Let's add a new Div ID.
+
+4
+00:00:21,810 --> 00:00:23,100
+And call it local time.
+
+5
+00:00:26,850 --> 00:00:27,990
+And now let's close it.
+
+6
+00:00:31,160 --> 00:00:32,930
+And also create a horizontal rule.
+
+7
+00:00:35,030 --> 00:00:41,030
+And then inside the div, let's create an H2 for S&P time synchronization.
+
+8
+00:00:47,280 --> 00:00:48,570
+And then make a label for.
+
+9
+00:00:51,960 --> 00:00:52,860
+For local time.
+
+10
+00:00:55,510 --> 00:00:57,130
+And right, connect to Wi-Fi.
+
+11
+00:00:59,370 --> 00:01:00,210
+For local time.
+
+12
+00:01:03,120 --> 00:01:04,260
+Then let's close the label.
+
+13
+00:01:07,450 --> 00:01:08,620
+Then let's create a divide.
+
+14
+00:01:10,030 --> 00:01:10,930
+For the local time.
+
+15
+00:01:13,080 --> 00:01:14,100
+And then close the divide.
+
+16
+00:01:17,720 --> 00:01:20,870
+So that takes care of our label and our divide for local time.
+
+17
+00:01:21,290 --> 00:01:23,860
+So now we can update the styling and apt at CSIS.
+
+18
+00:01:26,800 --> 00:01:29,440
+So let's come here and copy this one.
+
+19
+00:01:31,490 --> 00:01:32,870
+And let's just paste it up here.
+
+20
+00:01:34,540 --> 00:01:36,460
+And let's change it to local time.
+
+21
+00:01:40,170 --> 00:01:40,710
+And that's it.
+
+22
+00:01:42,050 --> 00:01:43,820
+So now we can go to D.J.s.
+
+23
+00:01:46,310 --> 00:01:49,550
+And now go to the top of the file within the very function.
+
+24
+00:01:50,670 --> 00:01:52,110
+And we'll call the new function here.
+
+25
+00:01:54,110 --> 00:01:56,120
+And call it start local time interval.
+
+26
+00:02:01,950 --> 00:02:06,120
+OK, so now let's copy this, because we're going to define it at the bottom of the file.
+
+27
+00:02:10,100 --> 00:02:13,520
+And here that's comment that this function sets the interval.
+
+28
+00:02:15,380 --> 00:02:16,700
+For displaying local time.
+
+29
+00:02:20,940 --> 00:02:21,690
+Right function.
+
+30
+00:02:22,770 --> 00:02:24,180
+Start local time interval.
+
+31
+00:02:27,290 --> 00:02:28,940
+And then he will use the set interval.
+
+32
+00:02:31,200 --> 00:02:36,390
+And then we'll set the interval to call a function to get the local time, and we'll call it get local
+
+33
+00:02:36,390 --> 00:02:36,750
+time.
+
+34
+00:02:39,790 --> 00:02:41,500
+And we'll call it every 10 seconds.
+
+35
+00:02:46,070 --> 00:02:47,360
+OK, so now let's go to find it.
+
+36
+00:02:49,810 --> 00:02:52,450
+And this function gets the local time.
+
+37
+00:02:55,860 --> 00:02:56,640
+And I'll make a note.
+
+38
+00:02:57,740 --> 00:03:00,170
+And say connect the ESP 30 to.
+
+39
+00:03:02,270 --> 00:03:03,110
+To the internet.
+
+40
+00:03:04,140 --> 00:03:05,460
+And the time will be updated.
+
+41
+00:03:11,360 --> 00:03:12,470
+And then right function.
+
+42
+00:03:14,200 --> 00:03:15,160
+Get local time.
+
+43
+00:03:19,710 --> 00:03:21,450
+And then here will use get Jason.
+
+44
+00:03:25,290 --> 00:03:27,600
+And we'll say forward slash local time.
+
+45
+00:03:28,610 --> 00:03:29,450
+That, Jason.
+
+46
+00:03:30,990 --> 00:03:32,790
+Comma function.
+
+47
+00:03:33,560 --> 00:03:34,010
+Data.
+
+48
+00:03:35,480 --> 00:03:38,630
+And open the curly braces, and he will specify or divide.
+
+49
+00:03:39,860 --> 00:03:40,550
+Local time.
+
+50
+00:03:42,900 --> 00:03:44,460
+And then say that text.
+
+51
+00:03:47,400 --> 00:03:48,120
+And it's time.
+
+52
+00:03:51,550 --> 00:03:53,230
+OK, and then close it with the semicolon.
+
+53
+00:03:55,250 --> 00:03:58,180
+And that's it, and that's all for the Web page programming.
+
+54
+00:03:58,490 --> 00:04:01,100
+And in the next lesson, we'll continue with the FTP seven.
+

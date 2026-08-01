@@ -1,0 +1,752 @@
+1
+00:00:07,190 --> 00:00:10,070
+All right, so let's start off by creating a new source file under Maine.
+
+2
+00:00:15,280 --> 00:00:17,530
+And call it S&P Time Sink.
+
+3
+00:00:19,400 --> 00:00:19,910
+Gutsy.
+
+4
+00:00:22,250 --> 00:00:23,570
+And now create a new header file.
+
+5
+00:00:27,140 --> 00:00:29,150
+And it's S&P time sink.
+
+6
+00:00:35,710 --> 00:00:37,300
+And now let's go to see make lists.
+
+7
+00:00:38,920 --> 00:00:41,350
+And let's add here, the S&P time sync.
+
+8
+00:00:43,290 --> 00:00:44,100
+That see file.
+
+9
+00:00:45,620 --> 00:00:47,570
+All right, so now we can go to tasks coming.
+
+10
+00:00:51,090 --> 00:00:53,580
+And here let's go to the very bottom in here.
+
+11
+00:00:54,730 --> 00:00:56,080
+And let's add the information.
+
+12
+00:00:57,050 --> 00:00:59,900
+For the S&P Time Sync Task.
+
+13
+00:01:03,210 --> 00:01:05,940
+And now let's define S&P time sink.
+
+14
+00:01:09,770 --> 00:01:12,830
+And now a copy this part and its stack size.
+
+15
+00:01:14,860 --> 00:01:16,660
+And make it four thousand ninety six.
+
+16
+00:01:18,620 --> 00:01:21,320
+The next defined priority as for.
+
+17
+00:01:23,780 --> 00:01:24,740
+And the core idea.
+
+18
+00:01:26,420 --> 00:01:26,990
+As one.
+
+19
+00:01:29,350 --> 00:01:30,490
+OK, so we're good to go.
+
+20
+00:01:31,150 --> 00:01:33,010
+So now we can go to the time sink header.
+
+21
+00:01:33,960 --> 00:01:36,870
+And now here we're going to define a couple of function prototypes.
+
+22
+00:01:37,620 --> 00:01:41,910
+And first, let's define a prototype that starts the A.P. server.
+
+23
+00:01:44,260 --> 00:01:45,550
+Synchronization task.
+
+24
+00:01:47,800 --> 00:01:51,940
+And it's a void S&P time sink Teske start.
+
+25
+00:01:53,600 --> 00:01:54,290
+And it's void.
+
+26
+00:01:58,170 --> 00:02:03,090
+OK, now let's define another prototype, which returns local time.
+
+27
+00:02:04,020 --> 00:02:07,710
+If set and the return is the local time buffer.
+
+28
+00:02:14,170 --> 00:02:16,270
+OK, so the return is a point to.
+
+29
+00:02:17,450 --> 00:02:19,390
+And it's S&P time sink.
+
+30
+00:02:20,210 --> 00:02:20,870
+Get time.
+
+31
+00:02:21,960 --> 00:02:22,680
+And it's void.
+
+32
+00:02:26,320 --> 00:02:27,250
+All right, so that's it.
+
+33
+00:02:27,790 --> 00:02:29,050
+So now we can copy this.
+
+34
+00:02:30,360 --> 00:02:32,520
+And we can head over to the see file and to find them there.
+
+35
+00:02:34,790 --> 00:02:38,330
+And let's first just put them here, and I'll clean them up a bit.
+
+36
+00:02:45,950 --> 00:02:47,300
+All right, so we'll define those later.
+
+37
+00:02:47,330 --> 00:02:51,610
+Now let's just go up and include here ESP luggage.
+
+38
+00:02:53,020 --> 00:02:53,950
+And now include.
+
+39
+00:02:55,320 --> 00:02:58,110
+Free autos slash free auto, Sturridge.
+
+40
+00:03:00,060 --> 00:03:01,020
+And also include.
+
+41
+00:03:02,510 --> 00:03:03,350
+Free autos.
+
+42
+00:03:04,770 --> 00:03:06,180
+Slash task, dunwich.
+
+43
+00:03:08,160 --> 00:03:09,090
+And next include.
+
+44
+00:03:10,410 --> 00:03:14,820
+Lightweight IP apps, S.A. Pietrowicz.
+
+45
+00:03:16,770 --> 00:03:20,970
+And now for our application includes let's include tasks common.
+
+46
+00:03:24,490 --> 00:03:25,750
+And we also need to include.
+
+47
+00:03:27,120 --> 00:03:28,080
+FTP server.
+
+48
+00:03:30,070 --> 00:03:31,660
+We also need to include our.
+
+49
+00:03:32,770 --> 00:03:34,240
+S&P time sink.
+
+50
+00:03:35,200 --> 00:03:35,650
+Courage.
+
+51
+00:03:37,370 --> 00:03:38,600
+And lastly, let's include.
+
+52
+00:03:39,590 --> 00:03:41,690
+Include the wife at that age.
+
+53
+00:03:43,010 --> 00:03:46,070
+OK, now I'll just build to resolve these unresolved includes you.
+
+54
+00:03:48,560 --> 00:03:49,800
+Whoops, I tried to save.
+
+55
+00:03:49,820 --> 00:03:52,970
+Well, it's building, so that's OK, I'll just let it continue.
+
+56
+00:04:05,280 --> 00:04:09,960
+OK, so we're back, right, so here, let's do a static const care.
+
+57
+00:04:14,440 --> 00:04:16,600
+And call it S&P Time Sink.
+
+58
+00:04:20,680 --> 00:04:24,610
+And because I had prefer having the task start function at the bottom of the file.
+
+59
+00:04:25,880 --> 00:04:26,810
+I'll just move it there.
+
+60
+00:04:28,210 --> 00:04:32,620
+And then here we'll use X to create PIN to Core.
+
+61
+00:04:35,130 --> 00:04:38,460
+And the tax code is a reference to S&P time sink.
+
+62
+00:04:40,940 --> 00:04:43,430
+And the name is also S&P time sync.
+
+63
+00:04:45,610 --> 00:04:49,090
+When the stack depth S&P time sync task.
+
+64
+00:04:52,610 --> 00:04:53,450
+Stack size.
+
+65
+00:04:55,100 --> 00:04:56,840
+PV parameters are no.
+
+66
+00:04:57,980 --> 00:05:02,630
+And the priority is as interview time sink to ask priority.
+
+67
+00:05:04,860 --> 00:05:10,710
+And the test scandal is now in the core idea is the S&P time sync task.
+
+68
+00:05:12,110 --> 00:05:12,600
+Caller ID.
+
+69
+00:05:16,950 --> 00:05:19,950
+Now, let's create the S&P Time Sync function.
+
+70
+00:05:22,760 --> 00:05:23,730
+And let's do it here.
+
+71
+00:05:24,710 --> 00:05:28,610
+It'll be the soon to be time synchronization task.
+
+72
+00:05:31,340 --> 00:05:35,170
+And the parameter ARG is a point of variable parameter.
+
+73
+00:05:39,150 --> 00:05:40,260
+It's a static void.
+
+74
+00:05:41,480 --> 00:05:43,130
+And it's our time sync task.
+
+75
+00:05:44,690 --> 00:05:45,950
+And it's a void pointer.
+
+76
+00:05:47,020 --> 00:05:47,860
+PV Perram.
+
+77
+00:05:49,970 --> 00:05:53,360
+Now here, let's create an infinite loop and we can use a wild one.
+
+78
+00:05:56,210 --> 00:06:01,910
+And in here, we'll call the centipede time sink, obtain time function, and we'll define this shortly.
+
+79
+00:06:02,270 --> 00:06:06,710
+So it's the S&P time sink, obtain time.
+
+80
+00:06:11,560 --> 00:06:17,020
+And now we can add a delay here and in our implementation, we'll continue checking if the time is updated
+
+81
+00:06:17,020 --> 00:06:18,100
+based on this delay.
+
+82
+00:06:18,760 --> 00:06:23,350
+But of course, you can adjust this to your needs, or maybe you even want to kill the task once the
+
+83
+00:06:23,350 --> 00:06:24,910
+time is up to date, for example.
+
+84
+00:06:25,900 --> 00:06:28,030
+So here, let's use B tasks delay.
+
+85
+00:06:31,550 --> 00:06:34,310
+And let's do this every ten thousand milliseconds.
+
+86
+00:06:45,000 --> 00:06:51,030
+OK, and should the task implementation of a breakout of the above loop, we can call vortex delete.
+
+87
+00:06:51,510 --> 00:06:52,350
+So let's do that.
+
+88
+00:06:54,770 --> 00:06:55,910
+In personal to it.
+
+89
+00:06:59,740 --> 00:07:02,680
+OK, so next, let's define the uptick in time function.
+
+90
+00:07:03,920 --> 00:07:05,720
+And up here, let's say.
+
+91
+00:07:07,170 --> 00:07:08,370
+Gets the current time.
+
+92
+00:07:09,650 --> 00:07:12,830
+And if the current time is not up to date.
+
+93
+00:07:15,070 --> 00:07:17,020
+The S&P time sync.
+
+94
+00:07:18,220 --> 00:07:19,630
+And S&P.
+
+95
+00:07:20,800 --> 00:07:21,760
+Function is called.
+
+96
+00:07:26,490 --> 00:07:30,780
+And it's a static void up to in time, and it's void.
+
+97
+00:07:33,380 --> 00:07:38,510
+And first of all, say, time type now equals zero.
+
+98
+00:07:39,880 --> 00:07:47,500
+And next will create the time infrastructure in here, use struct Tim and call it time info and now
+
+99
+00:07:47,500 --> 00:07:48,370
+set it to zero.
+
+100
+00:07:49,790 --> 00:07:50,390
+Like so.
+
+101
+00:07:51,800 --> 00:07:56,780
+And now we'll call the time function and pass a reference to our time type variable.
+
+102
+00:07:56,810 --> 00:07:57,230
+Now.
+
+103
+00:08:00,260 --> 00:08:05,210
+The next use, the local time underscore our function to update the TM structure.
+
+104
+00:08:05,280 --> 00:08:08,090
+So let's call local time, underscore I.
+
+105
+00:08:09,280 --> 00:08:10,600
+And pass a reference to now.
+
+106
+00:08:11,660 --> 00:08:13,430
+And a reference to time info.
+
+107
+00:08:17,550 --> 00:08:19,530
+All right, so next, we'll check the time.
+
+108
+00:08:21,660 --> 00:08:23,790
+In case we need to initialize.
+
+109
+00:08:25,260 --> 00:08:26,940
+Slash re initialize.
+
+110
+00:08:29,820 --> 00:08:33,419
+So, right, if time info does you.
+
+111
+00:08:37,360 --> 00:08:41,620
+Is less than twenty sixteen minus 9500.
+
+112
+00:08:46,430 --> 00:08:49,100
+Then we should S&P time sink.
+
+113
+00:08:50,470 --> 00:08:52,150
+In it, S&P.
+
+114
+00:08:54,320 --> 00:08:58,790
+So we'll call this function if the time is not up to date, and we'll define it shortly.
+
+115
+00:08:59,180 --> 00:09:02,000
+So next, we'll set the local time zone.
+
+116
+00:09:04,580 --> 00:09:07,790
+And you set envy and specify to.
+
+117
+00:09:09,700 --> 00:09:13,630
+And now I'll into my time zone, and so you can just into yours as well.
+
+118
+00:09:23,480 --> 00:09:25,430
+And you could set the last parameter as one.
+
+119
+00:09:27,730 --> 00:09:28,090
+All right.
+
+120
+00:09:28,720 --> 00:09:33,250
+So you can check the file that I've attached in the resources and look for your time zone there and
+
+121
+00:09:33,250 --> 00:09:34,150
+then just enter it here.
+
+122
+00:09:35,300 --> 00:09:37,070
+OK, next call to set.
+
+123
+00:09:39,380 --> 00:09:42,200
+And that's to initialize the time zone conversion routine.
+
+124
+00:09:43,500 --> 00:09:49,800
+OK, so next, we need a global variable here for the S&P operating mode status.
+
+125
+00:09:53,140 --> 00:09:57,190
+And we need this variable because we only want to set the operating mode once.
+
+126
+00:09:57,700 --> 00:09:59,230
+So it's a static pool.
+
+127
+00:10:01,020 --> 00:10:03,420
+S&P Up mode set.
+
+128
+00:10:04,690 --> 00:10:05,800
+Instead, it's a false.
+
+129
+00:10:07,050 --> 00:10:07,550
+OK.
+
+130
+00:10:07,590 --> 00:10:15,300
+And next, let's define the initialize S&P function will come into you, initialize S&P service.
+
+131
+00:10:17,080 --> 00:10:21,580
+Using S&P Up mode poll mode.
+
+132
+00:10:24,390 --> 00:10:26,340
+OK, so I'll copy the function.
+
+133
+00:10:28,110 --> 00:10:29,580
+And here it's static void.
+
+134
+00:10:31,440 --> 00:10:32,220
+And it's void.
+
+135
+00:10:34,750 --> 00:10:37,030
+And first, let's S.P. lug.
+
+136
+00:10:39,500 --> 00:10:41,000
+And say initializing.
+
+137
+00:10:44,040 --> 00:10:45,690
+The centrepiece service.
+
+138
+00:10:50,130 --> 00:10:54,900
+Now, right, if not, S&P Up mode said.
+
+139
+00:10:57,830 --> 00:11:01,310
+So if it's not set, will set the operating mode.
+
+140
+00:11:04,550 --> 00:11:11,630
+Using S&P set operating mode and then pass S&P Up mode pull.
+
+141
+00:11:17,480 --> 00:11:20,600
+And then now we can set this variable to true.
+
+142
+00:11:24,700 --> 00:11:28,660
+And then next, we can call S&P set ServerName.
+
+143
+00:11:31,740 --> 00:11:33,330
+And the first parameter is zero.
+
+144
+00:11:34,460 --> 00:11:37,520
+And the second is pool that A.P. talk.
+
+145
+00:11:40,960 --> 00:11:44,020
+And now we can initialize the servers.
+
+146
+00:11:46,210 --> 00:11:48,130
+Using S&P in it.
+
+147
+00:11:51,000 --> 00:11:54,660
+And then we can let the FTP server know.
+
+148
+00:11:55,860 --> 00:11:57,300
+Service is initialized.
+
+149
+00:12:00,240 --> 00:12:02,670
+By calling a CTB server monitor.
+
+150
+00:12:04,660 --> 00:12:12,790
+Send a message and we'll create a new message for this and call it HTP message time service initialized.
+
+151
+00:12:18,820 --> 00:12:23,620
+All right, so that will be our new message for the FTP server, and we'll define it later.
+
+152
+00:12:23,770 --> 00:12:26,260
+For now, let's just go to the get time function.
+
+153
+00:12:29,020 --> 00:12:35,380
+And will return a buffer here, so it needs to be a static care and call it time buffer.
+
+154
+00:12:37,240 --> 00:12:41,740
+And one hundred bytes should be enough and set it to zero.
+
+155
+00:12:45,080 --> 00:12:45,430
+All right.
+
+156
+00:12:46,010 --> 00:12:47,270
+So I'll make a little room here.
+
+157
+00:12:52,100 --> 00:12:55,750
+Then let's use the time type now instead of two zero.
+
+158
+00:12:56,990 --> 00:13:00,050
+And we also need our struct. team time info.
+
+159
+00:13:01,820 --> 00:13:02,870
+And set that to zero.
+
+160
+00:13:05,490 --> 00:13:08,610
+And then call the time function with a reference to now.
+
+161
+00:13:10,210 --> 00:13:12,640
+The now called local time underscored our.
+
+162
+00:13:13,700 --> 00:13:16,760
+In reference now and then reference time for.
+
+163
+00:13:19,090 --> 00:13:24,110
+Then let's do a check and say if time info that TMU.
+
+164
+00:13:26,290 --> 00:13:27,100
+Is less than.
+
+165
+00:13:28,600 --> 00:13:31,570
+Twenty sixteen, minus nineteen hundred.
+
+166
+00:13:34,140 --> 00:13:35,370
+Then we'll ESP log.
+
+167
+00:13:38,160 --> 00:13:39,600
+Time is not set yet.
+
+168
+00:13:43,590 --> 00:13:44,670
+Then they'll say else.
+
+169
+00:13:47,420 --> 00:13:49,850
+And then now we can call CRF Time.
+
+170
+00:13:52,070 --> 00:13:56,960
+And this function is similar to aspirin death, which enables formatting the time and date string.
+
+171
+00:13:57,140 --> 00:13:59,780
+OK, so first we'll do this to the time buffer.
+
+172
+00:14:01,230 --> 00:14:02,250
+For the size of.
+
+173
+00:14:03,580 --> 00:14:04,480
+The time buffer.
+
+174
+00:14:06,610 --> 00:14:08,530
+And then now will format the day.
+
+175
+00:14:10,450 --> 00:14:11,050
+The month.
+
+176
+00:14:13,040 --> 00:14:13,550
+The year.
+
+177
+00:14:15,280 --> 00:14:16,000
+And the hour.
+
+178
+00:14:20,490 --> 00:14:21,180
+And the second.
+
+179
+00:14:24,240 --> 00:14:26,850
+OK, and we'll get the information from time info.
+
+180
+00:14:31,740 --> 00:14:33,240
+And then let's S.P. lug.
+
+181
+00:14:35,340 --> 00:14:36,630
+The current time info.
+
+182
+00:14:42,830 --> 00:14:44,450
+From the time buffer.
+
+183
+00:14:48,750 --> 00:14:51,480
+And then we can return the time buffer.
+
+184
+00:14:56,580 --> 00:14:58,410
+So now we can copy our new message.
+
+185
+00:15:01,310 --> 00:15:04,040
+And then let's go define it in the HTTP server header.
+
+186
+00:15:06,860 --> 00:15:08,840
+And let's just included as a message right here.
+
+187
+00:15:13,190 --> 00:15:14,630
+All right, so that's it for now.
+
+188
+00:15:14,660 --> 00:15:15,950
+Let's continue in the next lesson.
+

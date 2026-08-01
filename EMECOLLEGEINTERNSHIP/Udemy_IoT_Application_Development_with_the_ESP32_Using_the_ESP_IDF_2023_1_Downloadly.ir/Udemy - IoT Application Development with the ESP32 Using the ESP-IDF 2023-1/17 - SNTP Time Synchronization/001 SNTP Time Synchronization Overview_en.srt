@@ -1,0 +1,216 @@
+1
+00:00:07,190 --> 00:00:13,190
+Welcome to the soon to be time synchronisation section here, I'll describe the implementation and provide
+
+2
+00:00:13,190 --> 00:00:18,440
+some very brief background information about Simple Network Time Protocol and discuss the relevant ESP
+
+3
+00:00:18,440 --> 00:00:19,820
+RDF APIs as well.
+
+4
+00:00:21,460 --> 00:00:23,260
+So let's get right into the implementation.
+
+5
+00:00:25,320 --> 00:00:31,140
+Once the ESP 32 has a connection, meaning you've connected to an access point with an internet connection,
+
+6
+00:00:31,530 --> 00:00:37,980
+the S&P Tasks start function will be called the task start function will set off the free auto's time
+
+7
+00:00:37,980 --> 00:00:42,330
+synchronization task, which will call a function which obtains the updated time.
+
+8
+00:00:43,140 --> 00:00:48,660
+Also, I should mention that in this implementation, the task will keep synchronizing and checking
+
+9
+00:00:48,660 --> 00:00:49,890
+that the time is up to date.
+
+10
+00:00:51,040 --> 00:00:57,490
+Regarding the obtained time function, this function will initialize the same TV service to query Nesson
+
+11
+00:00:57,490 --> 00:00:59,590
+TBE server for the Universal Time.
+
+12
+00:01:00,220 --> 00:01:05,670
+Furthermore, the obtained time function will be initialized in case the time is not up to date.
+
+13
+00:01:06,600 --> 00:01:10,770
+The local time zone will be set once the SMTP service has been initialized.
+
+14
+00:01:11,800 --> 00:01:16,390
+The Web server will be alerted upon initialization and will respond with the updated time.
+
+15
+00:01:23,260 --> 00:01:27,280
+All right, so let's take a look at some additional information about Simple Network time protocol.
+
+16
+00:01:29,380 --> 00:01:35,800
+S&P or Simple Network Time Protocol is a protocol designed to synchronize the clock of devices connected
+
+17
+00:01:35,800 --> 00:01:36,460
+to the internet.
+
+18
+00:01:37,120 --> 00:01:44,230
+The basic operation is as follows The client, or ESP 32, connects to the server using the UDP protocol
+
+19
+00:01:44,230 --> 00:01:45,640
+on Port 123.
+
+20
+00:01:46,390 --> 00:01:51,580
+The client transmits the request packet to the server, then the server responds with the timestamp
+
+21
+00:01:51,580 --> 00:01:52,030
+packet.
+
+22
+00:01:52,900 --> 00:01:55,840
+The client can then pass out the current date and time values.
+
+23
+00:01:56,500 --> 00:02:02,650
+So in general, if the ESP 32 is connected to the internet, it can get the time and date using S&P.
+
+24
+00:02:03,580 --> 00:02:09,280
+Also, I should mention that S&P in the SPF is supported by lightweight IP functions.
+
+25
+00:02:11,700 --> 00:02:16,530
+Now, let's review how the SPF can help us with getting us up and running.
+
+26
+00:02:19,070 --> 00:02:22,670
+I suggest you review the A.P. documentation from Impressive.
+
+27
+00:02:23,240 --> 00:02:28,130
+You can find all of the relevant information here, as well as some of the functions we'll be using.
+
+28
+00:02:29,510 --> 00:02:35,930
+Also, I should mention that will set the time zone using the following functions here set in, we will
+
+29
+00:02:35,930 --> 00:02:42,380
+used to set the particular time zone and to set to initialize the time zone conversion routine.
+
+30
+00:02:43,100 --> 00:02:44,960
+More on this in a moment in the next slides.
+
+31
+00:02:47,170 --> 00:02:50,680
+All right, so some of this may not come together until we actually start writing the code.
+
+32
+00:02:51,010 --> 00:02:53,410
+But I think a quick review may help when we actually do that.
+
+33
+00:02:54,550 --> 00:03:00,070
+All right, so after the free autos task kicks off and the obtained time function is called, the Initialize
+
+34
+00:03:00,190 --> 00:03:06,400
+S.P. function is called for, the first SMTP function is used, which configures the client in pull
+
+35
+00:03:06,400 --> 00:03:08,980
+mode to query the server every seconds.
+
+36
+00:03:09,610 --> 00:03:16,120
+The function that accomplishes this is the soon to be set operating mode function using the step up
+
+37
+00:03:16,120 --> 00:03:18,460
+mode poll as the input parameter.
+
+38
+00:03:20,680 --> 00:03:26,950
+Also within the Initialise S.A. function, we'll tell the client which server to use a common choice
+
+39
+00:03:26,950 --> 00:03:34,630
+is a cluster of servers from pool that A.P. org will specify this in the function, S&P said.
+
+40
+00:03:34,630 --> 00:03:35,350
+Server name.
+
+41
+00:03:36,660 --> 00:03:43,560
+Then we'll initialize the service using S.P. Initialise once that's done, we can then set the time
+
+42
+00:03:43,560 --> 00:03:46,650
+zone variable and initialize the time zone conversion.
+
+43
+00:03:47,310 --> 00:03:54,150
+We'll set the time zone using the set EMV function, specifying Tzi for the time zone and your local
+
+44
+00:03:54,150 --> 00:04:00,600
+time zone string, and then call the time zone set function to initialize the time zone conversion routine.
+
+45
+00:04:04,570 --> 00:04:10,330
+After the service is initialized, we'll need to check if the system clock is updated, the time to
+
+46
+00:04:10,330 --> 00:04:12,290
+get the actual time from the system clock.
+
+47
+00:04:12,730 --> 00:04:18,880
+We'll use the time function, which updates the time type variable and to split the variable into different
+
+48
+00:04:18,880 --> 00:04:21,310
+time values such as year, month and day.
+
+49
+00:04:21,820 --> 00:04:27,910
+The local time underscore our function is used, which updates the team structure as shown in the image
+
+50
+00:04:27,910 --> 00:04:28,210
+here.
+
+51
+00:04:29,450 --> 00:04:33,020
+Well, then check the information from the team struck to see if the time was set.
+
+52
+00:04:33,620 --> 00:04:35,210
+Just like in the image shown below.
+
+53
+00:04:38,210 --> 00:04:39,570
+All right, so that's enough for now.
+
+54
+00:04:39,590 --> 00:04:41,210
+Let's get to coding in the next section.
+
