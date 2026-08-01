@@ -1,0 +1,9 @@
+
+001 ESP-IDF-Programming-Guide
+https://docs.espressif.com/projects/esp-idf/en/latest/esp32/
+
+001 API-Reference
+https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/index.html
+
+001 Espressif-ESP-IDF-GitHub-Project-Examples-
+https://github.com/espressif/esp-idf/tree/master/examples

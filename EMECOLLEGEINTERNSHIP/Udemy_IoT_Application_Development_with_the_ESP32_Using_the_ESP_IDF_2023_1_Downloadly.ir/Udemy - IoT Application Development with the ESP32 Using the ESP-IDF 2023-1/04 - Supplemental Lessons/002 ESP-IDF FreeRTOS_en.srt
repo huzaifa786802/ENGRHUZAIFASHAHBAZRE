@@ -1,0 +1,396 @@
+1
+00:00:06,680 --> 00:00:09,140
+All right, so continuing with the supplemental lessons.
+
+2
+00:00:09,320 --> 00:00:15,110
+Let's briefly review the ESP IDF Riotous as a precursor to what's to come in the application development
+
+3
+00:00:15,110 --> 00:00:15,650
+lessons.
+
+4
+00:00:16,219 --> 00:00:20,240
+So the scope of this lesson won't be too exhaustive and will be limited to the following.
+
+5
+00:00:20,540 --> 00:00:25,310
+I'll show you where to find documentation if you want to go more in-depth into free photos, and then
+
+6
+00:00:25,310 --> 00:00:31,100
+we'll review some differences from the ESP IDF version of free autos with the vanilla or regular free
+
+7
+00:00:31,100 --> 00:00:31,670
+autos.
+
+8
+00:00:32,119 --> 00:00:39,020
+And then we'll take a look at Teske states test creation and the X Test Create Penta Core API and the
+
+9
+00:00:39,020 --> 00:00:40,550
+V task delay as well.
+
+10
+00:00:40,910 --> 00:00:42,230
+All right, so let's jump right in.
+
+11
+00:00:42,860 --> 00:00:48,680
+OK, so in the case that you're new to free autos, Free Autos is a real time operating system kernel
+
+12
+00:00:48,680 --> 00:00:54,650
+for embedded devices, and the following page from free auto storage provides a clear description of
+
+13
+00:00:54,650 --> 00:00:55,370
+an arthouse.
+
+14
+00:00:56,360 --> 00:01:02,570
+So to summarize, the scheduler in a Real-Time Operating System is designed to provide a predictable
+
+15
+00:01:02,570 --> 00:01:08,480
+execution pattern, and often embedded systems have real time requirements, which means that they must
+
+16
+00:01:08,480 --> 00:01:12,650
+respond to a certain event within a strictly defined time or deadline.
+
+17
+00:01:12,950 --> 00:01:18,740
+The guarantee to meet these requirements can only be made if the behavior of the operating system scheduler
+
+18
+00:01:18,740 --> 00:01:21,050
+can be predicted or is deterministic.
+
+19
+00:01:21,620 --> 00:01:22,010
+All right.
+
+20
+00:01:22,430 --> 00:01:27,590
+So you may want to bookmark this link for the free or books available from Free Autostart.
+
+21
+00:01:27,590 --> 00:01:28,370
+Org here.
+
+22
+00:01:29,400 --> 00:01:31,710
+They're nice to have as an additional resource.
+
+23
+00:01:32,250 --> 00:01:38,850
+And if you go to the free those fundamentals link, you'll find that this page contains background information
+
+24
+00:01:38,850 --> 00:01:43,710
+on multitasking and basic real time concepts, which is intended for beginners.
+
+25
+00:01:44,070 --> 00:01:47,520
+So if you want to get more into theory, this is also a good resource.
+
+26
+00:01:48,150 --> 00:01:53,670
+Additionally, you can find impressive documentation about their version of Free Artus by following
+
+27
+00:01:53,670 --> 00:01:56,430
+this link, and we'll take a look at parts of that shortly.
+
+28
+00:01:57,180 --> 00:02:03,240
+OK, so there are a few apparent differences between the aespa, ID3 autos and the regular or vanilla
+
+29
+00:02:03,240 --> 00:02:06,120
+free autos that affect the application development.
+
+30
+00:02:06,450 --> 00:02:12,300
+Firstly, the ESP 32 extends the MCU contains two extensive processor cores.
+
+31
+00:02:13,760 --> 00:02:20,660
+And the IDF uses its own version of the extensive port of frittatas, which provides multicore support.
+
+32
+00:02:21,020 --> 00:02:26,480
+And so in the case that you are already familiar with free autos, but not the IDF version, we do not
+
+33
+00:02:26,480 --> 00:02:32,440
+have to call the V task start schedule or API when using the ESP IDF free autos.
+
+34
+00:02:32,870 --> 00:02:39,860
+Also, the free autos task stack size is specified in bytes when using the IDF, not words as you would
+
+35
+00:02:39,860 --> 00:02:41,420
+do with regular free autos.
+
+36
+00:02:41,870 --> 00:02:47,330
+Additionally, the application Start-Up Flow is relevant here, which covers everything that happens
+
+37
+00:02:47,330 --> 00:02:53,870
+after the application starts executing and before the main function starts running inside the main task.
+
+38
+00:02:54,140 --> 00:02:57,860
+You can find details here with a high level view of the startup.
+
+39
+00:02:57,860 --> 00:03:00,410
+Process is described first.
+
+40
+00:03:00,590 --> 00:03:07,010
+The first stage bootloader and rom loads the second stage bootloader image to RAM from the Flash Offset
+
+41
+00:03:07,040 --> 00:03:09,320
+Hex one thousand and the second step.
+
+42
+00:03:09,800 --> 00:03:14,990
+The second stage bootloader loads the partition table and the main application image from Flash.
+
+43
+00:03:15,290 --> 00:03:20,570
+The main application incorporates both RAM segments and read on these segments via flash cache.
+
+44
+00:03:21,080 --> 00:03:27,560
+Then the application startup executes, and at this point, the second CPU and auto scheduler are started.
+
+45
+00:03:28,010 --> 00:03:32,240
+You can read up on the details of each of these steps, so feel free to come here if you're interested.
+
+46
+00:03:32,540 --> 00:03:35,720
+But for now, let's go over to the application startup details.
+
+47
+00:03:36,530 --> 00:03:41,900
+And so everything that happens after the application starts and before the app main is called involves
+
+48
+00:03:41,900 --> 00:03:48,110
+the following port initialization of hardware and Basic C runtime environment system, initialization
+
+49
+00:03:48,110 --> 00:03:53,570
+of software services and free autos, and running the main task and calling App Main, which will be
+
+50
+00:03:53,570 --> 00:03:55,100
+our application entry point.
+
+51
+00:03:55,550 --> 00:03:59,810
+All right, so I think that's enough details about the application startup for purposes.
+
+52
+00:04:00,840 --> 00:04:06,570
+OK, so in another toast implementation of a design, the program is divided into different tasks and
+
+53
+00:04:06,570 --> 00:04:09,930
+each task runs continuously in an infinite loop.
+
+54
+00:04:10,470 --> 00:04:15,270
+OK, so we can create free toast tasks using the X test, create APIs.
+
+55
+00:04:15,630 --> 00:04:20,250
+And to do that, we'll need to include free autos, slash tasks, storage.
+
+56
+00:04:20,730 --> 00:04:22,950
+And there are two API options available.
+
+57
+00:04:23,310 --> 00:04:30,540
+We can use X Test Create, which lets the ESP IDF riotous choose which core of the ESP thirty two to
+
+58
+00:04:30,540 --> 00:04:31,710
+the task should run on.
+
+59
+00:04:32,460 --> 00:04:37,980
+Then this is the basic structure of a free toast task with an infinite loop as the main body of the
+
+60
+00:04:37,980 --> 00:04:38,490
+task.
+
+61
+00:04:39,090 --> 00:04:42,330
+And here the X Task Create API creates the task.
+
+62
+00:04:43,220 --> 00:04:49,760
+And so its task rate pinned to core allows specifying which core the tasks should run on in the next.
+
+63
+00:04:49,790 --> 00:04:52,580
+I'll summarize the description of the API parameters.
+
+64
+00:04:53,450 --> 00:04:59,870
+All right, the first parameter PV test code is the custom C function or riotous task that runs in an
+
+65
+00:04:59,870 --> 00:05:00,560
+infinite loop.
+
+66
+00:05:01,010 --> 00:05:06,740
+And PC name is the descriptive name that you can give a task and is only used as a debugging aid.
+
+67
+00:05:07,160 --> 00:05:12,770
+US stack depth is the memory and bytes that should be allocated by the kernel to the task.
+
+68
+00:05:13,190 --> 00:05:18,530
+PV parameters is an optional parameter that is a pointer that can be used by the task.
+
+69
+00:05:18,920 --> 00:05:25,430
+UX priority is the priority at which the task should run on in the higher priority number takes precedence
+
+70
+00:05:25,910 --> 00:05:31,760
+and P created task is an optional task handle by which the created task can be referenced.
+
+71
+00:05:32,120 --> 00:05:38,870
+For example, if you need to use various free auto KPIs like V Task Delete, as shown here with the
+
+72
+00:05:38,870 --> 00:05:40,460
+task handle is referenced.
+
+73
+00:05:41,760 --> 00:05:49,290
+And then core idea is the core of the ESP 32 that the task is to be assigned to, which can be core
+
+74
+00:05:49,290 --> 00:05:50,820
+zero or core one.
+
+75
+00:05:52,160 --> 00:05:57,320
+And this link will take you to a description of task states as well as a state transition diagram.
+
+76
+00:05:58,320 --> 00:06:03,090
+OK, so let's take a look at the state diagram, and I'll briefly summarize the tasks states.
+
+77
+00:06:03,630 --> 00:06:09,360
+So the running state means that the task is executing and utilizing the processor and the ready state
+
+78
+00:06:09,360 --> 00:06:15,780
+here means that the task is able to execute but is not currently running because the task with an equal
+
+79
+00:06:15,780 --> 00:06:17,820
+or higher priority is currently running.
+
+80
+00:06:18,270 --> 00:06:22,200
+So if a task is blocked, this can be caused by a temporal event.
+
+81
+00:06:22,200 --> 00:06:28,410
+For example, a call to V task delay that causes the task to be placed into the block state until the
+
+82
+00:06:28,410 --> 00:06:29,910
+delay period has expired.
+
+83
+00:06:30,300 --> 00:06:34,950
+Or it can be blocked due to an external event, which means that the task is waiting to receive from
+
+84
+00:06:34,950 --> 00:06:38,520
+a Q event group or notification or a similar event.
+
+85
+00:06:38,940 --> 00:06:45,060
+And this differs from tasks in the suspended state where there is no timeout in tasks only enter and
+
+86
+00:06:45,060 --> 00:06:52,860
+exit the suspended state when explicitly commanded to do so using V tasks suspend and X task resume
+
+87
+00:06:52,860 --> 00:06:53,880
+API calls.
+
+88
+00:06:54,180 --> 00:06:54,570
+All right.
+
+89
+00:06:55,020 --> 00:06:55,980
+And these are linked.
+
+90
+00:06:56,010 --> 00:06:58,140
+So feel free to read up on those as well.
+
+91
+00:06:59,180 --> 00:07:05,030
+And about Vitesse DeLay, it's used to send a task into the black state for a set number of ticks.
+
+92
+00:07:05,570 --> 00:07:11,840
+The actual time that the task remains blocked depends on the tick rate and the constant port tick period.
+
+93
+00:07:11,840 --> 00:07:15,980
+Milliseconds can be used to calculate real time from the tick rate.
+
+94
+00:07:16,310 --> 00:07:23,810
+For example, if the free tortoise tick rate in the SDK config is set to 100 hertz as it's shown here,
+
+95
+00:07:24,530 --> 00:07:32,510
+then this port tick period is 10 milliseconds and 500 divided by 10 is 50 ticks, which is what we passed
+
+96
+00:07:32,510 --> 00:07:35,160
+to test delay and that is x delay.
+
+97
+00:07:35,180 --> 00:07:41,090
+In this example, and with 50 ticks at a period of 10 milliseconds, we end up with the five hundred
+
+98
+00:07:41,090 --> 00:07:42,110
+millisecond delay.
+
+99
+00:07:43,290 --> 00:07:45,840
+All right, so that's it for this quick overview of free autos.
+
