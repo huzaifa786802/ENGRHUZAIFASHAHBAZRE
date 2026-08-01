@@ -1,0 +1,963 @@
+1
+00:00:00,720 --> 00:00:07,620
+Hello, welcome back, and it's lesson we going to see how to create interrupt for our cheap inputs.
+
+2
+00:00:07,830 --> 00:00:15,320
+We going to see how to enable, extend or interrupt from Cuba makes and then program it in Cuba to eat.
+
+3
+00:00:15,690 --> 00:00:21,110
+But before we do this, we have to see how the external interrupts are connected and the microcontroller.
+
+4
+00:00:21,900 --> 00:00:27,240
+So we already know a while a push button is connected to PC 13.
+
+5
+00:00:27,450 --> 00:00:28,710
+So we keep that in mind.
+
+6
+00:00:28,860 --> 00:00:30,390
+We need another document here.
+
+7
+00:00:30,390 --> 00:00:32,220
+We have a number of documents thus far.
+
+8
+00:00:32,220 --> 00:00:40,260
+We have the the descriptions and the and the user guide of the Hardware Obstruction Leya Library, which
+
+9
+00:00:40,260 --> 00:00:40,890
+is the hall.
+
+10
+00:00:40,890 --> 00:00:44,750
+We also have the the user guide for the new clue into this report.
+
+11
+00:00:44,960 --> 00:00:50,760
+What we need now is the we need a reference module for the microcontroller itself.
+
+12
+00:00:50,790 --> 00:00:54,030
+Thus far, we don't have the reference manual for the microcontroller.
+
+13
+00:00:54,060 --> 00:00:58,080
+We have one for the library, the whole library, and then for the Nuclear Discovery Board.
+
+14
+00:00:59,130 --> 00:01:02,550
+You might think the documents for the Nuclear Discovery Board is supported.
+
+15
+00:01:02,550 --> 00:01:07,950
+MICROCONTROLLER No, it just talks about these boards, how they are connected schematic.
+
+16
+00:01:07,950 --> 00:01:10,440
+Do you have a push button, et cetera?
+
+17
+00:01:10,740 --> 00:01:15,210
+We need to document that tells us about it registers in the chip itself.
+
+18
+00:01:15,720 --> 00:01:22,050
+So we're going to go to our best friend, Kyouko to, you know, ask for some help like we did earlier.
+
+19
+00:01:22,560 --> 00:01:25,800
+So I'll come over here or estimate 32 F one one.
+
+20
+00:01:26,910 --> 00:01:30,120
+And then the word, oh, search here is reference module
+
+21
+00:01:32,790 --> 00:01:33,570
+over here.
+
+22
+00:01:34,710 --> 00:01:37,410
+And this first link here, it's a PDF.
+
+23
+00:01:37,410 --> 00:01:38,880
+So we can click this.
+
+24
+00:01:40,790 --> 00:01:42,600
+I'm opening in this new tub.
+
+25
+00:01:43,730 --> 00:01:46,840
+OK, it's over here and there's the reference point.
+
+26
+00:01:46,880 --> 00:01:48,290
+I'm going to save that as well.
+
+27
+00:01:48,500 --> 00:01:53,220
+Click over here and advance on this 32 bit.
+
+28
+00:01:53,480 --> 00:01:54,680
+OK, we can keep.
+
+29
+00:01:54,710 --> 00:01:55,880
+OK, I'll change the name.
+
+30
+00:01:55,880 --> 00:01:57,190
+I don't want to get confused.
+
+31
+00:01:57,190 --> 00:02:04,420
+ASTM 32 F for one one ref my know that's what I'm going to call this.
+
+32
+00:02:05,840 --> 00:02:07,960
+OK, we can open this.
+
+33
+00:02:07,970 --> 00:02:08,960
+No, don't lose for that.
+
+34
+00:02:08,960 --> 00:02:11,430
+Now I think I should close the browser.
+
+35
+00:02:12,350 --> 00:02:13,640
+OK, can I open this.
+
+36
+00:02:13,760 --> 00:02:17,120
+So we want to find out where our interrupt lines up.
+
+37
+00:02:17,390 --> 00:02:19,010
+So I just come here like I do.
+
+38
+00:02:19,010 --> 00:02:21,440
+These are reference modules you don't need to read.
+
+39
+00:02:21,440 --> 00:02:21,920
+I read that.
+
+40
+00:02:21,920 --> 00:02:24,830
+You just need to know where to find what you're looking for.
+
+41
+00:02:25,230 --> 00:02:28,940
+So I'll press control an F and then I'll search interrupt.
+
+42
+00:02:29,930 --> 00:02:30,410
+Right.
+
+43
+00:02:30,650 --> 00:02:33,020
+And then over here it says interrupts.
+
+44
+00:02:33,020 --> 00:02:36,830
+Let's see what this first one here could do it for us.
+
+45
+00:02:36,830 --> 00:02:37,280
+This one.
+
+46
+00:02:37,280 --> 00:02:37,790
+Let's see.
+
+47
+00:02:37,910 --> 00:02:42,230
+I just start from the top search interrupt and then.
+
+48
+00:02:42,230 --> 00:02:43,520
+Oh, it interrupts again.
+
+49
+00:02:44,360 --> 00:02:46,190
+Let's see how many interrupt we have,
+
+50
+00:02:49,430 --> 00:02:50,060
+OK.
+
+51
+00:02:53,080 --> 00:02:53,800
+Interrupt.
+
+52
+00:02:55,780 --> 00:03:02,620
+And which one we're looking for, one that is called the interrupt controller I.
+
+53
+00:03:09,130 --> 00:03:11,710
+So extend or interrupt configuration register.
+
+54
+00:03:17,560 --> 00:03:24,530
+Um, we can use a different word, we can use SDI for external interrupt, and I know this stuff because
+
+55
+00:03:24,530 --> 00:03:25,970
+of experience, right?
+
+56
+00:03:26,330 --> 00:03:29,500
+So I know what to search for actually.
+
+57
+00:03:30,620 --> 00:03:31,760
+OK, we have it over here.
+
+58
+00:03:31,770 --> 00:03:38,630
+External interrupts Event Controller Page 201 or double click this over here.
+
+59
+00:03:38,630 --> 00:03:41,720
+And it talks about the external interrupt.
+
+60
+00:03:42,740 --> 00:03:44,510
+It talks about the address.
+
+61
+00:03:44,510 --> 00:03:47,860
+And then it brings us to this table, this very important table.
+
+62
+00:03:48,620 --> 00:03:49,040
+Right.
+
+63
+00:03:49,050 --> 00:03:49,870
+I'm going to zoom in.
+
+64
+00:03:51,260 --> 00:03:55,880
+So this one tells us external interrupts slash event G.P.A. Krupin.
+
+65
+00:03:56,400 --> 00:04:06,750
+So over here, it's telling us that all things zero are connected to external interrupts you over here.
+
+66
+00:04:06,750 --> 00:04:08,840
+It's written etext zero.
+
+67
+00:04:09,110 --> 00:04:17,270
+So peninsula of every port, whether it's A, B, C, D, E or H, you use external interrupts zero
+
+68
+00:04:18,110 --> 00:04:23,740
+and then open one external interrupt one all the way to fifteen.
+
+69
+00:04:23,750 --> 00:04:29,220
+So from this we can tell that our button should be connected to external interruptive.
+
+70
+00:04:29,270 --> 00:04:32,240
+Uh, thirteen since it is connected to PC thirteen.
+
+71
+00:04:33,020 --> 00:04:35,720
+So this is what we came for.
+
+72
+00:04:36,920 --> 00:04:37,370
+Right.
+
+73
+00:04:37,370 --> 00:04:38,750
+I'm going to minimize this now.
+
+74
+00:04:38,750 --> 00:04:42,980
+We can go to our estimate 32 QNX to set this up.
+
+75
+00:04:48,740 --> 00:04:51,460
+I'm going to select my board, it's the new clipboard.
+
+76
+00:04:59,230 --> 00:05:02,480
+And I'm going to open out come over here.
+
+77
+00:05:02,980 --> 00:05:10,240
+Claire Penult, I started from scratch because it would take some time for you to get used to it.
+
+78
+00:05:10,420 --> 00:05:11,880
+That's why I didn't start in the middle.
+
+79
+00:05:12,070 --> 00:05:14,260
+So let's initialize the normal stuff.
+
+80
+00:05:14,260 --> 00:05:21,810
+The Cool Stuff System Call says over here, a single wire passes over here.
+
+81
+00:05:21,820 --> 00:05:29,920
+I'm just going to say bypass for the high speed clock, low speed accident or C, use this ceramic resonator.
+
+82
+00:05:30,430 --> 00:05:35,170
+And then what we're going to do is our PC 13 or is it.
+
+83
+00:05:37,750 --> 00:05:39,350
+PG 13 is over here.
+
+84
+00:05:40,180 --> 00:05:45,300
+I'm going to right click this time rather than choose input.
+
+85
+00:05:45,340 --> 00:05:46,460
+I'm going to choose keepa.
+
+86
+00:05:46,480 --> 00:05:53,520
+You extend or interrupt because I want to use interrupt and then we know our lead is five.
+
+87
+00:05:53,530 --> 00:05:56,130
+So I'll come over here then.
+
+88
+00:05:56,140 --> 00:06:00,520
+This is the output and we can rename this.
+
+89
+00:06:06,960 --> 00:06:10,380
+Right, click and to use a label of call this lady.
+
+90
+00:06:13,470 --> 00:06:19,200
+And then over here, right, click until you saw label BTN
+
+91
+00:06:22,020 --> 00:06:22,590
+like this.
+
+92
+00:06:22,890 --> 00:06:26,420
+OK, OK.
+
+93
+00:06:26,430 --> 00:06:30,720
+Next we need to go to the configuration top to select our interrupter line.
+
+94
+00:06:30,900 --> 00:06:33,600
+So there's an extra step involved in this one.
+
+95
+00:06:33,930 --> 00:06:36,210
+That is why it's essential that we do it.
+
+96
+00:06:36,750 --> 00:06:39,570
+Um, so I'll come over here to.
+
+97
+00:06:41,370 --> 00:06:45,470
+Systems view over here and then the Enviga over here.
+
+98
+00:06:48,670 --> 00:06:54,310
+This should open a system for you and Vic.
+
+99
+00:06:58,160 --> 00:06:58,670
+Right.
+
+100
+00:06:59,330 --> 00:07:08,030
+So what we want is external interrupt line 13, but we see that cube mix allows us to select this for
+
+101
+00:07:08,060 --> 00:07:11,200
+interrupt ranging from 10 to 15.
+
+102
+00:07:11,210 --> 00:07:13,930
+So our 13 falls within this range.
+
+103
+00:07:13,940 --> 00:07:14,780
+So we take this.
+
+104
+00:07:15,170 --> 00:07:19,870
+So there's no dedicated Etext I line 13.
+
+105
+00:07:20,180 --> 00:07:25,340
+There is a dedicated line for interrupt of 10 to 15.
+
+106
+00:07:25,640 --> 00:07:33,440
+So we take this, OK, once that is done under Enviga, we can go to our project and then give it a
+
+107
+00:07:33,440 --> 00:07:33,830
+name.
+
+108
+00:07:34,230 --> 00:07:36,140
+We can call this input interrupt.
+
+109
+00:07:44,290 --> 00:07:52,450
+And then we can select our two Jane Q idee and then we can generate the project.
+
+110
+00:07:56,460 --> 00:08:05,070
+Oh, click open project to open it so the project is done opening this old project from our workspace.
+
+111
+00:08:05,070 --> 00:08:06,780
+So I'll close this and then.
+
+112
+00:08:08,570 --> 00:08:16,880
+This is all new one input interrupt, so come over here, open source, and then I'll just do a bit
+
+113
+00:08:16,880 --> 00:08:17,540
+of cleanup.
+
+114
+00:08:19,040 --> 00:08:21,320
+I'll clean up by reducing the number of comment.
+
+115
+00:08:23,330 --> 00:08:26,420
+So this is what it looks like after taking up the comment.
+
+116
+00:08:26,840 --> 00:08:27,220
+Right.
+
+117
+00:08:27,260 --> 00:08:28,250
+This our main function.
+
+118
+00:08:28,650 --> 00:08:37,730
+So, OK, um, we going to we saw the init function, the key player in its function already.
+
+119
+00:08:38,060 --> 00:08:42,920
+So what are we going to do this time is let's the the interrupt turn on the LCD.
+
+120
+00:08:43,520 --> 00:08:48,290
+To do this, we have to take a look at the function that allows us to deal with interrupt.
+
+121
+00:08:48,800 --> 00:08:54,800
+We can find this in our While Drive manual, the document we downloaded earlier.
+
+122
+00:08:58,050 --> 00:08:58,570
+Right.
+
+123
+00:08:58,770 --> 00:09:06,060
+So if we don't want to always go back to the, um, the dereference manual, one way of doing this,
+
+124
+00:09:06,420 --> 00:09:12,900
+one way of knowing all the functions available to a particular Peverel is to open the implementation
+
+125
+00:09:12,900 --> 00:09:18,480
+file of the peripheral so you can come to drive us over here, drive us.
+
+126
+00:09:18,810 --> 00:09:25,000
+And then this one, SDM three to four hold driver and then we are dealing with GPU.
+
+127
+00:09:25,080 --> 00:09:31,740
+So you select the whole underscore GPL, you don't see fault double click to open it and you can either
+
+128
+00:09:31,740 --> 00:09:38,490
+go through the entire driver file or you can come over here and take a look at the outline, the outline
+
+129
+00:09:38,490 --> 00:09:45,930
+here, its list, the number of defines and the number of functions defined in this file over here.
+
+130
+00:09:45,930 --> 00:09:50,190
+These are the defined statement, GPL, your mode, etc. These are the functions we have.
+
+131
+00:09:50,200 --> 00:09:59,330
+GPL you in it, D in it, repin right beento Gilpin in and then we have exten or interrupt your Q handler
+
+132
+00:09:59,430 --> 00:10:01,980
+over here and then we have the extend or interrupt callback.
+
+133
+00:10:02,220 --> 00:10:03,900
+So we know these two functions.
+
+134
+00:10:03,900 --> 00:10:07,860
+Deal with interrupt so we can take a look at the Iraqi handler.
+
+135
+00:10:07,860 --> 00:10:11,490
+You can just double click this and then it will bring it over here for you.
+
+136
+00:10:12,300 --> 00:10:15,450
+And then he says this function handles extend or interrupt request.
+
+137
+00:10:15,750 --> 00:10:24,000
+Krupin specifies the pins connected to it, extend or interrupt line, and then it returns none.
+
+138
+00:10:25,020 --> 00:10:30,390
+So we can just pass the pin here for the external interrupt and then this will deal with it.
+
+139
+00:10:30,750 --> 00:10:33,180
+Another way is to use this one here.
+
+140
+00:10:33,210 --> 00:10:34,770
+The extend or interrupt callback.
+
+141
+00:10:35,280 --> 00:10:39,060
+It says open specifies the pin connected.
+
+142
+00:10:39,240 --> 00:10:40,950
+We can use this callback function.
+
+143
+00:10:41,400 --> 00:10:47,610
+The callback function basically allows us to add our execution in this function.
+
+144
+00:10:47,700 --> 00:10:53,330
+If you want to perform a computation, if you have got an algorithm that needs to compute when to interrupt,
+
+145
+00:10:53,340 --> 00:10:59,730
+OK, as you put it in this function such that whenever the interrupt occurs, this function is executed.
+
+146
+00:10:59,940 --> 00:11:07,350
+And the reason we see this week keyword here is that it means this function can appear twice.
+
+147
+00:11:08,680 --> 00:11:14,590
+You know, we cannot pick up appear multiple times in a while, you know, our project, whenever we
+
+148
+00:11:14,590 --> 00:11:22,360
+see week, whenever there is a situation where we have this function defined twice with one starting
+
+149
+00:11:22,360 --> 00:11:28,830
+with wheat and the other one not having a week and just having this part of it, the one starting with
+
+150
+00:11:28,840 --> 00:11:32,610
+week is not going to be comp. It's not going to be run, I should say.
+
+151
+00:11:33,280 --> 00:11:38,920
+So this allows us to be able to copy this function, paste it in our mandatory file and then delete
+
+152
+00:11:38,920 --> 00:11:45,730
+the week keyword there and then write our own version of it while keeping this where it is without cleaning
+
+153
+00:11:45,730 --> 00:11:45,940
+it.
+
+154
+00:11:46,570 --> 00:11:53,380
+Because what happens is often when you have two identical functions in your project, the compiler is
+
+155
+00:11:53,380 --> 00:11:57,940
+going to complain and tell you you've got multiple definitions of the function.
+
+156
+00:11:58,120 --> 00:12:04,030
+But if you put a week before the ones you don't need so that you just delete the week keyword when you
+
+157
+00:12:04,030 --> 00:12:07,450
+need a particular version, then you can get away with it.
+
+158
+00:12:08,290 --> 00:12:10,110
+So I'm going to copy this over here.
+
+159
+00:12:10,750 --> 00:12:11,070
+Control.
+
+160
+00:12:11,230 --> 00:12:11,830
+Easy to copy.
+
+161
+00:12:11,830 --> 00:12:13,240
+I'll come to amend or C fall.
+
+162
+00:12:13,930 --> 00:12:16,030
+I can put it anywhere I want.
+
+163
+00:12:16,030 --> 00:12:21,490
+I can put it above you or let me put it right beneath the main function.
+
+164
+00:12:22,480 --> 00:12:25,180
+I'll come over here and we can read what it says.
+
+165
+00:12:25,600 --> 00:12:28,780
+This function should not be modified when the callback is needed.
+
+166
+00:12:29,020 --> 00:12:35,100
+The whole GPL you extend or Kobuk could be implemented in the use of all this or use of it.
+
+167
+00:12:35,380 --> 00:12:37,450
+So we want this to execute.
+
+168
+00:12:37,450 --> 00:12:42,190
+So we delete the week here and then we can just take the note.
+
+169
+00:12:42,190 --> 00:12:42,840
+We've read it.
+
+170
+00:12:43,270 --> 00:12:45,950
+So what we want to do is OK, when the interrupt.
+
+171
+00:12:45,970 --> 00:12:48,190
+OK, here's when what interrupt.
+
+172
+00:12:48,220 --> 00:12:50,590
+Which is connected to our input case.
+
+173
+00:12:50,620 --> 00:12:55,330
+What we want to do, we want to do something when I do something over here.
+
+174
+00:12:56,680 --> 00:12:57,190
+Right.
+
+175
+00:12:57,640 --> 00:13:03,430
+And remember the interrupted OK, when we press our button basically that is why we connected it to
+
+176
+00:13:03,550 --> 00:13:05,350
+the push-Button extend or interrupt.
+
+177
+00:13:05,860 --> 00:13:09,400
+OK, so what we want to do is talk about the ability.
+
+178
+00:13:10,000 --> 00:13:13,420
+So we'll do so together.
+
+179
+00:13:13,420 --> 00:13:14,740
+We use the whole
+
+180
+00:13:17,290 --> 00:13:18,250
+Jhpiego
+
+181
+00:13:20,740 --> 00:13:22,960
+underscore toggle pin
+
+182
+00:13:25,750 --> 00:13:33,280
+and then the first argument is going to be the the part which is really the GPL, your port.
+
+183
+00:13:34,570 --> 00:13:38,380
+And then the second argument is going to be the which is early dippin like this.
+
+184
+00:13:39,400 --> 00:13:39,830
+Right.
+
+185
+00:13:40,930 --> 00:13:45,240
+So what is going to happen is we talk about this whenever the interrupt.
+
+186
+00:13:45,250 --> 00:13:47,230
+OK, so there's nothing else we need to do.
+
+187
+00:13:47,230 --> 00:13:49,650
+We don't need to write anything in the main function.
+
+188
+00:13:50,320 --> 00:13:51,540
+This is the beauty of this.
+
+189
+00:13:51,550 --> 00:13:57,700
+So you can think of this as a background threat, something in the background that is just triggered
+
+190
+00:13:57,700 --> 00:13:58,870
+whenever there's an interrupt.
+
+191
+00:13:58,870 --> 00:14:04,300
+And this type, this interrupt is triggered by pressing the push button in our case and this particular
+
+192
+00:14:04,300 --> 00:14:04,880
+example.
+
+193
+00:14:05,530 --> 00:14:08,350
+So this is it, right?
+
+194
+00:14:08,360 --> 00:14:12,430
+So I'm going to build I'm going to click over here to build.
+
+195
+00:14:16,910 --> 00:14:26,750
+We've got three errors, it could be from our implementation of the early DGP report, so I probably
+
+196
+00:14:26,750 --> 00:14:32,760
+messed up the the name of the lady was caught early DGP report.
+
+197
+00:14:32,780 --> 00:14:33,740
+This is correct.
+
+198
+00:14:33,740 --> 00:14:35,480
+Let's copy the exact same word.
+
+199
+00:14:37,500 --> 00:14:44,350
+OK, the port shouldn't be capital letters, just start with a capital letter about the Pinelli dependence
+
+200
+00:14:44,430 --> 00:14:47,490
+should be fined hubo how the hell you togo?
+
+201
+00:14:47,700 --> 00:14:51,780
+Let's confirm how G.P.A. Togo paid back in the GPL.
+
+202
+00:14:51,780 --> 00:14:52,580
+You don't see far.
+
+203
+00:14:52,590 --> 00:14:57,570
+I'm going to check the outline and see what the function is like that how the GPL you told Gilpin's
+
+204
+00:14:58,740 --> 00:15:00,570
+it takes cheapie you.
+
+205
+00:15:04,610 --> 00:15:05,250
+Right.
+
+206
+00:15:05,270 --> 00:15:05,650
+OK.
+
+207
+00:15:05,940 --> 00:15:08,880
+Looks good, I'll come over here.
+
+208
+00:15:08,900 --> 00:15:09,860
+Click here to build.
+
+209
+00:15:15,160 --> 00:15:25,270
+I should close this, it's built successfully and then we can run this click over here, so like this
+
+210
+00:15:25,630 --> 00:15:26,680
+is 32.
+
+211
+00:15:29,750 --> 00:15:32,120
+We're going to keep everything the same say, OK.
+
+212
+00:15:40,400 --> 00:15:44,060
+So this expression, live expression is from our previous project.
+
+213
+00:15:45,650 --> 00:15:55,010
+OK, I can just close this, dropped this away a bit and then we can click here to run the code, currently
+
+214
+00:15:55,010 --> 00:16:02,210
+the lead is off when I press, as you can see, when my hand is pressing the LCD on, this means the
+
+215
+00:16:02,210 --> 00:16:03,200
+interrupters or Keryn.
+
+216
+00:16:03,200 --> 00:16:06,800
+When I left my hand, it goes off to when I press the interrupt.
+
+217
+00:16:06,830 --> 00:16:07,270
+OK, yes.
+
+218
+00:16:07,310 --> 00:16:10,960
+And what we find in the interrupt service routine is executed.
+
+219
+00:16:11,590 --> 00:16:12,290
+So this is it.
+
+220
+00:16:12,350 --> 00:16:13,940
+This or there is for this project.
+
+221
+00:16:13,940 --> 00:16:16,880
+If you have any questions at all, just let me know.
+
+222
+00:16:17,270 --> 00:16:22,310
+And if you find in the course use for take some time off to leave a review and I'll see you in the next
+
+223
+00:16:22,310 --> 00:16:22,660
+lesson.
+
+224
+00:16:22,670 --> 00:16:23,540
+Have a nice day.
+
+225
+00:16:24,030 --> 00:16:24,500
+Bye bye.
+
+226
+00:16:26,060 --> 00:16:32,440
+So as you can see, when I press the toggle, look at what is in the interrupt service routine is executed.
+
+227
+00:16:32,780 --> 00:16:38,090
+So sometimes when I press it sort of stays on because of something known as the bounce.
+
+228
+00:16:38,870 --> 00:16:44,600
+The the when you are working in embedded systems and you are dealing with push buttons, you've got
+
+229
+00:16:44,600 --> 00:16:50,830
+to account for depos, because when you press a button rather than the press or caring, once it occurs
+
+230
+00:16:50,900 --> 00:16:56,300
+multiple times, so often you've got to put a time there.
+
+231
+00:16:56,310 --> 00:16:59,300
+Some people often implement deboned use in time.
+
+232
+00:16:59,660 --> 00:17:05,030
+So the really the the Dippin for a number of milliseconds and then read it again to make sure there's
+
+233
+00:17:05,030 --> 00:17:06,560
+the actual state.
+
+234
+00:17:06,860 --> 00:17:12,170
+So the reason why you might see some jitter is because we've not, you know, put a system in place
+
+235
+00:17:12,590 --> 00:17:14,510
+to prevent the bounce.
+
+236
+00:17:14,540 --> 00:17:20,300
+So there is multiple reading of the same press cos I'm I think I'm pressing just once, but because
+
+237
+00:17:20,300 --> 00:17:23,840
+it's so fast, the one time press becomes ten times press.
+
+238
+00:17:24,170 --> 00:17:30,770
+If we were to count and if we were to view the number of times the button is pressed, you realise that
+
+239
+00:17:30,770 --> 00:17:36,860
+what I would consider a one time press could be 10 or 20 times in the reading of the PIN.
+
+240
+00:17:37,250 --> 00:17:40,360
+In a way, if you don't understand all of this, you need no worry about that.
+
+241
+00:17:40,760 --> 00:17:41,690
+I'll see you later.
