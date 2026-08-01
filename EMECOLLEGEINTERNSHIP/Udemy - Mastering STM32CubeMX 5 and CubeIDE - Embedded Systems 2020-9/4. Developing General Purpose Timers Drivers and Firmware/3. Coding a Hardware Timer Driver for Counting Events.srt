@@ -1,0 +1,559 @@
+1
+00:00:00,300 --> 00:00:00,810
+Welcome back.
+
+2
+00:00:00,990 --> 00:00:07,230
+In this lesson, we are going to see how to configure the timer to count the okay rules of the event,
+
+3
+00:00:07,890 --> 00:00:14,250
+the occurrence of an event could be the press of a button, the detection of the edge of a signal,
+
+4
+00:00:15,450 --> 00:00:16,170
+etc..
+
+5
+00:00:17,220 --> 00:00:20,610
+This is often known as the input capture mode of the timer.
+
+6
+00:00:21,060 --> 00:00:23,790
+And a mode such as this one is very important.
+
+7
+00:00:23,850 --> 00:00:30,870
+When you are dealing with some sensors, an example of that sense will be the ultrasonics central.
+
+8
+00:00:31,470 --> 00:00:38,310
+And for those of you who are not familiar with the, um, the mode of operation of the ultrasonic central,
+
+9
+00:00:38,630 --> 00:00:45,420
+well, what happens is that you have, um, you have an output piñon, an input pane, and basically
+
+10
+00:00:45,420 --> 00:00:52,560
+the output sends out a signal and then the signal would have to travel and then it would hit an object
+
+11
+00:00:52,770 --> 00:00:53,710
+and bounce back.
+
+12
+00:00:54,240 --> 00:01:00,210
+And then when it bounces back is going to be detected by the input spin and then the time it takes to
+
+13
+00:01:00,210 --> 00:01:01,250
+detect the signal.
+
+14
+00:01:01,260 --> 00:01:05,430
+The pretense is used to compute the distance of the object.
+
+15
+00:01:05,790 --> 00:01:07,200
+It's a very simple principle.
+
+16
+00:01:07,710 --> 00:01:12,930
+And if we're we're right in the, um, the drive off or on Ultrasonic Central, we'll be using inputs
+
+17
+00:01:12,930 --> 00:01:20,010
+capture all the time as a counter to capture when the signal returns.
+
+18
+00:01:20,610 --> 00:01:23,640
+So without talking much, let's just get into it.
+
+19
+00:01:23,730 --> 00:01:29,520
+In this in this example, though, we are going to simply detect the price of a war button on the board.
+
+20
+00:01:30,110 --> 00:01:34,800
+Well, I'm sure you'll be able to apply this principle in your everyday project.
+
+21
+00:01:35,030 --> 00:01:36,870
+I'll double click over here to get started.
+
+22
+00:01:37,410 --> 00:01:37,920
+I'll say no.
+
+23
+00:01:37,950 --> 00:01:38,570
+Over here.
+
+24
+00:01:41,020 --> 00:01:46,390
+A quote, a pinata by clicking pinata of a hit clip in out say yes if I hear.
+
+25
+00:01:47,910 --> 00:01:52,440
+And over here, we can make Hawaii experiment a bit more interesting, such that when we are able to
+
+26
+00:01:52,440 --> 00:01:57,000
+count the number of times the events will cast, we can blink on entity to do that.
+
+27
+00:01:57,030 --> 00:02:01,170
+I'm going to set out what Ellie Dippin here a you outputs like this.
+
+28
+00:02:04,320 --> 00:02:11,040
+Um, actually, I think we, um, we can see input's capture later this time, we're just going to use
+
+29
+00:02:11,310 --> 00:02:12,480
+time as a counter.
+
+30
+00:02:12,690 --> 00:02:15,280
+It's a different configuration compared to input's capture.
+
+31
+00:02:15,330 --> 00:02:18,990
+But this is there are some overlapping similarities.
+
+32
+00:02:19,830 --> 00:02:27,600
+Okay, so this time we are basically going to sort of capture the, um, the the the, um, the press
+
+33
+00:02:27,600 --> 00:02:28,230
+of the button.
+
+34
+00:02:28,290 --> 00:02:28,920
+So let's do it.
+
+35
+00:02:28,950 --> 00:02:30,300
+And you understand what I mean.
+
+36
+00:02:30,750 --> 00:02:31,800
+Come over here, timer.
+
+37
+00:02:32,190 --> 00:02:34,080
+And then also let time a one over here.
+
+38
+00:02:35,900 --> 00:02:41,690
+Then Luxor's or Select ETR, which is external external clock source.
+
+39
+00:02:43,970 --> 00:02:44,940
+iSelect, ETR.
+
+40
+00:02:45,000 --> 00:02:45,650
+Over here.
+
+41
+00:02:45,740 --> 00:02:49,760
+ETR to extend or Luxor's and everything else.
+
+42
+00:02:49,910 --> 00:02:50,720
+I'll leave it the same.
+
+43
+00:02:50,860 --> 00:02:51,320
+See?
+
+44
+00:02:52,380 --> 00:02:54,600
+OK, so Peter, twelve, ETR two.
+
+45
+00:02:54,790 --> 00:02:55,170
+OK.
+
+46
+00:02:58,560 --> 00:03:02,160
+For our club configuration here, we can leave everything the same.
+
+47
+00:03:02,230 --> 00:03:07,940
+Even if you have the Air Force, you board doesn't matter cause our club frequency is going to be based
+
+48
+00:03:07,940 --> 00:03:08,570
+on Dippin.
+
+49
+00:03:12,420 --> 00:03:18,540
+Because, um, our time out here, our time off, which is going to be the, um, what ETR here is a
+
+50
+00:03:18,540 --> 00:03:23,920
+different pin from where our push button SPC Fit and we're going to connect pieces fit in to Pier 12.
+
+51
+00:03:24,360 --> 00:03:26,700
+But if we had our button here, it would be fine.
+
+52
+00:03:26,970 --> 00:03:27,800
+But because we don't.
+
+53
+00:03:27,830 --> 00:03:28,080
+We're gonna.
+
+54
+00:03:28,140 --> 00:03:28,580
+Can I get.
+
+55
+00:03:30,720 --> 00:03:33,840
+If I hear I'm gonna set the, um, the counter period here to five.
+
+56
+00:03:34,010 --> 00:03:40,810
+I wouldn't set a pre-schooler counter period is basically just going to reload or to reload at five.
+
+57
+00:03:40,900 --> 00:03:44,080
+This is the value to which the auto reload happens.
+
+58
+00:03:44,590 --> 00:03:50,860
+So basically, when we detect, say, five, if you put ten here, we can auto reload at ten such that
+
+59
+00:03:50,890 --> 00:03:53,980
+when the event occurs for ten times, you can do an action.
+
+60
+00:03:54,120 --> 00:03:58,090
+In our case, when we detect five presses, we can, um, sort of toggle on LCD.
+
+61
+00:03:59,200 --> 00:04:03,550
+Next we go to the end, VIC searches and then we're going to take this one.
+
+62
+00:04:03,550 --> 00:04:04,510
+Hit the update.
+
+63
+00:04:05,200 --> 00:04:05,680
+Interrupt.
+
+64
+00:04:05,770 --> 00:04:06,330
+Over here.
+
+65
+00:04:08,740 --> 00:04:13,990
+Now we can go ahead and generate a project, I'll come to, um, January two right here, and then I'll
+
+66
+00:04:13,990 --> 00:04:17,290
+give the project any time a counter.
+
+67
+00:04:19,180 --> 00:04:21,680
+And then also light the torch and SDM 32.
+
+68
+00:04:22,040 --> 00:04:24,780
+Cuba makes, uh, Kubota e oh.
+
+69
+00:04:24,910 --> 00:04:26,650
+Click over here to generate.
+
+70
+00:04:31,990 --> 00:04:33,100
+We can open a project.
+
+71
+00:04:35,530 --> 00:04:42,190
+So over here, we simply need to implement a Kobuk, all the selections we made have been included in
+
+72
+00:04:42,190 --> 00:04:42,970
+our time.
+
+73
+00:04:43,410 --> 00:04:44,680
+And it's a function over here.
+
+74
+00:04:45,670 --> 00:04:51,070
+So to find a callback, we can just go to the, um, the time a module or come to drive this over here.
+
+75
+00:04:51,450 --> 00:04:55,650
+Hold driver and the source and then t i n c follow.
+
+76
+00:04:55,720 --> 00:04:56,530
+Give me that.
+
+77
+00:04:57,130 --> 00:05:05,560
+And um, I would just do control f and then I'll search under score week to jump to the callback.
+
+78
+00:05:05,850 --> 00:05:09,570
+The callback we're looking for is something like period elapsed callback.
+
+79
+00:05:10,390 --> 00:05:11,660
+It should be here somewhere.
+
+80
+00:05:14,570 --> 00:05:14,880
+OK.
+
+81
+00:05:15,170 --> 00:05:16,010
+It's over here.
+
+82
+00:05:16,790 --> 00:05:17,810
+He loves cool back.
+
+83
+00:05:17,960 --> 00:05:18,800
+Oh, copy this.
+
+84
+00:05:20,450 --> 00:05:23,250
+And I'll bring it to the main let's see over here.
+
+85
+00:05:23,330 --> 00:05:26,180
+I'll close this from here and then.
+
+86
+00:05:29,260 --> 00:05:34,030
+A patient above the main function over here and then cleanup within in here.
+
+87
+00:05:34,260 --> 00:05:37,470
+And we said one day when it lapses, we want to talk o the D.
+
+88
+00:05:38,070 --> 00:05:42,730
+I remember the period is going to elapse after with press of a button five times after its content.
+
+89
+00:05:42,730 --> 00:05:45,750
+Five course we set the auto reload to five.
+
+90
+00:05:46,270 --> 00:05:51,510
+So here we can simply say GPL you we can see how GPL you toggle pin.
+
+91
+00:05:53,110 --> 00:05:56,770
+So say how on a GPL you on a school.
+
+92
+00:05:59,380 --> 00:06:09,880
+Torgau pin and then pass the port GPL, you a then GPL, you on this call pin on the score five like
+
+93
+00:06:09,880 --> 00:06:10,210
+this.
+
+94
+00:06:12,840 --> 00:06:18,410
+Once we've implemented our Kobuk, we have to make sure we've started our time over to interrupt or
+
+95
+00:06:18,450 --> 00:06:20,720
+come down here and say HRO on this call.
+
+96
+00:06:20,760 --> 00:06:21,850
+Time on this call.
+
+97
+00:06:22,980 --> 00:06:23,640
+Start.
+
+98
+00:06:25,440 --> 00:06:26,360
+He has to be bass.
+
+99
+00:06:26,670 --> 00:06:27,990
+So I'll say I am bass.
+
+100
+00:06:28,590 --> 00:06:36,600
+Serve with the bass on the school, starts on the school I teach and then we pass the stress of the
+
+101
+00:06:36,600 --> 00:06:38,610
+time I handle h t.
+
+102
+00:06:38,610 --> 00:06:40,350
+I am one like this.
+
+103
+00:06:41,770 --> 00:06:45,300
+Okay, so we can build in c o click over here to build.
+
+104
+00:06:49,640 --> 00:06:50,780
+It's built successfully.
+
+105
+00:06:51,260 --> 00:06:56,620
+And then, um, we can go to the debugger or click on the bug over here.
+
+106
+00:07:04,690 --> 00:07:10,570
+So like we said earlier, our external trigger is set to be at 12:00 and we want to, you know, use
+
+107
+00:07:10,570 --> 00:07:13,390
+the button so we have to physically connect.
+
+108
+00:07:13,660 --> 00:07:19,820
+P a twelve and P.S. 13 using a jumper wire because we know our pattern is connected to 13.
+
+109
+00:07:20,770 --> 00:07:23,080
+Um, so we can, um, come over here.
+
+110
+00:07:24,040 --> 00:07:27,160
+Let's go back to our user guide and take a look at it.
+
+111
+00:07:27,660 --> 00:07:28,710
+Where was P twelve.
+
+112
+00:07:29,360 --> 00:07:30,020
+It's about.
+
+113
+00:07:30,360 --> 00:07:30,700
+Oh.
+
+114
+00:07:31,240 --> 00:07:32,110
+Open this up a bit.
+
+115
+00:07:34,030 --> 00:07:34,480
+Um.
+
+116
+00:07:37,510 --> 00:07:39,760
+So this is a twelve over here.
+
+117
+00:07:39,820 --> 00:07:41,610
+We have to put a jumper wire here.
+
+118
+00:07:42,070 --> 00:07:45,860
+One side of the jump, a wire and can make the other side two pieces, 13 over here.
+
+119
+00:07:46,570 --> 00:07:47,000
+Right.
+
+120
+00:07:48,930 --> 00:07:53,690
+Once we connect to the two things, we can simply run over here, we still in the pogo.
+
+121
+00:08:00,280 --> 00:08:06,530
+And as you can see, when I press when I press five times, it would Torgau, one, two, three, four,
+
+122
+00:08:06,550 --> 00:08:06,890
+five.
+
+123
+00:08:07,690 --> 00:08:08,480
+And then he came on.
+
+124
+00:08:09,280 --> 00:08:10,900
+One, two, three, four.
+
+125
+00:08:12,190 --> 00:08:12,430
+OK.
+
+126
+00:08:12,520 --> 00:08:17,390
+So what happens is sometimes you may realize that I press three times and then it goes.
+
+127
+00:08:17,470 --> 00:08:17,830
+This is.
+
+128
+00:08:18,220 --> 00:08:19,930
+This is because of a deep bounce.
+
+129
+00:08:20,860 --> 00:08:25,540
+When you press a button, you might think it's the you know, the signal has been read just once.
+
+130
+00:08:26,080 --> 00:08:29,530
+But sometimes you press a button and the press is recorded three times.
+
+131
+00:08:29,890 --> 00:08:36,850
+This can be eliminated using a filter, which is to write or write in a bit of code to get rid of typos.
+
+132
+00:08:37,270 --> 00:08:39,560
+But yet we're not looking at this now.
+
+133
+00:08:40,330 --> 00:08:41,380
+So I'll do it again.
+
+134
+00:08:41,590 --> 00:08:44,800
+One, two, three, four, five.
+
+135
+00:08:44,920 --> 00:08:45,460
+It's own.
+
+136
+00:08:46,360 --> 00:08:48,910
+One, two, three, four.
+
+137
+00:08:50,020 --> 00:08:51,220
+Cause I press too much.
+
+138
+00:08:51,650 --> 00:08:52,090
+Okay.
+
+139
+00:08:56,800 --> 00:08:59,620
+So they saw the rush and I'll see you in the next lesson.
+
+140
+00:08:59,650 --> 00:09:00,380
+Have a nice day.
