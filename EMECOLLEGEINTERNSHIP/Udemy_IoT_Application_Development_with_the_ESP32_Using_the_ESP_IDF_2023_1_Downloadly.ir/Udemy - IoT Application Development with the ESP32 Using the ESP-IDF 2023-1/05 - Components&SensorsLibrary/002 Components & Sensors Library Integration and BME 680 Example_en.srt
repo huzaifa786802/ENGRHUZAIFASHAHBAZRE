@@ -1,0 +1,488 @@
+1
+00:00:07,240 --> 00:00:13,510
+So here I have a blank specified project and we'll start off by cloning the ESP off sensor and Components
+
+2
+00:00:13,510 --> 00:00:16,390
+Library into the project folder right here.
+
+3
+00:00:17,050 --> 00:00:18,940
+So let's go to the project folder.
+
+4
+00:00:19,650 --> 00:00:20,760
+And right click.
+
+5
+00:00:25,110 --> 00:00:26,940
+Then go to get Bashir.
+
+6
+00:00:29,520 --> 00:00:31,350
+Now let's grab the Clone Command.
+
+7
+00:00:33,450 --> 00:00:35,040
+So just copy this line.
+
+8
+00:00:37,230 --> 00:00:39,240
+And then paste it into get bash.
+
+9
+00:00:42,350 --> 00:00:43,660
+And just let it finish.
+
+10
+00:00:46,970 --> 00:00:50,510
+And now we can close it and let's check out the project folder.
+
+11
+00:00:53,390 --> 00:00:55,190
+And there's a component we've cloned.
+
+12
+00:00:55,490 --> 00:00:58,310
+All right, so let's go back and check the ID.
+
+13
+00:01:00,480 --> 00:01:05,069
+Then let's right click on the project folder and go down to refresh.
+
+14
+00:01:07,470 --> 00:01:09,750
+And other components is visible here as well.
+
+15
+00:01:10,620 --> 00:01:11,260
+All right.
+
+16
+00:01:11,280 --> 00:01:16,140
+So now we need to include this component into the project build by adjusting the top level.
+
+17
+00:01:16,140 --> 00:01:19,050
+See Make List file, which is this one right here.
+
+18
+00:01:19,770 --> 00:01:20,880
+So let's open it.
+
+19
+00:01:22,260 --> 00:01:27,420
+And you need to add this line to the file and you could put it just underneath the first include statement
+
+20
+00:01:27,420 --> 00:01:28,770
+here as I have.
+
+21
+00:01:29,070 --> 00:01:30,960
+So I'll just give you a moment to type it.
+
+22
+00:01:31,440 --> 00:01:35,700
+And then we're including the additional component as shown in the how to use section that we saw in
+
+23
+00:01:35,700 --> 00:01:36,750
+the previous lesson.
+
+24
+00:01:37,290 --> 00:01:39,780
+And what we're doing is quite similar to the instructions.
+
+25
+00:01:40,020 --> 00:01:45,690
+We're just including this part here in the quotations, which is our path to the make list file to include
+
+26
+00:01:45,690 --> 00:01:46,800
+the components folder.
+
+27
+00:01:47,280 --> 00:01:51,090
+And once you've done that, you've successfully integrated the library into the project.
+
+28
+00:01:51,090 --> 00:01:56,010
+But to see how to work with the examples included in this library, let's continue by going to the resource
+
+29
+00:01:56,010 --> 00:02:00,750
+files I provided for this lesson and we're going to drop those files into the main folder here.
+
+30
+00:02:01,830 --> 00:02:08,820
+So within the resource files, what I've given you is the BMS 680 sensor dot C file, which is based
+
+31
+00:02:08,820 --> 00:02:11,190
+on the main dot C provided from the library.
+
+32
+00:02:13,530 --> 00:02:18,720
+And the BM 680 header filed just contains a function prototype so that we can run the example from our
+
+33
+00:02:18,720 --> 00:02:25,830
+main dot C and the C make list file includes our source files into the build and will replace our existing
+
+34
+00:02:25,830 --> 00:02:26,880
+file here with it.
+
+35
+00:02:27,480 --> 00:02:33,570
+And the k config project build file contains configuration defines and was also taken from the example
+
+36
+00:02:34,110 --> 00:02:34,950
+in this file.
+
+37
+00:02:34,950 --> 00:02:37,260
+We'll also replace our existing file here.
+
+38
+00:02:38,380 --> 00:02:39,850
+And we'll also have an updated main.
+
+39
+00:02:40,810 --> 00:02:45,490
+And this is the task common header file, which we'll update throughout the course to include all free
+
+40
+00:02:45,490 --> 00:02:51,910
+auto's tasks, definition information like the stack size priority and the core idea of the ESP 32 that
+
+41
+00:02:51,910 --> 00:02:53,200
+the task should run on.
+
+42
+00:02:53,200 --> 00:02:57,970
+So just know that we'll make use of this file as we progress in the course, not just the current lesson.
+
+43
+00:02:58,150 --> 00:03:02,620
+All right, so now let's select all of these files and we can drag them over to the main folder.
+
+44
+00:03:06,160 --> 00:03:08,510
+And then choose copy files OC.
+
+45
+00:03:09,970 --> 00:03:11,800
+And then select overwrite all.
+
+46
+00:03:14,360 --> 00:03:17,090
+And now let's check out the main quake list file here.
+
+47
+00:03:18,990 --> 00:03:24,420
+And there we have two source files listed that we need to build into the project main dot C and the
+
+48
+00:03:24,420 --> 00:03:26,400
+beam CCD sensor dot C.
+
+49
+00:03:27,330 --> 00:03:30,030
+And first, let's take a look at our main C file.
+
+50
+00:03:32,340 --> 00:03:33,720
+In our main Dead Sea.
+
+51
+00:03:33,780 --> 00:03:40,410
+We have an include for the BM 60 sensor header file and including that gives us access to the beam 680
+
+52
+00:03:40,410 --> 00:03:43,830
+task start function, which starts the example task.
+
+53
+00:03:44,670 --> 00:03:46,530
+So let's check out this header file.
+
+54
+00:03:47,870 --> 00:03:53,150
+And there we have the function prototype which replaces what was in App Main from the example.
+
+55
+00:03:53,930 --> 00:03:55,430
+So let's go ahead and take a look.
+
+56
+00:03:58,230 --> 00:04:04,080
+So we have this function definition here for the BM 680 test start, which is what we are calling from
+
+57
+00:04:04,080 --> 00:04:05,070
+main see.
+
+58
+00:04:05,370 --> 00:04:13,290
+And here the beam 680 test task is created using the x task create Penta Core API which takes our definitions
+
+59
+00:04:13,290 --> 00:04:15,600
+provided by the task common header file.
+
+60
+00:04:15,780 --> 00:04:21,209
+And those definitions are for the beam 680 task stack size the task priority.
+
+61
+00:04:22,029 --> 00:04:25,000
+And the core ID that the task should run on.
+
+62
+00:04:25,390 --> 00:04:26,890
+So let's take a look at those.
+
+63
+00:04:27,850 --> 00:04:32,500
+And there we have the stack size priority and core ID given by the example.
+
+64
+00:04:33,280 --> 00:04:37,600
+So I've kept all these values the same as what was provided by the example.
+
+65
+00:04:38,020 --> 00:04:39,160
+So let's go back.
+
+66
+00:04:40,310 --> 00:04:47,750
+And now let's check out the BMV 63 autos task, which is the function specified here.
+
+67
+00:04:48,880 --> 00:04:54,250
+So again, this is from the example provided by the library, and I won't go into too much detail here
+
+68
+00:04:54,250 --> 00:04:55,840
+because this isn't our code.
+
+69
+00:04:56,110 --> 00:05:00,160
+But you can see that they've done some initialization for eye to see communication.
+
+70
+00:05:01,650 --> 00:05:07,170
+And then they've initialized the sensor and then they've set the sampling rates for temperature, humidity
+
+71
+00:05:07,170 --> 00:05:12,510
+and pressure and then set the air filter size for temperature and pressure.
+
+72
+00:05:12,990 --> 00:05:16,920
+Then they've changed the heater profile and set the ambient temperature.
+
+73
+00:05:16,950 --> 00:05:18,900
+Then they get the measurement duration.
+
+74
+00:05:20,270 --> 00:05:25,610
+And in the wild one loop, the measurement cycle is triggered with the reference to the sensor settings
+
+75
+00:05:25,610 --> 00:05:27,260
+that were previously applied.
+
+76
+00:05:28,220 --> 00:05:30,890
+So that gives you a general idea of how this works.
+
+77
+00:05:31,100 --> 00:05:35,990
+The sensor is triggered based on those settings and that we have a delay until the measurement results
+
+78
+00:05:35,990 --> 00:05:40,670
+are available and then we get the results from this values instance.
+
+79
+00:05:41,600 --> 00:05:43,370
+Of the BM 60 values.
+
+80
+00:05:43,370 --> 00:05:53,690
+TYPEDEF So here we access values for the temperature, humidity, pressure and gas resistance and those
+
+81
+00:05:53,690 --> 00:05:55,910
+are all accessible via the typedef here.
+
+82
+00:05:56,920 --> 00:06:02,740
+And the floating point sensor values are all here in the BMB 680 head of file from the library that
+
+83
+00:06:02,740 --> 00:06:03,640
+we've integrated.
+
+84
+00:06:04,450 --> 00:06:05,590
+So let's go back.
+
+85
+00:06:06,590 --> 00:06:10,850
+And I'll just show you the other slight modifications I've made to this file, and that's at the top
+
+86
+00:06:10,850 --> 00:06:11,630
+of the file.
+
+87
+00:06:13,960 --> 00:06:17,440
+And there we have an included far ahead of file for our function prototype.
+
+88
+00:06:17,800 --> 00:06:22,060
+And then we also have the task common to access our free auto definitions.
+
+89
+00:06:22,060 --> 00:06:27,940
+And then we have these config example I to see definitions and this one is for the sensor address.
+
+90
+00:06:28,270 --> 00:06:30,790
+And then we have another here for the serial data line.
+
+91
+00:06:32,130 --> 00:06:33,990
+And this one is for the serial clock.
+
+92
+00:06:34,560 --> 00:06:37,290
+And these come from the K config project build file.
+
+93
+00:06:37,290 --> 00:06:43,320
+So we'll go ahead and open that because this file enables us to set various options from the sdhc config.
+
+94
+00:06:43,710 --> 00:06:45,360
+So let's see how this works.
+
+95
+00:06:46,380 --> 00:06:50,400
+Now I'll open this with the C C++ editor.
+
+96
+00:06:52,700 --> 00:06:57,710
+And this config file provides us with this example configuration menu option.
+
+97
+00:06:57,740 --> 00:07:04,430
+And when we build the project using this config file, the SDK config will then contain the menu configuration
+
+98
+00:07:04,430 --> 00:07:05,780
+items that we see here.
+
+99
+00:07:06,260 --> 00:07:11,390
+And this menu contains a choice for the example I to see address and the options for that.
+
+100
+00:07:11,840 --> 00:07:17,540
+And there's also the example I to see master serial clock and serial data as well.
+
+101
+00:07:18,750 --> 00:07:23,730
+So let's build the project and then we can view the config by going to project.
+
+102
+00:07:23,760 --> 00:07:25,410
+Then go to build all.
+
+103
+00:07:28,640 --> 00:07:29,810
+And this may take a moment.
+
+104
+00:07:29,810 --> 00:07:31,760
+So I'll go ahead and speed up the video now.
+
+105
+00:07:38,840 --> 00:07:42,290
+And once it's done, let's open the SDK config.
+
+106
+00:07:42,440 --> 00:07:44,150
+So just double click on that.
+
+107
+00:07:49,760 --> 00:07:52,610
+And the example configuration is right here.
+
+108
+00:07:54,280 --> 00:07:58,060
+Where we have the BM 60 I to see address options.
+
+109
+00:07:58,900 --> 00:08:03,730
+And we had the GPIO numbers for the serial clock and the serial data as well.
+
+110
+00:08:04,150 --> 00:08:08,950
+So that's how the SDHC config and the CÉ config project build file work together.
+
+111
+00:08:09,340 --> 00:08:13,990
+And I've already made the connections to the BMS 680 sensor based on the settings here.
+
+112
+00:08:15,300 --> 00:08:19,740
+So now I'll go ahead and flash to my dev kit by going to launch and run mode.
+
+113
+00:08:23,490 --> 00:08:25,140
+And again, I'll speed up the video.
+
+114
+00:08:30,230 --> 00:08:34,520
+Now that that's done, we can open a monitor and view those printf statements from the while loop.
+
+115
+00:08:34,730 --> 00:08:36,230
+Here we can open a terminal.
+
+116
+00:08:45,690 --> 00:08:49,260
+And there we have the values printed at the duration, determined by the wild loop.
+
+117
+00:08:51,270 --> 00:08:51,840
+Okay.
+
+118
+00:08:51,990 --> 00:08:53,490
+So that's all for this one.
+
+119
+00:08:53,520 --> 00:08:58,710
+And now that you know how to integrate the ESP lib, you now have an abundance of sensors and other
+
+120
+00:08:58,710 --> 00:09:00,270
+components at your disposal.
+
+121
+00:09:00,270 --> 00:09:02,280
+And I really hope you found this useful.
+
+122
+00:09:02,280 --> 00:09:04,020
+And I'll see you in the next lesson.
+
