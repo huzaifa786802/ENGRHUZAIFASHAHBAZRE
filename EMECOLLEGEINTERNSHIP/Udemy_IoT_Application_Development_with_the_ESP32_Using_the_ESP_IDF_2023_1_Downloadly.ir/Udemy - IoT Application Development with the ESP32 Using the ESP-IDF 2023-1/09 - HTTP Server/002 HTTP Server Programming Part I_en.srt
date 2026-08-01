@@ -1,0 +1,472 @@
+1
+00:00:07,090 --> 00:00:09,910
+OK, so the first thing we'll do is create a new folder on the main.
+
+2
+00:00:14,640 --> 00:00:15,750
+And call it Web page.
+
+3
+00:00:20,540 --> 00:00:20,810
+OK.
+
+4
+00:00:20,930 --> 00:00:25,580
+And Hugh will include our Web page files, so have the Web page files handy that were provided from
+
+5
+00:00:25,580 --> 00:00:29,210
+the resources for this section so that we can include them in this folder.
+
+6
+00:00:29,600 --> 00:00:33,770
+And I have mine right here, so I'll just take all of these files and then copy them to the web page
+
+7
+00:00:33,770 --> 00:00:34,730
+folder like so.
+
+8
+00:00:36,660 --> 00:00:38,760
+And here, just choose copy files.
+
+9
+00:00:39,890 --> 00:00:40,250
+OK.
+
+10
+00:00:41,800 --> 00:00:45,220
+So now let's open the files that we're going to develop further throughout the course.
+
+11
+00:00:45,580 --> 00:00:50,770
+First, go to APT, get success and right click and go to open with.
+
+12
+00:00:51,430 --> 00:00:52,480
+And then choose other.
+
+13
+00:00:54,740 --> 00:01:00,560
+And I'll just choose the C C++ editor, but if you happen to have something better like VSCO, then
+
+14
+00:01:00,560 --> 00:01:02,300
+by all means please use that instead.
+
+15
+00:01:04,180 --> 00:01:04,569
+OK.
+
+16
+00:01:05,530 --> 00:01:10,330
+And then now let's choose the judges file and bring up the internal editors again.
+
+17
+00:01:19,300 --> 00:01:21,730
+And again, I'll choose C C++ editor.
+
+18
+00:01:24,440 --> 00:01:27,680
+And then open up the index study HTML document in the same manner.
+
+19
+00:01:36,790 --> 00:01:38,500
+And I'll choose the same editor.
+
+20
+00:01:42,690 --> 00:01:45,480
+And this is the template that will expand upon throughout the course.
+
+21
+00:01:46,490 --> 00:01:53,000
+Here we have our app, that CSIS file specified as the stylesheet, an app that JS file here and we
+
+22
+00:01:53,000 --> 00:01:55,820
+have a J query here as our JavaScript library.
+
+23
+00:01:56,570 --> 00:01:58,460
+And if we go over to D.J.s.
+
+24
+00:01:59,540 --> 00:02:04,370
+We already have the functions there, which will handle the firmware update on the web page side.
+
+25
+00:02:05,120 --> 00:02:10,430
+So feel free to look at this and get a basic understanding of it, and we'll add quite a bit of code
+
+26
+00:02:10,430 --> 00:02:10,970
+to it later.
+
+27
+00:02:11,870 --> 00:02:17,780
+Also, there is a very basic stylesheet here, and there's some button styling already here, as well
+
+28
+00:02:17,780 --> 00:02:19,370
+as some color and fonts as well.
+
+29
+00:02:19,700 --> 00:02:22,100
+You could always customize this so that it suits your needs.
+
+30
+00:02:23,640 --> 00:02:25,770
+All right, so let's head over to see make list file.
+
+31
+00:02:27,560 --> 00:02:30,950
+And here we're going to say embed files.
+
+32
+00:02:32,380 --> 00:02:34,450
+Because we need to embed the Web page files.
+
+33
+00:02:34,630 --> 00:02:39,640
+So we'll say the path web page slash app, that success.
+
+34
+00:02:41,210 --> 00:02:43,670
+And then Web page slash apt, James.
+
+35
+00:02:45,260 --> 00:02:48,290
+And Web page slash favicon, Iko.
+
+36
+00:02:51,100 --> 00:02:52,090
+And then Web page.
+
+37
+00:02:53,080 --> 00:02:57,070
+Index that HTML and then Lesli Web page slash.
+
+38
+00:02:58,300 --> 00:03:00,070
+And then let's copy the J query.
+
+39
+00:03:02,820 --> 00:03:05,640
+And pasted here and then we can save it.
+
+40
+00:03:07,460 --> 00:03:10,760
+OK, so now let's head over to the main folder and then a new source file.
+
+41
+00:03:15,710 --> 00:03:17,990
+And call it HTP server does see.
+
+42
+00:03:25,020 --> 00:03:25,410
+All right.
+
+43
+00:03:27,370 --> 00:03:28,750
+And now create a new -- file.
+
+44
+00:03:32,700 --> 00:03:34,890
+And call it HTP Server Dot H.
+
+45
+00:03:39,980 --> 00:03:45,260
+OK, so first, let's head it back over to see make lists and add the HTP server source file.
+
+46
+00:03:47,960 --> 00:03:48,620
+And save it.
+
+47
+00:03:51,460 --> 00:03:53,050
+So now let's go to tasks common.
+
+48
+00:03:55,220 --> 00:03:59,690
+And here we're going to define the HTP server task info.
+
+49
+00:04:01,930 --> 00:04:04,600
+So now let's define the HTP server.
+
+50
+00:04:06,270 --> 00:04:07,620
+Task stack size.
+
+51
+00:04:10,130 --> 00:04:12,320
+As eight thousand one hundred ninety two bites.
+
+52
+00:04:16,120 --> 00:04:17,290
+And then to find the.
+
+53
+00:04:19,290 --> 00:04:21,000
+HTTP server task priority.
+
+54
+00:04:24,990 --> 00:04:26,340
+And we'll define it is for.
+
+55
+00:04:28,340 --> 00:04:32,360
+Which is just one priority level under the Wi-Fi application desk.
+
+56
+00:04:34,170 --> 00:04:38,830
+Right in here, we can define the HGTV server task.
+
+57
+00:04:40,120 --> 00:04:40,840
+Core aid.
+
+58
+00:04:42,730 --> 00:04:44,080
+And we'll make it zero as well.
+
+59
+00:04:45,390 --> 00:04:50,550
+So now here we can define the HGTV server, monitor task info.
+
+60
+00:04:56,070 --> 00:04:57,450
+And first will define the.
+
+61
+00:04:58,810 --> 00:05:00,490
+HGTV server monitor.
+
+62
+00:05:03,000 --> 00:05:03,870
+Stack size.
+
+63
+00:05:05,570 --> 00:05:07,460
+As four thousand ninety six bytes.
+
+64
+00:05:09,260 --> 00:05:13,250
+And then for the HTP server monitor.
+
+65
+00:05:16,710 --> 00:05:17,370
+Priority.
+
+66
+00:05:20,590 --> 00:05:21,370
+We'll say three.
+
+67
+00:05:23,350 --> 00:05:24,550
+And then let's do the.
+
+68
+00:05:26,170 --> 00:05:28,240
+HGTV server monitor carried.
+
+69
+00:05:32,650 --> 00:05:33,910
+And this we can leave at zero.
+
+70
+00:05:35,550 --> 00:05:37,590
+OK, so let's takes care of our task info.
+
+71
+00:05:38,430 --> 00:05:45,990
+So now let's go over to the head of file and he will create messages for the HTP monitor.
+
+72
+00:05:52,570 --> 00:05:54,670
+And let's typedef enum.
+
+73
+00:05:56,040 --> 00:05:57,840
+HTP server message.
+
+74
+00:05:59,640 --> 00:06:04,170
+And the first one will be 8TB Message, wi fi connect and it.
+
+75
+00:06:06,780 --> 00:06:08,850
+And will explicitly set it to zero.
+
+76
+00:06:10,050 --> 00:06:13,980
+OK, and then the 8TB message, wi fi connect success.
+
+77
+00:06:17,750 --> 00:06:22,040
+And then we'll also have a message why if I connect, fail.
+
+78
+00:06:26,310 --> 00:06:31,140
+And then also HTP message OTA update successful.
+
+79
+00:06:36,080 --> 00:06:39,680
+And then HTP message OTA update failed.
+
+80
+00:06:44,620 --> 00:06:49,210
+And also HTP message OTA update initialized.
+
+81
+00:06:54,360 --> 00:06:54,690
+All right.
+
+82
+00:06:55,080 --> 00:06:58,560
+So let's name it as HGTV server message.
+
+83
+00:07:00,170 --> 00:07:06,740
+Underscore E for Enum, and so these are the messages that the HTP server monitor will handle for now.
+
+84
+00:07:07,130 --> 00:07:09,170
+The monitor really doesn't do anything complex.
+
+85
+00:07:09,890 --> 00:07:15,080
+I just had the idea to include it to react to events and update global variables within the monitor
+
+86
+00:07:15,560 --> 00:07:21,530
+only so that it's easier to track what's going on in the HTP server, as you'll see later, and you
+
+87
+00:07:21,530 --> 00:07:23,720
+can easily modify this as you wish.
+
+88
+00:07:24,140 --> 00:07:28,490
+OK, so now let's create a structure for the message queue.
+
+89
+00:07:36,220 --> 00:07:38,800
+And here will say typedef struck.
+
+90
+00:07:41,640 --> 00:07:44,670
+And tag it as a server Q message.
+
+91
+00:07:49,190 --> 00:07:51,500
+And here we'll just include the inner.
+
+92
+00:07:54,830 --> 00:07:56,420
+And call it message I.D..
+
+93
+00:07:59,900 --> 00:08:04,010
+Then let's call this HTP server Q message underscore T.
+
+94
+00:08:10,050 --> 00:08:12,090
+And don't forget the semicolon here.
+
+95
+00:08:13,210 --> 00:08:18,280
+And similar to the wife by ABC's messages, this is something that you can easily expand upon based
+
+96
+00:08:18,280 --> 00:08:18,880
+on your needs.
+
+97
+00:08:18,910 --> 00:08:24,970
+OK, so now let's come down here and create a prototype for a function that sends a message to the cube.
+
+98
+00:08:29,280 --> 00:08:31,620
+And so the first parameter is message ID.
+
+99
+00:08:33,809 --> 00:08:36,510
+From the HTP server message in.
+
+100
+00:08:41,799 --> 00:08:43,870
+And the return is true.
+
+101
+00:08:44,890 --> 00:08:47,230
+If an item was successfully sent to the queue.
+
+102
+00:08:50,500 --> 00:08:51,940
+Otherwise, PD false.
+
+103
+00:08:56,040 --> 00:09:01,380
+And I'll leave a note here for you to expand the parameter list based on your requirements.
+
+104
+00:09:07,800 --> 00:09:12,810
+E.g., how you've expanded the HTP server cube message structure.
+
+105
+00:09:22,300 --> 00:09:25,540
+OK, so just expand the struct and function, however you like.
+
+106
+00:09:28,600 --> 00:09:31,410
+Now, let's say base type underscored T.
+
+107
+00:09:32,810 --> 00:09:34,190
+HTTP server monitor.
+
+108
+00:09:36,160 --> 00:09:37,110
+Send message.
+
+109
+00:09:40,320 --> 00:09:42,240
+And then let's just grab the inner.
+
+110
+00:09:44,000 --> 00:09:44,840
+And drop it here.
+
+111
+00:09:48,560 --> 00:09:52,760
+And we'll create another prototype that starts the HTTP server.
+
+112
+00:09:57,770 --> 00:10:00,710
+And say void HGTV servers start.
+
+113
+00:10:02,340 --> 00:10:03,060
+And it's void.
+
+114
+00:10:05,260 --> 00:10:08,980
+All right, so now create another prototype that stops the HGTV server.
+
+115
+00:10:12,290 --> 00:10:15,050
+And it's void HGTV server stop.
+
+116
+00:10:16,400 --> 00:10:17,000
+And void.
+
+117
+00:10:19,450 --> 00:10:20,800
+So now that's it for now.
+
+118
+00:10:20,890 --> 00:10:25,030
+And in the next section, we'll call the HP server debt see file.
+

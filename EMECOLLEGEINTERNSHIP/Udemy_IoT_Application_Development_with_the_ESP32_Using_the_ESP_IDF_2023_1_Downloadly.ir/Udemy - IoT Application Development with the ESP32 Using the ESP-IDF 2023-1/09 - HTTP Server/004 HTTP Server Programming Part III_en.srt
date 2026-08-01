@@ -1,0 +1,376 @@
+1
+00:00:07,350 --> 00:00:09,840
+OK, so let's start by defining the J Query handler.
+
+2
+00:00:14,220 --> 00:00:15,300
+And we'll define it here.
+
+3
+00:00:19,790 --> 00:00:22,580
+And we'll say, Jake, where we get handler.
+
+4
+00:00:25,210 --> 00:00:27,310
+Is requested when accessing the Web page.
+
+5
+00:00:31,030 --> 00:00:32,800
+And the perimeter RFQ.
+
+6
+00:00:34,020 --> 00:00:38,250
+Is the request for which the you are right needs to be handled?
+
+7
+00:00:43,410 --> 00:00:46,200
+And the return is ESP, OK?
+
+8
+00:00:51,120 --> 00:00:54,840
+And this will be static and returns espérer type.
+
+9
+00:00:56,950 --> 00:01:02,320
+And it's the Jake Query Handler, which takes a pointer to the HPD request structure.
+
+10
+00:01:03,980 --> 00:01:05,120
+And call it RFQ.
+
+11
+00:01:07,940 --> 00:01:11,930
+And the HPD request data structure holds all the information for the request.
+
+12
+00:01:13,750 --> 00:01:15,700
+OK, so here, lug a message.
+
+13
+00:01:17,700 --> 00:01:21,450
+That says Jake Query requested.
+
+14
+00:01:28,210 --> 00:01:33,370
+And then the response type using a speedy response set type.
+
+15
+00:01:35,820 --> 00:01:37,020
+Which takes the request.
+
+16
+00:01:38,320 --> 00:01:41,590
+And the tape is application slash JavaScript.
+
+17
+00:01:45,150 --> 00:01:46,860
+And if you follow the function definition.
+
+18
+00:01:47,940 --> 00:01:53,160
+You'll find that there are some commonly used types to find here, but we'll use others in addition
+
+19
+00:01:53,160 --> 00:01:54,210
+to these as well.
+
+20
+00:01:57,340 --> 00:02:05,020
+OK, so next, we'll send the response using HPD, underscore response, underscore send and past the
+
+21
+00:02:05,020 --> 00:02:08,050
+request, then the constant sharp pointer type.
+
+22
+00:02:09,320 --> 00:02:11,210
+So we can pass the joke where we start.
+
+23
+00:02:20,450 --> 00:02:22,490
+And then passed the J Query end.
+
+24
+00:02:25,280 --> 00:02:26,270
+Minus the start.
+
+25
+00:02:32,280 --> 00:02:34,050
+And if we follow the function definition.
+
+26
+00:02:36,330 --> 00:02:37,240
+You'll see that here.
+
+27
+00:02:37,260 --> 00:02:38,640
+We're just passing the request.
+
+28
+00:02:38,880 --> 00:02:40,410
+The buffer and the buffer length.
+
+29
+00:02:46,380 --> 00:02:49,230
+OK, so then just return ESP, OK.
+
+30
+00:02:51,760 --> 00:02:54,850
+All right, so now let's define the next handler by copying this one.
+
+31
+00:02:56,510 --> 00:02:57,620
+And pasting it beneath.
+
+32
+00:03:01,070 --> 00:03:06,080
+And to you will update the comment by saying, since the index, that HTML page.
+
+33
+00:03:11,490 --> 00:03:14,430
+And then just come down and grab the handler.
+
+34
+00:03:17,790 --> 00:03:19,410
+So that we can update the function name.
+
+35
+00:03:23,200 --> 00:03:26,050
+And then just change this to index that HTML.
+
+36
+00:03:29,320 --> 00:03:33,400
+And then we'll set the type as text H.M..
+
+37
+00:03:37,980 --> 00:03:41,790
+And then let's copy the HTML start and give it as the buffer.
+
+38
+00:03:44,110 --> 00:03:50,320
+And the length will take the H.M. end to complete the length parameter, and that's it.
+
+39
+00:03:50,980 --> 00:03:52,840
+So now let's keep going and copy.
+
+40
+00:03:55,940 --> 00:03:56,870
+And then paste it again.
+
+41
+00:04:00,380 --> 00:04:01,700
+And then update the comment.
+
+42
+00:04:02,890 --> 00:04:04,570
+To say app access.
+
+43
+00:04:08,610 --> 00:04:13,470
+And then I'll just fix this here and up here as well.
+
+44
+00:04:19,040 --> 00:04:20,300
+So we'll get the function name.
+
+45
+00:04:26,810 --> 00:04:27,620
+And place it here.
+
+46
+00:04:30,390 --> 00:04:31,830
+And then update the log message.
+
+47
+00:04:36,750 --> 00:04:38,430
+And then we can grab the KSAZ start.
+
+48
+00:04:44,990 --> 00:04:47,540
+And then we can also take care of the end as well right here.
+
+49
+00:04:51,870 --> 00:04:55,320
+And then also, we should remember to update the type as well.
+
+50
+00:04:57,230 --> 00:04:59,540
+Which is CSIS, so we can say.
+
+51
+00:05:01,570 --> 00:05:04,110
+Text forward slash CSIS.
+
+52
+00:05:06,310 --> 00:05:08,020
+OK, so let's let's keep it moving.
+
+53
+00:05:12,900 --> 00:05:13,920
+Let's just do the same.
+
+54
+00:05:17,920 --> 00:05:19,900
+And then he will do the duchess.
+
+55
+00:05:24,420 --> 00:05:26,400
+All right, so now let's just get the function name.
+
+56
+00:05:35,290 --> 00:05:35,920
+Place it here.
+
+57
+00:05:37,590 --> 00:05:39,360
+And update the message.
+
+58
+00:05:43,840 --> 00:05:45,160
+And the Typekit, that's fine.
+
+59
+00:05:45,760 --> 00:05:47,680
+So let's get the app just start.
+
+60
+00:05:52,300 --> 00:05:53,590
+And update the Senate function.
+
+61
+00:06:02,040 --> 00:06:03,090
+OK, that looks good.
+
+62
+00:06:04,650 --> 00:06:06,060
+OK, let's let's do the last one.
+
+63
+00:06:12,090 --> 00:06:14,760
+And you will say since the day that I come.
+
+64
+00:06:16,360 --> 00:06:16,890
+Icon.
+
+65
+00:06:18,200 --> 00:06:20,030
+File when accessing the Web page.
+
+66
+00:06:26,030 --> 00:06:27,380
+So let's update the function name.
+
+67
+00:06:33,390 --> 00:06:33,900
+Place it.
+
+68
+00:06:35,950 --> 00:06:37,180
+Then log the message.
+
+69
+00:06:41,790 --> 00:06:47,640
+And the type you that will be image slash x dash icon.
+
+70
+00:06:51,470 --> 00:06:53,060
+So now get the favicon start.
+
+71
+00:06:56,720 --> 00:06:58,150
+And we can update the response.
+
+72
+00:07:08,370 --> 00:07:08,760
+OK.
+
+73
+00:07:08,790 --> 00:07:09,240
+That's it.
+
+74
+00:07:09,840 --> 00:07:13,080
+So at this point, we can call the 8TB server start function.
+
+75
+00:07:13,500 --> 00:07:16,020
+They can do that by heading over to the Wi-Fi app that see.
+
+76
+00:07:18,120 --> 00:07:19,560
+Uncomment the function call.
+
+77
+00:07:23,200 --> 00:07:23,920
+And that looks good.
+
+78
+00:07:24,930 --> 00:07:26,190
+So build the project.
+
+79
+00:07:34,600 --> 00:07:35,710
+And let's just give it a minute.
+
+80
+00:07:55,230 --> 00:07:56,370
+OK, then now let's flesh.
+
+81
+00:08:08,170 --> 00:08:10,150
+OK, then let's open a serial monitor here.
+
+82
+00:08:18,050 --> 00:08:19,970
+And we can see that the Web server has started.
+
+83
+00:08:21,070 --> 00:08:23,200
+Now we can connect to the ESP.
+
+84
+00:08:30,320 --> 00:08:31,880
+And now let's open up Google Chrome.
+
+85
+00:08:38,600 --> 00:08:44,990
+And then navigate to our IP, which is one nine two one six eight zero, that one and hit enter.
+
+86
+00:08:46,770 --> 00:08:49,140
+Greg, the Web server responds with a Web page.
+
+87
+00:08:51,000 --> 00:08:51,370
+Great.
+
+88
+00:08:51,390 --> 00:08:52,320
+Everything looks good.
+
+89
+00:08:53,440 --> 00:08:56,890
+And on the monitor, our handler messages are logged for the HTML.
+
+90
+00:08:58,260 --> 00:09:04,290
+Jake Query, CSS and JavaScript, and also the five con Echo as well.
+
+91
+00:09:06,950 --> 00:09:09,440
+And this icon that shows up right here.
+
+92
+00:09:10,840 --> 00:09:15,070
+And the select button already has the JavaScript functionality to select the bin file.
+
+93
+00:09:15,960 --> 00:09:21,750
+And the update firmware button also reacts via the JavaScript functions included in the template files.
+
+94
+00:09:22,290 --> 00:09:26,430
+All right, so that's all for now, and the next lesson will continue to expand the web server.
+

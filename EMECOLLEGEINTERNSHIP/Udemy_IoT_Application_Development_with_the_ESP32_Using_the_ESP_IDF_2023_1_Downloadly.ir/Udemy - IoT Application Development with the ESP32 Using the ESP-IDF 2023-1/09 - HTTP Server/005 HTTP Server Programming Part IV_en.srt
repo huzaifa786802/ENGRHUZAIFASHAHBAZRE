@@ -1,0 +1,408 @@
+1
+00:00:07,090 --> 00:00:13,840
+In this lesson, we'll create the HGTV server monitor task, as I mentioned previously, this task simply
+
+2
+00:00:13,840 --> 00:00:19,390
+receives messages from the cube and updates global variables within the monitor task, which affects
+
+3
+00:00:19,390 --> 00:00:22,000
+certain actions of the web server and the web page.
+
+4
+00:00:22,870 --> 00:00:25,100
+And there are probably multiple ways to do this.
+
+5
+00:00:25,120 --> 00:00:30,550
+I just thought it might be useful to update the global variables in one place and also use this as an
+
+6
+00:00:30,550 --> 00:00:36,160
+opportunity to demonstrate just one way of accomplishing in a task communication between the Wi-Fi application
+
+7
+00:00:36,520 --> 00:00:37,480
+and the web server.
+
+8
+00:00:38,920 --> 00:00:43,300
+All right, so now let's start by creating the HTP server.
+
+9
+00:00:44,360 --> 00:00:45,710
+Monitor, task handle.
+
+10
+00:00:48,030 --> 00:00:50,190
+And that will be a static test candle type.
+
+11
+00:00:52,130 --> 00:00:55,220
+And call it task HTP server monitor.
+
+12
+00:00:57,850 --> 00:00:58,930
+And set that to no.
+
+13
+00:01:03,060 --> 00:01:04,980
+Next, we'll create the Q handle.
+
+14
+00:01:06,970 --> 00:01:09,280
+Used to manipulate the main cue of events.
+
+15
+00:01:14,180 --> 00:01:16,220
+And it's a static to handle type.
+
+16
+00:01:18,060 --> 00:01:22,260
+And call it HGTV Server Monitor, Q Handle.
+
+17
+00:01:27,820 --> 00:01:29,800
+And now let's come down to our to DOS.
+
+18
+00:01:34,000 --> 00:01:35,470
+We have our to dos right here.
+
+19
+00:01:36,790 --> 00:01:40,240
+And let's create the HTTP server monitor desk.
+
+20
+00:01:41,710 --> 00:01:43,420
+And also create the message queue.
+
+21
+00:01:44,910 --> 00:01:48,230
+OK, so here we can use X to create Penta Core.
+
+22
+00:01:53,150 --> 00:01:56,600
+And we'll call the function HTP server monitor.
+
+23
+00:02:00,860 --> 00:02:02,120
+And the tag can be the same.
+
+24
+00:02:08,880 --> 00:02:12,090
+And the stack size will be FTP server monitor.
+
+25
+00:02:14,020 --> 00:02:14,860
+Stack size.
+
+26
+00:02:16,240 --> 00:02:18,250
+And PV parameters will be No.
+
+27
+00:02:19,520 --> 00:02:24,260
+And the priority will be HTTP server monitor priority.
+
+28
+00:02:27,910 --> 00:02:32,590
+And our test scandal is a reference to the task HTP server monitor.
+
+29
+00:02:37,270 --> 00:02:41,280
+And now the Korede is HTTP server monitor, core aid.
+
+30
+00:02:46,990 --> 00:02:47,870
+OK, it looks good.
+
+31
+00:02:47,890 --> 00:02:52,090
+So later, we'll define the HTTP server monitored task you.
+
+32
+00:02:52,450 --> 00:02:58,510
+OK, now let's create the cue message and it'll be H-2B server monitor, queue handle.
+
+33
+00:03:02,480 --> 00:03:04,850
+Equals excu creates.
+
+34
+00:03:06,970 --> 00:03:10,120
+And it's 3:00 here and the size of.
+
+35
+00:03:11,950 --> 00:03:14,740
+HTTP server tube message types.
+
+36
+00:03:21,530 --> 00:03:25,580
+All right, so next, let's define the HTP server monetary task.
+
+37
+00:03:25,910 --> 00:03:26,900
+So we'll head up you.
+
+38
+00:03:30,970 --> 00:03:32,170
+And let's make a comment.
+
+39
+00:03:34,740 --> 00:03:38,520
+That says HTTP server monitor task.
+
+40
+00:03:39,440 --> 00:03:42,320
+Used to track events of the FTP server.
+
+41
+00:03:46,350 --> 00:03:50,940
+And the parameter is point of variable parameter, p parameter.
+
+42
+00:03:56,360 --> 00:03:58,490
+Which can be passed to the task.
+
+43
+00:04:01,550 --> 00:04:03,020
+And this is a static void.
+
+44
+00:04:04,520 --> 00:04:09,290
+HTP server monitor, and that's a void point of parameter.
+
+45
+00:04:12,530 --> 00:04:15,560
+And here, first, we need an instance of the Q message scandal.
+
+46
+00:04:15,740 --> 00:04:19,339
+So HGTV server monitor Q message type.
+
+47
+00:04:22,010 --> 00:04:23,900
+And call it message.
+
+48
+00:04:26,070 --> 00:04:27,750
+And next will create an endless loop.
+
+49
+00:04:33,060 --> 00:04:35,400
+And then say, if excu receive.
+
+50
+00:04:40,750 --> 00:04:42,310
+And let's include our handle here.
+
+51
+00:04:48,450 --> 00:04:51,540
+And the reference to the message then put Max delay.
+
+52
+00:04:57,950 --> 00:04:58,430
+OK.
+
+53
+00:04:59,430 --> 00:05:00,420
+Then say switch.
+
+54
+00:05:03,010 --> 00:05:04,660
+Message, short message, I'd.
+
+55
+00:05:06,180 --> 00:05:07,350
+And then let's open a case.
+
+56
+00:05:10,150 --> 00:05:15,160
+And we want to use our messages here, so let's come here and grab the first one.
+
+57
+00:05:17,330 --> 00:05:18,620
+And then let's drop it right here.
+
+58
+00:05:20,320 --> 00:05:22,450
+And then let's lug a message for this message.
+
+59
+00:05:30,630 --> 00:05:31,560
+And then we can break.
+
+60
+00:05:33,450 --> 00:05:35,410
+All right, so let me just fix this indentation.
+
+61
+00:05:37,240 --> 00:05:38,230
+And then copy that.
+
+62
+00:05:40,200 --> 00:05:41,490
+So we can paste it down.
+
+63
+00:05:42,990 --> 00:05:44,520
+Then let's grab the next message.
+
+64
+00:05:46,500 --> 00:05:47,820
+And then update this case.
+
+65
+00:05:49,980 --> 00:05:51,960
+And we'll just do the same procedure for the next.
+
+66
+00:05:58,130 --> 00:05:59,090
+Copy the message.
+
+67
+00:06:00,630 --> 00:06:01,590
+And update the case.
+
+68
+00:06:03,920 --> 00:06:04,970
+And let's keep it going.
+
+69
+00:06:10,370 --> 00:06:11,210
+For this message.
+
+70
+00:06:17,760 --> 00:06:19,080
+OK, and on to the next.
+
+71
+00:06:24,760 --> 00:06:25,570
+Get the message.
+
+72
+00:06:27,830 --> 00:06:28,700
+Update the case.
+
+73
+00:06:31,570 --> 00:06:32,770
+And one more time.
+
+74
+00:06:37,420 --> 00:06:38,320
+Grab the message.
+
+75
+00:06:39,970 --> 00:06:41,260
+And update this case.
+
+76
+00:06:44,300 --> 00:06:48,620
+OK, so now let's just leave a default break here.
+
+77
+00:06:53,170 --> 00:06:53,860
+OK, great.
+
+78
+00:06:54,430 --> 00:07:01,570
+So we'll want to be able to stop the FTP server monitor if the HTP server is stopped as well, so let's
+
+79
+00:07:01,570 --> 00:07:02,530
+grab the handle.
+
+80
+00:07:04,280 --> 00:07:07,820
+And then let's come down to the HTP server stop function.
+
+81
+00:07:11,110 --> 00:07:16,420
+And then we'll see if task HGTV server monitor.
+
+82
+00:07:18,140 --> 00:07:19,910
+Then we will ask delete.
+
+83
+00:07:25,140 --> 00:07:26,790
+And insert that same handle here.
+
+84
+00:07:27,840 --> 00:07:29,460
+OK, now log message.
+
+85
+00:07:33,930 --> 00:07:36,480
+That says HGTV servers stop.
+
+86
+00:07:38,940 --> 00:07:42,570
+Stopping FTP server monitor.
+
+87
+00:07:46,660 --> 00:07:49,450
+All right, now, let's set the handle to know.
+
+88
+00:07:54,300 --> 00:07:55,150
+OK, it looks good.
+
+89
+00:07:55,170 --> 00:07:56,700
+So that completes our stop function.
+
+90
+00:07:57,420 --> 00:07:59,040
+Now let's head over to the head of file.
+
+91
+00:08:01,330 --> 00:08:03,400
+So we can copy the send message prototype.
+
+92
+00:08:09,420 --> 00:08:10,800
+And we could define it right here.
+
+93
+00:08:12,930 --> 00:08:16,770
+So first, create an instance of the HGTV server Q message type.
+
+94
+00:08:25,680 --> 00:08:30,630
+Do we want the message I'd set to the message I'd passed to the function?
+
+95
+00:08:34,250 --> 00:08:37,640
+And then we'll return the result of excuse sent.
+
+96
+00:08:42,880 --> 00:08:43,960
+In pass the handle.
+
+97
+00:08:50,340 --> 00:08:53,280
+And the reference to the message and Port Max delay.
+
+98
+00:08:59,750 --> 00:09:00,200
+OK.
+
+99
+00:09:00,290 --> 00:09:01,970
+All looks good, so now we can build.
+
+100
+00:09:17,260 --> 00:09:17,740
+OK.
+
+101
+00:09:17,770 --> 00:09:20,620
+And we have no errors, so we're ready for firmware updates.
+
+102
+00:09:21,100 --> 00:09:24,310
+So we'll talk about that in the next section, and I'll see you then.
+

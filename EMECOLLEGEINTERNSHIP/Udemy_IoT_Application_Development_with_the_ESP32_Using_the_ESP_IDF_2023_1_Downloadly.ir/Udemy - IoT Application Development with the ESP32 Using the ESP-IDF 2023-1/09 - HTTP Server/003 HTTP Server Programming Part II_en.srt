@@ -1,0 +1,644 @@
+1
+00:00:07,310 --> 00:00:09,080
+OK, so let's go over to the C file.
+
+2
+00:00:10,710 --> 00:00:11,790
+We're going to include.
+
+3
+00:00:12,950 --> 00:00:15,560
+ESP HGTV server tonnage.
+
+4
+00:00:18,350 --> 00:00:20,600
+And that's for HTP server component.
+
+5
+00:00:22,320 --> 00:00:25,710
+And we can also include ESP luggage.
+
+6
+00:00:28,270 --> 00:00:31,750
+And we'll also include here, HDP server Dot H.
+
+7
+00:00:35,610 --> 00:00:36,330
+And include.
+
+8
+00:00:38,120 --> 00:00:39,560
+Tasks common.
+
+9
+00:00:42,420 --> 00:00:45,360
+And also include Wi-Fi app Dunwich.
+
+10
+00:00:49,260 --> 00:00:53,670
+And now let's add a tag used for ESP serial console messages.
+
+11
+00:00:57,940 --> 00:01:01,240
+And stay static const char tag.
+
+12
+00:01:04,069 --> 00:01:06,650
+And call it HGTV server.
+
+13
+00:01:10,360 --> 00:01:13,660
+OK, now we'll create a CTP server test handle.
+
+14
+00:01:19,340 --> 00:01:23,370
+And it'll be static, it's handled, underscored T.
+
+15
+00:01:26,950 --> 00:01:31,870
+And call it HTP server handle and set it to No.
+
+16
+00:01:33,710 --> 00:01:38,720
+And this is the HGTV server instance, and that will need to use will be called various functions from
+
+17
+00:01:38,720 --> 00:01:42,470
+the API, such as HPD Start and Stop.
+
+18
+00:01:42,920 --> 00:01:48,890
+And when we register, you are eye handlers using the HPD register, you are a handler function.
+
+19
+00:01:49,730 --> 00:01:52,610
+OK, so now let's take care of the embedded files.
+
+20
+00:01:54,380 --> 00:01:55,820
+Which includes Jake Query.
+
+21
+00:01:58,940 --> 00:02:00,260
+Index HTML.
+
+22
+00:02:01,820 --> 00:02:05,000
+APT casts and apt J.S..
+
+23
+00:02:05,480 --> 00:02:07,820
+Andy Favicon, Iko Files.
+
+24
+00:02:11,970 --> 00:02:15,510
+OK, so now we need to externe Konst undated type.
+
+25
+00:02:17,780 --> 00:02:25,760
+And notice how the files seem to be typed here, so we'll say a query underscore and just follow me
+
+26
+00:02:25,760 --> 00:02:26,060
+here.
+
+27
+00:02:32,200 --> 00:02:32,980
+For the start.
+
+28
+00:02:34,090 --> 00:02:38,560
+And then use Asymm and then quotes.
+
+29
+00:02:39,840 --> 00:02:41,370
+And just follow me the rest of the way.
+
+30
+00:02:46,470 --> 00:02:48,120
+And just paste the rest of the name here.
+
+31
+00:02:49,920 --> 00:02:51,210
+And that's how we handle the start.
+
+32
+00:02:51,720 --> 00:02:53,010
+So now just copy it.
+
+33
+00:02:54,570 --> 00:02:57,600
+And then paste it here and change this to end.
+
+34
+00:03:00,520 --> 00:03:01,570
+And the entiere.
+
+35
+00:03:05,390 --> 00:03:08,390
+The next let's just do the same for index studies HTML.
+
+36
+00:03:15,690 --> 00:03:16,770
+And that's for the start.
+
+37
+00:03:20,270 --> 00:03:21,710
+And then do the same like before.
+
+38
+00:03:30,720 --> 00:03:33,480
+So now just copy that and paste it.
+
+39
+00:03:35,400 --> 00:03:36,210
+Let's do the end.
+
+40
+00:03:41,860 --> 00:03:44,380
+And then let's do the ABC East start here.
+
+41
+00:04:01,160 --> 00:04:02,600
+And then they'll do the end portion.
+
+42
+00:04:11,080 --> 00:04:13,750
+OK, so now let's do the start for us.
+
+43
+00:04:28,850 --> 00:04:30,920
+Then now let's do the end for the US.
+
+44
+00:04:40,110 --> 00:04:41,250
+And then do the last one.
+
+45
+00:04:42,440 --> 00:04:44,000
+For favicon, Iko Stoat.
+
+46
+00:05:00,410 --> 00:05:02,960
+OK, and then we'll also do favicon could end.
+
+47
+00:05:11,800 --> 00:05:12,910
+OK, that looks good.
+
+48
+00:05:14,560 --> 00:05:16,240
+So now we can head over to the head of file.
+
+49
+00:05:19,170 --> 00:05:21,810
+And then just grab our start and stop prototypes for now.
+
+50
+00:05:33,610 --> 00:05:36,280
+And then our first, we can go to a CTP server start.
+
+51
+00:05:39,220 --> 00:05:46,630
+And let's grab the HGTV server handle and say, if it should be server handle is no.
+
+52
+00:05:49,260 --> 00:05:56,460
+Then will say a CTP server handle equals the result of HGTV server configured.
+
+53
+00:06:00,650 --> 00:06:03,020
+And dysfunction will need to create later.
+
+54
+00:06:03,980 --> 00:06:06,660
+So for now, let's go over to the HGTV service.
+
+55
+00:06:06,660 --> 00:06:07,040
+Stop.
+
+56
+00:06:08,000 --> 00:06:14,810
+And say, if HGTV server handle meaning that the HGTV server has been initialized already.
+
+57
+00:06:17,020 --> 00:06:19,210
+Then we'll call HTP stop.
+
+58
+00:06:20,590 --> 00:06:22,090
+And insert the handle parameter.
+
+59
+00:06:26,670 --> 00:06:28,710
+And now ESP log information.
+
+60
+00:06:31,650 --> 00:06:33,240
+HGTV servers stop.
+
+61
+00:06:36,130 --> 00:06:38,770
+Colon stopping HGTV server.
+
+62
+00:06:43,230 --> 00:06:46,650
+And then we can set the HGTV server handle back to No.
+
+63
+00:06:53,580 --> 00:06:54,720
+OK, that looks good.
+
+64
+00:06:55,740 --> 00:07:01,860
+Now, let's create the HGTV server configured function and come here and say sets up the default.
+
+65
+00:07:03,330 --> 00:07:05,810
+HPD server configuration.
+
+66
+00:07:08,570 --> 00:07:12,230
+And returns HGTV server instance handle.
+
+67
+00:07:14,310 --> 00:07:15,270
+If successful.
+
+68
+00:07:17,050 --> 00:07:17,420
+NULL.
+
+69
+00:07:17,540 --> 00:07:18,190
+Otherwise.
+
+70
+00:07:27,020 --> 00:07:31,670
+So we'll say static httpd handle underscored T.
+
+71
+00:07:33,800 --> 00:07:37,460
+And it's the HGTV server, configure function, and it's void.
+
+72
+00:07:41,560 --> 00:07:45,070
+And now will generate the default configuration.
+
+73
+00:07:50,200 --> 00:07:56,620
+So here we'll need an instance of the handle HPT config type, and we'll call it config.
+
+74
+00:07:57,890 --> 00:08:01,070
+Equals eight httpd default config function.
+
+75
+00:08:05,220 --> 00:08:06,960
+And here are right to do.
+
+76
+00:08:09,710 --> 00:08:13,250
+That we should create should be server and monitored task.
+
+77
+00:08:14,840 --> 00:08:15,800
+So we'll do that later.
+
+78
+00:08:16,790 --> 00:08:20,030
+And then also write another to do to create the message queue.
+
+79
+00:08:24,600 --> 00:08:29,460
+And now we can specify the core that the HTP server will run on.
+
+80
+00:08:33,900 --> 00:08:37,260
+And for that sake, config that Core ID.
+
+81
+00:08:40,659 --> 00:08:43,090
+Equals our GDP server.
+
+82
+00:08:44,320 --> 00:08:45,190
+Task Corps.
+
+83
+00:08:49,380 --> 00:08:52,110
+And next will adjust the default priority.
+
+84
+00:08:54,270 --> 00:08:58,080
+To one less than the Wi-Fi application desk.
+
+85
+00:09:03,310 --> 00:09:05,620
+And do conflict task priority.
+
+86
+00:09:13,910 --> 00:09:17,060
+Equals HGTV server task priority.
+
+87
+00:09:21,940 --> 00:09:24,160
+And now we'll bump up the stack size.
+
+88
+00:09:26,640 --> 00:09:34,170
+Because the default is four thousand ninety six bytes, so we'll do config Typekit stack size.
+
+89
+00:09:37,660 --> 00:09:41,200
+Equals our HTTP server task stack size.
+
+90
+00:09:45,000 --> 00:09:48,120
+And next will increase our you are right handlers.
+
+91
+00:09:52,600 --> 00:09:55,120
+Which is the maximum amount of you are right handlers.
+
+92
+00:09:56,270 --> 00:09:58,010
+In, say, conflict.
+
+93
+00:09:58,190 --> 00:09:59,660
+Max, you are right, handlers.
+
+94
+00:10:04,310 --> 00:10:05,810
+And Tony should be good enough.
+
+95
+00:10:07,650 --> 00:10:08,040
+All right.
+
+96
+00:10:08,670 --> 00:10:11,280
+And now we'll increase the time out limits.
+
+97
+00:10:16,070 --> 00:10:18,350
+And do Config Dutt receive.
+
+98
+00:10:18,500 --> 00:10:19,370
+Wait time out.
+
+99
+00:10:20,370 --> 00:10:21,450
+As 10 seconds.
+
+100
+00:10:23,750 --> 00:10:29,690
+And the next to conflict sent wait time out as 10 seconds as well.
+
+101
+00:10:32,170 --> 00:10:32,530
+All right.
+
+102
+00:10:33,370 --> 00:10:35,980
+And now let's log the configured information.
+
+103
+00:10:42,620 --> 00:10:46,910
+And for the message, we'll say HTP conserver can figure.
+
+104
+00:10:49,660 --> 00:10:51,040
+Starting server on port.
+
+105
+00:10:53,900 --> 00:10:55,340
+And we'll print the port, No.
+
+106
+00:10:56,880 --> 00:10:59,340
+And then we'll say with task priority.
+
+107
+00:11:01,680 --> 00:11:03,180
+And we'll give the priority here.
+
+108
+00:11:07,180 --> 00:11:09,880
+All right, and then we'll get the config that server port.
+
+109
+00:11:12,890 --> 00:11:15,620
+And the conflict task priority.
+
+110
+00:11:18,950 --> 00:11:24,320
+OK, so we'll see this information on the terminal monitor when the Web server starts next, let's start
+
+111
+00:11:24,320 --> 00:11:30,980
+the httpd server and we'll say if they start.
+
+112
+00:11:33,880 --> 00:11:37,060
+With the reference to the HTP server handle.
+
+113
+00:11:42,800 --> 00:11:44,480
+In a reference to the config.
+
+114
+00:11:48,200 --> 00:11:50,150
+And if it returns, ESP, OK.
+
+115
+00:11:54,600 --> 00:11:57,300
+Then we want to ESP log information.
+
+116
+00:12:01,300 --> 00:12:03,670
+That the HGTV server can figure.
+
+117
+00:12:05,640 --> 00:12:07,860
+Is now registering the Yura handlers.
+
+118
+00:12:13,520 --> 00:12:17,000
+And then first, we'll say, registered the J Query handler.
+
+119
+00:12:21,800 --> 00:12:25,190
+And Hugh, we need to speed you are a struct.
+
+120
+00:12:27,800 --> 00:12:30,380
+And call it Jake Weary underscored us.
+
+121
+00:12:34,810 --> 00:12:35,980
+And let's set the you are right.
+
+122
+00:12:39,380 --> 00:12:41,960
+As forward slash and the file name here.
+
+123
+00:12:50,710 --> 00:12:52,840
+And the next will specify the method.
+
+124
+00:12:55,350 --> 00:12:56,910
+As an HTP get.
+
+125
+00:13:00,140 --> 00:13:01,700
+And now we need to provide a handler.
+
+126
+00:13:05,280 --> 00:13:08,520
+And give it a function name as HGTV server.
+
+127
+00:13:10,000 --> 00:13:11,260
+Jake Weary, Handler.
+
+128
+00:13:15,400 --> 00:13:18,420
+And now let's set this user underscores CTCs.
+
+129
+00:13:21,620 --> 00:13:22,280
+As no.
+
+130
+00:13:27,870 --> 00:13:33,990
+All right, so that looks good, so now we can register that you are a handler using the ftpd, register
+
+131
+00:13:33,990 --> 00:13:35,070
+your eye handler.
+
+132
+00:13:37,250 --> 00:13:40,370
+And then we'll pass the 8TB server handle.
+
+133
+00:13:42,320 --> 00:13:46,010
+And a reference to the J Query underscored a structure.
+
+134
+00:13:49,490 --> 00:13:50,150
+OK, cool.
+
+135
+00:13:50,600 --> 00:13:52,250
+So now let's copy this one.
+
+136
+00:13:55,500 --> 00:13:56,580
+And then paste it down.
+
+137
+00:13:58,560 --> 00:14:02,310
+So we can register the index HTML handler.
+
+138
+00:14:04,600 --> 00:14:08,590
+And now change this name here to index underscore HTML.
+
+139
+00:14:10,320 --> 00:14:10,800
+And the are.
+
+140
+00:14:11,610 --> 00:14:12,900
+It's just a forward slash.
+
+141
+00:14:15,720 --> 00:14:18,390
+Then now let's update the handler name like so.
+
+142
+00:14:25,200 --> 00:14:26,790
+And also copy and paste.
+
+143
+00:14:28,070 --> 00:14:33,620
+To register the index CMLL handler and now just copy and paste.
+
+144
+00:14:35,620 --> 00:14:36,910
+To the next, you are a handler.
+
+145
+00:14:37,920 --> 00:14:40,500
+And change the name to that success handler.
+
+146
+00:14:43,150 --> 00:14:44,350
+And then update the name here.
+
+147
+00:14:47,630 --> 00:14:48,650
+And then update your.
+
+148
+00:14:52,240 --> 00:14:54,220
+And now we can update the handle of function name.
+
+149
+00:14:57,450 --> 00:15:00,930
+And then registered the app on Underscores CIUSSS Handler.
+
+150
+00:15:02,590 --> 00:15:04,540
+So now let's do the Duchess.
+
+151
+00:15:07,940 --> 00:15:09,750
+And then change it to A.j.'s.
+
+152
+00:15:11,440 --> 00:15:13,000
+And then update the rest of the same way.
+
+153
+00:15:27,230 --> 00:15:30,650
+OK, good, so now let's register the favicon, Dutt Iko.
+
+154
+00:15:35,260 --> 00:15:36,610
+And then we'll update it like so.
+
+155
+00:16:01,390 --> 00:16:03,820
+Now we can return the server handle.
+
+156
+00:16:10,670 --> 00:16:11,060
+OK.
+
+157
+00:16:12,000 --> 00:16:13,650
+And outside this if block.
+
+158
+00:16:16,720 --> 00:16:17,680
+We can return now.
+
+159
+00:16:19,130 --> 00:16:20,180
+Right here, great.
+
+160
+00:16:25,330 --> 00:16:30,160
+So next will define the you or I handlers, but I think now is a good time to take a short break and
+
+161
+00:16:30,160 --> 00:16:31,270
+we'll regroup in the next one.
+

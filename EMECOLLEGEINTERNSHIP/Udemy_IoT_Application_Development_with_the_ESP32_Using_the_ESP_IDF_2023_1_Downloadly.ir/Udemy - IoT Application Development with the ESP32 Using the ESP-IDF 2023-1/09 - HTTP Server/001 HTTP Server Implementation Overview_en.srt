@@ -1,0 +1,248 @@
+1
+00:00:07,130 --> 00:00:11,930
+In this section, we'll take a look at the HTP server implementation, which is a key component to the
+
+2
+00:00:11,930 --> 00:00:13,940
+wireless local area network application.
+
+3
+00:00:14,240 --> 00:00:16,040
+And of course, it supports the web page.
+
+4
+00:00:17,660 --> 00:00:22,520
+So let's get into the implementation overview, first of all, the Web server supports the web page
+
+5
+00:00:22,520 --> 00:00:29,630
+files, which includes the HTML document, the CSIS file and the JavaScript file, and will use this
+
+6
+00:00:29,630 --> 00:00:31,940
+web page to interact with the SB 32.
+
+7
+00:00:32,420 --> 00:00:38,480
+And that includes support for OTA or over the firmware updates and also displaying temperature and humidity
+
+8
+00:00:38,480 --> 00:00:39,290
+sensor readings.
+
+9
+00:00:39,740 --> 00:00:44,840
+And the web server will also be able to respond to connection and disconnection buttons, for example,
+
+10
+00:00:44,840 --> 00:00:50,480
+by entering the SSA, ID and password into text fields for the access point or router where you want
+
+11
+00:00:50,480 --> 00:00:54,200
+to connect and by clicking Connect, the connection attempts will be made.
+
+12
+00:00:54,680 --> 00:01:00,680
+And in the case that the ESP 32 is already connected to an access point, clicking disconnect will trigger
+
+13
+00:01:00,680 --> 00:01:04,700
+an action on the web server side that forces the SB 32 to disconnect.
+
+14
+00:01:05,730 --> 00:01:11,070
+Also, the webserver will be able to handle sending connection information to the Web page, such as
+
+15
+00:01:11,070 --> 00:01:19,800
+the suicide of the access point that the SB 32 is connected to and the IP and Gateway and Netmask signed
+
+16
+00:01:19,800 --> 00:01:20,580
+to the ESB.
+
+17
+00:01:21,240 --> 00:01:27,060
+And later in the course will display the side of the SB 32 itself on the web page.
+
+18
+00:01:27,720 --> 00:01:32,970
+So once you learn how to do all of these tasks, you'll know how to send data to the web page and receive
+
+19
+00:01:32,970 --> 00:01:38,310
+data from the page as well, which enables you to write your own custom LAN applications.
+
+20
+00:01:39,380 --> 00:01:44,960
+Now, let's talk about the Web page files, the resource files in this section includes an HTML file
+
+21
+00:01:44,960 --> 00:01:47,480
+that already includes the markup for the OTA update.
+
+22
+00:01:47,930 --> 00:01:52,520
+Basically, it is just a couple of buttons at this point, however, will expand upon this file throughout
+
+23
+00:01:52,520 --> 00:01:58,310
+the course, and the app does see a says file is the style sheet for the index edge HTML document,
+
+24
+00:01:58,760 --> 00:02:02,000
+and that will also continue to expand as we go along in the course.
+
+25
+00:02:02,360 --> 00:02:05,000
+And it already has the styling for the template that I've provided.
+
+26
+00:02:05,660 --> 00:02:12,650
+And also the Duchess file is the JavaScript file, which already includes the OTA functions and will
+
+27
+00:02:12,650 --> 00:02:15,290
+also expand this by adding functions throughout the course.
+
+28
+00:02:16,070 --> 00:02:22,070
+And the favicon that I could file is the icon that gets displayed in the address bar of the browser.
+
+29
+00:02:22,970 --> 00:02:29,360
+And lastly, the J Query file is the JavaScript library that enables the JavaScript functionality that
+
+30
+00:02:29,360 --> 00:02:30,140
+will be using.
+
+31
+00:02:31,850 --> 00:02:35,780
+Now, let's briefly talk about the 8TB server components of the IDF.
+
+32
+00:02:37,320 --> 00:02:39,420
+So here's the suggested reading for this section.
+
+33
+00:02:40,020 --> 00:02:45,900
+Be sure to check out the HTP server an API reference link to the overview here covers a lot of what
+
+34
+00:02:45,900 --> 00:02:49,020
+we're actually going to be doing in the course and the functions used.
+
+35
+00:02:49,920 --> 00:02:53,610
+And if you follow the second link, it just takes you to an example.
+
+36
+00:02:53,610 --> 00:02:58,350
+Further down on the same page, you'll find that our implementation follows a very similar structure
+
+37
+00:02:58,350 --> 00:02:59,730
+to this example shown here.
+
+38
+00:03:00,890 --> 00:03:04,490
+So let's take a look at some of the steps we'll have to take to get the web server up and running.
+
+39
+00:03:05,180 --> 00:03:11,630
+One of the first steps will take is embedding binary data the HTML, CSS and JavaScript files, so follow
+
+40
+00:03:11,630 --> 00:03:12,560
+the link for detail.
+
+41
+00:03:13,190 --> 00:03:17,570
+Basically, we're going to edit the see, make list file and list our web page files there.
+
+42
+00:03:18,200 --> 00:03:23,690
+Then, in the CTP server see file, we're going to add the files contents to the read only section in
+
+43
+00:03:23,690 --> 00:03:30,380
+the flesh, as shown here will then include our basic HTP server, start and stop functions and wrap
+
+44
+00:03:30,380 --> 00:03:32,750
+those functions so that we can use them in the application.
+
+45
+00:03:33,170 --> 00:03:35,180
+Similar to how it's done in the example here.
+
+46
+00:03:36,140 --> 00:03:42,080
+Next will then create the default 8TB server configuration, where some of these structure members will
+
+47
+00:03:42,080 --> 00:03:47,960
+be initialized using the default config function, but will adjust some of these members to our needs,
+
+48
+00:03:48,500 --> 00:03:51,170
+then we'll call the 8TB start function.
+
+49
+00:03:51,740 --> 00:03:57,080
+Things will turn out looking similar to the examples shown and throughout the course will create your
+
+50
+00:03:57,080 --> 00:03:57,800
+AI handlers.
+
+51
+00:03:58,370 --> 00:04:01,040
+And this is a you are a handler structure here.
+
+52
+00:04:01,760 --> 00:04:08,540
+And in the first lesson, we'll just register your AI handlers for the resource files and we'll create
+
+53
+00:04:08,540 --> 00:04:10,700
+this in a very similar way, as shown here.
+
+54
+00:04:11,640 --> 00:04:18,180
+And the last thing that I want to mention is that will also create a task called HGTV Server Monitor,
+
+55
+00:04:18,690 --> 00:04:22,410
+which can send and receive cue messages to respond to certain events.
+
+56
+00:04:23,070 --> 00:04:28,830
+It's similar to what we have in the Wi-Fi application for now will handle into test communication between
+
+57
+00:04:28,830 --> 00:04:34,050
+the Wi-Fi application and the web server in this manner by using the message cues.
+
+58
+00:04:34,590 --> 00:04:37,080
+If any of this seems confusing, don't worry.
+
+59
+00:04:37,410 --> 00:04:40,110
+Once we get to coding, it should start to make more sense.
+
+60
+00:04:40,500 --> 00:04:44,910
+I just like providing a quick overview so that you have some sort of reference before we get into using
+
+61
+00:04:44,910 --> 00:04:46,500
+the HGTV server API.
+
+62
+00:04:47,870 --> 00:04:49,850
+All right, so let's get to coding in the next section.
+
