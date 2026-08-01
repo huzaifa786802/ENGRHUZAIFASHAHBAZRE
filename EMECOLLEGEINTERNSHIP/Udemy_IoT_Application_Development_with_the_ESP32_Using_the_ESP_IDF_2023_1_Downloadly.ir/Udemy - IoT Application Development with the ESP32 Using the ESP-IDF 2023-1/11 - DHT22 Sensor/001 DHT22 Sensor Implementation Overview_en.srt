@@ -1,0 +1,112 @@
+1
+00:00:06,580 --> 00:00:07,390
+Hey, welcome back.
+
+2
+00:00:07,689 --> 00:00:11,740
+In this section will implement the DHT twenty two censored portion of the project.
+
+3
+00:00:12,160 --> 00:00:13,570
+So let's take a look at the overview.
+
+4
+00:00:14,840 --> 00:00:21,230
+And this course, we are using the AM to three zero two DHT 22 temperature and humidity sensor module.
+
+5
+00:00:21,890 --> 00:00:27,260
+This is a very popular, easy to find module, and if you do an online search for the sensor, you should
+
+6
+00:00:27,260 --> 00:00:30,230
+be able to find an online store that can ship it to your home country.
+
+7
+00:00:30,860 --> 00:00:36,530
+This module outputs a single digital signal and contains a calibrated temperature and humidity combined
+
+8
+00:00:36,530 --> 00:00:37,070
+sensor.
+
+9
+00:00:37,940 --> 00:00:43,280
+It only requires three connections, so you'll just connect the data line to the GPIO that we'll define
+
+10
+00:00:43,280 --> 00:00:50,660
+in the firmware and also connect the VXI and ground lines on the ESP 32 to VXI and the ground lines
+
+11
+00:00:50,660 --> 00:00:52,550
+on the DHT 22 sensor.
+
+12
+00:00:53,270 --> 00:00:55,280
+Also, a couple of more notes about the sensor.
+
+13
+00:00:55,790 --> 00:01:02,240
+It provides higher accuracy than the HD 11 variant, and the temperature ranges from negative 40 to
+
+14
+00:01:02,240 --> 00:01:06,980
+80 degrees Celsius, and the humidity range is from 20 to 90 percent.
+
+15
+00:01:07,580 --> 00:01:11,630
+And here is how I've connected the DHT 22 to my Rover Dev kit.
+
+16
+00:01:12,050 --> 00:01:19,190
+The blue wire three point three volts on the Dev Kit is connected to VXI on the DHT 22, and the gray
+
+17
+00:01:19,190 --> 00:01:27,920
+wire ground on the dev kit is connected to ground on the DHT 22 and the Purple Wire is GPIO 25 on the
+
+18
+00:01:27,920 --> 00:01:31,790
+delicate and connected to data on the DHT 22.
+
+19
+00:01:32,450 --> 00:01:34,730
+All right, so that's the three connections that we need.
+
+20
+00:01:36,100 --> 00:01:40,990
+All right, so let's take a look at how will accomplish getting the sensor data, the sensor data readings
+
+21
+00:01:40,990 --> 00:01:45,190
+will be handled by an existing library for the DHT 22 sensor.
+
+22
+00:01:45,700 --> 00:01:49,960
+I've attached the DHT 22 Dot C and Dot H files to.
+
+23
+00:01:49,960 --> 00:01:55,780
+The resources for this section will include these files directly under the main folder will create a
+
+24
+00:01:55,780 --> 00:02:01,270
+free autos task to read the DHT 22 data at a specified interval, and we'll test it.
+
+25
+00:02:01,870 --> 00:02:09,610
+Next, we'll update the web page files the Index HTML app to Access and APKs files in order to display
+
+26
+00:02:09,610 --> 00:02:15,580
+the updated data, and the web server will then need to be updated to respond to the get requests with
+
+27
+00:02:15,580 --> 00:02:18,940
+temperature and humidity data from the DHT 22 sensor.
+
+28
+00:02:20,800 --> 00:02:22,660
+And that's it, so now let's get the programming.
+
