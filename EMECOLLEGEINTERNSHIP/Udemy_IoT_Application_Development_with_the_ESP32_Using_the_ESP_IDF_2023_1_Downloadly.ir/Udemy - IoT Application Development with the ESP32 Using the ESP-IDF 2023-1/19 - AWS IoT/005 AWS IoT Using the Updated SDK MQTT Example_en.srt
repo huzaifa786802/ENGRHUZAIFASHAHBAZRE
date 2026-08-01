@@ -1,0 +1,1000 @@
+1
+00:00:06,740 --> 00:00:12,050
+Hello and welcome to the updated lesson on using a US Iot with the updated sdhc.
+
+2
+00:00:12,290 --> 00:00:19,340
+In the previous lessons we'd integrated the ESP a US Iot released version 3.1 and this was the latest
+
+3
+00:00:19,340 --> 00:00:24,770
+version at the time of the recording, but has since released a newer version and I'm going to keep
+
+4
+00:00:24,770 --> 00:00:29,000
+the old version as part of the configuration lesson as some people are still using it.
+
+5
+00:00:29,000 --> 00:00:32,990
+But for those that want to check out an example of publishing and subscribing using the new version
+
+6
+00:00:32,990 --> 00:00:35,420
+here, then this lesson is for you.
+
+7
+00:00:35,900 --> 00:00:41,240
+However, before moving on, please be sure that you've already set up your account, created a thing
+
+8
+00:00:41,240 --> 00:00:45,320
+in US generated certificates and attach the policy.
+
+9
+00:00:45,530 --> 00:00:49,280
+Basically, everything we did in the configuration lesson.
+
+10
+00:00:49,580 --> 00:00:52,340
+So go back and watch that if you haven't already.
+
+11
+00:00:53,000 --> 00:00:58,610
+So let's get started here by going to the project folder and let's change the name of the existing US
+
+12
+00:00:58,670 --> 00:00:59,870
+Iot folder.
+
+13
+00:01:00,020 --> 00:01:01,730
+In case you want to keep this version.
+
+14
+00:01:02,330 --> 00:01:04,340
+So that is version 3.1.
+
+15
+00:01:09,160 --> 00:01:12,580
+Now let's copy the clone command they provided for us here.
+
+16
+00:01:12,820 --> 00:01:13,660
+So copy that.
+
+17
+00:01:13,660 --> 00:01:14,380
+Like so.
+
+18
+00:01:14,920 --> 00:01:16,570
+And then go to the project folder.
+
+19
+00:01:19,110 --> 00:01:22,590
+Because we want to clone it to this folder and right click here.
+
+20
+00:01:26,020 --> 00:01:27,700
+And then go to get Bashir.
+
+21
+00:01:31,740 --> 00:01:33,480
+And then paste in the clone command.
+
+22
+00:01:37,940 --> 00:01:41,660
+And just give it a few moments to finish as it may take a little while.
+
+23
+00:01:44,630 --> 00:01:45,770
+And now we can close get.
+
+24
+00:01:47,240 --> 00:01:52,460
+And let's just briefly check out what we have here and our cloned ESP a society folder.
+
+25
+00:01:53,640 --> 00:01:58,410
+Here are the top level structure looks pretty simple with the examples folder and the libraries folder,
+
+26
+00:01:58,410 --> 00:02:03,750
+and we'll look into the examples shortly and we'll actually implement the mktg example.
+
+27
+00:02:04,470 --> 00:02:09,330
+And in the libraries folder, we'll need to include these by adjusting our make list file.
+
+28
+00:02:09,690 --> 00:02:13,770
+So feel free to get familiar with these files and folders here, especially if you're interested in
+
+29
+00:02:13,770 --> 00:02:16,190
+diving deeper into a society.
+
+30
+00:02:16,410 --> 00:02:16,710
+All right.
+
+31
+00:02:16,710 --> 00:02:19,440
+So now let's review into the example that we're going to implement.
+
+32
+00:02:19,890 --> 00:02:21,810
+Let's go back to the examples folder.
+
+33
+00:02:23,390 --> 00:02:28,880
+And the example that we want is an example where we can simply publish and subscribe data.
+
+34
+00:02:28,910 --> 00:02:34,070
+However, you can always explore the other examples once you know how to integrate this example.
+
+35
+00:02:34,160 --> 00:02:39,260
+So let's go into MQTT, then let's go into TLS mutual authentication.
+
+36
+00:02:41,370 --> 00:02:45,360
+And first, let's take a look at the read me that's provided here, because there's a few important
+
+37
+00:02:45,360 --> 00:02:46,110
+notes there.
+
+38
+00:02:46,890 --> 00:02:54,450
+First, it says we need to find and set the US endpoint hostname and it says Your Iot account has a
+
+39
+00:02:54,450 --> 00:02:56,580
+unique endpoint hostname to connect to.
+
+40
+00:02:56,610 --> 00:03:02,790
+To find it open the US Iot console and click the settings button on the bottom left side and using the
+
+41
+00:03:02,790 --> 00:03:04,350
+K config project build file.
+
+42
+00:03:04,350 --> 00:03:10,200
+From this example, we can enter the endpoint host name into the example configuration and the sdhc
+
+43
+00:03:10,200 --> 00:03:10,860
+config.
+
+44
+00:03:11,070 --> 00:03:18,630
+So also we need to set the client ID and it says here that the client ID is used in the MQTT Protocol
+
+45
+00:03:18,630 --> 00:03:26,490
+to send messages to and from a society and a Iot requires that each connected device within a single
+
+46
+00:03:26,820 --> 00:03:33,210
+US account uses a unique client ID, and if we recall from the configuration lesson, this is the name
+
+47
+00:03:33,210 --> 00:03:35,820
+of our thing in a society.
+
+48
+00:03:35,970 --> 00:03:41,100
+And in this example, these definitions are compiled into the menu config, which we can adjust via
+
+49
+00:03:41,100 --> 00:03:42,630
+the sdhc config file.
+
+50
+00:03:42,930 --> 00:03:47,760
+All right, so let's just grab that information for now, just as a quick refresher of where we can
+
+51
+00:03:47,760 --> 00:03:50,190
+find it so that we can easily retrieve it later.
+
+52
+00:03:50,430 --> 00:03:54,750
+So I'll just create a new text file and from our AWS account.
+
+53
+00:03:56,800 --> 00:03:58,840
+We can go to Iot core.
+
+54
+00:04:02,340 --> 00:04:04,080
+And then I'll just set my location.
+
+55
+00:04:11,910 --> 00:04:13,530
+And then we can go into settings.
+
+56
+00:04:16,950 --> 00:04:18,899
+And let's grab the endpoint hostname.
+
+57
+00:04:19,860 --> 00:04:21,089
+Copy it like so.
+
+58
+00:04:22,790 --> 00:04:24,530
+And then I'll just make a note of it here.
+
+59
+00:04:27,250 --> 00:04:27,640
+Next.
+
+60
+00:04:27,640 --> 00:04:29,110
+We want the client to ID.
+
+61
+00:04:34,310 --> 00:04:36,230
+Let's go to all devices.
+
+62
+00:04:37,000 --> 00:04:38,250
+Didn't go to things.
+
+63
+00:04:40,970 --> 00:04:42,320
+And I'll just copy mine.
+
+64
+00:04:44,990 --> 00:04:47,720
+And then make a note of it here and now.
+
+65
+00:04:47,720 --> 00:04:52,640
+Let's start integrating the framework and we'll start off by adjusting the top level CMYK list file
+
+66
+00:04:52,760 --> 00:04:56,840
+and we can actually use the C make list file provided by the example for reference.
+
+67
+00:04:58,590 --> 00:05:01,260
+So let's just open the make list file provided.
+
+68
+00:05:05,840 --> 00:05:08,480
+And then let's copy the entire set command right here.
+
+69
+00:05:10,210 --> 00:05:13,330
+Now go to the top level C make list file in the project.
+
+70
+00:05:19,830 --> 00:05:24,810
+And we can actually move the set command to the recommended location so we can get rid of this one.
+
+71
+00:05:27,620 --> 00:05:29,030
+And then pace the command to.
+
+72
+00:05:30,840 --> 00:05:34,380
+But let's adjust the path here so that it aligns with our folder structure.
+
+73
+00:05:34,770 --> 00:05:36,510
+We can select this part here.
+
+74
+00:05:37,730 --> 00:05:39,150
+Then use control f.
+
+75
+00:05:40,000 --> 00:05:45,610
+And then we could replace it with the correct path to the ESP a US Iot folder here.
+
+76
+00:05:46,180 --> 00:05:48,730
+All right, so just enter ESP.
+
+77
+00:05:50,020 --> 00:05:52,410
+A Iot.
+
+78
+00:05:53,500 --> 00:05:54,610
+Then replace all.
+
+79
+00:05:57,930 --> 00:05:58,450
+Och.
+
+80
+00:05:58,500 --> 00:05:59,580
+And that all looks good.
+
+81
+00:05:59,580 --> 00:06:06,150
+Except we forgot to do one thing and that's to refresh the project as I noticed that a USB Iot version
+
+82
+00:06:06,150 --> 00:06:08,340
+3.1 folder is missing here.
+
+83
+00:06:08,370 --> 00:06:15,060
+So what we could do is go to the top level project folder and right click and then go down to refresh
+
+84
+00:06:15,630 --> 00:06:17,130
+and refresh the project.
+
+85
+00:06:18,540 --> 00:06:21,090
+Now we have the old version in the new version right here.
+
+86
+00:06:22,950 --> 00:06:28,560
+Next, let's copy the necessary files over to the ID by going into the main folder of the example.
+
+87
+00:06:28,800 --> 00:06:31,110
+So let's head over to the example folder.
+
+88
+00:06:34,010 --> 00:06:35,450
+Go into the main folder.
+
+89
+00:06:37,030 --> 00:06:39,170
+And we already have our own app main.
+
+90
+00:06:39,190 --> 00:06:41,890
+So let's just take the demo config header file.
+
+91
+00:06:42,750 --> 00:06:47,970
+The config project build file and the MK PT demo source file.
+
+92
+00:06:48,660 --> 00:06:49,830
+Copy those over.
+
+93
+00:06:54,500 --> 00:06:57,920
+Choose overwrite for the k config project build file.
+
+94
+00:07:00,870 --> 00:07:05,550
+Okay, Next we can update the main CMYK list file by copying the name of our new source file.
+
+95
+00:07:06,000 --> 00:07:07,680
+Go over to the new source file.
+
+96
+00:07:10,330 --> 00:07:11,560
+And right click on it.
+
+97
+00:07:12,760 --> 00:07:13,480
+To copy.
+
+98
+00:07:14,050 --> 00:07:16,300
+Then let's open up the main make list file.
+
+99
+00:07:18,150 --> 00:07:21,810
+And we can override the old a society source file.
+
+100
+00:07:22,710 --> 00:07:24,210
+With the new file name here.
+
+101
+00:07:25,700 --> 00:07:27,110
+And just be sure to save that.
+
+102
+00:07:27,590 --> 00:07:29,510
+Next, let's update our main see.
+
+103
+00:07:30,700 --> 00:07:34,150
+And let's use the app and see from the example it's a reference.
+
+104
+00:07:36,270 --> 00:07:37,740
+Go ahead and open that file.
+
+105
+00:07:40,490 --> 00:07:46,130
+And the only thing that we need here is the entry point to the demo application, and that is this function
+
+106
+00:07:46,130 --> 00:07:46,640
+here.
+
+107
+00:07:47,150 --> 00:07:50,840
+So copy the prototype and let's go back and paste it in.
+
+108
+00:07:54,160 --> 00:07:54,610
+Okay.
+
+109
+00:07:54,740 --> 00:07:56,350
+Now just adjust it like so.
+
+110
+00:08:00,060 --> 00:08:01,800
+Let's also grab the function call.
+
+111
+00:08:03,580 --> 00:08:05,050
+And the function call is here.
+
+112
+00:08:06,940 --> 00:08:12,700
+Just copy that and let's go back and paste it into our wi fi application.
+
+113
+00:08:12,700 --> 00:08:14,440
+Connected events callback function.
+
+114
+00:08:15,430 --> 00:08:20,260
+And that's because we'll need an Internet connection prior to connecting to a society.
+
+115
+00:08:21,460 --> 00:08:25,930
+We can also comment out the old US Iot start function call.
+
+116
+00:08:27,770 --> 00:08:33,860
+Comment this out and we can also get rid of the include for the old a US Iot header.
+
+117
+00:08:36,700 --> 00:08:38,440
+And that's all we'll need to do here.
+
+118
+00:08:38,770 --> 00:08:43,510
+Next, let's briefly review the code provided by the example and make some changes wherever necessary.
+
+119
+00:08:44,080 --> 00:08:46,330
+Let's start with a demo config header file.
+
+120
+00:08:47,080 --> 00:08:48,790
+And let's just go through this briefly.
+
+121
+00:08:49,830 --> 00:08:53,220
+The endpoint here will come from the sdhc config once we update it.
+
+122
+00:08:54,190 --> 00:08:57,700
+And the MQTT port will come from the configuration as well.
+
+123
+00:08:59,900 --> 00:09:05,300
+And the client identifier also comes from the sdhc config and that will be updated with our thing.
+
+124
+00:09:05,300 --> 00:09:05,780
+Name.
+
+125
+00:09:06,710 --> 00:09:13,070
+And the network buffer size also comes from the sdhc config as well as the hardware platform name.
+
+126
+00:09:13,070 --> 00:09:17,440
+And we'll see how these definitions are defined when we update the sdhc config shortly.
+
+127
+00:09:18,110 --> 00:09:22,880
+So now let's take a look at the MQTT demo mutual authentication C file.
+
+128
+00:09:24,100 --> 00:09:26,980
+And this file contains everything that we need to run the demo.
+
+129
+00:09:26,980 --> 00:09:32,730
+But of course we need to update it so that we can publish the temperature, humidity and the wi fi RSI
+
+130
+00:09:32,740 --> 00:09:36,220
+and so that it works with our AWS Iot accounts.
+
+131
+00:09:36,700 --> 00:09:42,700
+So first let's add the include for the PH 22 sensor, and that is so that we can publish the temperature
+
+132
+00:09:42,700 --> 00:09:43,450
+and humidity.
+
+133
+00:09:49,050 --> 00:09:54,210
+And let's include the wi fi app as well and that so that we can publish the wi fi RSI.
+
+134
+00:10:01,920 --> 00:10:07,740
+So also at the top of the file, we have to adjust the root CA definition, the client certificate and
+
+135
+00:10:07,740 --> 00:10:09,060
+the private key as well.
+
+136
+00:10:09,660 --> 00:10:16,170
+So let's go ahead and copy the US root CA file name and we can get that from our certs folder.
+
+137
+00:10:17,600 --> 00:10:18,800
+And then right click.
+
+138
+00:10:20,720 --> 00:10:21,650
+Then copy.
+
+139
+00:10:23,350 --> 00:10:26,620
+And let's paste it in for the root CA binary data start.
+
+140
+00:10:28,560 --> 00:10:30,810
+And for the binary data end as well.
+
+141
+00:10:36,680 --> 00:10:38,870
+Now we can do the same for the client certificate.
+
+142
+00:10:39,050 --> 00:10:43,370
+So let's go back to the search folder and then I will just control see.
+
+143
+00:10:44,980 --> 00:10:46,630
+And then we could paste it in for the start.
+
+144
+00:10:52,850 --> 00:10:54,140
+Let's do the end as well.
+
+145
+00:10:59,030 --> 00:11:00,380
+Now for the private key.
+
+146
+00:11:02,210 --> 00:11:05,540
+Control C to copy and paste it in for the start.
+
+147
+00:11:08,700 --> 00:11:09,600
+And the end.
+
+148
+00:11:13,750 --> 00:11:15,430
+Now let's continue down the file.
+
+149
+00:11:16,560 --> 00:11:24,300
+We have some more defines here for the endpoint link and also the client identifier length and so on.
+
+150
+00:11:25,110 --> 00:11:30,300
+And then there's also connection re tris and then some others that you may want to look into for customizing
+
+151
+00:11:30,300 --> 00:11:31,230
+this example.
+
+152
+00:11:31,620 --> 00:11:34,110
+And here's an important one, which we'll have to update.
+
+153
+00:11:34,290 --> 00:11:40,590
+This is our topic name, which we had used in the previous a Iot example for publishing of subscribing
+
+154
+00:11:40,620 --> 00:11:45,510
+to and previously we had defined it in the US Iot C file.
+
+155
+00:11:45,540 --> 00:11:46,890
+So let's head over there.
+
+156
+00:11:49,300 --> 00:11:51,370
+And I will just control left to search for it.
+
+157
+00:11:55,600 --> 00:11:57,280
+And this is how I define mine.
+
+158
+00:11:58,220 --> 00:11:58,460
+All right.
+
+159
+00:11:58,460 --> 00:11:59,900
+So I'll go ahead and copy this.
+
+160
+00:12:01,630 --> 00:12:03,610
+And then go back to the new example file.
+
+161
+00:12:05,410 --> 00:12:07,120
+And then update the definition here.
+
+162
+00:12:09,120 --> 00:12:12,060
+And again, this is the topic to subscribe and publish to.
+
+163
+00:12:12,720 --> 00:12:19,200
+And let's keep moving this example message here we actually won't use as we're going to publish the
+
+164
+00:12:19,200 --> 00:12:22,020
+temperature humidity and we fire our Cici.
+
+165
+00:12:22,380 --> 00:12:24,330
+And as we can see from the outline here.
+
+166
+00:12:26,530 --> 00:12:31,690
+There are quite a few definitions and function prototypes, and I suggest that you go through these
+
+167
+00:12:31,690 --> 00:12:32,650
+on your own.
+
+168
+00:12:32,650 --> 00:12:37,270
+If you're interested in customizing this example and adapting it to suit your application needs.
+
+169
+00:12:38,080 --> 00:12:42,430
+Because what's important for us right now is publishing data to this topic.
+
+170
+00:12:42,730 --> 00:12:47,470
+We don't want to publish this Hello world message, so let's find out where this definition is used
+
+171
+00:12:47,470 --> 00:12:48,740
+by using control f.
+
+172
+00:12:53,970 --> 00:12:59,580
+And here we find that it's used within the published atomic function where the payload and the payload
+
+173
+00:12:59,580 --> 00:13:02,310
+length are updated with these macro definitions.
+
+174
+00:13:02,850 --> 00:13:08,910
+So instead of sending the Hello world, let's give it the temperature, humidity and wi fi r a C and
+
+175
+00:13:08,910 --> 00:13:10,560
+give it the new payload length as well.
+
+176
+00:13:10,830 --> 00:13:15,150
+And in order to do that, we can grab our print def statement from the old example.
+
+177
+00:13:15,480 --> 00:13:18,600
+So let's head back over to society.
+
+178
+00:13:19,950 --> 00:13:23,070
+And we could find that in the a society task.
+
+179
+00:13:23,340 --> 00:13:25,020
+And let's just copy this line here.
+
+180
+00:13:32,620 --> 00:13:34,870
+And let's just paste it towards the top of the function.
+
+181
+00:13:36,640 --> 00:13:38,890
+And we also want the wi fi outside.
+
+182
+00:13:39,220 --> 00:13:40,930
+So let's add in the text for that.
+
+183
+00:13:45,140 --> 00:13:48,390
+And then let's give it the function that is wi fi app.
+
+184
+00:13:48,410 --> 00:13:49,730
+Get RC.
+
+185
+00:13:53,460 --> 00:13:55,800
+And then why fi RSI is a string.
+
+186
+00:13:58,160 --> 00:14:01,100
+And the result from the function is an integer.
+
+187
+00:14:03,780 --> 00:14:06,600
+And let's define the C payload variable up here as well.
+
+188
+00:14:17,090 --> 00:14:17,420
+All right.
+
+189
+00:14:17,420 --> 00:14:20,900
+And then we want to update the payload with our C payload variable.
+
+190
+00:14:22,870 --> 00:14:26,230
+Which will now contain the RSI, temperature and humidity.
+
+191
+00:14:26,680 --> 00:14:31,570
+And then we also want to provide the length of the payload and we can use str len for that.
+
+192
+00:14:34,940 --> 00:14:36,200
+And that's all we need to do.
+
+193
+00:14:36,770 --> 00:14:41,180
+And again, if you want to dig deeper, I suggest reviewing this source file in more detail.
+
+194
+00:14:41,210 --> 00:14:47,600
+But for now, let's take a look at the US Iot demo main function and check out the description for a
+
+195
+00:14:47,600 --> 00:14:48,500
+quick overview.
+
+196
+00:14:49,370 --> 00:14:56,900
+And here it says that the example shown below uses MQTT APIs to send and receive MQTT packets over the
+
+197
+00:14:56,900 --> 00:14:59,930
+TLS connection established using OpenSSL.
+
+198
+00:15:00,170 --> 00:15:04,580
+The example is single threaded and uses statically allocated memory.
+
+199
+00:15:04,610 --> 00:15:10,340
+It uses quality of service level one and therefore implements a retransmission mechanism for published
+
+200
+00:15:10,340 --> 00:15:11,060
+messages.
+
+201
+00:15:12,330 --> 00:15:13,860
+So that covers the basics.
+
+202
+00:15:14,070 --> 00:15:19,740
+And now let's move on to build the project so that we can generate the SDK config file and update the
+
+203
+00:15:19,740 --> 00:15:21,030
+necessary variables.
+
+204
+00:15:21,240 --> 00:15:23,010
+So let's go ahead and build the project.
+
+205
+00:15:39,650 --> 00:15:41,960
+So now let's continue to the sdhc config.
+
+206
+00:15:51,510 --> 00:15:57,180
+And then here in the example configuration, we can update the client identifier and the endpoint of
+
+207
+00:15:57,180 --> 00:15:59,250
+the MQTT broker to connect to.
+
+208
+00:15:59,280 --> 00:16:00,870
+So let's copy the endpoint.
+
+209
+00:16:08,880 --> 00:16:10,080
+And just paste it in.
+
+210
+00:16:12,220 --> 00:16:14,200
+But now let's grab the client identify identifier.
+
+211
+00:16:17,820 --> 00:16:19,080
+And paste it in here.
+
+212
+00:16:21,100 --> 00:16:23,110
+And be sure to save the configuration.
+
+213
+00:16:23,110 --> 00:16:23,710
+All right.
+
+214
+00:16:24,640 --> 00:16:26,470
+So now we can go ahead and flesh it.
+
+215
+00:16:26,470 --> 00:16:32,530
+Once we're flesh, we'll open the monitor and then head over to the US Iot MQTT Test client.
+
+216
+00:16:32,950 --> 00:16:34,270
+So let's go ahead and flesh.
+
+217
+00:16:41,750 --> 00:16:42,450
+So that's okay.
+
+218
+00:16:42,470 --> 00:16:42,980
+I can just hit.
+
+219
+00:16:42,980 --> 00:16:43,670
+Proceed.
+
+220
+00:16:46,410 --> 00:16:48,180
+And I actually forgot to choose my port.
+
+221
+00:16:49,250 --> 00:16:50,600
+So I'll go ahead and do that.
+
+222
+00:16:54,140 --> 00:16:55,370
+And then I'll flash again.
+
+223
+00:17:00,880 --> 00:17:01,300
+Okay, then.
+
+224
+00:17:01,300 --> 00:17:02,620
+Now we can open the monitor.
+
+225
+00:17:15,190 --> 00:17:17,109
+Now I'm connecting with the save credentials.
+
+226
+00:17:19,869 --> 00:17:21,430
+And I'm already showing the published data.
+
+227
+00:17:21,460 --> 00:17:22,000
+Great.
+
+228
+00:17:22,420 --> 00:17:27,790
+So next, we can head over to a society and we can check out the activity from that end.
+
+229
+00:17:28,150 --> 00:17:29,350
+So let's head over there.
+
+230
+00:17:32,280 --> 00:17:33,600
+And let's click on our thing.
+
+231
+00:17:35,200 --> 00:17:36,730
+Let's go to the activity tab.
+
+232
+00:17:38,040 --> 00:17:41,010
+And then here we see the subscribed and connected events.
+
+233
+00:17:41,160 --> 00:17:43,440
+So that's what our subscribed event looks like.
+
+234
+00:17:43,560 --> 00:17:44,610
+And the connected.
+
+235
+00:17:45,850 --> 00:17:48,400
+So now let's go to the MQTT test client.
+
+236
+00:17:54,090 --> 00:17:55,470
+And then select the topic.
+
+237
+00:17:56,770 --> 00:18:03,190
+And there we have our published data, the wi fi, RSI, the temperature and the humidity being published
+
+238
+00:18:03,190 --> 00:18:06,340
+at the interval provided by the example that looks great.
+
+239
+00:18:06,940 --> 00:18:12,400
+So next, if you want to test publishing from the MQTT test client, we can set the monitors side by
+
+240
+00:18:12,400 --> 00:18:16,990
+side with a society and then view the activity from the monitor side.
+
+241
+00:18:17,140 --> 00:18:19,330
+So let's go ahead and put these side by side.
+
+242
+00:18:22,100 --> 00:18:22,400
+And then.
+
+243
+00:18:22,400 --> 00:18:23,780
+Now let's hit publish.
+
+244
+00:18:30,210 --> 00:18:31,200
+And there we go.
+
+245
+00:18:31,930 --> 00:18:36,520
+The messages are being received on the ESP 332 from a W society.
+
+246
+00:18:36,550 --> 00:18:37,930
+And that is very cool.
+
+247
+00:18:39,330 --> 00:18:45,690
+So now that you know how to integrate an example from this version of the ESP a AWS Iot SDK, then you
+
+248
+00:18:45,690 --> 00:18:48,720
+should have a solid foundation for exploring further on your own.
+
+249
+00:18:49,080 --> 00:18:49,350
+All right.
+
+250
+00:18:49,350 --> 00:18:52,950
+So thanks for joining me this far into the course and I hope to see you again soon.
+
