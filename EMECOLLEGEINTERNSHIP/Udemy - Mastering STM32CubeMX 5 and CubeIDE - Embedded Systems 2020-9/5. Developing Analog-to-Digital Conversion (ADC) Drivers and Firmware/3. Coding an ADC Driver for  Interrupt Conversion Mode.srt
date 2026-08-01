@@ -1,0 +1,595 @@
+1
+00:00:00,140 --> 00:00:05,250
+In this lesson, we are going to see how to configure our ADC to work in interrupt mode.
+
+2
+00:00:05,970 --> 00:00:09,390
+So I'm going to create a new project over here for new project.
+
+3
+00:00:11,760 --> 00:00:13,440
+I'll select my microcontroller.
+
+4
+00:00:13,560 --> 00:00:14,360
+It is the SDM.
+
+5
+00:00:14,360 --> 00:00:15,690
+Thirty two four one one.
+
+6
+00:00:15,720 --> 00:00:18,160
+You can select it at a nuclear discovery port.
+
+7
+00:00:18,540 --> 00:00:19,400
+Anyone is fine.
+
+8
+00:00:24,900 --> 00:00:25,870
+Oh, just select this.
+
+9
+00:00:27,760 --> 00:00:28,420
+I say no.
+
+10
+00:00:28,450 --> 00:00:29,080
+Over here.
+
+11
+00:00:32,880 --> 00:00:35,480
+And Eau Claire dippin out by coming over here.
+
+12
+00:00:35,700 --> 00:00:37,350
+Note Claire Penult.
+
+13
+00:00:41,120 --> 00:00:45,270
+And I'm going to select PSU to be my ADC for this experiment.
+
+14
+00:00:49,710 --> 00:00:50,430
+Close this.
+
+15
+00:00:52,350 --> 00:00:53,450
+Come over here quick.
+
+16
+00:00:53,520 --> 00:00:53,910
+This.
+
+17
+00:00:55,540 --> 00:00:58,670
+PSU becomes a DC one input's zero.
+
+18
+00:01:07,160 --> 00:01:10,590
+So we can go ahead to a clock configuration, we know what ATC is.
+
+19
+00:01:10,640 --> 00:01:12,350
+Can I go to the APB to us?
+
+20
+00:01:13,310 --> 00:01:18,290
+Um, so the board I selected, I selected a nuclear if not changed in it, then this is the frequency
+
+21
+00:01:18,320 --> 00:01:20,180
+it's giving me the default frequency.
+
+22
+00:01:20,920 --> 00:01:25,640
+Um, APB to is currently at at at 84 megahertz.
+
+23
+00:01:25,670 --> 00:01:29,360
+You can keep this the same or you can just change it.
+
+24
+00:01:29,390 --> 00:01:34,310
+I'm gonna send this to 60 mickum uh, 60 megahertz, which is fine.
+
+25
+00:01:34,370 --> 00:01:37,700
+If you're doing something that requires more frequency, you can certainly change it.
+
+26
+00:01:38,510 --> 00:01:40,370
+Um, let's see.
+
+27
+00:01:43,730 --> 00:01:48,870
+OK, so the reason I'm setting it like this is because some of you may have the estimate that two F
+
+28
+00:01:48,920 --> 00:01:54,140
+four was zero one boat and that one's default frequency 60 megahertz.
+
+29
+00:01:54,170 --> 00:01:59,660
+So I want us to keep within the same such that we can all try it on different versions of the F forebode.
+
+30
+00:02:00,250 --> 00:02:00,520
+So.
+
+31
+00:02:00,710 --> 00:02:00,980
+OK.
+
+32
+00:02:01,100 --> 00:02:07,760
+And my AP two, which is the, um, the, um, the bus for the ATC is also at 16 megahertz this fine.
+
+33
+00:02:08,420 --> 00:02:14,020
+I'll go to pan out in configuration and click system view over here.
+
+34
+00:02:15,520 --> 00:02:19,510
+And once this opens, I'll click the ADC and I'll configure the ADC.
+
+35
+00:02:22,370 --> 00:02:22,610
+OK.
+
+36
+00:02:22,820 --> 00:02:23,820
+It opened over here.
+
+37
+00:02:23,880 --> 00:02:25,280
+So click here to expand it.
+
+38
+00:02:35,700 --> 00:02:41,950
+I've come down here probably to certains and no krunk this port.
+
+39
+00:02:42,900 --> 00:02:49,170
+And over here, the clock pre-schooler is telling me that is dividing my clock source by two, which
+
+40
+00:02:49,170 --> 00:02:50,490
+is my 16 megahertz.
+
+41
+00:02:50,940 --> 00:02:54,250
+This has been divided by two, which you end up with eight megahertz.
+
+42
+00:02:54,330 --> 00:02:55,020
+This is fine.
+
+43
+00:02:56,850 --> 00:02:57,300
+Over here.
+
+44
+00:02:57,450 --> 00:02:58,650
+Keep everything the same.
+
+45
+00:02:58,740 --> 00:03:02,020
+And then just change the, um, come to the rank over here.
+
+46
+00:03:02,190 --> 00:03:03,480
+Cause we have one channel.
+
+47
+00:03:04,140 --> 00:03:05,580
+We have just rank one.
+
+48
+00:03:05,610 --> 00:03:13,080
+I'm gonna change sampling time to four eighty or we have to don't actually come to the end, fix certain
+
+49
+00:03:13,080 --> 00:03:13,490
+stuff.
+
+50
+00:03:13,860 --> 00:03:20,550
+And um, enable our ATC one global interrupt such that we'll be notified whatever, whenever a conversion
+
+51
+00:03:20,550 --> 00:03:21,210
+is complete.
+
+52
+00:03:22,350 --> 00:03:25,770
+Now we can go ahead and generate the code or click generate over here.
+
+53
+00:03:26,070 --> 00:03:29,590
+I'll give it a name or simply call this ADC.
+
+54
+00:03:29,800 --> 00:03:30,220
+Underscore.
+
+55
+00:03:30,480 --> 00:03:31,050
+Interrupt.
+
+56
+00:03:38,640 --> 00:03:41,070
+And, um, I'll select my two chain over here.
+
+57
+00:03:41,170 --> 00:03:42,090
+SDM 32.
+
+58
+00:03:43,670 --> 00:03:46,700
+And then keep everything the same and click here to generate code.
+
+59
+00:03:51,500 --> 00:03:53,000
+Click here to open the project.
+
+60
+00:03:55,740 --> 00:03:56,810
+There's a project.
+
+61
+00:03:56,900 --> 00:04:00,650
+It's opened close, this old one.
+
+62
+00:04:01,280 --> 00:04:01,700
+This is it.
+
+63
+00:04:02,280 --> 00:04:04,730
+ABC interrupt over here.
+
+64
+00:04:06,710 --> 00:04:07,190
+No, no.
+
+65
+00:04:07,360 --> 00:04:09,260
+Open this and clean up a bit.
+
+66
+00:04:14,780 --> 00:04:16,250
+Okay, we've cleaned up.
+
+67
+00:04:16,670 --> 00:04:19,660
+So what we have to do is start the ATC would interrupt.
+
+68
+00:04:19,760 --> 00:04:23,550
+I'll come down here and see how underscore.
+
+69
+00:04:23,620 --> 00:04:25,430
+ADC, let's call start.
+
+70
+00:04:28,140 --> 00:04:30,110
+On the score, 84 interrupt.
+
+71
+00:04:30,300 --> 00:04:32,070
+And this takes one argument.
+
+72
+00:04:32,970 --> 00:04:37,770
+The address of the ATC Hondo, which is ATC, each ATC one over here.
+
+73
+00:04:38,390 --> 00:04:39,690
+I'll pass that over here.
+
+74
+00:04:39,790 --> 00:04:43,470
+And then with The Ambersons sign here like this.
+
+75
+00:04:47,050 --> 00:04:47,250
+Right.
+
+76
+00:04:48,330 --> 00:04:50,460
+So this starts the ADC with interrupt.
+
+77
+00:04:50,840 --> 00:04:56,430
+So because we use an interrupt, we have to define our Kobuk, we need to go to our ADC module, come
+
+78
+00:04:56,430 --> 00:04:58,890
+to drivers over here, source.
+
+79
+00:04:59,490 --> 00:05:01,710
+And then you find your ADC to see fall.
+
+80
+00:05:02,310 --> 00:05:04,470
+And then in there, you find the Kobuk.
+
+81
+00:05:07,190 --> 00:05:12,840
+To find a callback, we can just search for the keyword, because we know we are often pretended.
+
+82
+00:05:12,950 --> 00:05:14,590
+They often start with a word weak.
+
+83
+00:05:14,930 --> 00:05:18,110
+So do control F and then underscore school week.
+
+84
+00:05:18,710 --> 00:05:19,670
+And then I hear this.
+
+85
+00:05:19,970 --> 00:05:20,130
+OK.
+
+86
+00:05:20,180 --> 00:05:21,200
+This is not a one we want.
+
+87
+00:05:21,230 --> 00:05:23,020
+We want confession complete.
+
+88
+00:05:23,760 --> 00:05:25,040
+Yeah, we go ladies.
+
+89
+00:05:25,460 --> 00:05:27,070
+Conversion complete callback.
+
+90
+00:05:27,410 --> 00:05:28,370
+So I just copy this.
+
+91
+00:05:30,690 --> 00:05:36,370
+And I'll come to my mind or see you fall over here and I can put us anywhere.
+
+92
+00:05:37,230 --> 00:05:40,800
+It's a function so it doesn't have to be within that of another function.
+
+93
+00:05:41,520 --> 00:05:51,180
+So I'll clean the key word here and all of this can be eliminated like this.
+
+94
+00:05:53,020 --> 00:06:01,230
+So so what this means is once the conversion is complete, the, um, the the program would jump to
+
+95
+00:06:01,230 --> 00:06:06,990
+this Kobuk function to execute one of others on ADC conversion complete whenever the conversion is complete.
+
+96
+00:06:07,020 --> 00:06:08,010
+We'll come to this function.
+
+97
+00:06:08,040 --> 00:06:09,230
+What do we want to do whenever.
+
+98
+00:06:09,290 --> 00:06:10,900
+An ABC conversion is complete.
+
+99
+00:06:11,220 --> 00:06:15,300
+If you want to run an algorithm, you can put it in this function if you want to do a particular thing.
+
+100
+00:06:15,570 --> 00:06:18,360
+If you want to light up an entity, anything, you can do it here.
+
+101
+00:06:18,750 --> 00:06:23,400
+But a more appropriate and sensible thing is to get the value that was just converted.
+
+102
+00:06:23,730 --> 00:06:31,410
+So what we have we have to do is see how underscore ADC get value like this.
+
+103
+00:06:32,850 --> 00:06:36,300
+And this takes the ADC Hondo US argument on this.
+
+104
+00:06:36,300 --> 00:06:37,470
+We return the ADC value.
+
+105
+00:06:37,500 --> 00:06:39,690
+But we have to create a global variable to hold it.
+
+106
+00:06:39,970 --> 00:06:46,760
+You in to underscore to call this sense of value like this and sense of value here.
+
+107
+00:06:47,100 --> 00:06:50,090
+Oh just copy this and sense of value here.
+
+108
+00:06:50,170 --> 00:06:52,350
+You cause this over here like this.
+
+109
+00:06:53,310 --> 00:06:53,750
+Right.
+
+110
+00:06:56,510 --> 00:06:58,650
+Note that over here we have the um.
+
+111
+00:06:58,950 --> 00:07:00,120
+We have the option to use.
+
+112
+00:07:00,180 --> 00:07:01,000
+We can use it.
+
+113
+00:07:01,230 --> 00:07:02,440
+This local handle here.
+
+114
+00:07:02,620 --> 00:07:03,180
+Oh well.
+
+115
+00:07:03,210 --> 00:07:04,620
+Global undo ADC one.
+
+116
+00:07:05,160 --> 00:07:05,490
+Right.
+
+117
+00:07:05,790 --> 00:07:11,650
+One key thing because when I use in a continuous mode, when the ADC completes one conversion, it will
+
+118
+00:07:11,650 --> 00:07:15,780
+just run this um Kobuk and then does it will be done.
+
+119
+00:07:15,870 --> 00:07:19,560
+It wouldn't run any more conversions if we want to start the conversion again.
+
+120
+00:07:19,920 --> 00:07:22,020
+We have to call haul on the score.
+
+121
+00:07:22,170 --> 00:07:23,210
+ADC on this call.
+
+122
+00:07:23,330 --> 00:07:25,440
+Start interrupt like this.
+
+123
+00:07:26,070 --> 00:07:26,700
+This is key.
+
+124
+00:07:26,760 --> 00:07:31,860
+Without this, the ADC will just perform one conversion and it will be done like this.
+
+125
+00:07:32,120 --> 00:07:32,450
+Okay.
+
+126
+00:07:35,240 --> 00:07:38,310
+No, we are ready to build, let's click here to build and she will have.
+
+127
+00:07:42,810 --> 00:07:43,840
+It's built successfully.
+
+128
+00:07:44,070 --> 00:07:46,080
+We can run our debugger or click over here.
+
+129
+00:08:03,670 --> 00:08:04,300
+It's open in.
+
+130
+00:08:09,980 --> 00:08:10,220
+OK.
+
+131
+00:08:10,570 --> 00:08:13,040
+I have to reconnect my board.
+
+132
+00:08:16,430 --> 00:08:21,710
+So we can add our global variable here to our live expression to observe it.
+
+133
+00:08:21,990 --> 00:08:27,560
+I'll double click there and then concurrency to copy and I'll come to live expressions and put this
+
+134
+00:08:27,650 --> 00:08:28,130
+over here.
+
+135
+00:08:28,280 --> 00:08:29,550
+I'll remove these old ones.
+
+136
+00:08:29,570 --> 00:08:31,010
+They are from a previous project.
+
+137
+00:08:33,360 --> 00:08:34,230
+I can simply.
+
+138
+00:08:35,360 --> 00:08:39,680
+I can do a remove or remove all like this.
+
+139
+00:08:39,930 --> 00:08:40,230
+OK.
+
+140
+00:08:40,340 --> 00:08:40,970
+That will click.
+
+141
+00:08:43,610 --> 00:08:45,470
+This new one hit Enter.
+
+142
+00:08:46,730 --> 00:08:50,060
+And then we can, um, click to Run.
+
+143
+00:08:50,360 --> 00:08:55,130
+I'm gonna connect my my senseor, which is just a potential meter to P is you.
+
+144
+00:08:58,770 --> 00:08:59,100
+Right.
+
+145
+00:08:59,160 --> 00:09:03,150
+I'm going to click here to run and we can see the value here.
+
+146
+00:09:03,240 --> 00:09:04,470
+So there's the unlock value.
+
+147
+00:09:05,810 --> 00:09:10,330
+And now I've moved it to the opposite direction and this is the value we're reading.
+
+148
+00:09:10,380 --> 00:09:12,250
+So this ADC in interrupt mode.
+
+149
+00:09:12,870 --> 00:09:13,230
+Okay.
