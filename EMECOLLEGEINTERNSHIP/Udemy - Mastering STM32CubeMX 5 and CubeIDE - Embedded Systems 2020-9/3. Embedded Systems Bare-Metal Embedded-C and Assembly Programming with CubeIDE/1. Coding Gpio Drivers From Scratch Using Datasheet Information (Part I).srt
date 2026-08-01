@@ -1,0 +1,2267 @@
+1
+00:00:00,420 --> 00:00:00,960
+Welcome back.
+
+2
+00:00:01,140 --> 00:00:06,640
+This lesson is about using the cube I.D. to create perimeter code.
+
+3
+00:00:07,090 --> 00:00:12,270
+And what I mean by bare metal code is right and the driver's without use in Cuba makes all the whole
+
+4
+00:00:12,270 --> 00:00:17,520
+library, meaning access in the registers directly after this lesson.
+
+5
+00:00:17,700 --> 00:00:23,280
+Go ahead and see how to write a driver's in assembly using cube I.D. as well without using the cube
+
+6
+00:00:23,780 --> 00:00:25,140
+and makes in the whole library.
+
+7
+00:00:25,890 --> 00:00:32,630
+And this lesson is going to be in this cube, imex cube, imex cube I.D. cause as well as another course
+
+8
+00:00:32,640 --> 00:00:36,900
+that I have on bare metal programming in that other cause.
+
+9
+00:00:37,200 --> 00:00:41,280
+The, um, the development environment we use is the Carl MBK.
+
+10
+00:00:41,750 --> 00:00:45,660
+So I'm going to include this this lesson in that other course as well.
+
+11
+00:00:45,990 --> 00:00:51,330
+The reason I'm saying this is that the language I'm going to use in this lesson would be assuming you've
+
+12
+00:00:51,330 --> 00:00:52,890
+never written bare metal code.
+
+13
+00:00:53,520 --> 00:00:56,160
+So I'm just going to assume you have no idea.
+
+14
+00:00:56,210 --> 00:00:57,780
+And I'm going to take you step by step.
+
+15
+00:00:58,560 --> 00:01:04,350
+If this lesson appears in the bare metal cores, student watch and of course, already know some of
+
+16
+00:01:04,350 --> 00:01:04,920
+the steps.
+
+17
+00:01:05,160 --> 00:01:07,800
+So it would sound a bit repetitive to them.
+
+18
+00:01:07,830 --> 00:01:11,610
+That is why I'm given this warning, because we are going to do it from scratch.
+
+19
+00:01:11,720 --> 00:01:16,510
+It's going to be from the student of the SDM, Teddy to Cuba mix perspective.
+
+20
+00:01:16,560 --> 00:01:22,140
+The estimate to Cuba students perspective, because this is not focused on bare metal.
+
+21
+00:01:22,200 --> 00:01:26,010
+So I'm going to explain some of the things as I do it.
+
+22
+00:01:26,400 --> 00:01:31,650
+But if you find this lesson in the bare metal, cause this would be like we spoke about this before.
+
+23
+00:01:31,710 --> 00:01:32,430
+Just bear with me.
+
+24
+00:01:32,970 --> 00:01:36,260
+And it's better to have it repeated than skipping stuff.
+
+25
+00:01:36,360 --> 00:01:37,890
+So let's get started.
+
+26
+00:01:38,850 --> 00:01:49,980
+So to, um, to be able to access the arm, to be able to access, to be able to access the registers,
+
+27
+00:01:50,010 --> 00:01:57,540
+we need to know the register addresses and the offset how they are arranged and what's the debits in
+
+28
+00:01:57,540 --> 00:02:05,340
+the wrappers are in the registers represent the registers that uh, 32 bit in size every register.
+
+29
+00:02:05,580 --> 00:02:07,170
+That is why the arm is a third.
+
+30
+00:02:07,260 --> 00:02:11,820
+It's one of the reasons why ARM is a 32 bit microprocessor.
+
+31
+00:02:13,530 --> 00:02:16,830
+So we have to know what bits number one is used for.
+
+32
+00:02:16,890 --> 00:02:17,490
+It's number two.
+
+33
+00:02:17,610 --> 00:02:18,870
+It's number three, et cetera.
+
+34
+00:02:19,290 --> 00:02:20,550
+To find this information out.
+
+35
+00:02:20,580 --> 00:02:22,350
+We need to download another document.
+
+36
+00:02:22,380 --> 00:02:26,610
+This time, we're going to download the reference module for the microcontroller chip.
+
+37
+00:02:26,970 --> 00:02:32,250
+We've already downloaded the data sheet for the, um, the chip, which gave us a quick overview.
+
+38
+00:02:32,250 --> 00:02:34,630
+We had about one hundred and forty eight pages.
+
+39
+00:02:34,650 --> 00:02:40,590
+The data sheet gave us the block diagram, um, showing us how the, um, the various peripherals are
+
+40
+00:02:40,590 --> 00:02:46,230
+connected to the different pass matrix or matrices that the board has.
+
+41
+00:02:46,260 --> 00:02:53,160
+And this allows us to know what Plock each pair for can have the data sheet.
+
+42
+00:02:53,430 --> 00:02:59,610
+The reference manual, on the other hand, gives us a detailed explanation of each and every register
+
+43
+00:03:00,150 --> 00:03:02,010
+India in the microcontroller chip.
+
+44
+00:03:02,040 --> 00:03:03,300
+So we'll need these documents.
+
+45
+00:03:03,330 --> 00:03:07,110
+And he has over, I think, over 800 or 1000 pages.
+
+46
+00:03:07,170 --> 00:03:08,910
+So it's a reference document.
+
+47
+00:03:08,940 --> 00:03:11,270
+It's not meant to be taken all at once, you know.
+
+48
+00:03:12,370 --> 00:03:16,860
+Anyway, um, so I'm gonna go to the Web browser and, um, and download it.
+
+49
+00:03:20,210 --> 00:03:25,360
+So you can just go to Google and type SDM three to four one one reference manual.
+
+50
+00:03:26,180 --> 00:03:29,660
+I have the four one one board.
+
+51
+00:03:29,780 --> 00:03:34,390
+That is why this is the the word you may have phones, you, etc..
+
+52
+00:03:35,790 --> 00:03:36,190
+OK.
+
+53
+00:03:39,740 --> 00:03:42,080
+This first link says PDAF.
+
+54
+00:03:42,230 --> 00:03:44,600
+So let's right click this and open this.
+
+55
+00:03:46,420 --> 00:03:46,650
+OK.
+
+56
+00:03:46,790 --> 00:03:47,720
+So here we go.
+
+57
+00:03:47,900 --> 00:03:50,780
+As I said, this has eight hundred and forty four pages.
+
+58
+00:03:50,840 --> 00:03:52,220
+We simply going to download this.
+
+59
+00:03:57,140 --> 00:03:59,050
+And I can rename this call.
+
+60
+00:03:59,430 --> 00:04:01,140
+Oh, call this the reference, my door.
+
+61
+00:04:01,230 --> 00:04:03,330
+I mean, they all have these long names.
+
+62
+00:04:05,800 --> 00:04:06,700
+Ref Miyo.
+
+63
+00:04:08,150 --> 00:04:08,320
+OK.
+
+64
+00:04:08,950 --> 00:04:13,970
+So once we've downloaded this, we'll go ahead and create a new project and then list out some of the,
+
+65
+00:04:13,970 --> 00:04:20,680
+um, the, um, the activities or some of the steps we need to take to get this project running.
+
+66
+00:04:21,870 --> 00:04:22,220
+Okay.
+
+67
+00:04:23,260 --> 00:04:26,290
+So I'm simply going to minimize this.
+
+68
+00:04:27,280 --> 00:04:28,620
+And this is our Kubi.
+
+69
+00:04:29,050 --> 00:04:40,210
+I'm gonna create a new project, file the new look at it for you over here and I'll select SDM 32 to
+
+70
+00:04:40,210 --> 00:04:40,810
+project.
+
+71
+00:04:41,140 --> 00:04:42,670
+This one here, not this one.
+
+72
+00:04:42,850 --> 00:04:45,760
+This one is the M3 to project.
+
+73
+00:04:50,150 --> 00:04:53,600
+It says Initialise and SDM 32 targets Selecter.
+
+74
+00:04:58,250 --> 00:05:00,060
+So does the target selector.
+
+75
+00:05:01,280 --> 00:05:03,930
+Please bear with a resolution for some strange reason.
+
+76
+00:05:03,960 --> 00:05:07,610
+It's open with, um, with these, um, smaller font.
+
+77
+00:05:07,670 --> 00:05:12,020
+But this is the same page that we use and, um, in a what Cuba makes to select our board.
+
+78
+00:05:12,350 --> 00:05:17,810
+So we just come here and select our board, SDM 32 for one one.
+
+79
+00:05:18,650 --> 00:05:19,760
+So we search over here.
+
+80
+00:05:24,480 --> 00:05:26,850
+And then over here, we can choose the board we have.
+
+81
+00:05:28,740 --> 00:05:33,570
+So I just select one or select my nuclear board by what matters.
+
+82
+00:05:33,640 --> 00:05:34,620
+Yes, the microcontroller.
+
+83
+00:05:34,650 --> 00:05:39,690
+No, whether it's nuclear or disco is the name of the microcontroller which we searched SDM three to
+
+84
+00:05:39,780 --> 00:05:40,500
+four one one.
+
+85
+00:05:41,040 --> 00:05:43,600
+And I'm, like I said, to bear with a small font here.
+
+86
+00:05:43,650 --> 00:05:46,440
+For some strange reason, Cuba makes opened this way.
+
+87
+00:05:47,220 --> 00:05:49,280
+And then you are familiar with this page.
+
+88
+00:05:49,280 --> 00:05:49,530
+All right.
+
+89
+00:05:49,560 --> 00:05:53,640
+It does the same page from Cuba mix that we select our board.
+
+90
+00:05:53,700 --> 00:05:54,750
+So we shouldn't be an issue.
+
+91
+00:05:54,780 --> 00:05:57,330
+So once I've found my board, I'll click on next.
+
+92
+00:05:58,680 --> 00:06:02,240
+And then once I've selected the board, I'm going to give the project to name.
+
+93
+00:06:06,330 --> 00:06:07,470
+I'll give this a name.
+
+94
+00:06:07,590 --> 00:06:08,220
+Let's see.
+
+95
+00:06:10,530 --> 00:06:11,370
+I'll call this GPI.
+
+96
+00:06:11,370 --> 00:06:11,760
+You.
+
+97
+00:06:17,080 --> 00:06:19,360
+QPR, you bare metal.
+
+98
+00:06:22,330 --> 00:06:24,430
+OK, so next.
+
+99
+00:06:25,510 --> 00:06:28,310
+And this I kept the same, it's a You Project Cube.
+
+100
+00:06:29,150 --> 00:06:31,480
+Get the prototype estimated to Cube.
+
+101
+00:06:32,620 --> 00:06:33,010
+OK.
+
+102
+00:06:33,560 --> 00:06:33,950
+Target.
+
+103
+00:06:34,360 --> 00:06:36,160
+I'll leave this the same next.
+
+104
+00:06:37,030 --> 00:06:38,360
+And then this is the board.
+
+105
+00:06:38,420 --> 00:06:41,260
+The reference board we selected, this is find firmware package.
+
+106
+00:06:41,330 --> 00:06:42,830
+You can keep this the way it is.
+
+107
+00:06:43,510 --> 00:06:44,780
+And then a click finish.
+
+108
+00:06:48,250 --> 00:06:52,480
+This kind of project is associated with SDM 32 Kubin mixed perspective.
+
+109
+00:06:52,510 --> 00:06:54,520
+Do you want to open this perspective?
+
+110
+00:06:55,120 --> 00:06:58,010
+If we want to open this perspective, we can say yes, but we don't need that.
+
+111
+00:06:58,030 --> 00:06:58,510
+So I'll say it.
+
+112
+00:06:58,540 --> 00:06:58,870
+No.
+
+113
+00:07:00,390 --> 00:07:02,360
+Because we're going to do keep Bermejo.
+
+114
+00:07:02,460 --> 00:07:03,590
+We don't need Cuba, Max.
+
+115
+00:07:03,660 --> 00:07:05,370
+We don't need the whole library.
+
+116
+00:07:05,430 --> 00:07:08,470
+We going to go to the datasheet and the reference my no.
+
+117
+00:07:08,550 --> 00:07:11,750
+Find the registers and manipulate them ourselves.
+
+118
+00:07:14,310 --> 00:07:14,490
+OK.
+
+119
+00:07:15,080 --> 00:07:16,490
+So there's the page that shows up.
+
+120
+00:07:16,520 --> 00:07:21,980
+This page has been opened to allow us to easily, you know, configure our pins.
+
+121
+00:07:22,280 --> 00:07:29,600
+So if you were to be creating a project using cube I.D., you can still use this method and then use
+
+122
+00:07:29,600 --> 00:07:32,550
+the whole library by just starting from cube I.D..
+
+123
+00:07:32,690 --> 00:07:33,440
+This opens.
+
+124
+00:07:33,440 --> 00:07:35,150
+You select your pins and then you move on.
+
+125
+00:07:35,810 --> 00:07:40,160
+What this means is you don't always have to start from cube and mix and come to cube to eat.
+
+126
+00:07:40,550 --> 00:07:42,200
+You can access cube mix from here.
+
+127
+00:07:42,470 --> 00:07:43,520
+But we don't need all of that.
+
+128
+00:07:43,580 --> 00:07:50,280
+We said we doing Bamma talks who are close this and then I'll come to see.
+
+129
+00:07:50,390 --> 00:07:52,550
+There is just what we have here.
+
+130
+00:07:54,470 --> 00:07:55,550
+It brought the whole library.
+
+131
+00:07:55,640 --> 00:07:56,960
+We don't need a whole library.
+
+132
+00:07:57,080 --> 00:07:57,680
+You brought this.
+
+133
+00:07:58,090 --> 00:07:59,080
+It couldn't help it.
+
+134
+00:07:59,270 --> 00:08:01,970
+So that's what SD is doing here.
+
+135
+00:08:03,740 --> 00:08:09,750
+So the system generated the whole library regardless because it assumes 99 percent of the time.
+
+136
+00:08:09,780 --> 00:08:13,730
+If you get on a project, you need the hardware obstruction layer, which is the whole library.
+
+137
+00:08:14,630 --> 00:08:15,950
+So we have the whole library here.
+
+138
+00:08:16,000 --> 00:08:16,850
+But we don't need that.
+
+139
+00:08:16,880 --> 00:08:19,560
+What are we going to be using as just a single header file?
+
+140
+00:08:19,640 --> 00:08:22,010
+Which we find in the CMC is okay.
+
+141
+00:08:24,260 --> 00:08:25,880
+So I'm going to quote the source folder.
+
+142
+00:08:26,030 --> 00:08:26,900
+This is our project.
+
+143
+00:08:26,930 --> 00:08:28,280
+This was located right.
+
+144
+00:08:28,310 --> 00:08:34,490
+Click at New and in our other folder called The Source Our Like This.
+
+145
+00:08:35,540 --> 00:08:40,550
+And this is just to show that, you know, we have a source folder in all of the project, the project
+
+146
+00:08:40,550 --> 00:08:40,970
+structure.
+
+147
+00:08:41,030 --> 00:08:44,940
+You often have your source inside your source, inside your source for.
+
+148
+00:08:45,050 --> 00:08:47,810
+You have your main Ötzi Fall and the other files you need.
+
+149
+00:08:48,260 --> 00:08:49,580
+So I have this source photo here.
+
+150
+00:08:51,560 --> 00:08:54,500
+And then I'm going to come over here inside this source folder.
+
+151
+00:08:55,070 --> 00:08:55,760
+I'll close this.
+
+152
+00:08:56,200 --> 00:08:57,640
+This is still our project, GPL.
+
+153
+00:08:57,650 --> 00:08:59,600
+You underscore Babymetal inside a source.
+
+154
+00:08:59,660 --> 00:09:01,050
+All right, click add.
+
+155
+00:09:01,100 --> 00:09:03,560
+New item or or new.
+
+156
+00:09:03,650 --> 00:09:05,090
+Why am I seeing a new item?
+
+157
+00:09:06,330 --> 00:09:06,690
+Okay.
+
+158
+00:09:07,020 --> 00:09:07,370
+New.
+
+159
+00:09:08,060 --> 00:09:10,520
+And then select followed by here.
+
+160
+00:09:12,480 --> 00:09:16,680
+Then this fall is going to be main dot c.
+
+161
+00:09:17,210 --> 00:09:17,900
+And then finish.
+
+162
+00:09:19,120 --> 00:09:19,230
+Okay.
+
+163
+00:09:19,610 --> 00:09:21,230
+So now we have our main see here.
+
+164
+00:09:21,590 --> 00:09:24,880
+And I'm going to include our SDM 32 head of file.
+
+165
+00:09:24,980 --> 00:09:29,840
+The head of file that gives the register addresses and locations we see include.
+
+166
+00:09:35,060 --> 00:09:36,950
+Besty M 32, f four.
+
+167
+00:09:37,130 --> 00:09:41,400
+We're using the F for board x x dot h x.
+
+168
+00:09:41,490 --> 00:09:44,050
+X means O f four essentially.
+
+169
+00:09:44,180 --> 00:09:45,980
+And I'm simply going to say int main.
+
+170
+00:09:46,020 --> 00:09:46,650
+Over here.
+
+171
+00:09:47,540 --> 00:09:48,420
+And this is void.
+
+172
+00:09:48,660 --> 00:09:53,520
+I want to just write this and test and see that we build successfully before we go on.
+
+173
+00:09:54,620 --> 00:09:55,030
+Okay.
+
+174
+00:09:56,030 --> 00:09:57,990
+And we can put our infinite loop in here.
+
+175
+00:10:00,030 --> 00:10:00,840
+Open and close.
+
+176
+00:10:01,410 --> 00:10:01,860
+Right.
+
+177
+00:10:03,330 --> 00:10:07,800
+So once this is done, we can click here to build.
+
+178
+00:10:12,290 --> 00:10:16,510
+Let's see what we have learned in all of the whole library drivers.
+
+179
+00:10:16,550 --> 00:10:18,950
+We can delete them, but we don't need to delete them.
+
+180
+00:10:18,980 --> 00:10:19,850
+This was just a demo.
+
+181
+00:10:19,880 --> 00:10:25,580
+But if you don't want to if you don't want this whole library stuff to take space on your firmware,
+
+182
+00:10:25,730 --> 00:10:27,200
+we don't need any of that here.
+
+183
+00:10:27,380 --> 00:10:28,310
+They can be deleted.
+
+184
+00:10:28,490 --> 00:10:29,240
+We're not using them.
+
+185
+00:10:29,270 --> 00:10:33,860
+You see, we know we don't have as tempted to underscore h e a eldard each.
+
+186
+00:10:33,890 --> 00:10:37,410
+We don't have it in our projects or we can delete everything related to it.
+
+187
+00:10:38,420 --> 00:10:38,710
+OK.
+
+188
+00:10:38,810 --> 00:10:39,940
+So we have no error.
+
+189
+00:10:39,980 --> 00:10:40,490
+No warning.
+
+190
+00:10:40,700 --> 00:10:41,120
+Right.
+
+191
+00:10:41,690 --> 00:10:42,770
+So the setup looks good.
+
+192
+00:10:43,160 --> 00:10:50,570
+So in this example, what we're going to do is basically togo the LCD on our nuclear board and this
+
+193
+00:10:50,570 --> 00:10:53,420
+can be in a SDM 32 F4 board at all.
+
+194
+00:10:54,440 --> 00:11:00,240
+The only difference is that you would have to connect the LTT differently on your particular body if
+
+195
+00:11:00,240 --> 00:11:02,350
+you are the disco board on disco.
+
+196
+00:11:02,390 --> 00:11:04,010
+The LCD are connected elsewhere.
+
+197
+00:11:04,460 --> 00:11:09,390
+But if you want to follow along without changing anything, you may need to connect on X10 or ality
+
+198
+00:11:09,410 --> 00:11:11,750
+to a port so that you can use the same pin.
+
+199
+00:11:12,350 --> 00:11:17,310
+The reason I'm saying this is that the nuclear boards elite is connected to P five.
+
+200
+00:11:17,450 --> 00:11:25,340
+So we're going to be enabling P five as an output pin, using bare metal, using the bare metal method.
+
+201
+00:11:25,490 --> 00:11:26,780
+If you may call it that.
+
+202
+00:11:27,860 --> 00:11:33,980
+So, you know, in modern day microcontrollers, before you use any part of the microcontroller in a
+
+203
+00:11:33,980 --> 00:11:37,970
+module or in your peripheral, you have to enable clock access to that part.
+
+204
+00:11:38,600 --> 00:11:44,170
+And the reason why we do this is because of something known as the clock gating mechanism.
+
+205
+00:11:45,680 --> 00:11:53,740
+Microcontrollers from the past long ago, about maybe two decades ago, didn't have this clock Gayton
+
+206
+00:11:53,770 --> 00:11:54,350
+mechanism.
+
+207
+00:11:54,440 --> 00:12:01,670
+And what I meant is if you turn on the microcontroller or all the parts sort of consume some power.
+
+208
+00:12:02,000 --> 00:12:02,270
+Right.
+
+209
+00:12:02,300 --> 00:12:04,940
+Cos they all have clock access open to them.
+
+210
+00:12:05,900 --> 00:12:13,070
+So due to the rise of, you know, low power development, finding ways to optimize, you know, power
+
+211
+00:12:13,070 --> 00:12:14,180
+usage, et cetera.
+
+212
+00:12:15,350 --> 00:12:17,540
+And we became one of the solutions.
+
+213
+00:12:17,660 --> 00:12:26,120
+So what this means is by default, the microcontroller has the clock cutoff from the different parts.
+
+214
+00:12:26,690 --> 00:12:32,290
+If you want to use a particle apart, you enable clock access to just that part two.
+
+215
+00:12:32,320 --> 00:12:39,620
+If I want to use HTC One, I enable clock access to ADC one without an enabling clock for the other
+
+216
+00:12:39,620 --> 00:12:42,350
+parts, such as you, art and other peripherals.
+
+217
+00:12:42,950 --> 00:12:44,980
+So this is what the clock caginess about.
+
+218
+00:12:45,900 --> 00:12:53,390
+And the bus, the bus of the arm of the microcontroller tells us how the clock lines are connected.
+
+219
+00:12:54,140 --> 00:12:58,400
+So to start off, let's take a look at the, um, the bus connection of the peripherals.
+
+220
+00:12:58,430 --> 00:13:01,730
+We said we're going to be dealing with GPI, you port.
+
+221
+00:13:02,000 --> 00:13:04,670
+So we want to know where port is connected.
+
+222
+00:13:04,760 --> 00:13:12,800
+If we can find a bus of Port A. Then we know how to enable clock to port A SO to find the bus, we need
+
+223
+00:13:12,800 --> 00:13:17,370
+to go to the SDM three to four one one datasheet document.
+
+224
+00:13:17,600 --> 00:13:19,450
+This is different from the reference document.
+
+225
+00:13:19,790 --> 00:13:23,630
+The datasheet documents is the document with the M with a block diagram.
+
+226
+00:13:23,900 --> 00:13:25,610
+We need to take a look at the block diagram.
+
+227
+00:13:27,320 --> 00:13:28,930
+I think I have the data sheet here.
+
+228
+00:13:30,260 --> 00:13:35,660
+So if you don't have that, you can just go on line, search SDM 32 F for one one datasheet.
+
+229
+00:13:36,470 --> 00:13:39,190
+And this is the um, is a called data sheet.
+
+230
+00:13:39,230 --> 00:13:41,720
+Liz, let's see what is written up here.
+
+231
+00:13:45,220 --> 00:13:46,600
+OK, so this is it.
+
+232
+00:13:46,800 --> 00:13:53,190
+This is classified as the datasheet when India and the arrangement and the other one is classified as
+
+233
+00:13:53,190 --> 00:13:53,430
+the.
+
+234
+00:13:54,060 --> 00:13:55,690
+The reference my notes written here.
+
+235
+00:13:55,710 --> 00:13:56,370
+Datasheet.
+
+236
+00:13:58,510 --> 00:13:58,990
+Over here.
+
+237
+00:13:59,400 --> 00:14:01,680
+So we need to take a look at the block diagram.
+
+238
+00:14:02,430 --> 00:14:03,860
+So I'm going to scroll down here.
+
+239
+00:14:08,170 --> 00:14:10,180
+We just posted this one over here.
+
+240
+00:14:11,560 --> 00:14:12,460
+I'm going to zoom in.
+
+241
+00:14:13,940 --> 00:14:14,320
+OK.
+
+242
+00:14:17,890 --> 00:14:18,750
+Well, assuming a bit.
+
+243
+00:14:19,860 --> 00:14:26,970
+OK, so this diagram here shows us the, um, the buses connecting the various parts of the of the of
+
+244
+00:14:26,970 --> 00:14:27,900
+the microcontroller.
+
+245
+00:14:29,610 --> 00:14:30,770
+So there are two buses.
+
+246
+00:14:31,020 --> 00:14:35,520
+Generally, we have the HP, the APB bus and the HP bus.
+
+247
+00:14:36,300 --> 00:14:41,430
+HP allows us to allows us for allows faster access.
+
+248
+00:14:41,640 --> 00:14:47,400
+Basically, you can access a particular part of the microcontroller with fewer clock cycles when using
+
+249
+00:14:47,400 --> 00:14:50,580
+the HP as compared to the APD.
+
+250
+00:14:50,640 --> 00:14:56,540
+APB is the legacy buses from the past and the HP is the more recent one.
+
+251
+00:14:56,550 --> 00:15:01,050
+But they keep both to allow portability.
+
+252
+00:15:02,070 --> 00:15:04,770
+So over here you see HP over here.
+
+253
+00:15:04,830 --> 00:15:12,240
+And then we have APB and HP are further divided into HP, one APB one, et cetera.
+
+254
+00:15:13,020 --> 00:15:19,800
+So to know how a particular component is connected, you just have to trace the arrows, the arrows
+
+255
+00:15:19,800 --> 00:15:20,480
+connecting it.
+
+256
+00:15:21,090 --> 00:15:23,040
+And then from the arrow, you know which bus.
+
+257
+00:15:23,850 --> 00:15:25,030
+So this is GPL, your ports.
+
+258
+00:15:25,190 --> 00:15:29,280
+If you look at UK ports, we see this arrow connection to G.P.A..
+
+259
+00:15:29,280 --> 00:15:33,390
+You put a and then connect into this other bus here.
+
+260
+00:15:33,870 --> 00:15:37,590
+When we look at the name of the bus, the bus is called a HP one bus.
+
+261
+00:15:38,250 --> 00:15:41,310
+So we know to access GPL, you put it to enable it.
+
+262
+00:15:41,850 --> 00:15:49,290
+We need to enable it using the HP one meaning there is something in the HP module without allow us to
+
+263
+00:15:49,300 --> 00:15:49,950
+enable G.P.A..
+
+264
+00:15:49,980 --> 00:15:54,780
+You put a is the same for ports B, C, D and E, you can trace them.
+
+265
+00:15:55,080 --> 00:16:03,000
+But if we were to use a different peripherals such as t I am M2 meaning time two, we know that we can
+
+266
+00:16:03,000 --> 00:16:05,440
+trace and locate it bus from here.
+
+267
+00:16:05,640 --> 00:16:12,710
+It's connected to the APB, one bus, the APB, one bus gives us access to time or two.
+
+268
+00:16:12,750 --> 00:16:19,200
+So after knowing this we know GPL, you say it is HP one.
+
+269
+00:16:19,260 --> 00:16:26,040
+So we can just keep a comment up here, a HP one like this.
+
+270
+00:16:26,830 --> 00:16:27,040
+OK.
+
+271
+00:16:27,120 --> 00:16:29,010
+And we said we're dealing with P five.
+
+272
+00:16:29,910 --> 00:16:30,720
+P A five.
+
+273
+00:16:31,180 --> 00:16:31,380
+That's.
+
+274
+00:16:31,390 --> 00:16:32,700
+Well, it is connected.
+
+275
+00:16:33,840 --> 00:16:34,230
+Right.
+
+276
+00:16:36,090 --> 00:16:43,140
+So to enable the HP one, we need to go to the data sheet and see what HP what looks like.
+
+277
+00:16:43,860 --> 00:16:50,520
+So we need to go to data sheets and search HP one and Naples, register the register for enabling HP
+
+278
+00:16:50,520 --> 00:16:50,820
+one.
+
+279
+00:16:52,560 --> 00:16:53,550
+I mean, reference manual.
+
+280
+00:16:53,580 --> 00:16:54,460
+This is the data sheet.
+
+281
+00:16:54,510 --> 00:16:56,390
+So we need to open the reference manual next.
+
+282
+00:16:56,430 --> 00:16:59,370
+Does the one that gives us the register information.
+
+283
+00:16:59,770 --> 00:17:00,510
+So come over here.
+
+284
+00:17:00,510 --> 00:17:01,710
+That will click this to open.
+
+285
+00:17:02,890 --> 00:17:04,080
+And there's the reference manual.
+
+286
+00:17:04,110 --> 00:17:04,890
+This one is bigger.
+
+287
+00:17:05,370 --> 00:17:07,140
+So there's a trick for dealing with this.
+
+288
+00:17:07,590 --> 00:17:09,460
+You simply search for what you are looking.
+
+289
+00:17:10,890 --> 00:17:11,920
+You all do control.
+
+290
+00:17:12,050 --> 00:17:16,620
+If you open the search box here and then I'm going to search HP one.
+
+291
+00:17:17,160 --> 00:17:18,340
+And then I hit enter.
+
+292
+00:17:19,530 --> 00:17:22,850
+And then it's probably here and then.
+
+293
+00:17:23,000 --> 00:17:24,300
+Oh, hit enter again.
+
+294
+00:17:24,360 --> 00:17:27,390
+I'm looking for HP one enabler register.
+
+295
+00:17:27,450 --> 00:17:33,390
+So this one here says RACC, a HP one pair, four o'clock enabler register.
+
+296
+00:17:33,510 --> 00:17:34,620
+This the one we're dealing with.
+
+297
+00:17:34,680 --> 00:17:35,490
+So click this.
+
+298
+00:17:36,700 --> 00:17:40,140
+And when I come here it tells me over here.
+
+299
+00:17:40,170 --> 00:17:42,330
+It shows the 32 bit register.
+
+300
+00:17:42,990 --> 00:17:45,600
+And we say 32 bits because we count from zero.
+
+301
+00:17:45,630 --> 00:17:48,750
+So if you count from zero through thirty one, you end up with 32.
+
+302
+00:17:49,650 --> 00:17:50,040
+Right.
+
+303
+00:17:50,310 --> 00:17:58,440
+So over here it says pit zero is GPA you a enable between GPL, you B enable B to GPL, you see a network
+
+304
+00:17:58,440 --> 00:17:58,920
+cetera.
+
+305
+00:17:59,310 --> 00:18:00,930
+So let's go to pit zero.
+
+306
+00:18:01,530 --> 00:18:06,310
+Over here, the bits I explained or that decoded if you want to see it.
+
+307
+00:18:07,110 --> 00:18:13,530
+So if I scroll down here to go to the part where it tells me BOPE, it's zero like it said in the diagram,
+
+308
+00:18:13,560 --> 00:18:15,780
+but zero is GPL you enable.
+
+309
+00:18:16,230 --> 00:18:22,260
+And it says, I Allport a clock and enable set and cleared by software.
+
+310
+00:18:22,860 --> 00:18:26,280
+And over here it gives a simple Truta table, if you want to call it that.
+
+311
+00:18:26,580 --> 00:18:31,650
+It says if it is set to zero then I put a clock is disabled.
+
+312
+00:18:31,710 --> 00:18:34,370
+If it is set to one then I o clock.
+
+313
+00:18:35,880 --> 00:18:38,340
+When they said to one, then I put a clock.
+
+314
+00:18:38,440 --> 00:18:39,900
+It is enabled.
+
+315
+00:18:40,050 --> 00:18:44,330
+So to enable clock four point eight we have to set this over here to one.
+
+316
+00:18:45,960 --> 00:18:47,640
+So yeah, that is point number one.
+
+317
+00:18:48,240 --> 00:18:50,100
+So we know what to do here.
+
+318
+00:18:53,580 --> 00:18:59,310
+So we can, um, we can take note of the we can, um, say
+
+319
+00:19:02,670 --> 00:19:05,970
+set the register called RACC,
+
+320
+00:19:09,090 --> 00:19:15,060
+HP one enable register set bitz zero.
+
+321
+00:19:15,340 --> 00:19:17,460
+Oh see I said it's zero
+
+322
+00:19:21,260 --> 00:19:25,770
+or Qasi HP one, two, one does what we want to do to enable clock access.
+
+323
+00:19:27,120 --> 00:19:27,480
+Right.
+
+324
+00:19:27,510 --> 00:19:27,960
+Next.
+
+325
+00:19:28,410 --> 00:19:34,950
+So once we do this auction clock access is going to be um is going to be available to keep you put in.
+
+326
+00:19:34,980 --> 00:19:41,370
+Now we can we can choose whichever pin we want on the port to use for our purpose.
+
+327
+00:19:41,790 --> 00:19:43,260
+But we said we use MPLX five.
+
+328
+00:19:44,430 --> 00:19:48,910
+This brings another explanation which regards to the way microcontrollers work.
+
+329
+00:19:49,980 --> 00:19:52,030
+So any microcontroller at all.
+
+330
+00:19:52,870 --> 00:19:58,140
+Um, when dealing with GPI, you GPI U stands for general purpose input output.
+
+331
+00:19:58,170 --> 00:20:05,610
+When dealing with GPA, you there are at least at least at least two registers that any microcontroller
+
+332
+00:20:05,610 --> 00:20:06,990
+would have, what, eight, eight bits.
+
+333
+00:20:06,990 --> 00:20:07,680
+Sixteen bits.
+
+334
+00:20:07,700 --> 00:20:08,490
+Thirty two bits.
+
+335
+00:20:08,760 --> 00:20:13,260
+There are at least two registers when it comes, when it comes to dealing with GPL.
+
+336
+00:20:13,260 --> 00:20:19,740
+You and these two registers are the um the direction register and the data register.
+
+337
+00:20:21,290 --> 00:20:26,150
+These are the at least two, but you would never in modern day microcontrollers, you would find more
+
+338
+00:20:26,150 --> 00:20:33,690
+than two, but all of them contain this, at least to the direction register is used to set the GPL.
+
+339
+00:20:33,790 --> 00:20:37,250
+You remember, GPL stands for general purpose, input output.
+
+340
+00:20:37,610 --> 00:20:42,590
+We use that direction to set the direction, whether we want it to be input or output.
+
+341
+00:20:42,710 --> 00:20:44,520
+We use that direction to do that.
+
+342
+00:20:44,620 --> 00:20:45,410
+Direction register.
+
+343
+00:20:45,470 --> 00:20:45,910
+To do that.
+
+344
+00:20:46,850 --> 00:20:54,200
+And they, um, the data register, based on whether you choose to set it as input or output, would
+
+345
+00:20:54,240 --> 00:20:59,510
+either contain the data or would give the data that is to be able to put it out.
+
+346
+00:21:00,170 --> 00:21:00,470
+Right.
+
+347
+00:21:00,530 --> 00:21:02,840
+So at least they have these two registers.
+
+348
+00:21:03,980 --> 00:21:06,620
+So these are the generic names of the registers.
+
+349
+00:21:07,200 --> 00:21:09,980
+Um, data register and direction register.
+
+350
+00:21:10,040 --> 00:21:10,730
+So I mentioned.
+
+351
+00:21:11,340 --> 00:21:11,710
+OK.
+
+352
+00:21:11,810 --> 00:21:19,870
+So given this fundamental, um, given this, um, fundamental knowledge, microcontroller manufacturers,
+
+353
+00:21:20,210 --> 00:21:23,210
+um, build upon this to add more options to it.
+
+354
+00:21:24,050 --> 00:21:33,380
+So I mentioned in GPL you you can have it either as input or output because of the complexity of modern
+
+355
+00:21:33,380 --> 00:21:34,460
+day microcontrollers.
+
+356
+00:21:35,150 --> 00:21:38,950
+Our GPI, you pin p five is not simply a GPO.
+
+357
+00:21:39,710 --> 00:21:46,550
+We can configure p a five also into an s p i o n s p i.
+
+358
+00:21:46,550 --> 00:21:49,370
+O stands for special purpose input output.
+
+359
+00:21:50,090 --> 00:21:57,740
+So because we have this other option in this so called Direxion Register, our options are no longer
+
+360
+00:21:58,160 --> 00:21:59,780
+choose input or output.
+
+361
+00:22:00,170 --> 00:22:03,140
+There's another option known as alternate function option.
+
+362
+00:22:04,040 --> 00:22:06,530
+So we can also set it to an alternate function.
+
+363
+00:22:06,980 --> 00:22:13,930
+And by setting it to an alternate function, we can say we want to use P a five as a U at our x p,
+
+364
+00:22:14,000 --> 00:22:21,050
+meaning you are to receive Peine or you are to explain or as a plutonium generator in all.
+
+365
+00:22:21,640 --> 00:22:22,340
+I said that.
+
+366
+00:22:22,970 --> 00:22:31,580
+So these are these are peripherals such as you at ADC, DHC, the special purpose peripherals, the
+
+367
+00:22:31,580 --> 00:22:36,680
+base pair for the general purpose is the simple G.P.A. you about all of these peripherals.
+
+368
+00:22:36,740 --> 00:22:38,360
+They deal with Paines as well.
+
+369
+00:22:38,960 --> 00:22:42,590
+So you have to configure the pin to be a special purpose being to use it.
+
+370
+00:22:43,460 --> 00:22:49,130
+So with this, then we access the same, the same direction register.
+
+371
+00:22:49,490 --> 00:22:49,910
+Right.
+
+372
+00:22:50,510 --> 00:22:52,580
+So direction register.
+
+373
+00:22:52,590 --> 00:22:53,000
+Right.
+
+374
+00:22:53,900 --> 00:22:58,910
+However, when you go to the data sheet and the reference my notes or from silicon manufactories, you
+
+375
+00:22:58,910 --> 00:23:01,940
+wouldn't find the, um, the word direction register.
+
+376
+00:23:02,450 --> 00:23:06,470
+They've given us this functionality or this registered different names.
+
+377
+00:23:07,010 --> 00:23:10,850
+If you go to the, um, the data sheet of the Texas instrument.
+
+378
+00:23:11,130 --> 00:23:12,860
+Um, Tim Forese, one, two, three.
+
+379
+00:23:12,890 --> 00:23:14,570
+This is still called Director Register.
+
+380
+00:23:15,080 --> 00:23:16,640
+But, you know, SDM 32.
+
+381
+00:23:16,730 --> 00:23:19,820
+This is called the Mode Register, cos it makes sense.
+
+382
+00:23:19,850 --> 00:23:20,920
+You are setting the mood.
+
+383
+00:23:21,440 --> 00:23:27,530
+So yeah, in other manufactories, I'm sure an B would have a different name for this same register,
+
+384
+00:23:28,100 --> 00:23:30,290
+but fundamentally they do the same thing.
+
+385
+00:23:30,980 --> 00:23:35,070
+So this brings us to going to find our more register.
+
+386
+00:23:35,180 --> 00:23:37,340
+And then, um, and then dealing with it.
+
+387
+00:23:37,880 --> 00:23:42,410
+So we're going to go back to a work reference my no and find a note register.
+
+388
+00:23:42,470 --> 00:23:45,950
+And see how the more register or the direction.
+
+389
+00:23:46,040 --> 00:23:51,370
+Remember when I say mode and direction, I'm using it interchangeably because I gave you the prologue.
+
+390
+00:23:51,530 --> 00:23:54,440
+I gave it introduction using the word director register.
+
+391
+00:23:54,470 --> 00:23:56,030
+So you can think of them as the same.
+
+392
+00:23:56,570 --> 00:24:02,210
+So we go to the, um, the reference manual, find this direction register or more register and see
+
+393
+00:24:02,210 --> 00:24:09,200
+what we have to do to this register to set out what, a five as an output pin because P five can be
+
+394
+00:24:09,290 --> 00:24:13,830
+output, it can be input and it can be a special purpose as well.
+
+395
+00:24:14,570 --> 00:24:18,770
+We have to say we want this pain to be output for this project and we have to find that.
+
+396
+00:24:19,580 --> 00:24:19,900
+Okay.
+
+397
+00:24:20,000 --> 00:24:22,020
+So let's go to the, um, the reference model.
+
+398
+00:24:24,140 --> 00:24:29,990
+I think I still have it open over here, so I'll come back to the top o scroll back to the top control
+
+399
+00:24:30,080 --> 00:24:34,560
+F to search F here and then I'm going to search mode.
+
+400
+00:24:34,980 --> 00:24:35,300
+Ah.
+
+401
+00:24:36,520 --> 00:24:42,400
+And then now hit enter and then it's probably here under GPL your register.
+
+402
+00:24:42,410 --> 00:24:45,430
+He says g.p or Port Moad registered.
+
+403
+00:24:45,690 --> 00:24:47,370
+The R stands for register.
+
+404
+00:24:47,420 --> 00:24:48,560
+That is why it's written mode.
+
+405
+00:24:48,620 --> 00:24:48,860
+Ah.
+
+406
+00:24:49,190 --> 00:24:50,840
+So we can click here to read about it.
+
+407
+00:24:52,670 --> 00:24:53,150
+Okay.
+
+408
+00:24:54,500 --> 00:25:02,330
+It says GPL you Portmore Register and GPL your GPA you on this uh subscript X mode register.
+
+409
+00:25:02,360 --> 00:25:07,360
+And it says X stands for a, e and H e all the way to H I should see.
+
+410
+00:25:07,690 --> 00:25:08,580
+And this means GPA.
+
+411
+00:25:08,600 --> 00:25:17,210
+You put a puts people C D all the way to H over here like we said or register s 32 bits if they are
+
+412
+00:25:17,210 --> 00:25:17,780
+not thirty two.
+
+413
+00:25:18,470 --> 00:25:20,540
+Although the other two bits, not all of them have all.
+
+414
+00:25:20,660 --> 00:25:22,760
+It's been used, for instance, this one down here.
+
+415
+00:25:23,100 --> 00:25:25,420
+We don't use the upper upper arm.
+
+416
+00:25:25,490 --> 00:25:26,240
+Fifteen bits.
+
+417
+00:25:26,930 --> 00:25:27,570
+Sixteen bits.
+
+418
+00:25:27,620 --> 00:25:28,220
+They're reserved.
+
+419
+00:25:29,230 --> 00:25:29,510
+OK.
+
+420
+00:25:29,640 --> 00:25:31,080
+So this one would register.
+
+421
+00:25:32,210 --> 00:25:37,100
+And it's it's broken down into mode zero.
+
+422
+00:25:37,130 --> 00:25:37,790
+Through mode.
+
+423
+00:25:37,860 --> 00:25:38,450
+Fifteen.
+
+424
+00:25:38,780 --> 00:25:39,200
+Right.
+
+425
+00:25:40,150 --> 00:25:41,000
+More to zero.
+
+426
+00:25:41,030 --> 00:25:43,180
+Takes the first two bit bits.
+
+427
+00:25:43,180 --> 00:25:45,240
+Zero and bit one more.
+
+428
+00:25:45,390 --> 00:25:50,150
+Fifteen takes the last two bits to thirty and a bit.
+
+429
+00:25:50,210 --> 00:25:50,780
+Thirty one.
+
+430
+00:25:51,230 --> 00:25:54,500
+So let's read about what mod zero is.
+
+431
+00:25:54,560 --> 00:25:55,010
+One word.
+
+432
+00:25:55,010 --> 00:25:56,840
+One is what mode two is, et cetera.
+
+433
+00:25:58,100 --> 00:25:59,100
+Over here it says.
+
+434
+00:25:59,230 --> 00:25:59,730
+Mode.
+
+435
+00:26:01,040 --> 00:26:01,370
+Mode.
+
+436
+00:26:01,550 --> 00:26:02,480
+Subscript y.
+
+437
+00:26:02,580 --> 00:26:07,570
+And over here it gives bits zero through one meaning they take one bit.
+
+438
+00:26:08,590 --> 00:26:08,930
+Um.
+
+439
+00:26:09,050 --> 00:26:09,340
+Yeah.
+
+440
+00:26:09,650 --> 00:26:13,890
+And it says Port X configuration Y equals zero through fifteen.
+
+441
+00:26:14,060 --> 00:26:15,030
+Meaning Y.
+
+442
+00:26:15,080 --> 00:26:15,270
+Here.
+
+443
+00:26:15,290 --> 00:26:18,950
+Represent more to zero mode one mode to all the way toward fifteen.
+
+444
+00:26:19,670 --> 00:26:20,060
+Right.
+
+445
+00:26:20,630 --> 00:26:25,220
+So he says these bits are written by software to configure the eye or direction mode.
+
+446
+00:26:25,520 --> 00:26:27,260
+You see the eye using the Y direction here.
+
+447
+00:26:27,830 --> 00:26:28,040
+Yeah.
+
+448
+00:26:28,970 --> 00:26:30,890
+So you said the eye or direction mode.
+
+449
+00:26:32,000 --> 00:26:37,990
+It says when we set the two bit two zero zero, we've set it as input.
+
+450
+00:26:38,870 --> 00:26:44,180
+When we set it to one zero, we've set it as general-purpose output mode.
+
+451
+00:26:45,590 --> 00:26:50,120
+When we set it to zero one, we've set it to alternate function mode.
+
+452
+00:26:50,240 --> 00:26:52,760
+And when we said it to one one, we've said it to unlock mode.
+
+453
+00:26:53,030 --> 00:26:55,670
+So we have four different modes or directions here.
+
+454
+00:26:56,510 --> 00:26:56,870
+Right.
+
+455
+00:26:57,410 --> 00:27:01,160
+So what, um, what we have here.
+
+456
+00:27:02,580 --> 00:27:04,340
+It's not clearly stated here.
+
+457
+00:27:04,940 --> 00:27:07,280
+But not one here.
+
+458
+00:27:07,910 --> 00:27:10,820
+These two bits are useful.
+
+459
+00:27:10,820 --> 00:27:14,900
+Configuring all this is mode zero.
+
+460
+00:27:14,930 --> 00:27:16,240
+I should see more zero here.
+
+461
+00:27:16,430 --> 00:27:25,850
+These two bits, which is bits and bytes, one more zero is useful, configuring all pins, zeros of
+
+462
+00:27:25,880 --> 00:27:26,570
+every port.
+
+463
+00:27:26,990 --> 00:27:28,920
+So if I'm dealing with P is zero.
+
+464
+00:27:29,010 --> 00:27:30,150
+I have to use more zero.
+
+465
+00:27:30,170 --> 00:27:31,490
+If I'm dealing with please you.
+
+466
+00:27:31,510 --> 00:27:32,720
+I have to use more to zero.
+
+467
+00:27:33,110 --> 00:27:40,530
+If I'm dealing with p.c zero point zero p e p h zero or more two in the same way mode five over here.
+
+468
+00:27:41,600 --> 00:27:47,710
+Whereas Mode five, mode five over here is for or pin pin fives.
+
+469
+00:27:47,930 --> 00:27:50,030
+So this is the one we're looking for.
+
+470
+00:27:50,330 --> 00:27:56,510
+We have to set mode five two two one zero.
+
+471
+00:27:56,930 --> 00:27:57,890
+So what does this mean.
+
+472
+00:27:58,040 --> 00:28:04,300
+It means we have a 32 bit, 32 bit binary number and that that's pit number ten.
+
+473
+00:28:04,340 --> 00:28:05,600
+We have to set it to one.
+
+474
+00:28:07,040 --> 00:28:09,760
+We have to make sure bits number 10 is set to one bits.
+
+475
+00:28:09,830 --> 00:28:12,040
+Number eleven is set to zero, all the other bits.
+
+476
+00:28:12,080 --> 00:28:13,040
+We don't care about them.
+
+477
+00:28:13,850 --> 00:28:15,160
+They deal with other pains.
+
+478
+00:28:15,250 --> 00:28:17,960
+But specifically, four bits.
+
+479
+00:28:18,110 --> 00:28:19,640
+Number ten and eleven.
+
+480
+00:28:19,700 --> 00:28:20,930
+We have to make sure.
+
+481
+00:28:21,860 --> 00:28:23,510
+We have to make sure they are set to.
+
+482
+00:28:25,260 --> 00:28:25,700
+Yes, sir.
+
+483
+00:28:25,700 --> 00:28:26,760
+To bits.
+
+484
+00:28:27,260 --> 00:28:30,710
+One and zero, as we have over here, if you don't understand, is live in.
+
+485
+00:28:30,860 --> 00:28:32,390
+Live it in the questions area.
+
+486
+00:28:32,820 --> 00:28:36,350
+So mode five is for P five.
+
+487
+00:28:36,650 --> 00:28:38,180
+So what is Mod five.
+
+488
+00:28:38,210 --> 00:28:40,850
+Would five deals with pit number ten and eleven.
+
+489
+00:28:41,480 --> 00:28:43,500
+So we set pits number ten to one.
+
+490
+00:28:44,210 --> 00:28:45,950
+And then bitz number eleven to zero.
+
+491
+00:28:46,220 --> 00:28:53,510
+By doing this we'll set it to general purpose output mode and output mode is what would output our L.E.
+
+492
+00:28:53,510 --> 00:28:54,080
+delight.
+
+493
+00:28:55,400 --> 00:28:57,800
+So let's take some note.
+
+494
+00:28:58,340 --> 00:28:59,330
+I'll come over here.
+
+495
+00:29:03,160 --> 00:29:03,720
+Set.
+
+496
+00:29:07,430 --> 00:29:07,880
+Set.
+
+497
+00:29:10,100 --> 00:29:13,100
+Bit ten to one.
+
+498
+00:29:13,850 --> 00:29:21,750
+And bit eleven to zero in GPL.
+
+499
+00:29:21,770 --> 00:29:22,520
+You a
+
+500
+00:29:28,840 --> 00:29:29,820
+mode register.
+
+501
+00:29:30,920 --> 00:29:32,420
+And this will give us output mode.
+
+502
+00:29:33,220 --> 00:29:33,540
+OK.
+
+503
+00:29:34,490 --> 00:29:38,300
+So after this we would have this set us output mode.
+
+504
+00:29:39,200 --> 00:29:43,070
+Now how do we write to the GPL Open?
+
+505
+00:29:43,280 --> 00:29:46,310
+Remember we said there are at least two registers you have to deal with.
+
+506
+00:29:46,340 --> 00:29:48,710
+There is the direction register and the data register.
+
+507
+00:29:49,550 --> 00:29:50,610
+Well, yeah.
+
+508
+00:29:50,690 --> 00:29:53,880
+The data register allows us to get the data.
+
+509
+00:29:54,400 --> 00:29:59,240
+I get it or give it based on whether we've configured for input or output.
+
+510
+00:29:59,900 --> 00:30:05,360
+So when we turn on the ality, when we want to turn it off to how do we do the on and off to do this,
+
+511
+00:30:05,420 --> 00:30:07,790
+we would have to access the data register.
+
+512
+00:30:08,420 --> 00:30:14,580
+And just like the direction register, silicon manufacturers give this register different names also.
+
+513
+00:30:15,350 --> 00:30:20,060
+So in some data sheet or reference modules, you find it's called the data register.
+
+514
+00:30:20,090 --> 00:30:26,480
+In others you'd find not data register, but a name is still descriptive of its function.
+
+515
+00:30:27,170 --> 00:30:30,500
+So over here, it is called the Output Data Register.
+
+516
+00:30:30,530 --> 00:30:36,920
+Over here, they've broken the data register into inputs, data register and output data register such
+
+517
+00:30:36,920 --> 00:30:41,870
+that when you are dealing with GPA, you set as an input.
+
+518
+00:30:41,960 --> 00:30:43,700
+You use the input data register.
+
+519
+00:30:43,750 --> 00:30:47,210
+And when you are dealing with it as an output, you use the output data register.
+
+520
+00:30:48,140 --> 00:30:52,130
+So let's find the output data register and see what it presents to us.
+
+521
+00:30:52,970 --> 00:31:01,220
+When I come up here and then I'll do a control f and then our search o t r does what it is called or
+
+522
+00:31:01,220 --> 00:31:03,530
+hit enter and it brings me over here.
+
+523
+00:31:03,560 --> 00:31:05,750
+GPL, you put output data register.
+
+524
+00:31:05,780 --> 00:31:06,860
+Click this over here.
+
+525
+00:31:07,580 --> 00:31:09,020
+And this explains what we've got.
+
+526
+00:31:09,470 --> 00:31:11,210
+You can close this.
+
+527
+00:31:13,040 --> 00:31:15,320
+So it says what does it say.
+
+528
+00:31:16,070 --> 00:31:16,650
+It says GPA.
+
+529
+00:31:16,670 --> 00:31:17,800
+You put the data register.
+
+530
+00:31:17,840 --> 00:31:18,500
+No problem.
+
+531
+00:31:18,980 --> 00:31:24,440
+And over here we have only r y meaning Y is from zero through fifteen.
+
+532
+00:31:25,250 --> 00:31:26,330
+The top is reserved.
+
+533
+00:31:26,360 --> 00:31:28,980
+So we have output data.
+
+534
+00:31:29,000 --> 00:31:29,360
+Register.
+
+535
+00:31:29,360 --> 00:31:30,900
+What is your one, two, three.
+
+536
+00:31:30,920 --> 00:31:32,660
+And these correspond to the PIN numbers.
+
+537
+00:31:32,720 --> 00:31:39,020
+So if we are dealing with PIN five, then this is where our output is going to be.
+
+538
+00:31:39,350 --> 00:31:41,470
+We are going to write our output here.
+
+539
+00:31:41,600 --> 00:31:44,570
+We're going to write one, two bits, number five over here.
+
+540
+00:31:44,900 --> 00:31:50,380
+And by writing one, two bits, number five, ten P a five is going to be set high.
+
+541
+00:31:50,870 --> 00:31:52,280
+It's going to be set to own.
+
+542
+00:31:53,480 --> 00:31:55,730
+It's going to be set to one, whichever you prefer.
+
+543
+00:31:56,540 --> 00:31:56,870
+So
+
+544
+00:31:59,780 --> 00:32:00,590
+we take note.
+
+545
+00:32:04,150 --> 00:32:04,770
+Right.
+
+546
+00:32:05,600 --> 00:32:06,140
+I'll see.
+
+547
+00:32:09,220 --> 00:32:09,660
+Right.
+
+548
+00:32:09,750 --> 00:32:19,160
+One, right, one, two GP, are you a GP, are you a.
+
+549
+00:32:21,300 --> 00:32:21,990
+Oh, dear.
+
+550
+00:32:22,890 --> 00:32:23,750
+Bit five.
+
+551
+00:32:26,790 --> 00:32:35,520
+To set P a five on and write zero.
+
+552
+00:32:36,070 --> 00:32:38,100
+I'm just put in this here for your revision, right.
+
+553
+00:32:38,250 --> 00:32:42,240
+Zero to set it off.
+
+554
+00:32:43,470 --> 00:32:43,890
+Right.
+
+555
+00:32:44,730 --> 00:32:46,470
+So we have everything we need.
+
+556
+00:32:46,800 --> 00:32:53,160
+And then, um, we can, um, we can, um, conclude here and continue the next lesson we've recorded
+
+557
+00:32:53,160 --> 00:32:54,510
+over, I think, 30 minutes.
+
+558
+00:32:54,990 --> 00:32:56,160
+So he's getting a bit long.
+
+559
+00:32:56,250 --> 00:32:58,650
+You can, um, stretch stretch your fingers.
+
+560
+00:32:58,740 --> 00:33:06,360
+I had my my university professor once told me, you know, when you move your fingers, when you move
+
+561
+00:33:06,360 --> 00:33:11,160
+your your joints, when you move them, especially the little joints rapidly, it keeps you awake.
+
+562
+00:33:11,430 --> 00:33:15,900
+So every now and then in class, he makes us stand up and then, you know, flex our fingers and then
+
+563
+00:33:15,930 --> 00:33:18,000
+take off our shoes and flex our toes.
+
+564
+00:33:18,030 --> 00:33:18,750
+You can imagine.
+
+565
+00:33:19,530 --> 00:33:20,880
+Apparently keeps people awake.
+
+566
+00:33:20,910 --> 00:33:22,620
+So you can use this break to do that.
+
+567
+00:33:23,360 --> 00:33:24,560
+And I'll see you in the next lesson.
