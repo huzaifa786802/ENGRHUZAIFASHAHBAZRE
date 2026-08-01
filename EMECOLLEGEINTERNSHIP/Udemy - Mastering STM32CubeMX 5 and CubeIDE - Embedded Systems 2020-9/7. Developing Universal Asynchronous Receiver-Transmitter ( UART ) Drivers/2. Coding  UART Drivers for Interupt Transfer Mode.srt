@@ -1,0 +1,1251 @@
+1
+00:00:00,240 --> 00:00:00,490
+Hello.
+
+2
+00:00:00,690 --> 00:00:01,200
+Welcome back.
+
+3
+00:00:01,450 --> 00:00:08,190
+And this lesson, we are going to see how to configure our SDM 32 you art for interrupt mode.
+
+4
+00:00:08,550 --> 00:00:15,260
+So what I'm going to do is create a pin out of created a new project, as you can see, after years
+
+5
+00:00:15,270 --> 00:00:16,210
+to collect a pin out.
+
+6
+00:00:18,210 --> 00:00:23,540
+And then the other time we use that, you are Temotu to this time less use.
+
+7
+00:00:23,580 --> 00:00:24,690
+You are too much of one.
+
+8
+00:00:25,110 --> 00:00:29,730
+And remember, you, art module one is no hasn't got the, um, the V1 capability.
+
+9
+00:00:30,120 --> 00:00:35,010
+If you using your automotive one or your nuclear board, you wouldn't be able to view it on Terra too.
+
+10
+00:00:36,030 --> 00:00:41,850
+You would require the extend or you are to us be convertor in order to view it.
+
+11
+00:00:42,120 --> 00:00:47,310
+It just happens that our You are module two is connected to the debugger which allows us to view it.
+
+12
+00:00:47,850 --> 00:00:53,480
+So this time we're going to use module one and this time we would use this opportunity to try to receive
+
+13
+00:00:53,480 --> 00:00:54,540
+a function as well.
+
+14
+00:00:55,020 --> 00:01:02,820
+And what we're going to do is we're going to tie the transmit and the receive pins of our microcontroller
+
+15
+00:01:02,820 --> 00:01:05,400
+such that we can create a loop back.
+
+16
+00:01:05,700 --> 00:01:10,930
+The data we send through the transmit, we receive it through, they receive a pin.
+
+17
+00:01:11,520 --> 00:01:14,820
+And this will verify that we've configured both our Rex and T x.
+
+18
+00:01:15,450 --> 00:01:18,900
+So come to connectivity over here and then I'll select you at one.
+
+19
+00:01:20,160 --> 00:01:22,200
+And once I've selected it, I'll open this.
+
+20
+00:01:22,770 --> 00:01:25,470
+And then now enable it as asynchronous mode.
+
+21
+00:01:26,550 --> 00:01:29,040
+And then this will show that pins involved here.
+
+22
+00:01:29,130 --> 00:01:31,280
+It's P A ten and P in nine.
+
+23
+00:01:31,590 --> 00:01:32,580
+So to create a U.
+
+24
+00:01:32,670 --> 00:01:33,570
+A loop back.
+
+25
+00:01:33,630 --> 00:01:35,410
+We know this is the R x receive.
+
+26
+00:01:35,660 --> 00:01:36,680
+And is the T expen.
+
+27
+00:01:37,080 --> 00:01:41,790
+So what we can do is take a jumper wire, connect to P eight nine and P a 10.
+
+28
+00:01:42,270 --> 00:01:47,820
+So we connect a pin here such that what is transmitted from P in I will be received from P A 10.
+
+29
+00:01:48,180 --> 00:01:51,930
+And we can verify that what we transmit is received.
+
+30
+00:01:52,680 --> 00:01:53,160
+Right.
+
+31
+00:01:55,410 --> 00:01:57,030
+Next we go to a clock certains.
+
+32
+00:01:57,060 --> 00:02:00,130
+I'm going to go to the clock set in here and then I'm going to select it.
+
+33
+00:02:00,330 --> 00:02:03,420
+As I as the source from this multiplex up over here.
+
+34
+00:02:04,410 --> 00:02:09,810
+Once that is done, I'm going to make sure my you are to pass is 16 megahertz so that those with the
+
+35
+00:02:09,810 --> 00:02:15,690
+F one FS Air Force, your one would just use the default settings or hit enter here.
+
+36
+00:02:16,830 --> 00:02:19,080
+And then everything will be adjusted accordingly.
+
+37
+00:02:20,280 --> 00:02:24,350
+Next, we go back to the PIN and configuration tab to continue our configuration.
+
+38
+00:02:24,380 --> 00:02:25,750
+I'll come to systems for you here.
+
+39
+00:02:25,950 --> 00:02:28,650
+I'll click my you at one, you know, expand from here.
+
+40
+00:02:29,920 --> 00:02:30,420
+Let's see.
+
+41
+00:02:30,500 --> 00:02:30,780
+Yes.
+
+42
+00:02:30,780 --> 00:02:31,590
+To be expanded.
+
+43
+00:02:31,690 --> 00:02:32,180
+Okay.
+
+44
+00:02:32,670 --> 00:02:33,870
+And over here.
+
+45
+00:02:33,930 --> 00:02:35,340
+OK, keep everything the same.
+
+46
+00:02:35,460 --> 00:02:37,960
+We want to receive and transmit the other part.
+
+47
+00:02:37,980 --> 00:02:38,670
+We wanted the same.
+
+48
+00:02:38,700 --> 00:02:43,700
+But because we said we'll be use and interrupt, we have to enable global interrupt for the U.
+
+49
+00:02:44,040 --> 00:02:44,530
+The USA.
+
+50
+00:02:44,640 --> 00:02:47,430
+So click over here to care to enable global interrupt.
+
+51
+00:02:48,660 --> 00:02:50,450
+Now I can go ahead and generate the code.
+
+52
+00:02:50,550 --> 00:02:52,050
+Come over here, generate code.
+
+53
+00:02:52,500 --> 00:02:57,180
+I'll give this a name you art underscore.
+
+54
+00:02:57,270 --> 00:02:57,930
+Interrupt.
+
+55
+00:02:59,070 --> 00:03:00,740
+And then also to change over here.
+
+56
+00:03:00,800 --> 00:03:03,140
+SDM 32 cube idi e.
+
+57
+00:03:03,690 --> 00:03:06,120
+And once that is done or click over here to generate.
+
+58
+00:03:08,660 --> 00:03:14,090
+So this is whole project of cleaned up, a bit of taken out most of the comments over here.
+
+59
+00:03:14,930 --> 00:03:18,140
+And then you can inspect the generated code.
+
+60
+00:03:18,260 --> 00:03:23,050
+It's almost the same as the one we saw for our you are to pull in.
+
+61
+00:03:23,780 --> 00:03:25,510
+The only differences on, um.
+
+62
+00:03:27,750 --> 00:03:34,140
+An interrupt handler was created in the underscore I don't see followed by here because we enabled global
+
+63
+00:03:34,140 --> 00:03:34,530
+interrupt.
+
+64
+00:03:34,540 --> 00:03:40,120
+So if you open estimated to four X X underscore, I don't see you feed C D.
+
+65
+00:03:41,790 --> 00:03:44,430
+Do you not interrupt handler included here.
+
+66
+00:03:44,520 --> 00:03:47,450
+As you can see, you use that one I RCU handler.
+
+67
+00:03:48,300 --> 00:03:48,700
+Right.
+
+68
+00:03:49,180 --> 00:03:51,690
+Okay, so we'll come over here.
+
+69
+00:03:51,720 --> 00:03:53,510
+Well we have to do is start out.
+
+70
+00:03:53,510 --> 00:03:56,640
+Were you at transmit.
+
+71
+00:03:56,700 --> 00:03:57,840
+Receive which interrupt.
+
+72
+00:03:57,840 --> 00:04:02,340
+And then we implement the interrupt callback whenever we use in the library.
+
+73
+00:04:02,460 --> 00:04:04,110
+We know when you use interrupt.
+
+74
+00:04:04,140 --> 00:04:06,030
+You've got to implement the callback function.
+
+75
+00:04:07,650 --> 00:04:07,800
+So.
+
+76
+00:04:07,800 --> 00:04:09,600
+Right to find the callback function.
+
+77
+00:04:09,630 --> 00:04:10,560
+We know the trick.
+
+78
+00:04:10,650 --> 00:04:17,310
+We go to our Triva file and then we find the, um, the type of callback we want to do.
+
+79
+00:04:17,310 --> 00:04:24,480
+We want a callback for data received complete or we want a callback for data transfer complete.
+
+80
+00:04:24,960 --> 00:04:31,260
+We want a callback for data have received complete meaning if half of the reception is complete.
+
+81
+00:04:31,950 --> 00:04:32,790
+All of that is there.
+
+82
+00:04:33,000 --> 00:04:35,460
+And we can find that out by going to the driver.
+
+83
+00:04:36,090 --> 00:04:37,770
+So go to drive us over here.
+
+84
+00:04:37,840 --> 00:04:45,090
+How driver, the source and what we're looking for is that you art or use that dot c file over here
+
+85
+00:04:45,090 --> 00:04:45,480
+to return.
+
+86
+00:04:45,480 --> 00:04:47,190
+You asked to see a double click this.
+
+87
+00:04:48,420 --> 00:04:52,820
+And we know the, um, the callbacks always start with the underscore week keyword.
+
+88
+00:04:53,100 --> 00:04:57,190
+So we can simply search the control F to open the fine window.
+
+89
+00:04:57,210 --> 00:05:03,390
+You press control plus F and then you type on the score week and then you start looking for it by hitting
+
+90
+00:05:03,480 --> 00:05:04,860
+enter to go to the next one.
+
+91
+00:05:05,250 --> 00:05:08,460
+So this is the um, transmit complete callback.
+
+92
+00:05:08,490 --> 00:05:10,850
+And there is trust me, to have complete callback.
+
+93
+00:05:10,890 --> 00:05:12,660
+We looking for transmit complete.
+
+94
+00:05:13,080 --> 00:05:13,680
+We need this.
+
+95
+00:05:14,070 --> 00:05:16,730
+We're gonna implement one callback for transmit complete.
+
+96
+00:05:16,790 --> 00:05:19,470
+And another one for transmit half complete.
+
+97
+00:05:20,370 --> 00:05:26,220
+There should be a callback, a single callback for both transmit complete and receive such that it's
+
+98
+00:05:26,220 --> 00:05:29,960
+gonna be you at T X are x complete callback.
+
+99
+00:05:30,650 --> 00:05:33,930
+But we are using t x separately and RACC separately.
+
+100
+00:05:34,380 --> 00:05:36,030
+So let's get to our X version.
+
+101
+00:05:37,020 --> 00:05:39,030
+O continue by looking.
+
+102
+00:05:40,140 --> 00:05:42,000
+So this is the R X complete.
+
+103
+00:05:43,180 --> 00:05:44,250
+I'll copy this as well.
+
+104
+00:05:56,970 --> 00:05:57,360
+Right.
+
+105
+00:05:57,510 --> 00:05:58,980
+So I'm just gonna clean this up.
+
+106
+00:05:59,010 --> 00:06:01,590
+We don't need the content in here.
+
+107
+00:06:03,870 --> 00:06:05,850
+We don't need a content in here as well.
+
+108
+00:06:06,450 --> 00:06:08,940
+And then the week keyword here can be eliminated.
+
+109
+00:06:10,360 --> 00:06:10,770
+Okay.
+
+110
+00:06:14,990 --> 00:06:21,320
+So for this experiment, we went to create two buffers, just like we saw earlier in the earlier example,
+
+111
+00:06:21,320 --> 00:06:25,580
+we had a buffer, which was basically, um, an array of characters.
+
+112
+00:06:26,020 --> 00:06:29,510
+And then, um, the buffer had a content halo from Cuba, Max.
+
+113
+00:06:29,930 --> 00:06:32,840
+This time, we simply going to create an array of numbers.
+
+114
+00:06:32,930 --> 00:06:41,400
+And this we would send from one buffer and expect to receive it in another buffer using our T X are
+
+115
+00:06:41,420 --> 00:06:48,440
+X looped back because we are going to use a jumper wire to connect our T X line to the R X line, such
+
+116
+00:06:48,440 --> 00:06:55,250
+that when we send from T X, we expect to receive an X and we expect what we receive to be available
+
+117
+00:06:55,310 --> 00:06:56,840
+in a while are X buffer.
+
+118
+00:06:57,440 --> 00:07:00,020
+So I'm going to come over here and create two arrays.
+
+119
+00:07:00,050 --> 00:07:01,320
+I'll see you in eight.
+
+120
+00:07:01,760 --> 00:07:05,240
+And this Quartey and then I'll call this T x buffer.
+
+121
+00:07:07,210 --> 00:07:09,490
+And it's gonna be an array of size 10.
+
+122
+00:07:09,590 --> 00:07:13,130
+And over here, I'm just going to put numbers.
+
+123
+00:07:14,150 --> 00:07:28,610
+Start off by saying, um, 10, 20, 30, 40, 50, 60, 70, 80, 90 and 100 like this.
+
+124
+00:07:29,120 --> 00:07:31,250
+And then over here, I'm going to see you integrate.
+
+125
+00:07:31,280 --> 00:07:31,900
+And there's Corti.
+
+126
+00:07:32,090 --> 00:07:33,740
+And this is going to be the ah X buffer.
+
+127
+00:07:33,770 --> 00:07:35,440
+This is going to be the receive buffer.
+
+128
+00:07:35,990 --> 00:07:37,190
+And it's a size of 10.
+
+129
+00:07:37,250 --> 00:07:38,480
+But this one is empty.
+
+130
+00:07:39,200 --> 00:07:43,220
+This we expect to find data inside this when we run our code.
+
+131
+00:07:44,060 --> 00:07:44,490
+Okay.
+
+132
+00:07:47,970 --> 00:07:51,500
+And remember, the callback function is just the function for doing something.
+
+133
+00:07:51,530 --> 00:07:58,760
+Basically, if you have something you want to do when data is received, you do it over here and over
+
+134
+00:07:58,760 --> 00:08:00,110
+here, do something as well.
+
+135
+00:08:00,740 --> 00:08:05,560
+But over here, because we don't have anything special to do, we can simply increment a counter variable
+
+136
+00:08:05,900 --> 00:08:07,100
+or come here and create you.
+
+137
+00:08:07,130 --> 00:08:10,230
+X3 to underscore T accord is our X counter.
+
+138
+00:08:11,060 --> 00:08:14,190
+And then I have another one called X counter.
+
+139
+00:08:14,270 --> 00:08:15,590
+These are global variables.
+
+140
+00:08:16,100 --> 00:08:21,020
+And then in the Eriks callback, I just increment the ERIKS counter.
+
+141
+00:08:26,860 --> 00:08:28,060
+Rick's account plus plus.
+
+142
+00:08:28,110 --> 00:08:28,600
+Like this.
+
+143
+00:08:29,170 --> 00:08:31,450
+And then over here to X.com, two plus plus.
+
+144
+00:08:31,520 --> 00:08:36,730
+And we will observe these counter variables in the expressions window like this.
+
+145
+00:08:36,820 --> 00:08:37,170
+Okay.
+
+146
+00:08:37,390 --> 00:08:39,400
+But you can do any elaborate stuff.
+
+147
+00:08:39,430 --> 00:08:41,110
+You can pass the on the data.
+
+148
+00:08:41,140 --> 00:08:48,340
+Perhaps if you receive data, you will not pass it through an algorithm such as delete the comma process,
+
+149
+00:08:48,470 --> 00:08:49,620
+CSP file, et cetera.
+
+150
+00:08:49,750 --> 00:08:52,700
+You can do it in the callbacks and um.
+
+151
+00:08:52,810 --> 00:08:54,410
+Yeah, depending on the type of data.
+
+152
+00:08:54,490 --> 00:09:00,160
+If it's not text then it's actual signal such as um maybe ADC values, you may want to clean it up,
+
+153
+00:09:00,230 --> 00:09:00,830
+et cetera.
+
+154
+00:09:01,210 --> 00:09:04,180
+All of that you can deal with using callbacks.
+
+155
+00:09:04,850 --> 00:09:05,000
+Okay.
+
+156
+00:09:05,140 --> 00:09:10,300
+So once that, uh, once we've implemented our callbacks, we can go ahead and start the, um, the
+
+157
+00:09:10,300 --> 00:09:13,060
+ADC stats, the you ought I should say.
+
+158
+00:09:14,260 --> 00:09:15,270
+So let's start o u.
+
+159
+00:09:15,340 --> 00:09:18,490
+Are we going to set out where you are to receive interrupt.
+
+160
+00:09:18,820 --> 00:09:22,960
+We're going to see all on the scroll you out.
+
+161
+00:09:23,820 --> 00:09:25,210
+That's that's the name of the function.
+
+162
+00:09:25,210 --> 00:09:29,920
+And you can find this in the, um, the driver fault, which is that you are but see all the um the
+
+163
+00:09:29,920 --> 00:09:32,020
+whole reference manual.
+
+164
+00:09:32,170 --> 00:09:35,800
+So this is you are to receive on the score.
+
+165
+00:09:35,860 --> 00:09:38,260
+Eighty four, interrupt, receive, use and interrupt.
+
+166
+00:09:38,350 --> 00:09:44,980
+And the first argument is the outrage of the you are to handle which is you are one over here and then
+
+167
+00:09:44,980 --> 00:09:47,470
+the buffer for the received data.
+
+168
+00:09:47,500 --> 00:09:49,310
+Where do you want to store what you received.
+
+169
+00:09:49,370 --> 00:09:50,370
+Want to store it.
+
+170
+00:09:50,380 --> 00:09:50,710
+You know.
+
+171
+00:09:52,120 --> 00:09:53,080
+What did we call it.
+
+172
+00:09:53,950 --> 00:09:54,790
+Quantity over here.
+
+173
+00:09:54,940 --> 00:09:55,890
+Eric's buffer.
+
+174
+00:09:56,190 --> 00:10:00,370
+I'll copy this R x buffer over here.
+
+175
+00:10:01,570 --> 00:10:05,900
+And then the next one is going to be the size, which is ten.
+
+176
+00:10:06,460 --> 00:10:09,470
+So pass this over here like this, following this.
+
+177
+00:10:09,490 --> 00:10:11,560
+The next one is going to be the transmit.
+
+178
+00:10:11,650 --> 00:10:13,770
+So over here, receive which interrupt.
+
+179
+00:10:13,990 --> 00:10:14,660
+Now transmit.
+
+180
+00:10:14,960 --> 00:10:15,280
+Oh.
+
+181
+00:10:16,330 --> 00:10:17,920
+On a scale you art
+
+182
+00:10:20,410 --> 00:10:22,960
+transmit on the school I.T..
+
+183
+00:10:24,220 --> 00:10:28,150
+And then the first document is the U to handle U R to one.
+
+184
+00:10:28,780 --> 00:10:32,680
+The second one is the transmit which is T X buffer.
+
+185
+00:10:35,170 --> 00:10:36,880
+And then the size is 10.
+
+186
+00:10:36,910 --> 00:10:42,720
+So we're going to take what is in T X buffer, which is this content, and then transmit that.
+
+187
+00:10:42,810 --> 00:10:49,030
+And because we're gonna connect a jumper wire, we're going to connect our ex ante X line using a jumper
+
+188
+00:10:49,030 --> 00:10:49,300
+wire.
+
+189
+00:10:49,330 --> 00:10:56,110
+What is transmitted or what is sent through the transmitter we received on the receiver pin and stored
+
+190
+00:10:56,110 --> 00:10:57,880
+in the receiver or our X buffer.
+
+191
+00:10:59,410 --> 00:11:03,010
+So now we can go ahead and arm and build our project.
+
+192
+00:11:03,550 --> 00:11:07,090
+But before we do that, we have to create the loop back.
+
+193
+00:11:07,180 --> 00:11:09,760
+We spoke about what this was helping over here.
+
+194
+00:11:09,790 --> 00:11:13,150
+We said we're going to connect our X and T X lines.
+
+195
+00:11:13,330 --> 00:11:17,830
+So we've got to connect P 18 to P in line if you're using the Discovery Port.
+
+196
+00:11:18,130 --> 00:11:19,060
+It's written on it.
+
+197
+00:11:19,070 --> 00:11:23,030
+So, you know, way to look at your P it and MPLX nine, which I use in a nuclear.
+
+198
+00:11:23,050 --> 00:11:26,260
+You've got to check the actual pin out, not what is written.
+
+199
+00:11:26,530 --> 00:11:28,540
+What is written is based on the art we know.
+
+200
+00:11:29,170 --> 00:11:29,700
+P note.
+
+201
+00:11:29,950 --> 00:11:30,880
+So this is a new clue.
+
+202
+00:11:31,060 --> 00:11:35,910
+Actual pin out and then know we're looking for P in nine MPLX 10.
+
+203
+00:11:35,940 --> 00:11:37,810
+So this is P in nine over here.
+
+204
+00:11:38,770 --> 00:11:42,960
+This is P nine and this is P a ten.
+
+205
+00:11:43,360 --> 00:11:46,150
+So we've got a connect to jump a wire from here.
+
+206
+00:11:46,750 --> 00:11:49,780
+One leg of the jumper wire here and the other one here.
+
+207
+00:11:50,170 --> 00:11:52,500
+And this would create a loop back connecting T, X and I.
+
+208
+00:11:52,760 --> 00:11:52,920
+Right.
+
+209
+00:11:54,550 --> 00:11:56,260
+Click over here to build my project.
+
+210
+00:12:00,880 --> 00:12:04,100
+It's Putin, it's pretty successfully.
+
+211
+00:12:05,090 --> 00:12:07,160
+Click here to go to the debug.
+
+212
+00:12:18,520 --> 00:12:26,110
+So what we want to do is check put our ERIKS buffer to our live expressions and see if data is received
+
+213
+00:12:26,170 --> 00:12:28,050
+when we're right, when we run our code.
+
+214
+00:12:28,780 --> 00:12:33,040
+We can also check out our extensive X counter to see is going to send us once.
+
+215
+00:12:33,790 --> 00:12:34,460
+Oh, yeah.
+
+216
+00:12:34,930 --> 00:12:35,290
+Let's see.
+
+217
+00:12:35,300 --> 00:12:37,990
+I'm when I remove this, this is from a previous project.
+
+218
+00:12:39,670 --> 00:12:44,300
+Remove all and I'm going to come over here are X buffa.
+
+219
+00:12:44,410 --> 00:12:46,000
+Remember our X barflies empty.
+
+220
+00:12:46,000 --> 00:12:46,930
+No X barflies.
+
+221
+00:12:46,930 --> 00:12:47,920
+The one with the data.
+
+222
+00:12:48,390 --> 00:12:49,690
+But we've created a loop back.
+
+223
+00:12:49,780 --> 00:12:53,830
+We've connected Ericsson t x so we expect to receive at our X.
+
+224
+00:12:54,690 --> 00:12:55,180
+Okay.
+
+225
+00:12:55,420 --> 00:13:01,240
+And then I'm going to take my R X counter as well or other over it.
+
+226
+00:13:01,450 --> 00:13:03,690
+I'm copying by pressing control see.
+
+227
+00:13:04,660 --> 00:13:10,810
+And then we can see T X can't control see to copy double click control V to paste over here.
+
+228
+00:13:11,620 --> 00:13:15,400
+And then I'm going to put a breakpoint at my wild one loop.
+
+229
+00:13:15,730 --> 00:13:18,100
+Remember we are using interrupt so we don't um.
+
+230
+00:13:18,460 --> 00:13:20,140
+We don't have to implement anything in here.
+
+231
+00:13:21,040 --> 00:13:25,210
+I'm simply going to double click here to put a break point here.
+
+232
+00:13:26,350 --> 00:13:29,320
+Then I'm going to click here to run the code.
+
+233
+00:13:30,720 --> 00:13:32,740
+And the Tehran and it stopped over here.
+
+234
+00:13:33,040 --> 00:13:34,120
+We can take a look at it.
+
+235
+00:13:34,210 --> 00:13:35,230
+Nothing was sent.
+
+236
+00:13:36,490 --> 00:13:43,420
+Nothing was sent because I can see the Erickson T x counter being, um, zero and zero.
+
+237
+00:13:44,780 --> 00:13:47,600
+So let's see where the issue is.
+
+238
+00:13:50,060 --> 00:13:53,000
+So the issue was from my jumper wire.
+
+239
+00:13:53,350 --> 00:13:58,050
+If your jumper wire is not tightly connected to the P, a nine and a 10.
+
+240
+00:13:58,100 --> 00:14:01,100
+You might not see the, um, the receiver and transmission happening.
+
+241
+00:14:01,820 --> 00:14:04,910
+My hands are literally holding in the jumper wise in place.
+
+242
+00:14:04,940 --> 00:14:06,730
+I'm pressing them so that, yeah.
+
+243
+00:14:07,190 --> 00:14:08,900
+You know, they're connected.
+
+244
+00:14:09,100 --> 00:14:10,730
+They're fully connected.
+
+245
+00:14:11,750 --> 00:14:12,110
+Yeah.
+
+246
+00:14:12,320 --> 00:14:17,780
+Because in a loose connection would um make this experiment difficult to run.
+
+247
+00:14:18,170 --> 00:14:20,210
+So as you can see, it's because we run once.
+
+248
+00:14:20,510 --> 00:14:22,040
+We've already transmitted the data.
+
+249
+00:14:22,070 --> 00:14:27,620
+You can see our X counter one, anti X counter one, cause there's been a single transmission in a single
+
+250
+00:14:27,620 --> 00:14:28,220
+reception.
+
+251
+00:14:28,230 --> 00:14:34,760
+And this is our our X buffer started empty and now he has the content of the T X buffer.
+
+252
+00:14:35,240 --> 00:14:36,980
+So because of our loop back.
+
+253
+00:14:38,360 --> 00:14:39,440
+And we can do this again.
+
+254
+00:14:39,890 --> 00:14:40,490
+Oh, just.
+
+255
+00:14:41,900 --> 00:14:43,860
+Oh, just, um, stop this.
+
+256
+00:14:45,480 --> 00:14:46,650
+And then we start again.
+
+257
+00:14:47,730 --> 00:14:50,730
+And then I'll click over here, come to the bug.
+
+258
+00:14:55,420 --> 00:14:56,140
+It opened in.
+
+259
+00:15:00,570 --> 00:15:04,680
+And then I'm just going to remove everything in order to gain.
+
+260
+00:15:06,360 --> 00:15:13,750
+Because some of them are saying failed to follow it or just remove or not start off by adding our Erich's
+
+261
+00:15:13,790 --> 00:15:16,730
+buffer to the live expressions window.
+
+262
+00:15:22,160 --> 00:15:22,890
+And then O.
+
+263
+00:15:23,480 --> 00:15:26,180
+A war t x counter.
+
+264
+00:15:32,730 --> 00:15:33,750
+And there no other way.
+
+265
+00:15:33,990 --> 00:15:34,860
+Ricks counter.
+
+266
+00:15:40,170 --> 00:15:40,530
+Right.
+
+267
+00:15:40,620 --> 00:15:47,430
+And we still have our breakpoint here, which is, you know, well, one loop break point is inside
+
+268
+00:15:47,430 --> 00:15:48,210
+a while, one loop.
+
+269
+00:15:49,200 --> 00:15:51,040
+Um, so click over here.
+
+270
+00:15:51,060 --> 00:15:51,470
+Run.
+
+271
+00:15:53,650 --> 00:15:54,370
+They run.
+
+272
+00:15:54,760 --> 00:15:55,050
+OK.
+
+273
+00:15:55,150 --> 00:15:56,500
+I clicked run twice.
+
+274
+00:15:57,520 --> 00:15:58,600
+And this is what we have.
+
+275
+00:15:58,750 --> 00:16:01,900
+We have our X buffer, our X buffer with a data.
+
+276
+00:16:03,550 --> 00:16:06,820
+N t x buffer here one and then our expert for here.
+
+277
+00:16:08,110 --> 00:16:08,530
+Okay.
+
+278
+00:16:09,070 --> 00:16:09,550
+Strange.
+
+279
+00:16:09,640 --> 00:16:13,340
+I don't know what it's because the, um, the breakpoint is in the wall.
+
+280
+00:16:13,340 --> 00:16:14,950
+One loop that is making it work.
+
+281
+00:16:15,030 --> 00:16:16,560
+No, but.
+
+282
+00:16:16,650 --> 00:16:16,830
+Yeah.
+
+283
+00:16:16,900 --> 00:16:17,950
+This is what it is.
+
+284
+00:16:18,070 --> 00:16:19,620
+So it is working our loop back.
+
+285
+00:16:19,660 --> 00:16:23,540
+We've been able to test our our ex ante x but let's test this to get.
+
+286
+00:16:23,570 --> 00:16:30,430
+I'm gonna put a break points up here and let's see if that would cause any problems for Kubi D e wanna
+
+287
+00:16:31,420 --> 00:16:31,930
+come out.
+
+288
+00:16:31,960 --> 00:16:33,960
+I'm gonna stop this and go back into it.
+
+289
+00:16:34,000 --> 00:16:35,860
+We can run this experiment together and see.
+
+290
+00:16:38,320 --> 00:16:38,560
+OK.
+
+291
+00:16:38,750 --> 00:16:40,190
+So I'm going to go back to the debug.
+
+292
+00:16:53,420 --> 00:16:55,940
+OK, I'm going to take out the break point from here.
+
+293
+00:16:56,780 --> 00:16:58,580
+You see, the breakpoint is put into 11.
+
+294
+00:16:59,570 --> 00:17:00,740
+Let me put out a top here.
+
+295
+00:17:02,500 --> 00:17:04,260
+Let's see when I click here to run.
+
+296
+00:17:07,160 --> 00:17:07,410
+OK.
+
+297
+00:17:07,580 --> 00:17:11,090
+Nothing is happening when the breakpoint is at the top, yet nothing happens.
+
+298
+00:17:12,110 --> 00:17:16,870
+I'm going to take it from here from the wall one line and put it inside a wall, one loop.
+
+299
+00:17:25,700 --> 00:17:30,020
+So I'm going to put a break point here right now or quick to run.
+
+300
+00:17:30,950 --> 00:17:31,250
+OK.
+
+301
+00:17:31,400 --> 00:17:35,990
+So now we know make sure the breakpoint is in the 11 loop.
+
+302
+00:17:37,440 --> 00:17:40,100
+It doesn't have to be on the line, but in the loop.
+
+303
+00:17:40,360 --> 00:17:40,660
+Right.
+
+304
+00:17:40,700 --> 00:17:42,200
+Soon after we've done that.
+
+305
+00:17:44,530 --> 00:17:45,950
+We can see this, um.
+
+306
+00:17:46,510 --> 00:17:46,730
+Yeah.
+
+307
+00:17:46,800 --> 00:17:48,250
+Work the way we expect it to.
+
+308
+00:17:48,970 --> 00:17:49,270
+Right.
+
+309
+00:17:49,330 --> 00:17:51,250
+So that's all there is if you have any questions.
+
+310
+00:17:51,310 --> 00:17:53,130
+Just live in the questions and answers.
+
+311
+00:17:53,170 --> 00:17:53,520
+Area.
+
+312
+00:17:53,660 --> 00:17:54,340
+I'll see you later.
+
+313
+00:17:54,370 --> 00:17:55,030
+Have a nice day.

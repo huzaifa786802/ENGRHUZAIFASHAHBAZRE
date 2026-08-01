@@ -1,0 +1,507 @@
+1
+00:00:00,720 --> 00:00:00,960
+Hello.
+
+2
+00:00:01,050 --> 00:00:01,620
+Welcome back.
+
+3
+00:00:01,800 --> 00:00:05,880
+In this lesson, we are going to see how to figure out what you are to work with.
+
+4
+00:00:06,200 --> 00:00:06,960
+The DMA.
+
+5
+00:00:07,320 --> 00:00:08,250
+So let's get started.
+
+6
+00:00:08,370 --> 00:00:11,070
+I've created a new project of Klett all pan out.
+
+7
+00:00:12,750 --> 00:00:16,740
+We're going to use our user, Toine, in this example in loop buck mode.
+
+8
+00:00:16,830 --> 00:00:21,960
+And what I mean by loop back is we're going to connect the T X and our X line and it sends you see that
+
+9
+00:00:21,960 --> 00:00:26,860
+one is better suited for this experiment, especially when you have the new glue board where they use
+
+10
+00:00:26,860 --> 00:00:27,940
+that to is use.
+
+11
+00:00:28,030 --> 00:00:28,890
+That's your debugger.
+
+12
+00:00:29,670 --> 00:00:32,070
+So I'm going to come to my connectivity.
+
+13
+00:00:32,310 --> 00:00:36,740
+And then you saw one over here and I'm going to select it to act.
+
+14
+00:00:37,270 --> 00:00:39,510
+Also, you are two, which is the asynchronous mode.
+
+15
+00:00:40,200 --> 00:00:40,910
+And then down.
+
+16
+00:00:41,130 --> 00:00:42,090
+So like this for me.
+
+17
+00:00:42,150 --> 00:00:43,860
+And then I'll go to clock configuration.
+
+18
+00:00:43,870 --> 00:00:47,540
+Like I said, my clock configuration will always set it to sixteen 16.
+
+19
+00:00:47,710 --> 00:00:49,200
+Isolate H.S. I hear.
+
+20
+00:00:49,920 --> 00:00:54,180
+And then this becomes 16 and I'm going to set this to 16 as well.
+
+21
+00:00:55,340 --> 00:00:56,250
+Oh, hit enter.
+
+22
+00:00:58,640 --> 00:00:59,000
+Right.
+
+23
+00:01:00,230 --> 00:01:02,520
+So we can go ahead to configure the, um, the you.
+
+24
+00:01:02,810 --> 00:01:08,330
+I'll come to Piñon configuration and then the systems view and then I'll click on you saw one we use
+
+25
+00:01:08,330 --> 00:01:10,080
+and just use one in this experimental.
+
+26
+00:01:10,100 --> 00:01:11,540
+Click here to open it up.
+
+27
+00:01:12,260 --> 00:01:12,890
+Let's see.
+
+28
+00:01:12,980 --> 00:01:14,030
+You has to be opened.
+
+29
+00:01:14,180 --> 00:01:14,600
+Okay.
+
+30
+00:01:15,200 --> 00:01:18,350
+And then we don't need NVC interrupt here so I'll leave that.
+
+31
+00:01:18,400 --> 00:01:19,310
+But DMA certains.
+
+32
+00:01:19,430 --> 00:01:20,210
+That's what we need.
+
+33
+00:01:20,570 --> 00:01:23,120
+So pull this up here and then I'll click to add.
+
+34
+00:01:23,600 --> 00:01:30,740
+And then a dropdown comes over here and also liked you saw one our X and NDR X the stream.
+
+35
+00:01:30,740 --> 00:01:33,460
+I can choose it at DMA stream to or stream five.
+
+36
+00:01:33,470 --> 00:01:34,430
+I'll keep this the same.
+
+37
+00:01:35,000 --> 00:01:36,350
+And then this is the reception.
+
+38
+00:01:36,380 --> 00:01:38,140
+So this is to receive data.
+
+39
+00:01:38,150 --> 00:01:40,130
+The direction is from peripheral to memory.
+
+40
+00:01:40,190 --> 00:01:46,460
+And we know that course you are receiving from the pen and storing it in memory and then you might use
+
+41
+00:01:46,460 --> 00:01:47,920
+it for something after you start it.
+
+42
+00:01:48,650 --> 00:01:49,790
+And the priority.
+
+43
+00:01:49,910 --> 00:01:51,140
+We don't care much about that.
+
+44
+00:01:51,860 --> 00:01:55,410
+And then we can add another DMA stream for the T x.
+
+45
+00:01:56,040 --> 00:01:57,120
+Also like this and this.
+
+46
+00:01:57,140 --> 00:01:58,610
+Defaults to stream seven.
+
+47
+00:01:58,630 --> 00:02:02,210
+And then this one T X is from memory to peripheral.
+
+48
+00:02:02,240 --> 00:02:06,020
+Because you write something and then you transmit over the peripheral line.
+
+49
+00:02:06,380 --> 00:02:07,530
+So that's the direction.
+
+50
+00:02:08,180 --> 00:02:08,480
+Right.
+
+51
+00:02:08,540 --> 00:02:09,800
+So it's looking good so far.
+
+52
+00:02:11,420 --> 00:02:13,460
+So now we can go ahead and generate the project.
+
+53
+00:02:13,480 --> 00:02:14,360
+A click over here.
+
+54
+00:02:14,450 --> 00:02:15,230
+I'll give it a name.
+
+55
+00:02:15,940 --> 00:02:17,050
+You art DMA.
+
+56
+00:02:17,130 --> 00:02:18,560
+I'll call this you Art.
+
+57
+00:02:21,080 --> 00:02:28,100
+You got on the school, DME, and then also led a toolchain, which is the SDM 32 QAD E and then click
+
+58
+00:02:28,120 --> 00:02:29,330
+here to generate the code.
+
+59
+00:02:31,670 --> 00:02:34,280
+So there's a project of clean up a bit of the comment.
+
+60
+00:02:35,420 --> 00:02:38,890
+This is very similar to our You Art Project standard.
+
+61
+00:02:38,900 --> 00:02:42,320
+You are just that we've got a DMA initialized here as well.
+
+62
+00:02:42,740 --> 00:02:48,410
+And then when you go to the the M, the UT in its function, it looks exactly the same way, apart from
+
+63
+00:02:48,410 --> 00:02:55,340
+a line that links that DMA and the You OTS together to show that we are using DME in this project.
+
+64
+00:02:56,060 --> 00:03:01,180
+So yeah, you can take a look at the M, the function is generated and if you want to know them step
+
+65
+00:03:01,180 --> 00:03:07,430
+by step, you can always refer to the m the whole user guide that we downloaded earlier.
+
+66
+00:03:08,000 --> 00:03:09,080
+So let's get started.
+
+67
+00:03:10,160 --> 00:03:15,800
+Remember, whenever you are using the DMA, the DMA uses the callback of the particle out here for your
+
+68
+00:03:15,800 --> 00:03:16,140
+use.
+
+69
+00:03:16,310 --> 00:03:24,350
+So whatever the callback function is for ADC is or time is when you are using ADC with DME.
+
+70
+00:03:24,560 --> 00:03:27,740
+Your callback will be the ADC conversion complete callback.
+
+71
+00:03:28,610 --> 00:03:30,350
+And that is where you do your code.
+
+72
+00:03:30,380 --> 00:03:37,040
+When Aboudi conversion complete occurs in the same instance while you are, the callback will be exactly
+
+73
+00:03:37,040 --> 00:03:39,250
+the same callbacks that we used in the previous you.
+
+74
+00:03:39,280 --> 00:03:46,700
+The project, which is the um, the you ot transfer a complete callback as well as the you are to receive
+
+75
+00:03:46,700 --> 00:03:47,480
+complete callback.
+
+76
+00:03:47,510 --> 00:03:54,340
+So I'm going to copy these callback functions from our previous project from specificly I y you interrupt
+
+77
+00:03:54,340 --> 00:03:57,710
+a project so I'll come to the you to interrupt a project over here.
+
+78
+00:03:58,820 --> 00:04:00,020
+We created a callback.
+
+79
+00:04:00,050 --> 00:04:03,180
+We had the um u r t x complete callback in Eriks.
+
+80
+00:04:03,830 --> 00:04:05,370
+I'm just going to copy them Coskata.
+
+81
+00:04:05,390 --> 00:04:06,960
+Same just at this time.
+
+82
+00:04:07,410 --> 00:04:14,690
+The trons added the transaction is going on with the DME rather than using the interruptive lines.
+
+83
+00:04:15,120 --> 00:04:15,340
+OK.
+
+84
+00:04:15,560 --> 00:04:22,010
+So then I'm going to bring our buffs as well, going to Koppio ATX and our X buffer and then we have
+
+85
+00:04:22,010 --> 00:04:23,970
+our our X content six counts.
+
+86
+00:04:24,050 --> 00:04:25,130
+I'm going to copy all of that.
+
+87
+00:04:25,460 --> 00:04:26,510
+It's exactly the same.
+
+88
+00:04:27,360 --> 00:04:30,890
+And then pasted in the one knew me and would see Father Y here and then.
+
+89
+00:04:31,010 --> 00:04:32,300
+Now I'll close the old one.
+
+90
+00:04:34,470 --> 00:04:34,910
+Okay.
+
+91
+00:04:36,420 --> 00:04:44,490
+The only difference over here is when we are going to call the receive and transmit function in the
+
+92
+00:04:44,640 --> 00:04:49,200
+interrupt example, we said how you are to receive on this call 84 interrupt.
+
+93
+00:04:49,260 --> 00:04:52,000
+This time we have to see how you are to receive DMA.
+
+94
+00:04:52,410 --> 00:04:54,590
+And we do the same for the, um, the transmit.
+
+95
+00:04:54,600 --> 00:05:00,540
+So come down here and then I'll see how underscore you at.
+
+96
+00:05:03,100 --> 00:05:12,230
+Unaskable receive an escort DMA, and then the first argument is the you are Tando, which is each U
+
+97
+00:05:12,380 --> 00:05:13,290
+out one.
+
+98
+00:05:13,760 --> 00:05:17,570
+The second argument is the M the buffer, which is the R X buffer.
+
+99
+00:05:20,000 --> 00:05:21,980
+And then the last argument is the size.
+
+100
+00:05:22,610 --> 00:05:31,710
+And then we do the same for transmit all on a score, you add on a school transmit underscore DMA.
+
+101
+00:05:32,780 --> 00:05:39,890
+The first SDM, Hondo H u r to one and then the puffer, which is the T X puffer.
+
+102
+00:05:42,770 --> 00:05:45,000
+And then the size like this.
+
+103
+00:05:45,610 --> 00:05:45,970
+OK.
+
+104
+00:05:46,470 --> 00:05:52,860
+And remember, this is still the loop buck mode or what I've been by loop loop buck mode is that we
+
+105
+00:05:52,860 --> 00:05:58,440
+have connected a jumper wire to our T X and our X line, which is P, A 10 and P nine, so that we can
+
+106
+00:05:58,440 --> 00:06:00,420
+just see that we received the data.
+
+107
+00:06:01,090 --> 00:06:01,350
+Right.
+
+108
+00:06:01,440 --> 00:06:04,860
+OK, click over here to build the project.
+
+109
+00:06:08,960 --> 00:06:10,050
+It's built successfully.
+
+110
+00:06:10,200 --> 00:06:11,790
+Click here for Debug.
+
+111
+00:06:26,080 --> 00:06:27,430
+No debugger has open.
+
+112
+00:06:27,610 --> 00:06:28,810
+Come to live expression.
+
+113
+00:06:28,840 --> 00:06:36,340
+I remove all of this, which belongs to the previous project room or and I'm going to add our our X
+
+114
+00:06:36,340 --> 00:06:42,490
+buffer to make sure to verify that we receive what we say and controversy out of here.
+
+115
+00:06:43,300 --> 00:06:47,030
+And then we can order our X counter as well.
+
+116
+00:06:52,930 --> 00:06:58,980
+And then I'm going to come over here and then put a break point in my wall, one loop by clicking here
+
+117
+00:06:58,990 --> 00:06:59,500
+like this.
+
+118
+00:07:00,340 --> 00:07:04,480
+Okay, then I'm going to click here to run and then click again.
+
+119
+00:07:05,080 --> 00:07:06,880
+You can see our X counter is one.
+
+120
+00:07:06,940 --> 00:07:12,460
+And when we check, we've received the data that we put in the transmitter buffer.
+
+121
+00:07:12,730 --> 00:07:19,660
+So this is you utter with DME and you can use the same method to transmit the data to view on your computer.
+
+122
+00:07:20,140 --> 00:07:24,890
+You can initialize the you out with DME and use your you you add.
+
+123
+00:07:25,270 --> 00:07:30,580
+Which is connected to the virtual comports and use the trout term, which is the serial program to view
+
+124
+00:07:30,580 --> 00:07:30,790
+it.
+
+125
+00:07:31,120 --> 00:07:31,760
+This or the rest.
+
+126
+00:07:31,780 --> 00:07:34,960
+If you have any questions, just let me know and I'll see you later.
+
+127
+00:07:34,990 --> 00:07:35,750
+Have a nice day.

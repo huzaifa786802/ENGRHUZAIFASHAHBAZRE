@@ -1,0 +1,1375 @@
+1
+00:00:00,980 --> 00:00:01,340
+Hello.
+
+2
+00:00:01,460 --> 00:00:01,970
+Welcome back.
+
+3
+00:00:02,150 --> 00:00:06,010
+In this lesson, we are going to see how to use more to pull you out modules.
+
+4
+00:00:06,590 --> 00:00:08,400
+We've seen how to use you, too.
+
+5
+00:00:08,600 --> 00:00:13,220
+We use that to transmit to hello from Cuba, mix in our first you project.
+
+6
+00:00:13,910 --> 00:00:17,610
+And the previous one, we saw how to use a different you out module, which was you at one.
+
+7
+00:00:17,710 --> 00:00:25,760
+We created the R x t x loop back and we were able to use interrupt to send data from the T X to the
+
+8
+00:00:25,760 --> 00:00:26,230
+Erich's.
+
+9
+00:00:26,660 --> 00:00:32,840
+This time we're going to initialize to you auto modules and use interrupt with both of them.
+
+10
+00:00:33,260 --> 00:00:35,150
+So I'm going to come to connectivity over here.
+
+11
+00:00:35,240 --> 00:00:44,660
+And then on the other two, I'm going to set it up us over here, asynchronous mode and we can get our
+
+12
+00:00:44,660 --> 00:00:45,380
+you to hear.
+
+13
+00:00:45,410 --> 00:00:49,970
+And then I'm going to set you at one as well as asynchronous mode.
+
+14
+00:00:53,850 --> 00:00:54,210
+Right.
+
+15
+00:00:54,240 --> 00:00:58,710
+And then we have our you at one here and we're going to use interruptible both of them.
+
+16
+00:00:59,010 --> 00:01:00,920
+So this is you at one sentence.
+
+17
+00:01:01,230 --> 00:01:03,600
+We had a we at the end of acceptance.
+
+18
+00:01:03,660 --> 00:01:03,810
+OK.
+
+19
+00:01:03,930 --> 00:01:04,980
+Let's deal with this later.
+
+20
+00:01:05,460 --> 00:01:10,620
+Let's go and calibrate our clock to 60 megahertz SUDA all f four boards would have the same thing.
+
+21
+00:01:10,980 --> 00:01:12,390
+I'm going to change this to H.
+
+22
+00:01:12,480 --> 00:01:18,690
+S I up here and then I'll change over here to 16 hit enter.
+
+23
+00:01:20,620 --> 00:01:21,730
+And we all have 16.
+
+24
+00:01:22,080 --> 00:01:29,280
+Okay, so now come to pin conflagration or come to systems view and then I'll select you at or you saw
+
+25
+00:01:29,380 --> 00:01:31,050
+one once of clicked.
+
+26
+00:01:31,330 --> 00:01:33,070
+I would expand from here like this.
+
+27
+00:01:36,530 --> 00:01:39,340
+And I'll come to the end, Vic Certains.
+
+28
+00:01:41,600 --> 00:01:42,320
+Look at this.
+
+29
+00:01:46,480 --> 00:01:50,500
+I just drug this open, this is you start one.
+
+30
+00:01:51,230 --> 00:01:54,080
+This is the parameter set and we keep everything here the same.
+
+31
+00:01:54,170 --> 00:01:55,940
+We really don't want to change anything here.
+
+32
+00:01:56,000 --> 00:01:56,630
+It looks good.
+
+33
+00:01:56,990 --> 00:01:58,390
+We want a neighbor to interrupt.
+
+34
+00:01:58,390 --> 00:02:00,480
+So just a neighbor global interrupt here.
+
+35
+00:02:01,460 --> 00:02:01,720
+Right.
+
+36
+00:02:01,790 --> 00:02:03,050
+This for you saw one or two.
+
+37
+00:02:03,050 --> 00:02:03,770
+The same for you.
+
+38
+00:02:04,260 --> 00:02:07,550
+To know what to use that to when they were global.
+
+39
+00:02:07,580 --> 00:02:08,390
+Interrupt here.
+
+40
+00:02:08,960 --> 00:02:09,240
+Okay.
+
+41
+00:02:09,380 --> 00:02:12,140
+Once that is done, I'm going to generate my project.
+
+42
+00:02:13,150 --> 00:02:14,370
+I'm going to come over here.
+
+43
+00:02:15,730 --> 00:02:17,240
+And then I'll give the project a name.
+
+44
+00:02:19,750 --> 00:02:20,990
+Cohodas you at.
+
+45
+00:02:24,350 --> 00:02:25,070
+Multiple.
+
+46
+00:02:26,420 --> 00:02:30,430
+And then I'll select my two chain over here, which is the SDM 32 Kubi E.
+
+47
+00:02:31,010 --> 00:02:32,600
+And then I'll click here to generate the code.
+
+48
+00:02:34,550 --> 00:02:41,000
+So this my project of clean up some of the comment and the experiment here is gonna be similar to the
+
+49
+00:02:41,000 --> 00:02:41,450
+other one.
+
+50
+00:02:41,840 --> 00:02:42,890
+You can inspect the code.
+
+51
+00:02:42,980 --> 00:02:48,800
+As you can see now, we have you are 20, you are two of Sandos and both of them have been initialized.
+
+52
+00:02:49,250 --> 00:02:53,090
+And when we come to a wall in its function, we have you saw one in it.
+
+53
+00:02:53,210 --> 00:02:54,440
+Use us two in it.
+
+54
+00:02:55,040 --> 00:02:55,370
+Right.
+
+55
+00:02:55,500 --> 00:02:59,030
+OK, clean these comments over here to shorten the length of the file.
+
+56
+00:03:00,380 --> 00:03:01,310
+Clean this as well.
+
+57
+00:03:01,790 --> 00:03:01,840
+Hmm.
+
+58
+00:03:03,410 --> 00:03:04,010
+And then this.
+
+59
+00:03:04,940 --> 00:03:05,170
+Okay.
+
+60
+00:03:05,210 --> 00:03:09,680
+So I'm going to create my ah ex ante x buffer like I did earlier.
+
+61
+00:03:09,860 --> 00:03:14,000
+The T X has the data are X is empty and we expect to be able to get a data.
+
+62
+00:03:15,130 --> 00:03:15,400
+Oh.
+
+63
+00:03:15,450 --> 00:03:23,580
+So if we inspect our I.T. dot see file, we realize that we have uninterrupted request handler for use
+
+64
+00:03:23,600 --> 00:03:24,200
+out to us.
+
+65
+00:03:24,200 --> 00:03:24,500
+Well.
+
+66
+00:03:24,590 --> 00:03:26,390
+So we have you sought to either.
+
+67
+00:03:26,420 --> 00:03:27,720
+Q You saw one either are.
+
+68
+00:03:27,760 --> 00:03:30,560
+Q Because we enabled global interrupt for both of them.
+
+69
+00:03:31,790 --> 00:03:34,970
+I'm going to copy and paste the code from our previous use of the project.
+
+70
+00:03:35,000 --> 00:03:42,770
+We had the callback while you ought x complete callback and then we had how you got our X complete and
+
+71
+00:03:42,860 --> 00:03:47,700
+we had two global variables that we were using to count the number of T X and the number of our X,
+
+72
+00:03:47,700 --> 00:03:48,560
+so I've put out here.
+
+73
+00:03:49,100 --> 00:03:53,210
+So now the question becomes over here, the local parameter is h you at.
+
+74
+00:03:53,510 --> 00:03:56,220
+How do you know whether r x complete.
+
+75
+00:03:56,300 --> 00:03:56,570
+Okay.
+
+76
+00:03:56,630 --> 00:03:57,680
+Don't use that one.
+
+77
+00:03:57,740 --> 00:03:58,700
+Or use us two.
+
+78
+00:03:59,260 --> 00:03:59,900
+In the same way.
+
+79
+00:03:59,930 --> 00:04:03,120
+How do you know where the T X complete occurred on U.
+
+80
+00:04:03,210 --> 00:04:03,450
+S.
+
+81
+00:04:03,500 --> 00:04:05,430
+One or you said two and solved solve.
+
+82
+00:04:05,570 --> 00:04:12,470
+We can use an if statement to check if h you are T equals one then we no use that one completed.
+
+83
+00:04:13,160 --> 00:04:15,520
+If it was to then we know it's you said two.
+
+84
+00:04:17,130 --> 00:04:17,450
+So two.
+
+85
+00:04:17,510 --> 00:04:24,620
+Dennis, do you remember the um the you said this over here is a structure and the structure has different
+
+86
+00:04:24,620 --> 00:04:25,010
+members.
+
+87
+00:04:25,040 --> 00:04:29,210
+The member, the member that keeps the module name is known as the instance.
+
+88
+00:04:29,900 --> 00:04:34,310
+And this literally is the you are to register that base address as we see written here.
+
+89
+00:04:34,520 --> 00:04:41,070
+So we're gonna check the instance if the instance, because your attitude in that is you add to or you
+
+90
+00:04:41,080 --> 00:04:44,810
+said remember the word you utting use that are used interchangeably.
+
+91
+00:04:45,020 --> 00:04:47,900
+And I explain to you why these two words exist.
+
+92
+00:04:48,650 --> 00:04:53,350
+You know, Synchronoss, asynchronous by Fey using just the asynchronous is simply you, art.
+
+93
+00:04:53,880 --> 00:05:01,550
+Okay, so we're gonna check if the instance is of you ought to or you add or you add one and then we
+
+94
+00:05:01,550 --> 00:05:03,200
+take the appropriate action.
+
+95
+00:05:04,850 --> 00:05:15,770
+So I'm going to see over here if this logo over here, if this and then member instance, because it's
+
+96
+00:05:15,770 --> 00:05:23,500
+a pointer, we use the arrow operator if instance because to let's see, use that one.
+
+97
+00:05:25,170 --> 00:05:26,450
+What we want to do is.
+
+98
+00:05:32,440 --> 00:05:42,410
+To just put do we use that one related something so something specific you want for you said one and
+
+99
+00:05:42,410 --> 00:05:43,460
+then we can do.
+
+100
+00:05:43,850 --> 00:05:54,370
+Also, if I can copy this and put this over here, because you said to then you do you start to relate
+
+101
+00:05:54,370 --> 00:05:54,980
+it to something.
+
+102
+00:05:55,070 --> 00:06:02,600
+So you're working with two, you sort of mojos and you have a block of code that execute for the data
+
+103
+00:06:02,630 --> 00:06:05,190
+that, you know, is received from USA one.
+
+104
+00:06:05,480 --> 00:06:10,360
+And you have a different block of code to execute for the data that is received from USA two.
+
+105
+00:06:10,370 --> 00:06:17,250
+So you put that you saw to one in this, um, if block here and you put a user one in this block.
+
+106
+00:06:17,990 --> 00:06:18,760
+We can do the same.
+
+107
+00:06:18,770 --> 00:06:26,430
+We can actually copy exactly the same thing and then put it in our, you know, what we call it in our
+
+108
+00:06:26,490 --> 00:06:31,970
+T X and this global this is something that is outside the if statement.
+
+109
+00:06:32,030 --> 00:06:36,130
+This is just for the T x any such reception.
+
+110
+00:06:36,470 --> 00:06:40,580
+We can have something that will be executed, but if it's coming from use, that's one.
+
+111
+00:06:40,580 --> 00:06:42,320
+We can have something else that will execute.
+
+112
+00:06:42,410 --> 00:06:44,190
+Only when we receive from user that one.
+
+113
+00:06:44,660 --> 00:06:47,670
+And we can have another block of code that would execute.
+
+114
+00:06:47,780 --> 00:06:49,860
+Only when it's received from USA two.
+
+115
+00:06:50,280 --> 00:06:52,750
+So that is how our code looks currently.
+
+116
+00:06:55,790 --> 00:06:57,230
+So we can start a while.
+
+117
+00:06:57,320 --> 00:06:59,330
+You saw to it interrupt like we did earlier.
+
+118
+00:06:59,390 --> 00:07:01,970
+I'm just gonna paste those two lines here.
+
+119
+00:07:02,360 --> 00:07:03,680
+This is for start in.
+
+120
+00:07:03,830 --> 00:07:09,240
+Um, you said one hour breaks and then you start to use to one T X.
+
+121
+00:07:09,500 --> 00:07:10,790
+So we just taken a look.
+
+122
+00:07:10,790 --> 00:07:11,480
+I you saw one.
+
+123
+00:07:11,480 --> 00:07:11,740
+No.
+
+124
+00:07:12,470 --> 00:07:18,170
+Um, so if we run this, the results in the live expressions window should be exactly the same.
+
+125
+00:07:18,560 --> 00:07:22,330
+But we can make this a bit more interesting by starting use out to us.
+
+126
+00:07:22,330 --> 00:07:22,570
+Well.
+
+127
+00:07:23,320 --> 00:07:30,440
+But let's see, are we going to use the same buffer if we want to run the same experiment, the same
+
+128
+00:07:30,440 --> 00:07:34,250
+Loop Park experiment with you said to then we need to connect a jumper wire.
+
+129
+00:07:35,330 --> 00:07:41,420
+Uh, we need to connect the use said to our ex ante experience, just like we did for user one.
+
+130
+00:07:42,110 --> 00:07:43,790
+And then, um, we can do it.
+
+131
+00:07:44,420 --> 00:07:47,120
+So I'm just gonna copy this and then paste it here.
+
+132
+00:07:49,340 --> 00:07:51,420
+And then I'll change this to you.
+
+133
+00:07:51,430 --> 00:07:52,120
+Set two.
+
+134
+00:07:52,250 --> 00:07:53,960
+And then you set two here.
+
+135
+00:07:54,670 --> 00:07:54,940
+OK.
+
+136
+00:07:55,070 --> 00:07:56,990
+So we have this as well.
+
+137
+00:07:57,860 --> 00:08:03,610
+And then, um, what's gonna happen here is I'm gonna create another buffer here.
+
+138
+00:08:04,830 --> 00:08:11,580
+I'll copy this and then I'll call this T X buffer to T X buffer to here.
+
+139
+00:08:11,630 --> 00:08:17,060
+And then over here we simply Quint's and one to just single numbers.
+
+140
+00:08:18,700 --> 00:08:18,920
+OK.
+
+141
+00:08:19,310 --> 00:08:24,410
+Actually we'll be better if T x buffer one is the one that says single numbers.
+
+142
+00:08:25,550 --> 00:08:25,780
+OK.
+
+143
+00:08:25,910 --> 00:08:27,550
+So now of change.
+
+144
+00:08:27,550 --> 00:08:29,450
+I want T X buffer two one.
+
+145
+00:08:30,380 --> 00:08:34,010
+And then we have T X buffer one to X buffer to our X buffer one.
+
+146
+00:08:34,070 --> 00:08:34,890
+Our X buffer two.
+
+147
+00:08:36,440 --> 00:08:39,740
+And I'm going to change the data we are sending over here like this.
+
+148
+00:08:48,160 --> 00:08:48,560
+Okay.
+
+149
+00:08:49,850 --> 00:08:51,200
+And this was sent in okay.
+
+150
+00:08:51,750 --> 00:08:52,160
+Right.
+
+151
+00:08:52,470 --> 00:08:59,020
+So this if we run and we go and check out our X bar for one and our expert for two would see that they
+
+152
+00:08:59,030 --> 00:09:00,450
+would both receive the data.
+
+153
+00:09:01,080 --> 00:09:01,960
+We can create.
+
+154
+00:09:02,070 --> 00:09:05,240
+So this you can think of these, um, control variables.
+
+155
+00:09:05,280 --> 00:09:10,170
+There's global contessa's us just telling us what's on our X has arrived or T X.
+
+156
+00:09:10,560 --> 00:09:14,410
+Now let's create custom ones that will tell us specifically.
+
+157
+00:09:14,980 --> 00:09:15,900
+I use that one.
+
+158
+00:09:15,950 --> 00:09:17,680
+Our X arrived in the USA too.
+
+159
+00:09:18,030 --> 00:09:21,840
+So I'm going to have our X counter one over here.
+
+160
+00:09:21,960 --> 00:09:23,780
+And then T X counter one.
+
+161
+00:09:24,220 --> 00:09:27,300
+And then our X counter to T X Konta two.
+
+162
+00:09:28,890 --> 00:09:36,870
+So what I'm gonna do here is over here in my outer X, if it's from USA one, I'm going to count T X,
+
+163
+00:09:36,870 --> 00:09:37,530
+counter one.
+
+164
+00:09:38,070 --> 00:09:41,880
+And if it from two to X Konta to you like this.
+
+165
+00:09:44,100 --> 00:09:46,890
+And then in the Erich's I'm gonna do the same thing.
+
+166
+00:09:47,220 --> 00:09:52,270
+I'm going to add all of this to the live expression's window if it's from one one.
+
+167
+00:09:52,620 --> 00:10:03,060
+If it's from two to remember, this one just tells us that, you know, on our excess or kid, regardless
+
+168
+00:10:03,060 --> 00:10:04,000
+of whether it's one or two.
+
+169
+00:10:04,020 --> 00:10:07,380
+And this one is specificly for one and this one is specifically for two.
+
+170
+00:10:08,250 --> 00:10:10,910
+So let's go and run this current good currently.
+
+171
+00:10:11,070 --> 00:10:15,250
+I don't have a jumper connected to the R, X and T X of my use out two.
+
+172
+00:10:15,660 --> 00:10:20,210
+So we don't expect you sots to to count anything because there's nothing going on there.
+
+173
+00:10:20,610 --> 00:10:27,750
+After we've verified that X only is being shown to count, then we know the R X bar fights working and
+
+174
+00:10:27,750 --> 00:10:34,300
+then we add the um the other part for the, the um the to the user too.
+
+175
+00:10:35,490 --> 00:10:37,030
+So I'm gonna go ahead and build.
+
+176
+00:10:37,110 --> 00:10:37,480
+Let's see.
+
+177
+00:10:37,890 --> 00:10:38,970
+So over here.
+
+178
+00:10:39,450 --> 00:10:41,100
+So I'm going to change this.
+
+179
+00:10:41,130 --> 00:10:47,440
+We renamed this to buffer one before up before one over here and then before two and then two over here.
+
+180
+00:10:48,030 --> 00:10:48,450
+Okay.
+
+181
+00:10:48,600 --> 00:10:50,040
+So click over here to build.
+
+182
+00:10:53,160 --> 00:10:53,790
+It's building.
+
+183
+00:10:58,580 --> 00:11:01,450
+And then we go to debug by clicking over here.
+
+184
+00:11:06,760 --> 00:11:07,090
+Right.
+
+185
+00:11:07,150 --> 00:11:08,860
+So I'm going to remove this.
+
+186
+00:11:09,490 --> 00:11:13,410
+And then once I've removed it or add all of our new clothes.
+
+187
+00:11:15,130 --> 00:11:15,340
+OK.
+
+188
+00:11:15,520 --> 00:11:16,430
+Let's go up here.
+
+189
+00:11:18,480 --> 00:11:19,820
+Are you sure you want to remove this?
+
+190
+00:11:19,880 --> 00:11:23,660
+I want to remove from live expression or remove everything from here.
+
+191
+00:11:23,730 --> 00:11:26,570
+Remove all and then we go up.
+
+192
+00:11:27,590 --> 00:11:30,200
+We're going to take T, X Buffa one, OK, T X.
+
+193
+00:11:30,230 --> 00:11:38,260
+We know the content of T X, we need not check T X, so our X before one, which is for use that one.
+
+194
+00:11:38,390 --> 00:11:46,370
+Then we're going to go to our X counter one to see whether you know, you saw one received.
+
+195
+00:11:48,290 --> 00:11:52,810
+And then we going to go to um r x puffer too.
+
+196
+00:11:52,880 --> 00:11:56,360
+This is for you Saaz to remember currently you said to look back.
+
+197
+00:11:56,480 --> 00:11:58,320
+It's not connected of not connected.
+
+198
+00:11:58,320 --> 00:12:00,050
+A jumper wire for use are two.
+
+199
+00:12:00,380 --> 00:12:08,570
+So we don't expect to see anything transmitted and then we're going to do um counter to our X counter
+
+200
+00:12:08,570 --> 00:12:12,290
+to which will be for use out to our X counter to over here.
+
+201
+00:12:13,360 --> 00:12:15,200
+So I'm going to put this over here like this.
+
+202
+00:12:16,040 --> 00:12:20,640
+And then I'm going to put break point in my code in the while.
+
+203
+00:12:20,640 --> 00:12:23,750
+One loop inside here.
+
+204
+00:12:26,710 --> 00:12:27,620
+Point, break point.
+
+205
+00:12:27,650 --> 00:12:28,880
+And then I'll click here to run.
+
+206
+00:12:31,350 --> 00:12:32,980
+And then a click to run again.
+
+207
+00:12:33,900 --> 00:12:38,140
+And I can see are X.com to one has incremented to one.
+
+208
+00:12:38,680 --> 00:12:41,830
+And our X for one, it has the content.
+
+209
+00:12:41,860 --> 00:12:43,150
+One, two, three, four, five.
+
+210
+00:12:43,840 --> 00:12:49,560
+And our X buffer to has nothing is because we have not connected the Erickson T X line.
+
+211
+00:12:49,660 --> 00:12:50,920
+So nothing has been received.
+
+212
+00:12:51,490 --> 00:12:59,230
+So the essence of this is that we know that the our firmware can identify where the, um, the interrupt
+
+213
+00:12:59,280 --> 00:13:02,850
+kid wreck's counter want is just for use out one.
+
+214
+00:13:02,890 --> 00:13:04,180
+That is why we have this.
+
+215
+00:13:04,750 --> 00:13:05,110
+Okay.
+
+216
+00:13:05,240 --> 00:13:07,440
+In our X counter to nothing, OK.
+
+217
+00:13:07,510 --> 00:13:10,450
+It is still zero and then it's about five two zero.
+
+218
+00:13:11,110 --> 00:13:20,290
+So I'll live it up to you to connect to the jumper wires to connect our X are X and to X of sorts to.
+
+219
+00:13:20,350 --> 00:13:27,880
+We can verify that from here when we come to penult we know it's p a two MPLX three.
+
+220
+00:13:28,360 --> 00:13:31,000
+So all you have to do is go to our.
+
+221
+00:13:33,500 --> 00:13:41,630
+Our datasheet over here and find P a two and a three, so there's P a two MPLX through this P two,
+
+222
+00:13:41,660 --> 00:13:42,380
+P A three.
+
+223
+00:13:42,660 --> 00:13:46,670
+Actually, let's do that together so that we make sure there are no unforeseen problems.
+
+224
+00:13:46,720 --> 00:13:53,060
+Cos I've not tried this before, so I'm going to connect, not a jump away from P A to B A three.
+
+225
+00:13:53,090 --> 00:13:55,340
+I've already connected P in Olympia 10.
+
+226
+00:13:55,520 --> 00:13:57,740
+That is for the U at one.
+
+227
+00:13:57,840 --> 00:13:59,480
+Are we doing the same for you at two.
+
+228
+00:14:00,380 --> 00:14:01,460
+I've done my connection.
+
+229
+00:14:01,720 --> 00:14:06,960
+I'll minimize this or minimize this so we can um.
+
+230
+00:14:08,600 --> 00:14:11,900
+We can stop and then go back to debug.
+
+231
+00:14:12,020 --> 00:14:13,250
+You can see what we have.
+
+232
+00:14:13,940 --> 00:14:14,750
+Click over here.
+
+233
+00:14:22,330 --> 00:14:24,970
+It says, failed to evaluate our export for one.
+
+234
+00:14:25,030 --> 00:14:27,160
+So I'm going to remove that and put it back.
+
+235
+00:14:27,220 --> 00:14:31,900
+Sometimes this happens or remove this and our export for one again.
+
+236
+00:14:32,170 --> 00:14:32,620
+Where is it?
+
+237
+00:14:33,790 --> 00:14:35,080
+This is our X buffer one.
+
+238
+00:14:35,110 --> 00:14:39,850
+This is where they receive data from, you know, USD one will be stored.
+
+239
+00:14:40,000 --> 00:14:42,710
+So a new expression over here.
+
+240
+00:14:42,730 --> 00:14:43,510
+Hit enter.
+
+241
+00:14:44,050 --> 00:14:47,990
+And we still have our break point inside to you while one loop.
+
+242
+00:14:48,070 --> 00:14:52,120
+So click here to run and then I'll click again to run.
+
+243
+00:14:53,560 --> 00:14:59,560
+Let's see, we have our X counter too, which is those who are X counter one is one.
+
+244
+00:15:00,460 --> 00:15:00,900
+Let's see.
+
+245
+00:15:00,920 --> 00:15:02,830
+Why are X counter to sue?
+
+246
+00:15:03,490 --> 00:15:07,840
+But we can verify Eric's buffer to see what we have with our data.
+
+247
+00:15:07,900 --> 00:15:08,170
+Okay.
+
+248
+00:15:08,230 --> 00:15:09,500
+Nothing has changed here.
+
+249
+00:15:10,240 --> 00:15:10,720
+Let's see.
+
+250
+00:15:13,190 --> 00:15:13,540
+Right.
+
+251
+00:15:13,810 --> 00:15:14,020
+Okay.
+
+252
+00:15:14,050 --> 00:15:15,520
+So we're not seeing anything here.
+
+253
+00:15:15,610 --> 00:15:22,030
+And this could make sense because remember, our you ought to it's the same line that we use for debugging.
+
+254
+00:15:22,420 --> 00:15:28,250
+So perhaps the system is not allowing us to, um, sort of create a loop back using our.
+
+255
+00:15:28,880 --> 00:15:32,200
+Said to which is the same line that our debugger uses.
+
+256
+00:15:32,680 --> 00:15:36,640
+So, um, we can, um, we can stop this experiment.
+
+257
+00:15:36,700 --> 00:15:42,030
+A better experiment will be maybe to send a data from one use out to another, use it and check the
+
+258
+00:15:42,030 --> 00:15:44,140
+serial monitor whether we can see it.
+
+259
+00:15:44,150 --> 00:15:51,060
+Since you said to her success, to the, um, the internal USP to, uh, use that converter.
+
+260
+00:15:51,520 --> 00:15:54,430
+We can check what we send from user to want to use it to.
+
+261
+00:15:54,760 --> 00:15:56,860
+We can do the communication between the two.
+
+262
+00:15:56,950 --> 00:16:01,300
+Rather than apply the, um, the loop back method for user to as well.
+
+263
+00:16:01,870 --> 00:16:05,350
+And as we can all see from here, we know that, yes.
+
+264
+00:16:05,860 --> 00:16:07,810
+Our callback function recognizes.
+
+265
+00:16:07,870 --> 00:16:10,630
+Which you said happened just that.
+
+266
+00:16:10,690 --> 00:16:11,020
+Yeah.
+
+267
+00:16:11,560 --> 00:16:13,150
+The Lookback method over here.
+
+268
+00:16:13,180 --> 00:16:18,970
+This tricky method, perhaps it's not the best method for use out to because it has been used as I want
+
+269
+00:16:18,970 --> 00:16:19,960
+debug line as well.
+
+270
+00:16:20,050 --> 00:16:21,220
+And I hope you understand this.
+
+271
+00:16:21,580 --> 00:16:22,390
+So I'm gonna stop this.
+
+272
+00:16:22,390 --> 00:16:23,950
+But certainly you can try.
+
+273
+00:16:24,400 --> 00:16:29,080
+And if you see an anomaly as to why this is no, um, behave in a way should behave.
+
+274
+00:16:29,500 --> 00:16:32,440
+You can leave it in the Q&amp;A section for all of us.
+
+275
+00:16:33,180 --> 00:16:33,360
+Yeah.
+
+276
+00:16:36,220 --> 00:16:43,300
+So what I'm going to do is I'm going to open the terminal and send some byte and see if we can receive
+
+277
+00:16:43,300 --> 00:16:44,530
+that to user two.
+
+278
+00:16:45,190 --> 00:16:46,330
+So everything is the same.
+
+279
+00:16:46,350 --> 00:16:47,860
+I'm not changing anything in the code.
+
+280
+00:16:48,340 --> 00:16:50,260
+I'm going to go to debug fuel over here.
+
+281
+00:16:56,480 --> 00:16:57,170
+It opened in.
+
+282
+00:17:07,150 --> 00:17:12,670
+And, um, all of these years failed to x, uh, to, um, fail to evaluate expression, so I'm gonna
+
+283
+00:17:12,760 --> 00:17:21,130
+remove all of that, remove all, and then, um, I'm going to go to our r x buffer to where is this
+
+284
+00:17:22,120 --> 00:17:23,160
+running someone else.
+
+285
+00:17:23,950 --> 00:17:24,310
+Look, uh.
+
+286
+00:17:30,250 --> 00:17:31,390
+Okay, here we go.
+
+287
+00:17:31,570 --> 00:17:35,170
+Cause I had the previous projects may not see file open as well.
+
+288
+00:17:38,850 --> 00:17:47,950
+And then, um, so are X Buffer to come over here at this hour, X two, which is for us.
+
+289
+00:17:48,160 --> 00:17:55,990
+You add to our exposure to copy controls each copy and then over here to paste and then I'll take the
+
+290
+00:17:55,990 --> 00:17:56,920
+counter as well.
+
+291
+00:17:57,310 --> 00:18:00,560
+Contrasty to copy and paste as well.
+
+292
+00:18:01,850 --> 00:18:03,700
+It says, cannot evaluate this.
+
+293
+00:18:09,850 --> 00:18:10,470
+Let's see.
+
+294
+00:18:22,040 --> 00:18:24,740
+I'm going to repeat what my project cost of this.
+
+295
+00:18:25,700 --> 00:18:29,210
+Come over here, remove or stop this.
+
+296
+00:18:32,930 --> 00:18:37,800
+For a bill, it's my project, I'm going to add X buffer to, again, our expert for to.
+
+297
+00:18:39,650 --> 00:18:42,190
+Controversy to copy that expression.
+
+298
+00:18:43,190 --> 00:18:46,310
+And then I'm going to add our X Coulter to controversy to copy.
+
+299
+00:18:49,590 --> 00:18:50,440
+Old expression.
+
+300
+00:18:50,530 --> 00:18:51,680
+So this is for you, sir, too.
+
+301
+00:18:51,790 --> 00:18:53,080
+I'm going to open terror to.
+
+302
+00:18:54,740 --> 00:19:00,350
+Click to open it, and I'm going to select my comport here.
+
+303
+00:19:00,680 --> 00:19:04,490
+I know you saw, too, is my S.T. link virtual COMPORTS or so like this?
+
+304
+00:19:04,490 --> 00:19:04,790
+I'll say.
+
+305
+00:19:04,840 --> 00:19:05,300
+Okay.
+
+306
+00:19:06,020 --> 00:19:11,540
+And then I'm going to go to set up to set the correct ball straight, cause the default here is no what
+
+307
+00:19:11,540 --> 00:19:13,700
+we set or select this then.
+
+308
+00:19:13,820 --> 00:19:14,240
+Okay.
+
+309
+00:19:15,110 --> 00:19:17,540
+And then I have my code run in.
+
+310
+00:19:17,750 --> 00:19:22,640
+I have the um I've not started running but a breakpoint is still inside the um the wall one loop.
+
+311
+00:19:25,020 --> 00:19:25,560
+Let's see.
+
+312
+00:19:26,550 --> 00:19:27,630
+This has to be opened.
+
+313
+00:19:30,780 --> 00:19:31,200
+This is it.
+
+314
+00:19:31,290 --> 00:19:33,420
+This outbreak points, so click here to run.
+
+315
+00:19:35,080 --> 00:19:37,070
+And it's run in a quick year to run.
+
+316
+00:19:37,160 --> 00:19:42,800
+And I'm simply going to type something into something is received here.
+
+317
+00:19:44,180 --> 00:19:46,130
+Um, we have something received.
+
+318
+00:19:49,530 --> 00:19:53,280
+And I just type something and you can see because I type something.
+
+319
+00:19:53,820 --> 00:19:56,160
+We have our X counter too, received here.
+
+320
+00:19:56,490 --> 00:19:57,720
+And let's see what I typed.
+
+321
+00:19:59,690 --> 00:20:01,130
+I just type some random stuff.
+
+322
+00:20:01,890 --> 00:20:02,270
+Right.
+
+323
+00:20:03,390 --> 00:20:08,460
+OK, so we are working with both user to a user want.
+
+324
+00:20:08,910 --> 00:20:12,600
+Now we can check out why you said one is still working.
+
+325
+00:20:13,350 --> 00:20:14,420
+It's not like it has stopped.
+
+326
+00:20:14,430 --> 00:20:20,710
+So I'm just going to copy this and add user to one X for two expressions just to show you that it's
+
+327
+00:20:20,720 --> 00:20:21,930
+still active as well.
+
+328
+00:20:24,160 --> 00:20:29,040
+And let's see if we can see you see that one is to send in the data.
+
+329
+00:20:32,560 --> 00:20:33,420
+That got sent.
+
+330
+00:20:33,750 --> 00:20:34,170
+Right.
+
+331
+00:20:34,860 --> 00:20:37,360
+And I want the reason why I wa.
+
+332
+00:20:38,550 --> 00:20:39,410
+Oh, are you sad, too?
+
+333
+00:20:39,510 --> 00:20:40,320
+It's not showing.
+
+334
+00:20:40,710 --> 00:20:46,320
+Well, we sent it because we no longer use in the T x profar for you said to remember.
+
+335
+00:20:46,830 --> 00:20:53,700
+We have taken out my loop back jumper wire so well Gore received in USA two is the random stuff that
+
+336
+00:20:53,700 --> 00:20:55,820
+I typed and we can see you saw it.
+
+337
+00:20:56,210 --> 00:21:00,270
+You said to counter showing that yes, we've received something.
+
+338
+00:21:00,910 --> 00:21:01,220
+OK.
+
+339
+00:21:03,300 --> 00:21:05,480
+So that's all to use to use out Mojo's.
+
+340
+00:21:06,120 --> 00:21:07,230
+And then, um, the um.
+
+341
+00:21:07,320 --> 00:21:13,620
+The lesson here is that in the callback you can basically use an if statement to um, to find which
+
+342
+00:21:13,620 --> 00:21:19,860
+you site has just transmitted or receive data and run the appropriate block of code to this or the rest.
+
+343
+00:21:19,960 --> 00:21:20,670
+I'll see you later.
+
+344
+00:21:21,180 --> 00:21:21,900
+Have a nice day.

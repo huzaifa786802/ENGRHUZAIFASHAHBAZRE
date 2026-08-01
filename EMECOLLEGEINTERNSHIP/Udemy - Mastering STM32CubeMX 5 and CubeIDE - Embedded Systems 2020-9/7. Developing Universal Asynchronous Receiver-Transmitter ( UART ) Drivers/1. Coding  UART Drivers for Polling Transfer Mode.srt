@@ -1,0 +1,1279 @@
+1
+00:00:00,330 --> 00:00:00,600
+Hello.
+
+2
+00:00:00,870 --> 00:00:01,380
+Welcome back.
+
+3
+00:00:01,620 --> 00:00:09,140
+In this lesson, we shall see how to create a you are to drive by using our SDM 32 Cubitt mix and the
+
+4
+00:00:09,180 --> 00:00:12,820
+Kubi e of created a new cube next project to apply here.
+
+5
+00:00:12,930 --> 00:00:16,630
+As you can see and I'm going to start off by clearing the piano.
+
+6
+00:00:16,960 --> 00:00:17,790
+Quick over here.
+
+7
+00:00:17,860 --> 00:00:20,020
+Clap your note and click.
+
+8
+00:00:20,060 --> 00:00:20,280
+Yes.
+
+9
+00:00:20,420 --> 00:00:20,900
+Over here.
+
+10
+00:00:20,910 --> 00:00:21,480
+Like this.
+
+11
+00:00:22,260 --> 00:00:26,580
+And then this is my microcontroller is the SDM 32 for one one.
+
+12
+00:00:27,210 --> 00:00:29,040
+And you might have a different version.
+
+13
+00:00:29,050 --> 00:00:31,950
+SDM 30 to Air Force your one and you may yeah.
+
+14
+00:00:31,980 --> 00:00:34,260
+You might have a different development board as well.
+
+15
+00:00:34,260 --> 00:00:41,280
+You might have either the nuclear or the disco board and the differences between the two, because what
+
+16
+00:00:41,280 --> 00:00:45,480
+happens is we going to configure our you out onto microcontroller.
+
+17
+00:00:46,170 --> 00:00:53,670
+But bef before the microcontroller is able to talk to our computer for testing purposes, we need um,
+
+18
+00:00:53,730 --> 00:00:57,750
+we need a USP to, to um, to you to convert.
+
+19
+00:00:58,890 --> 00:01:03,150
+Now if you have to discover port you need an external USP to you to convert.
+
+20
+00:01:03,360 --> 00:01:06,870
+But if you have the nuclear abort, the nuclear port does not require this.
+
+21
+00:01:07,410 --> 00:01:09,420
+So let me show you what this converter looks like.
+
+22
+00:01:09,510 --> 00:01:16,540
+If you have a disco ball so you can just go to Google and search USP to FTD converter.
+
+23
+00:01:16,870 --> 00:01:17,100
+And.
+
+24
+00:01:17,370 --> 00:01:18,150
+Different types.
+
+25
+00:01:18,150 --> 00:01:18,870
+Different colors.
+
+26
+00:01:18,900 --> 00:01:28,830
+But what is important is they often have our X and T X lines and we can make the R X line of the connect
+
+27
+00:01:28,950 --> 00:01:35,730
+of the converter to d t x line of our microcontroller and we can get t x line of the converter to the
+
+28
+00:01:35,840 --> 00:01:39,690
+R X line of our microcontroller so we can jump a.
+
+29
+00:01:40,030 --> 00:01:40,340
+Yeah.
+
+30
+00:01:41,010 --> 00:01:47,340
+And then this side connector USP and then the US because Dell Computer, such that we can be able to
+
+31
+00:01:47,340 --> 00:01:51,420
+send data from this from our microcontroller to our computer.
+
+32
+00:01:52,350 --> 00:01:54,070
+Again, this is just for a disco board.
+
+33
+00:01:54,120 --> 00:01:55,740
+The nuclear power does not need this.
+
+34
+00:01:56,310 --> 00:01:56,750
+Right.
+
+35
+00:01:56,910 --> 00:01:58,260
+So you can order one.
+
+36
+00:01:58,260 --> 00:02:02,910
+If you have a disco board, you can simply search USP to F converter F.
+
+37
+00:02:02,910 --> 00:02:07,090
+TDA is a very popular company to create this type of solution.
+
+38
+00:02:07,110 --> 00:02:08,340
+That is why your name is there.
+
+39
+00:02:09,080 --> 00:02:15,060
+Um, so let's go ahead and um, write the um the you are to remember, it's a twisted arrangement if
+
+40
+00:02:15,060 --> 00:02:16,560
+you have the chip the way you can.
+
+41
+00:02:16,560 --> 00:02:24,540
+Actually microcontrollers that t x of our microcontroller connects to our X over here and then our X
+
+42
+00:02:24,630 --> 00:02:27,030
+of our microcontroller connects to T, X or Y here.
+
+43
+00:02:27,450 --> 00:02:30,820
+And then you connect the ground to ground and then you connect the PCC to the five foot.
+
+44
+00:02:31,170 --> 00:02:33,780
+We don't really care about DTI are in S.T..
+
+45
+00:02:33,810 --> 00:02:34,590
+S fine here.
+
+46
+00:02:34,620 --> 00:02:35,970
+We don't care about those things.
+
+47
+00:02:37,860 --> 00:02:43,530
+The reason why for the new CLO, we don't need to connect in a extend or um chip is that it's been enabled
+
+48
+00:02:43,530 --> 00:02:47,840
+for us through the um, the same method that we flash code into the port.
+
+49
+00:02:48,480 --> 00:02:51,010
+So P a two MPLX three are the U.
+
+50
+00:02:51,150 --> 00:02:53,130
+At that we can use on the nuclear board.
+
+51
+00:02:53,190 --> 00:02:58,650
+That does not require us for X then that does not require us to have an external converter.
+
+52
+00:02:59,100 --> 00:03:01,390
+So we're going to use these in our experiment.
+
+53
+00:03:01,890 --> 00:03:07,560
+Nonetheless, I should point out that the uh other us more uh are you out modules are available on our
+
+54
+00:03:07,560 --> 00:03:08,550
+microcontroller list.
+
+55
+00:03:08,550 --> 00:03:10,110
+Take a look at it over here.
+
+56
+00:03:10,110 --> 00:03:11,130
+We have you said one.
+
+57
+00:03:11,130 --> 00:03:11,700
+You said two.
+
+58
+00:03:11,700 --> 00:03:12,420
+You said six.
+
+59
+00:03:12,450 --> 00:03:15,630
+Meaning we have three different sets, modules.
+
+60
+00:03:16,680 --> 00:03:23,640
+And the reason it is written, you said here is because the full name of the art that we are dealing
+
+61
+00:03:23,640 --> 00:03:31,110
+with, its full name is actually use it in the use that stands for Universal Synchronoss asynchronous
+
+62
+00:03:31,110 --> 00:03:32,400
+receiver transmitter.
+
+63
+00:03:33,090 --> 00:03:42,630
+When we are using it in asynchronous mode, it becomes you art without the s such that universal asynchronous
+
+64
+00:03:42,630 --> 00:03:43,740
+receiver transmitter.
+
+65
+00:03:43,980 --> 00:03:46,050
+So that is why we often see you Art.
+
+66
+00:03:46,380 --> 00:03:48,840
+But when you check over here, it is written us you use.
+
+67
+00:03:49,530 --> 00:03:53,850
+So let's say P to a click on peer to and see which you artist connected is.
+
+68
+00:03:53,910 --> 00:03:54,590
+You ought to.
+
+69
+00:03:55,030 --> 00:03:57,020
+I'm going to enable you art to from here.
+
+70
+00:03:57,060 --> 00:03:59,130
+Click this over here and mode.
+
+71
+00:03:59,240 --> 00:04:02,030
+Oh dropdown and select asynchronous.
+
+72
+00:04:02,040 --> 00:04:08,880
+This what I was talking about because we want to set it as a you art if we wanted it as you sort Synchronoss
+
+73
+00:04:08,940 --> 00:04:15,570
+we select this one over here you art and you realize that as soon as I selected my T Exline, which
+
+74
+00:04:15,570 --> 00:04:23,860
+is P two in my our X line, which is P three, I've been selected automatically right now.
+
+75
+00:04:23,880 --> 00:04:30,300
+Let's take a look at clock configuration, often to generate the the you are clock the um it requires
+
+76
+00:04:30,300 --> 00:04:32,460
+precise clock configuration.
+
+77
+00:04:32,730 --> 00:04:39,390
+So the clock source Martis yet in our high speed internal RC, um it's, it's precision is around one
+
+78
+00:04:39,400 --> 00:04:39,750
+percent.
+
+79
+00:04:39,780 --> 00:04:40,980
+So that should be fine for us.
+
+80
+00:04:41,070 --> 00:04:42,240
+I'm going to select H.
+
+81
+00:04:42,290 --> 00:04:43,290
+S I over here.
+
+82
+00:04:43,770 --> 00:04:44,940
+You see the radio button was.
+
+83
+00:04:44,960 --> 00:04:51,240
+Yeah, I've just clicked over here to select HSA, so I'm going to be using this clock source over here.
+
+84
+00:04:51,780 --> 00:04:58,080
+And what I'm going to do is I'm going to verify, um, I'm gonna verify the clock for my for my use
+
+85
+00:04:58,080 --> 00:04:59,820
+that one to make sure that.
+
+86
+00:05:00,330 --> 00:05:01,720
+Um, I know exactly the clock.
+
+87
+00:05:02,690 --> 00:05:07,800
+Um, so to verify the clock for the particular pair, for you have to check the, um, the past.
+
+88
+00:05:07,940 --> 00:05:12,900
+The perp is connected to cause over here we have the clocks of the various buses.
+
+89
+00:05:13,170 --> 00:05:16,380
+So I'm going to go to a what datasheet and take a look at the block diagram.
+
+90
+00:05:17,790 --> 00:05:20,030
+So what does the block diagram of our data sheet.
+
+91
+00:05:20,730 --> 00:05:22,760
+We don't look at this earlier than we are using.
+
+92
+00:05:22,780 --> 00:05:24,060
+They use it to model.
+
+93
+00:05:24,240 --> 00:05:27,210
+It's connected to APB one, right.
+
+94
+00:05:27,470 --> 00:05:30,070
+It's connected to APB one, as you can see over here.
+
+95
+00:05:30,120 --> 00:05:31,190
+This is APB one.
+
+96
+00:05:31,200 --> 00:05:32,660
+And then this is use us two.
+
+97
+00:05:33,460 --> 00:05:33,800
+Okay.
+
+98
+00:05:34,080 --> 00:05:36,510
+And we said the Artosis word is connected.
+
+99
+00:05:37,140 --> 00:05:37,540
+Okay.
+
+100
+00:05:38,670 --> 00:05:42,800
+And you can find this on page number fifteen of our wall of our data sheet.
+
+101
+00:05:43,590 --> 00:05:45,810
+And the data sheet is that documented?
+
+102
+00:05:45,960 --> 00:05:47,890
+The 149 pages.
+
+103
+00:05:47,970 --> 00:05:52,230
+The other document has over 800 pages and it's another one with a thousand pages.
+
+104
+00:05:52,950 --> 00:05:53,290
+Right.
+
+105
+00:05:53,490 --> 00:05:54,630
+So I'm gonna minimize this.
+
+106
+00:05:56,460 --> 00:06:02,760
+So we said it's APB, one APB, one lessie APB, one time a clock.
+
+107
+00:06:03,060 --> 00:06:05,420
+Is that, um, is a sixteen megahertz.
+
+108
+00:06:06,270 --> 00:06:09,960
+And then we have APB, one per four o'clock is at eight megahertz.
+
+109
+00:06:10,530 --> 00:06:14,850
+What I want to do is set APB one per four o'clock to 16 megahertz as well.
+
+110
+00:06:15,240 --> 00:06:22,140
+And the reason I want to do this is because those with the, um, the F zero one, um, SDM two board,
+
+111
+00:06:22,260 --> 00:06:27,570
+they have their default frequency set with this at sixteen megahertz because I don't want to have any
+
+112
+00:06:27,570 --> 00:06:32,010
+problems between EF four one one and F force you or one.
+
+113
+00:06:32,070 --> 00:06:36,540
+I just want to make sure it follows the Air Force Rule one so that people with that board wouldn't need
+
+114
+00:06:36,540 --> 00:06:37,410
+to change anything.
+
+115
+00:06:38,100 --> 00:06:43,560
+Cause often when I make SDM thirty two courses, I realize some people still have Air Force Rule one.
+
+116
+00:06:44,010 --> 00:06:46,050
+And there are other changes that are required.
+
+117
+00:06:46,500 --> 00:06:51,710
+So because of that nowadays, I just make sure the code is sort of fixed for Air Force One.
+
+118
+00:06:51,810 --> 00:06:54,210
+And then we run it on air for one one.
+
+119
+00:06:54,750 --> 00:06:54,990
+Right.
+
+120
+00:06:55,020 --> 00:06:58,050
+So I'm going to change this here to 16.
+
+121
+00:06:58,920 --> 00:06:59,640
+This is eight people.
+
+122
+00:06:59,670 --> 00:06:59,960
+One pair.
+
+123
+00:07:00,030 --> 00:07:00,630
+Four o'clock.
+
+124
+00:07:00,690 --> 00:07:03,760
+We can verify that again cause we said a while.
+
+125
+00:07:03,870 --> 00:07:05,760
+You said two is connected to GPP one.
+
+126
+00:07:05,860 --> 00:07:07,490
+And when I said this to EPB one.
+
+127
+00:07:08,030 --> 00:07:08,310
+Okay.
+
+128
+00:07:08,550 --> 00:07:12,900
+Once that is done, I said 16 hit enter.
+
+129
+00:07:13,200 --> 00:07:14,670
+It's gonna change a number of things.
+
+130
+00:07:15,630 --> 00:07:16,080
+Okay.
+
+131
+00:07:16,380 --> 00:07:18,170
+Luckily, we've got everyone at 16.
+
+132
+00:07:18,240 --> 00:07:18,480
+Okay.
+
+133
+00:07:18,520 --> 00:07:21,360
+This the exact configuration of the Air Force or one.
+
+134
+00:07:21,910 --> 00:07:22,160
+Okay.
+
+135
+00:07:22,200 --> 00:07:27,670
+We can continue with our configuration so we can grow to be um and configuration.
+
+136
+00:07:27,700 --> 00:07:32,580
+Stop over here and we click on that parameter certains over here and over here.
+
+137
+00:07:32,580 --> 00:07:33,800
+We can set the bar straight.
+
+138
+00:07:34,450 --> 00:07:35,340
+And this is fine.
+
+139
+00:07:35,400 --> 00:07:36,500
+We can keep it within here.
+
+140
+00:07:36,510 --> 00:07:40,650
+The same actually the board rate one hundred and fifteen thousand two hundred.
+
+141
+00:07:40,680 --> 00:07:43,840
+You can change it to nine thousand six hundred, et cetera.
+
+142
+00:07:43,980 --> 00:07:45,850
+But we can keep this pretty.
+
+143
+00:07:45,900 --> 00:07:48,840
+These are default settings, so we really need to change nothing here.
+
+144
+00:07:49,230 --> 00:07:55,590
+If you want just it to be half duplex, if you wanted to be a receiver, only a transmitter only you
+
+145
+00:07:55,590 --> 00:07:56,730
+can change over here.
+
+146
+00:07:57,300 --> 00:07:57,930
+That's data.
+
+147
+00:07:58,080 --> 00:07:59,220
+Um, data direction.
+
+148
+00:07:59,820 --> 00:08:00,090
+Right.
+
+149
+00:08:01,260 --> 00:08:03,300
+So we can leave everything the same.
+
+150
+00:08:03,330 --> 00:08:04,920
+We can live the oversampling the same.
+
+151
+00:08:04,950 --> 00:08:07,560
+This is calibrated to a what you call it.
+
+152
+00:08:08,040 --> 00:08:11,090
+This determines the speed of the data sampling.
+
+153
+00:08:11,610 --> 00:08:16,430
+And this takes into account the frequency at which, um, why you are prepared for it.
+
+154
+00:08:16,450 --> 00:08:16,790
+Run it.
+
+155
+00:08:16,950 --> 00:08:18,420
+And we know that 60 megahertz.
+
+156
+00:08:18,610 --> 00:08:19,620
+I wouldn't touch it.
+
+157
+00:08:19,740 --> 00:08:21,570
+Nathan, here we leave this the way it is.
+
+158
+00:08:22,170 --> 00:08:24,420
+I can generate by coming to generate over here.
+
+159
+00:08:24,840 --> 00:08:28,020
+And I'll give this a name.
+
+160
+00:08:28,080 --> 00:08:33,380
+You Art Paulin, because we're going to see how to do this would interrupt as well as DME.
+
+161
+00:08:33,420 --> 00:08:35,220
+So just give this a descriptive name.
+
+162
+00:08:35,730 --> 00:08:40,590
+And the two changes estimated to Kubi D e and I'll click over here to generate.
+
+163
+00:08:41,330 --> 00:08:41,480
+Mm hmm.
+
+164
+00:08:43,800 --> 00:08:45,720
+So there's a project of clean up a bit.
+
+165
+00:08:46,380 --> 00:08:46,570
+Um.
+
+166
+00:08:47,280 --> 00:08:52,050
+So in this experiment we only going to see how to transmit data where you are.
+
+167
+00:08:52,410 --> 00:08:54,090
+So I'm going to create a buffer without data.
+
+168
+00:08:54,120 --> 00:08:59,430
+I'm going to create this array here, which I shall call message and a message shall hold this sentence.
+
+169
+00:08:59,460 --> 00:09:00,600
+Hello from Cuba, Max.
+
+170
+00:09:01,440 --> 00:09:04,860
+And then, um, we are going to use our you at all.
+
+171
+00:09:04,860 --> 00:09:07,920
+You transmit API to transmit this data.
+
+172
+00:09:08,490 --> 00:09:11,730
+And then, um, you can find the information about the API.
+
+173
+00:09:11,940 --> 00:09:17,760
+Of course, cointel you auto C file or go into the reference manual of the whole drive a library.
+
+174
+00:09:18,760 --> 00:09:20,610
+Oh driver and library I should say.
+
+175
+00:09:20,970 --> 00:09:24,930
+So I'll come over here and see how underscore you art.
+
+176
+00:09:25,430 --> 00:09:26,160
+Underscore.
+
+177
+00:09:27,450 --> 00:09:30,220
+Transmit like this and this.
+
+178
+00:09:30,380 --> 00:09:33,300
+This function over here takes for argument.
+
+179
+00:09:33,330 --> 00:09:35,490
+The first document is the handle of the U.
+
+180
+00:09:35,590 --> 00:09:39,780
+At the address of the handle which is h h.
+
+181
+00:09:39,780 --> 00:09:43,850
+You ought to be using you auto module to as it is defined up here.
+
+182
+00:09:44,850 --> 00:09:48,000
+The second argument is the um, the buffer that has the data.
+
+183
+00:09:48,540 --> 00:09:50,460
+So we call in this message.
+
+184
+00:09:50,620 --> 00:09:53,800
+We've created this character a record message.
+
+185
+00:09:54,600 --> 00:09:59,510
+The third argument is the size of the data to be transmitted, which is 30 over here.
+
+186
+00:10:00,150 --> 00:10:02,500
+And the last argument is the time out like this.
+
+187
+00:10:04,510 --> 00:10:10,540
+Okay, so if we, um, if we don't do this onto a board and run, we expect to see this message sent
+
+188
+00:10:10,630 --> 00:10:10,900
+over.
+
+189
+00:10:10,900 --> 00:10:18,760
+You ought to another device which is receiving it because we want to monitor the, um, the receive
+
+190
+00:10:18,850 --> 00:10:20,200
+side from our computer.
+
+191
+00:10:20,230 --> 00:10:27,520
+We need to download a special program that can, um, sort of receive you, uh, you are data from an
+
+192
+00:10:27,520 --> 00:10:28,330
+embedded device.
+
+193
+00:10:28,810 --> 00:10:34,450
+So we need a program such as Terra Tim Party or any of those zero terminal programs.
+
+194
+00:10:34,870 --> 00:10:37,000
+Let's go to the, um, to Google and get one.
+
+195
+00:10:38,590 --> 00:10:41,560
+A very good one and popular one, which I use is the terror term.
+
+196
+00:10:41,590 --> 00:10:42,640
+This what it looks like.
+
+197
+00:10:43,000 --> 00:10:47,560
+You can just try to download it by clicking on this first link here will provide a download information.
+
+198
+00:10:47,980 --> 00:10:48,910
+This is terror term.
+
+199
+00:10:49,390 --> 00:10:52,300
+So I've opened this first link in this tab over here.
+
+200
+00:10:53,020 --> 00:10:55,630
+When you get here, we'll tell you where you can download it from.
+
+201
+00:10:56,710 --> 00:11:00,400
+It says, to download the available page from OCD and download page.
+
+202
+00:11:00,430 --> 00:11:02,110
+So you can click over here like this.
+
+203
+00:11:05,980 --> 00:11:11,320
+And we are brought to this page so we can scroll down here to download it at the X or the zip file.
+
+204
+00:11:11,350 --> 00:11:17,350
+You can just click on terror to hyphen for dot e XY to download off clicked here.
+
+205
+00:11:20,790 --> 00:11:26,830
+You can see it's downloaded because I've downloaded this once, I have this as number one.
+
+206
+00:11:27,100 --> 00:11:29,020
+So you can just double click and go.
+
+207
+00:11:29,770 --> 00:11:30,430
+And he stole it.
+
+208
+00:11:30,940 --> 00:11:32,680
+Go through the wizard and install it.
+
+209
+00:11:33,400 --> 00:11:35,890
+Perhaps I should just show how that is done.
+
+210
+00:11:36,010 --> 00:11:37,630
+I suspect this is straightforward.
+
+211
+00:11:37,870 --> 00:11:38,830
+You shouldn't be an issue.
+
+212
+00:11:41,340 --> 00:11:41,590
+OK.
+
+213
+00:11:41,910 --> 00:11:42,580
+So this is it.
+
+214
+00:11:42,660 --> 00:11:45,990
+Oh, double click to start the installation
+
+215
+00:11:49,360 --> 00:11:50,400
+and then Umbro here.
+
+216
+00:11:50,880 --> 00:11:54,960
+So once you've read the license agreement, you can click over here, accept.
+
+217
+00:11:57,350 --> 00:12:00,520
+And then you can leave everything else the same and go to next.
+
+218
+00:12:02,710 --> 00:12:06,670
+And then if you have a different language, you can select your language over here.
+
+219
+00:12:06,990 --> 00:12:07,530
+The next.
+
+220
+00:12:08,290 --> 00:12:10,330
+And then you can create shortcuts, et cetera.
+
+221
+00:12:11,220 --> 00:12:11,890
+Then next.
+
+222
+00:12:12,940 --> 00:12:15,020
+And then you can just click install.
+
+223
+00:12:15,090 --> 00:12:17,290
+But because I have it installed, would it proceed?
+
+224
+00:12:17,470 --> 00:12:18,360
+Just cancel this.
+
+225
+00:12:19,540 --> 00:12:19,740
+Yes.
+
+226
+00:12:19,750 --> 00:12:20,560
+I want to cancel.
+
+227
+00:12:22,900 --> 00:12:23,350
+Okay.
+
+228
+00:12:23,590 --> 00:12:24,310
+I'll close this.
+
+229
+00:12:26,650 --> 00:12:27,820
+So let's build a project.
+
+230
+00:12:27,880 --> 00:12:30,850
+This whole cube IDC project I click here to build.
+
+231
+00:12:42,910 --> 00:12:43,420
+It's Putin.
+
+232
+00:12:44,810 --> 00:12:45,740
+We have no error.
+
+233
+00:12:46,370 --> 00:12:47,030
+What does it say?
+
+234
+00:12:47,060 --> 00:12:47,640
+Over here?
+
+235
+00:12:50,330 --> 00:12:51,700
+It says we are passing a.
+
+236
+00:12:53,160 --> 00:12:54,450
+Argument two of the whole.
+
+237
+00:12:54,510 --> 00:12:54,830
+Okay.
+
+238
+00:12:54,900 --> 00:12:59,810
+So the reason we have a warning here is because it expects us to typecast this to a U.
+
+239
+00:13:00,180 --> 00:13:01,170
+Eight pointer.
+
+240
+00:13:01,650 --> 00:13:06,720
+So I'll put it, Brocket, you end it on this Quartey stuff over here.
+
+241
+00:13:07,170 --> 00:13:08,380
+That is why we have this warning.
+
+242
+00:13:08,400 --> 00:13:09,990
+I'm going to click here to view it again.
+
+243
+00:13:14,720 --> 00:13:15,800
+The warning disappears.
+
+244
+00:13:16,400 --> 00:13:18,120
+So I'm going to click here to go to the debugger.
+
+245
+00:13:20,560 --> 00:13:21,500
+I'm gonna select this.
+
+246
+00:13:26,550 --> 00:13:32,300
+And I'm going to open my terror term when you open terror term.
+
+247
+00:13:32,430 --> 00:13:38,720
+This is where you find you can either use it for, um, TCAP, IP connection or serial.
+
+248
+00:13:38,850 --> 00:13:43,900
+What we are using a voice, the serial connections or so like this radio button here in the dropdown
+
+249
+00:13:43,950 --> 00:13:46,350
+here, I see my SDM 32 board.
+
+250
+00:13:46,770 --> 00:13:48,170
+Yeah, this is the name it has.
+
+251
+00:13:48,900 --> 00:13:50,470
+You might find a different name here.
+
+252
+00:13:50,700 --> 00:13:55,680
+But one way to know which one your board is, is to disconnect your board and come to this dropdown.
+
+253
+00:13:56,070 --> 00:14:00,840
+If there's a particular one for two missing, you can take notes of the and then you connect your board
+
+254
+00:14:00,840 --> 00:14:01,620
+and come back here.
+
+255
+00:14:01,860 --> 00:14:05,880
+If you see it as a neo con port, then that is the new device you just connected.
+
+256
+00:14:06,690 --> 00:14:09,120
+So I'll come over here and then select this.
+
+257
+00:14:09,430 --> 00:14:12,180
+Com three and then I'll say, okay, over here.
+
+258
+00:14:13,080 --> 00:14:16,860
+Then this window, nothing is showing this because we're not running from our debug.
+
+259
+00:14:16,870 --> 00:14:17,760
+I'll click to run.
+
+260
+00:14:20,090 --> 00:14:22,000
+And our our system is running no.
+
+261
+00:14:22,090 --> 00:14:25,460
+Let's see what the track team is feeling.
+
+262
+00:14:26,470 --> 00:14:27,410
+Nothing is showing here.
+
+263
+00:14:27,500 --> 00:14:29,850
+It just showed a, you know.
+
+264
+00:14:35,000 --> 00:14:38,330
+And the reason why that is, is our board rate is not aligned.
+
+265
+00:14:38,870 --> 00:14:43,400
+You know where you set up, we're using a board rate of one hundred and one hundred and fifteen thousand
+
+266
+00:14:43,400 --> 00:14:43,910
+two hundred.
+
+267
+00:14:43,940 --> 00:14:48,860
+But the default setting here is ninety six thousand or nine thousand six hundred, I should say.
+
+268
+00:14:49,160 --> 00:14:56,010
+So I'm going to change the board rate by by coming to set up zero port and then this nine thousand six
+
+269
+00:14:56,010 --> 00:14:57,020
+hundred dropdown.
+
+270
+00:14:57,110 --> 00:14:57,680
+I'll click here.
+
+271
+00:14:57,740 --> 00:14:59,450
+And then also like this is the port rate.
+
+272
+00:14:59,540 --> 00:15:03,050
+We set our microcontroller to work at Click.
+
+273
+00:15:03,140 --> 00:15:03,440
+Okay.
+
+274
+00:15:03,470 --> 00:15:04,100
+Over here.
+
+275
+00:15:05,390 --> 00:15:09,920
+And I expect our port to stump speech in some data.
+
+276
+00:15:11,750 --> 00:15:13,760
+We may need to research the port.
+
+277
+00:15:14,060 --> 00:15:14,690
+Click this.
+
+278
+00:15:16,420 --> 00:15:21,220
+Oh, we can't even, um, escape that debark view, since the framework is already flushed.
+
+279
+00:15:21,950 --> 00:15:24,540
+I see it's connecting back to the deep of you.
+
+280
+00:15:25,290 --> 00:15:25,610
+Okay.
+
+281
+00:15:25,930 --> 00:15:26,420
+You saw it.
+
+282
+00:15:26,530 --> 00:15:26,950
+Hello.
+
+283
+00:15:31,400 --> 00:15:31,820
+This is it.
+
+284
+00:15:33,680 --> 00:15:39,650
+And the reason why it appears one is obviously because we don't have it in a while, you know what?
+
+285
+00:15:39,710 --> 00:15:40,470
+Infinite loop.
+
+286
+00:15:41,090 --> 00:15:42,230
+So we can do that now.
+
+287
+00:15:42,740 --> 00:15:45,290
+I'm going to take a while to transmit.
+
+288
+00:15:47,270 --> 00:15:50,170
+I'm going to cut this and put it in the wall.
+
+289
+00:15:50,180 --> 00:15:55,430
+One loop like this such that it would keep transmitting the same information.
+
+290
+00:15:56,090 --> 00:15:58,070
+And I'm going to repeat what my project.
+
+291
+00:16:01,140 --> 00:16:02,550
+Click over here to be at.
+
+292
+00:16:06,840 --> 00:16:12,570
+It's it successfully earned an hour click here to go to the Depok you.
+
+293
+00:16:18,760 --> 00:16:20,540
+And then click here to run.
+
+294
+00:16:21,860 --> 00:16:26,980
+Oh, you know, you don't always have to run your code and debug for you once you come to debug.
+
+295
+00:16:27,070 --> 00:16:33,890
+You can exit the debugger because the fermoy is going to be flushed into memory and you can check.
+
+296
+00:16:35,000 --> 00:16:36,980
+But, yeah, we can keep this open.
+
+297
+00:16:37,040 --> 00:16:37,880
+Let's take a look at it.
+
+298
+00:16:37,970 --> 00:16:38,910
+And we have this running.
+
+299
+00:16:39,260 --> 00:16:42,760
+The reason it is a bit like this is because we need a delay.
+
+300
+00:16:42,770 --> 00:16:46,370
+We have to put a delay there to make it to make it flow smoothly.
+
+301
+00:16:46,640 --> 00:16:50,920
+We even lucky that it is showing in a in a, um, data at all.
+
+302
+00:16:50,960 --> 00:16:54,590
+Sometimes if you don't put a delay there, um, it gets stuck.
+
+303
+00:16:54,800 --> 00:16:57,140
+So I'm going to put a bit of a delay here.
+
+304
+00:16:59,320 --> 00:16:59,430
+Oh.
+
+305
+00:16:59,630 --> 00:17:00,320
+See how.
+
+306
+00:17:03,040 --> 00:17:08,160
+Hall underscored DeLay and, oh, just applied, uh, s mistily here like this.
+
+307
+00:17:09,060 --> 00:17:11,160
+I'm going to come out.
+
+308
+00:17:16,750 --> 00:17:18,910
+And then I'm going to click here to build.
+
+309
+00:17:25,880 --> 00:17:29,070
+And then I'm going to go to the debugger by clicking on the bug over here.
+
+310
+00:17:43,670 --> 00:17:53,240
+Once that is done or click here to run, let's see what or terror I'm showing, I can see this is it.
+
+311
+00:17:53,310 --> 00:18:00,110
+It's printed in print and with Tenements Didley, we can increase the font size by coming over here.
+
+312
+00:18:00,250 --> 00:18:01,310
+Edit I see.
+
+313
+00:18:12,360 --> 00:18:17,380
+Well, we can just go to set up and then no phone to here and then Fonte.
+
+314
+00:18:25,990 --> 00:18:33,180
+And, um, we can select size 14 and I'm going to choose this font, Lucita, and then.
+
+315
+00:18:33,240 --> 00:18:33,580
+Okay.
+
+316
+00:18:34,090 --> 00:18:35,860
+And as you can see, we have this bigger.
+
+317
+00:18:36,900 --> 00:18:37,150
+Okay.
+
+318
+00:18:37,240 --> 00:18:41,450
+So this is how to transmit data with a U at this or the risk.
+
+319
+00:18:41,500 --> 00:18:46,900
+If you have any questions at all, just let me know in the Q&amp;A area and I'll see you later.
+
+320
+00:18:46,930 --> 00:18:47,540
+Have a nice day.
