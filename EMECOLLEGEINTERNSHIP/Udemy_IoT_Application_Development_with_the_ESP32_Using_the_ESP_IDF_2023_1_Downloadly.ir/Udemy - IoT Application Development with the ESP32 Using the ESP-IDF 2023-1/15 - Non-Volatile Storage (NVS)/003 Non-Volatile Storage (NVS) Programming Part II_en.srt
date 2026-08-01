@@ -1,0 +1,840 @@
+1
+00:00:07,550 --> 00:00:12,920
+We'll start off this programming lesson in the wife, a --, so come over here, and the first
+
+2
+00:00:12,920 --> 00:00:15,770
+thing we need is a new message case for loading saved credentials.
+
+3
+00:00:16,610 --> 00:00:19,880
+So let's come here to our wi fi up messages.
+
+4
+00:00:20,960 --> 00:00:23,030
+And let's say wi fi app message.
+
+5
+00:00:24,240 --> 00:00:25,710
+Load saved credentials.
+
+6
+00:00:30,320 --> 00:00:32,240
+OK, now let's go to the C file.
+
+7
+00:00:35,020 --> 00:00:36,310
+And first, let's include.
+
+8
+00:00:37,840 --> 00:00:38,980
+Investor shortage.
+
+9
+00:00:40,890 --> 00:00:43,200
+But now let's go down to the global section here.
+
+10
+00:00:44,870 --> 00:00:50,570
+And now we'll create a section here for free art event group handle and status bits, which we'll use
+
+11
+00:00:50,570 --> 00:00:55,400
+to control the transition of events in our state machine where our message cases are handled in the
+
+12
+00:00:55,410 --> 00:00:57,530
+Wi-Fi application free autos task.
+
+13
+00:00:59,180 --> 00:01:04,099
+So let's say we find application event group handle.
+
+14
+00:01:05,420 --> 00:01:06,500
+And status bits.
+
+15
+00:01:08,720 --> 00:01:15,380
+And it's a static event group handle type and call it wi fi app event group.
+
+16
+00:01:19,000 --> 00:01:21,910
+And then the first bit is a constant.
+
+17
+00:01:23,100 --> 00:01:26,700
+And call it wi fi, a connecting.
+
+18
+00:01:28,180 --> 00:01:29,590
+Using saves creds.
+
+19
+00:01:31,860 --> 00:01:32,250
+Bit.
+
+20
+00:01:34,790 --> 00:01:35,930
+And say equals.
+
+21
+00:01:36,940 --> 00:01:37,660
+But zero.
+
+22
+00:01:39,010 --> 00:01:40,020
+Now, let's do another.
+
+23
+00:01:40,170 --> 00:01:41,430
+So say constant.
+
+24
+00:01:42,890 --> 00:01:43,730
+WI fi app.
+
+25
+00:01:44,720 --> 00:01:46,910
+Connecting from HTP server a bit.
+
+26
+00:01:53,710 --> 00:01:55,570
+Equals bit one.
+
+27
+00:01:58,440 --> 00:02:03,570
+And we'll use these bits to signify to the application whether we are connecting, using safe credentials
+
+28
+00:02:03,570 --> 00:02:05,400
+or connecting from the FTP server.
+
+29
+00:02:06,860 --> 00:02:09,350
+So let's go down to the Wi-Fi start function, no.
+
+30
+00:02:11,300 --> 00:02:13,160
+And Hugh will create an event group.
+
+31
+00:02:14,470 --> 00:02:15,220
+So let's say.
+
+32
+00:02:16,620 --> 00:02:19,650
+Create wi fi application event group.
+
+33
+00:02:23,770 --> 00:02:26,860
+And let's use our wi fi app, event group.
+
+34
+00:02:29,220 --> 00:02:29,850
+Equals.
+
+35
+00:02:31,010 --> 00:02:32,600
+X event group create.
+
+36
+00:02:39,780 --> 00:02:40,200
+OK.
+
+37
+00:02:40,530 --> 00:02:42,000
+And that creates the event group.
+
+38
+00:02:43,110 --> 00:02:44,130
+And if you follow this.
+
+39
+00:02:46,200 --> 00:02:49,170
+It'll take you to the event group's head of file from photos.
+
+40
+00:02:50,140 --> 00:02:55,810
+And on the frittatas website, you can read up on event bits and event groups and event bits are used
+
+41
+00:02:55,810 --> 00:03:02,470
+to indicate if an event has occurred or not, and an event group is a set of event bits and individual
+
+42
+00:03:02,470 --> 00:03:08,260
+bits within the event group, a reference by a bit number so they can always find out more information
+
+43
+00:03:08,260 --> 00:03:10,570
+about event groups from the theater's website.
+
+44
+00:03:12,680 --> 00:03:14,120
+OK, so let's go up.
+
+45
+00:03:15,810 --> 00:03:18,980
+And check out the bit definitions, and if you follow this one.
+
+46
+00:03:20,080 --> 00:03:24,220
+You'll see that impressive has these defined and esprit bit deaf studies.
+
+47
+00:03:25,050 --> 00:03:27,160
+So now let's head down to the free autos task.
+
+48
+00:03:31,840 --> 00:03:35,320
+And now here, let's create an instance of the event bits type.
+
+49
+00:03:38,300 --> 00:03:39,890
+And let's call it event bits.
+
+50
+00:03:42,620 --> 00:03:47,510
+And if you follow the event bits tape, you'll see that this is a type that holds event bits.
+
+51
+00:03:49,620 --> 00:03:56,790
+OK, so now let's just adjust our first message here to wi fi app message loads, say its credentials.
+
+52
+00:04:01,470 --> 00:04:04,860
+So now let's create a new case for it here by copying this one.
+
+53
+00:04:06,900 --> 00:04:07,950
+And pasting above.
+
+54
+00:04:11,300 --> 00:04:13,010
+All right, so now let's update the case.
+
+55
+00:04:14,670 --> 00:04:18,720
+And the message that's logged, and let's get rid of this, and let's say if.
+
+56
+00:04:20,550 --> 00:04:22,650
+Spin vs load state creds.
+
+57
+00:04:25,130 --> 00:04:30,530
+And if it returns true, meaning it loaded station credentials, then we'll ESP log.
+
+58
+00:04:33,250 --> 00:04:34,960
+Loaded station configuration.
+
+59
+00:04:39,060 --> 00:04:43,020
+And now he will call our Wi-Fi app Connect SDK function.
+
+60
+00:04:44,390 --> 00:04:46,850
+And now let's use our X event group set bits.
+
+61
+00:04:49,250 --> 00:04:51,260
+And pass over Wi-Fi app event group.
+
+62
+00:04:52,970 --> 00:04:55,640
+And set the connecting using saved crowds bit.
+
+63
+00:04:57,550 --> 00:04:58,810
+And then let's say else.
+
+64
+00:04:59,890 --> 00:05:01,540
+Then we'll ESB lug.
+
+65
+00:05:04,830 --> 00:05:06,960
+Unable to load station configuration.
+
+66
+00:05:11,450 --> 00:05:12,650
+Then we can say next.
+
+67
+00:05:14,380 --> 00:05:15,550
+Start the Web server.
+
+68
+00:05:18,980 --> 00:05:21,410
+And let's use wi fi apps send message.
+
+69
+00:05:23,860 --> 00:05:26,980
+And let's pass these start http server message you.
+
+70
+00:05:29,650 --> 00:05:31,720
+OK, so that takes care of this case for now.
+
+71
+00:05:32,200 --> 00:05:35,290
+Next, let's go down to the user requested disconnect case.
+
+72
+00:05:37,270 --> 00:05:41,980
+And here, let's call the app and voice clear state creds function.
+
+73
+00:05:44,860 --> 00:05:49,960
+Now, in the gut IP case, we need to save credentials disconnecting, connecting from the HTP server.
+
+74
+00:05:50,530 --> 00:05:53,080
+So here, let's say event bits.
+
+75
+00:05:55,280 --> 00:05:58,580
+Equals X event group get its.
+
+76
+00:06:00,780 --> 00:06:02,850
+And pass the wi fi app event group.
+
+77
+00:06:06,760 --> 00:06:09,520
+So let's say if event bids.
+
+78
+00:06:11,090 --> 00:06:14,840
+And wi fi app connecting using saved credit.
+
+79
+00:06:21,370 --> 00:06:24,340
+Then let's use X Event Group Clear Bits.
+
+80
+00:06:29,170 --> 00:06:33,730
+In past the event group and then past connecting using saved crowds bit.
+
+81
+00:06:35,830 --> 00:06:37,510
+And now I'll make a comment here.
+
+82
+00:06:38,860 --> 00:06:40,570
+Save state creds.
+
+83
+00:06:41,320 --> 00:06:43,900
+Only if connecting from HTTP server.
+
+84
+00:06:48,740 --> 00:06:50,660
+And not loaded from envious.
+
+85
+00:06:55,880 --> 00:07:02,360
+OK, in here, I'll also say clear the bits in case we want to disconnect.
+
+86
+00:07:04,780 --> 00:07:05,800
+And reconnect.
+
+87
+00:07:07,360 --> 00:07:08,380
+And then start again.
+
+88
+00:07:11,890 --> 00:07:13,270
+And now we can say else.
+
+89
+00:07:15,230 --> 00:07:18,650
+And call app and voice save star creds.
+
+90
+00:07:20,800 --> 00:07:22,900
+All right, so that takes care of this case for now.
+
+91
+00:07:22,990 --> 00:07:25,600
+Basically, we only want to save credentials if it's required.
+
+92
+00:07:26,050 --> 00:07:26,320
+All right.
+
+93
+00:07:26,320 --> 00:07:31,990
+So now let's go up to the connecting from HTP server case and Use X Event Group said it's.
+
+94
+00:07:33,180 --> 00:07:34,500
+And Passau Event Group.
+
+95
+00:07:35,660 --> 00:07:38,150
+And they are connecting from HTP server a bit.
+
+96
+00:07:40,430 --> 00:07:43,490
+All right, so if we connect from the Web server, we want to set this bit.
+
+97
+00:07:44,520 --> 00:07:46,710
+All right, so now let's go to the gut IP case.
+
+98
+00:07:48,130 --> 00:07:51,340
+And here will say if event bits.
+
+99
+00:07:52,370 --> 00:07:56,240
+And wi fi connecting from HTP server bit.
+
+100
+00:08:01,650 --> 00:08:04,470
+Then Will X event group clear bits.
+
+101
+00:08:07,310 --> 00:08:11,240
+In past soybean group and the connecting from HTP server bit.
+
+102
+00:08:13,680 --> 00:08:16,470
+OK, so now this event is accounted for.
+
+103
+00:08:18,030 --> 00:08:23,190
+OK, so next, let's go to the state disconnected case, and here we need to account for whether this
+
+104
+00:08:23,190 --> 00:08:28,770
+event occurred using Sade's credentials or not, so we'll need to check the event pitch and react accordingly.
+
+105
+00:08:29,130 --> 00:08:32,039
+So first, let's say event bits.
+
+106
+00:08:34,230 --> 00:08:39,000
+Equals X event group get bits in past the event group.
+
+107
+00:08:44,420 --> 00:08:46,520
+And then we'll say if event bids.
+
+108
+00:08:47,840 --> 00:08:51,500
+And wi fi connecting using saved creds bit.
+
+109
+00:08:55,390 --> 00:08:57,040
+Then we'll ESB lug.
+
+110
+00:09:00,300 --> 00:09:01,230
+That this case.
+
+111
+00:09:04,470 --> 00:09:07,190
+And attempt using saved credentials.
+
+112
+00:09:10,840 --> 00:09:13,240
+And then we'll x event group clear bits.
+
+113
+00:09:15,650 --> 00:09:16,820
+Passing the event group.
+
+114
+00:09:21,410 --> 00:09:25,100
+And wi fi app connecting using saved crowds bit.
+
+115
+00:09:30,860 --> 00:09:33,620
+OK, and then let's invest clear stay creds.
+
+116
+00:09:38,170 --> 00:09:39,730
+And then we'll say else if.
+
+117
+00:09:41,260 --> 00:09:47,080
+Event bits and wi fi app connecting from HTTP server bit.
+
+118
+00:09:50,680 --> 00:09:52,180
+Then we'll ESG lug.
+
+119
+00:09:55,750 --> 00:09:56,920
+That in our case here.
+
+120
+00:10:00,700 --> 00:10:02,590
+Attempt from the FTP server.
+
+121
+00:10:09,220 --> 00:10:10,540
+And then we'll need to clear the bits.
+
+122
+00:10:11,930 --> 00:10:13,250
+So let's just use this one.
+
+123
+00:10:15,720 --> 00:10:18,120
+And paste it and then change it to.
+
+124
+00:10:20,560 --> 00:10:22,510
+From HTP server a bit.
+
+125
+00:10:24,880 --> 00:10:29,350
+And now in here, we can call HTP Server Monitor.
+
+126
+00:10:30,530 --> 00:10:35,300
+Send message and pass HTP message, wi fi connect fail.
+
+127
+00:10:41,880 --> 00:10:45,480
+All right, so we only send that message if we're connecting from the Web server.
+
+128
+00:10:45,930 --> 00:10:52,830
+However, I do think we should expand both the HTP server and Wi-Fi application to handle the user requested
+
+129
+00:10:52,830 --> 00:10:54,090
+disconnect situation.
+
+130
+00:10:54,690 --> 00:11:01,290
+So now let's go to HTP server Duddridge and create a new Wi-Fi status for HTP.
+
+131
+00:11:01,290 --> 00:11:03,060
+Wi-Fi status disconnected?
+
+132
+00:11:08,750 --> 00:11:13,640
+And also create a new monitor message and call it 8TB message.
+
+133
+00:11:15,310 --> 00:11:16,780
+User disconnect.
+
+134
+00:11:19,950 --> 00:11:22,290
+And now go to HTP Server Dot, see?
+
+135
+00:11:23,930 --> 00:11:26,210
+And here, let's create a new case for our message.
+
+136
+00:11:27,170 --> 00:11:28,490
+So here we can use this one.
+
+137
+00:11:33,400 --> 00:11:36,080
+Now, update the case to user disconnect.
+
+138
+00:11:38,950 --> 00:11:40,030
+And the message.
+
+139
+00:11:41,420 --> 00:11:45,980
+Now we'll update the global Wi-Fi status to Wi-Fi status disconnected.
+
+140
+00:11:49,640 --> 00:11:51,810
+And now we can go back to the at sea.
+
+141
+00:11:52,460 --> 00:11:53,300
+And now let's go up.
+
+142
+00:11:56,420 --> 00:11:59,090
+All the way up here and create a new status bit.
+
+143
+00:12:00,890 --> 00:12:06,350
+And it's constant wi fi app user requested stay disconnected, but.
+
+144
+00:12:13,440 --> 00:12:14,370
+And it's a bit, too.
+
+145
+00:12:17,300 --> 00:12:20,540
+OK, so now let's go back to the free autos task state machine.
+
+146
+00:12:25,260 --> 00:12:28,240
+Another user requested state disconnect.
+
+147
+00:12:29,190 --> 00:12:29,850
+Right here.
+
+148
+00:12:30,120 --> 00:12:31,050
+Let's set the bit.
+
+149
+00:12:34,030 --> 00:12:34,960
+Or event group.
+
+150
+00:12:39,030 --> 00:12:40,440
+And it's a WI Wi-Fi app.
+
+151
+00:12:41,410 --> 00:12:42,430
+User requested.
+
+152
+00:12:43,890 --> 00:12:45,210
+Stay disconnect, but.
+
+153
+00:12:47,850 --> 00:12:50,160
+OK, so now let's go down to the disconnect case.
+
+154
+00:12:51,880 --> 00:12:53,020
+And say else if.
+
+155
+00:12:54,020 --> 00:12:59,300
+Event bits and wi fi app user requested stay disconnected.
+
+156
+00:13:01,960 --> 00:13:03,340
+Then ESB log.
+
+157
+00:13:06,030 --> 00:13:07,440
+From the disconnected case.
+
+158
+00:13:10,560 --> 00:13:12,480
+User requested disconnection.
+
+159
+00:13:17,920 --> 00:13:20,950
+And now ex event group Clear Bits.
+
+160
+00:13:23,780 --> 00:13:24,650
+Our event group.
+
+161
+00:13:26,000 --> 00:13:27,860
+And our state disconnect bit.
+
+162
+00:13:32,710 --> 00:13:37,600
+Next, let's let the Web server know using a CTP server monitor send message.
+
+163
+00:13:42,910 --> 00:13:46,450
+And it's to be message why fi user disconnect?
+
+164
+00:13:50,230 --> 00:13:55,210
+And this covers all of the obvious scenarios for the disconnected case, but there is one more case
+
+165
+00:13:55,210 --> 00:13:57,430
+where perhaps the access point is unavailable.
+
+166
+00:13:57,610 --> 00:13:58,690
+So let's say else.
+
+167
+00:14:01,620 --> 00:14:02,480
+ESP log.
+
+168
+00:14:05,050 --> 00:14:06,130
+That from our case.
+
+169
+00:14:09,310 --> 00:14:10,300
+Attempt failed.
+
+170
+00:14:11,260 --> 00:14:13,660
+Check Wi-Fi access point to availability.
+
+171
+00:14:19,920 --> 00:14:20,280
+All right.
+
+172
+00:14:20,940 --> 00:14:22,510
+So then I'll write a message for you here.
+
+173
+00:14:22,860 --> 00:14:25,850
+Adjust this case to your needs.
+
+174
+00:14:27,000 --> 00:14:29,430
+And maybe you want to keep trying to connect.
+
+175
+00:14:34,240 --> 00:14:34,990
+For example.
+
+176
+00:14:37,220 --> 00:14:40,940
+OK, now we can remove this message, send call, so get rid of that.
+
+177
+00:14:42,790 --> 00:14:43,870
+And now let's build.
+
+178
+00:14:58,830 --> 00:15:00,690
+OK, so then when you're ready, you can flush.
+
+179
+00:15:10,440 --> 00:15:12,150
+All right, and next, let's open the monitor.
+
+180
+00:15:19,410 --> 00:15:21,030
+And now we can connect to the ESP.
+
+181
+00:15:32,570 --> 00:15:34,040
+Right now, let's go to the Web page.
+
+182
+00:15:41,580 --> 00:15:44,310
+Right now, let's connect and start testing the new functions.
+
+183
+00:16:02,310 --> 00:16:03,090
+And now connect.
+
+184
+00:16:10,980 --> 00:16:11,700
+OK, great.
+
+185
+00:16:12,660 --> 00:16:15,270
+And from the monitor, we could see that the credentials were saved.
+
+186
+00:16:15,810 --> 00:16:19,620
+So now, of course, a reboot using the Enable button on the ESP.
+
+187
+00:16:20,070 --> 00:16:21,210
+OK, and you could do the same.
+
+188
+00:16:22,290 --> 00:16:26,070
+And now we see that we've automatically reconnected using our saved credentials.
+
+189
+00:16:26,370 --> 00:16:26,880
+Nice.
+
+190
+00:16:29,170 --> 00:16:30,430
+So now refresh the page.
+
+191
+00:16:34,610 --> 00:16:35,450
+And all looks great.
+
+192
+00:16:36,730 --> 00:16:38,830
+So now I'll disconnect my access point.
+
+193
+00:16:46,630 --> 00:16:48,970
+OK, so now the ECB is really trying to connect.
+
+194
+00:16:55,740 --> 00:16:57,960
+And after Max Re tries.
+
+195
+00:16:59,200 --> 00:17:02,680
+Our last statement is reached in the messages looked perfect.
+
+196
+00:17:04,079 --> 00:17:06,690
+OK, so it's the message right here.
+
+197
+00:17:09,730 --> 00:17:11,660
+All right, so now we could try another scenario.
+
+198
+00:17:12,530 --> 00:17:17,569
+And now I'll leave my access point disconnected and I'll reboot the ESP again.
+
+199
+00:17:18,050 --> 00:17:22,310
+Then on startup, if it fails to connect, the credentials should be deleted.
+
+200
+00:17:23,089 --> 00:17:24,260
+OK, so let's try it.
+
+201
+00:17:25,099 --> 00:17:26,390
+So just give me a moment.
+
+202
+00:17:37,990 --> 00:17:43,570
+OK, now the ECB is trying to connect, using saved credentials and retrying.
+
+203
+00:17:44,520 --> 00:17:45,270
+And retrying.
+
+204
+00:17:50,160 --> 00:17:56,290
+And after maximum retrace, the clear stay creds function is called exactly what we expected.
+
+205
+00:17:56,310 --> 00:17:56,670
+Great.
+
+206
+00:17:57,030 --> 00:17:58,470
+And here is the logged message.
+
+207
+00:18:04,420 --> 00:18:09,400
+And here is our corresponding message case with the clear state creds function is called.
+
+208
+00:18:10,900 --> 00:18:11,590
+All right, great.
+
+209
+00:18:12,310 --> 00:18:13,930
+So that's it for this lesson.
+
+210
+00:18:14,050 --> 00:18:15,220
+Let's continue in the next.
+

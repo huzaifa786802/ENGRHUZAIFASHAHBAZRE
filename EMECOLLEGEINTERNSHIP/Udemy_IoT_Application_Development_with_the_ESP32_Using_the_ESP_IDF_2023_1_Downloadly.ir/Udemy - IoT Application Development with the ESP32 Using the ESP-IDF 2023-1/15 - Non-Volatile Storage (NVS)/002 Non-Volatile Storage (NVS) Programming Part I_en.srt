@@ -1,0 +1,1176 @@
+1
+00:00:06,930 --> 00:00:12,090
+We'll start off the India implementation by adding a couple of new files to go over to the main folder,
+
+2
+00:00:12,120 --> 00:00:14,430
+right click and add a new head of file.
+
+3
+00:00:16,800 --> 00:00:18,930
+And call it at Investment H.
+
+4
+00:00:23,200 --> 00:00:24,610
+Now, let's add a new source file.
+
+5
+00:00:28,140 --> 00:00:30,690
+And call it app and voice, Dorsey.
+
+6
+00:00:34,450 --> 00:00:36,070
+Now go over to see make lists.
+
+7
+00:00:38,730 --> 00:00:42,450
+Into the sources, let's add up in voice gutsy.
+
+8
+00:00:45,940 --> 00:00:47,350
+And now let's get organized you.
+
+9
+00:00:48,530 --> 00:00:51,320
+Because now we'll start off in the EPP and vice head of file.
+
+10
+00:00:52,900 --> 00:00:55,240
+And he will create a few functional prototypes.
+
+11
+00:00:56,200 --> 00:00:57,640
+So let's first comment you.
+
+12
+00:01:00,520 --> 00:01:01,900
+Safe station mode.
+
+13
+00:01:03,430 --> 00:01:04,780
+WI fi credentials.
+
+14
+00:01:05,990 --> 00:01:06,860
+To envious.
+
+15
+00:01:08,590 --> 00:01:11,170
+And the return is OK.
+
+16
+00:01:12,570 --> 00:01:13,530
+If successful.
+
+17
+00:01:16,630 --> 00:01:18,520
+And it's Espero type.
+
+18
+00:01:20,780 --> 00:01:24,170
+App and voice save state creds.
+
+19
+00:01:25,480 --> 00:01:26,230
+And it's void.
+
+20
+00:01:29,580 --> 00:01:30,600
+Now, let's make another.
+
+21
+00:01:33,520 --> 00:01:36,790
+Which loads the previously saved.
+
+22
+00:01:38,340 --> 00:01:39,240
+Credentials.
+
+23
+00:01:40,730 --> 00:01:41,810
+From Vice.
+
+24
+00:01:44,340 --> 00:01:45,180
+And the return.
+
+25
+00:01:46,450 --> 00:01:51,910
+Is true, if previously saved credentials were found.
+
+26
+00:01:55,260 --> 00:01:56,570
+And the return is bull.
+
+27
+00:01:57,930 --> 00:02:00,960
+And its app and voice load.
+
+28
+00:02:02,390 --> 00:02:03,380
+Stay creds.
+
+29
+00:02:04,640 --> 00:02:05,390
+And it's void.
+
+30
+00:02:07,920 --> 00:02:08,940
+Now, let's make another.
+
+31
+00:02:11,100 --> 00:02:14,460
+Which clears station mode credentials.
+
+32
+00:02:15,870 --> 00:02:16,920
+From NCVHS.
+
+33
+00:02:19,820 --> 00:02:20,720
+And the return.
+
+34
+00:02:22,030 --> 00:02:24,850
+Is ESP OK, if successful?
+
+35
+00:02:27,190 --> 00:02:29,200
+So the return is Espirito.
+
+36
+00:02:30,290 --> 00:02:32,240
+And we'll name it app and voice.
+
+37
+00:02:33,850 --> 00:02:35,390
+Clear state creds.
+
+38
+00:02:36,960 --> 00:02:37,680
+And it's void.
+
+39
+00:02:40,870 --> 00:02:45,090
+All right, so that's our three prototypes now, let's copy them so we can define them in the C file.
+
+40
+00:02:51,630 --> 00:02:52,590
+And let's paste them here.
+
+41
+00:02:54,810 --> 00:02:56,010
+Now we need to include.
+
+42
+00:02:57,800 --> 00:02:59,390
+Vestibule, that edge.
+
+43
+00:03:01,570 --> 00:03:03,250
+We also need to include here.
+
+44
+00:03:05,700 --> 00:03:06,590
+Studio.
+
+45
+00:03:10,750 --> 00:03:14,200
+And let's also include String Derrick.
+
+46
+00:03:17,040 --> 00:03:17,910
+And now include.
+
+47
+00:03:19,050 --> 00:03:20,430
+VSP looked Dunwich.
+
+48
+00:03:23,530 --> 00:03:26,980
+We also need to include envious flesh.
+
+49
+00:03:28,160 --> 00:03:28,750
+Duddridge.
+
+50
+00:03:30,690 --> 00:03:31,710
+And we also need our.
+
+51
+00:03:33,660 --> 00:03:35,320
+Our app and vestige.
+
+52
+00:03:37,050 --> 00:03:38,100
+And also include.
+
+53
+00:03:39,040 --> 00:03:40,960
+Why fi app Duddridge?
+
+54
+00:03:43,540 --> 00:03:45,040
+And next, let's add a tag.
+
+55
+00:03:46,720 --> 00:03:48,040
+For logging to the monitor.
+
+56
+00:03:51,960 --> 00:03:55,320
+And it's a static const care tag.
+
+57
+00:03:57,530 --> 00:03:59,570
+And let's call it envious.
+
+58
+00:04:04,430 --> 00:04:10,790
+OK, now we need our NCVHS name space used for station mode credentials.
+
+59
+00:04:13,520 --> 00:04:19,190
+And it's Konst Chair, app and voice star creds namespace.
+
+60
+00:04:21,690 --> 00:04:23,910
+And let's call it state creds.
+
+61
+00:04:29,000 --> 00:04:36,140
+OK, so next, let's define the save state creds function, and we'll need an envious handle.
+
+62
+00:04:37,520 --> 00:04:38,600
+And call it handle.
+
+63
+00:04:40,300 --> 00:04:41,890
+And then ESPN aired tape.
+
+64
+00:04:43,350 --> 00:04:44,220
+Esper.
+
+65
+00:04:45,940 --> 00:04:47,290
+And now S.P. lug.
+
+66
+00:04:50,750 --> 00:04:51,680
+That this function.
+
+67
+00:04:55,130 --> 00:04:57,770
+Is saving station mode credentials.
+
+68
+00:04:58,710 --> 00:04:59,370
+To flesh.
+
+69
+00:05:03,240 --> 00:05:05,110
+Now we need a Wi-Fi config type.
+
+70
+00:05:07,540 --> 00:05:10,480
+Pointer and call it wi fi SDH config.
+
+71
+00:05:13,770 --> 00:05:15,450
+Now, let's use our wi fi app.
+
+72
+00:05:16,350 --> 00:05:18,210
+Get wi fi config function.
+
+73
+00:05:20,500 --> 00:05:25,340
+Right, and if you recall that this function will return the Wi-Fi configuration like some.
+
+74
+00:05:27,770 --> 00:05:32,660
+And you will need to confirm the validity of this point to before continuing to use it to save credentials
+
+75
+00:05:32,660 --> 00:05:33,260
+to flesh.
+
+76
+00:05:33,770 --> 00:05:37,610
+So he will say if we fight state config.
+
+77
+00:05:39,170 --> 00:05:43,340
+And in here, we'll begin our investor operations and say Esper.
+
+78
+00:05:44,990 --> 00:05:46,730
+Equals and vice open.
+
+79
+00:05:48,910 --> 00:05:50,500
+And they'll pass the name space.
+
+80
+00:05:51,940 --> 00:05:54,070
+And then open in voice read write mode.
+
+81
+00:05:58,830 --> 00:06:00,840
+Out handle is a reference to the handle.
+
+82
+00:06:03,870 --> 00:06:06,810
+And then say, if ESB error.
+
+83
+00:06:07,950 --> 00:06:10,200
+Is not equal to ESP, OK?
+
+84
+00:06:12,150 --> 00:06:13,170
+Then we'll print.
+
+85
+00:06:16,500 --> 00:06:17,490
+That R function.
+
+86
+00:06:21,090 --> 00:06:21,510
+There.
+
+87
+00:06:25,010 --> 00:06:26,450
+Opening envious handle.
+
+88
+00:06:33,140 --> 00:06:36,350
+And let's use the spare to name function to get the error.
+
+89
+00:06:36,710 --> 00:06:40,220
+All right, so say ESP error to name.
+
+90
+00:06:41,900 --> 00:06:43,310
+In Pass, Esper.
+
+91
+00:06:45,430 --> 00:06:47,410
+And then we'll return to ESPÉRER.
+
+92
+00:06:53,120 --> 00:06:56,570
+OK, so now, let's say, set aside.
+
+93
+00:06:59,830 --> 00:07:04,060
+And it's Esper equals and vice set blub.
+
+94
+00:07:08,210 --> 00:07:09,260
+And passed the handle.
+
+95
+00:07:10,840 --> 00:07:12,130
+And then the key is.
+
+96
+00:07:14,440 --> 00:07:19,450
+And the value is why fi SDR config, SDR.
+
+97
+00:07:22,380 --> 00:07:27,390
+Aside, and the length is our max assisted length.
+
+98
+00:07:30,770 --> 00:07:33,740
+And now we'll check the air status and say if.
+
+99
+00:07:35,600 --> 00:07:39,360
+ESP error is not equal to ESP, OK?
+
+100
+00:07:41,100 --> 00:07:42,570
+Then let's print the error.
+
+101
+00:07:42,900 --> 00:07:45,150
+The same as before, so we can copy this.
+
+102
+00:07:47,620 --> 00:07:52,090
+And then say they're setting aside to invest.
+
+103
+00:07:55,600 --> 00:07:56,020
+All right.
+
+104
+00:07:56,440 --> 00:07:58,690
+And next, we can set the password in the same manner.
+
+105
+00:07:58,750 --> 00:08:00,070
+So let's copy this one.
+
+106
+00:08:04,840 --> 00:08:05,770
+And pace below.
+
+107
+00:08:07,740 --> 00:08:09,450
+And let's change this to password.
+
+108
+00:08:11,830 --> 00:08:13,510
+And change the key to password.
+
+109
+00:08:15,570 --> 00:08:17,400
+And the value is the password.
+
+110
+00:08:20,610 --> 00:08:23,220
+All right, in the print message is password.
+
+111
+00:08:27,250 --> 00:08:27,940
+So next.
+
+112
+00:08:29,240 --> 00:08:31,280
+We can commit credentials.
+
+113
+00:08:32,580 --> 00:08:33,480
+Two knives.
+
+114
+00:08:35,080 --> 00:08:39,610
+So let's do ESP air equals envious commit.
+
+115
+00:08:40,710 --> 00:08:41,520
+Pass the handle.
+
+116
+00:08:45,700 --> 00:08:53,380
+And now let's do the checking, let's say, if spare is not equal to ESP, OK?
+
+117
+00:08:55,410 --> 00:08:57,360
+Then let's print the message and return the error.
+
+118
+00:09:01,980 --> 00:09:05,310
+It will change this to committing credentials to.
+
+119
+00:09:12,440 --> 00:09:12,770
+Right.
+
+120
+00:09:12,980 --> 00:09:17,480
+And next, let's call envy as close in past the handle.
+
+121
+00:09:20,040 --> 00:09:21,570
+Now, S.P. Lug.
+
+122
+00:09:25,190 --> 00:09:26,060
+That the function.
+
+123
+00:09:29,160 --> 00:09:31,950
+Wrote Why five state config?
+
+124
+00:09:33,610 --> 00:09:34,990
+Station, as you said.
+
+125
+00:09:37,470 --> 00:09:40,260
+And we'll print it and password.
+
+126
+00:09:41,300 --> 00:09:42,150
+Animal print that.
+
+127
+00:09:44,580 --> 00:09:48,090
+And then we'll pass wi fi esta config.
+
+128
+00:09:49,630 --> 00:09:56,170
+Staked aside and why fi SCA config stay.
+
+129
+00:09:57,480 --> 00:09:58,080
+Password.
+
+130
+00:10:01,390 --> 00:10:01,750
+All right.
+
+131
+00:10:03,130 --> 00:10:04,360
+And now let's print that.
+
+132
+00:10:06,120 --> 00:10:06,810
+The function.
+
+133
+00:10:10,160 --> 00:10:11,680
+Returned ESP, OK.
+
+134
+00:10:15,210 --> 00:10:17,610
+Now, actually, let's return ESB, OK?
+
+135
+00:10:19,660 --> 00:10:21,880
+OK, so we return, OK, if all went well.
+
+136
+00:10:22,970 --> 00:10:25,790
+All right, so next, let's do the load state credits function here.
+
+137
+00:10:31,870 --> 00:10:33,580
+All right, so now I'll get this interview.
+
+138
+00:10:37,540 --> 00:10:39,610
+And first, let's create an invoice handle here.
+
+139
+00:10:41,720 --> 00:10:42,500
+And its handle.
+
+140
+00:10:45,020 --> 00:10:48,140
+And we needed spare time, ESP Air.
+
+141
+00:10:49,790 --> 00:10:51,230
+And now let's ISP lug.
+
+142
+00:10:54,260 --> 00:10:55,280
+That the function here.
+
+143
+00:10:59,020 --> 00:11:01,870
+Is loading Wi-Fi credentials?
+
+144
+00:11:04,230 --> 00:11:04,920
+From flesh.
+
+145
+00:11:09,090 --> 00:11:10,320
+And I will say if.
+
+146
+00:11:11,130 --> 00:11:14,190
+Envious is open in past the space.
+
+147
+00:11:21,000 --> 00:11:22,470
+And it's envious, read only.
+
+148
+00:11:24,480 --> 00:11:25,920
+Pass a reference to the handle.
+
+149
+00:11:27,460 --> 00:11:29,470
+And if that returns, ESP, OK.
+
+150
+00:11:30,890 --> 00:11:32,510
+Then we'll open up the curly braces.
+
+151
+00:11:34,430 --> 00:11:35,510
+And then we'll say else.
+
+152
+00:11:36,850 --> 00:11:38,290
+Put our return false you.
+
+153
+00:11:41,900 --> 00:11:46,300
+Now, let's go back up to the successful case, and we need a Wi-Fi config type pointer.
+
+154
+00:11:48,970 --> 00:11:55,570
+WI fi SJ config, and let's use a wi fi app, get wi fi config function.
+
+155
+00:11:56,820 --> 00:12:03,150
+And now we need to check the point to and say, if we stay config, there's no.
+
+156
+00:12:05,860 --> 00:12:07,660
+Then we'll want to allocate memory for it.
+
+157
+00:12:07,900 --> 00:12:10,270
+So say we fight stay config.
+
+158
+00:12:13,360 --> 00:12:14,080
+Equals.
+
+159
+00:12:15,260 --> 00:12:19,490
+Why fi config type cast pointer and now, Malak?
+
+160
+00:12:20,580 --> 00:12:21,660
+For the size of.
+
+161
+00:12:22,750 --> 00:12:24,070
+Why fi config type?
+
+162
+00:12:28,120 --> 00:12:32,290
+Next, we need to set the five star config.
+
+163
+00:12:33,880 --> 00:12:34,540
+Two zero.
+
+164
+00:12:35,820 --> 00:12:38,820
+For the size of Wi-Fi config type.
+
+165
+00:12:42,760 --> 00:12:45,730
+OK, so next, we need to allocate a buffer.
+
+166
+00:12:49,570 --> 00:12:51,030
+And let's use size T.
+
+167
+00:12:52,800 --> 00:12:54,390
+Why fi config size?
+
+168
+00:12:55,590 --> 00:12:59,310
+Equals size of the white flight config type.
+
+169
+00:13:02,860 --> 00:13:07,810
+And now we need a U.S. aid point to call it white flight config buffer.
+
+170
+00:13:09,730 --> 00:13:12,550
+Equals UNT eight typecast.
+
+171
+00:13:14,160 --> 00:13:14,820
+Malak.
+
+172
+00:13:15,780 --> 00:13:16,710
+Signs of.
+
+173
+00:13:18,220 --> 00:13:19,720
+UNT a type.
+
+174
+00:13:21,110 --> 00:13:24,740
+Multiplied by the wi fi config size.
+
+175
+00:13:27,240 --> 00:13:27,750
+OK.
+
+176
+00:13:27,780 --> 00:13:29,700
+And that ensures our buffer is large enough.
+
+177
+00:13:30,800 --> 00:13:33,890
+So now Mims said the Wi-Fi config buffer.
+
+178
+00:13:35,280 --> 00:13:36,030
+Two zero.
+
+179
+00:13:37,540 --> 00:13:38,620
+For the size of.
+
+180
+00:13:39,540 --> 00:13:41,040
+Wife iwconfig says.
+
+181
+00:13:42,190 --> 00:13:43,930
+And that ensures that buffer is clear.
+
+182
+00:13:46,250 --> 00:13:48,170
+Right, so next, let's load the suicide.
+
+183
+00:13:49,130 --> 00:13:51,530
+And we'll see if I can fix size.
+
+184
+00:13:53,030 --> 00:13:57,440
+Equals the size of wi fi star config.
+
+185
+00:13:59,920 --> 00:14:02,320
+As to that essence, I'd.
+
+186
+00:14:03,710 --> 00:14:08,720
+OK, next, use Espérer equals envious, get love.
+
+187
+00:14:09,760 --> 00:14:10,930
+Now past the handle.
+
+188
+00:14:12,210 --> 00:14:13,440
+Key is the suicide.
+
+189
+00:14:14,660 --> 00:14:16,970
+And the value as a wife, I can see buffer.
+
+190
+00:14:18,620 --> 00:14:21,560
+And the length is a reference to a wife iwconfig size.
+
+191
+00:14:22,740 --> 00:14:23,100
+OK.
+
+192
+00:14:23,550 --> 00:14:28,790
+And then say, if Esper is not equal to ESP, OK?
+
+193
+00:14:30,440 --> 00:14:35,330
+Then we need to free the memory, so say free wi fi config buffer.
+
+194
+00:14:39,040 --> 00:14:40,080
+And then let's print.
+
+195
+00:14:42,210 --> 00:14:43,170
+That dysfunction.
+
+196
+00:14:46,200 --> 00:14:47,400
+Now, let's give the air.
+
+197
+00:14:49,890 --> 00:14:53,910
+And say no station, as the side found in Vice.
+
+198
+00:14:56,140 --> 00:14:58,630
+And then use the air to name.
+
+199
+00:15:01,110 --> 00:15:02,490
+And pass the SPRO.
+
+200
+00:15:06,000 --> 00:15:07,200
+And now return false.
+
+201
+00:15:09,850 --> 00:15:15,280
+All right, so now we need to copy the suicide retrieved from flesh to our application by config.
+
+202
+00:15:15,970 --> 00:15:17,620
+So here let's use MEMC copy.
+
+203
+00:15:18,800 --> 00:15:20,780
+To our Wi-Fi star config.
+
+204
+00:15:22,990 --> 00:15:28,060
+Stay put aside from the wife iwconfig buffer.
+
+205
+00:15:29,680 --> 00:15:31,420
+For the Wi-Fi config size.
+
+206
+00:15:35,260 --> 00:15:35,980
+OK, great.
+
+207
+00:15:36,730 --> 00:15:38,860
+So next, we need to load the password.
+
+208
+00:15:39,490 --> 00:15:43,450
+So let's just use the same routine here so we can copy this one above.
+
+209
+00:15:46,330 --> 00:15:47,410
+And now let's use it below.
+
+210
+00:15:48,560 --> 00:15:51,440
+Now, let's change this comment here to load password.
+
+211
+00:15:53,240 --> 00:15:55,190
+And change this to password as well.
+
+212
+00:15:57,170 --> 00:16:01,430
+And just so you're aware this is our accessing the information from this structure.
+
+213
+00:16:02,470 --> 00:16:03,010
+Right here.
+
+214
+00:16:04,050 --> 00:16:04,440
+OK.
+
+215
+00:16:06,800 --> 00:16:09,260
+So next, let's change the key to password.
+
+216
+00:16:12,880 --> 00:16:15,250
+And for the printed text, let's change that.
+
+217
+00:16:16,810 --> 00:16:18,340
+And let's just change it to.
+
+218
+00:16:20,720 --> 00:16:22,400
+Change it to retrieving password.
+
+219
+00:16:26,810 --> 00:16:27,140
+All right.
+
+220
+00:16:27,320 --> 00:16:28,970
+So now we want to copy.
+
+221
+00:16:30,740 --> 00:16:31,730
+To the password.
+
+222
+00:16:33,670 --> 00:16:39,370
+OK, so here we're using the password key to load the password into our Wi-Fi config buffer.
+
+223
+00:16:39,910 --> 00:16:44,170
+And if successful, we copy it to state that password config.
+
+224
+00:16:45,220 --> 00:16:49,990
+So next, let's free the memory, so we'll say free wi fi config buffer.
+
+225
+00:16:54,460 --> 00:16:57,850
+And then let's call in as close in past the handle.
+
+226
+00:16:59,450 --> 00:17:00,560
+And now we'll print that.
+
+227
+00:17:04,550 --> 00:17:05,540
+The dysfunction.
+
+228
+00:17:10,130 --> 00:17:14,480
+Found a suicide email printed here and password.
+
+229
+00:17:15,589 --> 00:17:16,579
+And we'll printed you.
+
+230
+00:17:19,260 --> 00:17:21,839
+And now give it the wife stay config.
+
+231
+00:17:23,460 --> 00:17:27,210
+Stay DUT assisted in the fight.
+
+232
+00:17:27,329 --> 00:17:28,380
+Stay config.
+
+233
+00:17:29,370 --> 00:17:31,010
+A state that password.
+
+234
+00:17:33,320 --> 00:17:36,680
+And now it's confirmed that the credentials loaded by returning.
+
+235
+00:17:38,240 --> 00:17:39,860
+Why fight state config?
+
+236
+00:17:41,760 --> 00:17:48,120
+Staked aside in the first position, and if it's not equal to a no character.
+
+237
+00:17:49,290 --> 00:17:50,790
+Then we'll know that it returned true.
+
+238
+00:17:53,080 --> 00:17:57,160
+OK, so this return statement confirms that we actually have an SSD loaded.
+
+239
+00:17:58,830 --> 00:18:00,120
+All right, so let's continue.
+
+240
+00:18:01,560 --> 00:18:03,450
+To the clear state creds function.
+
+241
+00:18:05,720 --> 00:18:08,780
+And let's start here by creating an envious handle.
+
+242
+00:18:14,040 --> 00:18:15,900
+We also need an SPRO type.
+
+243
+00:18:17,040 --> 00:18:17,940
+He espérer.
+
+244
+00:18:19,080 --> 00:18:20,220
+Now, let's log.
+
+245
+00:18:23,550 --> 00:18:25,800
+That the clear state creds function.
+
+246
+00:18:27,910 --> 00:18:33,400
+Is clearing Wi-Fi station mode credentials from flesh?
+
+247
+00:18:36,950 --> 00:18:38,600
+And first of all, ESB Air.
+
+248
+00:18:39,640 --> 00:18:41,680
+Equals in vice open.
+
+249
+00:18:43,130 --> 00:18:47,360
+Pass the name space and it's envious, read write mode.
+
+250
+00:18:49,890 --> 00:18:51,750
+And it's a reference to our handle.
+
+251
+00:18:54,620 --> 00:18:59,480
+Now we'll see if the is not equal to ESP, OK?
+
+252
+00:19:00,680 --> 00:19:01,730
+And then we'll print that.
+
+253
+00:19:03,230 --> 00:19:04,220
+That a function.
+
+254
+00:19:06,770 --> 00:19:09,830
+Resulted in error and will print the error.
+
+255
+00:19:11,330 --> 00:19:14,780
+And we'll say opening envious handle.
+
+256
+00:19:16,700 --> 00:19:19,220
+And then use ESP Air to name.
+
+257
+00:19:20,710 --> 00:19:22,060
+Past the ESB air.
+
+258
+00:19:25,160 --> 00:19:26,840
+Pass the ESPOIR here.
+
+259
+00:19:30,250 --> 00:19:31,690
+Now we return the error.
+
+260
+00:19:35,100 --> 00:19:35,490
+OK.
+
+261
+00:19:36,700 --> 00:19:38,680
+So next, we'll erase credentials.
+
+262
+00:19:40,410 --> 00:19:44,640
+And then do ESB error equals in race all?
+
+263
+00:19:46,090 --> 00:19:47,080
+And pass the handle.
+
+264
+00:19:48,260 --> 00:19:52,760
+And say, if aespa error is not equal to ESP, OK?
+
+265
+00:19:54,680 --> 00:19:55,520
+Then let's print.
+
+266
+00:19:58,710 --> 00:19:59,190
+And say.
+
+267
+00:20:00,880 --> 00:20:04,060
+Error erasing station mode credentials.
+
+268
+00:20:05,270 --> 00:20:06,880
+And then I'll fix the spelling here.
+
+269
+00:20:09,790 --> 00:20:12,010
+Now, let's return the air.
+
+270
+00:20:15,420 --> 00:20:15,780
+OK.
+
+271
+00:20:16,650 --> 00:20:21,420
+And next, we can commit clearing credentials from envious.
+
+272
+00:20:25,370 --> 00:20:26,810
+And then do ESB Air.
+
+273
+00:20:28,020 --> 00:20:29,760
+Equals envious commit.
+
+274
+00:20:31,100 --> 00:20:32,120
+In pass the handle.
+
+275
+00:20:33,530 --> 00:20:35,450
+And say, if Esper.
+
+276
+00:20:36,550 --> 00:20:38,800
+It's not equal to ESP, OK?
+
+277
+00:20:40,360 --> 00:20:41,230
+Then we'll print.
+
+278
+00:20:44,770 --> 00:20:45,810
+This time will say.
+
+279
+00:20:46,910 --> 00:20:48,640
+Air envious commit.
+
+280
+00:20:51,740 --> 00:20:52,160
+OK.
+
+281
+00:20:53,850 --> 00:20:55,620
+So now we can envy as close.
+
+282
+00:20:56,790 --> 00:20:57,390
+The handle.
+
+283
+00:20:59,620 --> 00:21:00,580
+And then we can print.
+
+284
+00:21:03,090 --> 00:21:05,250
+There are clear state creds function.
+
+285
+00:21:07,100 --> 00:21:08,540
+Returned ESP, OK.
+
+286
+00:21:13,580 --> 00:21:15,590
+And now we can return ESP, OK?
+
+287
+00:21:19,490 --> 00:21:19,850
+All right.
+
+288
+00:21:20,030 --> 00:21:20,750
+That looks good.
+
+289
+00:21:21,810 --> 00:21:24,720
+OK, so but I have one mistake up here.
+
+290
+00:21:26,930 --> 00:21:30,830
+This password length, this should actually be Max password length.
+
+291
+00:21:37,040 --> 00:21:40,460
+And one more thing, the spelling up here should be const.
+
+292
+00:21:42,300 --> 00:21:45,240
+All right, so now let's build a project to make sure there's no errors.
+
+293
+00:22:05,270 --> 00:22:06,350
+OK, so that looks good.
+
+294
+00:22:06,500 --> 00:22:08,750
+So in the next lesson, we'll put these functions to use.
+

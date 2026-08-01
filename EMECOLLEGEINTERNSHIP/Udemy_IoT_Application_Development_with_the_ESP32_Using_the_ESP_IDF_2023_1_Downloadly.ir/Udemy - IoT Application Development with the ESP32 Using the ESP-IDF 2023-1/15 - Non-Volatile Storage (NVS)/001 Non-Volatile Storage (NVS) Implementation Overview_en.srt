@@ -1,0 +1,232 @@
+1
+00:00:07,020 --> 00:00:12,090
+Hello and welcome to the non-volatile storage implementation section in this section, I'll give a brief
+
+2
+00:00:12,090 --> 00:00:18,210
+overview of the SPF in vs library and how we're going to use it to save and load wi fi credentials.
+
+3
+00:00:20,390 --> 00:00:22,700
+So first, let's take a look at the implementation.
+
+4
+00:00:24,110 --> 00:00:30,350
+After the SB 32 successfully connects to an access point via the Web page, the SSA, ID and password
+
+5
+00:00:30,350 --> 00:00:34,010
+used to connect will be saved to flesh and upon startup.
+
+6
+00:00:34,400 --> 00:00:40,310
+The SB 32 will check the flash for any saved credentials and if there are any, they will be used to
+
+7
+00:00:40,310 --> 00:00:41,780
+attempt to connection immediately.
+
+8
+00:00:42,320 --> 00:00:44,900
+This is a very common set up in DeFi applications.
+
+9
+00:00:45,470 --> 00:00:46,640
+Also upon startup.
+
+10
+00:00:47,090 --> 00:00:52,130
+If after the Max connection retrace is reached and a connection attempt cannot be established.
+
+11
+00:00:52,400 --> 00:00:56,420
+We will clear the flash so those credentials won't be used to connect anymore.
+
+12
+00:00:57,570 --> 00:01:02,430
+If the disconnect button on the Web page is used to disconnect, the credentials will also be cleared
+
+13
+00:01:02,430 --> 00:01:03,960
+from the flesh in this case as well.
+
+14
+00:01:04,769 --> 00:01:09,120
+And once you have an idea of setting up the state machine and the Wi-Fi application so that these actions
+
+15
+00:01:09,120 --> 00:01:13,410
+can be handled, you'll be able to customize or adjust the application to your needs.
+
+16
+00:01:16,560 --> 00:01:21,840
+All right, so let's take a look at some of the APIs from the impressive body of inverse library and
+
+17
+00:01:21,840 --> 00:01:22,620
+how we can use them.
+
+18
+00:01:24,470 --> 00:01:30,050
+All right, so here is a link to impressive documentation for the non-volatile storage library and API
+
+19
+00:01:30,050 --> 00:01:30,560
+reference.
+
+20
+00:01:31,010 --> 00:01:36,230
+I do suggest you do some reading on your own here and at least browse over the introduction underlying
+
+21
+00:01:36,230 --> 00:01:39,710
+storage keys and values in namespace sections.
+
+22
+00:01:40,190 --> 00:01:44,780
+You can also find examples and information about other features that we will not use in this course.
+
+23
+00:01:48,480 --> 00:01:55,080
+In general, NCVHS components save and load data from storage that is preserved between boots so you
+
+24
+00:01:55,080 --> 00:01:57,880
+can turn the device off or if it loses power.
+
+25
+00:01:57,900 --> 00:02:01,800
+The data that you've stored will still be there for retrieval when it starts up again.
+
+26
+00:02:02,760 --> 00:02:08,490
+In the documentation, it's noted that invest using the impressive development framework works best
+
+27
+00:02:08,759 --> 00:02:12,630
+for storing small values e.g. Wi-Fi credentials in our case.
+
+28
+00:02:13,600 --> 00:02:21,790
+And about keys and values, envious operates on the key value pairs, keys or ASCII strings and values
+
+29
+00:02:21,790 --> 00:02:28,570
+are the types, for example, integer types, strings and variable length byte binary data, also known
+
+30
+00:02:28,570 --> 00:02:29,230
+as blobs.
+
+31
+00:02:30,300 --> 00:02:37,230
+And about namespaces, we assign each key value pair to a namespace, and we specify this namespace
+
+32
+00:02:37,230 --> 00:02:41,250
+when using certain inverse APIs, for example, and vice open.
+
+33
+00:02:43,630 --> 00:02:48,100
+OK, so let's take a look at some more specifics regarding saving and retrieving white flight credentials
+
+34
+00:02:48,670 --> 00:02:50,230
+to begin with saving credentials.
+
+35
+00:02:50,560 --> 00:02:53,160
+We need to open the storage area with the given name space.
+
+36
+00:02:53,650 --> 00:02:56,960
+We'll call PNB's open and specify the name space name.
+
+37
+00:02:57,340 --> 00:03:03,490
+Open in read write mode in our case and pass the handle to be used for subsequent calls to end via set
+
+38
+00:03:03,880 --> 00:03:10,360
+and invest commit functions to set the SSA, ID and password and for the Navy open function.
+
+39
+00:03:10,720 --> 00:03:16,450
+The first parameter taken is the name space, then the mode which is envious, read, write or invest,
+
+40
+00:03:16,450 --> 00:03:19,550
+read only and the third parameter is the handle.
+
+41
+00:03:20,200 --> 00:03:22,840
+And if successful, the return code is zero.
+
+42
+00:03:24,270 --> 00:03:30,570
+We will then set the variable length binary value for the society and password using Nvidia's set blub,
+
+43
+00:03:31,080 --> 00:03:34,200
+which takes the handle obtained from the envious open function.
+
+44
+00:03:34,800 --> 00:03:39,120
+Note we cannot use the set function if the handle was opened and read only mode.
+
+45
+00:03:40,130 --> 00:03:46,730
+All right, so then the key name, for example, we'll say suicide in quotation marks, then the next
+
+46
+00:03:46,730 --> 00:03:53,300
+parameter is the actual value to set, which is the suicide ID and password, and then we'll specify
+
+47
+00:03:53,300 --> 00:03:53,810
+the length.
+
+48
+00:03:55,610 --> 00:04:01,220
+After setting the values, we need to write the changes to non-volatile storage using NCVHS commit,
+
+49
+00:04:01,850 --> 00:04:07,790
+which takes the handle as the only parameter and for getting the credentials on startup, will also
+
+50
+00:04:07,790 --> 00:04:09,500
+need to call and be as open.
+
+51
+00:04:09,500 --> 00:04:15,980
+And then in our case, we'll call invoice get blub, which takes the handle the key name that we had
+
+52
+00:04:15,980 --> 00:04:22,910
+previously used when saving and the value which will have to dynamically allocate memory for and the
+
+53
+00:04:22,910 --> 00:04:24,320
+size or length as well.
+
+54
+00:04:27,650 --> 00:04:33,410
+When we need to clear the credentials, will again open the storage area using NGV's open in read write
+
+55
+00:04:33,410 --> 00:04:40,250
+mode, then we'll erase the key value pairs using envy as a result, which only takes the handle and
+
+56
+00:04:40,250 --> 00:04:44,570
+after racing, will commit the changes to NPS using NCVHS commit.
+
+57
+00:04:48,770 --> 00:04:50,330
+So that's all we need to cover for now.
+
+58
+00:04:50,360 --> 00:04:51,260
+Let's get decoding.
+
