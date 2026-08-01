@@ -1,0 +1,340 @@
+1
+00:00:06,510 --> 00:00:10,230
+Hello and welcome to the SPF Components Library section.
+
+2
+00:00:10,410 --> 00:00:16,710
+And in this section I'll introduce the ESP IDF Components Library, which is a library with an abundance
+
+3
+00:00:16,710 --> 00:00:22,110
+of sensor drivers and drivers for other components that may come in handy in your future projects or
+
+4
+00:00:22,110 --> 00:00:23,580
+within this course, if you like.
+
+5
+00:00:23,580 --> 00:00:29,340
+And all of these components and sensor drivers will be at your disposal once we integrate this library
+
+6
+00:00:29,340 --> 00:00:31,320
+and I'll show you how to get started with it.
+
+7
+00:00:32,509 --> 00:00:37,160
+So our plan for the lesson includes an introduction to the library and I'll show you how to integrate
+
+8
+00:00:37,160 --> 00:00:37,430
+it.
+
+9
+00:00:37,430 --> 00:00:41,210
+And in the next lesson we'll actually do the integration and run an example.
+
+10
+00:00:41,210 --> 00:00:46,460
+But I should be clear that using this library is completely optional and not necessary to complete the
+
+11
+00:00:46,460 --> 00:00:47,090
+course.
+
+12
+00:00:47,090 --> 00:00:51,020
+So you can always come back to this lesson whenever you'd like, if you want to use it.
+
+13
+00:00:51,460 --> 00:00:51,740
+All right.
+
+14
+00:00:51,740 --> 00:00:56,180
+So we'll start with the brief introduction of the library to show you where to find the documentation
+
+15
+00:00:56,180 --> 00:00:57,200
+and examples.
+
+16
+00:00:57,200 --> 00:01:02,120
+And then we'll take a look at our project structure and where this library fits into it, which will
+
+17
+00:01:02,120 --> 00:01:06,590
+then lead us into reviewing the steps that will take for the integration, and that will segue us into
+
+18
+00:01:06,590 --> 00:01:08,420
+the demonstration for the next lesson.
+
+19
+00:01:09,770 --> 00:01:13,730
+So the components library contains an abundance of drivers for sensors and more.
+
+20
+00:01:14,030 --> 00:01:15,440
+In the first link here.
+
+21
+00:01:16,300 --> 00:01:20,290
+Takes you to the SB Lib Components GitHub page.
+
+22
+00:01:20,800 --> 00:01:23,050
+Here you'll find information to help you get started.
+
+23
+00:01:24,000 --> 00:01:26,910
+Links to documentation and frequently asked questions.
+
+24
+00:01:27,820 --> 00:01:34,390
+As well as descriptions for all of the components included in the list is quite extensive and the library
+
+25
+00:01:34,390 --> 00:01:38,770
+seems to be actively maintained with contributions made by the list of developers here.
+
+26
+00:01:39,860 --> 00:01:40,370
+All right.
+
+27
+00:01:40,370 --> 00:01:42,290
+And if we go back to the documentation.
+
+28
+00:01:44,440 --> 00:01:45,730
+And then follow the link.
+
+29
+00:01:48,410 --> 00:01:50,480
+And again, first we have how to use it.
+
+30
+00:01:52,650 --> 00:01:55,650
+Then they provided links for all of the available components.
+
+31
+00:01:55,770 --> 00:02:01,290
+For example, if we're looking for the BM 680, which is for temperature, humidity as well as pressure.
+
+32
+00:02:02,740 --> 00:02:08,229
+They provided in-depth information about the sensor as well as documentation about the implementation.
+
+33
+00:02:09,110 --> 00:02:15,260
+And much like the documentation provided for the SBA itself, they've provided example, usage scenarios
+
+34
+00:02:15,260 --> 00:02:17,090
+and details about the results.
+
+35
+00:02:18,310 --> 00:02:22,200
+Measurement settings and other useful information about the beam.
+
+36
+00:02:22,210 --> 00:02:23,020
+680.
+
+37
+00:02:24,160 --> 00:02:30,160
+As well as full source code documentation and this is really nicely done and is a great resource.
+
+38
+00:02:31,030 --> 00:02:36,250
+So now let's go back to the repository and I'll show you where to find the examples from the GitHub
+
+39
+00:02:36,250 --> 00:02:36,750
+page.
+
+40
+00:02:36,760 --> 00:02:42,070
+Go to the examples folder, then here you'll find examples for all components which you can use to get
+
+41
+00:02:42,070 --> 00:02:42,850
+started with.
+
+42
+00:02:43,700 --> 00:02:46,690
+Now let's take a look at the BMS 680 sensor example.
+
+43
+00:02:48,400 --> 00:02:50,440
+And there we have everything we need to know.
+
+44
+00:02:50,470 --> 00:02:56,830
+We see what it does, how to connect the eye, to see serial clock and serial data lines, and then
+
+45
+00:02:56,830 --> 00:02:58,510
+example code in the main folder.
+
+46
+00:03:00,650 --> 00:03:01,910
+In not see.
+
+47
+00:03:03,010 --> 00:03:04,870
+We can simply take this file.
+
+48
+00:03:05,140 --> 00:03:11,470
+And what I would do is just create a function based on App Main here and integrate it into the application.
+
+49
+00:03:12,010 --> 00:03:12,400
+All right.
+
+50
+00:03:12,400 --> 00:03:14,410
+So let's go back up to the main folder.
+
+51
+00:03:15,070 --> 00:03:19,540
+And what I'm going to do is I'm going to show you how these macros are defined and brought into the
+
+52
+00:03:19,540 --> 00:03:20,410
+application.
+
+53
+00:03:22,150 --> 00:03:22,420
+Okay.
+
+54
+00:03:22,510 --> 00:03:25,450
+So let's go to this k config project build file.
+
+55
+00:03:26,410 --> 00:03:32,410
+And they've provided this file for us which we can utilize in our project, and it enables access to
+
+56
+00:03:32,410 --> 00:03:39,100
+define these settings directly from the SDK config menu from the expressive ID and I'll show you how
+
+57
+00:03:39,100 --> 00:03:42,460
+that works in the next lesson when we integrate the library.
+
+58
+00:03:43,850 --> 00:03:47,390
+And so that we can visualize where this component fits into our project.
+
+59
+00:03:47,780 --> 00:03:51,920
+Here's our course project structure without the sensor library component.
+
+60
+00:03:53,100 --> 00:03:56,460
+And the library will take its place as part of our extra components.
+
+61
+00:03:56,670 --> 00:03:59,370
+And there are some steps that we'll need to take to achieve this.
+
+62
+00:04:00,520 --> 00:04:03,610
+And we'll integrate the library by cloning the repository.
+
+63
+00:04:03,970 --> 00:04:06,700
+And we have the Git Clone Command for that right here.
+
+64
+00:04:07,920 --> 00:04:13,860
+And we'll also adjust the top level see list, text file, which is the see make list file in the project
+
+65
+00:04:13,860 --> 00:04:14,580
+folder.
+
+66
+00:04:14,940 --> 00:04:19,440
+And we'll add this line to include the ESP ADF sensor library component.
+
+67
+00:04:20,070 --> 00:04:26,040
+Then we'll integrate an example and you can either use mine or choose one from the library itself and
+
+68
+00:04:26,040 --> 00:04:31,650
+we'll need to adjust the make list file within the main folder to include the example files.
+
+69
+00:04:32,220 --> 00:04:39,000
+Also, we'll add the K config project build file from the example into the main folder and I'll show
+
+70
+00:04:39,000 --> 00:04:41,310
+you how that works with the sdhc config.
+
+71
+00:04:41,820 --> 00:04:46,470
+And lastly, I'll walk you through a few adjustments that will need to make for the application files.
+
+72
+00:04:46,740 --> 00:04:52,830
+We'll adjust Main C and we'll add this tasks common header file as well, which will eventually add
+
+73
+00:04:52,830 --> 00:04:54,600
+to your course source files anyway.
+
+74
+00:04:56,120 --> 00:05:01,430
+So again, any lessons added to this section are completely optional and you can consider these as bonus
+
+75
+00:05:01,430 --> 00:05:06,950
+lessons as this section will not include step by step programming, since we're simply integrating the
+
+76
+00:05:06,950 --> 00:05:09,290
+library along with example code.
+
+77
+00:05:09,410 --> 00:05:14,720
+And the idea here is that you can either use my code directly based on these examples, or you can watch
+
+78
+00:05:14,720 --> 00:05:18,280
+the lesson to learn by example for inspiration for your own projects.
+
+79
+00:05:18,290 --> 00:05:22,490
+If you plan on using the library or you can skip these lessons entirely.
+
+80
+00:05:23,150 --> 00:05:27,590
+So I'll start with the BM 680, which will communicate with override to see.
+
+81
+00:05:28,360 --> 00:05:32,920
+And I also plan on adding one or two more examples to this section in the case that anyone finds it
+
+82
+00:05:32,920 --> 00:05:33,580
+useful.
+
+83
+00:05:35,260 --> 00:05:35,500
+All right.
+
+84
+00:05:35,500 --> 00:05:38,560
+So let's continue to the next lesson if you'd like to integrate the library.
+
+85
+00:05:38,590 --> 00:05:40,570
+Otherwise, I'll see you in the section after.
+
