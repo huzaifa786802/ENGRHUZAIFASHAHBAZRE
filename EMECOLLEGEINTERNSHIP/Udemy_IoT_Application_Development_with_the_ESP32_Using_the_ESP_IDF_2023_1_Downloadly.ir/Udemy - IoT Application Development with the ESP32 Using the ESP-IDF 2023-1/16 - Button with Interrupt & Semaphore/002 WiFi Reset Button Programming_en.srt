@@ -1,0 +1,808 @@
+1
+00:00:06,880 --> 00:00:09,940
+We'll start off this lesson by adding a couple of new files and domain.
+
+2
+00:00:10,210 --> 00:00:11,910
+So let's first add the new source file.
+
+3
+00:00:13,610 --> 00:00:15,860
+And call it Wi-Fi reset button.
+
+4
+00:00:16,870 --> 00:00:17,470
+Don't seem.
+
+5
+00:00:19,060 --> 00:00:20,500
+And then let's add a new head of file.
+
+6
+00:00:23,880 --> 00:00:26,070
+And call this Wi-Fi reset button.
+
+7
+00:00:27,680 --> 00:00:28,220
+But each.
+
+8
+00:00:31,320 --> 00:00:32,850
+OK, so we'll get organized to you.
+
+9
+00:00:36,810 --> 00:00:38,310
+And then go to see make lists.
+
+10
+00:00:39,720 --> 00:00:42,900
+And to the sources, let's add the wi fi reset button.
+
+11
+00:00:44,320 --> 00:00:45,250
+That see file.
+
+12
+00:00:46,820 --> 00:00:47,240
+All right.
+
+13
+00:00:47,300 --> 00:00:49,010
+And now let's go to tasks common.
+
+14
+00:00:51,780 --> 00:00:57,300
+And Sheer will add the information for the Wi-Fi reset button task.
+
+15
+00:00:59,410 --> 00:01:02,890
+And define why fi reset button.
+
+16
+00:01:06,540 --> 00:01:07,830
+And I'll copy this part.
+
+17
+00:01:09,350 --> 00:01:11,030
+And it's the stack size.
+
+18
+00:01:12,210 --> 00:01:14,460
+And make it 20, 48 bytes.
+
+19
+00:01:15,330 --> 00:01:17,610
+And next is the priority.
+
+20
+00:01:19,310 --> 00:01:20,030
+As six.
+
+21
+00:01:20,950 --> 00:01:21,670
+And the next.
+
+22
+00:01:22,980 --> 00:01:23,610
+The caller ID.
+
+23
+00:01:24,940 --> 00:01:25,810
+And make it zero.
+
+24
+00:01:27,900 --> 00:01:28,830
+OK, it looks good.
+
+25
+00:01:29,640 --> 00:01:32,580
+So next, let's go to the Wi-Fi reset button header file.
+
+26
+00:01:34,930 --> 00:01:40,720
+And the first thing that we'll do here is create the default interrupt flag.
+
+27
+00:01:43,770 --> 00:01:48,960
+And define it as ESP into our flag default.
+
+28
+00:01:50,310 --> 00:01:51,150
+And it's zero.
+
+29
+00:01:51,960 --> 00:01:59,160
+OK, next, let's define the GPIO and first say wi fi reset button is the boot button.
+
+30
+00:02:01,060 --> 00:02:01,900
+On the delicate.
+
+31
+00:02:04,060 --> 00:02:07,600
+And define it as why fi reset button.
+
+32
+00:02:08,850 --> 00:02:10,860
+And it's A0, right?
+
+33
+00:02:11,940 --> 00:02:15,750
+OK, nuts, let's make a function prototype and make a comment here.
+
+34
+00:02:16,470 --> 00:02:18,570
+Configures wi fi reset button.
+
+35
+00:02:20,550 --> 00:02:22,320
+And interrupt configuration.
+
+36
+00:02:25,710 --> 00:02:28,320
+And it's void fi reset button.
+
+37
+00:02:29,950 --> 00:02:30,580
+Config.
+
+38
+00:02:31,390 --> 00:02:32,080
+And it's void.
+
+39
+00:02:34,050 --> 00:02:34,380
+All right.
+
+40
+00:02:34,830 --> 00:02:38,430
+And now let's copy this so we can define it in the C file.
+
+41
+00:02:41,660 --> 00:02:44,300
+And in the C file, let's just drop it right here.
+
+42
+00:02:47,230 --> 00:02:49,090
+OK, now let's include fructose.
+
+43
+00:02:49,990 --> 00:02:51,070
+And the first include.
+
+44
+00:02:52,440 --> 00:02:53,460
+This free autos.
+
+45
+00:02:54,440 --> 00:02:56,990
+Slash and I'll just copy this part.
+
+46
+00:02:59,500 --> 00:03:01,030
+And this one is free autos.
+
+47
+00:03:02,210 --> 00:03:02,570
+Courage.
+
+48
+00:03:04,440 --> 00:03:07,230
+And next include Trescothick.
+
+49
+00:03:08,420 --> 00:03:10,850
+And also include Reata SIM for.
+
+50
+00:03:14,330 --> 00:03:17,240
+And make sure you note the proper spelling here, it's simple.
+
+51
+00:03:19,710 --> 00:03:20,760
+And now let's include.
+
+52
+00:03:21,830 --> 00:03:24,650
+Driver slash GPIO Duddridge.
+
+53
+00:03:26,780 --> 00:03:30,080
+And also include our ESP lug tonnage.
+
+54
+00:03:31,460 --> 00:03:32,900
+And that's for our log functions.
+
+55
+00:03:33,800 --> 00:03:40,190
+And next, let's include our application headers, so first include tasks common.
+
+56
+00:03:44,660 --> 00:03:47,960
+And also include Wi-Fi app storage.
+
+57
+00:03:50,350 --> 00:03:51,880
+And of course, we want to include.
+
+58
+00:03:53,110 --> 00:03:54,820
+Our new wi fi reset button.
+
+59
+00:03:57,930 --> 00:03:59,520
+All right, and let's do a tag.
+
+60
+00:04:00,720 --> 00:04:02,280
+Static const care.
+
+61
+00:04:04,940 --> 00:04:07,190
+And call it wi fi reset button.
+
+62
+00:04:13,800 --> 00:04:14,370
+And next.
+
+63
+00:04:15,260 --> 00:04:16,670
+We need a semaphore handle.
+
+64
+00:04:19,980 --> 00:04:27,270
+And it's semaphore handle underscore T and call it Y5 reset semaphore.
+
+65
+00:04:29,820 --> 00:04:30,780
+And said it to no.
+
+66
+00:04:32,980 --> 00:04:36,400
+OK, and now let's go to the Wi-Fi reset button config.
+
+67
+00:04:37,500 --> 00:04:39,990
+And first, we'll create the binary semaphore.
+
+68
+00:04:43,070 --> 00:04:45,140
+And that's a wi fi reset, semaphore.
+
+69
+00:04:47,920 --> 00:04:51,220
+Equals x semaphore create binary.
+
+70
+00:04:58,640 --> 00:04:59,030
+OK.
+
+71
+00:04:59,480 --> 00:05:01,940
+And next, let's configure the button.
+
+72
+00:05:03,020 --> 00:05:04,070
+And set the direction.
+
+73
+00:05:06,550 --> 00:05:09,490
+And use GPIO pad, select GPIO.
+
+74
+00:05:13,570 --> 00:05:15,400
+And pass the Wi-Fi reset button.
+
+75
+00:05:18,480 --> 00:05:20,580
+And then use GPIO set direction.
+
+76
+00:05:24,030 --> 00:05:25,830
+And then pass the Wi-Fi reset button.
+
+77
+00:05:31,240 --> 00:05:34,000
+And set the mode as GPIO mode input.
+
+78
+00:05:39,670 --> 00:05:41,620
+Next, let's enable interrupt.
+
+79
+00:05:44,810 --> 00:05:45,860
+On the negative edge.
+
+80
+00:05:47,980 --> 00:05:50,530
+And use of set interrupt tape.
+
+81
+00:05:51,740 --> 00:05:53,480
+And pass the Wi-Fi reset button.
+
+82
+00:05:57,380 --> 00:06:01,700
+And for the insert type, it's GPIO into your neck edge.
+
+83
+00:06:07,610 --> 00:06:10,520
+And next, let's create the Wi-Fi reset button Teske.
+
+84
+00:06:14,390 --> 00:06:16,850
+With X task creates pinned to core.
+
+85
+00:06:22,130 --> 00:06:25,700
+And call it with the reference to Wi-Fi reset button.
+
+86
+00:06:29,660 --> 00:06:32,660
+And the tag is the same fi reset button.
+
+87
+00:06:35,460 --> 00:06:38,670
+And the depth is a Wi-Fi reset button to ask.
+
+88
+00:06:41,060 --> 00:06:41,840
+Stack size.
+
+89
+00:06:43,100 --> 00:06:44,570
+PV parameters are no.
+
+90
+00:06:45,710 --> 00:06:49,010
+And the priority is a Wi-Fi reset button desk.
+
+91
+00:06:54,140 --> 00:06:55,550
+And the task handle is no.
+
+92
+00:06:56,480 --> 00:06:59,970
+And the caller ID is our Wi-Fi reset button to ask.
+
+93
+00:07:02,190 --> 00:07:02,850
+Korede.
+
+94
+00:07:08,330 --> 00:07:12,480
+Next will install GPIO, our service.
+
+95
+00:07:14,560 --> 00:07:22,750
+And use GPIO and still by Assad's service and pass or ISP into your flag default.
+
+96
+00:07:26,280 --> 00:07:29,070
+OK, next, let's attach the interrupt service routine.
+
+97
+00:07:34,710 --> 00:07:36,840
+With ISI Handler.
+
+98
+00:07:37,870 --> 00:07:38,320
+Add.
+
+99
+00:07:40,390 --> 00:07:42,190
+And pass the Wi-Fi reset button.
+
+100
+00:07:45,320 --> 00:07:50,060
+And then the ISI handler will define it as wi fi reset button ISI Handler.
+
+101
+00:07:54,840 --> 00:07:55,890
+And the dogs are no.
+
+102
+00:07:58,560 --> 00:08:03,630
+OK, so next, we'll have to define the ISI handler and the wi fi reset button to ask.
+
+103
+00:08:04,410 --> 00:08:05,760
+OK, so let's come up you.
+
+104
+00:08:08,400 --> 00:08:11,670
+And let's say why fi reset button desk.
+
+105
+00:08:12,690 --> 00:08:14,610
+Reacts to a boot button event.
+
+106
+00:08:18,280 --> 00:08:20,920
+By sending a message to the Wi-Fi application.
+
+107
+00:08:25,830 --> 00:08:27,720
+To disconnect from Wi-Fi.
+
+108
+00:08:29,670 --> 00:08:31,200
+And clear the saved credentials.
+
+109
+00:08:34,860 --> 00:08:37,350
+All right, so the parameter TV program.
+
+110
+00:08:39,630 --> 00:08:42,030
+Is a parameter which can be passed to the task.
+
+111
+00:08:48,390 --> 00:08:49,380
+So this is a void.
+
+112
+00:08:50,290 --> 00:08:55,870
+A Wi-Fi reset button test, and it's a void pointer TV program.
+
+113
+00:08:58,230 --> 00:09:00,210
+OK, now let's create our endless for loop.
+
+114
+00:09:04,240 --> 00:09:06,640
+And you will need to check if we can obtain the semaphore.
+
+115
+00:09:07,270 --> 00:09:08,230
+So say if.
+
+116
+00:09:09,230 --> 00:09:10,220
+Semaphore, take.
+
+117
+00:09:15,530 --> 00:09:17,510
+And it's the Wi-Fi reset semaphore.
+
+118
+00:09:21,250 --> 00:09:22,270
+Port Max DeLay.
+
+119
+00:09:27,340 --> 00:09:29,110
+And if that returns true.
+
+120
+00:09:33,770 --> 00:09:35,120
+Then let's ESV log.
+
+121
+00:09:39,200 --> 00:09:41,990
+That wi fi reset button interrupt occurred.
+
+122
+00:09:49,160 --> 00:09:52,970
+And then we'll say send a message to disconnect wi fi.
+
+123
+00:09:57,820 --> 00:09:58,900
+And clear credentials.
+
+124
+00:10:00,640 --> 00:10:02,860
+Let's use our wi fi app, send message.
+
+125
+00:10:06,390 --> 00:10:08,370
+And pass the Wi-Fi message.
+
+126
+00:10:09,860 --> 00:10:11,960
+User requested state disconnect.
+
+127
+00:10:15,040 --> 00:10:20,140
+And now we'll put a delay here, so that quick button presses won't result in sending messages in rapid
+
+128
+00:10:20,140 --> 00:10:20,770
+succession.
+
+129
+00:10:21,430 --> 00:10:23,590
+So let's use the task delay.
+
+130
+00:10:27,050 --> 00:10:29,180
+With the delay of two thousand milliseconds.
+
+131
+00:10:37,900 --> 00:10:38,830
+All right, that's it.
+
+132
+00:10:39,340 --> 00:10:43,020
+So next, let's define our ISO handler, and we'll do it up here.
+
+133
+00:10:44,670 --> 00:10:46,620
+And say ISI Handler.
+
+134
+00:10:47,800 --> 00:10:50,350
+For the Wi-Fi reset boot button.
+
+135
+00:10:54,610 --> 00:10:55,750
+And the parameter ARG.
+
+136
+00:10:57,960 --> 00:10:59,700
+Is a parameter which can be passed.
+
+137
+00:11:03,740 --> 00:11:04,880
+To the ISI handler.
+
+138
+00:11:09,690 --> 00:11:12,060
+And it's void, I attribute.
+
+139
+00:11:13,240 --> 00:11:14,660
+And it's a reset button.
+
+140
+00:11:14,680 --> 00:11:15,610
+I saw a handler.
+
+141
+00:11:16,720 --> 00:11:18,910
+And it takes a valid point to ask.
+
+142
+00:11:20,880 --> 00:11:24,000
+And in here will notify the button to ask.
+
+143
+00:11:28,380 --> 00:11:34,740
+Using eczema for GIF from ISO and pass a wi fi reset semaphore.
+
+144
+00:11:37,360 --> 00:11:38,860
+And the second parameter is no.
+
+145
+00:11:41,980 --> 00:11:48,550
+So to recap, we're going to call the public function wi fi reset button config from Maine Dot C, and
+
+146
+00:11:48,550 --> 00:11:53,470
+when the user presses the boot button, the interrupt service routine will be invoked, which gives
+
+147
+00:11:53,470 --> 00:11:54,210
+the semaphore.
+
+148
+00:11:54,790 --> 00:12:00,970
+Then the wi fi reset button task takes the semaphore, which allows the button task to unblock so that
+
+149
+00:12:00,970 --> 00:12:03,910
+the message can be sent to the Wi-Fi application to disconnect.
+
+150
+00:12:04,660 --> 00:12:05,440
+OK, that's it.
+
+151
+00:12:06,070 --> 00:12:08,860
+But we have to make a couple of changes to the Wi-Fi app that see.
+
+152
+00:12:10,840 --> 00:12:13,420
+So come here and let's add another status bit.
+
+153
+00:12:14,230 --> 00:12:19,330
+And we need another status bit to indicate to the application that the ESB thirty two is indeed connected
+
+154
+00:12:19,330 --> 00:12:25,000
+to an access point before reacting to the Wi-Fi disconnect button press and calling the disconnect function.
+
+155
+00:12:25,690 --> 00:12:26,090
+OK.
+
+156
+00:12:26,830 --> 00:12:28,450
+So let's say consent.
+
+157
+00:12:30,660 --> 00:12:33,360
+WI fi app Stay Connected.
+
+158
+00:12:36,380 --> 00:12:37,370
+But IP bit.
+
+159
+00:12:39,850 --> 00:12:40,990
+Equals bid three.
+
+160
+00:12:42,960 --> 00:12:48,420
+All right, so first, we need to set this bid when the ESP 32 has a connection and is assigned an IP.
+
+161
+00:12:49,110 --> 00:12:53,420
+So let's first go down to the gut IP case and the Wi-Fi application task.
+
+162
+00:12:59,110 --> 00:13:02,290
+And Hugh will say X Event Group set bids.
+
+163
+00:13:06,850 --> 00:13:07,810
+For the event group.
+
+164
+00:13:09,360 --> 00:13:10,950
+And then passed the gut IP bit.
+
+165
+00:13:14,940 --> 00:13:17,790
+Now, let's go down to the user request to disconnect case.
+
+166
+00:13:19,370 --> 00:13:21,320
+And here, let's say event bits.
+
+167
+00:13:23,560 --> 00:13:26,590
+Equals X event group get bits.
+
+168
+00:13:31,090 --> 00:13:32,140
+From our event group.
+
+169
+00:13:39,730 --> 00:13:41,000
+And now let's say if.
+
+170
+00:13:42,170 --> 00:13:46,040
+Event bits and the gut IP bid.
+
+171
+00:13:52,310 --> 00:13:55,820
+Then we'll simply take the call we've already written and inserted here.
+
+172
+00:13:58,070 --> 00:13:59,030
+All right, so let's cut it.
+
+173
+00:14:00,130 --> 00:14:00,880
+And pasted here.
+
+174
+00:14:04,000 --> 00:14:10,210
+OK, so whether we arrive here due to a disconnect button press and the web page or via a Wi-Fi reset
+
+175
+00:14:10,210 --> 00:14:16,000
+button, press here will check if there is indeed an active connection first before setting the user
+
+176
+00:14:16,000 --> 00:14:22,540
+request to disconnected, setting the retry number to Max tries, disconnecting Wi-Fi, clearing the
+
+177
+00:14:22,540 --> 00:14:25,480
+station credentials and changing the LTE status.
+
+178
+00:14:25,960 --> 00:14:28,570
+So now we need to update the disconnected case below.
+
+179
+00:14:28,750 --> 00:14:29,610
+So let's go there.
+
+180
+00:14:31,290 --> 00:14:37,320
+And down here, let's say, if event bits and the gut IP bit.
+
+181
+00:14:41,820 --> 00:14:43,430
+Then we'll go ahead and clear the bits.
+
+182
+00:14:49,290 --> 00:14:52,620
+From a prevent group, and it's to gut IP bit.
+
+183
+00:14:54,660 --> 00:14:57,150
+OK, so now let's go to main that can test this out.
+
+184
+00:15:00,090 --> 00:15:03,600
+First, let's include the Wi-Fi reset button.
+
+185
+00:15:08,830 --> 00:15:10,840
+And then here, let's configure.
+
+186
+00:15:11,860 --> 00:15:13,210
+The wi fi reset button.
+
+187
+00:15:15,320 --> 00:15:17,750
+And call Wi-Fi reset button config.
+
+188
+00:15:21,450 --> 00:15:23,160
+OK, now let's build and test it.
+
+189
+00:15:38,400 --> 00:15:39,480
+And flash, when you're ready.
+
+190
+00:15:47,860 --> 00:15:48,910
+Then open a monitor.
+
+191
+00:15:57,180 --> 00:15:58,620
+And then connect to the ESP.
+
+192
+00:16:03,300 --> 00:16:04,440
+I'm already connected here.
+
+193
+00:16:05,900 --> 00:16:07,190
+So now go to the Web page.
+
+194
+00:16:12,300 --> 00:16:13,740
+And then I'll connect the ESPN.
+
+195
+00:16:33,330 --> 00:16:35,490
+OK, we're connected a refresh here.
+
+196
+00:16:36,910 --> 00:16:39,700
+And now press the boot button on the dead kid.
+
+197
+00:16:41,140 --> 00:16:41,920
+And there you have it.
+
+198
+00:16:42,280 --> 00:16:47,440
+We've disconnected Wi-Fi and the station credentials are cleared, and there's our log message.
+
+199
+00:16:50,380 --> 00:16:51,340
+And if we refresh.
+
+200
+00:16:53,570 --> 00:16:55,190
+The connection information goes away.
+
+201
+00:16:55,550 --> 00:16:56,030
+Nice.
+
+202
+00:16:56,690 --> 00:16:59,150
+OK, so let's continue our development in the next lesson.
+
