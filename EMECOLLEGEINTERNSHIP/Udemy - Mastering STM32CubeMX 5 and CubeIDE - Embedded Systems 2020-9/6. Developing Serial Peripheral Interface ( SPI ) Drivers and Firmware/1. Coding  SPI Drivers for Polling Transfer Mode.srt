@@ -1,0 +1,703 @@
+1
+00:00:00,780 --> 00:00:01,020
+Hello.
+
+2
+00:00:01,110 --> 00:00:01,590
+Welcome back.
+
+3
+00:00:01,680 --> 00:00:05,130
+In this lesson, we are going to see how to configure the S.P.I.
+
+4
+00:00:05,400 --> 00:00:07,380
+So I've started a new project.
+
+5
+00:00:07,470 --> 00:00:12,110
+As you can see, we can start off by selecting DSP.
+
+6
+00:00:12,880 --> 00:00:14,340
+I come over here.
+
+7
+00:00:14,760 --> 00:00:16,850
+Where do we find SPOG connectivity?
+
+8
+00:00:17,850 --> 00:00:22,240
+We can start with S.P.I one click over here to expand it.
+
+9
+00:00:23,010 --> 00:00:24,480
+I'm going to select Full Duplex.
+
+10
+00:00:28,620 --> 00:00:34,580
+And it's selected the, um, the three pins required is squaddie clock the so when Dendi Mozi, as you
+
+11
+00:00:34,580 --> 00:00:35,390
+can see from here.
+
+12
+00:00:37,190 --> 00:00:42,560
+So I'm just gonna come to clock configuration and then change 260 megahertz so that we all have the
+
+13
+00:00:42,560 --> 00:00:45,170
+same clock, including those with the Air Force.
+
+14
+00:00:45,170 --> 00:00:45,800
+Your reports.
+
+15
+00:00:46,140 --> 00:00:48,060
+So change over here to 16.
+
+16
+00:00:48,500 --> 00:00:52,190
+And I hope I can get 16 on both off my clock buses if I don't.
+
+17
+00:00:52,240 --> 00:00:54,380
+I would have to fiddle with it more.
+
+18
+00:00:54,710 --> 00:00:54,890
+Okay.
+
+19
+00:00:55,010 --> 00:00:58,250
+It would be to time a clock 16 if every one time I was 16.
+
+20
+00:00:58,370 --> 00:00:58,670
+Okay.
+
+21
+00:00:58,730 --> 00:00:59,240
+We are good.
+
+22
+00:00:59,840 --> 00:01:04,670
+So we can come back to penult and configuration and then I'll come to systems for you over here.
+
+23
+00:01:05,030 --> 00:01:05,270
+Okay.
+
+24
+00:01:05,270 --> 00:01:06,680
+S.P.I, he's already selected.
+
+25
+00:01:07,040 --> 00:01:12,110
+So I come to the parameters set in tab over here and then I'm going to pull this up like this.
+
+26
+00:01:14,330 --> 00:01:17,180
+So over here we can leave most of the options the same.
+
+27
+00:01:17,310 --> 00:01:20,690
+The pre-schooler here basically is just like a pre-schooler and a timer.
+
+28
+00:01:21,260 --> 00:01:22,410
+It's the number we pass.
+
+29
+00:01:22,500 --> 00:01:24,990
+Yeah, it's used to divide the frequency.
+
+30
+00:01:25,380 --> 00:01:31,010
+So our sixteen gigahertz will be divided by two and we end up with eight megahertz and the board rate
+
+31
+00:01:31,040 --> 00:01:32,930
+becomes eight megabits per second.
+
+32
+00:01:33,380 --> 00:01:34,950
+I'm gonna reduce this further.
+
+33
+00:01:35,030 --> 00:01:37,600
+I'm going to put it around one megabits per second.
+
+34
+00:01:37,610 --> 00:01:39,530
+Therefore also like to eight over here.
+
+35
+00:01:40,580 --> 00:01:44,840
+Um, yeah, I'm, I'm putting around two megabits so I select eight.
+
+36
+00:01:45,200 --> 00:01:51,150
+If I select 16 is gonna give me one megabit, which is a thousand kilobits per second.
+
+37
+00:01:51,500 --> 00:01:53,210
+So I select eight over here like this.
+
+38
+00:01:56,410 --> 00:01:59,760
+Next, we go to the GPL, your tub and ensure that we are running.
+
+39
+00:02:00,510 --> 00:02:01,960
+We run in at high speed.
+
+40
+00:02:02,350 --> 00:02:08,890
+So the GPA sets is let's see, this is the clock line.
+
+41
+00:02:10,830 --> 00:02:14,610
+Let's see, well, we have maximum, very high.
+
+42
+00:02:15,390 --> 00:02:20,620
+What is the one we have it set at high C?
+
+43
+00:02:24,910 --> 00:02:25,200
+Okay.
+
+44
+00:02:25,260 --> 00:02:27,450
+Cuba makes her set it for us.
+
+45
+00:02:27,570 --> 00:02:29,010
+Very high, very high, very high.
+
+46
+00:02:29,670 --> 00:02:31,430
+And the older version of Cuba makes you.
+
+47
+00:02:31,770 --> 00:02:32,940
+You would have a drop down.
+
+48
+00:02:33,190 --> 00:02:36,180
+You would have another window that allows you to change the speed.
+
+49
+00:02:36,220 --> 00:02:38,820
+But we want them all to be at high speed.
+
+50
+00:02:40,680 --> 00:02:47,050
+We can go ahead and generate our quote or come to the generator over here and then I'll give my project
+
+51
+00:02:47,090 --> 00:02:48,980
+a anymore call this S.P.I pole.
+
+52
+00:02:49,590 --> 00:02:52,280
+Cause we're going to see how to use interrupt and other methods.
+
+53
+00:02:52,350 --> 00:02:55,870
+There's the pulling method and then I'm going to select it to train over here.
+
+54
+00:02:55,940 --> 00:02:57,440
+Steam 32 Kubi the E.
+
+55
+00:02:58,020 --> 00:02:59,340
+Click over here to generate.
+
+56
+00:03:01,560 --> 00:03:04,770
+So there's a project we can take a look at the generated code.
+
+57
+00:03:04,980 --> 00:03:08,640
+It's very similar to all the other peripherals we've seen thus far.
+
+58
+00:03:09,240 --> 00:03:11,640
+It has a basically a handle.
+
+59
+00:03:11,640 --> 00:03:13,460
+And they handle this very similar to these.
+
+60
+00:03:13,530 --> 00:03:19,020
+You are to actually got an instance, the mode, the direction, data size, Klok polarity, clockface,
+
+61
+00:03:19,450 --> 00:03:22,050
+poudre to pre-schooler, et cetera.
+
+62
+00:03:22,800 --> 00:03:23,340
+So this is it.
+
+63
+00:03:23,760 --> 00:03:27,780
+So we're gonna start off by creating two global two global arrays.
+
+64
+00:03:27,840 --> 00:03:29,130
+We shall use them as buffers.
+
+65
+00:03:29,160 --> 00:03:32,670
+We show have a transmit buffer and receive buffer.
+
+66
+00:03:32,730 --> 00:03:38,180
+And we're going to send data from the transmit buffer and verify that we can receive in the receive
+
+67
+00:03:38,190 --> 00:03:39,840
+buffer if that works accurately.
+
+68
+00:03:39,870 --> 00:03:43,680
+Then that would confirm the worst setup is working as we expect it to.
+
+69
+00:03:44,010 --> 00:03:46,660
+So I'll see you in eight on the squatty.
+
+70
+00:03:46,830 --> 00:03:47,460
+Over here.
+
+71
+00:03:47,940 --> 00:03:49,440
+And I'll give this a name.
+
+72
+00:03:49,530 --> 00:03:50,250
+I'll call this
+
+73
+00:03:54,340 --> 00:03:57,950
+or call this, let's say T x buffer, because we're gonna have two of them.
+
+74
+00:03:58,430 --> 00:04:03,750
+And then it's gonna have, let's say, ten numbers.
+
+75
+00:04:04,350 --> 00:04:24,320
+And then, um, we can simply say 10, 20, 30, 40 or what is 50, 60, 70, 80, 90, 99.
+
+76
+00:04:27,400 --> 00:04:30,140
+Or 100, because we are dealing with a debate.
+
+77
+00:04:30,250 --> 00:04:32,250
+We can still go 100, right?
+
+78
+00:04:32,950 --> 00:04:33,370
+Okay.
+
+79
+00:04:34,030 --> 00:04:37,960
+And then I can see you in eight on the squatty.
+
+80
+00:04:38,080 --> 00:04:40,750
+And this is the rmx buffer.
+
+81
+00:04:40,870 --> 00:04:46,810
+This buffer would have the received data and it's going to be of the same size over here like this.
+
+82
+00:04:47,610 --> 00:04:50,540
+And, um, once this was done, we can proceed to initialise.
+
+83
+00:04:51,490 --> 00:04:54,700
+You can close this up a bit.
+
+84
+00:04:56,920 --> 00:05:00,460
+We can transmit that data by using deha s.p.i, transmit data.
+
+85
+00:05:01,360 --> 00:05:07,540
+And um, we can receive use in the whole S.P.I, receive um receive data um or you call it.
+
+86
+00:05:08,620 --> 00:05:13,740
+Um we can use that transmit, receive uh API both for receive and transmission.
+
+87
+00:05:14,170 --> 00:05:19,660
+And if we want to learn more about this, we can always take a look at the whole library, um reference
+
+88
+00:05:19,660 --> 00:05:21,190
+mind or we downloaded earlier.
+
+89
+00:05:21,620 --> 00:05:26,920
+All of this is explained and the steps to deal with each and every pair for is explained in that document.
+
+90
+00:05:27,370 --> 00:05:27,960
+So simplicity.
+
+91
+00:05:28,030 --> 00:05:30,120
+How S.P.I.
+
+92
+00:05:30,160 --> 00:05:30,830
+Over here.
+
+93
+00:05:31,900 --> 00:05:40,940
+And then the function is transmit and then receive like this on.
+
+94
+00:05:41,050 --> 00:05:45,080
+The first argument is the handle of the SBI H S.P.I one.
+
+95
+00:05:45,750 --> 00:05:51,730
+The second argument is the um is the is the transmitter buffer.
+
+96
+00:05:52,600 --> 00:05:55,480
+So the transmitter for what name did we give it.
+
+97
+00:05:55,570 --> 00:05:57,450
+We said to you X buffer over here.
+
+98
+00:05:58,320 --> 00:06:01,930
+You xpo for the next one is the R X buffer.
+
+99
+00:06:02,560 --> 00:06:04,360
+We call that uh X buffer.
+
+100
+00:06:04,600 --> 00:06:10,360
+So we just changes to our X and then the um the next argument, which is argument number four is the
+
+101
+00:06:10,360 --> 00:06:11,230
+size of the buffer.
+
+102
+00:06:11,260 --> 00:06:11,950
+This is ten.
+
+103
+00:06:12,480 --> 00:06:17,710
+And the, um, the last argument is the time out of past one hundred here, over here like this.
+
+104
+00:06:20,290 --> 00:06:22,230
+Because we have no S.P.I sleeve.
+
+105
+00:06:22,430 --> 00:06:26,830
+We're going to verify our experiment by using something known as the loop back.
+
+106
+00:06:27,010 --> 00:06:31,060
+We're going to connect to the measle when they Morsi line the Mizo stands for.
+
+107
+00:06:31,060 --> 00:06:32,320
+Must that enslave out.
+
+108
+00:06:32,410 --> 00:06:34,760
+And then the Mozi stands for M. Out Slavin.
+
+109
+00:06:34,780 --> 00:06:39,880
+We're going to connect these two lines so that we can see the data transmit from masters to slave.
+
+110
+00:06:40,450 --> 00:06:43,650
+Um, just it's known as the Lookback method basically.
+
+111
+00:06:43,840 --> 00:06:46,800
+So we're going to have a jumper wire connecting P. six and seven.
+
+112
+00:06:47,230 --> 00:06:52,700
+And that should be able to allow us to see that our S.P.I configuration is working right.
+
+113
+00:06:55,270 --> 00:06:59,440
+So let's find where P is six MPLX seven are located O come over here.
+
+114
+00:07:00,340 --> 00:07:03,820
+This is, uh, wiping out of the nuclear board.
+
+115
+00:07:04,600 --> 00:07:07,210
+If you have the disco board, you have the pinata right in there.
+
+116
+00:07:07,240 --> 00:07:10,720
+So you need notes, um, sort of refer to any document.
+
+117
+00:07:10,990 --> 00:07:12,790
+But here we have P six, MPLX seven.
+
+118
+00:07:12,820 --> 00:07:15,800
+So we just need a jumper to connect to be a six MPLX seven.
+
+119
+00:07:15,820 --> 00:07:16,480
+I'm gonna do that.
+
+120
+00:07:17,860 --> 00:07:19,210
+We can go ahead and build our project.
+
+121
+00:07:19,450 --> 00:07:20,560
+Click over here to build.
+
+122
+00:07:28,520 --> 00:07:29,600
+It's pulled successfully.
+
+123
+00:07:30,020 --> 00:07:31,310
+Click here to go to the debug.
+
+124
+00:07:38,570 --> 00:07:39,800
+I selected the wrong one.
+
+125
+00:07:39,980 --> 00:07:41,260
+Click here to go to the deponent.
+
+126
+00:07:44,580 --> 00:07:47,070
+Okay, I have to create a new book.
+
+127
+00:07:47,800 --> 00:07:48,810
+I'll come over here.
+
+128
+00:07:52,690 --> 00:07:55,030
+Debug us ASTM 32 Coatex M.
+
+129
+00:08:00,500 --> 00:08:00,940
+Okay.
+
+130
+00:08:03,470 --> 00:08:09,800
+So I'm going to do is at our our our X buffa to live expression, remember the X parfaits empty.
+
+131
+00:08:09,800 --> 00:08:12,620
+We want to know whether we can receive this data in the Erich's.
+
+132
+00:08:14,370 --> 00:08:21,810
+So I'll put this here like this and then I'm going to click here to run and then I'm going to pause
+
+133
+00:08:22,950 --> 00:08:24,680
+and then see what we have in the X buffer.
+
+134
+00:08:24,720 --> 00:08:26,040
+Got X upon this like this.
+
+135
+00:08:26,890 --> 00:08:29,260
+And, um, we have nothing in the R X buffer.
+
+136
+00:08:30,540 --> 00:08:31,430
+When I run again.
+
+137
+00:08:33,130 --> 00:08:33,560
+Pause.
+
+138
+00:08:34,520 --> 00:08:35,260
+We have nothing.
+
+139
+00:08:36,670 --> 00:08:37,300
+I stopped it.
+
+140
+00:08:37,690 --> 00:08:38,110
+Nessy.
+
+141
+00:08:44,710 --> 00:08:48,400
+If the true causes of this, if you find nothing.
+
+142
+00:08:48,430 --> 00:08:55,100
+It could be that the decompiled is optimizing in a way to values or you've not connected your jumper
+
+143
+00:08:55,100 --> 00:08:55,930
+wire properly.
+
+144
+00:08:56,440 --> 00:09:01,570
+So we can we can disable the optimization first.
+
+145
+00:09:03,160 --> 00:09:05,940
+I just realized the problem is from my jumper wire off.
+
+146
+00:09:06,330 --> 00:09:06,500
+Yeah.
+
+147
+00:09:06,670 --> 00:09:07,280
+I'll fix that.
+
+148
+00:09:07,600 --> 00:09:08,560
+So let's see again.
+
+149
+00:09:09,490 --> 00:09:14,620
+And then, um, I'll show you an image of my setup, a click over here to debug few.
+
+150
+00:09:24,110 --> 00:09:28,070
+Okay, so we can put a break point here.
+
+151
+00:09:28,100 --> 00:09:30,080
+You can basically click here.
+
+152
+00:09:31,430 --> 00:09:34,220
+Click the line of the wall one to place a break point.
+
+153
+00:09:34,970 --> 00:09:35,330
+Right.
+
+154
+00:09:35,810 --> 00:09:38,870
+And then we click to run so that it would stop at a break point.
+
+155
+00:09:38,960 --> 00:09:40,460
+This is our our expert Paphitis.
+
+156
+00:09:40,480 --> 00:09:41,390
+This they receive Buffa.
+
+157
+00:09:41,400 --> 00:09:43,360
+I remember they received barflies empty.
+
+158
+00:09:43,970 --> 00:09:52,070
+So if we expand now to receive Buffa has the content of the T x buffer to verify that this is really
+
+159
+00:09:52,070 --> 00:09:54,110
+the S.P.I transmitting the information.
+
+160
+00:09:54,110 --> 00:09:57,170
+I'm going to take out my jumper wire and run again.
+
+161
+00:09:57,710 --> 00:09:59,450
+So I'm gonna pull out my jumper wire.
+
+162
+00:10:01,930 --> 00:10:06,570
+And I'm going to terminate and relaunch.
+
+163
+00:10:11,340 --> 00:10:12,150
+Opened in.
+
+164
+00:10:19,860 --> 00:10:20,550
+Let's see.
+
+165
+00:10:21,570 --> 00:10:22,960
+We still have our break here.
+
+166
+00:10:23,040 --> 00:10:24,120
+I'm going to click to run.
+
+167
+00:10:25,140 --> 00:10:26,520
+No, there is no jumper wire.
+
+168
+00:10:26,970 --> 00:10:27,750
+OK, let's see.
+
+169
+00:10:29,240 --> 00:10:30,890
+The oryx barflies empty.
+
+170
+00:10:31,070 --> 00:10:35,410
+Showing is very true, meaning no data is received from TXU to Rex.
+
+171
+00:10:36,230 --> 00:10:40,340
+And then we're doing this, like I mention, using a method known as the loop back where we've connected
+
+172
+00:10:40,340 --> 00:10:41,810
+the Mousie and Mizo.
+
+173
+00:10:42,260 --> 00:10:48,410
+With this, we can verify our S.P.I configuration without requiring a particular S.P.I sleeve.
+
+174
+00:10:48,980 --> 00:10:51,170
+So this is all there is, if you have a question.
+
+175
+00:10:51,910 --> 00:10:53,900
+Just live in the question area.
+
+176
+00:10:54,350 --> 00:10:55,100
+I'll see you later.

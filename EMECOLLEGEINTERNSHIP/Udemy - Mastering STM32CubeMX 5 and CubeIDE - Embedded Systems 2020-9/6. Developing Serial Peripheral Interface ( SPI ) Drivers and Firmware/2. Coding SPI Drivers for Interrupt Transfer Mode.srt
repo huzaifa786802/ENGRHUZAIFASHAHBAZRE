@@ -1,0 +1,663 @@
+1
+00:00:00,210 --> 00:00:00,420
+Hello.
+
+2
+00:00:00,570 --> 00:00:01,070
+Welcome back.
+
+3
+00:00:01,180 --> 00:00:05,200
+And this lesson, we shall see how to configure our S.P.I for interrupt mode.
+
+4
+00:00:06,780 --> 00:00:08,430
+So we will do exactly what we did.
+
+5
+00:00:08,850 --> 00:00:11,370
+So come to connectivity S.P.I one.
+
+6
+00:00:11,370 --> 00:00:16,770
+I'm going to enable the US food most duplex over here.
+
+7
+00:00:17,040 --> 00:00:18,960
+And these will be a neighborhood for us.
+
+8
+00:00:19,500 --> 00:00:19,870
+Okay.
+
+9
+00:00:21,120 --> 00:00:27,190
+And then I'm just going to make sure our board works with most of the F four boats out.
+
+10
+00:00:27,250 --> 00:00:34,410
+I'm gonna change this to 16 so that I can get my EPB one timer clocks 60 and an APB to term a clock
+
+11
+00:00:34,410 --> 00:00:39,060
+16 as well so that those with the Air Force, you shouldn't have any difference.
+
+12
+00:00:39,610 --> 00:00:44,620
+Okay, now we can go to the, um, the configuration of the S.P.I.
+
+13
+00:00:45,250 --> 00:00:47,880
+And then I click over here, parameter sirtuins.
+
+14
+00:00:47,880 --> 00:00:56,150
+And this time we can reduce the frequency even further by getting a larger and larger pre-schooler o
+
+15
+00:00:56,360 --> 00:00:58,710
+use a pre-schooler such as this over here.
+
+16
+00:01:00,180 --> 00:01:04,850
+And we're doing this because we're using the um, we're using the interrupt.
+
+17
+00:01:04,890 --> 00:01:07,530
+And we don't want to sort of miss some of it.
+
+18
+00:01:07,890 --> 00:01:08,540
+We don't want to, uh.
+
+19
+00:01:08,670 --> 00:01:08,850
+Yeah.
+
+20
+00:01:08,880 --> 00:01:10,710
+Miss some of the data that comes.
+
+21
+00:01:11,400 --> 00:01:15,360
+So we reduce in the frequency drastically the frequency of the S.P.I.
+
+22
+00:01:16,260 --> 00:01:22,170
+And because and because we use an interrupt, we have to always enable the interrupt from the MVC certains
+
+23
+00:01:22,170 --> 00:01:22,680
+over here.
+
+24
+00:01:24,660 --> 00:01:27,330
+We can go ahead and generate our project or come over here.
+
+25
+00:01:28,210 --> 00:01:29,520
+I'll give the project to name.
+
+26
+00:01:29,990 --> 00:01:38,070
+I call this S.P.I as call interrupt and then, um, isolate it to change over here.
+
+27
+00:01:38,400 --> 00:01:39,270
+Skew the mix.
+
+28
+00:01:39,960 --> 00:01:41,180
+Click generate over here.
+
+29
+00:01:44,610 --> 00:01:49,140
+So those are projects we to do like we did before, we're going to create the Eriks buffer and a T Expo
+
+30
+00:01:49,140 --> 00:01:51,060
+for the T Expo for has the data.
+
+31
+00:01:51,330 --> 00:01:52,470
+It's going to transmit it.
+
+32
+00:01:52,500 --> 00:01:54,520
+And we expect to receive in the X buffer.
+
+33
+00:01:55,080 --> 00:01:55,470
+Right.
+
+34
+00:01:55,560 --> 00:01:59,070
+So we've defined it the same way the R X buffer starts off empty.
+
+35
+00:01:59,580 --> 00:02:05,780
+Once that is done, we can, um, use the same API, but this time would interrupt that we used earlier.
+
+36
+00:02:05,790 --> 00:02:08,070
+We use HARL S.P.I transmit, receive.
+
+37
+00:02:08,100 --> 00:02:11,220
+This time we're going to use Harlette, S.P.I crunch me to receive interrupt.
+
+38
+00:02:11,310 --> 00:02:12,580
+Let's do so.
+
+39
+00:02:12,960 --> 00:02:16,670
+I'm going to come down here after S.P.I has been initialized.
+
+40
+00:02:17,100 --> 00:02:19,350
+I'll see how underscore s.p.i.
+
+41
+00:02:19,950 --> 00:02:21,030
+And then on this call.
+
+42
+00:02:23,040 --> 00:02:25,940
+Transmit like this then.
+
+43
+00:02:27,740 --> 00:02:29,070
+And then receive.
+
+44
+00:02:29,250 --> 00:02:32,820
+And then over here I t for interrupt.
+
+45
+00:02:33,510 --> 00:02:40,560
+And then the first then is the address of the handle, the SBI handle which is H s.p.i one.
+
+46
+00:02:41,340 --> 00:02:42,570
+HSP won't like this.
+
+47
+00:02:42,660 --> 00:02:47,160
+And then the next is the um the Bufford has the data to be transmitted.
+
+48
+00:02:47,190 --> 00:02:48,780
+We call it this t x buffer.
+
+49
+00:02:49,750 --> 00:02:53,580
+And the next argument is the buffer to store the received data.
+
+50
+00:02:53,610 --> 00:02:55,200
+We call in this R X buffer.
+
+51
+00:02:56,010 --> 00:02:57,410
+And the data size, which is 10.
+
+52
+00:02:57,480 --> 00:03:01,550
+This time we don't need to pass the time out because we dealing with interrupt.
+
+53
+00:03:02,220 --> 00:03:02,580
+Right.
+
+54
+00:03:02,850 --> 00:03:06,080
+So n as you would know when we always dealing with interrupt.
+
+55
+00:03:06,120 --> 00:03:07,890
+We've got to find the callback function.
+
+56
+00:03:08,250 --> 00:03:09,450
+So let's do that now.
+
+57
+00:03:11,550 --> 00:03:13,590
+So we go to the module to find a callback.
+
+58
+00:03:13,620 --> 00:03:15,080
+I go to drive us over here.
+
+59
+00:03:15,600 --> 00:03:16,610
+And then source.
+
+60
+00:03:16,680 --> 00:03:19,190
+And then what I'm looking for is the S.P.I to see.
+
+61
+00:03:19,740 --> 00:03:20,820
+And then like we did.
+
+62
+00:03:21,210 --> 00:03:24,400
+We can do control F and find the weak keyword.
+
+63
+00:03:24,870 --> 00:03:26,220
+Because they always start with weak.
+
+64
+00:03:26,310 --> 00:03:31,440
+And what we're looking for is the um, transmit receive complete callback.
+
+65
+00:03:31,500 --> 00:03:34,830
+If we want to do a callback only when receive is complete.
+
+66
+00:03:34,860 --> 00:03:36,420
+We can take this one if we want.
+
+67
+00:03:36,420 --> 00:03:37,440
+Just transmit complete.
+
+68
+00:03:37,470 --> 00:03:38,430
+We can take the other one.
+
+69
+00:03:38,850 --> 00:03:41,400
+But we want both our 60 X callback.
+
+70
+00:03:41,820 --> 00:03:43,680
+So I'll copy this from over here.
+
+71
+00:03:44,250 --> 00:03:45,510
+I'll come to Main over here.
+
+72
+00:03:45,670 --> 00:03:47,670
+Then I'll paste this in here like this.
+
+73
+00:03:48,170 --> 00:03:51,000
+And everything in here is going to be wiped off like this.
+
+74
+00:03:54,270 --> 00:03:56,890
+Okay, so we have to delete that, we could cue it from here.
+
+75
+00:03:56,940 --> 00:04:03,090
+And over here, we don't need to do anything in the in the Kobuk if we have something to do.
+
+76
+00:04:03,120 --> 00:04:06,030
+We can put it here, but we don't have something to do.
+
+77
+00:04:06,120 --> 00:04:08,230
+So is our classic to something.
+
+78
+00:04:08,970 --> 00:04:11,290
+If you want to blink on LSD, you can blink an LCD.
+
+79
+00:04:12,390 --> 00:04:14,910
+We didn't set up the LCD, so this is classic.
+
+80
+00:04:14,930 --> 00:04:15,600
+Do something.
+
+81
+00:04:15,930 --> 00:04:20,940
+One other thing we can do is just put an infinite loop here that will do nothing.
+
+82
+00:04:21,360 --> 00:04:29,280
+Remember, this callback is only you know, the process only jumps here whenever this received, when
+
+83
+00:04:29,460 --> 00:04:33,040
+never you know this receive and transmit it s are 60 X.
+
+84
+00:04:33,670 --> 00:04:36,110
+So it doesn't mean we're going to be stuck here forever.
+
+85
+00:04:37,140 --> 00:04:38,550
+You know, it's a background thread.
+
+86
+00:04:39,450 --> 00:04:42,090
+Um, actually, I'll take this out.
+
+87
+00:04:42,490 --> 00:04:43,410
+Shouldn't be teaching.
+
+88
+00:04:43,470 --> 00:04:46,380
+This is not a good will front in this example.
+
+89
+00:04:46,860 --> 00:04:49,770
+If there is something we want to do here, we can, um, do it here.
+
+90
+00:04:51,870 --> 00:04:52,990
+Um, let's see.
+
+91
+00:04:54,300 --> 00:04:58,050
+Put a counter here and counter.
+
+92
+00:04:58,610 --> 00:05:00,070
+Then we can basically do counter.
+
+93
+00:05:00,170 --> 00:05:00,930
+Plus plus.
+
+94
+00:05:02,550 --> 00:05:03,270
+Plus plus here.
+
+95
+00:05:03,720 --> 00:05:03,980
+Okay.
+
+96
+00:05:04,850 --> 00:05:06,270
+Now we have something we can work with.
+
+97
+00:05:06,480 --> 00:05:08,940
+Remember we still um we still doing the loop back.
+
+98
+00:05:08,970 --> 00:05:13,860
+So you've got to connect the P seven and P six with a jumper wire to demonstrate this.
+
+99
+00:05:17,090 --> 00:05:22,280
+I'm going to click over here to build a close this this fully.
+
+100
+00:05:22,910 --> 00:05:25,320
+I'm gonna go to the debug click over here.
+
+101
+00:05:27,080 --> 00:05:27,830
+This one here.
+
+102
+00:05:32,750 --> 00:05:34,250
+And then okay, over here.
+
+103
+00:05:38,790 --> 00:05:40,550
+Over here, we still have a while.
+
+104
+00:05:40,620 --> 00:05:41,140
+Let's see.
+
+105
+00:05:41,820 --> 00:05:43,840
+We cannot break point here at home.
+
+106
+00:05:44,180 --> 00:05:44,760
+That's mean.
+
+107
+00:05:44,910 --> 00:05:46,160
+Just click over here.
+
+108
+00:05:47,580 --> 00:05:48,480
+We have a break point.
+
+109
+00:05:48,510 --> 00:05:56,790
+I'm going to add our counter to the Yum, to our expressions when two US will pull counter over here
+
+110
+00:05:56,790 --> 00:05:58,860
+like this when I click here to run.
+
+111
+00:06:00,570 --> 00:06:01,020
+It's, uh.
+
+112
+00:06:01,170 --> 00:06:05,820
+Um, oh, I ordered two expressions, I should be added to live expressions.
+
+113
+00:06:06,990 --> 00:06:08,210
+I'm going to clean this.
+
+114
+00:06:14,880 --> 00:06:22,190
+So I'm going to add I will counter over here two live expressions and I'm going to add our our expert
+
+115
+00:06:22,200 --> 00:06:22,740
+for here.
+
+116
+00:06:23,010 --> 00:06:24,210
+Remember, we've run once.
+
+117
+00:06:24,240 --> 00:06:27,190
+That is why we see an account to us was then.
+
+118
+00:06:27,570 --> 00:06:29,880
+This is our receive for Lissie.
+
+119
+00:06:31,550 --> 00:06:33,080
+And indeed, we've received the data.
+
+120
+00:06:33,110 --> 00:06:34,190
+We can try that again.
+
+121
+00:06:34,370 --> 00:06:36,910
+I'm going to relaunch, terminate and launch again.
+
+122
+00:06:44,600 --> 00:06:45,710
+Okay, it's Lodin.
+
+123
+00:06:51,210 --> 00:06:51,790
+AK.
+
+124
+00:06:53,510 --> 00:06:55,190
+And we still have a break point here.
+
+125
+00:06:57,090 --> 00:06:59,140
+Well, we have heard expression.
+
+126
+00:07:00,040 --> 00:07:01,480
+I'm going to click to run to see.
+
+127
+00:07:04,970 --> 00:07:06,770
+We have two other expressions again.
+
+128
+00:07:06,920 --> 00:07:08,450
+This is frustrating.
+
+129
+00:07:09,670 --> 00:07:10,390
+Stop this.
+
+130
+00:07:12,190 --> 00:07:18,130
+Oh, just remove all evil and then add our X buffer.
+
+131
+00:07:19,280 --> 00:07:20,620
+Oh, that will counter.
+
+132
+00:07:21,940 --> 00:07:22,870
+Which is up here.
+
+133
+00:07:35,210 --> 00:07:36,580
+I added our XPO for it.
+
+134
+00:07:36,950 --> 00:07:38,210
+I'm supposed to copy this.
+
+135
+00:07:40,440 --> 00:07:46,370
+Oh, you're supposed to copy this, sorry, but the computer is a bit slow.
+
+136
+00:07:46,850 --> 00:07:49,610
+OK, so we have come to one because we had just run again.
+
+137
+00:07:50,150 --> 00:07:50,470
+OK.
+
+138
+00:07:50,630 --> 00:07:55,540
+And then, um, I know you get a point so you can take out the count, uh, take out the jumper wire
+
+139
+00:07:55,580 --> 00:08:01,250
+and you realize that our console, our counter one to count is a duplicate of a counter won't count.
+
+140
+00:08:01,310 --> 00:08:03,450
+And then our our expert be empty.
+
+141
+00:08:03,910 --> 00:08:05,360
+So we like a mission in this hall.
+
+142
+00:08:05,360 --> 00:08:07,640
+S.P.I T XRX Complete Kobuk.
+
+143
+00:08:08,120 --> 00:08:13,190
+If you have a block of code that you want to execute, one of the SBA transmits and receives data.
+
+144
+00:08:13,280 --> 00:08:14,180
+This is where you do it.
+
+145
+00:08:14,240 --> 00:08:16,820
+Over here we simply count on a variable.
+
+146
+00:08:17,180 --> 00:08:22,940
+And equally, if you have a block of code that you want to execute only when data is received by the
+
+147
+00:08:22,940 --> 00:08:30,440
+SBI, such as you want to take that data and pass, pass it and pass, it could mean taken or taken
+
+148
+00:08:30,440 --> 00:08:33,470
+out spaces and commerce and created into something.
+
+149
+00:08:33,830 --> 00:08:35,810
+You can execute that in a callback as well.
+
+150
+00:08:36,140 --> 00:08:37,850
+Over here we just put in a counter.
+
+151
+00:08:38,210 --> 00:08:40,100
+So that's all the rage from any questions at all.
+
+152
+00:08:40,130 --> 00:08:42,260
+Just leave it in the questions area.
+
+153
+00:08:42,800 --> 00:08:49,490
+As you can see, the difference here is basically transmit to receive, which I t which means interrupt
+
+154
+00:08:49,490 --> 00:08:53,240
+and then you just need to put this callback function.
+
+155
+00:08:53,250 --> 00:08:54,840
+We can leave it empty if we want.
+
+156
+00:08:54,890 --> 00:08:56,000
+But it has to be here.
+
+157
+00:08:56,330 --> 00:08:57,230
+We can leave empty.
+
+158
+00:08:57,710 --> 00:08:58,010
+Right.
+
+159
+00:08:58,040 --> 00:09:02,370
+But I'm just using this opportunity to increment a counter and then, um.
+
+160
+00:09:02,510 --> 00:09:02,790
+Yeah.
+
+161
+00:09:02,870 --> 00:09:09,710
+Like we said, the S.P.I trick we are using here is a loop buck trick, um, such that our experiments
+
+162
+00:09:10,130 --> 00:09:12,170
+want to depend on a particular sleeve.
+
+163
+00:09:12,200 --> 00:09:17,090
+But later on we'll start dealing with some other peripherals that require S.P.I communication.
+
+164
+00:09:17,630 --> 00:09:21,200
+And you would see how practical the S.P.I setup is.
+
+165
+00:09:21,530 --> 00:09:22,760
+But this order is for now.
+
+166
+00:09:22,940 --> 00:09:23,510
+I'll see you later.
