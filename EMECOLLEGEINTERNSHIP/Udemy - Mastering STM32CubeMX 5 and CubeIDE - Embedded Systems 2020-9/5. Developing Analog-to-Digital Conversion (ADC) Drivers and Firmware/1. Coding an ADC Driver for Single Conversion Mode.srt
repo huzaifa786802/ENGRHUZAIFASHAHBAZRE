@@ -1,0 +1,791 @@
+1
+00:00:00,400 --> 00:00:00,840
+Hello.
+
+2
+00:00:02,980 --> 00:00:09,140
+In this lesson, we are going to see how to convert the how to configure the ADC using our Cuba mix
+
+3
+00:00:09,370 --> 00:00:10,630
+when it creates a new project.
+
+4
+00:00:10,670 --> 00:00:11,540
+Come over here.
+
+5
+00:00:11,720 --> 00:00:12,500
+You project.
+
+6
+00:00:12,920 --> 00:00:14,090
+And then also liked my port.
+
+7
+00:00:15,770 --> 00:00:20,960
+So we are going to see different methods for initialize and the ADC.
+
+8
+00:00:20,960 --> 00:00:26,510
+We first going to see this single mode conversion and then we're going to see the continuous mode conversion.
+
+9
+00:00:27,020 --> 00:00:31,310
+After that, we going to see how to crigger the ADC conversion using a timer.
+
+10
+00:00:31,820 --> 00:00:38,270
+And then we're going to see how to sort of configure multiple ADC channels and using the DMA to do that.
+
+11
+00:00:39,110 --> 00:00:42,800
+So come over here or select SDM 32 for one one.
+
+12
+00:00:45,940 --> 00:00:47,420
+Then I double click this.
+
+13
+00:00:49,950 --> 00:00:50,470
+Gopin.
+
+14
+00:01:00,380 --> 00:01:02,330
+So we start off by clearing the penult.
+
+15
+00:01:05,140 --> 00:01:06,430
+Claire Penult over were here.
+
+16
+00:01:11,470 --> 00:01:14,290
+Then I'm going to set up the, um, the core.
+
+17
+00:01:16,060 --> 00:01:18,670
+Over here, we're using the sewer wire.
+
+18
+00:01:21,430 --> 00:01:25,110
+And then RCC over here going to bypass this.
+
+19
+00:01:27,670 --> 00:01:30,610
+Then this we're gonna use the crystal.
+
+20
+00:01:36,530 --> 00:01:40,970
+So our estimate there are two for one, one has just one ADC module.
+
+21
+00:01:42,260 --> 00:01:44,170
+So we can come over here to analog.
+
+22
+00:01:44,450 --> 00:01:45,840
+And there's just ADC one.
+
+23
+00:01:46,970 --> 00:01:51,200
+However, this single ADC module gives us 16 channels.
+
+24
+00:01:52,070 --> 00:01:52,430
+Right.
+
+25
+00:01:52,460 --> 00:01:56,930
+So I'm going to select in zero here for input's channel zero.
+
+26
+00:01:58,560 --> 00:01:58,870
+Okay.
+
+27
+00:02:01,540 --> 00:02:06,040
+And this experiment, we can leave everything here on the parameters set in is the same.
+
+28
+00:02:06,230 --> 00:02:07,870
+We don't need to change anything.
+
+29
+00:02:08,500 --> 00:02:08,890
+Right.
+
+30
+00:02:09,340 --> 00:02:11,440
+So we can generate our code now.
+
+31
+00:02:11,890 --> 00:02:14,620
+So we just come to project manager over here.
+
+32
+00:02:14,670 --> 00:02:17,530
+I'm going to select my two chain is SDM 32.
+
+33
+00:02:17,650 --> 00:02:18,490
+Cube E.
+
+34
+00:02:19,000 --> 00:02:24,070
+I'll call this project ADC underscore single mode conversion.
+
+35
+00:02:28,790 --> 00:02:34,280
+Once that is done, click over here to generate we can open our project.
+
+36
+00:02:36,950 --> 00:02:39,790
+So this whole project I double click here to open.
+
+37
+00:02:41,820 --> 00:02:44,570
+Open the main door to see fall and then clean up a bit.
+
+38
+00:02:47,950 --> 00:02:53,130
+So now the first thing we have to do is start the ADC to do that.
+
+39
+00:02:53,230 --> 00:02:55,910
+We go to the ADC module to see the function out.
+
+40
+00:02:56,020 --> 00:02:57,040
+Allow us to do that.
+
+41
+00:02:57,760 --> 00:02:59,820
+So come over here and find the ADC.
+
+42
+00:02:59,830 --> 00:03:00,790
+Don't see fall.
+
+43
+00:03:01,350 --> 00:03:02,080
+So I hear.
+
+44
+00:03:08,140 --> 00:03:08,740
+See?
+
+45
+00:03:16,050 --> 00:03:21,750
+So we have the function for initialise in these initialise, and as well, the one we're looking for
+
+46
+00:03:21,810 --> 00:03:28,650
+is the start function we can search by doing control F and then we can simply search ADC underscore
+
+47
+00:03:29,760 --> 00:03:30,300
+start.
+
+48
+00:03:34,840 --> 00:03:35,430
+And this is it.
+
+49
+00:03:35,940 --> 00:03:39,870
+So there are two versions there starts with interrupt and there is just start.
+
+50
+00:03:44,340 --> 00:03:45,510
+We miss this thought.
+
+51
+00:03:46,080 --> 00:03:49,320
+This is ATC stops with the one above should be ATC start.
+
+52
+00:03:50,800 --> 00:03:51,190
+This is it.
+
+53
+00:03:51,600 --> 00:03:51,810
+OK.
+
+54
+00:03:52,150 --> 00:04:01,440
+So this just takes a pointer to the ADC Hondo, so I couldn't copy this and take it to our main see.
+
+55
+00:04:05,160 --> 00:04:08,910
+So after we initialize the ADC, then we start the ADC.
+
+56
+00:04:09,510 --> 00:04:12,540
+So this takes the ADC Hando, which is up here.
+
+57
+00:04:15,130 --> 00:04:15,790
+Clean this.
+
+58
+00:04:18,180 --> 00:04:19,650
+This or ADC one, Hunda.
+
+59
+00:04:20,710 --> 00:04:27,310
+So take this with Pasos, like you went to this function and post the address over here like this.
+
+60
+00:04:30,750 --> 00:04:31,650
+Over here like this.
+
+61
+00:04:32,040 --> 00:04:32,370
+Right.
+
+62
+00:04:32,400 --> 00:04:34,140
+So this will start the easy one.
+
+63
+00:04:35,760 --> 00:04:38,640
+Now, the next thing we need to do is pull for conversion.
+
+64
+00:04:38,880 --> 00:04:43,110
+So we need to get a function down, allow us to pull for conversion when the conversion is complete.
+
+65
+00:04:43,140 --> 00:04:45,210
+When I store the resort in a variable.
+
+66
+00:04:45,630 --> 00:04:46,980
+So let's do it.
+
+67
+00:04:47,880 --> 00:04:49,640
+So let's go to what ADC module.
+
+68
+00:04:51,030 --> 00:04:53,340
+So let's search for plan for conversion.
+
+69
+00:04:53,510 --> 00:04:56,280
+Control F and the P or L.
+
+70
+00:04:56,370 --> 00:04:59,950
+L for conversion o.
+
+71
+00:05:04,910 --> 00:05:05,440
+Like this.
+
+72
+00:05:06,320 --> 00:05:06,470
+Okay.
+
+73
+00:05:06,560 --> 00:05:09,260
+So there is this function hall ADC poll for conversion.
+
+74
+00:05:09,290 --> 00:05:11,660
+It takes the ADC Hondo and a time out.
+
+75
+00:05:12,090 --> 00:05:14,420
+We can copy this if you want to read more about the function.
+
+76
+00:05:14,540 --> 00:05:15,590
+You can read the brief here.
+
+77
+00:05:15,610 --> 00:05:17,690
+Pool for regular conversion complete.
+
+78
+00:05:18,470 --> 00:05:18,890
+Right.
+
+79
+00:05:19,490 --> 00:05:22,310
+So this parameter time out value is in milliseconds.
+
+80
+00:05:22,370 --> 00:05:24,510
+So is the timeout amount.
+
+81
+00:05:25,400 --> 00:05:26,000
+I should say.
+
+82
+00:05:28,570 --> 00:05:29,170
+Copy this.
+
+83
+00:05:30,390 --> 00:05:31,490
+And then bring it over here.
+
+84
+00:05:34,600 --> 00:05:37,450
+So we place our pool for conversion here.
+
+85
+00:05:41,620 --> 00:05:48,820
+The first argument is the ADC handle, so HTC One, HTC One over here and a time out, we can give it
+
+86
+00:05:48,820 --> 00:05:50,260
+time out of one Emmas.
+
+87
+00:05:50,290 --> 00:05:50,950
+That is fine.
+
+88
+00:05:51,550 --> 00:05:57,790
+So now that we've bought for conversion, we have to use a third function, which is to get the conversion
+
+89
+00:05:57,820 --> 00:05:59,740
+or stop put in comment here.
+
+90
+00:06:02,590 --> 00:06:04,780
+Number one, you start the ADC.
+
+91
+00:06:09,310 --> 00:06:10,070
+Number two.
+
+92
+00:06:14,540 --> 00:06:15,720
+Pull for conversion.
+
+93
+00:06:19,870 --> 00:06:20,860
+Then number three.
+
+94
+00:06:26,500 --> 00:06:27,670
+We get to conversion.
+
+95
+00:06:31,870 --> 00:06:32,150
+Okay.
+
+96
+00:06:32,290 --> 00:06:33,640
+So these are the three steps.
+
+97
+00:06:34,630 --> 00:06:36,580
+So let's grab the third function.
+
+98
+00:06:36,760 --> 00:06:37,570
+I'll come over here.
+
+99
+00:06:37,690 --> 00:06:39,340
+It's known as they get value function.
+
+100
+00:06:39,880 --> 00:06:40,840
+So control f
+
+101
+00:06:44,290 --> 00:06:47,480
+okay over here gets value and we can read about it says.
+
+102
+00:06:47,530 --> 00:06:49,490
+Gets the converted value from the data.
+
+103
+00:06:49,510 --> 00:06:49,670
+Right.
+
+104
+00:06:49,680 --> 00:06:50,950
+You start off regular Cherno.
+
+105
+00:06:51,640 --> 00:06:53,590
+This one just takes the ADC handle.
+
+106
+00:06:53,960 --> 00:07:00,490
+So argument and then it returns the value returned to you in 32, which is the ADC value.
+
+107
+00:07:02,650 --> 00:07:03,610
+So put that in here.
+
+108
+00:07:03,970 --> 00:07:06,560
+And then I'm going to pass our ADC one Hondo here.
+
+109
+00:07:07,880 --> 00:07:09,700
+This plus one this.
+
+110
+00:07:09,760 --> 00:07:12,510
+The address like this.
+
+111
+00:07:15,580 --> 00:07:17,030
+And then some cool on over here.
+
+112
+00:07:21,070 --> 00:07:27,450
+So this function is going to return the ADC value that you would read from Channel from the ADC one.
+
+113
+00:07:27,600 --> 00:07:29,500
+And we've configured only Channel Zero.
+
+114
+00:07:29,770 --> 00:07:32,610
+So I'm going to create a global variable to hold the resort.
+
+115
+00:07:33,120 --> 00:07:37,240
+You end thirty two 30 to underscore t, I call this sense of value.
+
+116
+00:07:38,820 --> 00:07:45,220
+Then over here, sense of value is going to have the return of the get value function like this.
+
+117
+00:07:46,270 --> 00:07:51,220
+And these steps we can keep them in the infinite loop.
+
+118
+00:07:52,990 --> 00:07:53,930
+Cut them from here.
+
+119
+00:07:57,610 --> 00:07:59,300
+Push them over here like this.
+
+120
+00:08:00,320 --> 00:08:02,830
+Okay, so now we can test all board.
+
+121
+00:08:02,870 --> 00:08:10,640
+We need to connect a sensor to ADC Channel Zero and then we can read the volume from the watch window.
+
+122
+00:08:11,030 --> 00:08:13,100
+We can read a sense of value from Watch Windu.
+
+123
+00:08:15,890 --> 00:08:19,640
+We can use a potential meter as our senseor in this experiment.
+
+124
+00:08:20,360 --> 00:08:25,720
+So by 10 and the knob of the potential meter, you basically change in the analog reading.
+
+125
+00:08:26,150 --> 00:08:28,430
+Remember, the potential meter has three legs.
+
+126
+00:08:28,850 --> 00:08:35,300
+The middle leg is the one that goes to our ADC pin, which is P is zero for ADC Channel zero.
+
+127
+00:08:36,080 --> 00:08:44,330
+And then the left leg can go to ground and then the rightmost leg can go to the VCT, which is the voltage
+
+128
+00:08:44,330 --> 00:08:44,720
+source.
+
+129
+00:08:45,170 --> 00:08:51,440
+So you can connect your potential meter Mido leg to the ADC, pin the left one to ground and then the
+
+130
+00:08:51,440 --> 00:08:57,590
+right like to eat up five votaw, three point three vote depending on the board you are using.
+
+131
+00:08:57,590 --> 00:09:00,390
+And if you're using the nuclear connected to the FIVE-FOLD.
+
+132
+00:09:01,140 --> 00:09:01,470
+Yeah.
+
+133
+00:09:03,740 --> 00:09:05,090
+So we can build our project.
+
+134
+00:09:05,140 --> 00:09:06,350
+A click over here to build.
+
+135
+00:09:10,140 --> 00:09:11,000
+To appeared in.
+
+136
+00:09:13,050 --> 00:09:14,480
+Well, we have an error somewhere.
+
+137
+00:09:15,190 --> 00:09:19,390
+What does it say so value on declared?
+
+138
+00:09:22,080 --> 00:09:23,770
+Oh, I've got a typo here.
+
+139
+00:09:25,290 --> 00:09:25,600
+OK.
+
+140
+00:09:25,650 --> 00:09:26,580
+Click here to build.
+
+141
+00:09:36,360 --> 00:09:38,460
+Okay, to build successfully.
+
+142
+00:09:39,430 --> 00:09:43,210
+And then we can click here to go to the D-Box you.
+
+143
+00:09:56,590 --> 00:09:57,100
+OK.
+
+144
+00:10:15,570 --> 00:10:18,210
+These expressions are from a previous project.
+
+145
+00:10:18,240 --> 00:10:19,120
+We can delete them.
+
+146
+00:10:29,750 --> 00:10:36,090
+So now we're going to add a sense of value to the expression controversy to copy and then control fee
+
+147
+00:10:36,090 --> 00:10:40,040
+to paste over here, and then I'm going to click here to run the code.
+
+148
+00:10:42,230 --> 00:10:44,180
+It says Target not available.
+
+149
+00:10:47,520 --> 00:10:51,330
+Okay, so I'm going to take a look at my debugger, right?
+
+150
+00:10:53,090 --> 00:10:55,690
+So, um, let's go to the debugger again.
+
+151
+00:10:55,870 --> 00:10:56,730
+Click over here.
+
+152
+00:11:02,870 --> 00:11:03,510
+It's open in.
+
+153
+00:11:05,880 --> 00:11:06,230
+Right.
+
+154
+00:11:06,530 --> 00:11:14,400
+So we if we run this, that's gonna tell us that target's not available is because we're using the,
+
+155
+00:11:15,430 --> 00:11:16,790
+uh, we use the wrong window.
+
+156
+00:11:16,850 --> 00:11:18,200
+This one is called expressions.
+
+157
+00:11:18,230 --> 00:11:24,140
+But to monitor a, well, global variables, we have to use the live expressions, video, uh, window
+
+158
+00:11:24,710 --> 00:11:26,090
+so we can come over.
+
+159
+00:11:26,210 --> 00:11:26,540
+Okay.
+
+160
+00:11:26,800 --> 00:11:27,890
+Escape the debug view.
+
+161
+00:11:27,950 --> 00:11:28,580
+Sorry about that.
+
+162
+00:11:28,760 --> 00:11:29,450
+Now go again.
+
+163
+00:11:29,560 --> 00:11:31,760
+I'll click over here on this bug over here.
+
+164
+00:11:34,500 --> 00:11:36,270
+So I'm going to close this window.
+
+165
+00:11:36,570 --> 00:11:42,000
+This window called Expression's, I'll close it and I'm going to come over here to window and then sure
+
+166
+00:11:42,000 --> 00:11:46,060
+window and then I'll select live expressions.
+
+167
+00:11:46,750 --> 00:11:47,930
+You should be here somewhere.
+
+168
+00:11:48,180 --> 00:11:50,100
+This live expression is the issue.
+
+169
+00:11:50,180 --> 00:11:52,170
+Yes, they have the same icon.
+
+170
+00:11:52,500 --> 00:11:54,480
+That is why it's a bit confusing.
+
+171
+00:11:54,810 --> 00:11:59,430
+So if you want to want to tell your global variables, you use the live expressions.
+
+172
+00:12:00,060 --> 00:12:03,810
+So over here, my global variable is added.
+
+173
+00:12:03,880 --> 00:12:06,280
+But let's see if you started.
+
+174
+00:12:07,770 --> 00:12:09,240
+You had no global variable.
+
+175
+00:12:10,300 --> 00:12:11,460
+I'm trying to clean it.
+
+176
+00:12:18,350 --> 00:12:19,220
+To other global.
+
+177
+00:12:19,250 --> 00:12:19,700
+For a while.
+
+178
+00:12:19,730 --> 00:12:25,130
+You can just copy the name of the variable and click on expressions over here and then paste the name.
+
+179
+00:12:25,890 --> 00:12:27,410
+So I have this other twice.
+
+180
+00:12:27,530 --> 00:12:28,160
+No problem.
+
+181
+00:12:28,880 --> 00:12:30,080
+So, um, yeah.
+
+182
+00:12:30,350 --> 00:12:31,700
+So to run our code.
+
+183
+00:12:33,330 --> 00:12:34,570
+Click over here to run.
+
+184
+00:12:36,040 --> 00:12:41,950
+And this is this is the ADC value, and this is based on the current position of my potential, Meeta.
+
+185
+00:12:42,100 --> 00:12:44,140
+And I'm going to move the potential meta.
+
+186
+00:12:45,490 --> 00:12:46,360
+I say move it.
+
+187
+00:12:46,870 --> 00:12:48,870
+You see that the value goes down.
+
+188
+00:12:48,940 --> 00:12:50,440
+I've moved it to the right.
+
+189
+00:12:50,470 --> 00:12:51,340
+Most position.
+
+190
+00:12:51,370 --> 00:12:58,360
+I've moved it to the to the direction towards the, um, the direction of the pin that connects to ground.
+
+191
+00:12:58,600 --> 00:13:00,760
+That is why we record in a very low value.
+
+192
+00:13:01,060 --> 00:13:05,350
+I'm going to move it to the opposite direction, the very end of the opposite direction.
+
+193
+00:13:06,070 --> 00:13:09,370
+And as I move, you see the, um, the ADC value increases.
+
+194
+00:13:09,880 --> 00:13:12,430
+So this is how to configure the ADC.
+
+195
+00:13:13,180 --> 00:13:19,120
+And then we shall go on and see two other examples, at least two other examples which regards to ADC
+
+196
+00:13:19,120 --> 00:13:19,900
+configuration.
+
+197
+00:13:19,930 --> 00:13:23,260
+If you have any questions at all, live in the community section and I'll see you later.
+
+198
+00:13:23,290 --> 00:13:24,040
+Have a nice day.
