@@ -1,0 +1,735 @@
+1
+00:00:02,090 --> 00:00:02,590
+Welcome back.
+
+2
+00:00:02,780 --> 00:00:07,240
+In this lesson, we going to see how to create threats manually.
+
+3
+00:00:07,640 --> 00:00:12,770
+So let's say you have generated your code with Cuba mix and when you arrive here, you realize, oh,
+
+4
+00:00:13,010 --> 00:00:14,090
+I would need another threat.
+
+5
+00:00:14,960 --> 00:00:18,590
+Well, you can just follow up how the other threats were created.
+
+6
+00:00:18,950 --> 00:00:25,100
+We start off by creating the arm, by creating a threat I.D. So I'm just gonna copy the threat idea
+
+7
+00:00:25,100 --> 00:00:25,490
+here.
+
+8
+00:00:26,480 --> 00:00:28,430
+I'm going to create threat three.
+
+9
+00:00:28,520 --> 00:00:31,580
+So I renamed this threat Hando to Threat three.
+
+10
+00:00:31,580 --> 00:00:38,300
+Hando Once the I.D. created, we come over here and then we use the U.S. threat death to create a threat.
+
+11
+00:00:38,800 --> 00:00:41,960
+I'm going to create an exact replica of threat.
+
+12
+00:00:41,990 --> 00:00:46,310
+Wanted to copy this over here and then paste it.
+
+13
+00:00:47,750 --> 00:00:49,820
+So what is going to happiness?
+
+14
+00:00:50,090 --> 00:00:51,310
+We have always threat.
+
+15
+00:00:51,320 --> 00:00:53,570
+The first argument is the threat.
+
+16
+00:00:53,630 --> 00:00:54,030
+Name.
+
+17
+00:00:55,250 --> 00:00:56,760
+The first argument is the threat.
+
+18
+00:00:56,800 --> 00:00:58,910
+Names who are called as threat to a threat.
+
+19
+00:00:58,940 --> 00:00:59,360
+Three.
+
+20
+00:01:00,150 --> 00:01:03,350
+The second argument is the threat function, which we should define later.
+
+21
+00:01:03,390 --> 00:01:05,050
+Our code is Threat three fund.
+
+22
+00:01:06,860 --> 00:01:12,980
+The argument of today is the priority and then the argument which we have zero debt.
+
+23
+00:01:13,010 --> 00:01:20,540
+If we want to know more about this argument, we can actually view this and the threat that the threat
+
+24
+00:01:20,570 --> 00:01:22,640
+would see fall, which you can find over here.
+
+25
+00:01:23,180 --> 00:01:25,490
+I'm gonna keep this zero argument to what it is.
+
+26
+00:01:25,520 --> 00:01:26,720
+This is the stock size.
+
+27
+00:01:27,820 --> 00:01:30,950
+Um, I think I've forgotten what a zero stands for.
+
+28
+00:01:31,960 --> 00:01:33,470
+Um, we can find that out.
+
+29
+00:01:34,970 --> 00:01:35,480
+Let's see.
+
+30
+00:01:38,060 --> 00:01:40,700
+So to find this out, I'm gonna come to the, um.
+
+31
+00:01:41,810 --> 00:01:48,440
+To the middle where third party free ARTUS source and then I'll go to tasks to see.
+
+32
+00:01:51,580 --> 00:01:54,850
+And then what we are looking for is the US threat def.
+
+33
+00:01:56,380 --> 00:02:02,740
+This is something DeNardo control f always threat def.
+
+34
+00:02:03,340 --> 00:02:04,510
+Let's see if we have it here.
+
+35
+00:02:06,860 --> 00:02:07,130
+OK.
+
+36
+00:02:07,840 --> 00:02:12,720
+It doesn't exist here and always threat def.
+
+37
+00:02:12,900 --> 00:02:13,840
+It doesn't exist here.
+
+38
+00:02:14,410 --> 00:02:14,580
+OK.
+
+39
+00:02:14,680 --> 00:02:18,020
+The reason it doesn't exist here is this should be found in the Ms.
+
+40
+00:02:18,160 --> 00:02:20,470
+Ms is always dot h.
+
+41
+00:02:20,530 --> 00:02:22,000
+This is not a this is.
+
+42
+00:02:22,000 --> 00:02:27,720
+No this is not a call if we are to us function.
+
+43
+00:02:27,910 --> 00:02:32,860
+This is the function that was wrapped around free Archos by Simms's.
+
+44
+00:02:32,890 --> 00:02:35,710
+So let's find a Simms's fault and find the meaning of that.
+
+45
+00:02:37,810 --> 00:02:41,110
+We simply need to come up here in our main dot C file and then.
+
+46
+00:02:41,110 --> 00:02:44,290
+Right, click on CMC Spoilsports H Coutu declaration.
+
+47
+00:02:44,830 --> 00:02:49,930
+And this will also give us the chance to see the different aspects, such as the number of priorities
+
+48
+00:02:49,930 --> 00:02:50,980
+and other things we have.
+
+49
+00:02:51,710 --> 00:02:54,790
+OK, so what does the CMC Stone Age for the API.
+
+50
+00:02:54,880 --> 00:02:57,670
+We are using are from this file over here.
+
+51
+00:02:58,300 --> 00:03:00,040
+So you can spend some time looking at this.
+
+52
+00:03:01,090 --> 00:03:01,610
+OK.
+
+53
+00:03:02,920 --> 00:03:04,480
+So these are the priority levels.
+
+54
+00:03:04,540 --> 00:03:06,130
+We have the ideal priority.
+
+55
+00:03:06,190 --> 00:03:08,350
+This is the lowest minus three.
+
+56
+00:03:08,380 --> 00:03:09,970
+We have always priority low.
+
+57
+00:03:10,000 --> 00:03:11,920
+This is minus two.
+
+58
+00:03:12,160 --> 00:03:13,000
+Below normal.
+
+59
+00:03:13,600 --> 00:03:14,420
+It's minus one.
+
+60
+00:03:14,440 --> 00:03:16,240
+Normal is you priority above.
+
+61
+00:03:16,240 --> 00:03:17,200
+Normal is plus one.
+
+62
+00:03:17,230 --> 00:03:18,490
+We have high priority.
+
+63
+00:03:18,790 --> 00:03:20,080
+We have real time priority.
+
+64
+00:03:20,080 --> 00:03:20,380
+We have.
+
+65
+00:03:20,710 --> 00:03:21,340
+Priority.
+
+66
+00:03:21,790 --> 00:03:23,200
+These are the priority types.
+
+67
+00:03:23,480 --> 00:03:26,770
+And they are always status types, which we've not looked at.
+
+68
+00:03:27,490 --> 00:03:29,470
+And then, um, all we are looking for is a while.
+
+69
+00:03:29,550 --> 00:03:31,050
+Always the red dev function.
+
+70
+00:03:31,120 --> 00:03:31,630
+This is it.
+
+71
+00:03:31,710 --> 00:03:32,750
+Always the red death.
+
+72
+00:03:33,040 --> 00:03:35,320
+The first name is a pointer to the thread name.
+
+73
+00:03:35,710 --> 00:03:40,780
+The second name is the start address of the thread function, which is basically the thread function.
+
+74
+00:03:41,350 --> 00:03:42,510
+This is the priority.
+
+75
+00:03:42,550 --> 00:03:46,450
+What we the zero that was confusing us is this one here.
+
+76
+00:03:46,480 --> 00:03:47,620
+Number of instances.
+
+77
+00:03:47,920 --> 00:03:51,490
+So you can have a single thread and have multiple instances of the same threat.
+
+78
+00:03:51,880 --> 00:03:54,940
+So we pass in zero day because we know create infinite instances.
+
+79
+00:03:55,300 --> 00:03:57,190
+So this argument is number of instances.
+
+80
+00:03:57,190 --> 00:03:59,200
+And the last one, of course, is the stock size.
+
+81
+00:03:59,950 --> 00:04:04,360
+And if you want to learn more about the API is available, you can certainly spend more time in this,
+
+82
+00:04:04,360 --> 00:04:05,050
+followed by here.
+
+83
+00:04:06,490 --> 00:04:07,930
+So we know what that means.
+
+84
+00:04:07,970 --> 00:04:10,450
+Now, this is a number of instances.
+
+85
+00:04:10,690 --> 00:04:12,030
+So zero instances.
+
+86
+00:04:12,040 --> 00:04:12,970
+This the stack size.
+
+87
+00:04:13,300 --> 00:04:15,910
+So once we've used the OS thread def.
+
+88
+00:04:17,080 --> 00:04:19,520
+To to set these parameters.
+
+89
+00:04:19,610 --> 00:04:25,640
+We come here and then we use the always threat create and then to create a threat who is threat create
+
+90
+00:04:26,060 --> 00:04:28,370
+and then is threat three over here.
+
+91
+00:04:29,120 --> 00:04:34,970
+And this is going to return to threat under which we shall store in the threat I.D. that we created.
+
+92
+00:04:35,240 --> 00:04:36,440
+So it's gonna be stored here.
+
+93
+00:04:37,610 --> 00:04:38,030
+Right.
+
+94
+00:04:38,510 --> 00:04:40,880
+So change the comment here to threat three.
+
+95
+00:04:41,330 --> 00:04:44,900
+Remember, we have threat three over here.
+
+96
+00:04:45,290 --> 00:04:46,370
+So the steps.
+
+97
+00:04:46,430 --> 00:04:50,540
+Step one, we declared a handle to store the threat handle.
+
+98
+00:04:50,660 --> 00:04:51,650
+When it returns.
+
+99
+00:04:52,040 --> 00:04:57,500
+And then we use the always threat def to define DRM, the parameters of the threat.
+
+100
+00:04:57,560 --> 00:04:59,900
+And then we create the threat using the OS threat.
+
+101
+00:04:59,950 --> 00:05:00,270
+Great.
+
+102
+00:05:00,350 --> 00:05:03,440
+Once that is done, we have to go ahead and define the threat function.
+
+103
+00:05:04,610 --> 00:05:10,100
+So I'm gonna come down here and the threat function has to take this format.
+
+104
+00:05:10,250 --> 00:05:10,990
+It's void.
+
+105
+00:05:11,180 --> 00:05:13,800
+It takes constant point-I argument.
+
+106
+00:05:15,800 --> 00:05:18,320
+So I'll copy this pasted over here.
+
+107
+00:05:20,690 --> 00:05:21,800
+I copy the lymphoid
+
+108
+00:05:24,340 --> 00:05:28,850
+conclusory to copy control to paste open and close.
+
+109
+00:05:29,540 --> 00:05:33,440
+And then I'm gonna change this to threat three func.
+
+110
+00:05:33,470 --> 00:05:39,930
+Remember we already told our OS threat def that the threat function is called Threat three fund.
+
+111
+00:05:40,230 --> 00:05:41,300
+As you can see over here.
+
+112
+00:05:41,780 --> 00:05:43,370
+So that is why I'm using the same name.
+
+113
+00:05:44,640 --> 00:05:45,060
+OK.
+
+114
+00:05:46,880 --> 00:05:48,860
+And its priority is just like the others.
+
+115
+00:05:49,520 --> 00:05:53,030
+And in here you can just put your infinite loop.
+
+116
+00:05:53,090 --> 00:05:54,130
+Remember threats.
+
+117
+00:05:54,170 --> 00:05:56,450
+Main threats have to have infinite loops.
+
+118
+00:05:57,370 --> 00:06:00,830
+The other forms of threats that are time are threats, interrupt threats.
+
+119
+00:06:01,070 --> 00:06:03,560
+Those don't don't have infinite loops.
+
+120
+00:06:03,590 --> 00:06:04,640
+Those have to return.
+
+121
+00:06:05,450 --> 00:06:08,180
+And just to RAAM to make sure it is working.
+
+122
+00:06:08,350 --> 00:06:11,030
+Let's add our profiler to it.
+
+123
+00:06:11,570 --> 00:06:14,780
+Let's profile this threat and see.
+
+124
+00:06:16,090 --> 00:06:24,330
+So in our profilers, I'm going to come over here at a new one thread, three profiler like this, and
+
+125
+00:06:24,340 --> 00:06:27,590
+then I'm simply going to go and incremented.
+
+126
+00:06:28,850 --> 00:06:30,290
+So I'm going to come down here.
+
+127
+00:06:32,090 --> 00:06:34,790
+This is our threat three function.
+
+128
+00:06:34,910 --> 00:06:36,650
+I'm simply going to this profiler.
+
+129
+00:06:37,640 --> 00:06:45,170
+So now let's go and see if this increment unless she did I forget to train this to Profiler three.
+
+130
+00:06:47,090 --> 00:06:47,310
+Okay.
+
+131
+00:06:47,420 --> 00:06:50,120
+When I posted this here, he has to be three.
+
+132
+00:06:51,740 --> 00:06:52,160
+Okay.
+
+133
+00:06:53,660 --> 00:06:56,540
+So let's go and see when I click to build.
+
+134
+00:06:56,570 --> 00:06:57,830
+Click over here to build.
+
+135
+00:07:01,310 --> 00:07:01,980
+It's built in.
+
+136
+00:07:05,060 --> 00:07:06,550
+We've got to rush.
+
+137
+00:07:07,120 --> 00:07:07,720
+Let's see.
+
+138
+00:07:07,780 --> 00:07:08,840
+Let's see, let's see.
+
+139
+00:07:16,630 --> 00:07:16,790
+Right.
+
+140
+00:07:16,890 --> 00:07:20,670
+Three function is good work with zero come from.
+
+141
+00:07:21,280 --> 00:07:22,970
+Okay, should be up there somewhere.
+
+142
+00:07:29,910 --> 00:07:32,710
+Who is threat or those who see it over here?
+
+143
+00:07:39,190 --> 00:07:39,470
+Huh?
+
+144
+00:07:40,160 --> 00:07:47,690
+Okay, so I suspect I know the reason is because our thread function, the prototype of the function
+
+145
+00:07:47,690 --> 00:07:49,460
+has to be placed on the top of the fall.
+
+146
+00:07:49,520 --> 00:07:52,130
+Remember, the function is declared below this line.
+
+147
+00:07:52,760 --> 00:07:55,100
+So it's not accessible because of that.
+
+148
+00:07:55,130 --> 00:07:57,710
+We've got to put a prototype of thread three.
+
+149
+00:07:57,890 --> 00:08:01,170
+You see, we have the prototype of all our threat functions at the top here.
+
+150
+00:08:02,790 --> 00:08:05,540
+So copy this pasted over here.
+
+151
+00:08:06,230 --> 00:08:10,310
+Change this to number three like this and then click over here to build.
+
+152
+00:08:12,640 --> 00:08:13,250
+It's Putin.
+
+153
+00:08:15,130 --> 00:08:16,330
+We still have two errors.
+
+154
+00:08:16,640 --> 00:08:18,130
+Let's see what does it say?
+
+155
+00:08:20,190 --> 00:08:20,570
+Three.
+
+156
+00:08:20,850 --> 00:08:21,010
+Oh.
+
+157
+00:08:22,470 --> 00:08:26,200
+Okay, so the other issue is I have a typo in this word here.
+
+158
+00:08:27,040 --> 00:08:27,910
+It should be one H.
+
+159
+00:08:28,630 --> 00:08:30,730
+And yeah, I'll fix that here.
+
+160
+00:08:33,180 --> 00:08:34,580
+Three, three fingers, one each.
+
+161
+00:08:35,100 --> 00:08:37,160
+Okay, let's build and see.
+
+162
+00:08:37,290 --> 00:08:38,400
+Click over here to build.
+
+163
+00:08:43,870 --> 00:08:44,740
+We have one error.
+
+164
+00:08:45,140 --> 00:08:45,730
+Let's see.
+
+165
+00:08:46,630 --> 00:08:50,220
+This time is somewhere else has to be done here.
+
+166
+00:08:58,320 --> 00:09:00,520
+All right.
+
+167
+00:09:00,650 --> 00:09:10,430
+Three phone calls for gonna open this up a bit on defined reference to threat, three funk.
+
+168
+00:09:11,480 --> 00:09:14,240
+OK, we still have our two H over here.
+
+169
+00:09:14,610 --> 00:09:15,220
+Share a border.
+
+170
+00:09:15,620 --> 00:09:16,700
+Click over here to build.
+
+171
+00:09:23,680 --> 00:09:27,950
+It appealed successfully, gonna get onto the board and go to the debugged by clicking here.
+
+172
+00:09:33,910 --> 00:09:34,550
+It's opening.
+
+173
+00:09:41,410 --> 00:09:44,530
+So I'm going to profile thread number three.
+
+174
+00:09:45,070 --> 00:09:52,720
+I'm going to remove all of these from the old project or old experiment or copy thread three profiler,
+
+175
+00:09:52,830 --> 00:09:53,890
+go at it over here.
+
+176
+00:09:54,100 --> 00:09:58,730
+Remember, thread three has the same priority as the other threats or tasks.
+
+177
+00:09:59,290 --> 00:10:01,900
+Click over here to run and you can see it is running.
+
+178
+00:10:02,080 --> 00:10:05,830
+So our new task or threat is executing as well.
+
+179
+00:10:06,540 --> 00:10:06,970
+Right.
+
+180
+00:10:10,380 --> 00:10:10,710
+Right.
+
+181
+00:10:10,900 --> 00:10:12,430
+So that's all there is for this lesson.
+
+182
+00:10:12,430 --> 00:10:14,970
+We've seen how to create a threat manually.
+
+183
+00:10:15,800 --> 00:10:21,730
+I mean, the next lesson we're going to see how to how to send notification between threats or soon
+
+184
+00:10:21,730 --> 00:10:22,420
+the next lesson.

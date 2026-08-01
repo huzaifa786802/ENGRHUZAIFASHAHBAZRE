@@ -1,0 +1,811 @@
+1
+00:00:00,210 --> 00:00:00,420
+Hello.
+
+2
+00:00:00,510 --> 00:00:01,020
+Welcome back.
+
+3
+00:00:01,480 --> 00:00:01,680
+OK.
+
+4
+00:00:01,890 --> 00:00:07,470
+So let's go to a new threat, threat three, and we are going to, um, we're going to add that also
+
+5
+00:00:07,470 --> 00:00:12,750
+to these threats for sending the four taken and sending the message.
+
+6
+00:00:12,840 --> 00:00:15,260
+Basically, we're going to let it take, Becky.
+
+7
+00:00:15,660 --> 00:00:21,540
+The key to the restroom and also be able to use the restroom, which is that you are out in our story.
+
+8
+00:00:21,960 --> 00:00:25,020
+So using the same new text, we can use this as well.
+
+9
+00:00:25,320 --> 00:00:31,080
+I'm going to copy this book over here and then paste it in our new thread, which is thread three.
+
+10
+00:00:31,140 --> 00:00:32,520
+I'm going to comment this out.
+
+11
+00:00:36,370 --> 00:00:37,370
+Patients over here.
+
+12
+00:00:38,050 --> 00:00:40,420
+And, um, we're going to send a message.
+
+13
+00:00:43,740 --> 00:00:46,350
+This message is going to be hello from threat to three.
+
+14
+00:00:49,650 --> 00:00:50,790
+Going to come up here.
+
+15
+00:00:54,210 --> 00:00:58,170
+And I know I'll say hello from three to three, right?
+
+16
+00:00:58,990 --> 00:01:03,910
+And they know where to put the same amount of delay, which is tenements.
+
+17
+00:01:04,490 --> 00:01:07,930
+So now we have hello from thread one, thread two and thread three.
+
+18
+00:01:08,540 --> 00:01:09,490
+And then.
+
+19
+00:01:11,160 --> 00:01:12,450
+Put this over here like this.
+
+20
+00:01:13,590 --> 00:01:15,930
+Okay, let's put and see what we have.
+
+21
+00:01:16,050 --> 00:01:17,100
+Click over here to build.
+
+22
+00:01:21,170 --> 00:01:21,610
+Putin.
+
+23
+00:01:23,620 --> 00:01:24,770
+To build successfully.
+
+24
+00:01:26,660 --> 00:01:28,140
+And then click to debug.
+
+25
+00:01:35,880 --> 00:01:37,420
+It's loaded, okay?
+
+26
+00:01:37,830 --> 00:01:39,890
+We use in terror time in this experiment.
+
+27
+00:01:39,950 --> 00:01:48,540
+So I'm going to exit this quick over here to come out of it and I'll come over here to a term, then
+
+28
+00:01:49,140 --> 00:01:56,820
+select this three sort of baud rate to the appropriate value.
+
+29
+00:01:57,620 --> 00:01:58,470
+This one over here.
+
+30
+00:01:59,220 --> 00:02:02,610
+And then, OK, click away to reset.
+
+31
+00:02:05,990 --> 00:02:09,140
+OK, we get in a bit of a conflict.
+
+32
+00:02:09,250 --> 00:02:09,650
+Lizzie.
+
+33
+00:02:13,260 --> 00:02:16,520
+And yet it's understandable why we should get this, OK?
+
+34
+00:02:16,920 --> 00:02:20,670
+So what happens is the threats have the same priority.
+
+35
+00:02:21,240 --> 00:02:25,230
+So if one threat has the key and the threat.
+
+36
+00:02:25,310 --> 00:02:25,510
+Right.
+
+37
+00:02:25,510 --> 00:02:26,430
+Loses the key.
+
+38
+00:02:27,480 --> 00:02:30,360
+The other two threats, stop fighting for a key.
+
+39
+00:02:31,500 --> 00:02:35,440
+So in a way, that is what creates this, um, this issue with a you.
+
+40
+00:02:36,390 --> 00:02:41,820
+So when we have just two threads, one releases the key data, one just picks it up and then uses the
+
+41
+00:02:41,820 --> 00:02:42,170
+key.
+
+42
+00:02:42,270 --> 00:02:44,710
+But now we have two threads waiting.
+
+43
+00:02:45,150 --> 00:02:46,860
+And they both have the same priority.
+
+44
+00:02:47,160 --> 00:02:49,500
+So it's the one the other one believes is the key.
+
+45
+00:02:50,010 --> 00:02:51,420
+No one is ahead of the other.
+
+46
+00:02:51,570 --> 00:02:52,350
+The key is dropped.
+
+47
+00:02:52,380 --> 00:02:56,370
+And then there is there's a conflict for who gets the key.
+
+48
+00:02:56,430 --> 00:03:01,620
+That is I think that is what is manifested into the in the second one.
+
+49
+00:03:01,670 --> 00:03:02,500
+It's up this way.
+
+50
+00:03:02,940 --> 00:03:08,550
+But anyway, this is not the experiment we run in here that we can synchronize the threat further to,
+
+51
+00:03:08,550 --> 00:03:09,510
+um, to let this arm.
+
+52
+00:03:09,630 --> 00:03:11,670
+To let all of them work peacefully.
+
+53
+00:03:12,210 --> 00:03:12,620
+We can, um.
+
+54
+00:03:12,690 --> 00:03:13,230
+We can do that.
+
+55
+00:03:13,260 --> 00:03:14,320
+But that's not experiment.
+
+56
+00:03:14,390 --> 00:03:15,960
+We're going to see how to notify.
+
+57
+00:03:16,020 --> 00:03:16,860
+Between threats.
+
+58
+00:03:17,220 --> 00:03:18,720
+And furthermore, actually, we can um.
+
+59
+00:03:19,260 --> 00:03:24,930
+Uh, a simple issue will be to reduce that learmount between the threat.
+
+60
+00:03:25,170 --> 00:03:26,730
+So that do all work peacefully.
+
+61
+00:03:27,160 --> 00:03:31,950
+Uh, a proper issue is to apply another form of synchronization between the threats.
+
+62
+00:03:32,410 --> 00:03:34,620
+Well, let's go ahead and look at notification.
+
+63
+00:03:34,680 --> 00:03:37,020
+I'll leave this for you as an assignment.
+
+64
+00:03:37,230 --> 00:03:41,980
+If you if you've not found a way to make them more, you know what?
+
+65
+00:03:42,000 --> 00:03:43,550
+Peacefully, then, um, leave it.
+
+66
+00:03:43,560 --> 00:03:44,900
+And the questions and answers area.
+
+67
+00:03:45,130 --> 00:03:46,080
+Why should it be an issue?
+
+68
+00:03:46,860 --> 00:03:49,260
+Let's see how to create notifications.
+
+69
+00:04:28,510 --> 00:04:33,340
+So we are going to notify thread number three from thread to using the, um, the push.
+
+70
+00:04:33,340 --> 00:04:40,870
+But we was so when we pressed when we pressed the push button, which is often which is going to be
+
+71
+00:04:40,870 --> 00:04:47,110
+read into it to a notification should be sent to thread three to use the, um.
+
+72
+00:04:47,290 --> 00:04:51,520
+You ought to transmit its message, which is greetings from threat three.
+
+73
+00:04:51,970 --> 00:04:52,630
+So let's do that.
+
+74
+00:04:54,250 --> 00:05:01,210
+So I'm going to enable the, um, the push button and thread to again, um, this is what we did.
+
+75
+00:05:01,470 --> 00:05:07,670
+I'm gonna come over here and then remove the comment and then, um, we can.
+
+76
+00:05:07,670 --> 00:05:10,630
+No, I'm just gonna fetch all of this.
+
+77
+00:05:13,500 --> 00:05:14,270
+This is how a.
+
+78
+00:05:15,620 --> 00:05:17,210
+You quote using them UTX.
+
+79
+00:05:18,600 --> 00:05:19,600
+Cut this.
+
+80
+00:05:21,960 --> 00:05:24,470
+And then our place in here.
+
+81
+00:05:26,260 --> 00:05:32,650
+So to, um, to send a notification, we need to use the, um, the task notify function.
+
+82
+00:05:33,130 --> 00:05:34,880
+Come over here and say X task.
+
+83
+00:05:35,650 --> 00:05:38,910
+Notify the first argument is the.
+
+84
+00:05:40,630 --> 00:05:42,290
+It's the task you want to notify.
+
+85
+00:05:42,490 --> 00:05:44,810
+And you have to pass the task on the.
+
+86
+00:05:44,870 --> 00:05:48,170
+Remember the task on the list, like the idea of each task.
+
+87
+00:05:48,600 --> 00:05:50,200
+We want to notify Task three.
+
+88
+00:05:50,300 --> 00:05:51,670
+We need to task 300.
+
+89
+00:05:52,760 --> 00:05:53,010
+Copy.
+
+90
+00:05:53,120 --> 00:05:55,370
+Task or threat three from.
+
+91
+00:05:55,440 --> 00:05:55,710
+Yeah.
+
+92
+00:05:58,990 --> 00:05:59,820
+Come down here.
+
+93
+00:06:00,600 --> 00:06:01,640
+Post this over here.
+
+94
+00:06:03,900 --> 00:06:09,520
+The second argument is a flag that we can set, we can, um, there's a range, I think, you know,
+
+95
+00:06:09,630 --> 00:06:15,000
+eight others up to eight PYT range of flags that we can set.
+
+96
+00:06:15,120 --> 00:06:18,090
+This flag would be used to identify the notification.
+
+97
+00:06:18,090 --> 00:06:24,550
+I'm going to set E X zero one and then I'm going to pass E set bit.
+
+98
+00:06:25,200 --> 00:06:29,030
+So there are ways of notifying you can either set pits or disable it.
+
+99
+00:06:29,430 --> 00:06:30,930
+So here we are set in bits.
+
+100
+00:06:31,110 --> 00:06:32,480
+So our pass is set said bits.
+
+101
+00:06:32,610 --> 00:06:32,850
+Yeah.
+
+102
+00:06:34,020 --> 00:06:38,670
+So we send in the notification to thread three three three.
+
+103
+00:06:38,790 --> 00:06:42,510
+We have to wait for the notification to arrive.
+
+104
+00:06:43,650 --> 00:06:47,520
+So I'm going to go to thread three words or thread three.
+
+105
+00:06:47,890 --> 00:06:50,550
+This is to reach over here.
+
+106
+00:06:51,700 --> 00:06:54,570
+And in here we are going to use the next task.
+
+107
+00:06:54,630 --> 00:06:55,440
+Notify wait.
+
+108
+00:06:55,490 --> 00:06:57,680
+Function say X task.
+
+109
+00:07:01,270 --> 00:07:07,420
+Notify wait and then pass PD force over here.
+
+110
+00:07:10,000 --> 00:07:11,650
+And it's your X, F, f.
+
+111
+00:07:16,340 --> 00:07:17,600
+And then at five value.
+
+112
+00:07:22,970 --> 00:07:27,400
+And then PD Mux delay of port must delay.
+
+113
+00:07:38,110 --> 00:07:42,850
+So we passed this here because we don't want it to reset the flags upon entry.
+
+114
+00:07:43,160 --> 00:07:46,600
+And this one here resets all the flags before leaving.
+
+115
+00:07:46,930 --> 00:07:55,290
+So upon entry, do not reset the flags and here reset the flags when leaving and the notify value.
+
+116
+00:07:55,300 --> 00:07:57,070
+Here's the value that will be received.
+
+117
+00:07:57,340 --> 00:08:01,990
+And this is what would we would use to confirm this is the notification we want.
+
+118
+00:08:02,620 --> 00:08:09,460
+And postmarks delay means wait indefinitely for this notification to arrive if we don't use postmarks
+
+119
+00:08:09,490 --> 00:08:09,690
+delay.
+
+120
+00:08:10,030 --> 00:08:15,220
+And we use that time such as 5:00 a.m., as it can wait for five a.m., as if the notification doesn't
+
+121
+00:08:15,220 --> 00:08:15,580
+arrive.
+
+122
+00:08:15,610 --> 00:08:18,460
+It would proceed to execute the other lines of code.
+
+123
+00:08:18,890 --> 00:08:20,710
+But here we are saying wait indefinitely.
+
+124
+00:08:22,180 --> 00:08:24,460
+So we have to define notify value here.
+
+125
+00:08:26,120 --> 00:08:27,850
+So you inferred you this underscore to.
+
+126
+00:08:30,040 --> 00:08:30,880
+That's Five-fold.
+
+127
+00:08:40,880 --> 00:08:46,280
+So, um, this variable here would have the notification value, you would have it.
+
+128
+00:08:46,730 --> 00:08:51,230
+So we basically would declaring an empty verbal to start the notification value.
+
+129
+00:08:51,500 --> 00:08:54,590
+And we've got to check the notification value if it's the one we're waiting for.
+
+130
+00:08:54,620 --> 00:08:58,550
+And we can use the end, um, the logical end to do this.
+
+131
+00:08:58,580 --> 00:09:06,500
+We can say if if notified value contains or our expected value.
+
+132
+00:09:06,530 --> 00:09:08,080
+So I'll say if over here.
+
+133
+00:09:09,960 --> 00:09:16,280
+And say, and your ex sure won because you can have notification coming from different tasks.
+
+134
+00:09:19,080 --> 00:09:20,880
+If this is three quarters of zero.
+
+135
+00:09:26,210 --> 00:09:26,630
+Right.
+
+136
+00:09:30,260 --> 00:09:36,740
+If that's the case, then we can know it's the right notification, we can, um, transmit our data.
+
+137
+00:09:39,590 --> 00:09:42,890
+Or just cut this and put it in the.
+
+138
+00:09:50,230 --> 00:09:50,650
+Right.
+
+139
+00:09:51,370 --> 00:09:58,930
+So we will received a notification because remember when we said send notification, we added this threat
+
+140
+00:09:58,990 --> 00:10:02,410
+threat 3s, thread I.D. would that notification would arrive.
+
+141
+00:10:02,510 --> 00:10:08,950
+And we confirm if this or X were one, then this is the notification that tells us to go ahead and use
+
+142
+00:10:08,950 --> 00:10:09,270
+the U.
+
+143
+00:10:09,940 --> 00:10:15,010
+We can have another notification coming from another thread, and that could be through extra, too.
+
+144
+00:10:15,040 --> 00:10:18,270
+And we can check if it's so X to do this other action.
+
+145
+00:10:19,230 --> 00:10:19,460
+Right.
+
+146
+00:10:21,020 --> 00:10:22,180
+So what does this thread, too?
+
+147
+00:10:22,430 --> 00:10:25,760
+I'm going to make sure that notification is sent when we press the button.
+
+148
+00:10:25,790 --> 00:10:27,440
+So I'm going to cut this over here.
+
+149
+00:10:28,490 --> 00:10:31,010
+The task notify function.
+
+150
+00:10:32,470 --> 00:10:33,460
+I'm going to put it here.
+
+151
+00:10:33,520 --> 00:10:36,640
+This is the action that we take when the pattern is pressed.
+
+152
+00:10:37,190 --> 00:10:38,650
+So won't the button is pressed.
+
+153
+00:10:38,740 --> 00:10:39,880
+We want to do two things.
+
+154
+00:10:39,910 --> 00:10:45,700
+We want to send notification to thread three, as well as print our threat to message.
+
+155
+00:10:46,270 --> 00:10:47,920
+But this is not really relevant here.
+
+156
+00:10:48,680 --> 00:10:48,970
+OK.
+
+157
+00:10:49,480 --> 00:10:50,350
+But we can keep it.
+
+158
+00:10:51,910 --> 00:10:53,890
+And then let's Putin see what we have.
+
+159
+00:10:54,220 --> 00:10:55,660
+Let's hope we have no errors.
+
+160
+00:11:00,550 --> 00:11:00,780
+OK.
+
+161
+00:11:01,030 --> 00:11:01,930
+We've got no arrow.
+
+162
+00:11:02,110 --> 00:11:03,060
+Let's get onto the board.
+
+163
+00:11:03,190 --> 00:11:03,980
+Click over here.
+
+164
+00:11:06,280 --> 00:11:07,230
+It's downloaded.
+
+165
+00:11:14,380 --> 00:11:15,480
+Download in.
+
+166
+00:11:17,720 --> 00:11:17,930
+OK.
+
+167
+00:11:18,320 --> 00:11:19,030
+It's downloaded.
+
+168
+00:11:19,190 --> 00:11:21,530
+Going to escape by coming out of it.
+
+169
+00:11:21,730 --> 00:11:23,510
+I'm going to terror attempt to see where we have.
+
+170
+00:11:26,700 --> 00:11:27,190
+AK.
+
+171
+00:11:28,610 --> 00:11:35,480
+When I select the port, this one over here, then I set the board rate to the appropriate value.
+
+172
+00:11:38,330 --> 00:11:42,530
+This one over here, we have Cretans from threat one.
+
+173
+00:11:44,180 --> 00:11:49,140
+As see, as I pressed the button, we see Cretans from threat three and threat to let me just increase
+
+174
+00:11:49,140 --> 00:11:53,550
+the font size so that we all see what we see properly.
+
+175
+00:11:57,060 --> 00:11:57,710
+It's open in.
+
+176
+00:11:59,910 --> 00:12:01,330
+A select 14 here.
+
+177
+00:12:01,470 --> 00:12:03,220
+Then I'm going to use this one.
+
+178
+00:12:03,730 --> 00:12:05,020
+See the council.
+
+179
+00:12:06,390 --> 00:12:07,970
+OK, so this is it.
+
+180
+00:12:08,750 --> 00:12:10,100
+Greetings from threat one.
+
+181
+00:12:10,460 --> 00:12:11,690
+The Botin is not prest.
+
+182
+00:12:25,260 --> 00:12:28,860
+So I'm going to select 14 over here and then use this font.
+
+183
+00:12:29,820 --> 00:12:30,600
+And now it's bigger.
+
+184
+00:12:31,770 --> 00:12:32,060
+OK.
+
+185
+00:12:33,450 --> 00:12:36,450
+So this is third one only sent.
+
+186
+00:12:36,570 --> 00:12:42,630
+Remember, we only send a message from three to when the button is pressed and at the same time we send
+
+187
+00:12:42,630 --> 00:12:43,710
+a notification as well.
+
+188
+00:12:44,160 --> 00:12:45,670
+So the button is no press.
+
+189
+00:12:45,690 --> 00:12:47,010
+No, I'm going to press the button.
+
+190
+00:12:47,520 --> 00:12:51,560
+You can see we find greetings from Threat three and then greetings from threat to us.
+
+191
+00:12:51,570 --> 00:12:53,130
+Well, right.
+
+192
+00:12:53,190 --> 00:12:55,230
+Because of what we are Twyning threat to.
+
+193
+00:12:57,550 --> 00:12:57,870
+OK.
+
+194
+00:12:59,400 --> 00:13:03,330
+So in threat number two, just to point out.
+
+195
+00:13:03,480 --> 00:13:07,680
+When a botanist press, we send a notification and then we print out what threat to message.
+
+196
+00:13:08,080 --> 00:13:12,040
+And when we send a notification threat, three receives the notification.
+
+197
+00:13:12,600 --> 00:13:14,160
+And then it's printed message.
+
+198
+00:13:14,670 --> 00:13:19,680
+So this weather is this is how to send notification between friends or even amongst threats.
+
+199
+00:13:20,010 --> 00:13:24,990
+I advise you to, um, experiment more, try to send a notification coming from threat one as well.
+
+200
+00:13:25,890 --> 00:13:28,500
+And then check that is the right notification.
+
+201
+00:13:28,530 --> 00:13:32,490
+Just give it a different notification value and then take an appropriate action.
+
+202
+00:13:33,150 --> 00:13:33,750
+That's all there is.
+
+203
+00:13:33,880 --> 00:13:34,590
+I'll see you later.

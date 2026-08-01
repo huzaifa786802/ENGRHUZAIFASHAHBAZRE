@@ -1,0 +1,335 @@
+1
+00:00:00,370 --> 00:00:00,570
+Hello.
+
+2
+00:00:00,750 --> 00:00:01,290
+Welcome back.
+
+3
+00:00:01,650 --> 00:00:08,670
+So in this lesson, we are going to see how to how to access a single resource from multiple threads
+
+4
+00:00:08,760 --> 00:00:12,700
+or tasks by the help of a new text when using mutex.
+
+5
+00:00:13,050 --> 00:00:15,210
+There are two functions or two API.
+
+6
+00:00:15,270 --> 00:00:22,270
+We need we need the, um, the new tax give and the new tax take or the semaphores take and the semaphores
+
+7
+00:00:22,290 --> 00:00:24,510
+give me Texas, that type of semaphore.
+
+8
+00:00:25,260 --> 00:00:28,800
+So, um, I'm gonna come over here.
+
+9
+00:00:28,920 --> 00:00:30,240
+This is my third one.
+
+10
+00:00:30,780 --> 00:00:38,760
+You can think of the mutex as a key, a single key to the rest room or the toilet or the um the restroom.
+
+11
+00:00:39,010 --> 00:00:40,290
+I know you get what I mean.
+
+12
+00:00:40,650 --> 00:00:45,390
+So if you want to go to the restroom, you pick up the key and then you open the door.
+
+13
+00:00:45,690 --> 00:00:50,700
+When you finish using it returned a key such that the next person can pick up the key.
+
+14
+00:00:50,760 --> 00:00:51,280
+Open the door.
+
+15
+00:00:51,280 --> 00:00:53,040
+And when different issues in it, they return.
+
+16
+00:00:53,580 --> 00:00:56,450
+So we are going to use them.
+
+17
+00:00:57,580 --> 00:01:05,790
+Ex semiformal take to take the key, so say ex semaphore, take does the name of the API.
+
+18
+00:01:06,070 --> 00:01:07,600
+And this here takes the name off.
+
+19
+00:01:07,600 --> 00:01:12,880
+The key name of the key is our new tax I.D..
+
+20
+00:01:13,000 --> 00:01:13,640
+Over here.
+
+21
+00:01:13,720 --> 00:01:16,000
+The new text we created in Cuba makes its code.
+
+22
+00:01:16,030 --> 00:01:19,720
+You add new tax on those who control see to copy.
+
+23
+00:01:24,310 --> 00:01:31,530
+And then I'm going to put this here and then we're going to add some delay here, such as it is a form
+
+24
+00:01:31,530 --> 00:01:32,110
+of a timeout.
+
+25
+00:01:32,190 --> 00:01:40,740
+So I'll say put Max DeLay and put Max DeLay means this is, um, infinite timeout.
+
+26
+00:01:40,920 --> 00:01:45,120
+Meaning don't move on, too, until you get a key.
+
+27
+00:01:45,690 --> 00:01:53,010
+You can put an amount of time here, such as fry them as such that if the key doesn't arrive in five,
+
+28
+00:01:53,020 --> 00:01:54,920
+Emmis, break the door and enter.
+
+29
+00:01:55,490 --> 00:01:59,280
+But if you put port max delay means if the key doesn't arrive.
+
+30
+00:01:59,340 --> 00:02:01,020
+You cannot open the door.
+
+31
+00:02:01,470 --> 00:02:02,610
+The door is still locked.
+
+32
+00:02:02,970 --> 00:02:09,060
+But if we put something before, put an actual number here, which is not put to Max DeLay 10 M as hundred
+
+33
+00:02:09,060 --> 00:02:14,400
+M as it means, if the key doesn't arrive within this time, you can go ahead and try to enter.
+
+34
+00:02:15,390 --> 00:02:15,660
+Right.
+
+35
+00:02:15,750 --> 00:02:22,450
+And you can think of the bathroom being that you got that you are the driver, the restroom being the
+
+36
+00:02:22,550 --> 00:02:23,280
+are the driver.
+
+37
+00:02:23,700 --> 00:02:31,380
+So wait, wait for infinite time until the key arrives before you can enter the restroom, which is
+
+38
+00:02:31,380 --> 00:02:33,360
+the you are driver once you are done.
+
+39
+00:02:33,900 --> 00:02:34,920
+You can return to key.
+
+40
+00:02:34,980 --> 00:02:39,270
+We this uh this API should be you at take.
+
+41
+00:02:39,340 --> 00:02:40,830
+I forgot to put a word take here.
+
+42
+00:02:43,080 --> 00:02:46,950
+Once you are done you can return the key by saying x semaphore.
+
+43
+00:02:48,180 --> 00:02:50,220
+You can give back the key x semaphore.
+
+44
+00:02:50,250 --> 00:02:55,080
+Give like this and the name of the key is you are to new text Hondo.
+
+45
+00:02:56,240 --> 00:02:56,640
+Right.
+
+46
+00:02:57,550 --> 00:03:00,090
+And when given the key there is no time involved.
+
+47
+00:03:00,720 --> 00:03:01,320
+So this is it.
+
+48
+00:03:01,830 --> 00:03:12,090
+So the same thing is going to be done for our our threat to thread two would also need to take the same
+
+49
+00:03:12,090 --> 00:03:12,420
+key.
+
+50
+00:03:12,500 --> 00:03:13,770
+The key name is the same.
+
+51
+00:03:14,550 --> 00:03:15,860
+And we say, wait two.
+
+52
+00:03:15,870 --> 00:03:16,650
+The key arrives.
+
+53
+00:03:16,680 --> 00:03:17,010
+Wait.
+
+54
+00:03:17,040 --> 00:03:20,070
+An infinite amount of time once you are done.
+
+55
+00:03:20,130 --> 00:03:21,630
+You can also return the key.
+
+56
+00:03:22,050 --> 00:03:22,920
+The same key.
+
+57
+00:03:24,240 --> 00:03:24,780
+Like this.
+
+58
+00:03:25,950 --> 00:03:26,350
+OK.
+
+59
+00:03:26,940 --> 00:03:33,060
+I hope you understand the analogy so we can build now and see what we have a quicker way here to build.
+
+60
+00:03:37,570 --> 00:03:38,710
+It's built successfully.
+
+61
+00:03:39,250 --> 00:03:40,630
+Click here to get it onto the board.
+
+62
+00:03:47,350 --> 00:03:48,170
+It's download in.
+
+63
+00:03:52,950 --> 00:03:53,750
+It's downloading.
+
+64
+00:03:59,900 --> 00:04:00,300
+OK.
+
+65
+00:04:00,550 --> 00:04:01,530
+It's, quote, onto the board.
+
+66
+00:04:01,710 --> 00:04:02,630
+Click here to stop.
+
+67
+00:04:05,860 --> 00:04:09,410
+OK, so now we can go to war to return to see.
+
+68
+00:04:11,960 --> 00:04:12,470
+Select.
+
+69
+00:04:12,630 --> 00:04:14,130
+I was to report from here.
+
+70
+00:04:15,570 --> 00:04:19,800
+This one over here, then change the board bodyweight.
+
+71
+00:04:22,310 --> 00:04:23,580
+It's the correct but rate.
+
+72
+00:04:25,830 --> 00:04:34,130
+OK, now we can see the returns from third one greeting from threat to almost equal amount of threat
+
+73
+00:04:34,140 --> 00:04:34,970
+one and three, two.
+
+74
+00:04:35,160 --> 00:04:38,640
+In fact, they have equal amount of access to the U.
+
+75
+00:04:38,810 --> 00:04:38,950
+S.
+
+76
+00:04:39,600 --> 00:04:41,210
+So this is the beauty of new tax.
+
+77
+00:04:41,280 --> 00:04:45,840
+And you apply the same method when dealing with an LCD screen.
+
+78
+00:04:45,990 --> 00:04:51,390
+If we replace the you out with an LCD screen, let's say we wanted to send the same message onto the
+
+79
+00:04:51,390 --> 00:04:51,780
+screen.
+
+80
+00:04:52,080 --> 00:04:57,480
+We would need to just use the dramatics to do that.
+
+81
+00:04:58,410 --> 00:05:04,170
+So, yeah, this is how we solve the multiple access to a single resource using a new text.
+
+82
+00:05:04,210 --> 00:05:07,630
+If you have any questions, leave it in the questions and answers area.
+
+83
+00:05:08,490 --> 00:05:08,910
+Right.
+
+84
+00:05:12,960 --> 00:05:15,270
+So this saw there is the next lesson.

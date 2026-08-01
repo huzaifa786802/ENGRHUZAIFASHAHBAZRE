@@ -1,0 +1,1247 @@
+1
+00:00:00,970 --> 00:00:01,270
+Hello.
+
+2
+00:00:01,590 --> 00:00:02,080
+Welcome back.
+
+3
+00:00:02,680 --> 00:00:05,200
+So, um, let's continue where we left off.
+
+4
+00:00:06,280 --> 00:00:09,580
+Now let's analyze our free Archos config dot h file.
+
+5
+00:00:09,790 --> 00:00:13,020
+Because if you want to change the, um, the settings of the kernel.
+
+6
+00:00:13,120 --> 00:00:14,170
+This is why you do it.
+
+7
+00:00:14,590 --> 00:00:15,460
+So double click here.
+
+8
+00:00:15,500 --> 00:00:17,320
+Free Archos config dot h.
+
+9
+00:00:18,060 --> 00:00:23,830
+And over here, this is where we decide to use various aspects of the kernel.
+
+10
+00:00:24,040 --> 00:00:26,290
+It says over here, config use preemption.
+
+11
+00:00:27,100 --> 00:00:27,790
+One means.
+
+12
+00:00:28,690 --> 00:00:29,230
+Use it.
+
+13
+00:00:29,500 --> 00:00:32,320
+Zero means force meaning do not use it.
+
+14
+00:00:32,660 --> 00:00:35,140
+So we want to use preemption set to one.
+
+15
+00:00:35,950 --> 00:00:38,230
+We want to support static allocation.
+
+16
+00:00:38,260 --> 00:00:41,440
+This is a two one dynamic allocation is set to one.
+
+17
+00:00:42,340 --> 00:00:43,490
+We don't want to use either.
+
+18
+00:00:43,690 --> 00:00:44,860
+Hook is set to zero.
+
+19
+00:00:44,890 --> 00:00:47,020
+We don't want to use take hook is set to zero.
+
+20
+00:00:47,620 --> 00:00:53,200
+So if you want to know more about these parameters, I would advise you to free up to, um, to take
+
+21
+00:00:53,200 --> 00:00:54,150
+a look at the, um.
+
+22
+00:00:54,610 --> 00:00:56,260
+To take a look at my other.
+
+23
+00:00:56,890 --> 00:00:59,140
+Free ATA's on, um, process source.
+
+24
+00:00:59,560 --> 00:01:00,310
+From ground up.
+
+25
+00:01:01,000 --> 00:01:02,280
+Um, most um.
+
+26
+00:01:02,590 --> 00:01:02,830
+Oh.
+
+27
+00:01:02,890 --> 00:01:08,920
+If you're already seeing the free Artus for uh for um process source then you'd already know this.
+
+28
+00:01:09,610 --> 00:01:16,510
+The reason I'm saying this is that in free ATA's on um processors from ground up we use the call I d
+
+29
+00:01:16,570 --> 00:01:24,250
+e and this lesson might be included in that same course to show people how to use free ARTUS with Cuba
+
+30
+00:01:24,260 --> 00:01:24,860
+mix in Cuba.
+
+31
+00:01:25,210 --> 00:01:29,560
+So if you are viewing free arter from, um, processors from ground up, you already know these.
+
+32
+00:01:29,890 --> 00:01:34,750
+But if you're not you, your view and just kinda makes ASTM to Cuba mix.
+
+33
+00:01:34,900 --> 00:01:39,940
+Cause then you wouldn't know the meaning of these parameters and you could check that other course out
+
+34
+00:01:40,000 --> 00:01:43,540
+or you could just um search the free ARTUS, uh, manual.
+
+35
+00:01:44,670 --> 00:01:44,970
+Okay.
+
+36
+00:01:45,070 --> 00:01:47,020
+So these are where all parameters are.
+
+37
+00:01:47,710 --> 00:01:49,880
+So if I want to use something, we set it here.
+
+38
+00:01:49,930 --> 00:01:52,290
+If we do not, we set it off.
+
+39
+00:01:52,300 --> 00:01:58,180
+We turn it on and off in this file config use mutex because we are using mbewe text is set to one if
+
+40
+00:01:58,180 --> 00:01:59,590
+we were going to be set to zero.
+
+41
+00:02:00,010 --> 00:02:01,600
+We're not using the sixteen bits tick's.
+
+42
+00:02:01,780 --> 00:02:04,890
+So it is set to zero maximum number of priorities.
+
+43
+00:02:04,990 --> 00:02:05,500
+Seven.
+
+44
+00:02:06,370 --> 00:02:10,550
+The take rate is to 1000 hertz the clock.
+
+45
+00:02:10,570 --> 00:02:12,360
+Hertz is using system clock.
+
+46
+00:02:13,400 --> 00:02:14,010
+When I use it I.
+
+47
+00:02:14,080 --> 00:02:14,810
+I do hook.
+
+48
+00:02:16,360 --> 00:02:22,030
+And when we come down here we use using our cystic as the time base for our ARTUS.
+
+49
+00:02:22,120 --> 00:02:23,110
+Like I mentioned earlier.
+
+50
+00:02:23,980 --> 00:02:24,450
+So yeah.
+
+51
+00:02:25,120 --> 00:02:27,100
+So let's move on with our Y experiment.
+
+52
+00:02:27,190 --> 00:02:28,790
+I'll come back to the main dot CFR.
+
+53
+00:02:30,520 --> 00:02:35,190
+So now, um, we have our system work in a round robin harbor.
+
+54
+00:02:35,260 --> 00:02:36,810
+We talk about LTE.
+
+55
+00:02:37,190 --> 00:02:38,350
+We're going to use our thread.
+
+56
+00:02:38,440 --> 00:02:41,140
+Want to talk it with reality so we can go to the thread.
+
+57
+00:02:41,140 --> 00:02:42,360
+Function off the one.
+
+58
+00:02:43,480 --> 00:02:46,300
+And at the ality Togo code over there.
+
+59
+00:02:47,060 --> 00:02:48,010
+This is the red one.
+
+60
+00:02:48,310 --> 00:02:50,590
+We have the pre uh, we have the profile.
+
+61
+00:02:50,680 --> 00:02:52,030
+We can comment this out.
+
+62
+00:02:52,510 --> 00:02:54,010
+The profile is good for debugging.
+
+63
+00:02:54,040 --> 00:02:58,220
+We only turn it on when we want to see how things y a threat is not working.
+
+64
+00:02:58,240 --> 00:03:02,920
+The first thing you do is you profile it to see if it's change and meaning the threat is executing.
+
+65
+00:03:04,000 --> 00:03:04,300
+Right.
+
+66
+00:03:04,330 --> 00:03:11,440
+So I'm going to comment out of profilers and bring back the the delay it I was in the thread function
+
+67
+00:03:11,500 --> 00:03:13,270
+when it was first created for us.
+
+68
+00:03:17,120 --> 00:03:19,140
+Okay, common desalt also.
+
+69
+00:03:20,860 --> 00:03:23,760
+So the third one, this was thread function one.
+
+70
+00:03:23,780 --> 00:03:30,240
+I'm going to start off by talking in our early deoxy hall on the score cheapie I oh, on the score,
+
+71
+00:03:32,440 --> 00:03:35,510
+Torgau Pain and our early DP five.
+
+72
+00:03:35,550 --> 00:03:36,800
+So CGP are you a
+
+73
+00:03:39,590 --> 00:03:46,820
+comma qpr you g.p.a. you on this score pain underscore five like this.
+
+74
+00:03:49,810 --> 00:03:52,310
+We can also send some um some data from here.
+
+75
+00:03:52,340 --> 00:03:55,070
+We can um tell you what I'll say.
+
+76
+00:03:55,640 --> 00:04:04,670
+You ain't eight, you ain't eight on the score t and then I'll call this message and then I'll give
+
+77
+00:04:04,670 --> 00:04:16,400
+it a size of let's say twenty five and then I'll see maybe greetings from third one.
+
+78
+00:04:16,550 --> 00:04:17,270
+Something like that.
+
+79
+00:04:18,050 --> 00:04:20,300
+I'll put new line encourage return here.
+
+80
+00:04:20,540 --> 00:04:30,130
+Oh increase this to thirty five and then semicolon over here so we can transmit this using our you ut.
+
+81
+00:04:30,860 --> 00:04:42,590
+So now we simply see how an escort you out on the score transmit and then you are Tando the address
+
+82
+00:04:42,680 --> 00:04:48,110
+h you two and then the pa voice quote message
+
+83
+00:04:50,830 --> 00:04:57,290
+the prophesies to get an actual size we can count one, two, three, four, five, six, seven, eight,
+
+84
+00:04:57,320 --> 00:04:58,200
+nine, ten.
+
+85
+00:04:58,910 --> 00:05:04,130
+Okay I'll just put thirty five to thirty five and then we can put a time out of one.
+
+86
+00:05:04,370 --> 00:05:04,760
+Okay.
+
+87
+00:05:06,120 --> 00:05:07,670
+Cause we've declared thirty five.
+
+88
+00:05:07,770 --> 00:05:13,790
+It might be bigger than that, although we could include the string dot h and be able to automatically
+
+89
+00:05:13,790 --> 00:05:15,350
+compute the size of the buffer.
+
+90
+00:05:16,380 --> 00:05:17,930
+Uh I'll leave that to you.
+
+91
+00:05:20,030 --> 00:05:21,480
+And uh um one M.
+
+92
+00:05:21,480 --> 00:05:22,820
+S delays too late too.
+
+93
+00:05:22,850 --> 00:05:24,170
+So I'm going to increase this a bit.
+
+94
+00:05:25,130 --> 00:05:26,750
+Once this is done, I'll build.
+
+95
+00:05:34,280 --> 00:05:37,290
+And I'm going to turn it on to the board by clicking over here debug.
+
+96
+00:05:45,390 --> 00:05:47,830
+And I'm going to open up terror term.
+
+97
+00:05:48,140 --> 00:05:52,390
+Zero program to see what a I can view the data.
+
+98
+00:05:52,730 --> 00:05:53,650
+It's like this.
+
+99
+00:05:54,820 --> 00:05:55,330
+This is it.
+
+100
+00:05:56,020 --> 00:05:57,960
+And then you orthopod rate the default.
+
+101
+00:05:58,000 --> 00:05:58,780
+But wait, what are you.
+
+102
+00:05:58,780 --> 00:06:01,540
+What is it?
+
+103
+00:06:01,600 --> 00:06:04,150
+One hundred and fifteen thousand two hundred.
+
+104
+00:06:04,720 --> 00:06:06,780
+Okay, then, um.
+
+105
+00:06:08,250 --> 00:06:10,100
+I'm gonna click play over here.
+
+106
+00:06:13,240 --> 00:06:19,440
+So we have greetings from threat one, the reason it's behaving like this.
+
+107
+00:06:21,360 --> 00:06:24,540
+It's because of our courage, return with courage, return is not.
+
+108
+00:06:28,410 --> 00:06:28,890
+Let's see,
+
+109
+00:06:32,580 --> 00:06:34,230
+I've reset my board.
+
+110
+00:06:34,530 --> 00:06:37,310
+Let me see the same way, okay.
+
+111
+00:06:41,530 --> 00:06:46,170
+OK, I'm going to change this, then this.
+
+112
+00:06:46,720 --> 00:06:50,250
+We have 24 characters in our cities, two to enforce.
+
+113
+00:06:50,300 --> 00:06:52,270
+Well, I'm going to click here to build.
+
+114
+00:06:56,270 --> 00:06:58,580
+It's important that we get it to right?
+
+115
+00:06:58,940 --> 00:07:05,330
+Perfectly so that when it jumbo's up, we can know that it's jumbled up because I want to demonstrate
+
+116
+00:07:05,360 --> 00:07:11,090
+what happens when we are trying to use to threats to access the same resource.
+
+117
+00:07:12,530 --> 00:07:16,130
+So we need this to one to show how it's working in it.
+
+118
+00:07:16,760 --> 00:07:18,080
+Good work and condition.
+
+119
+00:07:18,590 --> 00:07:25,310
+And then when it starts jumbling up text and we no doubt it is not the way it should work in a way.
+
+120
+00:07:25,340 --> 00:07:26,390
+You would see what I mean.
+
+121
+00:07:28,620 --> 00:07:28,990
+OK.
+
+122
+00:07:29,480 --> 00:07:30,900
+So click here to run this.
+
+123
+00:07:30,960 --> 00:07:34,730
+Do I have to return open Tobin?
+
+124
+00:07:39,080 --> 00:07:39,550
+Lucy.
+
+125
+00:07:49,320 --> 00:07:54,710
+You know, I escape from this, then I'm out of the Dybbuk.
+
+126
+00:07:54,830 --> 00:07:55,490
+Of course, we don't need.
+
+127
+00:07:55,560 --> 00:07:58,790
+We just need to flush it to our board once I'm out.
+
+128
+00:07:58,910 --> 00:08:00,770
+I'm going to press to reset my board.
+
+129
+00:08:09,990 --> 00:08:10,860
+It's strange.
+
+130
+00:08:11,940 --> 00:08:15,060
+I'm going to start to reteam again because it's misbehaving.
+
+131
+00:08:19,930 --> 00:08:20,410
+This is it.
+
+132
+00:08:20,950 --> 00:08:21,880
+This over here.
+
+133
+00:08:23,680 --> 00:08:25,150
+And then zero port.
+
+134
+00:08:26,290 --> 00:08:29,720
+One hundred and fifteen thousand two hundred, OK.
+
+135
+00:08:30,220 --> 00:08:30,850
+Like this.
+
+136
+00:08:32,240 --> 00:08:35,740
+They reset board is giving us.
+
+137
+00:08:52,340 --> 00:08:54,200
+So let's increase the time out a bit.
+
+138
+00:08:54,260 --> 00:08:56,450
+I'm going to increase it over here to ten.
+
+139
+00:08:57,200 --> 00:08:57,710
+Okay.
+
+140
+00:08:57,980 --> 00:08:58,820
+This is the same.
+
+141
+00:08:58,820 --> 00:09:02,900
+We have our courage return a new line when I click here to build.
+
+142
+00:09:10,490 --> 00:09:11,720
+It's built successfully.
+
+143
+00:09:12,050 --> 00:09:13,570
+Click here to get onto the board.
+
+144
+00:09:25,330 --> 00:09:29,790
+Okay, it's downloaded a quick here.
+
+145
+00:09:30,670 --> 00:09:37,690
+It's still working this way, too, but I can escape this by simply coming out since it's already on
+
+146
+00:09:37,690 --> 00:09:38,200
+the board.
+
+147
+00:09:38,380 --> 00:09:40,060
+No, I can go to to.
+
+148
+00:09:42,390 --> 00:09:43,260
+And take a look at it.
+
+149
+00:09:43,680 --> 00:09:44,520
+Come over here.
+
+150
+00:09:45,990 --> 00:09:51,300
+This is the port and then select the portrait.
+
+151
+00:09:53,090 --> 00:09:54,760
+Over here like this and then.
+
+152
+00:09:54,870 --> 00:09:55,280
+Okay.
+
+153
+00:09:57,720 --> 00:09:58,780
+And this is what we have.
+
+154
+00:09:59,350 --> 00:10:05,560
+It's a peer, not a one second rate, and my ality is totally at a one second rate as well because we
+
+155
+00:10:05,560 --> 00:10:06,520
+are talking in reality.
+
+156
+00:10:07,000 --> 00:10:07,540
+So this is it.
+
+157
+00:10:07,600 --> 00:10:10,630
+We are sending this this message to the U.
+
+158
+00:10:10,720 --> 00:10:10,840
+S.
+
+159
+00:10:11,020 --> 00:10:11,980
+From our threat one.
+
+160
+00:10:13,540 --> 00:10:13,960
+Right.
+
+161
+00:10:14,050 --> 00:10:18,060
+Moving on, no less.
+
+162
+00:10:18,790 --> 00:10:25,510
+Interact with threat to what we're going to do in threat to check if the button is pressed and if that
+
+163
+00:10:25,510 --> 00:10:25,870
+is price.
+
+164
+00:10:25,880 --> 00:10:29,910
+We want to send you a greeting from threat to us.
+
+165
+00:10:29,950 --> 00:10:32,260
+Well, so come over here.
+
+166
+00:10:34,390 --> 00:10:40,120
+This is a threat function to what I'm gonna do is check if the push button is pressed.
+
+167
+00:10:40,840 --> 00:10:45,370
+We can see how on this call we want to use that GPL.
+
+168
+00:10:45,370 --> 00:10:50,650
+You read Peine, GPL, you underscore read.
+
+169
+00:10:51,370 --> 00:10:56,650
+And then this one takes the port and then a PIN number GPL.
+
+170
+00:10:56,650 --> 00:11:00,070
+You print 13 because it's P.c 13.
+
+171
+00:11:03,840 --> 00:11:11,990
+And we want to check if this is reset, meaning, uh, this push button is active, low by default,
+
+172
+00:11:12,020 --> 00:11:12,650
+it is high.
+
+173
+00:11:12,710 --> 00:11:15,040
+When you press it to activate it, it becomes law.
+
+174
+00:11:15,470 --> 00:11:24,350
+You want to check if it's Lowe's, which upl you opinion on this call reset like this.
+
+175
+00:11:26,120 --> 00:11:28,540
+This is surrounded by an if
+
+176
+00:11:31,920 --> 00:11:38,780
+if this is reset, then we want to send a message and the message can be similar to the one we sent.
+
+177
+00:11:39,290 --> 00:11:42,500
+So just come over here and copy this.
+
+178
+00:11:45,710 --> 00:11:50,760
+And then push this in here and then I'm going to copy this.
+
+179
+00:11:50,780 --> 00:11:57,440
+This message we have here and then I'll pasted up here and I'll just change the number one to two.
+
+180
+00:11:59,180 --> 00:12:04,730
+So this creten from third to like this.
+
+181
+00:12:07,010 --> 00:12:11,990
+And just like, well, we have in thread one, I'm going to set it Dilli here to 1000 as well.
+
+182
+00:12:13,530 --> 00:12:13,900
+Right.
+
+183
+00:12:14,340 --> 00:12:15,560
+So I'm going to click here to build.
+
+184
+00:12:22,740 --> 00:12:23,880
+It's built successfully.
+
+185
+00:12:25,150 --> 00:12:27,310
+I'll get it onto the board by clicking over here.
+
+186
+00:12:39,230 --> 00:12:39,750
+Okay.
+
+187
+00:12:45,150 --> 00:12:46,660
+It's downloaded onto the board.
+
+188
+00:12:46,720 --> 00:12:49,590
+I'm simply going to escape this and go to Terra to
+
+189
+00:12:52,300 --> 00:12:53,560
+click over here to open.
+
+190
+00:12:56,050 --> 00:12:59,050
+Over here, then.
+
+191
+00:12:59,740 --> 00:13:00,340
+Okay.
+
+192
+00:13:00,730 --> 00:13:04,480
+And then I'm going to set the ball straight through a port.
+
+193
+00:13:07,270 --> 00:13:10,380
+This is all board rates and I'm going to press to reset my board.
+
+194
+00:13:14,440 --> 00:13:14,580
+OK.
+
+195
+00:13:14,660 --> 00:13:15,850
+The boathouse where we sit.
+
+196
+00:13:16,810 --> 00:13:18,490
+So I've not pressed a button yet.
+
+197
+00:13:18,520 --> 00:13:20,980
+So we just get in hello from threat one.
+
+198
+00:13:22,120 --> 00:13:25,180
+So I'm gonna press the button and we have.
+
+199
+00:13:25,210 --> 00:13:25,480
+Hello.
+
+200
+00:13:25,480 --> 00:13:26,320
+From threat to.
+
+201
+00:13:26,950 --> 00:13:27,390
+Okay.
+
+202
+00:13:30,780 --> 00:13:33,220
+Sometimes when I press the button, there's a miss.
+
+203
+00:13:33,270 --> 00:13:34,290
+But we can see it.
+
+204
+00:13:35,040 --> 00:13:41,970
+Okay, so the reason this is work and thus far and there is no conflict is because we have a significant
+
+205
+00:13:41,970 --> 00:13:43,620
+amount of delay between the two.
+
+206
+00:13:44,590 --> 00:13:47,130
+What we're going to do now is reduce the amount of delay.
+
+207
+00:13:48,420 --> 00:13:48,880
+Let's do that.
+
+208
+00:13:48,960 --> 00:13:52,800
+See what we get before we reduce the delay.
+
+209
+00:13:52,830 --> 00:13:54,220
+Before we reduce the delay.
+
+210
+00:13:54,240 --> 00:13:58,950
+Let's get the two threads to have the same amount of work to do.
+
+211
+00:13:59,430 --> 00:14:02,340
+What I mean by that is I'm going to comment thread one.
+
+212
+00:14:02,490 --> 00:14:06,450
+Libby togo out such that they are both doing exactly the same thing.
+
+213
+00:14:07,680 --> 00:14:10,320
+They just transmitting this.
+
+214
+00:14:11,860 --> 00:14:12,270
+Right.
+
+215
+00:14:13,110 --> 00:14:14,550
+They just transmitted the message.
+
+216
+00:14:18,060 --> 00:14:20,790
+OK, so when I click over here.
+
+217
+00:14:27,900 --> 00:14:28,560
+It's built in.
+
+218
+00:14:29,700 --> 00:14:30,820
+It's built successfully.
+
+219
+00:14:32,350 --> 00:14:33,110
+And then, um.
+
+220
+00:14:36,400 --> 00:14:39,160
+We get to the debug to get onto a board.
+
+221
+00:14:50,790 --> 00:14:53,880
+Okay, let's download it.
+
+222
+00:14:54,130 --> 00:14:56,850
+So I'm going to escape this and then try it manually.
+
+223
+00:14:57,940 --> 00:15:00,880
+What I mean by my knowledge is actually the was on the board.
+
+224
+00:15:00,910 --> 00:15:02,270
+So I don't need to be in the debark.
+
+225
+00:15:02,340 --> 00:15:03,760
+I'm going to click here to stop it.
+
+226
+00:15:04,460 --> 00:15:05,680
+And then I'm going to.
+
+227
+00:15:08,110 --> 00:15:09,810
+And then I'm going to go to Terra term.
+
+228
+00:15:13,370 --> 00:15:14,270
+Click over here.
+
+229
+00:15:15,470 --> 00:15:19,970
+This is it then set up through a port.
+
+230
+00:15:21,500 --> 00:15:23,660
+This are bought right then.
+
+231
+00:15:23,720 --> 00:15:24,010
+OK.
+
+232
+00:15:24,140 --> 00:15:24,770
+Over here.
+
+233
+00:15:27,010 --> 00:15:31,480
+OK, I'm going to press the button when I press the button.
+
+234
+00:15:31,570 --> 00:15:32,410
+We still get it.
+
+235
+00:15:33,030 --> 00:15:33,430
+OK.
+
+236
+00:15:34,730 --> 00:15:36,640
+They're doing the same amount of work.
+
+237
+00:15:37,840 --> 00:15:44,860
+Sometimes when I press the button, I don't get no threat to appear at all cause there's conflict sometimes.
+
+238
+00:15:45,640 --> 00:15:45,940
+OK.
+
+239
+00:15:46,240 --> 00:15:52,510
+So next experiment, I'm going to disable the button, then just let him, you know, run on your own.
+
+240
+00:15:55,390 --> 00:16:01,660
+We just push on it to the part where we realize the system cannot be able to provide us both at the
+
+241
+00:16:01,660 --> 00:16:02,290
+same time.
+
+242
+00:16:03,340 --> 00:16:04,750
+So over here we have.
+
+243
+00:16:04,870 --> 00:16:07,180
+If the button is pressed, transmit the message.
+
+244
+00:16:07,710 --> 00:16:16,930
+So I'm going to just take this out and then put over here and then comment out this this block of code.
+
+245
+00:16:19,340 --> 00:16:20,200
+Switch it up.
+
+246
+00:16:20,290 --> 00:16:20,820
+Are the same.
+
+247
+00:16:20,830 --> 00:16:21,110
+No.
+
+248
+00:16:21,840 --> 00:16:25,150
+The red one transmits greetings from threat one.
+
+249
+00:16:25,630 --> 00:16:30,000
+Always daily this and then through to transmits this was delayed this.
+
+250
+00:16:30,530 --> 00:16:30,840
+Okay.
+
+251
+00:16:31,420 --> 00:16:35,080
+This could work as well because that delayed is a huge delay.
+
+252
+00:16:35,080 --> 00:16:38,140
+One second real time reporting system.
+
+253
+00:16:38,520 --> 00:16:41,740
+You know, universe is quite a lot of time to wait.
+
+254
+00:16:43,000 --> 00:16:43,390
+Right.
+
+255
+00:16:45,040 --> 00:16:46,270
+So it's build successfully.
+
+256
+00:16:46,360 --> 00:16:48,070
+We click over here to go to the book.
+
+257
+00:16:56,840 --> 00:16:57,500
+It open in.
+
+258
+00:17:04,650 --> 00:17:05,400
+It's on our board.
+
+259
+00:17:05,550 --> 00:17:07,340
+I'm just going to exit.
+
+260
+00:17:09,300 --> 00:17:10,610
+I'm going to go to terror term.
+
+261
+00:17:14,670 --> 00:17:17,510
+And then also like this.
+
+262
+00:17:20,030 --> 00:17:21,750
+And then also like the board rate
+
+263
+00:17:25,090 --> 00:17:25,500
+then.
+
+264
+00:17:25,870 --> 00:17:26,280
+Okay.
+
+265
+00:17:27,980 --> 00:17:29,750
+Gonna click to reset the board.
+
+266
+00:17:32,490 --> 00:17:32,880
+OK.
+
+267
+00:17:33,100 --> 00:17:38,680
+So we have the Cretans from thread one, Cretans from thread to greetings from thread to greetings from
+
+268
+00:17:38,680 --> 00:17:43,300
+thread one, two, one, two, one, two, one.
+
+269
+00:17:43,330 --> 00:17:45,810
+We're still looking good, right?
+
+270
+00:17:45,850 --> 00:17:49,120
+So great to reduce the delay amount to 10, Emmis.
+
+271
+00:17:58,930 --> 00:17:59,380
+OK.
+
+272
+00:17:59,580 --> 00:18:00,720
+Going to click here to build.
+
+273
+00:18:12,020 --> 00:18:12,230
+Let's.
+
+274
+00:18:13,270 --> 00:18:19,690
+Click here to go to debunk, and then I'm going to escape the debacle by clicking here.
+
+275
+00:18:23,090 --> 00:18:23,560
+OK.
+
+276
+00:18:23,850 --> 00:18:26,800
+And then to return.
+
+277
+00:18:31,120 --> 00:18:32,020
+Come over here.
+
+278
+00:18:32,740 --> 00:18:37,600
+This is how comport then I'm gonna select the board rate.
+
+279
+00:18:42,440 --> 00:18:45,890
+And then click to reset a board.
+
+280
+00:18:46,780 --> 00:18:47,000
+OK.
+
+281
+00:18:47,060 --> 00:18:49,810
+So this where we get to know, we get in gibberish.
+
+282
+00:18:51,410 --> 00:18:59,000
+This is it, because both of the threads are trying to access the same, um, the same resource at the
+
+283
+00:18:59,000 --> 00:18:59,630
+same time.
+
+284
+00:18:59,750 --> 00:19:03,920
+And because of this, there's a coalition and the the hardware, which is the single resource, cannot
+
+285
+00:19:03,920 --> 00:19:04,610
+handle this.
+
+286
+00:19:05,540 --> 00:19:05,840
+OK.
+
+287
+00:19:06,170 --> 00:19:08,090
+To prove that this is what is really happening.
+
+288
+00:19:08,120 --> 00:19:12,370
+I'm going to comment out thread two and keep thread one.
+
+289
+00:19:12,380 --> 00:19:17,000
+Send in its message unless you because it could just be that 10 M.
+
+290
+00:19:17,000 --> 00:19:20,270
+S is too, too little for any threat.
+
+291
+00:19:20,720 --> 00:19:22,430
+So I'm going to comment on that threat, too.
+
+292
+00:19:23,610 --> 00:19:28,070
+And let's just see thread one attempt to send with a delay of 10 M.
+
+293
+00:19:28,070 --> 00:19:28,370
+S.
+
+294
+00:19:33,940 --> 00:19:34,590
+It's built in.
+
+295
+00:19:39,780 --> 00:19:41,490
+Click here to get onto the board.
+
+296
+00:19:54,260 --> 00:19:55,210
+It's downloading.
+
+297
+00:19:57,920 --> 00:19:58,360
+It's done.
+
+298
+00:19:58,400 --> 00:20:05,870
+I'm going to click here to escape and then I'll go to terror turn by clicking over here.
+
+299
+00:20:09,630 --> 00:20:11,970
+Then I select my port.
+
+300
+00:20:15,190 --> 00:20:17,830
+Then I'll change the board rate by coming over here.
+
+301
+00:20:24,780 --> 00:20:28,040
+She can see through it, one is working on its own with 10 M.
+
+302
+00:20:28,040 --> 00:20:28,630
+S delay.
+
+303
+00:20:29,080 --> 00:20:36,760
+So the problem was we had two threads trying to access the same resource at almost the same time.
+
+304
+00:20:37,330 --> 00:20:45,340
+And if we had some delay, which is 10 Imus and 10 Imus in real, uh, in our toast time in our total
+
+305
+00:20:45,340 --> 00:20:46,670
+universe, that's a lot of time.
+
+306
+00:20:47,350 --> 00:20:52,480
+But that's the quittin allowed the, um, the two different threads to access the same resource.
+
+307
+00:20:52,920 --> 00:20:56,710
+So we solve this problem using Ammu ticks the music we created earlier.
+
+308
+00:20:57,460 --> 00:20:57,880
+Right.
+
+309
+00:20:58,210 --> 00:21:06,040
+So I'm going to enable the message from thread to again, cause we can use, you know, with the aid
+
+310
+00:21:06,040 --> 00:21:10,060
+of the mute ticks or just do controversy over hand and controversy over here.
+
+311
+00:21:11,410 --> 00:21:15,220
+So we shall continue that experiment and the next lesson.
+
+312
+00:21:15,850 --> 00:21:22,050
+So I'll see you in the next lesson as we see how to solve this issue using the UTX we created.
