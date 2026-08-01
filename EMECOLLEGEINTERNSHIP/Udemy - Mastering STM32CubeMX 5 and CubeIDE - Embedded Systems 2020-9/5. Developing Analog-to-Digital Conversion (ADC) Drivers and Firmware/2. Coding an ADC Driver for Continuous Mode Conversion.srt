@@ -1,0 +1,923 @@
+1
+00:00:00,210 --> 00:00:00,460
+Hello.
+
+2
+00:00:00,690 --> 00:00:01,160
+Welcome back.
+
+3
+00:00:01,410 --> 00:00:06,540
+In this lesson, we shall see how to set up our ADC for continuous conversion.
+
+4
+00:00:06,870 --> 00:00:09,390
+We've already seen how to perform single conversion.
+
+5
+00:00:09,720 --> 00:00:12,240
+The single conversion is good for every day.
+
+6
+00:00:12,270 --> 00:00:15,580
+No more low speed project.
+
+7
+00:00:15,720 --> 00:00:22,200
+But if you want your conversion to happen rapidly or if your project requires rapid conversion, something
+
+8
+00:00:22,200 --> 00:00:29,670
+that is very fast, such as digital signal processing, then the best or the better solution.
+
+9
+00:00:29,790 --> 00:00:34,170
+Among the two is the M, the ADC continuous conversion mode.
+
+10
+00:00:34,410 --> 00:00:37,440
+Later on, we shall see how to incorporate the DMA.
+
+11
+00:00:38,160 --> 00:00:41,610
+So let's go to Cuba, mix and start off by creating a project.
+
+12
+00:00:41,940 --> 00:00:44,670
+And then we go to the IDC to write the code.
+
+13
+00:00:48,880 --> 00:00:50,410
+I'll select my board over here.
+
+14
+00:00:51,380 --> 00:00:53,650
+You can use it at a nuclear or the disco.
+
+15
+00:00:53,920 --> 00:00:55,060
+There should be fine.
+
+16
+00:01:02,880 --> 00:01:03,750
+So clear.
+
+17
+00:01:03,900 --> 00:01:05,510
+Oh, PS, like I always do.
+
+18
+00:01:20,280 --> 00:01:21,780
+So we still using the P is.
+
+19
+00:01:21,960 --> 00:01:28,610
+I'm going to said that as an ADC pin by clicking over here, it's ADC one input's zero.
+
+20
+00:01:30,870 --> 00:01:31,320
+Okay.
+
+21
+00:01:33,360 --> 00:01:36,450
+Okay, so let's configure the ADC first.
+
+22
+00:01:36,540 --> 00:01:40,620
+I'll come to the system clock and just do the normal setup over here first.
+
+23
+00:01:43,090 --> 00:01:43,900
+I'm going to use the.
+
+24
+00:01:45,190 --> 00:01:50,780
+This the a wire over here and then RCC like the clocks, the.
+
+25
+00:01:56,900 --> 00:01:57,260
+Artist.
+
+26
+00:01:59,040 --> 00:02:01,130
+I just keep this or keep these disabled.
+
+27
+00:02:01,820 --> 00:02:03,230
+You can, you can.
+
+28
+00:02:05,500 --> 00:02:08,890
+Whatever choice we make here would reflect in the clock configuration.
+
+29
+00:02:10,480 --> 00:02:14,350
+Let's just OK, let's bypass high speed external.
+
+30
+00:02:15,930 --> 00:02:18,720
+When we start using the when we get to the part about.
+
+31
+00:02:21,160 --> 00:02:27,820
+About the USB devices, we would no longer be able to bypass high speed Extel would start and enabling
+
+32
+00:02:27,820 --> 00:02:28,060
+it.
+
+33
+00:02:28,180 --> 00:02:30,520
+But thus far we can afford to bypass it.
+
+34
+00:02:31,060 --> 00:02:31,420
+Okay.
+
+35
+00:02:31,870 --> 00:02:34,590
+So once this is done, we can configure the ADC.
+
+36
+00:02:35,670 --> 00:02:37,120
+Um, I'll come over here.
+
+37
+00:02:38,020 --> 00:02:40,720
+The analog stub, my computer's running a bit slow.
+
+38
+00:02:42,210 --> 00:02:43,570
+A click on a log over here.
+
+39
+00:02:44,050 --> 00:02:44,820
+Did you see one?
+
+40
+00:02:48,900 --> 00:02:50,560
+And we would need to arm.
+
+41
+00:02:50,760 --> 00:02:52,800
+We would need to scale down the ATC clock.
+
+42
+00:02:53,280 --> 00:02:58,920
+So let's go to our clock configuration and see what is the current clock of the ATC.
+
+43
+00:02:59,310 --> 00:02:59,910
+Click over here.
+
+44
+00:02:59,970 --> 00:03:01,050
+Clock configuration.
+
+45
+00:03:04,230 --> 00:03:09,510
+So from the microcontrollers user guide that we downloaded, if you check, you realize that the ADC
+
+46
+00:03:09,510 --> 00:03:11,880
+is connected to the APB to us over here.
+
+47
+00:03:12,350 --> 00:03:14,980
+So over here says APB to pay for a clock.
+
+48
+00:03:15,270 --> 00:03:16,560
+It's 48 megahertz.
+
+49
+00:03:16,890 --> 00:03:19,890
+Therefore, this is the clock for our ADC currently.
+
+50
+00:03:20,010 --> 00:03:22,530
+Forty eight make a hit, as we see over here.
+
+51
+00:03:22,800 --> 00:03:24,540
+If we keep everything here the same.
+
+52
+00:03:26,190 --> 00:03:27,150
+So, no, no, we know this.
+
+53
+00:03:27,170 --> 00:03:30,650
+We can go to the configuration of the, uh, the ATC.
+
+54
+00:03:30,660 --> 00:03:33,010
+We know it's clock is 48 megahertz.
+
+55
+00:03:33,390 --> 00:03:33,660
+Right.
+
+56
+00:03:33,690 --> 00:03:40,890
+So if I come over here for ADC configuration, um, if I come up here, we can decide to keep the clock
+
+57
+00:03:40,980 --> 00:03:46,270
+at 48 megahertz or maybe we think that is too fast and we want to slow down the clock.
+
+58
+00:03:46,770 --> 00:03:50,520
+So we are given the option to select a divider over here.
+
+59
+00:03:50,880 --> 00:03:54,120
+We can divide the clock it up by two, four, six or eight.
+
+60
+00:03:54,180 --> 00:03:58,800
+So if we divide by two, the forty eight megahertz becomes twenty four megahertz.
+
+61
+00:03:59,130 --> 00:04:01,130
+So the default here says divide by two.
+
+62
+00:04:01,140 --> 00:04:02,790
+So I'll just keep that over here.
+
+63
+00:04:02,820 --> 00:04:03,720
+I wouldn't change it.
+
+64
+00:04:06,340 --> 00:04:09,040
+Next sense, we are working with continuous conversion.
+
+65
+00:04:09,130 --> 00:04:10,220
+We come over here.
+
+66
+00:04:10,720 --> 00:04:12,100
+Continuous conversion mode.
+
+67
+00:04:12,250 --> 00:04:13,180
+It says disabled.
+
+68
+00:04:13,210 --> 00:04:14,950
+We're gonna change that to enabled.
+
+69
+00:04:16,990 --> 00:04:17,260
+OK.
+
+70
+00:04:17,350 --> 00:04:21,640
+And the ADC resolution, if we want to change it, we can change it, we have options.
+
+71
+00:04:21,670 --> 00:04:24,910
+We can select it a six bit, eight bit, 10 bits or twelve bits.
+
+72
+00:04:25,270 --> 00:04:28,430
+I'm just going to keep it to the twelve bits and you can rella.
+
+73
+00:04:28,570 --> 00:04:33,970
+You realize that the higher the resolution, the more Crock's like was required to complete the conversion.
+
+74
+00:04:34,270 --> 00:04:41,470
+Such the six bits requires nine ADC clock cycles and eight which requires eleven, ten requests.
+
+75
+00:04:41,500 --> 00:04:44,020
+Thirteen and twelve requires fifteen.
+
+76
+00:04:44,410 --> 00:04:49,240
+So if we keep this then it's going to take 15 clock cycles for a single conversion.
+
+77
+00:04:53,030 --> 00:04:57,150
+Also, we have the option to align the data, we can leave this the way it is, right?
+
+78
+00:04:57,150 --> 00:05:00,270
+Alignment is good and we can come over here.
+
+79
+00:05:00,300 --> 00:05:00,810
+Also.
+
+80
+00:05:02,720 --> 00:05:07,210
+If we had multiple channels, then we'd have, um.
+
+81
+00:05:07,310 --> 00:05:10,220
+We'll have, uh, other Ronke over here.
+
+82
+00:05:10,220 --> 00:05:13,260
+We'll have multiple ranks, Ronke one, two, three, et cetera.
+
+83
+00:05:13,310 --> 00:05:20,060
+And we'll be able to select, um, we'll be able to select the arrangement in which the conversion should.
+
+84
+00:05:20,100 --> 00:05:20,350
+Okay.
+
+85
+00:05:20,420 --> 00:05:21,170
+What do we want.
+
+86
+00:05:21,200 --> 00:05:25,990
+Channel ten to be sampled first or Channel One, et cetera.
+
+87
+00:05:26,040 --> 00:05:29,530
+But of course we have one only we have just one under rank.
+
+88
+00:05:29,600 --> 00:05:30,140
+Over here.
+
+89
+00:05:30,480 --> 00:05:31,370
+And this is rank one.
+
+90
+00:05:31,730 --> 00:05:33,200
+And we can select the sampling time.
+
+91
+00:05:33,470 --> 00:05:34,280
+Sampling time.
+
+92
+00:05:34,430 --> 00:05:41,720
+Can either there is three psychos over here or we can go all the way to four eighty cycles so we can
+
+93
+00:05:41,720 --> 00:05:42,860
+choose for eighty cycles.
+
+94
+00:05:47,290 --> 00:05:54,430
+So because we already mentioned up here that the sampling time is is, um, uh, also depends on the,
+
+95
+00:05:54,430 --> 00:05:56,710
+um, the resolution over here.
+
+96
+00:05:56,740 --> 00:05:59,060
+It says fifteen ADC cycles for twelve pit.
+
+97
+00:05:59,380 --> 00:06:03,580
+So whatever we select down here for sampling time should be plus that 12 bit.
+
+98
+00:06:04,180 --> 00:06:04,420
+Right.
+
+99
+00:06:04,450 --> 00:06:09,970
+So there's four hundred and eighty Cycos plus the twelve pit it takes plus the twelve bit it takes for
+
+100
+00:06:09,970 --> 00:06:14,010
+twelve plus the fifteen cycos it takes for the twelve pit.
+
+101
+00:06:14,320 --> 00:06:20,560
+If we were using um um if we were using a ten bit it takes thirteen Cycos.
+
+102
+00:06:20,590 --> 00:06:24,390
+So Timbits has a constant of thirteen, thirteen Cycos.
+
+103
+00:06:24,670 --> 00:06:30,940
+If we select a sampling time or for eighty then it becomes four eighty Cycos plus the thirteen Cycos
+
+104
+00:06:30,940 --> 00:06:31,900
+for our ten bit.
+
+105
+00:06:32,440 --> 00:06:32,770
+Right.
+
+106
+00:06:32,800 --> 00:06:35,380
+So that is why we have to select sampling time as well.
+
+107
+00:06:37,210 --> 00:06:38,680
+Now we can generate our code.
+
+108
+00:06:38,710 --> 00:06:44,900
+We can, um, we can come over here to project manager or select my two chain before I forget this.
+
+109
+00:06:44,950 --> 00:06:47,130
+The SDM 32 Kubi d e.
+
+110
+00:06:47,740 --> 00:06:55,620
+I call this project, um, ADC on this call to a continuous conversion.
+
+111
+00:06:57,710 --> 00:06:58,250
+Like this.
+
+112
+00:07:00,440 --> 00:07:01,820
+So we can generate a project.
+
+113
+00:07:02,060 --> 00:07:06,560
+Once we've given it a name and selected the appropriate to chain quickly by here to generate.
+
+114
+00:07:09,610 --> 00:07:16,840
+So like we did in the other lesson, we have to start the, um, the ADC like we did before, and then
+
+115
+00:07:17,470 --> 00:07:21,730
+we create a global variable to get the ADC conversion and store it into it.
+
+116
+00:07:21,970 --> 00:07:22,630
+So let's do the.
+
+117
+00:07:24,340 --> 00:07:30,790
+And this mode, we don't need to keep all the ATC related initialization in the while, one infinite
+
+118
+00:07:30,790 --> 00:07:31,120
+loop.
+
+119
+00:07:31,210 --> 00:07:36,220
+We just need to call the get value Indiewire one loop.
+
+120
+00:07:36,440 --> 00:07:44,860
+That is what is supposed to continuously occur to get a value by the ATC start code that can be called
+
+121
+00:07:45,010 --> 00:07:48,330
+outside the infinite loop because we want to execute that just once.
+
+122
+00:07:48,370 --> 00:07:50,430
+We need to execute that just once.
+
+123
+00:07:50,800 --> 00:07:56,460
+Whereas in the other example, in the single conversion mode, we need to always study ATC.
+
+124
+00:07:56,860 --> 00:08:00,760
+So that's another difference between the two in terms of initialization.
+
+125
+00:08:02,780 --> 00:08:04,820
+So we can start it over here.
+
+126
+00:08:06,020 --> 00:08:06,620
+Over here.
+
+127
+00:08:09,330 --> 00:08:20,190
+Number one, start ADC and we use the same API we use before toll on a score ADC on a score start.
+
+128
+00:08:21,180 --> 00:08:28,080
+And this takes the ADC handle an address to the ADC handle as its only argument, which is a which is
+
+129
+00:08:28,170 --> 00:08:31,470
+HP, ADC one course, the ADC Modulus ADC one.
+
+130
+00:08:31,980 --> 00:08:32,370
+Right.
+
+131
+00:08:32,890 --> 00:08:38,870
+And um, we will create a global variable here, which I'll call you into that to underscore t.
+
+132
+00:08:39,340 --> 00:08:40,440
+I'll make it volatile.
+
+133
+00:08:41,070 --> 00:08:44,340
+And I'll call a sense of value like this.
+
+134
+00:08:46,330 --> 00:08:46,790
+Right.
+
+135
+00:08:48,470 --> 00:08:51,250
+So once we've done this, we can get a conversion.
+
+136
+00:08:51,980 --> 00:08:54,230
+So I'll come over here in our infinite loop.
+
+137
+00:08:54,260 --> 00:08:59,270
+That is where we get a conversion to get conversion.
+
+138
+00:08:59,520 --> 00:09:00,230
+I call this.
+
+139
+00:09:00,590 --> 00:09:04,070
+So all we have to do is store the resort and sense of value.
+
+140
+00:09:04,460 --> 00:09:08,600
+We use the pole for conversion, just like we did before to get this.
+
+141
+00:09:08,960 --> 00:09:09,690
+So how?
+
+142
+00:09:09,840 --> 00:09:15,080
+See how on the scroll ADC it is like this.
+
+143
+00:09:15,890 --> 00:09:19,400
+And then pole for conversion.
+
+144
+00:09:21,710 --> 00:09:25,550
+And it takes the um, the ADC handle and the timeout.
+
+145
+00:09:26,090 --> 00:09:30,080
+So each ADC one is the first argument in the timeout of one.
+
+146
+00:09:30,100 --> 00:09:30,920
+Emmis is fine.
+
+147
+00:09:31,400 --> 00:09:36,950
+And this is going to return the ADC value which will store in our global variable, which we named a
+
+148
+00:09:36,950 --> 00:09:38,870
+sense of value like this.
+
+149
+00:09:39,440 --> 00:09:39,870
+Okay.
+
+150
+00:09:39,980 --> 00:09:42,460
+So this all we need to do actually.
+
+151
+00:09:42,800 --> 00:09:43,850
+So just two steps.
+
+152
+00:09:44,820 --> 00:09:51,740
+We start the ADC, we get the ADC, we continuously get the ADC in our infinite loop over here like
+
+153
+00:09:51,740 --> 00:09:52,070
+this.
+
+154
+00:09:52,490 --> 00:09:52,910
+Okay.
+
+155
+00:09:55,100 --> 00:09:58,780
+Actually, over here we have to simply use to get value.
+
+156
+00:09:58,790 --> 00:10:01,340
+We need no pool for ADC conversion.
+
+157
+00:10:01,370 --> 00:10:04,040
+That is the key difference between the two.
+
+158
+00:10:04,270 --> 00:10:07,070
+So over here, how ADC on this gets value.
+
+159
+00:10:08,340 --> 00:10:11,040
+A simple cluster I wrote get conversion here.
+
+160
+00:10:11,090 --> 00:10:12,890
+And then I came using the wrong function.
+
+161
+00:10:12,980 --> 00:10:13,580
+So this is it.
+
+162
+00:10:14,000 --> 00:10:18,050
+We start the ADC and then we get the ADC value as simple as that.
+
+163
+00:10:18,530 --> 00:10:23,840
+And the reason this works continuously is because with initialize that to be continuous mode.
+
+164
+00:10:24,710 --> 00:10:25,160
+Right.
+
+165
+00:10:25,610 --> 00:10:28,340
+So I click over here to build a project.
+
+166
+00:10:28,480 --> 00:10:29,390
+OK, quick over here.
+
+167
+00:10:30,530 --> 00:10:31,280
+And it's built in.
+
+168
+00:10:33,790 --> 00:10:35,040
+We have two errors.
+
+169
+00:10:35,940 --> 00:10:36,670
+Um, let's see.
+
+170
+00:10:37,000 --> 00:10:38,260
+I think it's from our new.
+
+171
+00:10:38,290 --> 00:10:38,570
+OK.
+
+172
+00:10:38,800 --> 00:10:39,700
+This one here.
+
+173
+00:10:40,550 --> 00:10:40,970
+OK.
+
+174
+00:10:41,110 --> 00:10:41,980
+There's a mistake here.
+
+175
+00:10:42,040 --> 00:10:47,620
+And I can know the mistake because whenever you are using the whole library, when you first use the
+
+176
+00:10:47,640 --> 00:10:52,870
+keyword, all you have to add the name of the module you are dealing with.
+
+177
+00:10:53,170 --> 00:11:00,210
+So if it was a function that deals with a timer, it would be hard to underscore t I am for timer.
+
+178
+00:11:00,760 --> 00:11:07,180
+If it's a function that deals with less than a ADC, it has to always be hard on the score ADC.
+
+179
+00:11:07,630 --> 00:11:10,090
+So of course I made a mistake in typing this.
+
+180
+00:11:10,610 --> 00:11:12,710
+There should be on the score ADC over here.
+
+181
+00:11:13,330 --> 00:11:14,380
+And apart from that.
+
+182
+00:11:15,720 --> 00:11:19,180
+Um, this gets value because we are using continuous conversion mode.
+
+183
+00:11:20,050 --> 00:11:21,530
+It takes just one argument.
+
+184
+00:11:21,580 --> 00:11:25,180
+It doesn't take a timeout cause it's gonna be continuously converting.
+
+185
+00:11:25,780 --> 00:11:28,720
+And, um, we can actually find this function.
+
+186
+00:11:29,050 --> 00:11:31,210
+We can find this function in our ADC module.
+
+187
+00:11:31,240 --> 00:11:33,100
+I'll copy the function name as I've written it.
+
+188
+00:11:34,030 --> 00:11:40,570
+And then we're going to go to our drivers over here, just like we often do to verify the name of the
+
+189
+00:11:40,570 --> 00:11:41,110
+function.
+
+190
+00:11:41,170 --> 00:11:44,200
+And then I'll come over here, hold driver, ADC Dot.
+
+191
+00:11:44,230 --> 00:11:46,690
+See, it should be up here.
+
+192
+00:11:48,760 --> 00:11:50,710
+It's gonna say too big for the kids.
+
+193
+00:11:50,750 --> 00:11:54,930
+Not so, um, let's see what are we can view the outline.
+
+194
+00:11:56,510 --> 00:11:56,720
+OK.
+
+195
+00:11:56,790 --> 00:11:57,950
+Let's search or do.
+
+196
+00:11:58,020 --> 00:12:02,070
+Control F and then paste the name of the function here.
+
+197
+00:12:03,570 --> 00:12:05,250
+And this is the function name.
+
+198
+00:12:05,910 --> 00:12:06,150
+OK.
+
+199
+00:12:06,420 --> 00:12:06,870
+Indeed.
+
+200
+00:12:06,960 --> 00:12:08,970
+And it gets one argument.
+
+201
+00:12:09,060 --> 00:12:12,900
+It takes one argument and it returns the ADC conversion.
+
+202
+00:12:13,350 --> 00:12:20,250
+So the process gets the converted value from the data register of regular Cherno each ADC pointer to
+
+203
+00:12:20,280 --> 00:12:22,190
+ADC Hando type structure.
+
+204
+00:12:23,130 --> 00:12:25,890
+And the return value is the converted value.
+
+205
+00:12:25,930 --> 00:12:27,320
+So, okay, we're look good.
+
+206
+00:12:27,360 --> 00:12:30,030
+Now we can build again.
+
+207
+00:12:30,260 --> 00:12:31,150
+I'll click over here.
+
+208
+00:12:33,330 --> 00:12:34,020
+It's built in.
+
+209
+00:12:36,740 --> 00:12:40,790
+So it's done building those school to debug, I see, click over here.
+
+210
+00:12:46,200 --> 00:12:48,080
+Select this, okay?
+
+211
+00:12:57,700 --> 00:12:58,270
+Okay.
+
+212
+00:13:02,840 --> 00:13:05,060
+So that's my live expressions window.
+
+213
+00:13:05,180 --> 00:13:11,390
+If you don't have this live expression, it's opened, you can come to window, show you and then you
+
+214
+00:13:11,390 --> 00:13:13,190
+select live expressions.
+
+215
+00:13:13,250 --> 00:13:14,570
+It's somewhere here.
+
+216
+00:13:15,290 --> 00:13:15,710
+This is it.
+
+217
+00:13:15,980 --> 00:13:17,270
+You click here to open it.
+
+218
+00:13:17,720 --> 00:13:24,050
+So I'm going to copy ADC volume control, see to copy and then I'll double click in here and then I'll
+
+219
+00:13:24,050 --> 00:13:24,560
+paste it.
+
+220
+00:13:25,280 --> 00:13:27,990
+So now this is inside the live expressions.
+
+221
+00:13:28,520 --> 00:13:31,640
+So I'm going to click here to run the code or click it to run.
+
+222
+00:13:31,730 --> 00:13:37,610
+And this is my ADC value and I'm going to move my potential meter, which we are using as the SENSEOR.
+
+223
+00:13:37,880 --> 00:13:41,630
+And as you move, as I move, you can see the ADC value changes.
+
+224
+00:13:41,900 --> 00:13:47,570
+So if this were to be a light sensor or the ADC value will be changing accordingly based on the amount
+
+225
+00:13:47,570 --> 00:13:48,530
+of light you received.
+
+226
+00:13:48,780 --> 00:13:55,280
+If it was a different type of sensor such as temperature or pressure, you would work the same way.
+
+227
+00:13:55,820 --> 00:13:56,180
+Okay.
+
+228
+00:13:56,270 --> 00:13:59,390
+So that's all there is for this lesson if you have any questions at all.
+
+229
+00:13:59,450 --> 00:14:00,260
+Just let me know.
+
+230
+00:14:00,820 --> 00:14:01,760
+I'll see you later.
+
+231
+00:14:01,910 --> 00:14:02,670
+Have a nice day.
