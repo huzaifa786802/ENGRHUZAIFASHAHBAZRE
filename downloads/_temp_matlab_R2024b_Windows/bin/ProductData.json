@@ -1,0 +1,1455 @@
+{
+   "ProductData" : [
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "5G",
+         "ProductName" : "5G Toolbox",
+         "ProductNumber" : 161
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "AT",
+         "ProductName" : "Aerospace Toolbox",
+         "ProductNumber" : 108
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "AE",
+         "ProductName" : "Aerospace Blockset",
+         "ProductNumber" : 70
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "AA",
+         "ProductName" : "Antenna Toolbox",
+         "ProductNumber" : 141
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "AU",
+         "ProductName" : "Audio Toolbox",
+         "ProductNumber" : 151
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "PW",
+         "ProductName" : "Powertrain Blockset",
+         "ProductNumber" : 148
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "AS",
+         "ProductName" : "AUTOSAR Blockset",
+         "ProductNumber" : 170
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "BI",
+         "ProductName" : "Bioinformatics Toolbox",
+         "ProductNumber" : 83
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "BL",
+         "ProductName" : "Bluetooth Toolbox",
+         "ProductNumber" : 194
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "C2",
+         "ProductName" : "C2000 Microcontroller Blockset",
+         "ProductNumber" : 199
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "CM",
+         "ProductName" : "Communications Toolbox",
+         "ProductNumber" : 36
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "CO",
+         "ProductName" : "MATLAB Compiler",
+         "ProductNumber" : 28
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "MJ",
+         "ProductName" : "MATLAB Compiler SDK",
+         "ProductNumber" : 97
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "CT",
+         "ProductName" : "Control System Toolbox",
+         "ProductNumber" : 3
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "CF",
+         "ProductName" : "Curve Fitting Toolbox",
+         "ProductNumber" : 60
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "DA",
+         "ProductName" : "Data Acquisition Toolbox",
+         "ProductNumber" : 47
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "DB",
+         "ProductName" : "Database Toolbox",
+         "ProductNumber" : 41
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "DF",
+         "ProductName" : "Datafeed Toolbox",
+         "ProductNumber" : 50
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "DD",
+         "ProductName" : "DDS Blockset",
+         "ProductNumber" : 190
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "DH",
+         "ProductName" : "Deep Learning HDL Toolbox",
+         "ProductNumber" : 179
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "DO",
+         "ProductName" : "DO Qualification Kit",
+         "ProductNumber" : 129
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "DR",
+         "ProductName" : "Automated Driving Toolbox",
+         "ProductNumber" : 152
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "DS",
+         "ProductName" : "DSP System Toolbox",
+         "ProductNumber" : 24
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "HS",
+         "ProductName" : "DSP HDL Toolbox",
+         "ProductNumber" : 196
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "EC",
+         "ProductName" : "Embedded Coder",
+         "ProductNumber" : 65
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "ET",
+         "ProductName" : "Econometrics Toolbox",
+         "ProductNumber" : 125
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "ES",
+         "ProductName" : "HDL Verifier",
+         "ProductNumber" : 132
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "EL",
+         "ProductName" : "Spreadsheet Link",
+         "ProductNumber" : 9
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "FA",
+         "ProductName" : "Simulink Fault Analyzer",
+         "ProductNumber" : 195
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "FI",
+         "ProductName" : "Financial Toolbox",
+         "ProductNumber" : 30
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "IT",
+         "ProductName" : "Financial Instruments Toolbox",
+         "ProductNumber" : 136
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "PO",
+         "ProductName" : "Fixed-Point Designer",
+         "ProductNumber" : 91
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "TF",
+         "ProductName" : "Sensor Fusion and Tracking Toolbox",
+         "ProductNumber" : 157
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "FL",
+         "ProductName" : "Fuzzy Logic Toolbox",
+         "ProductNumber" : 23
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "GD",
+         "ProductName" : "Global Optimization Toolbox",
+         "ProductNumber" : 90
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "GC",
+         "ProductName" : "GPU Coder",
+         "ProductNumber" : 155
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "HD",
+         "ProductName" : "HDL Coder",
+         "ProductNumber" : 101
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "FH",
+         "ProductName" : "Filter Design HDL Coder",
+         "ProductNumber" : 88
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "OT",
+         "ProductName" : "Industrial Communication Toolbox",
+         "ProductNumber" : 89
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "ID",
+         "ProductName" : "System Identification Toolbox",
+         "ProductNumber" : 4
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "IE",
+         "ProductName" : "IEC Certification Kit",
+         "ProductNumber" : 128
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "IP",
+         "ProductName" : "Image Processing Toolbox",
+         "ProductNumber" : 17
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "IA",
+         "ProductName" : "Image Acquisition Toolbox",
+         "ProductNumber" : 78
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "IC",
+         "ProductName" : "Instrument Control Toolbox",
+         "ProductNumber" : 62
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "LP",
+         "ProductName" : "Lidar Toolbox",
+         "ProductNumber" : 178
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "LS",
+         "ProductName" : "LTE Toolbox",
+         "ProductNumber" : 140
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "MG",
+         "ProductName" : "Mapping Toolbox",
+         "ProductNumber" : 11
+      },
+      {
+         "ControllingProduct" : null,
+         "ControllingProductData" : {
+            "ActivateShortcutName" : "Activate MATLAB",
+            "ActivateShortcutPath" : {
+               "glnxa64" : "bin/glnxa64/MathWorksProductAuthorizer.sh",
+               "maca64" : "bin/maca64/MathWorksProductAuthorizer",
+               "maci64" : "bin/maci64/MathWorksProductAuthorizer",
+               "win64" : "bin\\win64\\MathWorksProductAuthorizer.exe"
+            },
+            "DeactivateShortcutName" : "Deactivate MATLAB",
+            "DeactivateShortcutPath" : {
+               "glnxa64" : "bin/glnxa64/MathWorksLicenseDeactivation",
+               "maca64" : "bin/maca64/MathWorksLicenseDeactivation",
+               "maci64" : "bin/maci64/MathWorksLicenseDeactivation",
+               "win64" : "bin\\win64\\MathWorksLicenseDeactivation.exe"
+            },
+            "DeletePreferencesOption" : true,
+            "DetectRunningExe" : {
+               "glnxa64" : "bin/glnxa64/MATLAB",
+               "maca64" : "bin/maca64/MATLAB",
+               "maci64" : "bin/maci64/MATLAB",
+               "win64" : "bin\\win64\\MATLAB.exe"
+            },
+            "DisplayDesktopShortcutOption" : true,
+            "IsRequiredForMacOSApp" : true,
+            "ProductBasecode" : "ML",
+            "ProductFamily" : "MATLAB",
+            "ProductName" : "MATLAB",
+            "ProductVersion" : "24.2",
+            "RegistryKey" : "MATLABROOT",
+            "RegistryKeyRoot" : "MATLAB",
+            "RegistryKeySubRoot" : "version",
+            "RelativeProductPath" : {
+               "glnxa64" : "MATLAB",
+               "maca64" : "MATLAB",
+               "maci64" : "MATLAB",
+               "win64" : "MATLAB"
+            },
+            "Release" : "R2024b",
+            "StartUpShortcutName" : "MATLAB",
+            "StartUpShortcutPath" : {
+               "glnxa64" : "bin/matlab",
+               "maca64" : "bin/matlab",
+               "maci64" : "bin/matlab",
+               "win64" : "bin\\matlab.exe"
+            },
+            "SymbolicLinks" : [
+               "matlab",
+               "mex"
+            ]
+         },
+         "ProductBasecode" : "ML",
+         "ProductName" : "MATLAB",
+         "ProductNumber" : 1
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "ME",
+         "ProductName" : "MATLAB Coder",
+         "ProductNumber" : 135
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "TE",
+         "ProductName" : "MATLAB Test",
+         "ProductNumber" : 198
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "MB",
+         "ProductName" : "Model-Based Calibration Toolbox",
+         "ProductNumber" : 68
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "MT",
+         "ProductName" : "Motor Control Blockset",
+         "ProductNumber" : 177
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "DX",
+         "ProductName" : "Medical Imaging Toolbox",
+         "ProductNumber" : 197
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "MP",
+         "ProductName" : "Model Predictive Control Toolbox",
+         "ProductNumber" : 22
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "AM",
+         "ProductName" : "Mixed-Signal Blockset",
+         "ProductNumber" : 160
+      },
+      {
+         "ControllingProduct" : null,
+         "ControllingProductData" : {
+            "ActivateShortcutName" : null,
+            "ActivateShortcutPath" : null,
+            "DeactivateShortcutName" : null,
+            "DeactivateShortcutPath" : null,
+            "DeletePreferencesOption" : false,
+            "DetectRunningExe" : null,
+            "DisplayDesktopShortcutOption" : false,
+            "IsRequiredForMacOSApp" : false,
+            "ProductBasecode" : "PR",
+            "ProductFamily" : "MATLAB Production Server",
+            "ProductName" : "MATLAB Production Server",
+            "ProductVersion" : "24.2",
+            "RegistryKey" : "MATLABROOT",
+            "RegistryKeyRoot" : "MATLAB Production Server",
+            "RegistryKeySubRoot" : "version",
+            "RelativeProductPath" : {
+               "glnxa64" : "MATLAB/MATLAB_Production_Server",
+               "maca64" : "MATLAB/MATLAB_Production_Server",
+               "maci64" : "MATLAB/MATLAB_Production_Server",
+               "win64" : "MATLAB\\MATLAB Production Server"
+            },
+            "Release" : "R2024b",
+            "StartUpShortcutName" : null,
+            "StartUpShortcutPath" : null,
+            "SymbolicLinks" : null
+         },
+         "ProductBasecode" : "PR",
+         "ProductName" : "MATLAB Production Server",
+         "ProductNumber" : 126
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "NV",
+         "ProductName" : "Navigation Toolbox",
+         "ProductNumber" : 176
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "NN",
+         "ProductName" : "Deep Learning Toolbox",
+         "ProductNumber" : 12
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "OP",
+         "ProductName" : "Optimization Toolbox",
+         "ProductNumber" : 6
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "DM",
+         "ProductName" : "Parallel Computing Toolbox",
+         "ProductNumber" : 80
+      },
+      {
+         "ControllingProduct" : null,
+         "ControllingProductData" : {
+            "ActivateShortcutName" : null,
+            "ActivateShortcutPath" : null,
+            "DeactivateShortcutName" : null,
+            "DeactivateShortcutPath" : null,
+            "DeletePreferencesOption" : true,
+            "DetectRunningExe" : {
+               "glnxa64" : "bin/glnxa64/MATLAB",
+               "maca64" : "bin/maca64/MATLAB",
+               "maci64" : "bin/maci64/MATLAB",
+               "win64" : "bin\\win64\\MATLAB.exe"
+            },
+            "DisplayDesktopShortcutOption" : false,
+            "IsRequiredForMacOSApp" : true,
+            "ProductBasecode" : "DW",
+            "ProductFamily" : "MATLAB Parallel Server",
+            "ProductName" : "MATLAB Parallel Server",
+            "ProductVersion" : "24.2",
+            "RegistryKey" : "MATLABROOT",
+            "RegistryKeyRoot" : "MATLAB",
+            "RegistryKeySubRoot" : "version",
+            "RelativeProductPath" : {
+               "glnxa64" : "MATLAB",
+               "maca64" : "MATLAB",
+               "maci64" : "MATLAB",
+               "win64" : "MATLAB"
+            },
+            "Release" : "R2024b",
+            "StartUpShortcutName" : null,
+            "StartUpShortcutPath" : null,
+            "SymbolicLinks" : null
+         },
+         "ProductBasecode" : "DW",
+         "ProductName" : "MATLAB Parallel Server",
+         "ProductNumber" : 94
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "PD",
+         "ProductName" : "Partial Differential Equation Toolbox",
+         "ProductNumber" : 31
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "AR",
+         "ProductName" : "Phased Array System Toolbox",
+         "ProductNumber" : 112
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "PL",
+         "ProductName" : "Simulink PLC Coder",
+         "ProductNumber" : 133
+      },
+      {
+         "ControllingProduct" : null,
+         "ControllingProductData" : {
+            "ActivateShortcutName" : "Activate Polyspace",
+            "ActivateShortcutPath" : {
+               "glnxa64" : "bin/glnxa64/MathWorksProductAuthorizer.sh",
+               "maca64" : "bin/maca64/MathWorksProductAuthorizer",
+               "maci64" : "bin/maci64/MathWorksProductAuthorizer",
+               "win64" : "bin\\win64\\MathWorksProductAuthorizer.exe"
+            },
+            "DeactivateShortcutName" : "Deactivate Polyspace",
+            "DeactivateShortcutPath" : {
+               "glnxa64" : "bin/glnxa64/MathWorksLicenseDeactivation",
+               "maca64" : "bin/maca64/MathWorksLicenseDeactivation",
+               "maci64" : "bin/maci64/MathWorksLicenseDeactivation",
+               "win64" : "bin\\win64\\MathWorksLicenseDeactivation.exe"
+            },
+            "DeletePreferencesOption" : false,
+            "DetectRunningExe" : null,
+            "DisplayDesktopShortcutOption" : true,
+            "IsRequiredForMacOSApp" : false,
+            "ProductBasecode" : "BD",
+            "ProductFamily" : "Polyspace",
+            "ProductName" : "Polyspace Bug Finder",
+            "ProductVersion" : "24.2",
+            "RegistryKey" : "POLYSPACEROOT",
+            "RegistryKeyRoot" : "Polyspace",
+            "RegistryKeySubRoot" : "release",
+            "RelativeProductPath" : {
+               "glnxa64" : "Polyspace",
+               "maca64" : "Polyspace",
+               "maci64" : "Polyspace",
+               "win64" : "Polyspace"
+            },
+            "Release" : "R2024b",
+            "StartUpShortcutName" : "Polyspace",
+            "StartUpShortcutPath" : {
+               "glnxa64" : "polyspace/bin/polyspace",
+               "maca64" : "polyspace/bin/polyspace",
+               "maci64" : "polyspace/bin/polyspace",
+               "win64" : "polyspace\\bin\\polyspace.exe"
+            },
+            "SymbolicLinks" : null
+         },
+         "ProductBasecode" : "BD",
+         "ProductName" : "Polyspace Bug Finder",
+         "ProductNumber" : 164
+      },
+      {
+         "ControllingProduct" : null,
+         "ControllingProductData" : {
+            "ActivateShortcutName" : null,
+            "ActivateShortcutPath" : null,
+            "DeactivateShortcutName" : null,
+            "DeactivateShortcutPath" : null,
+            "DeletePreferencesOption" : false,
+            "DetectRunningExe" : null,
+            "DisplayDesktopShortcutOption" : false,
+            "IsRequiredForMacOSApp" : false,
+            "ProductBasecode" : "BS",
+            "ProductFamily" : "Polyspace Bug Finder Server",
+            "ProductName" : "Polyspace Bug Finder Server",
+            "ProductVersion" : "24.2",
+            "RegistryKey" : "POLYSPACEROOT",
+            "RegistryKeyRoot" : "Polyspace Server",
+            "RegistryKeySubRoot" : "version",
+            "RelativeProductPath" : {
+               "glnxa64" : "Polyspace_Server",
+               "maca64" : "Polyspace_Server",
+               "maci64" : "Polyspace_Server",
+               "win64" : "Polyspace Server"
+            },
+            "Release" : "R2024b",
+            "StartUpShortcutName" : null,
+            "StartUpShortcutPath" : null,
+            "SymbolicLinks" : null
+         },
+         "ProductBasecode" : "BS",
+         "ProductName" : "Polyspace Bug Finder Server",
+         "ProductNumber" : 166
+      },
+      {
+         "ControllingProduct" : "BD",
+         "ProductBasecode" : "CD",
+         "ProductName" : "Polyspace Code Prover",
+         "ProductNumber" : 165
+      },
+      {
+         "ControllingProduct" : "BS",
+         "ProductBasecode" : "CS",
+         "ProductName" : "Polyspace Code Prover Server",
+         "ProductNumber" : 167
+      },
+      {
+         "ControllingProduct" : null,
+         "ControllingProductData" : {
+            "ActivateShortcutName" : "Activate Polyspace",
+            "ActivateShortcutPath" : {
+               "glnxa64" : "bin/glnxa64/MathWorksProductAuthorizer.sh",
+               "maca64" : "bin/maca64/MathWorksProductAuthorizer",
+               "maci64" : "bin/maci64/MathWorksProductAuthorizer",
+               "win64" : "bin\\win64\\MathWorksProductAuthorizer.exe"
+            },
+            "DeactivateShortcutName" : "Deactivate Polyspace",
+            "DeactivateShortcutPath" : {
+               "glnxa64" : "bin/glnxa64/MathWorksLicenseDeactivation",
+               "maca64" : "bin/maca64/MathWorksLicenseDeactivation",
+               "maci64" : "bin/maci64/MathWorksLicenseDeactivation",
+               "win64" : "bin\\win64\\MathWorksLicenseDeactivation.exe"
+            },
+            "DeletePreferencesOption" : false,
+            "DetectRunningExe" : null,
+            "DisplayDesktopShortcutOption" : true,
+            "IsRequiredForMacOSApp" : false,
+            "ProductBasecode" : "PZ",
+            "ProductFamily" : "Polyspace",
+            "ProductName" : "Polyspace Test",
+            "ProductVersion" : "24.2",
+            "RegistryKey" : "POLYSPACEROOT",
+            "RegistryKeyRoot" : "Polyspace",
+            "RegistryKeySubRoot" : "release",
+            "RelativeProductPath" : {
+               "glnxa64" : "Polyspace",
+               "maca64" : "Polyspace",
+               "maci64" : "Polyspace",
+               "win64" : "Polyspace"
+            },
+            "Release" : "R2024b",
+            "StartUpShortcutName" : "Polyspace Test",
+            "StartUpShortcutPath" : {
+               "glnxa64" : "polyspace/bin/polyspace-desktop-ui",
+               "maca64" : "polyspace/bin/polyspace-desktop-ui",
+               "maci64" : "polyspace/bin/polyspace-desktop-ui",
+               "win64" : "polyspace\\bin\\polyspace-desktop-ui.exe"
+            },
+            "SymbolicLinks" : null
+         },
+         "ProductBasecode" : "PZ",
+         "ProductName" : "Polyspace Test",
+         "ProductNumber" : 192
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "PM",
+         "ProductName" : "Predictive Maintenance Toolbox",
+         "ProductNumber" : 158
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "RA",
+         "ProductName" : "Radar Toolbox",
+         "ProductNumber" : 181
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "RF",
+         "ProductName" : "RF Toolbox",
+         "ProductNumber" : 86
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "RP",
+         "ProductName" : "RF PCB Toolbox",
+         "ProductNumber" : 188
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "RK",
+         "ProductName" : "Risk Management Toolbox",
+         "ProductNumber" : 150
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "RL",
+         "ProductName" : "Reinforcement Learning Toolbox",
+         "ProductNumber" : 172
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "RO",
+         "ProductName" : "Robotics System Toolbox",
+         "ProductNumber" : 142
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "RC",
+         "ProductName" : "Robust Control Toolbox",
+         "ProductNumber" : 5
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "RR",
+         "ProductName" : "ROS Toolbox",
+         "ProductNumber" : 175
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "MR",
+         "ProductName" : "MATLAB Report Generator",
+         "ProductNumber" : 44
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SR",
+         "ProductName" : "Simulink Report Generator",
+         "ProductNumber" : 45
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SI",
+         "ProductName" : "Satellite Communications Toolbox",
+         "ProductNumber" : 189
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SX",
+         "ProductName" : "SerDes Toolbox",
+         "ProductNumber" : 162
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SQ",
+         "ProductName" : "Signal Integrity Toolbox",
+         "ProductNumber" : 187
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SG",
+         "ProductName" : "Signal Processing Toolbox",
+         "ProductNumber" : 8
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SB",
+         "ProductName" : "SimBiology",
+         "ProductNumber" : 103
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SE",
+         "ProductName" : "SimEvents",
+         "ProductNumber" : 100
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "RB",
+         "ProductName" : "RF Blockset",
+         "ProductNumber" : 87
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SS",
+         "ProductName" : "Simscape",
+         "ProductNumber" : 104
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "BT",
+         "ProductName" : "Simscape Battery",
+         "ProductNumber" : 193
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "LD",
+         "ProductName" : "Simscape Driveline",
+         "ProductNumber" : 95
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "PS",
+         "ProductName" : "Simscape Electrical",
+         "ProductNumber" : 40
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SH",
+         "ProductName" : "Simscape Fluids",
+         "ProductNumber" : 105
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "MS",
+         "ProductName" : "Simscape Multibody",
+         "ProductNumber" : 64
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SL",
+         "ProductName" : "Simulink",
+         "ProductNumber" : 2
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "RT",
+         "ProductName" : "Simulink Coder",
+         "ProductNumber" : 14
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SK",
+         "ProductName" : "Simulink Compiler",
+         "ProductNumber" : 174
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SZ",
+         "ProductName" : "Simulink Test",
+         "ProductNumber" : 144
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "VR",
+         "ProductName" : "Simulink 3D Animation",
+         "ProductNumber" : 66
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "VV",
+         "ProductName" : "Simulink Check",
+         "ProductNumber" : 93
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "CI",
+         "ProductName" : "Simulink Code Inspector",
+         "ProductNumber" : 134
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SD",
+         "ProductName" : "Simulink Control Design",
+         "ProductNumber" : 85
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "CV",
+         "ProductName" : "Simulink Coverage",
+         "ProductNumber" : 146
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SO",
+         "ProductName" : "Simulink Design Optimization",
+         "ProductNumber" : 127
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "WT",
+         "ProductName" : "Simulink Desktop Real-Time",
+         "ProductNumber" : 48
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "DV",
+         "ProductName" : "Simulink Design Verifier",
+         "ProductNumber" : 110
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "RQ",
+         "ProductName" : "Requirements Toolbox",
+         "ProductNumber" : 147
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "XP",
+         "ProductName" : "Simulink Real-Time",
+         "ProductNumber" : 56
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "HW",
+         "ProductName" : "SoC Blockset",
+         "ProductNumber" : 163
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SF",
+         "ProductName" : "Stateflow",
+         "ProductNumber" : 38
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "ST",
+         "ProductName" : "Statistics and Machine Learning Toolbox",
+         "ProductNumber" : 19
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "SM",
+         "ProductName" : "Symbolic Math Toolbox",
+         "ProductNumber" : 15
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "ZC",
+         "ProductName" : "System Composer",
+         "ProductNumber" : 159
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "TA",
+         "ProductName" : "Text Analytics Toolbox",
+         "ProductNumber" : 156
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "UV",
+         "ProductName" : "UAV Toolbox",
+         "ProductNumber" : 182
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "VE",
+         "ProductName" : "Vehicle Dynamics Blockset",
+         "ProductNumber" : 153
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "VP",
+         "ProductName" : "Computer Vision Toolbox",
+         "ProductNumber" : 96
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "VT",
+         "ProductName" : "Vision HDL Toolbox",
+         "ProductNumber" : 143
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "VN",
+         "ProductName" : "Vehicle Network Toolbox",
+         "ProductNumber" : 124
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "WA",
+         "ProductName" : "Wavelet Toolbox",
+         "ProductNumber" : 35
+      },
+      {
+         "ControllingProduct" : null,
+         "ControllingProductData" : {
+            "ActivateShortcutName" : null,
+            "ActivateShortcutPath" : null,
+            "DeactivateShortcutName" : null,
+            "DeactivateShortcutPath" : null,
+            "DeletePreferencesOption" : false,
+            "DetectRunningExe" : null,
+            "DisplayDesktopShortcutOption" : false,
+            "IsRequiredForMacOSApp" : false,
+            "ProductBasecode" : "MW",
+            "ProductFamily" : "MATLAB Web App Server",
+            "ProductName" : "MATLAB Web App Server",
+            "ProductVersion" : "24.2",
+            "RegistryKey" : "MATLABROOT",
+            "RegistryKeyRoot" : "MATLAB Web App Server",
+            "RegistryKeySubRoot" : "version",
+            "RelativeProductPath" : {
+               "glnxa64" : "MATLAB/MATLAB_Web_App_Server",
+               "maca64" : "MATLAB/MATLAB_Web_App_Server",
+               "maci64" : "MATLAB/MATLAB_Web_App_Server",
+               "win64" : "MATLAB\\MATLAB Web App Server"
+            },
+            "Release" : "R2024b",
+            "StartUpShortcutName" : null,
+            "StartUpShortcutPath" : null,
+            "SymbolicLinks" : null
+         },
+         "ProductBasecode" : "MW",
+         "ProductName" : "MATLAB Web App Server",
+         "ProductNumber" : 173
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "LH",
+         "ProductName" : "Wireless HDL Toolbox",
+         "ProductNumber" : 154
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "WL",
+         "ProductName" : "WLAN Toolbox",
+         "ProductNumber" : 145
+      },
+      {
+         "ControllingProduct" : "ML",
+         "ProductBasecode" : "WB",
+         "ProductName" : "Wireless Testbench",
+         "ProductNumber" : 191
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35261",
+         "ProductName" : "MATLAB Runtime - 5G Toolbox Addin",
+         "ProductNumber" : 35261
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35208",
+         "ProductName" : "MATLAB Runtime - Aerospace Toolbox Addin",
+         "ProductNumber" : 35208
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35251",
+         "ProductName" : "MATLAB Runtime - Audio Toolbox Addin",
+         "ProductNumber" : 35251
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35183",
+         "ProductName" : "MATLAB Runtime - Bioinformatics Toolbox Addin",
+         "ProductNumber" : 35183
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35294",
+         "ProductName" : "MATLAB Runtime - Bluetooth Toolbox Addin",
+         "ProductNumber" : 35294
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35136",
+         "ProductName" : "MATLAB Runtime - Communications Toolbox Addin",
+         "ProductNumber" : 35136
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35103",
+         "ProductName" : "MATLAB Runtime - Control System Toolbox Addin",
+         "ProductNumber" : 35103
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35160",
+         "ProductName" : "MATLAB Runtime - Curve Fitting Toolbox Addin",
+         "ProductNumber" : 35160
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35147",
+         "ProductName" : "MATLAB Runtime - Data Acquisition Toolbox Addin",
+         "ProductNumber" : 35147
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35141",
+         "ProductName" : "MATLAB Runtime - Database Toolbox Addin",
+         "ProductNumber" : 35141
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35150",
+         "ProductName" : "MATLAB Runtime - Datafeed Toolbox Addin",
+         "ProductNumber" : 35150
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35252",
+         "ProductName" : "MATLAB Runtime - Automated Driving Toolbox Addin",
+         "ProductNumber" : 35252
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35124",
+         "ProductName" : "MATLAB Runtime - DSP System Toolbox Addin",
+         "ProductNumber" : 35124
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35225",
+         "ProductName" : "MATLAB Runtime - Econometrics Toolbox Addin",
+         "ProductNumber" : 35225
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35130",
+         "ProductName" : "MATLAB Runtime - Financial Toolbox Addin",
+         "ProductNumber" : 35130
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35236",
+         "ProductName" : "MATLAB Runtime - Financial Instruments Toolbox Addin",
+         "ProductNumber" : 35236
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35191",
+         "ProductName" : "MATLAB Runtime - Fixed-Point Designer Addin",
+         "ProductNumber" : 35191
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35257",
+         "ProductName" : "MATLAB Runtime - Sensor Fusion and Tracking Toolbox Addin",
+         "ProductNumber" : 35257
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35123",
+         "ProductName" : "MATLAB Runtime - Fuzzy Logic Toolbox Addin",
+         "ProductNumber" : 35123
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35190",
+         "ProductName" : "MATLAB Runtime - Global Optimization Toolbox Addin",
+         "ProductNumber" : 35190
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35189",
+         "ProductName" : "MATLAB Runtime - ICOMM Toolbox Addin",
+         "ProductNumber" : 35189
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35104",
+         "ProductName" : "MATLAB Runtime - System Identification Toolbox Addin",
+         "ProductNumber" : 35104
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35117",
+         "ProductName" : "MATLAB Runtime - Image Processing Toolbox Addin",
+         "ProductNumber" : 35117
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35178",
+         "ProductName" : "MATLAB Runtime - Image Acquisition Toolbox Addin",
+         "ProductNumber" : 35178
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35162",
+         "ProductName" : "MATLAB Runtime - Instrument Control Toolbox Addin",
+         "ProductNumber" : 35162
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35278",
+         "ProductName" : "MATLAB Runtime - Lidar Toolbox Addin",
+         "ProductNumber" : 35278
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35240",
+         "ProductName" : "MATLAB Runtime - LTE Toolbox Addin",
+         "ProductNumber" : 35240
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35111",
+         "ProductName" : "MATLAB Runtime - Mapping Toolbox Addin",
+         "ProductNumber" : 35111
+      },
+      {
+         "ControllingProduct" : null,
+         "ControllingProductData" : null,
+         "ProductBasecode" : "1000",
+         "ProductName" : "MATLAB Runtime",
+         "ProductNumber" : 1000
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35052",
+         "ProductName" : "MATLAB Runtime - Hadoop And Spark Addin",
+         "ProductNumber" : 35052
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35000",
+         "ProductName" : "MATLAB Runtime - Core",
+         "ProductNumber" : 35000
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35056",
+         "ProductName" : "MATLAB Runtime - CPP Shared Library",
+         "ProductNumber" : 35056
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35002",
+         "ProductName" : "MATLAB Runtime - Graphics",
+         "ProductNumber" : 35002
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35053",
+         "ProductName" : "MATLAB Runtime - Java Addin",
+         "ProductNumber" : 35053
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35011",
+         "ProductName" : "MATLAB Runtime - JMI",
+         "ProductNumber" : 35011
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35054",
+         "ProductName" : "MATLAB Runtime - Production Server Addin",
+         "ProductNumber" : 35054
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35003",
+         "ProductName" : "MATLAB Runtime - Non Interactive MATLAB",
+         "ProductNumber" : 35003
+      },
+      {
+         "ControllingProduct" : null,
+         "ControllingProductData" : {
+            "ActivateShortcutName" : null,
+            "ActivateShortcutPath" : null,
+            "DeactivateShortcutName" : null,
+            "DeactivateShortcutPath" : null,
+            "DeletePreferencesOption" : null,
+            "DetectRunningExe" : null,
+            "DisplayDesktopShortcutOption" : false,
+            "IsRequiredForMacOSApp" : false,
+            "ProductBasecode" : "35010",
+            "ProductFamily" : "MATLAB Runtime",
+            "ProductName" : "MATLAB Runtime",
+            "ProductVersion" : "24.2",
+            "RegistryKey" : "MATLABROOT",
+            "RegistryKeyRoot" : "MATLAB Runtime",
+            "RegistryKeySubRoot" : "version",
+            "RelativeProductPath" : {
+               "glnxa64" : "MATLAB/MATLAB_Runtime",
+               "maca64" : "MATLAB/MATLAB_Runtime",
+               "maci64" : "MATLAB/MATLAB_Runtime",
+               "win64" : "MATLAB\\MATLAB Runtime"
+            },
+            "Release" : "R2024b",
+            "StartUpShortcutName" : null,
+            "StartUpShortcutPath" : null,
+            "SymbolicLinks" : null
+         },
+         "ProductBasecode" : "35010",
+         "ProductName" : "MATLAB Runtime - Numerics",
+         "ProductNumber" : 35010
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35055",
+         "ProductName" : "MATLAB Runtime - Python",
+         "ProductNumber" : 35055
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35500",
+         "ProductName" : "MATLAB Runtime - Web Apps Addin",
+         "ProductNumber" : 35500
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35051",
+         "ProductName" : "MATLAB Runtime - NET And Excel Addin",
+         "ProductNumber" : 35051
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35297",
+         "ProductName" : "MATLAB Runtime - Medical Imaging Toolbox Addin",
+         "ProductNumber" : 35297
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35122",
+         "ProductName" : "MATLAB Runtime - Model Predictive Control Toolbox Addin",
+         "ProductNumber" : 35122
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35276",
+         "ProductName" : "MATLAB Runtime - Navigation Toolbox Addin",
+         "ProductNumber" : 35276
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35112",
+         "ProductName" : "MATLAB Runtime - Deep Learning Toolbox Addin",
+         "ProductNumber" : 35112
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35106",
+         "ProductName" : "MATLAB Runtime - Optimization Toolbox Addin",
+         "ProductNumber" : 35106
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35180",
+         "ProductName" : "MATLAB Runtime - Parallel Computing Toolbox Cluster Addin",
+         "ProductNumber" : 35180
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35380",
+         "ProductName" : "MATLAB Runtime - Parallel Computing Toolbox GPU Addin",
+         "ProductNumber" : 35380
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35131",
+         "ProductName" : "MATLAB Runtime - Partial Differential Equation Toolbox Addin",
+         "ProductNumber" : 35131
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35212",
+         "ProductName" : "MATLAB Runtime - Phased Array System Toolbox Addin",
+         "ProductNumber" : 35212
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35258",
+         "ProductName" : "MATLAB Runtime - Predictive Maintenance Toolbox Addin",
+         "ProductNumber" : 35258
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35274",
+         "ProductName" : "MATLAB Runtime - Rapid Accelerator",
+         "ProductNumber" : 35274
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35281",
+         "ProductName" : "MATLAB Runtime - Radar Toolbox Addin",
+         "ProductNumber" : 35281
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35186",
+         "ProductName" : "MATLAB Runtime - RF Toolbox Addin",
+         "ProductNumber" : 35186
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35250",
+         "ProductName" : "MATLAB Runtime - Risk Management Toolbox Addin",
+         "ProductNumber" : 35250
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35272",
+         "ProductName" : "MATLAB Runtime - Reinforcement Learning Toolbox Addin",
+         "ProductNumber" : 35272
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35242",
+         "ProductName" : "MATLAB Runtime - Robotics System Toolbox Addin",
+         "ProductNumber" : 35242
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35275",
+         "ProductName" : "MATLAB Runtime - ROS Toolbox Addin",
+         "ProductNumber" : 35275
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35144",
+         "ProductName" : "MATLAB Runtime - MATLAB Report Generator Addin",
+         "ProductNumber" : 35144
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35289",
+         "ProductName" : "MATLAB Runtime - Satellite Communications Toolbox Addin",
+         "ProductNumber" : 35289
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35108",
+         "ProductName" : "MATLAB Runtime - Signal Processing Toolbox Addin",
+         "ProductNumber" : 35108
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35203",
+         "ProductName" : "MATLAB Runtime - SimBiology Addin",
+         "ProductNumber" : 35203
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35166",
+         "ProductName" : "MATLAB Runtime - Simulink 3D Animation Addin",
+         "ProductNumber" : 35166
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35227",
+         "ProductName" : "MATLAB Runtime - Simulink Design Optimization Addin",
+         "ProductNumber" : 35227
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35156",
+         "ProductName" : "MATLAB Runtime - Simulink Real-Time Addin",
+         "ProductNumber" : 35156
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35119",
+         "ProductName" : "MATLAB Runtime - Statistics and Machine Learning Toolbox Addin",
+         "ProductNumber" : 35119
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35259",
+         "ProductName" : "MATLAB Runtime - System Composer Addin",
+         "ProductNumber" : 35259
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35256",
+         "ProductName" : "MATLAB Runtime - Text Analytics Toolbox Addin",
+         "ProductNumber" : 35256
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35282",
+         "ProductName" : "MATLAB Runtime - UAV Toolbox Addin",
+         "ProductNumber" : 35282
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35196",
+         "ProductName" : "MATLAB Runtime - Computer Vision Toolbox Addin",
+         "ProductNumber" : 35196
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35224",
+         "ProductName" : "MATLAB Runtime - Vehicle Network Toolbox Addin",
+         "ProductNumber" : 35224
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35135",
+         "ProductName" : "MATLAB Runtime - Wavelet Toolbox Addin",
+         "ProductNumber" : 35135
+      },
+      {
+         "ControllingProduct" : "35010",
+         "ProductBasecode" : "35245",
+         "ProductName" : "MATLAB Runtime - WLAN Toolbox Addin",
+         "ProductNumber" : 35245
+      }
+   ]
+}
