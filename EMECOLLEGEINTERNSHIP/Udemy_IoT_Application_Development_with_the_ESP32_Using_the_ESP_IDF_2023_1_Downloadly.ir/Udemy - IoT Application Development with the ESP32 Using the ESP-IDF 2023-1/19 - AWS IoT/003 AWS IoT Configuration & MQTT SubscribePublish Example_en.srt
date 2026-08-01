@@ -1,0 +1,1496 @@
+1
+00:00:06,939 --> 00:00:07,250
+Okay.
+
+2
+00:00:07,270 --> 00:00:13,180
+Be sure that your account is set up and open the github page for esp rwc iot.
+
+3
+00:00:14,170 --> 00:00:19,180
+Because now we're going to clone this repository and we're going to use this command here.
+
+4
+00:00:20,110 --> 00:00:22,210
+So let's copy it using this button.
+
+5
+00:00:24,280 --> 00:00:26,020
+And then let's go to the workspace folder.
+
+6
+00:00:28,580 --> 00:00:30,440
+Now right click on the project folder.
+
+7
+00:00:31,300 --> 00:00:33,040
+And let's go to get here.
+
+8
+00:00:34,300 --> 00:00:35,440
+Which is right here.
+
+9
+00:00:35,680 --> 00:00:36,100
+Okay.
+
+10
+00:00:38,520 --> 00:00:40,440
+And then let me pull it back into view.
+
+11
+00:00:43,710 --> 00:00:47,400
+Now let's insert the command that we've copied and hit enter.
+
+12
+00:00:49,670 --> 00:00:50,730
+And just let it finish.
+
+13
+00:00:50,750 --> 00:00:52,160
+I'll speed up the video a bit here.
+
+14
+00:01:25,840 --> 00:01:26,110
+Okay.
+
+15
+00:01:26,110 --> 00:01:26,950
+Now we can close.
+
+16
+00:01:26,960 --> 00:01:27,580
+Get back.
+
+17
+00:01:30,130 --> 00:01:33,250
+And here is the ESPN Society.
+
+18
+00:01:33,460 --> 00:01:34,360
+So let's take a look.
+
+19
+00:01:36,600 --> 00:01:40,380
+And this is the embedded C, a society device SDK.
+
+20
+00:01:40,710 --> 00:01:42,240
+So let's go in here and take a look around.
+
+21
+00:01:43,700 --> 00:01:47,660
+You can find the include files here and the source files here as well.
+
+22
+00:01:48,410 --> 00:01:52,190
+And if we go back to ESP a WC Iot folder.
+
+23
+00:01:53,710 --> 00:01:56,290
+Here, you'll find the examples that you can get started with.
+
+24
+00:01:57,370 --> 00:02:01,330
+And this is the subscribe publish example and in the main folder.
+
+25
+00:02:02,480 --> 00:02:02,990
+The file.
+
+26
+00:02:02,990 --> 00:02:05,270
+Here is what I've based the code on in the resources.
+
+27
+00:02:07,150 --> 00:02:07,480
+Okay.
+
+28
+00:02:07,480 --> 00:02:12,700
+So now we'll continue in the Eclipse A.D. And now I'm just getting back to the project folder.
+
+29
+00:02:15,800 --> 00:02:20,360
+Because next we'll need to include the esp nws iot into the build.
+
+30
+00:02:21,020 --> 00:02:22,700
+So now let's switch over to Eclipse.
+
+31
+00:02:23,980 --> 00:02:29,200
+And let's go to the C make list file in the project directory here and we'll tell C make where to find
+
+32
+00:02:29,200 --> 00:02:30,550
+a society.
+
+33
+00:02:31,210 --> 00:02:32,620
+So here, let's write set.
+
+34
+00:02:32,890 --> 00:02:35,740
+And in parentheses, it's extra.
+
+35
+00:02:36,790 --> 00:02:37,510
+Component.
+
+36
+00:02:38,790 --> 00:02:39,390
+Dears.
+
+37
+00:02:40,440 --> 00:02:40,790
+Okay.
+
+38
+00:02:40,800 --> 00:02:49,020
+And then in quotations it's ISP, dash, FWC, dash, Iot and close parentheses.
+
+39
+00:02:49,890 --> 00:02:51,360
+And then control this to save.
+
+40
+00:02:52,050 --> 00:02:54,240
+All right, now let's include the resource files.
+
+41
+00:02:54,450 --> 00:02:55,440
+So have yours ready.
+
+42
+00:02:56,190 --> 00:02:57,090
+Minor right here.
+
+43
+00:02:58,260 --> 00:03:00,420
+And I'll just control C to copy them.
+
+44
+00:03:01,580 --> 00:03:04,580
+And then let's go to the main folder and paste them in.
+
+45
+00:03:07,460 --> 00:03:11,210
+And now you need to add the source file to the main CMA list file here.
+
+46
+00:03:12,790 --> 00:03:14,260
+So now let's add it to the list.
+
+47
+00:03:15,350 --> 00:03:19,370
+And that's the IWC, IATA, that IATSE.
+
+48
+00:03:20,890 --> 00:03:21,610
+And save that.
+
+49
+00:03:23,060 --> 00:03:27,140
+Next, we'll need to go to a website and generate the certificates.
+
+50
+00:03:27,590 --> 00:03:30,410
+But while we're here, let's create a folder for the certificates.
+
+51
+00:03:31,100 --> 00:03:34,130
+So under the main folder, let's create a new folder.
+
+52
+00:03:37,750 --> 00:03:38,890
+And call it certs.
+
+53
+00:03:41,960 --> 00:03:44,960
+And now we can head over to the IWC management console.
+
+54
+00:03:45,620 --> 00:03:45,950
+All right.
+
+55
+00:03:45,950 --> 00:03:50,690
+So this is the link here which you can find in the resources and we'll log in using the button here.
+
+56
+00:03:54,830 --> 00:03:55,130
+Okay.
+
+57
+00:03:55,130 --> 00:03:58,100
+So I'm a root user, so enter my email address.
+
+58
+00:04:04,060 --> 00:04:05,050
+And then click next.
+
+59
+00:04:06,100 --> 00:04:07,450
+Then do the security check.
+
+60
+00:04:14,490 --> 00:04:16,019
+And now sign in with your password.
+
+61
+00:04:24,290 --> 00:04:24,560
+All right.
+
+62
+00:04:24,560 --> 00:04:26,210
+So this is the console home screen.
+
+63
+00:04:26,660 --> 00:04:30,620
+And first off, I just want to point out that you can easily retrieve your account number here.
+
+64
+00:04:31,740 --> 00:04:32,700
+Which we'll need later.
+
+65
+00:04:33,640 --> 00:04:37,090
+And also your region, which you can adjust, you can retrieve here as well.
+
+66
+00:04:38,020 --> 00:04:44,560
+So now let's go over to Iot Core, which I've recently visited, and we can pull that up by searching
+
+67
+00:04:44,560 --> 00:04:45,580
+Iot core.
+
+68
+00:04:48,830 --> 00:04:50,330
+And here, just follow the link.
+
+69
+00:04:57,130 --> 00:05:01,750
+And this is the main page and there's additional resources directly linked here.
+
+70
+00:05:02,230 --> 00:05:08,050
+For example, there's an interactive tutorial here, as well as video resources.
+
+71
+00:05:09,180 --> 00:05:10,350
+And to develop a good.
+
+72
+00:05:11,430 --> 00:05:11,880
+Okay.
+
+73
+00:05:12,480 --> 00:05:17,760
+So now let's get started and go to the managed dropdown right here and then choose things.
+
+74
+00:05:20,990 --> 00:05:23,150
+And now we want to go to create things.
+
+75
+00:05:27,350 --> 00:05:29,180
+Then choose, create a single thing.
+
+76
+00:05:30,210 --> 00:05:31,110
+And click next.
+
+77
+00:05:33,450 --> 00:05:33,830
+Okay.
+
+78
+00:05:33,840 --> 00:05:35,700
+And in this step, we'll give the thing a name.
+
+79
+00:05:36,180 --> 00:05:39,780
+And the name that we choose has to reflect how it's defined in the source code.
+
+80
+00:05:40,350 --> 00:05:45,270
+So let's go over to the source code and I'll show you where that is so you can rename it to your liking
+
+81
+00:05:45,270 --> 00:05:45,780
+if you wish.
+
+82
+00:05:46,840 --> 00:05:47,140
+Okay.
+
+83
+00:05:47,140 --> 00:05:52,000
+So now let's open the aid wc iot ahead of file and this is the define.
+
+84
+00:05:52,030 --> 00:05:55,840
+So go ahead and change it however you like and I'll just stick with this one.
+
+85
+00:05:55,990 --> 00:05:59,230
+So I'll just copy it and paste it as the thing.
+
+86
+00:05:59,230 --> 00:05:59,580
+Name.
+
+87
+00:06:00,750 --> 00:06:05,280
+And then we won't touch the additional configurations so we can just click next.
+
+88
+00:06:06,880 --> 00:06:09,880
+And now we want to auto generate a new certificate.
+
+89
+00:06:10,390 --> 00:06:11,140
+Click next.
+
+90
+00:06:13,370 --> 00:06:16,070
+Now we'll create and attach a policy to the certificate.
+
+91
+00:06:16,310 --> 00:06:21,710
+And I already have an old policy here, so we can just ignore that and click on Create Policy.
+
+92
+00:06:26,530 --> 00:06:29,500
+Now I'll just give you a policy, a name, and I'll call.
+
+93
+00:06:29,500 --> 00:06:30,610
+Mind you, Demi.
+
+94
+00:06:31,740 --> 00:06:32,940
+VSP 32.
+
+95
+00:06:34,690 --> 00:06:35,560
+Test policy.
+
+96
+00:06:40,660 --> 00:06:40,990
+All right.
+
+97
+00:06:40,990 --> 00:06:45,850
+So we're going to create the policy document here, which will be formatted into JSON.
+
+98
+00:06:47,460 --> 00:06:49,620
+And we could do that by going over to the building.
+
+99
+00:06:50,720 --> 00:06:55,640
+And just so you know, you can include all actions by including the asterisk like so.
+
+100
+00:06:56,540 --> 00:06:59,840
+And then include another asterisk as the policy resource.
+
+101
+00:07:00,320 --> 00:07:05,150
+But we're going to be more specific and let's first allow for iottie connect.
+
+102
+00:07:06,310 --> 00:07:09,820
+And the policy resource needs to be formatted as it's shown here.
+
+103
+00:07:10,360 --> 00:07:15,250
+And I'll include a text document that you can copy from and adjust, or you can just follow my typing
+
+104
+00:07:15,250 --> 00:07:15,550
+here.
+
+105
+00:07:16,270 --> 00:07:22,660
+So first it's a R in colon, A.W. s colon, IATA colon.
+
+106
+00:07:23,380 --> 00:07:27,340
+And here you'll need to include your region and I'll show you again where you can find it in a minute.
+
+107
+00:07:27,730 --> 00:07:29,290
+And so I'll just type mine for now.
+
+108
+00:07:35,220 --> 00:07:37,380
+And you can find yours from the dropdown here.
+
+109
+00:07:37,650 --> 00:07:38,160
+Okay.
+
+110
+00:07:38,700 --> 00:07:39,950
+And it's on the right side there.
+
+111
+00:07:41,810 --> 00:07:47,180
+And also now you can copy your account number from here because we'll need to include that here, too.
+
+112
+00:07:47,990 --> 00:07:48,530
+Okay.
+
+113
+00:07:48,560 --> 00:07:49,490
+After the colon.
+
+114
+00:07:49,610 --> 00:07:50,420
+Just paste it.
+
+115
+00:07:52,200 --> 00:07:57,270
+In this first part, you can go ahead and copy because we'll use it for the next policy statement.
+
+116
+00:07:57,990 --> 00:07:58,410
+All right.
+
+117
+00:07:58,650 --> 00:08:00,150
+And then next type client.
+
+118
+00:08:01,710 --> 00:08:02,200
+Okay.
+
+119
+00:08:02,220 --> 00:08:04,560
+And then we need to include the name of our thing.
+
+120
+00:08:05,190 --> 00:08:07,200
+So here that'll be forward slash.
+
+121
+00:08:08,180 --> 00:08:12,620
+You Demi underscore SB 32 underscore test.
+
+122
+00:08:14,690 --> 00:08:16,370
+Now let's add a new statement.
+
+123
+00:08:17,430 --> 00:08:18,840
+So just use the button here.
+
+124
+00:08:20,230 --> 00:08:21,160
+And will allow.
+
+125
+00:08:21,580 --> 00:08:23,430
+And this time it's for Iot.
+
+126
+00:08:23,620 --> 00:08:24,310
+Subscribe.
+
+127
+00:08:26,350 --> 00:08:33,100
+And just follow me for the policy resource and just paste the first part and then type topic filter.
+
+128
+00:08:35,340 --> 00:08:38,610
+Forward Slash and I'll show you where to get the topic from.
+
+129
+00:08:39,090 --> 00:08:40,740
+So let's go over to the source code.
+
+130
+00:08:42,070 --> 00:08:43,690
+And then go to the C file.
+
+131
+00:08:44,700 --> 00:08:45,870
+And let's scroll down.
+
+132
+00:08:50,930 --> 00:08:52,640
+And the topic name is right here.
+
+133
+00:08:53,180 --> 00:08:56,650
+So let's copy that and go back to a WSI hottie.
+
+134
+00:08:57,760 --> 00:09:00,220
+And let's paste it like so.
+
+135
+00:09:01,780 --> 00:09:02,170
+Okay.
+
+136
+00:09:02,290 --> 00:09:03,010
+That looks good.
+
+137
+00:09:03,370 --> 00:09:04,960
+And let's copy the relevant part.
+
+138
+00:09:06,730 --> 00:09:11,080
+And then let's add a new statement for iota you receive.
+
+139
+00:09:13,750 --> 00:09:15,370
+Then paste the resource.
+
+140
+00:09:16,390 --> 00:09:17,620
+And then it's topic.
+
+141
+00:09:19,150 --> 00:09:20,110
+Forward slash.
+
+142
+00:09:20,970 --> 00:09:22,440
+And we need the topic name.
+
+143
+00:09:22,950 --> 00:09:24,390
+So it's the same as before.
+
+144
+00:09:24,840 --> 00:09:27,390
+So let's copy it from the previous resource.
+
+145
+00:09:30,810 --> 00:09:32,730
+And let's spend it for Iot.
+
+146
+00:09:32,880 --> 00:09:33,450
+Receive.
+
+147
+00:09:35,310 --> 00:09:37,970
+And this time, let's copy the entire field.
+
+148
+00:09:38,690 --> 00:09:40,490
+And now let's add the final statement.
+
+149
+00:09:41,700 --> 00:09:43,980
+And this will be for IATA publish.
+
+150
+00:09:46,780 --> 00:09:53,020
+And then just paste the resource as its contents are the same as the previous field and then the policy
+
+151
+00:09:53,020 --> 00:09:54,130
+document is complete.
+
+152
+00:09:54,730 --> 00:09:55,150
+Okay.
+
+153
+00:09:55,330 --> 00:09:57,910
+And then scroll down and let's click on Create.
+
+154
+00:09:59,020 --> 00:10:01,300
+And you have to be sure to give it a unique name.
+
+155
+00:10:01,720 --> 00:10:04,750
+In my case, the name already exists, so I'll just change it.
+
+156
+00:10:06,900 --> 00:10:08,340
+And then again click Create.
+
+157
+00:10:11,640 --> 00:10:13,710
+So I'll go ahead and delete this old policy.
+
+158
+00:10:14,040 --> 00:10:18,210
+And if you ever need to do that, you can select it and then click Delete.
+
+159
+00:10:19,700 --> 00:10:21,080
+And then type delete you.
+
+160
+00:10:26,260 --> 00:10:26,590
+Okay.
+
+161
+00:10:26,590 --> 00:10:28,390
+So now let's attach this policy.
+
+162
+00:10:28,870 --> 00:10:31,180
+And to do that, we'll go back to the previous tab.
+
+163
+00:10:33,450 --> 00:10:38,370
+Then we'll select the created policy to attach and then click create thing.
+
+164
+00:10:39,890 --> 00:10:42,830
+And here are the certificates and keys that we need to download.
+
+165
+00:10:43,220 --> 00:10:45,740
+So first, let's download the device certificate.
+
+166
+00:10:49,610 --> 00:10:51,530
+And then we also need the private key.
+
+167
+00:10:54,670 --> 00:10:59,560
+And we also need the root certificate, authority certificate and we'll just use the RC.
+
+168
+00:10:59,950 --> 00:11:00,940
+So let's download it.
+
+169
+00:11:02,490 --> 00:11:03,450
+And then click done.
+
+170
+00:11:05,560 --> 00:11:08,050
+But it actually wants us to download the public key, too.
+
+171
+00:11:08,080 --> 00:11:08,830
+So let's do that.
+
+172
+00:11:10,900 --> 00:11:11,270
+Okay.
+
+173
+00:11:11,300 --> 00:11:12,940
+Now we can move on, but clicking done.
+
+174
+00:11:16,140 --> 00:11:21,780
+And just so you're aware, you can always view your certificates over here under the secure tab.
+
+175
+00:11:23,300 --> 00:11:23,690
+All right.
+
+176
+00:11:23,990 --> 00:11:26,270
+So now let's add the certificates to the project.
+
+177
+00:11:26,720 --> 00:11:27,980
+So let's open the folder.
+
+178
+00:11:30,890 --> 00:11:35,180
+And here I have the project folder ready and here's the main project folder.
+
+179
+00:11:36,180 --> 00:11:37,890
+So I'll just set these side by side.
+
+180
+00:11:40,380 --> 00:11:40,750
+Okay.
+
+181
+00:11:40,770 --> 00:11:42,480
+Now, let's be sure that we select the route.
+
+182
+00:11:42,480 --> 00:11:42,990
+See a.
+
+183
+00:11:44,470 --> 00:11:51,160
+As well as the device certificate and the private key, and I'll just control X to cut them and then
+
+184
+00:11:51,160 --> 00:11:52,990
+I'll paste them here into the search folder.
+
+185
+00:11:55,290 --> 00:11:55,620
+Okay.
+
+186
+00:11:55,630 --> 00:11:58,620
+Now let's go to the source file and take a look at how they're defined.
+
+187
+00:12:00,710 --> 00:12:01,010
+All right.
+
+188
+00:12:01,010 --> 00:12:05,930
+So here we have the root certificate, the device certificate, as well as the private key.
+
+189
+00:12:06,230 --> 00:12:11,360
+And the embedded certificates are loaded from the search folder and embedded into the application binary.
+
+190
+00:12:12,520 --> 00:12:14,560
+So we need the file names to match these here.
+
+191
+00:12:16,150 --> 00:12:19,360
+So let's refresh the folders so that the certificates appear.
+
+192
+00:12:20,670 --> 00:12:21,510
+Let's refresh.
+
+193
+00:12:23,090 --> 00:12:24,650
+And expand the search folder.
+
+194
+00:12:27,230 --> 00:12:27,740
+Okay.
+
+195
+00:12:29,030 --> 00:12:29,960
+Let's copy the route.
+
+196
+00:12:29,970 --> 00:12:30,680
+See a name.
+
+197
+00:12:32,640 --> 00:12:34,620
+And I'll just bring the file names into view.
+
+198
+00:12:37,570 --> 00:12:37,990
+Okay.
+
+199
+00:12:38,110 --> 00:12:40,510
+Now right click and rename.
+
+200
+00:12:42,140 --> 00:12:43,550
+And then let's just paste the name.
+
+201
+00:12:44,970 --> 00:12:45,410
+Then click.
+
+202
+00:12:45,410 --> 00:12:45,800
+Okay.
+
+203
+00:12:48,830 --> 00:12:50,720
+And let's grab the device certificate name.
+
+204
+00:12:55,820 --> 00:12:56,930
+And let's right click.
+
+205
+00:12:57,720 --> 00:12:58,320
+Rename.
+
+206
+00:13:00,250 --> 00:13:01,000
+Paste the name.
+
+207
+00:13:04,170 --> 00:13:04,830
+And click.
+
+208
+00:13:04,830 --> 00:13:05,200
+Okay.
+
+209
+00:13:06,790 --> 00:13:09,130
+All right, now let's copy the private key file name.
+
+210
+00:13:13,690 --> 00:13:14,590
+And rename.
+
+211
+00:13:16,870 --> 00:13:17,590
+And paste.
+
+212
+00:13:22,930 --> 00:13:23,140
+Now.
+
+213
+00:13:23,140 --> 00:13:23,830
+Let's continue.
+
+214
+00:13:26,900 --> 00:13:33,410
+Go to the main C, make this file here and now we'll tell C make to embed these files and we'll do that
+
+215
+00:13:33,410 --> 00:13:34,670
+using the following command.
+
+216
+00:13:36,130 --> 00:13:39,160
+Say target add binary data.
+
+217
+00:13:42,270 --> 00:13:43,140
+Parentheses.
+
+218
+00:13:43,440 --> 00:13:47,280
+Dollar Sign open curly braces component.
+
+219
+00:13:48,490 --> 00:13:49,090
+Target.
+
+220
+00:13:50,550 --> 00:13:52,980
+Close curly braces and then in quotes.
+
+221
+00:13:53,250 --> 00:13:57,580
+We need the path which is certs forward slash nwc.
+
+222
+00:13:57,960 --> 00:13:58,770
+See a pen.
+
+223
+00:14:04,330 --> 00:14:07,330
+And it's text and close parentheses.
+
+224
+00:14:07,930 --> 00:14:10,990
+Then let's copy this line and paste below.
+
+225
+00:14:12,290 --> 00:14:14,120
+And then just update the name of the file.
+
+226
+00:14:25,280 --> 00:14:25,700
+Okay.
+
+227
+00:14:25,730 --> 00:14:26,840
+Then add the private key.
+
+228
+00:14:35,290 --> 00:14:36,260
+All right, that looks good.
+
+229
+00:14:36,280 --> 00:14:37,810
+So now let's go to the C file.
+
+230
+00:14:41,340 --> 00:14:42,870
+And go to the bottom of the file.
+
+231
+00:14:44,230 --> 00:14:48,160
+And this function here starts the IWC 83 arduous task.
+
+232
+00:14:48,610 --> 00:14:50,980
+It will need to add these defines to the tasks.
+
+233
+00:14:50,980 --> 00:14:51,910
+Common header file.
+
+234
+00:14:52,240 --> 00:14:53,050
+So let's go them.
+
+235
+00:14:54,350 --> 00:14:58,130
+And we'll define for a U.S. Iot task.
+
+236
+00:15:02,440 --> 00:15:03,940
+In first do the stack size.
+
+237
+00:15:07,540 --> 00:15:09,820
+As 9216 bytes.
+
+238
+00:15:12,950 --> 00:15:13,790
+Then let's add.
+
+239
+00:15:22,280 --> 00:15:23,060
+As six.
+
+240
+00:15:24,750 --> 00:15:25,650
+And then let's add.
+
+241
+00:15:27,010 --> 00:15:27,880
+The core I.D..
+
+242
+00:15:34,460 --> 00:15:35,270
+We'll make it one.
+
+243
+00:15:38,040 --> 00:15:38,470
+Okay.
+
+244
+00:15:38,470 --> 00:15:39,170
+It looks good.
+
+245
+00:15:39,180 --> 00:15:42,330
+Now let's save it and then go back to the C file.
+
+246
+00:15:44,330 --> 00:15:45,980
+And now defines updated.
+
+247
+00:15:46,670 --> 00:15:47,050
+Okay.
+
+248
+00:15:47,060 --> 00:15:51,680
+Next, we need to build the project and generate the updated SDK config file.
+
+249
+00:15:52,010 --> 00:15:55,850
+But first, I'll make sure to save the C make list file that I forgot to save here.
+
+250
+00:15:59,530 --> 00:15:59,890
+Okay.
+
+251
+00:15:59,890 --> 00:16:00,820
+Now that's saved.
+
+252
+00:16:01,030 --> 00:16:07,630
+And before we build, let's first go to main dot C and let's include a w s Iot that h.
+
+253
+00:16:14,400 --> 00:16:19,050
+All right, then we want to call the task start function when we have a Wi-Fi connection.
+
+254
+00:16:19,830 --> 00:16:21,960
+So let's go ahead and copy that function name.
+
+255
+00:16:24,660 --> 00:16:25,440
+Then paste it.
+
+256
+00:16:27,230 --> 00:16:27,590
+Okay.
+
+257
+00:16:27,590 --> 00:16:32,900
+So again, this task should only start when the ESP 32 is connected to the Internet, and that's why
+
+258
+00:16:32,900 --> 00:16:33,860
+we want to call it here.
+
+259
+00:16:34,760 --> 00:16:35,060
+All right.
+
+260
+00:16:35,060 --> 00:16:40,430
+So also, before we build, we need to increase the partition table sizes for the otus slots.
+
+261
+00:16:40,790 --> 00:16:43,400
+And I've included the partition table in the resources.
+
+262
+00:16:43,820 --> 00:16:46,970
+So please have that file ready and I'll show you where to include it.
+
+263
+00:16:47,780 --> 00:16:48,110
+Okay.
+
+264
+00:16:48,110 --> 00:16:55,130
+So with the latest IDF installation, my IDF is now located in this location, so I'll just go to frameworks
+
+265
+00:16:55,730 --> 00:16:56,840
+esp IDF.
+
+266
+00:16:58,190 --> 00:16:59,390
+Then go to components.
+
+267
+00:17:00,510 --> 00:17:02,520
+And then go down to partition table.
+
+268
+00:17:06,849 --> 00:17:13,450
+And you'll want to replace your old partitions to add to that CSV file with the one that I've provided
+
+269
+00:17:13,720 --> 00:17:15,190
+and I've already updated mine.
+
+270
+00:17:15,609 --> 00:17:18,940
+So let's go ahead and take a look at that and let's review this from the top.
+
+271
+00:17:19,630 --> 00:17:25,329
+In this here is the same motor data is the same and this is the same.
+
+272
+00:17:25,839 --> 00:17:31,780
+But here I've removed the factory app to make more room for the voter slots and I've maxed out both
+
+273
+00:17:31,780 --> 00:17:34,600
+of them for my SB 32 rover, and that's it.
+
+274
+00:17:35,200 --> 00:17:38,530
+And we could swap between these two OTA slots for firmware updates.
+
+275
+00:17:39,070 --> 00:17:40,300
+Okay, now let's go back.
+
+276
+00:17:41,990 --> 00:17:43,970
+And just be sure to update yours as well.
+
+277
+00:17:45,090 --> 00:17:51,450
+Now we're going to build the project so that we can update the SDK config file for AWG satellite communication.
+
+278
+00:17:51,780 --> 00:17:53,010
+So go ahead and build all.
+
+279
+00:17:56,390 --> 00:17:58,760
+And this may take a bit small speed up the video now.
+
+280
+00:18:05,910 --> 00:18:08,010
+And now let's open the SDK config.
+
+281
+00:18:20,030 --> 00:18:21,500
+And go all the way to the bottom.
+
+282
+00:18:24,140 --> 00:18:27,770
+And open Amazon Web Services Iot platform settings.
+
+283
+00:18:29,750 --> 00:18:37,130
+And now we need to update the IWC iota endpoint hostname, which we can get from the AWB Iot account.
+
+284
+00:18:37,370 --> 00:18:41,090
+But first, I'll show you where this variable is located in the source code.
+
+285
+00:18:41,420 --> 00:18:45,860
+So in AWB Iot that C go towards the top of the file.
+
+286
+00:18:48,690 --> 00:18:53,040
+And take a look at this variable fwc, iata kuti host.
+
+287
+00:18:53,730 --> 00:19:02,160
+This is the default and Kuti host url that is pulled from AWG sale t config that h and if we hover we
+
+288
+00:19:02,160 --> 00:19:03,250
+can see that it's empty.
+
+289
+00:19:03,420 --> 00:19:07,890
+So let's follow this definition and we can see that this definition originates from here.
+
+290
+00:19:08,310 --> 00:19:09,270
+So let's follow that.
+
+291
+00:19:10,410 --> 00:19:13,290
+And this takes us to the SDK config file.
+
+292
+00:19:13,560 --> 00:19:15,210
+And of course, this variable is empty.
+
+293
+00:19:15,720 --> 00:19:16,980
+So let's go ahead and update it.
+
+294
+00:19:17,370 --> 00:19:25,620
+So let's go back to a WSU T and first let's go into the thing, click on the thing and choose, interact.
+
+295
+00:19:26,070 --> 00:19:28,050
+And from there, go to view settings.
+
+296
+00:19:30,920 --> 00:19:36,410
+And here we have the device data endpoint and here it tells us that your devices can use your accounts
+
+297
+00:19:36,410 --> 00:19:39,230
+device data endpoint to connect to a WC.
+
+298
+00:19:39,590 --> 00:19:42,980
+Each of your things has a rest API available at this endpoint.
+
+299
+00:19:43,100 --> 00:19:48,170
+nQt clients in a WSI Iot devices case also use this endpoint.
+
+300
+00:19:48,590 --> 00:19:50,300
+All right, so that's exactly what we need.
+
+301
+00:19:50,300 --> 00:19:53,120
+So let's copy that by clicking here and then.
+
+302
+00:19:53,120 --> 00:19:54,570
+Now let's go back to the idea.
+
+303
+00:19:55,860 --> 00:19:58,110
+So go back to the SDK configuration.
+
+304
+00:19:58,950 --> 00:19:59,790
+And pasted here.
+
+305
+00:20:01,520 --> 00:20:02,540
+And be sure to save it.
+
+306
+00:20:04,700 --> 00:20:05,840
+And then we can close it out.
+
+307
+00:20:07,340 --> 00:20:07,690
+Okay.
+
+308
+00:20:07,700 --> 00:20:09,410
+Now let's build so we can test it out.
+
+309
+00:20:13,460 --> 00:20:15,350
+And again, I'll speed up the video for this.
+
+310
+00:20:22,490 --> 00:20:22,870
+Okay.
+
+311
+00:20:22,880 --> 00:20:23,720
+Now let's flesh.
+
+312
+00:20:29,490 --> 00:20:31,860
+And here I have a message that you've probably seen before.
+
+313
+00:20:32,340 --> 00:20:37,410
+In this case, it looks like intelligence didn't recognize a variable in wi fi apt c.
+
+314
+00:20:37,710 --> 00:20:38,790
+So let's just proceed.
+
+315
+00:20:42,440 --> 00:20:44,390
+And if I click on fi app dot c.
+
+316
+00:20:45,370 --> 00:20:46,210
+Now it goes away.
+
+317
+00:20:48,210 --> 00:20:48,500
+All right.
+
+318
+00:20:48,500 --> 00:20:50,030
+So now just let flesh and complete.
+
+319
+00:20:52,210 --> 00:20:52,600
+Okay.
+
+320
+00:20:52,630 --> 00:20:56,770
+Now let's have a society that see and view and open a monitor.
+
+321
+00:21:03,540 --> 00:21:06,420
+All right, so just give me a moment to connect the ISP 32.
+
+322
+00:21:11,500 --> 00:21:11,800
+Okay.
+
+323
+00:21:11,800 --> 00:21:18,760
+So now I'm connected and the callback function is called and the IWC vr tas task is started.
+
+324
+00:21:23,540 --> 00:21:26,300
+And now a society is subscribing.
+
+325
+00:21:27,160 --> 00:21:29,230
+And now I'm getting the messages logged right here.
+
+326
+00:21:31,890 --> 00:21:32,310
+Okay.
+
+327
+00:21:32,610 --> 00:21:34,650
+And let's see where this happens in the source code.
+
+328
+00:21:35,910 --> 00:21:36,870
+So just follow me.
+
+329
+00:21:40,890 --> 00:21:45,090
+And these are the sprint F messages into the C payload variable.
+
+330
+00:21:48,270 --> 00:21:49,260
+For quality of service.
+
+331
+00:21:49,260 --> 00:21:49,710
+Zero.
+
+332
+00:21:52,400 --> 00:21:54,350
+And for quality of service one.
+
+333
+00:21:56,100 --> 00:21:57,360
+And for quality of service.
+
+334
+00:21:57,360 --> 00:22:02,760
+One, we're checking the error status in which this error would imply that.
+
+335
+00:22:03,030 --> 00:22:05,490
+Q OS one acknowledgement was received.
+
+336
+00:22:05,850 --> 00:22:10,710
+All right, so now let's go to NWA Society and view these messages there.
+
+337
+00:22:11,760 --> 00:22:12,090
+Okay.
+
+338
+00:22:12,320 --> 00:22:13,670
+MWC City.
+
+339
+00:22:13,740 --> 00:22:15,030
+Let's go back to things.
+
+340
+00:22:24,480 --> 00:22:26,010
+And now just click in to your thing.
+
+341
+00:22:27,540 --> 00:22:29,130
+Now go down to activity.
+
+342
+00:22:30,820 --> 00:22:33,340
+Then to the mktg test client.
+
+343
+00:22:43,940 --> 00:22:48,710
+First we need to enter the topic filter and the topic filter describes the topics to which you want
+
+344
+00:22:48,710 --> 00:22:51,530
+to subscribe, and this is defined in the source code.
+
+345
+00:22:51,710 --> 00:22:52,930
+So let's go to the I.D..
+
+346
+00:22:54,460 --> 00:22:55,990
+And follow me just up here.
+
+347
+00:22:58,330 --> 00:23:00,340
+And that is our topic defined right here.
+
+348
+00:23:01,150 --> 00:23:03,040
+So copy it and let's go back.
+
+349
+00:23:04,080 --> 00:23:04,980
+And pasted here.
+
+350
+00:23:06,310 --> 00:23:08,650
+And now let's go down to additional configuration.
+
+351
+00:23:10,040 --> 00:23:12,620
+And Select display payloads as strings.
+
+352
+00:23:13,750 --> 00:23:19,420
+And then click subscribe and then you'll see the messages start to appear and it may take a second or
+
+353
+00:23:19,420 --> 00:23:19,750
+two.
+
+354
+00:23:20,050 --> 00:23:20,740
+And there we go.
+
+355
+00:23:21,370 --> 00:23:28,210
+Our test topic is alive and the data from the ESP 32 is populating right here and the messages are populated
+
+356
+00:23:28,210 --> 00:23:30,220
+at the defined interval from the source code.
+
+357
+00:23:30,850 --> 00:23:35,830
+And we can set this as a favorite so that we can do it any time we go to a society.
+
+358
+00:23:36,160 --> 00:23:39,400
+So Set is a favorite here and now.
+
+359
+00:23:39,400 --> 00:23:41,260
+Let's test publishing to the topic.
+
+360
+00:23:42,170 --> 00:23:45,230
+And he will just click publish to publish this message.
+
+361
+00:23:46,420 --> 00:23:47,800
+And that'll be for a topic.
+
+362
+00:23:48,250 --> 00:23:52,510
+And the message payload will be published to this topic with the quality of service zero.
+
+363
+00:23:52,630 --> 00:23:53,080
+Okay.
+
+364
+00:23:54,290 --> 00:23:55,550
+All right, so now let's test it.
+
+365
+00:23:57,450 --> 00:24:02,130
+And back in the IDB, we can see that it was sent successfully right there.
+
+366
+00:24:03,300 --> 00:24:08,160
+Right there in our subscribe callback function, and that's where the message is logged into the console.
+
+367
+00:24:08,550 --> 00:24:09,360
+So let's see that.
+
+368
+00:24:11,190 --> 00:24:12,540
+And that is right up here.
+
+369
+00:24:17,230 --> 00:24:21,430
+And that's from our subscribe callback handler where the console messages are locked.
+
+370
+00:24:22,410 --> 00:24:22,730
+Okay.
+
+371
+00:24:22,740 --> 00:24:27,960
+So in the next lesson, we'll do a brief walkthrough of the source code and also will expand it to include
+
+372
+00:24:27,960 --> 00:24:32,910
+received signal strength of the Wi-Fi connection as well as the temperature and humidity sensor data.
+
+373
+00:24:33,270 --> 00:24:33,580
+All right.
+
+374
+00:24:33,580 --> 00:24:36,330
+So I really hope you enjoyed this lesson and I'll see you in the next.
+
