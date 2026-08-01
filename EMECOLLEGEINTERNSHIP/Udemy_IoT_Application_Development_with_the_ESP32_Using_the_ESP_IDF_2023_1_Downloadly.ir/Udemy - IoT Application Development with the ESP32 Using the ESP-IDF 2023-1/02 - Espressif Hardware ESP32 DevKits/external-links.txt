@@ -1,0 +1,9 @@
+
+001 Development-Board-Overviews
+https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#development-board-overviews
+
+001 ESP-WROVER-KIT-JTAG-Interface
+https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/jtag-debugging/configure-ft2232h-jtag.html
+
+001 ESP32-Datasheet
+https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
