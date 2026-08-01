@@ -1,0 +1,264 @@
+1
+00:00:06,550 --> 00:00:07,240
+Hi, everyone.
+
+2
+00:00:07,450 --> 00:00:11,950
+So before we get started, let's take a look at the cost structure for the wireless local area network
+
+3
+00:00:11,950 --> 00:00:15,520
+that we'll create, which will then use to connect to a society.
+
+4
+00:00:16,270 --> 00:00:21,250
+I'll start off by taking a very brief look at the impressive dev kits and the related documentation
+
+5
+00:00:21,250 --> 00:00:22,450
+provided by Impressive.
+
+6
+00:00:23,360 --> 00:00:27,530
+Will then go through the eclipse idea for the installation process in Windows.
+
+7
+00:00:27,890 --> 00:00:32,720
+However, if you're using Linux or Mac, you can easily follow instructions within the resources I provided
+
+8
+00:00:32,930 --> 00:00:35,570
+to complete the installation for you operating system on your own.
+
+9
+00:00:36,050 --> 00:00:41,090
+And the first task will be to set up a template project which will use going forward and to set up the
+
+10
+00:00:41,090 --> 00:00:43,490
+project configuration so that we can build in flesh.
+
+11
+00:00:43,970 --> 00:00:48,740
+Then we'll go through some introductory supplemental lessons for getting our feet wet by taking a look
+
+12
+00:00:48,740 --> 00:00:54,170
+at how we can set up the example projects provided by expressive and direct provided additional resources
+
+13
+00:00:54,170 --> 00:00:56,660
+which are helpful in getting started with application development.
+
+14
+00:00:56,990 --> 00:01:03,260
+Using the SPF index will proceed with some background information on the SPF EDF version of free artus
+
+15
+00:01:03,560 --> 00:01:05,300
+and go through the Free Artas basics.
+
+16
+00:01:05,660 --> 00:01:09,320
+Then I'll provide a briefing on the coding style that we'll use so that you know what to expect in the
+
+17
+00:01:09,320 --> 00:01:09,710
+course.
+
+18
+00:01:10,250 --> 00:01:13,040
+And it'll also share the location of the Git repository with you.
+
+19
+00:01:13,490 --> 00:01:16,070
+And from that point, we'll proceed with application development.
+
+20
+00:01:16,340 --> 00:01:19,050
+We'll create the status slide colors using an LED.
+
+21
+00:01:19,730 --> 00:01:24,140
+Then we'll create the basis for the wi fi application that we'll build upon throughout the course.
+
+22
+00:01:24,380 --> 00:01:28,340
+And the lessons that follow will include the initial development of the HTTP server.
+
+23
+00:01:28,760 --> 00:01:34,580
+And I should mention that the wi fi application and HTTP server will communicate using free are message
+
+24
+00:01:34,580 --> 00:01:37,370
+queues and we'll expand those throughout the course as well.
+
+25
+00:01:38,300 --> 00:01:43,280
+Next, we'll move on to the over the year firmware update which works over the wireless local area network
+
+26
+00:01:43,610 --> 00:01:49,140
+using a mobile device, laptop or any device with wi fi and a web browser that you can use to connect
+
+27
+00:01:49,140 --> 00:01:49,730
+to your ISP.
+
+28
+00:01:49,730 --> 00:01:57,770
+32 Dev Kit A.L. Provide boilerplate HTML JavaScript and CSV file templates that we'll continue to build
+
+29
+00:01:57,770 --> 00:01:58,850
+upon throughout the course.
+
+30
+00:01:59,930 --> 00:02:05,450
+The application will then be expanded to display data from the DHT 22 temperature and humidity sensor.
+
+31
+00:02:06,450 --> 00:02:12,360
+And then we'll update the web page and server to enable connecting and disconnecting the ISP 32 with
+
+32
+00:02:12,360 --> 00:02:16,170
+an access point, as well as displaying the connection information on the web page.
+
+33
+00:02:17,110 --> 00:02:20,860
+And we'll use non-volatile storage for saving and loading Wi-Fi credentials.
+
+34
+00:02:21,900 --> 00:02:27,120
+Then we'll implement a wi fi reset button using the boot button on the death kit, which employs the
+
+35
+00:02:27,120 --> 00:02:33,300
+use of an interrupt and binary semaphore and and PTP time synchronization will be used to display the
+
+36
+00:02:33,300 --> 00:02:34,680
+local time on the webpage.
+
+37
+00:02:35,820 --> 00:02:40,260
+And we'll also display the ESP 32 axis point S's I.D. on the Web page as well.
+
+38
+00:02:41,130 --> 00:02:44,370
+And currently the last section involves a society.
+
+39
+00:02:44,820 --> 00:02:50,520
+For this section, I'll provide a general introduction to society and our implementation, as well as
+
+40
+00:02:50,520 --> 00:02:55,800
+some information about account setup and where to find a society resources and documentation.
+
+41
+00:02:56,130 --> 00:03:00,690
+The next lesson will include some technical background information that is useful to know about prior
+
+42
+00:03:00,690 --> 00:03:06,870
+to getting into a WSU team will then configure the project so that we're able to connect to a society
+
+43
+00:03:06,870 --> 00:03:11,040
+core and publish data to and from the MQ test console.
+
+44
+00:03:11,550 --> 00:03:18,060
+And then we'll do a thorough review of the WC Iot subscribe published source code and updated to publish
+
+45
+00:03:18,060 --> 00:03:23,550
+the temperature, humidity and the wi fi RSS psi, which is the received signal strength indicator of
+
+46
+00:03:23,550 --> 00:03:24,570
+the Wi-Fi connection.
+
+47
+00:03:24,870 --> 00:03:29,790
+And lastly, I should mention that I tested the web page functionality in this course using Google Chrome,
+
+48
+00:03:30,150 --> 00:03:34,020
+so I suggest that you use the same info about the course organization.
+
+49
+00:03:34,170 --> 00:03:39,270
+So before starting step by step programming sessions, I'll provide a PowerPoint presentation with relevant
+
+50
+00:03:39,270 --> 00:03:44,220
+information about the implementation and an overview of general requirements for the programming section.
+
+51
+00:03:44,550 --> 00:03:49,350
+I'll also provide suggested reading with links to the relevant expressive documentation, and I'll also
+
+52
+00:03:49,350 --> 00:03:54,090
+outline the steps that we'll go through to implement the tasks at hand with brief explanations of the
+
+53
+00:03:54,090 --> 00:03:57,450
+selected ESP ADF APIs used for each section.
+
+54
+00:03:58,170 --> 00:04:01,530
+The provided resources for this course will include the PowerPoint slides.
+
+55
+00:04:01,980 --> 00:04:06,450
+There you'll find links to the suggested reading and expressive documentation for the APIs that we're
+
+56
+00:04:06,450 --> 00:04:06,900
+using.
+
+57
+00:04:07,320 --> 00:04:11,670
+Also, you may want to have this information on hand to review while we're going through the programming
+
+58
+00:04:11,670 --> 00:04:17,190
+sections, and I encourage you to pause the videos at any time to take a look at these as this may help
+
+59
+00:04:17,190 --> 00:04:20,430
+you in getting more familiar with this recipes IOT Development Framework.
+
+60
+00:04:20,850 --> 00:04:25,860
+Also, in each section I've provided you with code that we've implemented, you'll find this in the
+
+61
+00:04:25,860 --> 00:04:29,850
+section overview if there is an overview for that particular section.
+
+62
+00:04:30,240 --> 00:04:33,900
+Otherwise I'll include the resources directly in the lesson as shown here.
+
+63
+00:04:35,250 --> 00:04:40,410
+And in case of any errors, you can always refer back to the attachments provided and compare the code
+
+64
+00:04:40,410 --> 00:04:41,040
+with yours.
+
+65
+00:04:41,370 --> 00:04:43,830
+And I do suggest that you type it out as we go along.
+
+66
+00:04:45,320 --> 00:04:46,820
+All right, so I'll see you in the course.
+

@@ -1,0 +1,104 @@
+1
+00:00:00,600 --> 00:00:01,589
+Hello and welcome back.
+
+2
+00:00:01,770 --> 00:00:04,350
+Now let's take a look at the hardware and software used in the course.
+
+3
+00:00:05,040 --> 00:00:10,680
+If you're not already aware of the ESB 32 by now, I'll just mentioned that the ESB 32 is a series of
+
+4
+00:00:10,680 --> 00:00:17,340
+low cost, low power SLC or system on a CHIP series of microcontrollers with integrated Wi-Fi and dual
+
+5
+00:00:17,340 --> 00:00:18,120
+mode Bluetooth.
+
+6
+00:00:18,450 --> 00:00:21,420
+And for this course, we'll use an ESP 32 depth kit.
+
+7
+00:00:21,690 --> 00:00:26,610
+Any ESP 32 dev kit will work for this course and I personally have a few decades.
+
+8
+00:00:26,820 --> 00:00:29,460
+However, I do prefer working with the rubber dev kit.
+
+9
+00:00:29,970 --> 00:00:34,860
+You can find information about it if you follow this link and you can find information about all the
+
+10
+00:00:34,860 --> 00:00:37,080
+SPECIF dev kits via the following link.
+
+11
+00:00:39,090 --> 00:00:45,060
+Other hardware components include an arguably either the package type here or the common NATO.
+
+12
+00:00:45,060 --> 00:00:52,710
+A common cathode type also will use an AM to 302 DHT 22 sensor for temperature and humidity data.
+
+13
+00:00:53,370 --> 00:00:58,050
+And you'll also want to have jumper wires and a breadboard available to connect these components to
+
+14
+00:00:58,050 --> 00:00:59,580
+the ESP 32 dev kit.
+
+15
+00:01:00,300 --> 00:01:05,880
+So moving on to the software requirements, we'll use the Eclipse RDF plugin which is available for
+
+16
+00:01:05,880 --> 00:01:09,570
+Linux, Mac and Windows and I'll demonstrate the Windows installation.
+
+17
+00:01:09,900 --> 00:01:14,520
+However, in the documentation they provide, you'll find instructions for both Linux and Mac as well.
+
+18
+00:01:15,000 --> 00:01:21,300
+The Windows installation is an all in one install and gives you the ESPN PDF Idea of tools and Eclipse
+
+19
+00:01:21,300 --> 00:01:21,750
+as well.
+
+20
+00:01:22,230 --> 00:01:26,220
+You can also install it as a plug in to an existing Eclipse installation if you prefer.
+
+21
+00:01:26,490 --> 00:01:29,220
+It's quite easy to do and you can find details here.
+
+22
+00:01:30,290 --> 00:01:35,960
+With the eclipse idea, you can easily create, see, make ideas projects, create launch targets for
+
+23
+00:01:35,960 --> 00:01:42,110
+different variants of the ESP, compile, flash and debug as well as view the serial output, which
+
+24
+00:01:42,110 --> 00:01:44,390
+will be our main method of debugging in this course.
+
+25
+00:01:45,320 --> 00:01:45,680
+Okay.
+
+26
+00:01:45,680 --> 00:01:47,690
+So next we'll take a look at the core structure.
+
