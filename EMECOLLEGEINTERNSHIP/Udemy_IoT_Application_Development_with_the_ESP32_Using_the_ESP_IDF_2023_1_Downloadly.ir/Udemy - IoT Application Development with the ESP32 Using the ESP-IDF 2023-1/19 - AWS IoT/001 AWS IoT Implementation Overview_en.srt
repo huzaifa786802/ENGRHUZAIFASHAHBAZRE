@@ -1,0 +1,428 @@
+1
+00:00:07,100 --> 00:00:10,310
+Hello and welcome to the Amazon Web Services Iot section.
+
+2
+00:00:10,850 --> 00:00:16,670
+In this section, we'll configure the project to enable communication with a US Iot core, which is
+
+3
+00:00:16,670 --> 00:00:20,240
+a cloud service that will allow us to communicate with the ISP from anywhere.
+
+4
+00:00:20,630 --> 00:00:27,260
+And in our implementation, we'll go through the basic processes of Iot core and from the AWG dashboard
+
+5
+00:00:27,260 --> 00:00:32,720
+we'll subscribe to and publish the temperature and humidity sensor data as well as the received signal
+
+6
+00:00:32,720 --> 00:00:34,550
+strength of our local Wi-Fi connection.
+
+7
+00:00:35,390 --> 00:00:41,210
+Okay, so in this lesson, I'll just provide a high level brief introduction to a WSI Iot core, and
+
+8
+00:00:41,210 --> 00:00:46,490
+then I'll share some a WC Iot core resources that are beneficial when first getting started, which
+
+9
+00:00:46,490 --> 00:00:49,070
+should also help with clarifying more technical details.
+
+10
+00:00:49,550 --> 00:00:53,960
+And just as a heads up in the next lesson, I'll discuss a few technical topics that should provide
+
+11
+00:00:53,960 --> 00:00:55,130
+even more clarification.
+
+12
+00:00:55,490 --> 00:01:01,760
+I'll also mention the ESP, AWB Iot SDK, which will integrate into the project and also provide the
+
+13
+00:01:01,760 --> 00:01:03,590
+AWB account setup link.
+
+14
+00:01:04,069 --> 00:01:08,690
+And then at the end I'll mention the steps it will take for our public subscribed implementation and
+
+15
+00:01:08,690 --> 00:01:11,090
+testing using the MQ t test client.
+
+16
+00:01:11,330 --> 00:01:11,600
+All right.
+
+17
+00:01:11,600 --> 00:01:18,410
+So for now, let's continue with the AWB Safety Overview and to visualize AWB Iot Communication at a
+
+18
+00:01:18,410 --> 00:01:19,430
+very basic level.
+
+19
+00:01:19,760 --> 00:01:25,220
+We'll have our thing as it's called in AWB, which is our device that will connect to the cloud via
+
+20
+00:01:25,220 --> 00:01:33,170
+AWB Iot core using the NQT protocol, which is a lightweight published subscribe protocol compatible
+
+21
+00:01:33,170 --> 00:01:34,850
+with a society.
+
+22
+00:01:35,390 --> 00:01:36,620
+I'll touch on this more in a bit.
+
+23
+00:01:37,640 --> 00:01:41,390
+Now let's review some basic information about a U.S. Safety Corps.
+
+24
+00:01:42,230 --> 00:01:48,920
+The U.S. Safety Corps is a platform that connects Iot devices to US, Iot services.
+
+25
+00:01:49,370 --> 00:01:53,600
+And to get started, let's go through some key resources for US safety.
+
+26
+00:01:54,260 --> 00:02:00,050
+And I would first suggest that you follow this link to the US Iot Getting Started page as it's worth
+
+27
+00:02:00,050 --> 00:02:05,960
+going through all of this information because there's much to learn regarding a society, which is why
+
+28
+00:02:05,960 --> 00:02:12,500
+I also suggest going to the learn more about a website link and bookmarking it for future reference.
+
+29
+00:02:13,510 --> 00:02:18,670
+And if you're looking for additional resources regarding technical aspects, I also suggest watching
+
+30
+00:02:18,670 --> 00:02:24,910
+this introduction to a WSU tee and just follow the link and you can log in with your Amazon account.
+
+31
+00:02:25,540 --> 00:02:29,890
+And this is a really good introduction to the basics where each of these components are described.
+
+32
+00:02:30,340 --> 00:02:35,200
+And in fact, I would even come back to this after we've completed the project setup if you really want
+
+33
+00:02:35,200 --> 00:02:35,920
+to nail it down.
+
+34
+00:02:36,610 --> 00:02:38,920
+However, for now, let's just continue with the basics here.
+
+35
+00:02:39,610 --> 00:02:47,350
+A WSU core includes the device gateway, which enables devices to communicate with a WSU securely and
+
+36
+00:02:47,350 --> 00:02:49,150
+efficiently in the device.
+
+37
+00:02:49,150 --> 00:02:58,060
+Gateway supports NQT web sockets and HTTP 1.1 protocols, and the device Gateway hosts a message broker
+
+38
+00:02:58,660 --> 00:03:02,920
+which connects and processes messages between your Iot device and the cloud.
+
+39
+00:03:03,610 --> 00:03:09,040
+The message broker is a published subscribe broker service that allows you to send messages addressed
+
+40
+00:03:09,040 --> 00:03:13,210
+to a topic like the topic I've created here, which we'll use later.
+
+41
+00:03:16,550 --> 00:03:21,830
+So the act of sending the message is referred to as publishing and the act of registering to receive
+
+42
+00:03:21,830 --> 00:03:25,490
+messages for a topic filter is referred to as subscribing.
+
+43
+00:03:26,180 --> 00:03:33,230
+And in this course we'll use the muted test client here to monitor muted messages being passed into
+
+44
+00:03:33,230 --> 00:03:36,440
+Amazon Web Services accounts from the ESP 32.
+
+45
+00:03:37,280 --> 00:03:44,300
+So the ESP 32 will publish imputed messages that are identified by topic to communicated state to a
+
+46
+00:03:44,310 --> 00:03:51,980
+WSU team and will also subscribe to messages on the ESP 32 side and test sending them using the published
+
+47
+00:03:51,980 --> 00:03:53,390
+to a topic option here.
+
+48
+00:03:54,110 --> 00:04:00,830
+So publishing and subscribing using the MQ test client is a good way to get started with a society.
+
+49
+00:04:01,070 --> 00:04:03,770
+And once you've done this, you can then dive deeper on your own.
+
+50
+00:04:04,800 --> 00:04:06,900
+And just briefly about nQt.
+
+51
+00:04:07,440 --> 00:04:13,920
+nQt is a lightweight, published subscribed network protocol that transports messages between devices.
+
+52
+00:04:14,340 --> 00:04:21,390
+To learn more about Iot core communication protocols and the details of each, you can use the FWC Iot
+
+53
+00:04:21,540 --> 00:04:27,030
+device communication protocols link here where you can examine the details and capabilities of each.
+
+54
+00:04:30,500 --> 00:04:36,230
+And the next link is quite useful for learning more about using MQ with a society.
+
+55
+00:04:37,520 --> 00:04:41,030
+And you'll find that there are two different levels of quality of service available.
+
+56
+00:04:41,690 --> 00:04:47,750
+Quality of service level zero messages are sent zero or more times and should be used for messages that
+
+57
+00:04:47,750 --> 00:04:52,040
+are sent over reliable communication links or that can be missed without a problem.
+
+58
+00:04:52,790 --> 00:04:59,060
+And quality of service level one messages are sent at least one time and then repeatedly until the public
+
+59
+00:04:59,060 --> 00:05:00,170
+response is received.
+
+60
+00:05:00,980 --> 00:05:05,600
+And you'll see how the different quality of service options are used and implemented in the source code.
+
+61
+00:05:06,880 --> 00:05:12,760
+Now let's take a look at how we're going to enable AWG sale TE Core communication on the ESB 32.
+
+62
+00:05:13,600 --> 00:05:20,110
+So of course we're going to use IWC or TE, but I wanted to point out that SB 32 supports multiple cloud
+
+63
+00:05:20,110 --> 00:05:20,710
+frameworks.
+
+64
+00:05:21,250 --> 00:05:25,360
+So if you're interested, you can follow the additional links here to get started with the basics for
+
+65
+00:05:25,360 --> 00:05:26,500
+any of these frameworks.
+
+66
+00:05:26,860 --> 00:05:31,420
+For example, Google Iot provides its own examples that you can get started with.
+
+67
+00:05:32,200 --> 00:05:34,840
+And they provide a getting started guide for theirs as well.
+
+68
+00:05:35,470 --> 00:05:35,830
+All right.
+
+69
+00:05:35,830 --> 00:05:37,240
+So that's all I'll mention about that.
+
+70
+00:05:37,300 --> 00:05:39,160
+Now let's go back to IWC.
+
+71
+00:05:39,430 --> 00:05:47,080
+The ESP 32 IWC sale team is based on Amazon Web Services, Iot Device SDK and embedded.
+
+72
+00:05:47,080 --> 00:05:51,370
+See which you can find here and we'll set this up in the next lesson.
+
+73
+00:05:51,730 --> 00:05:54,970
+But first, you'll need to set up your IWC Iot account.
+
+74
+00:05:56,340 --> 00:05:57,720
+So let's review the process.
+
+75
+00:05:58,440 --> 00:06:00,510
+You can use the link here to set up your account.
+
+76
+00:06:00,840 --> 00:06:03,600
+And the process is the typical registration process.
+
+77
+00:06:04,170 --> 00:06:09,600
+You'll just provide your email address and create an account name, confirm it and create a password,
+
+78
+00:06:09,870 --> 00:06:15,270
+and then into your name, phone number and address and credit card information for identity verification
+
+79
+00:06:15,270 --> 00:06:15,900
+purposes.
+
+80
+00:06:16,380 --> 00:06:18,690
+And then you'll see a message like this when doing so.
+
+81
+00:06:19,550 --> 00:06:22,850
+And then you may need to verify your identity with your phone number as well.
+
+82
+00:06:23,210 --> 00:06:25,520
+And the whole process should take around 5 minutes.
+
+83
+00:06:26,060 --> 00:06:30,620
+And I'll also just mention that when I signed up, I chose the basic support free plan.
+
+84
+00:06:31,070 --> 00:06:33,350
+And you could check out details when you get to this part.
+
+85
+00:06:34,100 --> 00:06:38,090
+And then once you're done, you can always get back to the management console via the link here.
+
+86
+00:06:38,510 --> 00:06:40,610
+So feel free to bookmark this one as well.
+
+87
+00:06:42,100 --> 00:06:45,520
+Now let's talk about the implementation and configuration steps that we'll take.
+
+88
+00:06:46,030 --> 00:06:52,720
+First, we're going to clone the ESP WC Iot repository and add it to the project by updating the CE
+
+89
+00:06:52,720 --> 00:06:54,850
+make list file in the project directory.
+
+90
+00:06:55,180 --> 00:06:59,530
+And then we'll add the template files that are provided in the resources for this section and we'll
+
+91
+00:06:59,530 --> 00:07:05,200
+include them into the project build by updating the CE make list file under the main folder and then
+
+92
+00:07:05,200 --> 00:07:10,960
+we'll go into the Iot core management console and create a thing in Amazon Web Services.
+
+93
+00:07:11,110 --> 00:07:17,170
+And we'll also create a policy and attach it to the device certificate and then we'll generate the certificates
+
+94
+00:07:17,170 --> 00:07:22,780
+in public and private keys, and then we'll need to add the certificates and private key as embedded
+
+95
+00:07:22,780 --> 00:07:24,400
+components on the East Side.
+
+96
+00:07:24,790 --> 00:07:32,560
+Then we'll update the source code to accommodate the AWG Iot Freitas task and adding the Iot core component
+
+97
+00:07:32,890 --> 00:07:37,960
+will increase our application size, so we'll need to adjust the partition table accordingly.
+
+98
+00:07:38,320 --> 00:07:44,350
+Well then update the SDK config to include the device data endpoint from your Amazon Web Services account.
+
+99
+00:07:44,680 --> 00:07:50,290
+And then we can flash to the ESB 32 connected to the Internet and subscribe and publish data to and
+
+100
+00:07:50,290 --> 00:07:52,000
+from the RWC dashboard.
+
+101
+00:07:52,510 --> 00:07:57,070
+And I also just want to mention that we'll use our connected event callback function and main that C
+
+102
+00:07:57,340 --> 00:08:04,150
+to start the US Iot free task as we want to kick off that task when the ESP is connected to the internet.
+
+103
+00:08:04,570 --> 00:08:09,970
+And as a second step we'll get the received signal strength indicator of the Wi-Fi connection using
+
+104
+00:08:09,970 --> 00:08:17,260
+the ESP Wi-Fi to get AP info API and will publish it to a WSU team.
+
+105
+00:08:17,860 --> 00:08:22,330
+This will enable you to monitor the health of the connection from anywhere and then also will publish
+
+106
+00:08:22,330 --> 00:08:23,980
+the temperature and humidity sensor data.
+
+107
+00:08:25,210 --> 00:08:29,350
+All right, so be sure to set up UAW Society Core Account and LC as soon.
+
