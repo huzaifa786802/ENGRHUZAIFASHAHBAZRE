@@ -1,0 +1,1099 @@
+1
+00:00:01,260 --> 00:00:02,370
+So welcome back.
+
+2
+00:00:02,730 --> 00:00:09,930
+This where we left off, we went to the went to the datasheet and the reference my not to get to the
+
+3
+00:00:09,960 --> 00:00:15,380
+memory locations of Iowa registers of interest, and then we assign symbolic names to them.
+
+4
+00:00:16,480 --> 00:00:24,630
+And this lesson, we will go ahead and stop right in the initialization, you know, subroutine for
+
+5
+00:00:24,770 --> 00:00:25,980
+what you call your driver.
+
+6
+00:00:26,040 --> 00:00:30,680
+So when, of course, that when our application starts, we start from demesne.
+
+7
+00:00:30,770 --> 00:00:31,130
+Right.
+
+8
+00:00:31,200 --> 00:00:35,310
+So as soon as we enter the main, we're going to branch into a subroutine that will create.
+
+9
+00:00:35,740 --> 00:00:40,200
+So over here, I would see our center this a bit
+
+10
+00:00:45,300 --> 00:00:45,750
+like this.
+
+11
+00:00:45,840 --> 00:00:46,080
+OK.
+
+12
+00:00:46,200 --> 00:00:48,330
+So we starts from Maine over here.
+
+13
+00:00:48,420 --> 00:00:56,280
+As soon as we enter Maine, I'm going to want to see B.L. Branch to the subroutine that we shall call.
+
+14
+00:00:57,480 --> 00:00:58,550
+We shall call this GPL.
+
+15
+00:00:58,550 --> 00:01:06,870
+You it in its G.P.A. underscore in its just bear with me as I find a right indentation to use.
+
+16
+00:01:11,360 --> 00:01:11,690
+OK.
+
+17
+00:01:12,280 --> 00:01:12,940
+Just bear with me.
+
+18
+00:01:15,000 --> 00:01:15,790
+I think we are good here.
+
+19
+00:01:16,270 --> 00:01:16,460
+OK.
+
+20
+00:01:16,510 --> 00:01:22,060
+So as soon as it starts, Bill, GPL, you, GPL, you in it.
+
+21
+00:01:22,330 --> 00:01:23,710
+So let's implement this.
+
+22
+00:01:24,700 --> 00:01:26,230
+This label, GPL, you in it.
+
+23
+00:01:27,480 --> 00:01:29,320
+Can we do this to implement a label?
+
+24
+00:01:29,500 --> 00:01:29,760
+OK.
+
+25
+00:01:30,220 --> 00:01:34,690
+So first I'm gonna be putting some comment to show what this looks like in C language.
+
+26
+00:01:35,260 --> 00:01:43,790
+So in C we would do it, not in Matosi would do RACC and then we'll access the HP one enabler register.
+
+27
+00:01:45,700 --> 00:01:47,570
+It would be one E and R.
+
+28
+00:01:48,250 --> 00:01:56,210
+And then what we're gonna do is add this to the GPL you enable which is your X zero one.
+
+29
+00:01:57,310 --> 00:01:57,760
+Right.
+
+30
+00:01:58,300 --> 00:01:59,130
+Zero X or one.
+
+31
+00:01:59,170 --> 00:02:04,270
+The reason I'm clean in this is, um, I just remembered it will be better if we created a symbolic
+
+32
+00:02:04,270 --> 00:02:05,110
+name to hold this.
+
+33
+00:02:05,680 --> 00:02:14,650
+So this we going to create a symbolic name to hold this um this as well as the bits for as well as the
+
+34
+00:02:14,650 --> 00:02:20,770
+bit for 10 and the bit for certain to output mode in the motor register.
+
+35
+00:02:21,160 --> 00:02:29,320
+So we can see dot eku you over here and then I'm going to call this GPL, you a enable GPL, you e e
+
+36
+00:02:29,350 --> 00:02:36,460
+n and GPL you eat and basically means shift one two, position zero.
+
+37
+00:02:39,670 --> 00:02:43,300
+And um, we can um come over here and do another one.
+
+38
+00:02:43,340 --> 00:02:50,260
+EKU you and this we shall use to set our GPL you gpl u five.
+
+39
+00:02:50,500 --> 00:02:59,530
+g.P I will put a pin five to output so I'll call this, I can call this Moate register five more to
+
+40
+00:02:59,530 --> 00:03:00,340
+five out.
+
+41
+00:03:01,390 --> 00:03:10,900
+And we do this by we know what we do, we just shift one two position number ten like this because we
+
+42
+00:03:10,900 --> 00:03:13,740
+have to set a bit ten in the register.
+
+43
+00:03:13,870 --> 00:03:19,280
+One together is to save us output and then we can have early on we can have a symbolic name though.
+
+44
+00:03:19,290 --> 00:03:21,730
+Ten on the ality would do eku you
+
+45
+00:03:24,670 --> 00:03:29,200
+LCD naledi underscore on and then this.
+
+46
+00:03:29,800 --> 00:03:34,030
+We simply know we set bitta number five to one to ten on the LCD.
+
+47
+00:03:34,570 --> 00:03:36,340
+We can do LHD off if we want.
+
+48
+00:03:36,490 --> 00:03:39,220
+And I know you will guess what that is set in bits five to zero.
+
+49
+00:03:39,400 --> 00:03:40,000
+Simple as that.
+
+50
+00:03:40,540 --> 00:03:44,200
+So not only have this symbolically, we can copy this and then.
+
+51
+00:03:44,360 --> 00:03:44,580
+Okay.
+
+52
+00:03:44,620 --> 00:03:51,360
+So in our comment we know to enable GPL, you put a we do this in C language.
+
+53
+00:03:51,390 --> 00:03:51,590
+Okay.
+
+54
+00:03:51,670 --> 00:03:54,310
+In assembly, what we do is they load.
+
+55
+00:03:55,440 --> 00:03:58,170
+Load operates and then right back to memory.
+
+56
+00:03:58,590 --> 00:04:03,990
+So we're going to load this into a register, RSU, we're going to load this.
+
+57
+00:04:04,580 --> 00:04:05,640
+We're going to load the address.
+
+58
+00:04:06,550 --> 00:04:13,110
+So I'm gonna start off by saying I use the cups yellowed are zero comma.
+
+59
+00:04:14,010 --> 00:04:17,010
+And what we want to load is it'll be one enabler register.
+
+60
+00:04:20,940 --> 00:04:23,580
+RACC, HP, one, and they registered this one here.
+
+61
+00:04:23,610 --> 00:04:30,750
+We want to load it into our, you know, one, this means load the address of, you know, HP one.
+
+62
+00:04:33,660 --> 00:04:35,640
+I think I should put comments here,
+
+63
+00:04:39,990 --> 00:04:40,860
+load address
+
+64
+00:04:44,270 --> 00:04:51,210
+of our RCC, HP one E an R to our zero.
+
+65
+00:04:52,440 --> 00:04:55,980
+And we know that we know this is the address.
+
+66
+00:04:56,010 --> 00:04:57,960
+This symbolic name hosts it.
+
+67
+00:04:58,370 --> 00:05:05,640
+And once we've done this, what we want to do is load the value at the address found in our zero into
+
+68
+00:05:05,700 --> 00:05:06,210
+our one.
+
+69
+00:05:08,870 --> 00:05:16,670
+So what we want to do in layman's terms, we want to get the current content of this register, which
+
+70
+00:05:16,670 --> 00:05:17,900
+is the memory location.
+
+71
+00:05:17,930 --> 00:05:21,260
+This memory location, which is out in these two numbers.
+
+72
+00:05:21,730 --> 00:05:22,370
+Want to get it?
+
+73
+00:05:22,370 --> 00:05:23,690
+Current content of that.
+
+74
+00:05:24,530 --> 00:05:30,150
+And another way of saying dice load value at address found in register eiris.
+
+75
+00:05:30,210 --> 00:05:35,570
+You go into our one because register Ansaru has the address.
+
+76
+00:05:35,750 --> 00:05:38,600
+We want the value at this address.
+
+77
+00:05:38,690 --> 00:05:40,040
+We want to load down to our one.
+
+78
+00:05:40,980 --> 00:05:41,290
+Yeah.
+
+79
+00:05:42,260 --> 00:05:47,270
+If you don't understand this, if you don't understand this, just leave it to the questions and answers
+
+80
+00:05:47,270 --> 00:05:47,570
+area.
+
+81
+00:05:49,420 --> 00:05:49,590
+OK.
+
+82
+00:05:49,690 --> 00:05:56,900
+So I'll just say it as found in our zero into our one.
+
+83
+00:05:57,190 --> 00:05:57,550
+Right.
+
+84
+00:05:58,100 --> 00:06:05,210
+To do this, we do load and then we do our one like this and then square brackets.
+
+85
+00:06:05,300 --> 00:06:05,690
+Ursu.
+
+86
+00:06:06,490 --> 00:06:06,850
+OK.
+
+87
+00:06:07,550 --> 00:06:16,490
+So then our one now would have the current content of the memory location which is the RACC underscore
+
+88
+00:06:16,520 --> 00:06:18,050
+each one and they will register.
+
+89
+00:06:18,440 --> 00:06:23,440
+So what we want to do is we want to perform on all operation with our GPL.
+
+90
+00:06:23,450 --> 00:06:28,940
+You enable and by performing our operation, we don't change the current content.
+
+91
+00:06:28,970 --> 00:06:33,530
+We just add one new bit and enable to its current content.
+
+92
+00:06:34,130 --> 00:06:43,160
+So what I'm gonna do is c take the content of register iris you are it with GPL you enable and start
+
+93
+00:06:43,160 --> 00:06:44,750
+A resorts back into our zero.
+
+94
+00:06:45,470 --> 00:06:48,200
+So I'll see all over here.
+
+95
+00:06:50,970 --> 00:06:51,260
+Sorry.
+
+96
+00:06:51,370 --> 00:06:52,720
+Take the content off register.
+
+97
+00:06:52,750 --> 00:06:57,140
+Ah one course after this instruction we'll have it into our one will have the value in our one.
+
+98
+00:06:58,100 --> 00:07:01,400
+Take the content of register our one or it's with GPL.
+
+99
+00:07:01,400 --> 00:07:03,590
+You enable the symbolic name here.
+
+100
+00:07:04,280 --> 00:07:05,330
+It's an immediate value.
+
+101
+00:07:05,510 --> 00:07:09,980
+So we use this pound sign and then put a resource back into our one.
+
+102
+00:07:10,250 --> 00:07:10,630
+OK.
+
+103
+00:07:17,530 --> 00:07:18,580
+I'll see you over here.
+
+104
+00:07:21,210 --> 00:07:22,800
+There is no relevant comment here.
+
+105
+00:07:22,840 --> 00:07:24,010
+I think this is straightforward.
+
+106
+00:07:24,500 --> 00:07:33,190
+OK, so once this is done, after this, we should have we should have the right the right bit arrangement
+
+107
+00:07:33,220 --> 00:07:34,010
+to set the pin.
+
+108
+00:07:34,090 --> 00:07:35,530
+We have to write to back to memory.
+
+109
+00:07:35,980 --> 00:07:43,240
+So after this, the contents of our one would have a one new 30 turbit's value that.
+
+110
+00:07:43,240 --> 00:07:50,410
+Would that preserve the initial status of the HP one enabler register as well as enables GPL, you put
+
+111
+00:07:50,510 --> 00:07:59,320
+it so well, we have to do next is C store the content in our one at the address found in our zero.
+
+112
+00:08:00,910 --> 00:08:03,180
+OK, yeah.
+
+113
+00:08:03,280 --> 00:08:06,760
+We make an assembly sound like it's just normal English language.
+
+114
+00:08:07,210 --> 00:08:15,510
+We say store the content in our one D address found in our zero.
+
+115
+00:08:20,390 --> 00:08:22,330
+This should be one no exclamation.
+
+116
+00:08:22,900 --> 00:08:23,500
+Goodness.
+
+117
+00:08:23,630 --> 00:08:24,220
+Losing it.
+
+118
+00:08:25,780 --> 00:08:28,000
+OK, so how do we execute this?
+
+119
+00:08:28,010 --> 00:08:29,510
+We use the stall operation.
+
+120
+00:08:29,890 --> 00:08:32,210
+This instruction, we say stall.
+
+121
+00:08:32,500 --> 00:08:35,260
+And then this is the saucer.
+
+122
+00:08:35,440 --> 00:08:36,760
+And this is the destination.
+
+123
+00:08:40,250 --> 00:08:43,460
+Stored content in our one at the address found in our zero.
+
+124
+00:08:44,180 --> 00:08:52,910
+OK, so after this we would we would we would have enabled or would she tell you a clock access to G.P.A.?
+
+125
+00:08:52,910 --> 00:08:53,540
+You put it.
+
+126
+00:08:53,600 --> 00:08:57,530
+The next thing we have to do is set a wire.
+
+127
+00:08:57,560 --> 00:08:58,490
+GPL your mode.
+
+128
+00:08:58,700 --> 00:09:00,160
+Register one a set.
+
+129
+00:09:00,170 --> 00:09:04,040
+You call you P a five to output pin.
+
+130
+00:09:04,370 --> 00:09:17,930
+So next we have to do GPL you a mode register and then we want a pause mode five out to it like this.
+
+131
+00:09:18,500 --> 00:09:19,700
+So we start off Habbo.
+
+132
+00:09:19,730 --> 00:09:21,560
+You post the video and try to do this.
+
+133
+00:09:22,070 --> 00:09:24,710
+Given what you've seen with this, try to do this on your own.
+
+134
+00:09:25,370 --> 00:09:27,710
+And once you've tried, we can do it together.
+
+135
+00:09:28,900 --> 00:09:30,700
+OK, so to do that, we do load.
+
+136
+00:09:32,690 --> 00:09:38,570
+And then we do our zero e course GPL you e underscore mode register.
+
+137
+00:09:38,990 --> 00:09:40,250
+I'm not going to comment this much.
+
+138
+00:09:41,300 --> 00:09:56,570
+And then we do load our one piracy row and then we do the all operation, all oh we do our one with
+
+139
+00:09:58,610 --> 00:10:02,220
+mode five out this constant that we created.
+
+140
+00:10:03,140 --> 00:10:08,390
+And then finally we store back to memory, which is the register which is.
+
+141
+00:10:08,420 --> 00:10:08,700
+Yeah.
+
+142
+00:10:08,840 --> 00:10:14,180
+The memory address stored in the register store R one.
+
+143
+00:10:14,930 --> 00:10:15,530
+R zero.
+
+144
+00:10:16,790 --> 00:10:17,240
+OK.
+
+145
+00:10:18,320 --> 00:10:18,680
+Right.
+
+146
+00:10:19,190 --> 00:10:21,950
+So after this we would have GPL you.
+
+147
+00:10:23,080 --> 00:10:26,080
+Put a PIN five set as an output pin.
+
+148
+00:10:26,260 --> 00:10:32,380
+And if you do not understand how this accomplishes that, then please start watching the video from
+
+149
+00:10:32,380 --> 00:10:33,130
+scratch again.
+
+150
+00:10:33,310 --> 00:10:35,650
+Or maybe it's in the Q&amp;A area.
+
+151
+00:10:36,470 --> 00:10:40,990
+But I'm sure by now this is like very straightforward to you.
+
+152
+00:10:41,680 --> 00:10:42,130
+OK.
+
+153
+00:10:42,230 --> 00:10:48,920
+Next, we need to turn on the LCD and what we do to turn it on is basically set bits.
+
+154
+00:10:49,000 --> 00:10:52,150
+Number five in the output data register to one.
+
+155
+00:10:53,050 --> 00:10:56,050
+So in some language, BABYMETAL would do GPL u.
+
+156
+00:10:57,520 --> 00:10:57,680
+Oh.
+
+157
+00:10:58,110 --> 00:10:58,630
+Ah.
+
+158
+00:10:59,410 --> 00:11:05,860
+And then if we want to do friendly programming, we can do this early on.
+
+159
+00:11:06,250 --> 00:11:09,820
+But if we don't care about the other bits, we can simply write this to it.
+
+160
+00:11:10,810 --> 00:11:18,610
+And this vertical line, if you've noticed, for those of you with, um, you know, those of you who
+
+161
+00:11:18,610 --> 00:11:18,910
+can.
+
+162
+00:11:19,040 --> 00:11:19,420
+Yeah.
+
+163
+00:11:19,940 --> 00:11:25,510
+Analyze, you realize that this is equivalent to our operation that we always do here.
+
+164
+00:11:25,660 --> 00:11:29,050
+So if I remove this, for instance, in this example, we want to use this.
+
+165
+00:11:29,110 --> 00:11:30,580
+So we wouldn't need to do it at all.
+
+166
+00:11:31,010 --> 00:11:33,520
+So let's see how this would look in assembly.
+
+167
+00:11:36,520 --> 00:11:46,690
+I would simply to load RC room and then the GPL, you A or D r.
+
+168
+00:11:48,640 --> 00:11:55,060
+Once that is done, I'm going to load ality on into a different register early on here.
+
+169
+00:11:55,180 --> 00:11:57,220
+I'm going to load this into rates that are one.
+
+170
+00:11:59,210 --> 00:12:08,900
+So lowed register R-1 because early on like this.
+
+171
+00:12:09,850 --> 00:12:16,190
+And once that is done, I'm simply going to store what is in register our one at the memory location
+
+172
+00:12:16,190 --> 00:12:20,780
+held in register ARVA zero one over here in our zero.
+
+173
+00:12:21,710 --> 00:12:22,130
+Right.
+
+174
+00:12:23,510 --> 00:12:29,450
+And once this is done, we can return from our subroutine by doing B LR because we are done with this
+
+175
+00:12:29,450 --> 00:12:31,850
+subroutine because they allow me to return.
+
+176
+00:12:32,900 --> 00:12:33,350
+OK.
+
+177
+00:12:34,850 --> 00:12:38,720
+And then we can use the end directive to indicate with ended.
+
+178
+00:12:40,610 --> 00:12:41,060
+Right.
+
+179
+00:12:43,360 --> 00:12:43,850
+Okay.
+
+180
+00:12:44,420 --> 00:12:46,670
+So this is our program so far.
+
+181
+00:12:46,820 --> 00:12:50,090
+It starts from Maine and then its branches to the subroutine.
+
+182
+00:12:50,240 --> 00:12:51,320
+Are you in it?
+
+183
+00:12:51,950 --> 00:12:56,870
+And then when it enters here, it would it would enable clock access to G.P.A..
+
+184
+00:12:56,870 --> 00:12:57,610
+You Port A..
+
+185
+00:12:58,610 --> 00:13:08,000
+It would, um, it would set GPL, you put a pin five two outputs pin and then it would set GPL.
+
+186
+00:13:08,000 --> 00:13:12,890
+You put a PIN five output data register bits five to one.
+
+187
+00:13:14,030 --> 00:13:17,400
+And this would turn on the LCD because the LCD connected to P five.
+
+188
+00:13:18,230 --> 00:13:20,150
+And then would return from the subroutine.
+
+189
+00:13:20,570 --> 00:13:23,210
+And this is just to indicate this the end of the assembly file.
+
+190
+00:13:23,660 --> 00:13:28,190
+So what we want to do is, yeah, we can leave here.
+
+191
+00:13:28,250 --> 00:13:33,050
+Let's build a SC applicable here to build and let's see how many arrows we've created.
+
+192
+00:13:34,370 --> 00:13:34,940
+Okay.
+
+193
+00:13:40,400 --> 00:13:40,670
+Right.
+
+194
+00:13:40,700 --> 00:13:44,150
+We have arrows with a symbolic name assignment.
+
+195
+00:13:44,270 --> 00:13:44,670
+OK.
+
+196
+00:13:44,870 --> 00:13:46,160
+So the reason why that is.
+
+197
+00:13:46,280 --> 00:13:46,620
+Yes.
+
+198
+00:13:47,180 --> 00:13:52,460
+So us you do this as this becomes your job and you do this, you stop mixing syntax.
+
+199
+00:13:53,600 --> 00:13:56,360
+The syntax is different in the arm assembler.
+
+200
+00:13:56,560 --> 00:13:56,730
+Over.
+
+201
+00:13:56,800 --> 00:13:57,000
+Yeah.
+
+202
+00:13:57,140 --> 00:13:59,690
+When you do that, EKU you and you give your new name.
+
+203
+00:14:00,170 --> 00:14:01,430
+You've got to put a comma here.
+
+204
+00:14:02,660 --> 00:14:04,340
+So let's just put some commas.
+
+205
+00:14:04,460 --> 00:14:06,770
+Let's see if this fixes the arrows.
+
+206
+00:14:07,760 --> 00:14:09,210
+So I could put comma.
+
+207
+00:14:09,800 --> 00:14:13,040
+I have a comma here and then comma everywhere.
+
+208
+00:14:18,490 --> 00:14:19,240
+Okay.
+
+209
+00:14:23,450 --> 00:14:26,960
+I think I may have clean motor.
+
+210
+00:14:28,100 --> 00:14:28,540
+OK.
+
+211
+00:14:32,060 --> 00:14:33,350
+Come here as well.
+
+212
+00:14:34,940 --> 00:14:38,460
+Comma here, comma everywhere.
+
+213
+00:14:38,600 --> 00:14:40,020
+Everyone gets a comma.
+
+214
+00:14:42,290 --> 00:14:43,550
+Coma and then.
+
+215
+00:14:53,280 --> 00:14:55,850
+Now, let's see what we have a quake to build.
+
+216
+00:14:55,940 --> 00:14:57,550
+Let's see how many arrows we have left.
+
+217
+00:15:00,630 --> 00:15:01,220
+We have four.
+
+218
+00:15:01,530 --> 00:15:01,900
+OK.
+
+219
+00:15:02,040 --> 00:15:07,850
+Was the cause, the C o r one.
+
+220
+00:15:07,980 --> 00:15:17,280
+This is on shifted register required on shift, shifted register required or one d or shift to register
+
+221
+00:15:17,300 --> 00:15:17,740
+required.
+
+222
+00:15:17,880 --> 00:15:19,620
+Is that right?
+
+223
+00:15:19,950 --> 00:15:23,270
+The reason for this error is the lack of farm.
+
+224
+00:15:23,580 --> 00:15:24,420
+I'm not a directive.
+
+225
+00:15:24,450 --> 00:15:28,050
+We're going to add another directive to indicate the syntax we use.
+
+226
+00:15:28,050 --> 00:15:35,160
+And so I come over here and see what the syntax over here and I'll say a unified, unified like this.
+
+227
+00:15:35,400 --> 00:15:37,460
+OK, so let's build and see.
+
+228
+00:15:38,130 --> 00:15:39,270
+Click over here to build.
+
+229
+00:15:40,940 --> 00:15:42,310
+We have two arrows, he says.
+
+230
+00:15:42,410 --> 00:15:43,040
+Let's see.
+
+231
+00:15:44,270 --> 00:15:47,220
+It says on define symbol mode.
+
+232
+00:15:47,240 --> 00:15:50,840
+Five out the C word, five out.
+
+233
+00:15:51,350 --> 00:15:53,600
+Let's see, maybe we have a typo.
+
+234
+00:15:53,930 --> 00:15:54,180
+OK.
+
+235
+00:15:54,280 --> 00:15:58,220
+Over here to return mode four is what five control is to save.
+
+236
+00:15:58,610 --> 00:15:59,770
+Click over here to build.
+
+237
+00:16:02,230 --> 00:16:02,760
+It's in.
+
+238
+00:16:03,120 --> 00:16:04,230
+It's built successfully.
+
+239
+00:16:05,470 --> 00:16:06,000
+Okay.
+
+240
+00:16:06,240 --> 00:16:06,790
+Looking good.
+
+241
+00:16:06,870 --> 00:16:09,330
+So we've reached an energy plan with driver in assembly.
+
+242
+00:16:09,390 --> 00:16:10,860
+Let's see if it runs.
+
+243
+00:16:10,890 --> 00:16:14,130
+And if it turns on the ality, I'll click over here to go to debug.
+
+244
+00:16:15,440 --> 00:16:16,820
+And then click this and then.
+
+245
+00:16:16,880 --> 00:16:17,270
+OK.
+
+246
+00:16:20,780 --> 00:16:22,970
+It's open and I'll say, okay, over here.
+
+247
+00:16:27,570 --> 00:16:28,320
+It's downloading.
+
+248
+00:16:34,040 --> 00:16:35,560
+Okay, it's done.
+
+249
+00:16:35,770 --> 00:16:36,610
+Click here to run.
+
+250
+00:16:38,850 --> 00:16:40,420
+And my LRB is on.
+
+251
+00:16:41,440 --> 00:16:41,720
+OK.
+
+252
+00:16:41,830 --> 00:16:45,130
+So this the end of this lesson, if you have any questions at all.
+
+253
+00:16:46,090 --> 00:16:48,850
+Just leave it in the questions and answers area.
+
+254
+00:16:49,030 --> 00:16:50,350
+And I hope you're enjoying the course.
+
+255
+00:16:51,250 --> 00:16:52,240
+This is really simple.
+
+256
+00:16:52,270 --> 00:16:55,150
+If you have any questions, just leave it there.
+
+257
+00:16:55,240 --> 00:17:00,100
+Or if you leave it in the Q&amp;A section and you'll note receiving a quick response, you can message me.
+
+258
+00:17:01,390 --> 00:17:09,930
+Just remember the directives, the directives and then the symbolic name assignment and then the rest
+
+259
+00:17:10,670 --> 00:17:13,960
+of the comment states here very step by step.
+
+260
+00:17:14,720 --> 00:17:17,080
+OK, that's all a simulator.
+
+261
+00:17:18,040 --> 00:17:24,730
+So for those of you who are watching this in the Cuban mics can remix Cuba Idee e course if you want
+
+262
+00:17:24,730 --> 00:17:31,060
+to land more ebow assembly programming and how to write drivers for other peripherals like the ADC to
+
+263
+00:17:31,060 --> 00:17:35,790
+Taimur and to land the complete assembly program.
+
+264
+00:17:35,790 --> 00:17:39,340
+And you can take a look at the Amah Assembly programming course.
+
+265
+00:17:39,370 --> 00:17:40,900
+There is part one and part two.
+
+266
+00:17:41,200 --> 00:17:45,840
+And after that, you'll be able to write your complete firmware in assembly before.
+
+267
+00:17:45,990 --> 00:17:50,770
+So if you're watching this in the ARM Assembly course, just to show you how to create the project and
+
+268
+00:17:50,770 --> 00:17:54,490
+cube I.D. E, then you already know what I'm talking about.
+
+269
+00:17:54,850 --> 00:17:57,790
+But we are going to we're not going to dive deeper into assembly.
+
+270
+00:17:57,820 --> 00:18:04,060
+This is just to show how one would go about creating assembly assembly projects in Cuba.
+
+271
+00:18:04,270 --> 00:18:11,860
+The next one we're gonna do is we're going to take a quote created in the Carl MBK using the arm assembler,
+
+272
+00:18:12,190 --> 00:18:18,370
+and then we're going to bring it here and change it to run on Diesem Cube Idee, which uses the GCSE
+
+273
+00:18:18,370 --> 00:18:22,180
+assembler so that we can see that it's basically the same thing.
+
+274
+00:18:22,420 --> 00:18:24,400
+We simply need to change a few directives.
+
+275
+00:18:24,850 --> 00:18:25,920
+So we're going to do that now.
