@@ -1,0 +1,1119 @@
+1
+00:00:00,620 --> 00:00:00,830
+Hello.
+
+2
+00:00:01,080 --> 00:00:01,590
+Welcome back.
+
+3
+00:00:01,680 --> 00:00:08,540
+In this lesson, we are going to see how to develop a USP H.I.G. keyboard using our Cuber mixing cube
+
+4
+00:00:08,570 --> 00:00:08,940
+idea.
+
+5
+00:00:09,210 --> 00:00:10,590
+So I'm going to create a new project.
+
+6
+00:00:10,610 --> 00:00:11,460
+I'll click over here.
+
+7
+00:00:12,060 --> 00:00:16,170
+You project or select my port over here.
+
+8
+00:00:16,860 --> 00:00:19,320
+SDM 32, a four one one.
+
+9
+00:00:20,640 --> 00:00:21,710
+And then also like this.
+
+10
+00:00:27,420 --> 00:00:29,270
+We start off by clearing open out.
+
+11
+00:00:29,350 --> 00:00:32,070
+Click over here, clip in, out, I'll say yes.
+
+12
+00:00:32,170 --> 00:00:32,760
+Over here.
+
+13
+00:00:35,630 --> 00:00:42,830
+I've said it to, oh, gee, by coming over here, multimedia, um, actually connectivity, USP, LTG
+
+14
+00:00:43,670 --> 00:00:44,090
+mode.
+
+15
+00:00:44,600 --> 00:00:45,740
+It's a device only.
+
+16
+00:00:47,880 --> 00:00:49,190
+Now we've got to set a clock.
+
+17
+00:00:51,770 --> 00:01:00,990
+I'll go to the UN system, call RACC, and then high speed Klok, which is HSC or select Christo's large
+
+18
+00:01:00,990 --> 00:01:02,140
+ceramic resonator.
+
+19
+00:01:03,040 --> 00:01:05,050
+This is based on the setting of my board.
+
+20
+00:01:05,080 --> 00:01:08,250
+I'm using the SDM 32 F for one one for each board.
+
+21
+00:01:09,080 --> 00:01:13,480
+Okay, next we've got to go to middleware and it's like the class.
+
+22
+00:01:13,570 --> 00:01:16,520
+I'll come to Mido Middleware over here.
+
+23
+00:01:17,380 --> 00:01:21,610
+And then you s.b device class for FSD IP.
+
+24
+00:01:22,090 --> 00:01:25,750
+We want to do an HIV device, human interface device.
+
+25
+00:01:26,710 --> 00:01:33,400
+Okay, so now this is the arm does well, although we've done it similar to what we did when creating
+
+26
+00:01:33,430 --> 00:01:34,800
+the HIV mouse.
+
+27
+00:01:35,740 --> 00:01:42,340
+But to create a keyboard we have to do exactly the same thing and then change the P I.D. number so that
+
+28
+00:01:42,350 --> 00:01:46,090
+our computer will identify what microcontroller is a keyboard.
+
+29
+00:01:46,670 --> 00:01:49,930
+Well, by here I'm going to change the PDA from two to three.
+
+30
+00:01:49,930 --> 00:01:52,210
+One, five, two, two, two, three, one, six.
+
+31
+00:01:52,540 --> 00:01:55,810
+So I click over here and change the five to six.
+
+32
+00:01:57,100 --> 00:01:57,520
+Okay.
+
+33
+00:01:58,300 --> 00:02:04,310
+I'm also going to initialize our push button so that we can use it in our experiment.
+
+34
+00:02:04,310 --> 00:02:09,980
+To be a zero is where the push button is connected to on my or my disco board.
+
+35
+00:02:10,810 --> 00:02:12,160
+Where is P is you.
+
+36
+00:02:12,980 --> 00:02:14,860
+I've got P three over here.
+
+37
+00:02:16,000 --> 00:02:16,780
+This is P is.
+
+38
+00:02:16,780 --> 00:02:18,340
+You said it to GPL.
+
+39
+00:02:18,340 --> 00:02:19,090
+Your input.
+
+40
+00:02:20,620 --> 00:02:21,100
+Like this?
+
+41
+00:02:22,090 --> 00:02:27,620
+No, we can go to the clock conflagration tub and you can see we've selected the HSC here, the highspeed
+
+42
+00:02:27,730 --> 00:02:33,460
+external, and then it's set to ninety six megahertz, which is quite high.
+
+43
+00:02:33,640 --> 00:02:39,430
+I'll leave this the way it is now or generate the project by coming to project manager over.
+
+44
+00:02:39,550 --> 00:02:40,870
+I'll give the project to name.
+
+45
+00:02:41,540 --> 00:02:44,470
+I call this USP underscore.
+
+46
+00:02:45,670 --> 00:02:47,540
+H.I.G. underscore.
+
+47
+00:02:50,360 --> 00:02:51,050
+Keyboard.
+
+48
+00:02:56,890 --> 00:03:05,530
+And then I'm going to select my two chain SDM 32 to IDC and then I'll click generate over here.
+
+49
+00:03:10,180 --> 00:03:16,180
+So this a project, this, I mean, see fall, and then, um, as we saw in the setup, we did exactly
+
+50
+00:03:16,180 --> 00:03:18,750
+what we did for the, um, for the most project.
+
+51
+00:03:19,420 --> 00:03:27,490
+So the way this is going to act as a keyboard will be through some manual changes that would do to the
+
+52
+00:03:27,490 --> 00:03:27,800
+code.
+
+53
+00:03:27,820 --> 00:03:34,390
+Here we start off by changing the report cites the report, the end and point report.
+
+54
+00:03:34,390 --> 00:03:37,870
+Size is different for the mouse and the, um, and the keyboard.
+
+55
+00:03:38,260 --> 00:03:46,870
+So we go to a USP device, H.I.G. dot each file to change the to locate the USB device, H.I.G. dot
+
+56
+00:03:46,930 --> 00:03:47,440
+h file.
+
+57
+00:03:47,470 --> 00:03:57,580
+You click on middleware you USP device library class H.I.G. include which is I n c and then you find
+
+58
+00:03:57,580 --> 00:03:58,570
+the fallen open.
+
+59
+00:03:58,960 --> 00:04:06,430
+So like we said, the default, if you um if you set us up in Cuba makes that default is setup for mouse.
+
+60
+00:04:07,150 --> 00:04:10,540
+So we've got to change it to give us the keyboard.
+
+61
+00:04:11,620 --> 00:04:12,040
+Right.
+
+62
+00:04:15,360 --> 00:04:15,600
+OK.
+
+63
+00:04:15,710 --> 00:04:21,900
+So this is where it gives us the the end point size, which is two x zero four here.
+
+64
+00:04:24,020 --> 00:04:24,920
+I'll put a comment.
+
+65
+00:04:27,690 --> 00:04:28,260
+I'll see.
+
+66
+00:04:31,430 --> 00:04:36,830
+Change to zero x zero eight four keyboard.
+
+67
+00:04:38,280 --> 00:04:41,820
+So this is going to be the first change we are.
+
+68
+00:04:42,130 --> 00:04:45,630
+We apply to I'll just change this four to eight.
+
+69
+00:04:47,900 --> 00:04:48,260
+OK.
+
+70
+00:04:49,890 --> 00:04:54,060
+Next, we have to change the interface protocol to keyboard.
+
+71
+00:04:54,560 --> 00:04:58,380
+Now, we can do that in the implementation file of this same file.
+
+72
+00:04:58,530 --> 00:05:02,530
+This is the head of our USP device on a score, HIIT dots each.
+
+73
+00:05:02,910 --> 00:05:05,990
+We've got to go to the DOT, see Falin perform this change.
+
+74
+00:05:06,000 --> 00:05:07,350
+I'll come to source over here.
+
+75
+00:05:07,380 --> 00:05:08,700
+USP device on this score.
+
+76
+00:05:08,730 --> 00:05:09,840
+H.I.G. dot h.
+
+77
+00:05:10,470 --> 00:05:12,180
+And then I'll scroll down.
+
+78
+00:05:14,220 --> 00:05:16,140
+We've got to locate the descriptor.
+
+79
+00:05:19,310 --> 00:05:20,570
+Should be down here somewhere.
+
+80
+00:05:26,700 --> 00:05:29,510
+We are looking for this over here.
+
+81
+00:05:29,600 --> 00:05:32,750
+USP, H.I.G. Configuration, FSD Descriptor.
+
+82
+00:05:32,780 --> 00:05:37,310
+Remember, we are using a word device in FSM mode, not an H.S. mode.
+
+83
+00:05:37,490 --> 00:05:40,700
+If we were using an HST mode will come to HST descriptor.
+
+84
+00:05:41,100 --> 00:05:42,650
+Which has configuration descriptor.
+
+85
+00:05:43,000 --> 00:05:46,760
+But because we've set it up for effort, we'll come over here.
+
+86
+00:05:46,790 --> 00:05:51,200
+What we're looking for is to change the, um, the protocol from mouse to keyboard.
+
+87
+00:05:51,710 --> 00:05:56,540
+And there are comments here describing what each line over here does.
+
+88
+00:05:57,110 --> 00:06:04,220
+When you come down over here to line number one hundred and sixty one interface protocol.
+
+89
+00:06:04,550 --> 00:06:05,930
+Zero is none.
+
+90
+00:06:06,200 --> 00:06:07,370
+One is keyboard.
+
+91
+00:06:07,400 --> 00:06:10,340
+Two is mouse currently by default.
+
+92
+00:06:10,430 --> 00:06:11,210
+It is said to two.
+
+93
+00:06:11,240 --> 00:06:16,120
+I'm going to change this to one for keyboard like we are told to do over here.
+
+94
+00:06:18,740 --> 00:06:22,890
+Now we've got a we've got to change the, um, the, uh, the.
+
+95
+00:06:22,920 --> 00:06:24,270
+Report descriptor.
+
+96
+00:06:27,190 --> 00:06:28,060
+We've changed.
+
+97
+00:06:28,090 --> 00:06:32,620
+Thus far, the configuration descriptor known as another one known as the.
+
+98
+00:06:32,860 --> 00:06:33,850
+The report descriptor.
+
+99
+00:06:34,030 --> 00:06:36,790
+This is war tells the, um, the computer.
+
+100
+00:06:36,850 --> 00:06:37,640
+This is a mouse.
+
+101
+00:06:37,720 --> 00:06:38,830
+When you receive this.
+
+102
+00:06:39,370 --> 00:06:40,180
+This is a click.
+
+103
+00:06:40,270 --> 00:06:41,050
+This is, um.
+
+104
+00:06:41,230 --> 00:06:43,780
+This is right click left click scroll wheel, et cetera.
+
+105
+00:06:44,110 --> 00:06:45,950
+We've got to change it for keyboard.
+
+106
+00:06:47,200 --> 00:06:49,340
+Um, so we've got to locate it first.
+
+107
+00:06:55,420 --> 00:06:59,570
+So this was the March report Descriptor, HIIT, Mones Report Descriptor.
+
+108
+00:06:59,620 --> 00:07:04,770
+This information here encapsulates what the it means to be a mouse.
+
+109
+00:07:04,810 --> 00:07:07,150
+It encapsulates the essence of a mouse.
+
+110
+00:07:08,170 --> 00:07:12,550
+So this shows what this computer is able to know.
+
+111
+00:07:12,670 --> 00:07:16,510
+This is a mouse and how it should sort of translate to information.
+
+112
+00:07:17,020 --> 00:07:21,200
+So for a keyboard, there is a different set of numbers that you need to use.
+
+113
+00:07:21,220 --> 00:07:24,510
+This can be generated from the, uh, the USP Web site.
+
+114
+00:07:24,970 --> 00:07:28,680
+And you can also get it from S.T. to people at SD Microelectronics.
+
+115
+00:07:29,380 --> 00:07:35,490
+Um, so I have this file here which has that descriptor for USP, um, for keyboard.
+
+116
+00:07:36,400 --> 00:07:41,670
+This over here gives us the same, the same um, the same thing for keyboard.
+
+117
+00:07:41,770 --> 00:07:43,240
+So I'm gonna copy everything here.
+
+118
+00:07:43,270 --> 00:07:45,100
+Control a and then control.
+
+119
+00:07:45,110 --> 00:07:50,170
+See I'm going to touch this to the lesson as well and I'm going to paste this here.
+
+120
+00:07:53,320 --> 00:07:53,740
+Right.
+
+121
+00:07:54,400 --> 00:07:58,630
+So once I've pasted this here, we can delete the first one.
+
+122
+00:08:00,090 --> 00:08:01,290
+We can delete the first one.
+
+123
+00:08:02,190 --> 00:08:05,020
+You note that this one is still called H.I.G. March Descriptor.
+
+124
+00:08:05,040 --> 00:08:09,660
+We can change the name to keyboard if we want, but because we have two of them now, we can delete
+
+125
+00:08:09,660 --> 00:08:10,710
+the one for the amount.
+
+126
+00:08:10,740 --> 00:08:12,670
+We don't need most in this project.
+
+127
+00:08:13,940 --> 00:08:15,980
+So I just delete this from here like this.
+
+128
+00:08:16,430 --> 00:08:20,460
+Either that or we could have used an if else and just set the mouse to zero.
+
+129
+00:08:20,480 --> 00:08:25,450
+We can see if zero execute the mouse else execute this other block.
+
+130
+00:08:25,820 --> 00:08:26,900
+But this is easier.
+
+131
+00:08:27,680 --> 00:08:31,460
+Okay, so this one over here is the arm.
+
+132
+00:08:31,510 --> 00:08:33,140
+The report descriptor for keyboard.
+
+133
+00:08:33,980 --> 00:08:34,430
+Okay.
+
+134
+00:08:37,100 --> 00:08:40,570
+No, no, we've changed the reports descriptor from most a keyboard.
+
+135
+00:08:40,630 --> 00:08:42,010
+We've got to change the size.
+
+136
+00:08:42,250 --> 00:08:46,960
+When we come to the dot each fall, the size, the report descriptive size is defined.
+
+137
+00:08:47,290 --> 00:08:49,120
+We've got to change it over here.
+
+138
+00:08:49,150 --> 00:08:50,890
+It set us seventy four.
+
+139
+00:08:51,490 --> 00:08:56,860
+We we have to change the size because as you saw, the array is bigger than this one here.
+
+140
+00:08:57,610 --> 00:08:59,580
+It's bigger than the one we deleted from Mount.
+
+141
+00:09:00,580 --> 00:09:08,470
+We have to change this to one eighty seven and um we can um we can rename this too keyboard or if we
+
+142
+00:09:08,470 --> 00:09:11,920
+don't want to make a lot of changes we can still keep the same name.
+
+143
+00:09:12,300 --> 00:09:15,550
+I can see why he has to assess H.I.G. Mount report this group to size.
+
+144
+00:09:16,090 --> 00:09:21,280
+We could have just created a new defined statement and call it H I.D. keyboard report scripter aside
+
+145
+00:09:21,700 --> 00:09:26,290
+and find every word that this is used and then replace it with keyboard.
+
+146
+00:09:26,950 --> 00:09:29,290
+But an easier way is just to change this.
+
+147
+00:09:29,440 --> 00:09:29,710
+Yeah.
+
+148
+00:09:31,000 --> 00:09:35,590
+No, we can go to our main would see fall and then um and then run the experiment.
+
+149
+00:09:35,620 --> 00:09:42,250
+Basically when we um when we press our push button we want to press a particular keyboard key such that
+
+150
+00:09:42,440 --> 00:09:46,660
+our push-button will be detected as a key by our computer.
+
+151
+00:09:47,290 --> 00:09:52,480
+When I come to mean that C over here and in our infinite loop, we'll check without a push button is
+
+152
+00:09:52,480 --> 00:09:52,930
+pressed.
+
+153
+00:09:53,430 --> 00:10:05,560
+We just see if on a score cheapie I owe on the score we'd read a pin and then the pin Portas gpa you
+
+154
+00:10:05,620 --> 00:10:10,590
+it penis cheapie I o on the school pin on the scores.
+
+155
+00:10:10,700 --> 00:10:11,770
+You read it.
+
+156
+00:10:12,310 --> 00:10:14,130
+This is Piers Zero.
+
+157
+00:10:14,620 --> 00:10:20,950
+If this is set up we checked out by saying GPA you on the school pin on this course set.
+
+158
+00:10:21,040 --> 00:10:23,430
+If such is the state then.
+
+159
+00:10:25,350 --> 00:10:31,080
+We want to do something and there's something we want to do is send a key press, a key basic, just
+
+160
+00:10:31,080 --> 00:10:34,790
+like we did in the mouse example we need to do over here.
+
+161
+00:10:34,890 --> 00:10:36,300
+Well, we need to declare a buffer.
+
+162
+00:10:36,690 --> 00:10:38,760
+We'll see say this time the buffer size is eight.
+
+163
+00:10:38,910 --> 00:10:39,910
+I'll see you in eight.
+
+164
+00:10:39,990 --> 00:10:43,800
+On this score, t in key buffer.
+
+165
+00:10:43,860 --> 00:10:44,460
+Oh, I see.
+
+166
+00:10:46,140 --> 00:10:46,560
+Buffer.
+
+167
+00:10:48,680 --> 00:10:50,720
+And the size is eight like this.
+
+168
+00:10:57,980 --> 00:11:00,610
+Okay, so let's input our data.
+
+169
+00:11:01,310 --> 00:11:07,750
+Um, so we have eight eight spaces.
+
+170
+00:11:07,780 --> 00:11:10,410
+That's the size of our buffer, just like we did for the mouse.
+
+171
+00:11:10,470 --> 00:11:11,290
+I'll come over here.
+
+172
+00:11:11,710 --> 00:11:13,180
+Index zero is for the report.
+
+173
+00:11:13,240 --> 00:11:16,750
+Idee Index zero here.
+
+174
+00:11:18,310 --> 00:11:19,170
+Reports I.D..
+
+175
+00:11:20,320 --> 00:11:21,130
+Just pass one.
+
+176
+00:11:23,690 --> 00:11:26,700
+And then index one is the modifier.
+
+177
+00:11:29,220 --> 00:11:29,970
+Above zero.
+
+178
+00:11:37,320 --> 00:11:41,320
+Indexed to his T or E m.
+
+179
+00:11:47,600 --> 00:11:48,320
+Index three.
+
+180
+00:11:51,400 --> 00:11:53,220
+This key code data.
+
+181
+00:11:54,310 --> 00:11:55,980
+Actual data that we wish to send.
+
+182
+00:12:02,850 --> 00:12:07,320
+Index four, five, six and seven, equal key data.
+
+183
+00:12:09,560 --> 00:12:11,990
+I'm going to set all of these two zero initially.
+
+184
+00:12:19,590 --> 00:12:22,010
+This is for certain.
+
+185
+00:12:22,140 --> 00:12:24,750
+Two zero two zero.
+
+186
+00:12:25,410 --> 00:12:26,220
+This is five.
+
+187
+00:12:30,480 --> 00:12:33,390
+There's a six set index, six two zero.
+
+188
+00:12:36,060 --> 00:12:38,490
+Oh, set index seven to zero as well.
+
+189
+00:12:41,350 --> 00:12:42,790
+Is six, seven.
+
+190
+00:12:44,290 --> 00:12:47,650
+Okay, so we can send a key.
+
+191
+00:12:47,940 --> 00:12:53,310
+We can send Paige down, press the, um, the hexadecimal code for the ISO X for E.
+
+192
+00:12:53,790 --> 00:12:56,070
+So to do that, we just place it in the key code data.
+
+193
+00:12:56,120 --> 00:12:58,320
+But I'm going to place it at is index over here.
+
+194
+00:12:58,890 --> 00:13:11,970
+So I would say if I were a push button is pressed, then I want to see what keys Buffa Index three equals
+
+195
+00:13:12,460 --> 00:13:13,350
+through X.
+
+196
+00:13:14,550 --> 00:13:15,690
+Through X for E.
+
+197
+00:13:21,040 --> 00:13:22,840
+This is on page down press.
+
+198
+00:13:28,940 --> 00:13:34,940
+And once we've done this, once we've seen Saturdays, we've got to use the, um, the H.I.G. send reports
+
+199
+00:13:34,970 --> 00:13:41,300
+to send a buffer, the top of our content, just like we did for the mouse so we can come over here.
+
+200
+00:13:41,430 --> 00:13:45,910
+The defense argument is the, um, the handle the USB device handle.
+
+201
+00:13:46,460 --> 00:13:49,070
+The second argument is the buffer and then the buffer size.
+
+202
+00:13:51,120 --> 00:13:54,030
+And we know we find a handle in the, um, the device does see fall.
+
+203
+00:13:54,110 --> 00:13:55,440
+They use device to see.
+
+204
+00:13:55,970 --> 00:14:00,740
+So I'm going to come to source over here, USP device to see.
+
+205
+00:14:00,770 --> 00:14:03,260
+And then over here, we should have this.
+
+206
+00:14:04,280 --> 00:14:07,070
+I'm going to copy this and I'm going to declare it.
+
+207
+00:14:07,070 --> 00:14:08,720
+And it may not see us external.
+
+208
+00:14:10,220 --> 00:14:11,080
+Put it up here.
+
+209
+00:14:13,790 --> 00:14:20,660
+I'll put the extend key word here like this so we can call our function now the send report function.
+
+210
+00:14:22,530 --> 00:14:27,930
+I'm going to copy this controversy to copy, because we need this for the first document of our function.
+
+211
+00:14:28,590 --> 00:14:29,280
+And I'll say.
+
+212
+00:14:31,700 --> 00:14:40,840
+The function is USP D on the school, each I.D. on the school send report.
+
+213
+00:14:41,670 --> 00:14:44,820
+The first argument is the, um, the address of the Hando.
+
+214
+00:14:46,270 --> 00:14:54,050
+Then the, um, the report Buffa keeps both over here and the size, which is eight like this.
+
+215
+00:14:56,110 --> 00:14:59,470
+So what we have to do is to, um, press and release.
+
+216
+00:14:59,500 --> 00:15:01,780
+We know when you are using the keyboard on the computer.
+
+217
+00:15:01,810 --> 00:15:03,430
+If you press a key, nothing happens.
+
+218
+00:15:03,460 --> 00:15:06,040
+You have to press and release it, press it.
+
+219
+00:15:06,060 --> 00:15:10,270
+Did, uh, a press or a key is read when it's pressed and released.
+
+220
+00:15:12,370 --> 00:15:14,860
+You can realize that if you would just drop your hand.
+
+221
+00:15:15,280 --> 00:15:18,700
+You know, dependent on the keyboard, some keys.
+
+222
+00:15:18,970 --> 00:15:22,180
+You have to quickly, you know, press and lift your hand.
+
+223
+00:15:22,750 --> 00:15:25,210
+Others, if you keep your hand on it, you might press more.
+
+224
+00:15:25,540 --> 00:15:28,960
+But in our case, we are doing the press and release over here.
+
+225
+00:15:29,680 --> 00:15:37,070
+Um, so once we've done this, we would apply a bit of delay and then we release or C on underscore
+
+226
+00:15:37,150 --> 00:15:38,000
+delay fifty.
+
+227
+00:15:38,160 --> 00:15:38,340
+Yeah.
+
+228
+00:15:38,380 --> 00:15:38,920
+Like this.
+
+229
+00:15:41,710 --> 00:15:44,110
+And then I'll send a release or simply copy this.
+
+230
+00:15:44,210 --> 00:15:47,950
+The um copy this from here.
+
+231
+00:15:48,040 --> 00:15:48,640
+Over here.
+
+232
+00:15:48,800 --> 00:15:52,640
+Paste it over here like this to release me.
+
+233
+00:15:52,690 --> 00:15:56,280
+Basically send no data so I'll pass it over here like this.
+
+234
+00:16:00,530 --> 00:16:01,000
+Okay.
+
+235
+00:16:03,280 --> 00:16:07,170
+Remember, when you press the page down on your keyboard, it screws the arm.
+
+236
+00:16:07,270 --> 00:16:08,310
+It's close the screen.
+
+237
+00:16:08,710 --> 00:16:10,280
+It will give you a dance crew.
+
+238
+00:16:10,840 --> 00:16:11,110
+Right.
+
+239
+00:16:11,140 --> 00:16:13,210
+So that's the effect we expect to see.
+
+240
+00:16:13,990 --> 00:16:15,790
+And, um, I'm going to build.
+
+241
+00:16:16,050 --> 00:16:16,600
+Let's see.
+
+242
+00:16:18,580 --> 00:16:21,490
+I'm gonna include USP, H.I.G. device, the H over here.
+
+243
+00:16:21,580 --> 00:16:22,880
+So I wouldn't get any arrows.
+
+244
+00:16:23,510 --> 00:16:26,730
+Also include U.
+
+245
+00:16:27,280 --> 00:16:31,980
+S bd underscore HIIT dot h.
+
+246
+00:16:32,230 --> 00:16:32,710
+Like this.
+
+247
+00:16:33,680 --> 00:16:34,040
+Okay.
+
+248
+00:16:34,150 --> 00:16:35,380
+Click over here to build.
+
+249
+00:16:38,690 --> 00:16:39,820
+It's pulled successfully.
+
+250
+00:16:40,430 --> 00:16:44,780
+I'm gonna download onto my board by clicking debug.
+
+251
+00:16:46,780 --> 00:16:47,370
+Selectees.
+
+252
+00:16:53,400 --> 00:16:55,150
+They don't say, okay, over here.
+
+253
+00:17:04,590 --> 00:17:05,070
+Right.
+
+254
+00:17:10,210 --> 00:17:16,890
+Okay, so just exit this since it's downloaded, the download verified so slick successfully so I can
+
+255
+00:17:16,890 --> 00:17:20,130
+exit this and test it out without being in that book for you.
+
+256
+00:17:21,300 --> 00:17:29,910
+So this is our USP keyboard project of downloaded onto the board of Built downloaded onto the board
+
+257
+00:17:30,000 --> 00:17:33,180
+by going through the, um, the debug sequence over here.
+
+258
+00:17:33,420 --> 00:17:38,370
+I'm trying on a different computer because my computer for record in the video.
+
+259
+00:17:39,690 --> 00:17:44,940
+Um, the fast USB port is being used for an external hard disk.
+
+260
+00:17:44,970 --> 00:17:47,740
+So I'm testing on a different computer.
+
+261
+00:17:48,030 --> 00:17:51,300
+So you can see that the IDC looks, uh, a bit different.
+
+262
+00:17:51,310 --> 00:17:55,980
+And over here we have just the USP, the the HIIT keyboard, uh, project.
+
+263
+00:17:56,280 --> 00:17:56,580
+So.
+
+264
+00:17:56,660 --> 00:17:56,850
+Okay.
+
+265
+00:17:56,940 --> 00:17:57,840
+This is our project.
+
+266
+00:17:57,930 --> 00:17:59,850
+And then we said we're doing page down.
+
+267
+00:17:59,880 --> 00:18:00,420
+Page down.
+
+268
+00:18:00,510 --> 00:18:03,870
+Is similar to pressing that down RACQ on your keyboard.
+
+269
+00:18:04,290 --> 00:18:09,510
+So what I'm gonna do is I'm gonna press the button cause we expect this to scroll down the page.
+
+270
+00:18:09,540 --> 00:18:10,210
+If it's working.
+
+271
+00:18:10,800 --> 00:18:13,710
+When I press the blue button on all this keyboard.
+
+272
+00:18:14,150 --> 00:18:15,930
+So as I press the page jumps.
+
+273
+00:18:16,760 --> 00:18:18,000
+And now we at the end.
+
+274
+00:18:18,360 --> 00:18:22,650
+I'll go up and impress again when I press.
+
+275
+00:18:22,710 --> 00:18:23,400
+It just jumps.
+
+276
+00:18:23,490 --> 00:18:23,970
+It goes.
+
+277
+00:18:24,450 --> 00:18:25,260
+So this page down.
+
+278
+00:18:25,320 --> 00:18:27,600
+So this how we build the HIIT keyboard.
+
+279
+00:18:27,660 --> 00:18:34,080
+If you have any issues with the setup or you face any problems, just leave in the Q&amp;A section.
+
+280
+00:18:34,320 --> 00:18:35,060
+I'll see you later.

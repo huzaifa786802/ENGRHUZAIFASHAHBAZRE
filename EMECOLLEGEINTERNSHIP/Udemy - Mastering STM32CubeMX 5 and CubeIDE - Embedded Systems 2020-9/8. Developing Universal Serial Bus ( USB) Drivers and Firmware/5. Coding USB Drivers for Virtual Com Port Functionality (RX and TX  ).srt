@@ -1,0 +1,1239 @@
+1
+00:00:00,300 --> 00:00:00,750
+Welcome back.
+
+2
+00:00:00,850 --> 00:00:04,080
+And the previous lesson, we saw how to send data.
+
+3
+00:00:04,160 --> 00:00:09,930
+Using the what you virtual comport in this lesson, we're going to create a new project and then send
+
+4
+00:00:09,930 --> 00:00:11,790
+data and receive data as well.
+
+5
+00:00:11,820 --> 00:00:17,100
+We're going to see our X and T X using the compote to keep the mic setup is exactly the same.
+
+6
+00:00:17,150 --> 00:00:22,650
+But because I want a new project rather than, you know, change that I want so that I can upload or
+
+7
+00:00:22,680 --> 00:00:24,060
+attach to a different project.
+
+8
+00:00:24,290 --> 00:00:25,680
+We start from scratch again.
+
+9
+00:00:25,980 --> 00:00:26,730
+So come over here.
+
+10
+00:00:26,760 --> 00:00:27,630
+New project.
+
+11
+00:00:30,000 --> 00:00:33,520
+And then I'll open this, I'll say no.
+
+12
+00:00:33,550 --> 00:00:34,170
+Over here.
+
+13
+00:00:41,910 --> 00:00:42,650
+Oh, come over here.
+
+14
+00:00:42,740 --> 00:00:44,350
+Penult, clapping out.
+
+15
+00:00:44,990 --> 00:00:45,670
+Oh, say yes.
+
+16
+00:00:48,260 --> 00:00:52,380
+And then I'll start off with my USP initialization.
+
+17
+00:00:52,430 --> 00:00:56,180
+I'll come to USP, oh, TGF this device only.
+
+18
+00:00:59,370 --> 00:01:04,170
+And then I'll come to middleware USP device.
+
+19
+00:01:05,320 --> 00:01:07,080
+What we're looking for is the virtual comport.
+
+20
+00:01:08,560 --> 00:01:09,760
+We leave everything the same.
+
+21
+00:01:10,360 --> 00:01:19,180
+And then we go to our system, core RACC, high speed extend or we use the crystal or the ceramic resonator.
+
+22
+00:01:20,200 --> 00:01:20,620
+Right.
+
+23
+00:01:20,890 --> 00:01:22,660
+Everything else should be left the same.
+
+24
+00:01:23,350 --> 00:01:24,620
+And then I'll come to clock.
+
+25
+00:01:24,880 --> 00:01:30,340
+Um, let's in fact, let's enable our one of our LCD.
+
+26
+00:01:32,210 --> 00:01:34,020
+I'll quote from Rome, fifteen.
+
+27
+00:01:34,080 --> 00:01:41,520
+I don't know which colitis, but I just said it to GPL you output so that we can turn on reality and
+
+28
+00:01:41,570 --> 00:01:42,510
+I'll rename this
+
+29
+00:01:45,330 --> 00:01:48,420
+to LCD so that we can identify it as well.
+
+30
+00:01:48,860 --> 00:01:49,210
+Okay.
+
+31
+00:01:50,290 --> 00:01:56,490
+And then I'm going to go to a configuration and we have this here asking whether we want to resolve
+
+32
+00:01:56,490 --> 00:01:58,110
+the issues or two particularly I'll click.
+
+33
+00:01:58,140 --> 00:01:58,350
+Yes.
+
+34
+00:01:58,350 --> 00:02:01,470
+Or go out here and it's going to do it on its own.
+
+35
+00:02:02,910 --> 00:02:05,340
+And then I'm going to bump this up to to six.
+
+36
+00:02:07,450 --> 00:02:08,920
+You can you can leave yours.
+
+37
+00:02:09,400 --> 00:02:12,580
+All that matters is you've selected high speed extend all over here.
+
+38
+00:02:13,140 --> 00:02:15,220
+And I know why you're using the PLL clock.
+
+39
+00:02:16,050 --> 00:02:18,850
+Okay, so then we go to project manager.
+
+40
+00:02:18,910 --> 00:02:22,440
+I'm going to increase the heap and the and the stack.
+
+41
+00:02:22,790 --> 00:02:22,930
+Oh.
+
+42
+00:02:23,010 --> 00:02:23,690
+At once you.
+
+43
+00:02:23,800 --> 00:02:25,680
+And then add once you both.
+
+44
+00:02:25,850 --> 00:02:26,130
+Yeah.
+
+45
+00:02:26,360 --> 00:02:26,650
+Yeah.
+
+46
+00:02:27,400 --> 00:02:29,220
+And then I'm going to create a project name.
+
+47
+00:02:29,350 --> 00:02:33,060
+I'll call this USP school.
+
+48
+00:02:35,560 --> 00:02:40,870
+Virtual comport r, x, t, x.
+
+49
+00:02:42,580 --> 00:02:48,820
+And then I select my two chain SDM 30 to Kubi D, E, and then I'll click over here to generate.
+
+50
+00:02:57,760 --> 00:03:03,870
+It's generating on the routes may corrupt to previous generated previous generated projects.
+
+51
+00:03:04,920 --> 00:03:06,750
+I wonder why I'm getting this warning.
+
+52
+00:03:11,760 --> 00:03:12,190
+Hard to say.
+
+53
+00:03:12,310 --> 00:03:12,680
+Yes.
+
+54
+00:03:19,270 --> 00:03:20,980
+Click over here to open the project.
+
+55
+00:03:26,360 --> 00:03:26,870
+Launch.
+
+56
+00:03:29,410 --> 00:03:34,420
+This is my this is my projects, I've cleaned up the comment I'm going to build just to make sure everything
+
+57
+00:03:34,420 --> 00:03:37,030
+works because of the warning I saw earlier.
+
+58
+00:03:43,320 --> 00:03:47,550
+OK, it's all good, right?
+
+59
+00:03:47,670 --> 00:03:50,850
+So, um, let's go back to our CDC.
+
+60
+00:03:50,910 --> 00:03:54,480
+I have to see fall and see the functions we have available to us.
+
+61
+00:03:55,700 --> 00:03:56,880
+Okay, let's see.
+
+62
+00:03:57,030 --> 00:03:58,750
+We're looking for the receiver function.
+
+63
+00:03:59,520 --> 00:04:01,340
+There is the USC X buffer efforts.
+
+64
+00:04:01,860 --> 00:04:03,640
+This is, uh, this is a buffer.
+
+65
+00:04:03,900 --> 00:04:04,210
+Okay.
+
+66
+00:04:04,420 --> 00:04:05,490
+Looking for functions.
+
+67
+00:04:08,310 --> 00:04:15,590
+CDC, in its efforts, the in it control efforts and, um, receive efforts.
+
+68
+00:04:16,090 --> 00:04:16,290
+OK.
+
+69
+00:04:16,380 --> 00:04:19,470
+So this function is statically defined, meaning it is.
+
+70
+00:04:19,680 --> 00:04:21,670
+It is constrained to just this fall.
+
+71
+00:04:22,100 --> 00:04:27,540
+But we want to be able to access this function in fouse outside of this external fault, such as?
+
+72
+00:04:27,570 --> 00:04:28,670
+Oh, it may not see far.
+
+73
+00:04:29,100 --> 00:04:33,750
+So one way we can get around this is to create a callback function for this.
+
+74
+00:04:34,020 --> 00:04:40,500
+So I'm going to go to the interface for all of this CDC underscore I that see and then define a callback.
+
+75
+00:04:41,910 --> 00:04:46,290
+So to find the CDC, I f the C, I think I should be able to.
+
+76
+00:04:46,290 --> 00:04:46,620
+Right.
+
+77
+00:04:46,620 --> 00:04:47,980
+Click and go to the, uh.
+
+78
+00:04:48,120 --> 00:04:50,640
+We need to go to the dot h file of this.
+
+79
+00:04:52,790 --> 00:04:54,350
+Yeah, let's see.
+
+80
+00:04:54,660 --> 00:04:55,670
+I'll come over here.
+
+81
+00:04:57,340 --> 00:04:58,070
+That will click.
+
+82
+00:05:06,710 --> 00:05:06,920
+Okay.
+
+83
+00:05:06,990 --> 00:05:08,900
+This did not age four, okay?
+
+84
+00:05:09,180 --> 00:05:14,040
+So we're going to define a new fall here callback function, and when we include this dot h fall to
+
+85
+00:05:14,070 --> 00:05:16,860
+any other file, we'll be able to use that for the function.
+
+86
+00:05:17,280 --> 00:05:24,450
+So we're going to, um, use the word key word so that this will always exist and then we can re implement
+
+87
+00:05:24,450 --> 00:05:25,260
+it in our main dot.
+
+88
+00:05:25,290 --> 00:05:25,560
+See.
+
+89
+00:05:25,810 --> 00:05:30,480
+So same week, CDC underscore.
+
+90
+00:05:32,580 --> 00:05:33,660
+Receive Kobuk.
+
+91
+00:05:37,270 --> 00:05:37,790
+And then there's.
+
+92
+00:05:37,910 --> 00:05:39,340
+Which will make it take two arguments.
+
+93
+00:05:39,510 --> 00:05:41,530
+The buffer pointed to the buffer.
+
+94
+00:05:41,550 --> 00:05:42,510
+To be specific.
+
+95
+00:05:45,910 --> 00:05:48,220
+And then the length you end.
+
+96
+00:05:48,410 --> 00:05:48,660
+Two.
+
+97
+00:05:48,920 --> 00:05:51,460
+On a score t like this.
+
+98
+00:05:53,890 --> 00:05:55,150
+So does dot age fall.
+
+99
+00:05:55,180 --> 00:05:56,670
+So this has to exist in the dots.
+
+100
+00:05:56,770 --> 00:05:56,980
+Yes.
+
+101
+00:05:56,980 --> 00:06:01,910
+Well, we can just keep it empty and then put its proper implementation in domain.
+
+102
+00:06:02,560 --> 00:06:05,800
+So, um, this is how a new function of copy, the header.
+
+103
+00:06:06,160 --> 00:06:07,120
+The function header.
+
+104
+00:06:07,690 --> 00:06:10,630
+We are coming to re implement over here.
+
+105
+00:06:10,660 --> 00:06:14,830
+We can keep it up here if we want or just paste this over here.
+
+106
+00:06:14,860 --> 00:06:16,120
+So we have a new function.
+
+107
+00:06:17,710 --> 00:06:22,800
+This function is called receive callback, which included this to our CDC.
+
+108
+00:06:22,960 --> 00:06:23,980
+I f c for.
+
+109
+00:06:25,940 --> 00:06:30,770
+So what we want to do is call this callback function of ours one of our data's received.
+
+110
+00:06:31,400 --> 00:06:39,590
+So I'm going to copy this function name and then come to a water, receive our CDC receive function
+
+111
+00:06:39,590 --> 00:06:39,770
+here.
+
+112
+00:06:39,800 --> 00:06:41,090
+This is the CDC received.
+
+113
+00:06:41,660 --> 00:06:47,120
+And when it received the packet, I'll come down here and then call our function.
+
+114
+00:06:47,210 --> 00:06:49,280
+Remember, our function takes two arguments.
+
+115
+00:06:49,310 --> 00:06:52,550
+The buffer so is the same as the same buffer that is here.
+
+116
+00:06:54,100 --> 00:07:00,440
+And then the length, the length here, we can just pass length the address of the length.
+
+117
+00:07:02,450 --> 00:07:03,380
+Oh, we can just see.
+
+118
+00:07:04,730 --> 00:07:04,880
+Yeah.
+
+119
+00:07:04,930 --> 00:07:05,530
+2.0.
+
+120
+00:07:05,570 --> 00:07:06,650
+We can pass the address.
+
+121
+00:07:06,770 --> 00:07:08,720
+It's fine like this.
+
+122
+00:07:13,410 --> 00:07:17,250
+So because all function is, um, it is define us weak.
+
+123
+00:07:17,290 --> 00:07:19,940
+We've got to do the proper implementation in me.
+
+124
+00:07:20,020 --> 00:07:22,720
+I'm going to copy this and then go to Maine.
+
+125
+00:07:23,490 --> 00:07:26,920
+And this means that you can have your own implementation, remember?
+
+126
+00:07:27,610 --> 00:07:30,190
+And then, um, I'll put it somewhere in Maine.
+
+127
+00:07:30,890 --> 00:07:32,320
+Oh, put it down here.
+
+128
+00:07:32,650 --> 00:07:33,970
+Oh, don't hit hideous.
+
+129
+00:07:35,410 --> 00:07:36,380
+I can put it up here.
+
+130
+00:07:37,960 --> 00:07:40,840
+And then delete the weak key word over here.
+
+131
+00:07:42,210 --> 00:07:46,150
+So for our experiment, we can simply echo the data back to the transmitter.
+
+132
+00:07:46,300 --> 00:07:48,590
+To do this, we can use the transmit F.
+
+133
+00:07:48,600 --> 00:07:49,930
+S function we saw earlier.
+
+134
+00:07:50,350 --> 00:07:52,070
+Also the CDC over here.
+
+135
+00:07:53,350 --> 00:07:53,920
+Transmit.
+
+136
+00:07:54,170 --> 00:07:55,270
+Underscore efforts.
+
+137
+00:07:55,420 --> 00:07:58,870
+And then we can pass the buffer over here.
+
+138
+00:07:59,510 --> 00:08:00,450
+S first document.
+
+139
+00:08:01,240 --> 00:08:02,820
+And then the length over here.
+
+140
+00:08:06,150 --> 00:08:07,080
+The second argument.
+
+141
+00:08:10,380 --> 00:08:15,390
+So this means whenever we send data, we should see it echoed back to the transmitter.
+
+142
+00:08:16,980 --> 00:08:18,360
+And I hope you understand this.
+
+143
+00:08:18,540 --> 00:08:24,900
+This is just callback function in callback function is simply do something right, do something.
+
+144
+00:08:25,230 --> 00:08:31,260
+So if you don't want to see, um, the data I could back, you can disable this and just see reality
+
+145
+00:08:31,290 --> 00:08:35,370
+such that whenever you receive data, just the LCD will be will be lit.
+
+146
+00:08:35,790 --> 00:08:38,780
+So we can see Harl underscore GPI you.
+
+147
+00:08:39,110 --> 00:08:43,610
+And then remember we um, we set one of our early days.
+
+148
+00:08:43,620 --> 00:08:44,350
+We can toggle it.
+
+149
+00:08:44,400 --> 00:08:48,710
+So we say torgau pain and then we can see GPL.
+
+150
+00:08:48,720 --> 00:08:59,520
+You underscore ality, underscore port and then GPL, you the dependence GPL you Ellie Dippin GPL you
+
+151
+00:08:59,600 --> 00:09:03,030
+on underscore early dippin a thing that is PD fifteen with it.
+
+152
+00:09:03,270 --> 00:09:07,490
+So if you have more things you want to do whenever data is received, you can add it here.
+
+153
+00:09:07,980 --> 00:09:09,750
+But we can have the echo as well.
+
+154
+00:09:10,440 --> 00:09:10,890
+Right.
+
+155
+00:09:13,240 --> 00:09:16,770
+And that's going to be our main function is just empty.
+
+156
+00:09:16,890 --> 00:09:19,590
+We're doing it in the Kobuk that we've created.
+
+157
+00:09:19,890 --> 00:09:21,270
+So let's build and see what we have.
+
+158
+00:09:21,430 --> 00:09:22,590
+Collected by here to build.
+
+159
+00:09:27,360 --> 00:09:28,530
+We have a number of errors.
+
+160
+00:09:29,490 --> 00:09:34,310
+Okay, so this one here, how GPL you were Togo in GPL, you report.
+
+161
+00:09:35,480 --> 00:09:38,580
+I think you play a live report is not spelled properly.
+
+162
+00:09:39,120 --> 00:09:40,110
+Capital letters.
+
+163
+00:09:40,170 --> 00:09:41,910
+Some of them need to be smaller letters.
+
+164
+00:09:42,570 --> 00:09:42,820
+OK.
+
+165
+00:09:42,930 --> 00:09:46,140
+Ellie, DGP, your posts should be DGP, your port.
+
+166
+00:09:47,750 --> 00:09:48,510
+Over here.
+
+167
+00:09:50,000 --> 00:09:53,130
+And then early, Depayin simply added Dippin.
+
+168
+00:09:56,010 --> 00:09:57,100
+Okay, let's pivot again.
+
+169
+00:09:59,560 --> 00:10:00,370
+Click over here.
+
+170
+00:10:05,550 --> 00:10:10,790
+And then the reason we have the warning is we've got include the USP, CDC.
+
+171
+00:10:11,280 --> 00:10:12,300
+I f dot h.
+
+172
+00:10:12,870 --> 00:10:13,770
+Come over here and see.
+
+173
+00:10:17,750 --> 00:10:27,980
+Include USP device, speedy underscore, CDC underscore I f dot h.
+
+174
+00:10:28,100 --> 00:10:28,610
+Like this.
+
+175
+00:10:29,690 --> 00:10:31,730
+So let's build a click over here to build.
+
+176
+00:10:33,660 --> 00:10:34,210
+It's Putin.
+
+177
+00:10:34,810 --> 00:10:36,360
+Now, we've got no arrow, no warning.
+
+178
+00:10:36,580 --> 00:10:38,050
+Click here to get it onto our board.
+
+179
+00:10:41,200 --> 00:10:41,940
+So like this.
+
+180
+00:10:46,990 --> 00:10:47,350
+We'll see.
+
+181
+00:10:47,510 --> 00:10:47,840
+Okay.
+
+182
+00:10:47,910 --> 00:10:48,490
+Over here.
+
+183
+00:10:57,840 --> 00:11:00,610
+And it says waiting for the probe of connection.
+
+184
+00:11:02,490 --> 00:11:02,910
+OK.
+
+185
+00:11:03,430 --> 00:11:06,180
+Download verified successfully, so it's flush the port.
+
+186
+00:11:06,250 --> 00:11:08,260
+I'm going to disconnect the debugger.
+
+187
+00:11:11,610 --> 00:11:12,850
+And then we can test it out.
+
+188
+00:11:15,020 --> 00:11:21,890
+So let's go ahead and and test out our federal comb, our X, T, X over here, we want to test out
+
+189
+00:11:22,280 --> 00:11:24,280
+receiving and transmitting of the data.
+
+190
+00:11:24,720 --> 00:11:29,810
+Um, before we do that, um, let's check what a callback implementation looks good.
+
+191
+00:11:30,110 --> 00:11:30,310
+OK?
+
+192
+00:11:30,530 --> 00:11:32,020
+We said this is a callback.
+
+193
+00:11:32,030 --> 00:11:37,100
+You can do something, but we basically want to echo back what we receive and then turn on the ality.
+
+194
+00:11:37,490 --> 00:11:43,010
+This Elegy pianist connected to the blue LTT of the Discovery boat over here in a mock in a wall made
+
+195
+00:11:43,010 --> 00:11:43,580
+wall one.
+
+196
+00:11:44,110 --> 00:11:45,620
+I'm going to put a bit of delay here.
+
+197
+00:11:45,730 --> 00:11:50,930
+We'll see how all on a score delay.
+
+198
+00:11:51,890 --> 00:11:53,910
+And then I'm going to pass this.
+
+199
+00:11:53,970 --> 00:11:55,010
+A five hundred here.
+
+200
+00:11:56,200 --> 00:11:56,530
+Okay.
+
+201
+00:11:56,780 --> 00:12:00,770
+And then let's go to our CDC dot.
+
+202
+00:12:00,850 --> 00:12:02,430
+I file this one here.
+
+203
+00:12:02,480 --> 00:12:03,720
+We made a lot of changes here.
+
+204
+00:12:03,770 --> 00:12:05,220
+This the main change that we did.
+
+205
+00:12:05,250 --> 00:12:05,760
+Let's see.
+
+206
+00:12:05,780 --> 00:12:12,470
+Does OK over here to point to because it's a point to the CDC underscore receive efforts.
+
+207
+00:12:12,980 --> 00:12:16,430
+I'm going to change this and to learn index.
+
+208
+00:12:16,430 --> 00:12:17,660
+You like this.
+
+209
+00:12:18,750 --> 00:12:26,240
+OK, so we did this and then we have the weak object over here in the same file which we implemented
+
+210
+00:12:26,270 --> 00:12:28,130
+the actual thin and demain dot see.
+
+211
+00:12:28,880 --> 00:12:29,270
+Right.
+
+212
+00:12:29,660 --> 00:12:31,850
+Okay, so it's looking good so far.
+
+213
+00:12:31,910 --> 00:12:35,480
+Let's click over here to download, uh, to build first.
+
+214
+00:12:36,200 --> 00:12:40,760
+So it's building while it's building over here to really capture the essence of what's going on.
+
+215
+00:12:40,760 --> 00:12:42,830
+We need a different serial program.
+
+216
+00:12:43,120 --> 00:12:49,160
+Terror term does not give us this are x, t, x functionality in a proper way.
+
+217
+00:12:49,170 --> 00:12:53,410
+So we're going to, uh, download another one known as real time.
+
+218
+00:12:53,540 --> 00:12:56,140
+You can go to Google and search download real term.
+
+219
+00:12:56,530 --> 00:13:03,440
+And at this first link would open once it opens, you just you just follow the, um, the procedure
+
+220
+00:13:03,470 --> 00:13:04,730
+to to download it.
+
+221
+00:13:05,720 --> 00:13:12,560
+And then, um, what you do is you click download and once you click download it would open a page,
+
+222
+00:13:12,590 --> 00:13:13,610
+you will start download enough.
+
+223
+00:13:13,610 --> 00:13:14,800
+Download this before.
+
+224
+00:13:15,650 --> 00:13:16,610
+So um.
+
+225
+00:13:16,810 --> 00:13:17,200
+Yeah.
+
+226
+00:13:17,540 --> 00:13:19,250
+So it was start downloading shortly.
+
+227
+00:13:20,200 --> 00:13:20,590
+Right.
+
+228
+00:13:21,690 --> 00:13:23,270
+You just follow the steps to store.
+
+229
+00:13:26,500 --> 00:13:29,590
+So to install, you just simply click next.
+
+230
+00:13:29,740 --> 00:13:31,180
+Keep keep everything the same.
+
+231
+00:13:31,210 --> 00:13:34,900
+Keep clicking next and then you click to install off, install it before.
+
+232
+00:13:34,930 --> 00:13:39,160
+So I wouldn't go ahead with this, so I'll cancel this.
+
+233
+00:13:39,270 --> 00:13:39,440
+OK.
+
+234
+00:13:39,520 --> 00:13:40,530
+This has finished building.
+
+235
+00:13:40,840 --> 00:13:41,170
+Oh.
+
+236
+00:13:41,200 --> 00:13:42,940
+Click debug to get onto the board.
+
+237
+00:13:45,480 --> 00:13:49,500
+So it's work working from here, you can see getting onto the board.
+
+238
+00:13:57,010 --> 00:13:57,400
+Right.
+
+239
+00:13:58,100 --> 00:13:58,440
+Okay.
+
+240
+00:13:58,570 --> 00:13:59,890
+So we are in debug mode.
+
+241
+00:13:59,980 --> 00:14:02,890
+I'm going to exit because I just need this to be on the board.
+
+242
+00:14:03,730 --> 00:14:04,150
+I don't know.
+
+243
+00:14:04,300 --> 00:14:05,440
+I don't need to debug it.
+
+244
+00:14:05,560 --> 00:14:05,870
+Okay.
+
+245
+00:14:06,250 --> 00:14:10,720
+So now I'm going to open the, um, the real term we downloaded and installed.
+
+246
+00:14:14,050 --> 00:14:14,710
+Oh, open it.
+
+247
+00:14:19,910 --> 00:14:21,150
+It's called real time.
+
+248
+00:14:22,090 --> 00:14:22,310
+OK.
+
+249
+00:14:22,650 --> 00:14:23,160
+Over here.
+
+250
+00:14:26,010 --> 00:14:27,270
+So this is real time.
+
+251
+00:14:27,420 --> 00:14:33,870
+So when we start, we have this quote display because I want to show the echo.
+
+252
+00:14:34,650 --> 00:14:40,080
+I'm going to enable half duplex over here on the do display or enable this import.
+
+253
+00:14:40,740 --> 00:14:41,250
+Oh, come here.
+
+254
+00:14:41,310 --> 00:14:42,120
+This dropdown.
+
+255
+00:14:43,760 --> 00:14:44,570
+What device?
+
+256
+00:14:44,970 --> 00:14:46,890
+My device is not shown here.
+
+257
+00:14:49,250 --> 00:14:50,270
+I'll reset my board.
+
+258
+00:14:52,440 --> 00:14:59,430
+You see, okay, this is my device click connect to window windows, and I have to reset this for it
+
+259
+00:14:59,430 --> 00:14:59,880
+to show.
+
+260
+00:15:00,300 --> 00:15:01,650
+So I'm going to open this again.
+
+261
+00:15:02,690 --> 00:15:04,460
+I'm going to open Real Real-Time again.
+
+262
+00:15:05,450 --> 00:15:05,980
+Open.
+
+263
+00:15:07,950 --> 00:15:08,910
+This is real time.
+
+264
+00:15:11,220 --> 00:15:11,690
+Okay.
+
+265
+00:15:12,090 --> 00:15:14,370
+I said I'm going to set half duplex.
+
+266
+00:15:14,550 --> 00:15:14,840
+Okay.
+
+267
+00:15:14,940 --> 00:15:17,370
+And on the porch, I'll drop down over here.
+
+268
+00:15:18,150 --> 00:15:19,240
+USP device.
+
+269
+00:15:19,380 --> 00:15:20,910
+I know it's put 16.
+
+270
+00:15:21,870 --> 00:15:24,130
+And I verified that using terror 10.
+
+271
+00:15:24,210 --> 00:15:29,950
+You can also verify that in your device manager or click 16 over here and under send.
+
+272
+00:15:30,600 --> 00:15:31,470
+Come over here.
+
+273
+00:15:31,990 --> 00:15:33,060
+Then I'm going to take.
+
+274
+00:15:35,280 --> 00:15:38,610
+See our life so that we get a new life.
+
+275
+00:15:39,120 --> 00:15:40,430
+And what we want to send.
+
+276
+00:15:40,990 --> 00:15:41,750
+I'm going to send.
+
+277
+00:15:45,270 --> 00:15:45,720
+This is it.
+
+278
+00:15:45,740 --> 00:15:46,210
+How about that?
+
+279
+00:15:46,330 --> 00:15:47,370
+Or hello from Cuba.
+
+280
+00:15:47,640 --> 00:15:48,600
+Like we did earlier.
+
+281
+00:15:49,110 --> 00:15:54,590
+So then I click send us and we are sending.
+
+282
+00:15:54,660 --> 00:15:58,320
+But when I receive it, I see why that is.
+
+283
+00:16:00,440 --> 00:16:00,710
+Okay.
+
+284
+00:16:00,780 --> 00:16:02,790
+Simply by pressing the reset button.
+
+285
+00:16:02,970 --> 00:16:03,900
+I think we are looking good.
+
+286
+00:16:03,930 --> 00:16:05,240
+No, I just reset my boat.
+
+287
+00:16:05,280 --> 00:16:06,270
+Nothing has changed.
+
+288
+00:16:06,660 --> 00:16:10,970
+So Sandusky well is in the yellow is what we receive.
+
+289
+00:16:11,040 --> 00:16:11,820
+Does the echo.
+
+290
+00:16:12,870 --> 00:16:13,350
+Right.
+
+291
+00:16:14,320 --> 00:16:18,440
+If we turn off half duplex here, we really see where we type, so.
+
+292
+00:16:18,570 --> 00:16:19,920
+Oh, turn this off.
+
+293
+00:16:19,950 --> 00:16:22,890
+Half duplex and I'll go back to send.
+
+294
+00:16:25,820 --> 00:16:28,290
+And we seen just one part of the message we're not seeing.
+
+295
+00:16:28,390 --> 00:16:28,830
+TXI.
+
+296
+00:16:29,420 --> 00:16:39,650
+We're just seeing Dietrich's OK, so half duplex would give us all of it, put T X and what is brought
+
+297
+00:16:39,650 --> 00:16:40,040
+back.
+
+298
+00:16:40,480 --> 00:16:40,770
+Right.
+
+299
+00:16:40,880 --> 00:16:45,260
+And you can see the LCD is on as well as Sandusky.
+
+300
+00:16:45,610 --> 00:16:46,370
+And I can see.
+
+301
+00:16:46,840 --> 00:16:47,010
+OK.
+
+302
+00:16:47,150 --> 00:16:52,870
+So this is T X outbreaks and you can see the stats showing up when we send we receive us work where
+
+303
+00:16:52,940 --> 00:16:56,000
+you see the light indicate the activity.
+
+304
+00:16:56,030 --> 00:16:59,610
+So when I click this, I transmit and receive hands.
+
+305
+00:16:59,720 --> 00:17:01,880
+We get two sentences.
+
+306
+00:17:02,360 --> 00:17:04,130
+What is transmitted and what is received.
+
+307
+00:17:04,660 --> 00:17:04,900
+OK.
+
+308
+00:17:05,090 --> 00:17:08,460
+So there's a if you have any questions, just live in the questions and answers area.
+
+309
+00:17:08,590 --> 00:17:09,260
+Oh, see you later.
+
+310
+00:17:09,290 --> 00:17:09,880
+Have a nice day.
