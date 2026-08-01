@@ -1,0 +1,615 @@
+1
+00:00:00,540 --> 00:00:05,580
+And this lesson, we're going to see how to work with multiple extend or interrupt.
+
+2
+00:00:05,910 --> 00:00:07,460
+So I'm going to create a new project from.
+
+3
+00:00:07,460 --> 00:00:07,750
+All right.
+
+4
+00:00:07,800 --> 00:00:07,980
+Yeah.
+
+5
+00:00:08,040 --> 00:00:08,970
+Click over here.
+
+6
+00:00:09,090 --> 00:00:09,900
+You project.
+
+7
+00:00:14,980 --> 00:00:16,110
+Also liked my board.
+
+8
+00:00:16,850 --> 00:00:18,540
+This team to four.
+
+9
+00:00:22,130 --> 00:00:22,820
+One, one.
+
+10
+00:00:30,600 --> 00:00:32,360
+Or just like the nuclear board here.
+
+11
+00:00:39,780 --> 00:00:44,540
+And I'm going to disable Claire, or the pin out was a clip in out over here
+
+12
+00:00:47,710 --> 00:00:48,950
+and I'm going to start off.
+
+13
+00:00:49,130 --> 00:00:55,340
+I know we have just a single button on the nuclear board, but we would find a way to run this experiment.
+
+14
+00:00:56,000 --> 00:00:56,930
+I'm going to set a wire.
+
+15
+00:00:57,000 --> 00:01:03,200
+P.S. 13 over here, which is where our push button is connected to extend or interrupt GPL, you extend
+
+16
+00:01:03,200 --> 00:01:04,310
+or interrupt 13.
+
+17
+00:01:05,740 --> 00:01:11,270
+And then I'm going to set P five to our ality, which is simply GPL, your output like this.
+
+18
+00:01:15,400 --> 00:01:20,290
+We can use Spears zero as our next button, although there is no second button on the board.
+
+19
+00:01:20,320 --> 00:01:23,190
+We can nominate peers you over here.
+
+20
+00:01:23,230 --> 00:01:28,480
+So I'm going to go to pin p0 and said as as GPL, you extend or interrupt you like this.
+
+21
+00:01:29,230 --> 00:01:29,550
+Okay.
+
+22
+00:01:30,910 --> 00:01:37,780
+So we can make our experiment a bit more interesting by 10 in the early days on using P.S. 13, which
+
+23
+00:01:37,780 --> 00:01:47,170
+is where our push button is connected and turn it off using PSU so we can go to our systems view and
+
+24
+00:01:47,170 --> 00:01:48,730
+then click on our GPL.
+
+25
+00:01:48,730 --> 00:01:51,370
+You over here to setup the pins.
+
+26
+00:01:51,750 --> 00:01:53,800
+I'll click over here to open it.
+
+27
+00:01:58,280 --> 00:02:00,070
+So I'll start off by clicking on, um.
+
+28
+00:02:03,090 --> 00:02:04,730
+We have our peers who are here.
+
+29
+00:02:07,780 --> 00:02:14,430
+We know it selected its default mode as extend or interrupt mode with Brize in edge trigger.
+
+30
+00:02:14,950 --> 00:02:15,630
+That is fine.
+
+31
+00:02:16,520 --> 00:02:20,030
+A whopping five is said to, um, output, Push-Pull.
+
+32
+00:02:21,070 --> 00:02:22,120
+That is fine as well.
+
+33
+00:02:22,390 --> 00:02:23,080
+These are peers.
+
+34
+00:02:23,810 --> 00:02:24,070
+Right.
+
+35
+00:02:27,490 --> 00:02:32,480
+So the spears, you extend or interrupt, rise and, uh, rise, rising age trigger.
+
+36
+00:02:32,570 --> 00:02:40,130
+P.S. 13, we want to change that to fall in age external interrupt mode with falling edge trigger detection.
+
+37
+00:02:40,640 --> 00:02:41,030
+Right.
+
+38
+00:02:42,010 --> 00:02:42,350
+OK.
+
+39
+00:02:44,180 --> 00:02:46,880
+Once this is done, we've got to go to the NVC tub.
+
+40
+00:02:46,960 --> 00:02:50,600
+And and they will all interrupt enabled us and then enable this.
+
+41
+00:02:51,950 --> 00:02:55,490
+Now we can go ahead and generate our project, come to generate code over here.
+
+42
+00:02:56,340 --> 00:03:02,150
+I'll call this or call this multiple.
+
+43
+00:03:08,670 --> 00:03:09,480
+External.
+
+44
+00:03:12,630 --> 00:03:17,250
+Interrupts and then also likes my tune change over here is the esteemed 32 Cube.
+
+45
+00:03:18,510 --> 00:03:21,270
+And then we can click over here to generate.
+
+46
+00:03:23,810 --> 00:03:24,840
+This is our project.
+
+47
+00:03:25,570 --> 00:03:26,490
+I'll clean up a bit.
+
+48
+00:03:28,440 --> 00:03:30,060
+So this all may not seem far.
+
+49
+00:03:30,390 --> 00:03:35,130
+And if we come down here, would see all of the code calibrated in the GPL.
+
+50
+00:03:35,130 --> 00:03:35,750
+You in it.
+
+51
+00:03:37,200 --> 00:03:38,400
+We have to interrupt.
+
+52
+00:03:39,360 --> 00:03:45,310
+And to see further interrupt information, we can come to the SDM 32 F4 on the score.
+
+53
+00:03:45,480 --> 00:03:55,020
+I did not see this fall over here and now we'll see our two interlocked, uh oh, two interrupt handlers.
+
+54
+00:03:55,110 --> 00:03:58,480
+So we have 10 or 15 to 10.
+
+55
+00:03:58,680 --> 00:03:59,790
+I RCU handler.
+
+56
+00:04:00,750 --> 00:04:03,990
+And this is what would handle the interrupt request for P.S. 13.
+
+57
+00:04:04,950 --> 00:04:10,950
+And then we have extend or interrupt zero hour cue handler.
+
+58
+00:04:11,190 --> 00:04:13,280
+And this, of course, is DPL you pin zero.
+
+59
+00:04:14,260 --> 00:04:20,520
+OK, so now we have to implement a while Kobuk for interrupt.
+
+60
+00:04:21,020 --> 00:04:25,130
+So we have to go to our GPL you module.
+
+61
+00:04:25,350 --> 00:04:26,940
+So I come to drive us over here.
+
+62
+00:04:27,480 --> 00:04:31,110
+How drivers sors and then G.P.A. you don't see.
+
+63
+00:04:33,970 --> 00:04:39,640
+And we can simply start off by searching the week keyword our search on that score on a score week.
+
+64
+00:04:44,050 --> 00:04:45,840
+And we have this callback function here.
+
+65
+00:04:46,710 --> 00:04:48,420
+Oh, GPL, you, XDR.
+
+66
+00:04:48,640 --> 00:04:49,230
+Kobuk.
+
+67
+00:04:50,230 --> 00:04:52,940
+So we can just copy this, reimplement this.
+
+68
+00:04:53,060 --> 00:04:55,180
+No, I mean, let's see file.
+
+69
+00:04:55,640 --> 00:04:59,230
+So I copy this and then I'll come up here.
+
+70
+00:05:00,640 --> 00:05:01,510
+I can close this.
+
+71
+00:05:03,450 --> 00:05:05,350
+I'll come up here and put this here like this.
+
+72
+00:05:06,700 --> 00:05:08,820
+And then I would delete the weak key word.
+
+73
+00:05:09,000 --> 00:05:09,260
+Yeah.
+
+74
+00:05:10,610 --> 00:05:10,760
+OK.
+
+75
+00:05:11,160 --> 00:05:15,220
+So you may be wondering, we've got one callback function, but we've got to interrupt.
+
+76
+00:05:15,760 --> 00:05:16,840
+How do we work with this?
+
+77
+00:05:16,930 --> 00:05:21,460
+And there is a single parameter over here which is GPL you pin.
+
+78
+00:05:22,180 --> 00:05:22,640
+OK.
+
+79
+00:05:23,200 --> 00:05:26,620
+We can do this by using an if statement.
+
+80
+00:05:27,610 --> 00:05:33,370
+We can simply check what a pain is to interrupt coming from and then we execute.
+
+81
+00:05:33,400 --> 00:05:34,360
+Well, we want to execute.
+
+82
+00:05:34,690 --> 00:05:39,610
+So over here I can simply see if this parameter here, GPL yappin.
+
+83
+00:05:42,510 --> 00:05:50,060
+If this equals G play, you pin zero, which is the same as our peers zero.
+
+84
+00:05:51,510 --> 00:05:56,040
+If this, of course GPA point zero, then we want to do something here.
+
+85
+00:05:56,900 --> 00:06:02,610
+And we said I would do something will be to turn on the ality, but do something.
+
+86
+00:06:05,890 --> 00:06:16,030
+And over here, we can see if the GPA you pin a course GPA, you pin 13.
+
+87
+00:06:23,700 --> 00:06:25,000
+Want to do something again?
+
+88
+00:06:29,780 --> 00:06:34,520
+OK, so over here, you can do whatever you want, but I'm just going to turn on the here.
+
+89
+00:06:35,270 --> 00:06:38,900
+Turn off the ality here and turn it on in the next interrupt.
+
+90
+00:06:39,440 --> 00:06:42,830
+So I'll see how GPI you.
+
+91
+00:06:43,100 --> 00:06:44,120
+And then two, turn on.
+
+92
+00:06:44,720 --> 00:06:46,310
+We use the right pin.
+
+93
+00:06:47,170 --> 00:06:47,470
+Right.
+
+94
+00:06:47,520 --> 00:06:48,200
+Been like this.
+
+95
+00:06:48,230 --> 00:06:50,670
+And then this takes the port, which is GPL.
+
+96
+00:06:50,690 --> 00:06:52,840
+You see, that's where the is connected.
+
+97
+00:06:53,120 --> 00:06:57,650
+The PIN number is keeping you on the scorpion on this score five.
+
+98
+00:06:58,670 --> 00:07:02,270
+And then we want to write zero to it.
+
+99
+00:07:02,310 --> 00:07:03,130
+Want to turn it off.
+
+100
+00:07:03,140 --> 00:07:04,230
+So we use reset.
+
+101
+00:07:04,250 --> 00:07:09,140
+So we say G.P.A. you on the Scorpion and the score reset like this.
+
+102
+00:07:10,580 --> 00:07:17,780
+And over here, if the interrupt is coming from P.S. 13, we want to turn on the depen.
+
+103
+00:07:17,900 --> 00:07:24,830
+So we say G.P.A., you hold GPI, you on the score, right.
+
+104
+00:07:24,950 --> 00:07:28,960
+PIN like this and then we pass the same thing.
+
+105
+00:07:28,970 --> 00:07:29,420
+GPL U.
+
+106
+00:07:29,520 --> 00:07:29,820
+A.
+
+107
+00:07:31,280 --> 00:07:33,250
+And then the the penis G.P.A..
+
+108
+00:07:33,260 --> 00:07:34,860
+You pin five.
+
+109
+00:07:34,920 --> 00:07:37,730
+Cause that is where the it is connected p a five.
+
+110
+00:07:38,870 --> 00:07:40,310
+You pin on the score five.
+
+111
+00:07:40,880 --> 00:07:41,960
+And we want to do cheapie.
+
+112
+00:07:42,110 --> 00:07:42,470
+You.
+
+113
+00:07:45,670 --> 00:07:48,600
+No scorpion on this corset sets means.
+
+114
+00:07:49,230 --> 00:07:49,530
+Right.
+
+115
+00:07:49,720 --> 00:07:51,220
+One to it, okay.
+
+116
+00:07:56,130 --> 00:07:57,400
+We have this over here.
+
+117
+00:08:05,690 --> 00:08:12,950
+So from this arrangement, I hope you can tell that we cannot have, uh, two PIN numbers in a multiple
+
+118
+00:08:13,010 --> 00:08:14,210
+interrupt arrangement.
+
+119
+00:08:14,240 --> 00:08:20,500
+And what I mean by two PIN numbers is that if you have the same PIN number but different port, you
+
+120
+00:08:20,500 --> 00:08:22,190
+can all use multiple interrupt.
+
+121
+00:08:22,790 --> 00:08:27,050
+You have to have different pin numbers, if any can be the same ports, but different PIN numbers.
+
+122
+00:08:27,410 --> 00:08:30,620
+The reason why that is, is that what is taken here is the PIN number.
+
+123
+00:08:31,250 --> 00:08:35,350
+So pin zero here means it could be pin zero four.
+
+124
+00:08:35,540 --> 00:08:39,850
+Put a pin zero for ports B, C, D, E, F, et cetera.
+
+125
+00:08:40,880 --> 00:08:48,850
+So you cannot have pin zero for port A as one extent or interrupt and pin zero for port to be as an
+
+126
+00:08:48,850 --> 00:08:54,410
+ETA as another extend or interrupt cause there would be no way to differentiate the two of them.
+
+127
+00:08:55,640 --> 00:08:56,060
+Right.
+
+128
+00:08:57,680 --> 00:09:00,830
+So we can go ahead and build a project or click over here.
+
+129
+00:09:06,830 --> 00:09:09,470
+I have one error here because of the.
+
+130
+00:09:10,290 --> 00:09:13,090
+This would pin here should be all cup two letters.
+
+131
+00:09:17,070 --> 00:09:17,930
+So appealed again.
+
+132
+00:09:27,990 --> 00:09:29,250
+It appealed successfully.
+
+133
+00:09:29,380 --> 00:09:31,710
+I'll get onto the board by clicking on this.
+
+134
+00:09:36,000 --> 00:09:37,880
+Selectors say, okay.
+
+135
+00:09:45,930 --> 00:09:46,660
+I say, OK.
+
+136
+00:09:46,950 --> 00:09:50,220
+Here we are here.
+
+137
+00:09:50,390 --> 00:09:51,500
+We can click here to run.
+
+138
+00:09:54,560 --> 00:09:54,950
+Right.
+
+139
+00:09:55,100 --> 00:10:02,240
+So you can try this on your board so you can simply connect on the external button to the P zero.
+
+140
+00:10:02,720 --> 00:10:07,910
+This is the, uh, that nuclear user guide we downloaded.
+
+141
+00:10:08,060 --> 00:10:09,820
+This is the position of P is you.
+
+142
+00:10:09,900 --> 00:10:10,730
+It over here.
+
+143
+00:10:10,970 --> 00:10:12,490
+You can just use this P note.
+
+144
+00:10:12,960 --> 00:10:13,210
+Oh.
+
+145
+00:10:14,000 --> 00:10:14,720
+This one here.
+
+146
+00:10:14,780 --> 00:10:19,330
+This is how I bought a four one one r e p.
+
+147
+00:10:19,430 --> 00:10:20,060
+Is you.
+
+148
+00:10:20,180 --> 00:10:21,860
+Is this pin over here.
+
+149
+00:10:22,580 --> 00:10:23,000
+Right.
+
+150
+00:10:23,930 --> 00:10:29,120
+So based on the setup, if you have more interrupt, you can just use the if statement to deal with
+
+151
+00:10:29,120 --> 00:10:30,650
+them one by one like that.
+
+152
+00:10:31,220 --> 00:10:32,090
+So that's all there is.
+
+153
+00:10:32,150 --> 00:10:33,020
+And I'll see you later.
+
+154
+00:10:33,110 --> 00:10:33,760
+Have a nice day.
