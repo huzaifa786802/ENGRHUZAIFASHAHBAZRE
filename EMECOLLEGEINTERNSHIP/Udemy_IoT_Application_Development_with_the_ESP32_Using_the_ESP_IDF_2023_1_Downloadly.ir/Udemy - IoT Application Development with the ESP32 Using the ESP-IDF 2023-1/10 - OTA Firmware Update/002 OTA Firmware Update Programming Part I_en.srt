@@ -1,0 +1,916 @@
+1
+00:00:06,950 --> 00:00:11,900
+We're going to start the OTA update section by defining a few status definitions pertaining to whether
+
+2
+00:00:11,900 --> 00:00:17,840
+the update is pending, successful or it's failed, and our JavaScript function for getting the status
+
+3
+00:00:17,840 --> 00:00:20,210
+is already prepared for reacting to these statuses.
+
+4
+00:00:20,780 --> 00:00:23,870
+So let's head over to the jazz file and take a look.
+
+5
+00:00:25,380 --> 00:00:30,870
+And here in the good state is function, it says if Flushing was complete, the status is one else,
+
+6
+00:00:30,870 --> 00:00:32,009
+it's a negative one.
+
+7
+00:00:32,369 --> 00:00:34,530
+And here we have the successful situation.
+
+8
+00:00:35,890 --> 00:00:38,350
+And the unsuccessful situation is right here.
+
+9
+00:00:38,980 --> 00:00:45,250
+OK, so we need to send the statuses accordingly on the web server side so that this JavaScript function
+
+10
+00:00:45,250 --> 00:00:46,630
+reacts in the appropriate manner.
+
+11
+00:00:47,230 --> 00:00:48,880
+So let's head over to the head of file now.
+
+12
+00:00:51,390 --> 00:00:55,020
+And here will define OTA update pending.
+
+13
+00:00:58,070 --> 00:00:58,760
+As zero.
+
+14
+00:01:00,310 --> 00:01:01,210
+And then define.
+
+15
+00:01:03,240 --> 00:01:04,980
+OTA update successful.
+
+16
+00:01:07,770 --> 00:01:08,370
+As one.
+
+17
+00:01:12,300 --> 00:01:15,990
+And now let's define OTA update failed.
+
+18
+00:01:18,430 --> 00:01:19,330
+As negative one.
+
+19
+00:01:20,510 --> 00:01:24,380
+Also, we actually don't need the less enum status here, so let's get rid of it.
+
+20
+00:01:30,780 --> 00:01:33,450
+And in the C file, let's remove the case for it as well.
+
+21
+00:01:38,960 --> 00:01:41,090
+OK, so now back to the head of file.
+
+22
+00:01:43,100 --> 00:01:45,890
+Let's define a timer callback function.
+
+23
+00:01:51,160 --> 00:01:54,880
+Which calls ESP restart upon successful firmware update.
+
+24
+00:02:02,050 --> 00:02:06,940
+And here will say firmware update, reset, call back.
+
+25
+00:02:09,080 --> 00:02:11,210
+And it takes a void pointer argument.
+
+26
+00:02:12,880 --> 00:02:13,360
+OK.
+
+27
+00:02:13,870 --> 00:02:18,370
+And let's actually name it properly at the HTP server to it.
+
+28
+00:02:22,170 --> 00:02:23,160
+OK, that's better.
+
+29
+00:02:24,150 --> 00:02:25,770
+Now we'll head over to the see file.
+
+30
+00:02:28,150 --> 00:02:28,870
+And include.
+
+31
+00:02:30,270 --> 00:02:32,860
+ESP to upstage.
+
+32
+00:02:34,110 --> 00:02:35,970
+And that's for OTA functions.
+
+33
+00:02:37,310 --> 00:02:41,870
+And also include this slash program, Dot H.
+
+34
+00:02:42,860 --> 00:02:44,570
+And that's for our men macro.
+
+35
+00:02:46,140 --> 00:02:49,920
+And then we want to create a global variable for firmware updates status.
+
+36
+00:02:53,410 --> 00:03:00,790
+Which is a static int in call it global underscore firmware, underscore update, underscore status
+
+37
+00:03:01,480 --> 00:03:04,420
+and set it to OTA update pending.
+
+38
+00:03:09,310 --> 00:03:16,990
+And now let's copy this variable, and let's bring it to the monitor under OTA update successful.
+
+39
+00:03:17,560 --> 00:03:20,830
+And let's set it to OTA update successful.
+
+40
+00:03:22,510 --> 00:03:22,930
+OK.
+
+41
+00:03:23,920 --> 00:03:28,660
+And then under OTA update failed, let's set it to OTA update failed.
+
+42
+00:03:35,030 --> 00:03:39,410
+So now in the US, let's see what handlers we need to define.
+
+43
+00:03:41,970 --> 00:03:43,350
+Within update firmware.
+
+44
+00:03:44,410 --> 00:03:46,990
+We have a post for OTA update.
+
+45
+00:03:47,770 --> 00:03:48,220
+OK.
+
+46
+00:03:48,850 --> 00:03:52,990
+And when the Web page is accessed, get update status is called.
+
+47
+00:03:55,410 --> 00:03:58,500
+And there we have the forgotten status.
+
+48
+00:03:59,370 --> 00:04:00,900
+And that's also a post method.
+
+49
+00:04:01,770 --> 00:04:06,960
+So here we have to post methods OTA update and OTA status to be handled.
+
+50
+00:04:07,830 --> 00:04:09,390
+So let's go back to the C file.
+
+51
+00:04:10,490 --> 00:04:12,410
+And down to our you or I handlers.
+
+52
+00:04:18,269 --> 00:04:20,160
+All right, so here, let's register.
+
+53
+00:04:21,700 --> 00:04:23,200
+OTA update handler.
+
+54
+00:04:26,370 --> 00:04:32,400
+And we need an instance of the euro, a structure and call it to underscore update.
+
+55
+00:04:35,730 --> 00:04:36,720
+And the you are right.
+
+56
+00:04:38,020 --> 00:04:40,660
+Will be forward slash OTA update.
+
+57
+00:04:45,940 --> 00:04:49,270
+And the method will be a top post.
+
+58
+00:04:52,570 --> 00:04:58,600
+And the handler will call HTTP server OTA update handler.
+
+59
+00:05:05,100 --> 00:05:07,440
+And we can set the user to know.
+
+60
+00:05:11,150 --> 00:05:11,540
+OK.
+
+61
+00:05:11,690 --> 00:05:16,640
+And then call FTPd, register you or a handler in pest to handle.
+
+62
+00:05:17,950 --> 00:05:20,320
+And then a reference to the OTA update struct.
+
+63
+00:05:22,920 --> 00:05:23,370
+OK.
+
+64
+00:05:24,400 --> 00:05:27,250
+Now will register the status handler.
+
+65
+00:05:32,460 --> 00:05:34,110
+And call it a status.
+
+66
+00:05:40,120 --> 00:05:43,930
+And for that, you are right, that will be forward slash OTA status.
+
+67
+00:05:50,920 --> 00:05:55,360
+And then the method will be http post as well.
+
+68
+00:05:58,410 --> 00:05:59,190
+And the handler.
+
+69
+00:06:01,030 --> 00:06:05,080
+We'll call HTP server, OTA status handler.
+
+70
+00:06:08,840 --> 00:06:10,700
+User CTCs is now.
+
+71
+00:06:14,750 --> 00:06:16,670
+And then we'll register the handler.
+
+72
+00:06:21,160 --> 00:06:24,130
+Pass the handle and a reference to the otter struct.
+
+73
+00:06:29,270 --> 00:06:32,420
+OK, next, let's define the OTA update handler.
+
+74
+00:06:36,520 --> 00:06:40,330
+And let's make a comment here, receives the bin file.
+
+75
+00:06:43,560 --> 00:06:46,950
+Via the Web page and handles the firmware update.
+
+76
+00:06:49,460 --> 00:06:55,370
+And the parameter R e q is the HTTP request for which the you are right needs to be handled.
+
+77
+00:07:03,530 --> 00:07:05,570
+And the return is OK.
+
+78
+00:07:06,580 --> 00:07:12,640
+Otherwise, PSG fail if time out occurs and the update cannot be started.
+
+79
+00:07:19,140 --> 00:07:27,240
+And the return is ISP error type, and it's our OTA update handler, which takes a pointer to the HTTP
+
+80
+00:07:27,250 --> 00:07:29,940
+the request type, and it's RFQ.
+
+81
+00:07:32,280 --> 00:07:36,030
+And here we need an instance of the ELISpot handle structure.
+
+82
+00:07:39,220 --> 00:07:40,840
+And we'll call it Otere Handle.
+
+83
+00:07:42,710 --> 00:07:49,970
+And next, we need a buffer to hold data received from the Web page, so say Char a buffer and it's
+
+84
+00:07:49,970 --> 00:07:51,500
+1024 bytes.
+
+85
+00:07:53,470 --> 00:07:56,110
+And also, we need a variable to hold the content length.
+
+86
+00:07:56,230 --> 00:07:58,150
+So say, into content length.
+
+87
+00:08:00,670 --> 00:08:05,560
+Equals the request content length, and we can access that like so.
+
+88
+00:08:07,270 --> 00:08:10,120
+And also, we need to track the content received.
+
+89
+00:08:12,560 --> 00:08:13,700
+And set it to zero.
+
+90
+00:08:14,480 --> 00:08:20,790
+And let's add another variable to receive data from each HTP request function, call and call it and
+
+91
+00:08:20,790 --> 00:08:22,100
+to receive length.
+
+92
+00:08:25,010 --> 00:08:30,080
+And also, we need a variable to tell us when the actual firmware update file content is found.
+
+93
+00:08:30,110 --> 00:08:33,740
+So we'll say Bull is request, but started.
+
+94
+00:08:36,159 --> 00:08:37,299
+And set it to false.
+
+95
+00:08:37,720 --> 00:08:46,000
+And also, we need to check the flesh status, so-called this one flesh successful and set it to false.
+
+96
+00:08:50,230 --> 00:08:58,180
+OK, now we need an instance of the ESP partition struct, and that's a pointer to a constant ESG partition
+
+97
+00:08:58,180 --> 00:08:58,600
+type.
+
+98
+00:09:02,800 --> 00:09:04,690
+And call it update partition.
+
+99
+00:09:07,580 --> 00:09:13,160
+Which equals the result of ESPN to get next update partition.
+
+100
+00:09:15,230 --> 00:09:16,580
+And the parameter is no.
+
+101
+00:09:19,040 --> 00:09:19,520
+OK.
+
+102
+00:09:19,910 --> 00:09:21,380
+And if we follow this function.
+
+103
+00:09:22,520 --> 00:09:28,340
+We can see that it returns the next OTA application partition, which should be written with new firmware
+
+104
+00:09:28,340 --> 00:09:35,360
+and to call this function to find an OTA application partition, which can be passed to SPRO to begin.
+
+105
+00:09:36,810 --> 00:09:40,890
+So next, let's create a do while loop to receive the update file.
+
+106
+00:09:44,660 --> 00:09:47,630
+And it's while received length.
+
+107
+00:09:49,110 --> 00:09:52,410
+Is greater than zero and content received.
+
+108
+00:09:54,760 --> 00:09:56,830
+It's less than content length.
+
+109
+00:10:02,140 --> 00:10:02,560
+OK.
+
+110
+00:10:02,800 --> 00:10:06,640
+And the first thing we'll do here is read the data for the request.
+
+111
+00:10:11,950 --> 00:10:13,960
+And say, if receive length.
+
+112
+00:10:16,640 --> 00:10:19,970
+Equals HTTP requests receive.
+
+113
+00:10:23,730 --> 00:10:25,310
+And the first parameter is Ari.
+
+114
+00:10:25,810 --> 00:10:28,410
+Q The second is a buffer.
+
+115
+00:10:29,190 --> 00:10:32,700
+And the third is the minimum between the content length.
+
+116
+00:10:35,910 --> 00:10:38,190
+And the size of a buffer.
+
+117
+00:10:41,370 --> 00:10:43,770
+And if this result is less than zero.
+
+118
+00:10:45,110 --> 00:10:47,780
+Then we need to handle the timeout error case here.
+
+119
+00:10:48,260 --> 00:10:51,050
+So let's say check if timeout occurred.
+
+120
+00:10:55,540 --> 00:10:57,670
+And then we'll be right if received length.
+
+121
+00:11:00,920 --> 00:11:04,280
+Is httpd suck it air time out?
+
+122
+00:11:10,550 --> 00:11:12,080
+Then we will lug a message.
+
+123
+00:11:16,410 --> 00:11:18,750
+That the OTA update handle the function.
+
+124
+00:11:24,570 --> 00:11:27,450
+Has experienced a socket timeout.
+
+125
+00:11:31,900 --> 00:11:33,640
+And then, let's say continue.
+
+126
+00:11:35,800 --> 00:11:39,280
+And we'll come and retry receiving if time out occurred.
+
+127
+00:11:45,470 --> 00:11:47,810
+Otherwise we can log a message.
+
+128
+00:11:51,860 --> 00:11:53,240
+That there was some other error.
+
+129
+00:11:54,380 --> 00:12:00,530
+So we'll say that the OTA update handler, the experienced OTA other error.
+
+130
+00:12:04,030 --> 00:12:06,250
+And we can actually print the received length.
+
+131
+00:12:14,680 --> 00:12:18,010
+OK, so then at this point, we can return ESP fail.
+
+132
+00:12:24,480 --> 00:12:26,130
+All right, so now we can continue.
+
+133
+00:12:26,910 --> 00:12:28,290
+And here let's print.
+
+134
+00:12:31,310 --> 00:12:37,700
+Let's print that the OTA update handler has received some bytes of the content.
+
+135
+00:12:40,170 --> 00:12:44,040
+And we'll give it the content received in the content length.
+
+136
+00:12:56,940 --> 00:12:58,440
+All right, and then we can check.
+
+137
+00:12:58,770 --> 00:13:00,870
+Is this the first data we are receiving?
+
+138
+00:13:04,330 --> 00:13:04,990
+If so.
+
+139
+00:13:07,050 --> 00:13:09,480
+It will have the information in the header that we need.
+
+140
+00:13:15,930 --> 00:13:20,070
+And first of all, say if the request body is not started.
+
+141
+00:13:22,770 --> 00:13:25,500
+Then we'll set request body started to true.
+
+142
+00:13:31,580 --> 00:13:35,690
+And then we'll come here and get the location of the -- content.
+
+143
+00:13:39,190 --> 00:13:43,660
+Meaning will remove the Web form data from the request.
+
+144
+00:13:44,350 --> 00:13:54,700
+OK, so now let's say cha point to body start underscore P equals string string of the Otere buffer.
+
+145
+00:13:57,710 --> 00:14:01,730
+And we need to find these slash or slash and slash or slash and.
+
+146
+00:14:03,280 --> 00:14:05,560
+And then increment to point two by four.
+
+147
+00:14:06,630 --> 00:14:08,820
+For the length of the slash or slash ends.
+
+148
+00:14:10,910 --> 00:14:13,850
+All right, so now we'll get the entire body part length.
+
+149
+00:14:15,880 --> 00:14:17,170
+From the received length.
+
+150
+00:14:20,510 --> 00:14:24,410
+Minus the difference between the body start point to.
+
+151
+00:14:25,820 --> 00:14:27,770
+And the beginning of the Otay buffer.
+
+152
+00:14:30,390 --> 00:14:35,670
+OK, so here we needed to get the body start point to to point to the beginning of the data that we
+
+153
+00:14:35,670 --> 00:14:37,980
+want without the web form junk data.
+
+154
+00:14:38,430 --> 00:14:44,700
+And we also need the length of data that we want so that we can pass this information to spot a right
+
+155
+00:14:44,850 --> 00:14:45,870
+and we'll do that later.
+
+156
+00:14:46,110 --> 00:14:49,530
+OK, so next, let's print some information.
+
+157
+00:14:53,510 --> 00:14:58,220
+About the OTA file size so that it shows up while we are receiving the file.
+
+158
+00:15:01,490 --> 00:15:02,840
+And give it the content length.
+
+159
+00:15:15,210 --> 00:15:18,870
+And then here we can say ESP error type error.
+
+160
+00:15:19,820 --> 00:15:21,830
+Equals ESP to begin.
+
+161
+00:15:23,350 --> 00:15:27,250
+And give it the update partition and then the file size is.
+
+162
+00:15:27,760 --> 00:15:28,750
+Size unknown.
+
+163
+00:15:31,640 --> 00:15:33,950
+And then give a reference to the yacht to handle.
+
+164
+00:15:35,940 --> 00:15:40,200
+OK, then we'll say if error is not equal to ESP, OK?
+
+165
+00:15:45,450 --> 00:15:47,190
+Then print that there was an error.
+
+166
+00:15:52,890 --> 00:15:55,530
+And we'll say air with OK to begin.
+
+167
+00:16:00,360 --> 00:16:01,620
+Cancelling OTA.
+
+168
+00:16:08,560 --> 00:16:11,080
+OK, then return, ESB fail.
+
+169
+00:16:14,890 --> 00:16:16,330
+All right, then we'll say else.
+
+170
+00:16:17,690 --> 00:16:20,840
+And then we'll print that we're writing to politicians subtype.
+
+171
+00:16:23,370 --> 00:16:25,510
+Will say writing to politicians subtype.
+
+172
+00:16:31,680 --> 00:16:32,280
+Offset.
+
+173
+00:16:39,830 --> 00:16:42,080
+And give the update partition subtype.
+
+174
+00:16:45,740 --> 00:16:48,080
+And the update partition address.
+
+175
+00:16:54,480 --> 00:16:56,640
+So now let's say.
+
+176
+00:16:57,630 --> 00:16:58,860
+Right, this first part.
+
+177
+00:17:00,560 --> 00:17:01,310
+Of the data.
+
+178
+00:17:02,740 --> 00:17:05,319
+And say the spot, right?
+
+179
+00:17:06,609 --> 00:17:08,440
+Then pass the to handle.
+
+180
+00:17:11,060 --> 00:17:12,500
+The body start point to.
+
+181
+00:17:17,400 --> 00:17:18,720
+And the body part length.
+
+182
+00:17:24,550 --> 00:17:25,780
+And then we'll say else.
+
+183
+00:17:27,640 --> 00:17:33,460
+In the case that the body data has already been found and it's not the first part of the data that we've
+
+184
+00:17:33,460 --> 00:17:40,060
+received and written with spot, right, and then we want to write a data.
+
+185
+00:17:42,280 --> 00:17:43,300
+So let's comment.
+
+186
+00:17:44,730 --> 00:17:45,150
+Right.
+
+187
+00:17:45,600 --> 00:17:46,170
+A data.
+
+188
+00:17:47,190 --> 00:17:49,590
+And we'll use SBO to write.
+
+189
+00:17:51,920 --> 00:17:56,510
+And then pass the yacht handle and give it the yacht a buffer this time.
+
+190
+00:17:57,790 --> 00:18:00,130
+And we want the received length this time.
+
+191
+00:18:02,000 --> 00:18:04,760
+And now we want to increment the content received.
+
+192
+00:18:09,020 --> 00:18:10,220
+By the received length.
+
+193
+00:18:14,860 --> 00:18:19,840
+So we are going to do this while the received length is greater than zero.
+
+194
+00:18:20,290 --> 00:18:26,110
+And the content received is less than the content length as we're incrementing the content received
+
+195
+00:18:26,860 --> 00:18:28,780
+with each call to receive data.
+
+196
+00:18:31,060 --> 00:18:35,470
+So once that's done, we can say if the spot end.
+
+197
+00:18:40,300 --> 00:18:41,470
+In pass the handle.
+
+198
+00:18:45,130 --> 00:18:47,350
+And if that returns, ESP, OK.
+
+199
+00:18:49,540 --> 00:18:51,460
+Then let's update the partition.
+
+200
+00:18:55,600 --> 00:19:02,500
+And right, if he spoke to set boot partition and give it the update partition.
+
+201
+00:19:05,450 --> 00:19:07,240
+If that is ESP, OK?
+
+202
+00:19:09,470 --> 00:19:13,340
+Then the Konst ESP partition type.
+
+203
+00:19:15,640 --> 00:19:17,740
+Pointer boot partition.
+
+204
+00:19:20,090 --> 00:19:23,900
+Equals the spot to get boot partition.
+
+205
+00:19:25,420 --> 00:19:29,440
+And now let's log information that about the next boot partition.
+
+206
+00:19:36,330 --> 00:19:39,300
+And say next boot partition subtype.
+
+207
+00:19:40,450 --> 00:19:42,160
+Is that offset?
+
+208
+00:19:46,680 --> 00:19:48,900
+And then give the boot partition subtype.
+
+209
+00:19:51,910 --> 00:19:53,770
+And the boot partition address.
+
+210
+00:19:56,690 --> 00:19:59,600
+OK, then set flesh successful to true.
+
+211
+00:20:05,400 --> 00:20:09,300
+Else we need to log an error that says fleshed error.
+
+212
+00:20:12,650 --> 00:20:14,450
+So let's log about this function.
+
+213
+00:20:16,530 --> 00:20:18,210
+And we'll say fleshed error.
+
+214
+00:20:23,770 --> 00:20:26,950
+And then if e-sport end didn't go well.
+
+215
+00:20:29,460 --> 00:20:30,540
+We also have an error.
+
+216
+00:20:33,390 --> 00:20:36,480
+And that air that's from ESPN and.
+
+217
+00:20:42,950 --> 00:20:46,640
+OK, and lastly, we want update global variables throughout the file.
+
+218
+00:20:53,580 --> 00:20:55,920
+So let's send a message about the status.
+
+219
+00:20:57,220 --> 00:20:59,410
+And we can say, if flesh successful.
+
+220
+00:21:01,880 --> 00:21:06,710
+And then we could one line this HTTP server monitor send message.
+
+221
+00:21:13,830 --> 00:21:17,140
+HTP message OTA update successful.
+
+222
+00:21:25,780 --> 00:21:26,290
+Else.
+
+223
+00:21:29,880 --> 00:21:31,140
+We'll send the message.
+
+224
+00:21:36,540 --> 00:21:39,930
+That http message OTA update failed.
+
+225
+00:21:47,020 --> 00:21:47,410
+All right.
+
+226
+00:21:47,710 --> 00:21:50,080
+And now we can return ESP, OK?
+
+227
+00:21:55,520 --> 00:21:55,910
+OK.
+
+228
+00:21:55,940 --> 00:22:00,170
+Well done, so we have a bit more to do, but I think that's enough time for now.
+
+229
+00:22:00,170 --> 00:22:03,140
+So let's take a short break and let's continue in the next lesson.
+

@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "d:/EMECOLLEGEINTERNSHIP/Udemy_IoT_Application_Development_with_the_ESP32_Using_the_ESP_IDF_2023_1_Downloadly.ir/Udemy - IoT Application Development with the ESP32 Using the ESP-IDF 2023-1/10 - OTA Firmware Update",
+      "program": "d:/EMECOLLEGEINTERNSHIP/Udemy_IoT_Application_Development_with_the_ESP32_Using_the_ESP_IDF_2023_1_Downloadly.ir/Udemy - IoT Application Development with the ESP32 Using the ESP-IDF 2023-1/10 - OTA Firmware Update/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

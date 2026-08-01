@@ -1,0 +1,288 @@
+1
+00:00:07,030 --> 00:00:10,870
+In this section, we'll take a look at the over the firmware update implementation.
+
+2
+00:00:11,440 --> 00:00:16,660
+This firmware update will be implemented over the wireless local area network, and we'll simply upload
+
+3
+00:00:16,660 --> 00:00:19,750
+the binary file to the ISP using the web page.
+
+4
+00:00:21,170 --> 00:00:28,160
+So before we go deeper into details, let's talk about OTA updates in general using the IDF, so OTA
+
+5
+00:00:28,160 --> 00:00:31,760
+updates allow a device to update itself based on data received.
+
+6
+00:00:32,090 --> 00:00:38,630
+For example, over Wi-Fi, while the normal firmware is running and enabling firmware updates requires
+
+7
+00:00:38,630 --> 00:00:46,310
+configuring a partition table with at least two application slots called OTAs zero and Otere one, as
+
+8
+00:00:46,310 --> 00:00:50,990
+well as an OTA data partition and the OTA operation functions.
+
+9
+00:00:50,990 --> 00:00:57,710
+Write a new application firmware image to whichever OTA application slot is currently not selected for
+
+10
+00:00:57,710 --> 00:00:58,160
+booting.
+
+11
+00:00:58,730 --> 00:01:05,570
+So once the image is verified, the OTA data partition is updated to specify that this image should
+
+12
+00:01:05,570 --> 00:01:06,740
+be used for the next boot.
+
+13
+00:01:08,130 --> 00:01:13,500
+And further to the partition table, the flash of the East can contain multiple applications in different
+
+14
+00:01:13,500 --> 00:01:14,230
+kinds of data.
+
+15
+00:01:14,250 --> 00:01:18,750
+For example, calibration data, file systems, parameter storage, etc..
+
+16
+00:01:19,170 --> 00:01:25,620
+And for this purpose, a partition table is flash to hex eight thousand in flash memory, and each entry
+
+17
+00:01:25,620 --> 00:01:31,200
+of the partition table has a label, a type subtype and an offset in the flash, where the partition
+
+18
+00:01:31,200 --> 00:01:31,710
+is loaded.
+
+19
+00:01:32,490 --> 00:01:39,540
+And also, the simplest way to use the partition table is to open the project configuration or SDK config
+
+20
+00:01:39,540 --> 00:01:43,050
+and eclipse and choose factory up to 0.8 definitions.
+
+21
+00:01:43,380 --> 00:01:46,080
+As we've already done in the project configuration section.
+
+22
+00:01:47,650 --> 00:01:49,960
+And here is what a partition table looks like.
+
+23
+00:01:50,440 --> 00:01:54,520
+Here we have names, types, subtypes, upsets and sizes.
+
+24
+00:01:55,000 --> 00:02:00,160
+And in this table, which is the same as the one we're currently using, we have three applications.
+
+25
+00:02:00,160 --> 00:02:06,940
+We have the factory application at Offset X ten thousand and the next two applications or apps with
+
+26
+00:02:07,510 --> 00:02:09,880
+zero and 0.1 one subtypes.
+
+27
+00:02:11,009 --> 00:02:16,350
+And there is also a new OTA data slot, which holds the data for OTA updates.
+
+28
+00:02:16,770 --> 00:02:20,730
+The bootloader will check this OTA data slot to know which app to execute.
+
+29
+00:02:21,120 --> 00:02:24,360
+So if it is empty, the factory application will be executed.
+
+30
+00:02:24,870 --> 00:02:28,200
+And also, you can customize the partition table to suit your needs.
+
+31
+00:02:28,620 --> 00:02:34,020
+For example, if you application takes up more space, you can adjust the size and to remove the factory
+
+32
+00:02:34,020 --> 00:02:39,270
+application and just use only to zero and OTA one partitions if you need.
+
+33
+00:02:40,620 --> 00:02:42,510
+OK, now let's talk about our implementation.
+
+34
+00:02:43,540 --> 00:02:49,750
+The user can start the OTA update by uploading the application binary over the web page, and the firmware
+
+35
+00:02:49,750 --> 00:02:54,700
+update is then performed on the web server side and the web page will display the status, whether it
+
+36
+00:02:54,700 --> 00:02:55,840
+was successful or not.
+
+37
+00:02:56,500 --> 00:03:02,620
+And once the update is complete, the web page is no longer available and the SB 32 will then restart.
+
+38
+00:03:03,430 --> 00:03:08,830
+And we can then test the firmware update by making just a couple of simple changes, like changing the
+
+39
+00:03:08,920 --> 00:03:15,940
+side of the SB 32S Access Point and maybe the web page background just to verify that the new firmware
+
+40
+00:03:15,940 --> 00:03:16,930
+is indeed running.
+
+41
+00:03:17,940 --> 00:03:21,440
+So now let's discuss how we can accomplish this using the ESP IDF.
+
+42
+00:03:23,230 --> 00:03:28,480
+I suggest you browse the impressive documentation to get a better grasp on the OTA update topics you
+
+43
+00:03:28,900 --> 00:03:34,000
+as well as the API reference, check out the process overview and other features available that will
+
+44
+00:03:34,000 --> 00:03:35,410
+not be using in our example.
+
+45
+00:03:36,010 --> 00:03:38,950
+You can also find more details about the partition table here.
+
+46
+00:03:39,610 --> 00:03:44,000
+Take a look at the overview, as well as other details like creating partition tables.
+
+47
+00:03:44,020 --> 00:03:44,860
+If you're interested.
+
+48
+00:03:46,790 --> 00:03:51,830
+So the steps that will have to take on the Web server side starts with receiving the file from the web
+
+49
+00:03:51,830 --> 00:03:55,640
+page, and we'll call HTTP requests received for this.
+
+50
+00:03:56,150 --> 00:03:58,850
+So this API will read HTTP content.
+
+51
+00:03:58,850 --> 00:04:06,200
+Data from the HTTP request into the provided buffer will then have to make multiple calls to this function
+
+52
+00:04:06,560 --> 00:04:12,620
+each time fetching buffer length a number of bytes, while the pointer to the content data is incremented
+
+53
+00:04:12,620 --> 00:04:14,300
+internally by the same number.
+
+54
+00:04:15,260 --> 00:04:20,990
+Then we'll have to identify where the binary file content actually starts by checking the escape characters.
+
+55
+00:04:21,420 --> 00:04:27,850
+The slasher suggestions that are present when receiving the file from the web page and then call SPRO
+
+56
+00:04:27,870 --> 00:04:35,930
+to begin the e-sport begin function commences the update by writing to the specified partition.
+
+57
+00:04:36,320 --> 00:04:43,790
+And once successful, it allocates memory that remains in use until the SPL end function is called.
+
+58
+00:04:44,880 --> 00:04:50,880
+So next, we call Esposti right to write the first chunk of data that we've received from the web page.
+
+59
+00:04:51,480 --> 00:04:57,600
+The write function writes data to the specified partition that can be called multiple times as data
+
+60
+00:04:57,600 --> 00:05:00,570
+is received during the operation.
+
+61
+00:05:01,080 --> 00:05:07,950
+Which brings us to the next point we'll continue receiving the rest of the file by calling HTTP Request
+
+62
+00:05:07,950 --> 00:05:13,170
+Receive and Esposti to write until all of the content is received.
+
+63
+00:05:13,770 --> 00:05:20,250
+Then we'll finish the OTA update and validate the application image by calling Esposti End.
+
+64
+00:05:20,880 --> 00:05:27,570
+So here it's mentioned that the handle associated with the OTA update is no longer valid and that the
+
+65
+00:05:27,570 --> 00:05:31,110
+memory associated with it is freed regardless of the result.
+
+66
+00:05:31,860 --> 00:05:39,060
+And next, we'll need to configure the data from the partition table for the new boot partition by calling
+
+67
+00:05:39,060 --> 00:05:41,520
+each spot to set boot partition.
+
+68
+00:05:42,360 --> 00:05:49,560
+And here it's mentioned that after this calling, ECP restart will boot the newly configured application
+
+69
+00:05:49,560 --> 00:05:53,970
+partition, which brings us to the next function ESP restart.
+
+70
+00:05:54,480 --> 00:05:56,910
+This function will restart both CPU's.
+
+71
+00:05:56,910 --> 00:06:03,900
+Both the Pro and application CPUs will be restarted, and the function does not return, of course.
+
+72
+00:06:05,160 --> 00:06:09,090
+All right, so let's put this plan into action, and I'll see you in the programming sections.
+
