@@ -1,0 +1,1275 @@
+1
+00:00:01,090 --> 00:00:01,360
+Hello.
+
+2
+00:00:01,750 --> 00:00:02,290
+Welcome back.
+
+3
+00:00:02,620 --> 00:00:09,290
+In this lesson, we are going to demonstrate how to write assembly code using the Kubi d e.
+
+4
+00:00:10,290 --> 00:00:15,580
+I'm going to create a new project from over here, new SDM 32 project.
+
+5
+00:00:17,270 --> 00:00:19,000
+My boat selector is going to load up.
+
+6
+00:00:20,230 --> 00:00:20,980
+So here we go.
+
+7
+00:00:21,490 --> 00:00:22,630
+So I should point out.
+
+8
+00:00:22,780 --> 00:00:24,100
+If you load if the.
+
+9
+00:00:24,340 --> 00:00:29,380
+The project selected a target selector loads up and it doesn't show this Panio over here.
+
+10
+00:00:29,800 --> 00:00:37,540
+Simply click a console and start the project creation project and start a project creation process again.
+
+11
+00:00:38,590 --> 00:00:46,310
+Um, cause sometimes when you try to create a project and it tries to load the, um, the target selector,
+
+12
+00:00:46,960 --> 00:00:48,100
+it doesn't load everything.
+
+13
+00:00:48,130 --> 00:00:51,250
+It doesn't load the part that allows you to search for your board.
+
+14
+00:00:51,310 --> 00:00:55,510
+If you experience the click console, there is console down here.
+
+15
+00:00:56,570 --> 00:00:57,670
+There is console here.
+
+16
+00:00:57,820 --> 00:01:01,060
+If you experience that, just click console over here and start again.
+
+17
+00:01:01,960 --> 00:01:07,840
+Yeah, I think Cube I.D. two has a number of bugs that, you know, updated versions.
+
+18
+00:01:07,900 --> 00:01:09,760
+Would, um, would you sort of get rid of.
+
+19
+00:01:10,380 --> 00:01:11,380
+Um, yeah.
+
+20
+00:01:11,470 --> 00:01:13,040
+Look at what I'm having here.
+
+21
+00:01:13,540 --> 00:01:15,580
+So the, the pano disappeared.
+
+22
+00:01:16,060 --> 00:01:17,200
+Just what I was talking about.
+
+23
+00:01:18,070 --> 00:01:23,980
+So in this case, what I would do is simply console and then just start again, click console over here
+
+24
+00:01:24,070 --> 00:01:25,810
+and then start again.
+
+25
+00:01:30,190 --> 00:01:32,480
+New look at this.
+
+26
+00:01:33,790 --> 00:01:35,030
+Oh, goodness.
+
+27
+00:01:37,350 --> 00:01:42,960
+OK, SDM 32 Kube SDM 32 Project Knocking Project.
+
+28
+00:01:44,030 --> 00:01:48,530
+So it's going to load up the targets elected again, and this time I hope you load it up properly.
+
+29
+00:01:50,150 --> 00:01:52,400
+So I'm gonna search my boat again.
+
+30
+00:01:52,520 --> 00:01:53,720
+Do pardon the arm.
+
+31
+00:01:53,870 --> 00:01:55,280
+The resolution here.
+
+32
+00:01:55,340 --> 00:01:56,640
+It's from the cube I.D..
+
+33
+00:01:57,340 --> 00:01:58,310
+It's not from my side.
+
+34
+00:01:58,420 --> 00:02:02,120
+ASTM 32 by boat is estimated to have four one one.
+
+35
+00:02:02,180 --> 00:02:03,270
+Just search a boat here.
+
+36
+00:02:03,380 --> 00:02:05,970
+And this is the same screen we find on Cuba mix.
+
+37
+00:02:06,470 --> 00:02:07,970
+So there's nothing strange.
+
+38
+00:02:08,330 --> 00:02:14,810
+Just search your boat, your microcontroller if you are using a different microcontroller and then go
+
+39
+00:02:14,810 --> 00:02:15,770
+ahead and select it.
+
+40
+00:02:19,980 --> 00:02:22,290
+So once your board is selected, you just click next.
+
+41
+00:02:24,670 --> 00:02:26,270
+And then you give your project a name.
+
+42
+00:02:28,940 --> 00:02:30,740
+I'll call this simple assembly.
+
+43
+00:02:32,700 --> 00:02:34,010
+I'll keep everything the same.
+
+44
+00:02:34,060 --> 00:02:37,160
+Or click next and a click finish over here.
+
+45
+00:02:38,770 --> 00:02:40,220
+And it's going to create a project.
+
+46
+00:02:40,340 --> 00:02:41,270
+It says this.
+
+47
+00:02:41,890 --> 00:02:44,270
+This kind of project is associated with Cuba.
+
+48
+00:02:44,300 --> 00:02:46,670
+Max, do you want to open this perspective?
+
+49
+00:02:46,740 --> 00:02:46,970
+No.
+
+50
+00:02:47,000 --> 00:02:47,660
+I'll say no.
+
+51
+00:02:48,200 --> 00:02:50,010
+I think it would open it regardless.
+
+52
+00:02:52,860 --> 00:02:53,220
+Right.
+
+53
+00:02:53,280 --> 00:02:55,980
+So the setup is complete and we have this here.
+
+54
+00:02:56,040 --> 00:02:56,870
+I'm going to close this.
+
+55
+00:02:56,880 --> 00:02:59,160
+We don't need as we write an assembly code.
+
+56
+00:03:00,030 --> 00:03:01,650
+And then, um, this is our project.
+
+57
+00:03:01,680 --> 00:03:05,490
+We come to call our source file is here in the source folder.
+
+58
+00:03:06,360 --> 00:03:07,560
+And then, um, our.
+
+59
+00:03:07,860 --> 00:03:09,270
+We don't need all of this.
+
+60
+00:03:09,960 --> 00:03:11,550
+We don't even need may not see.
+
+61
+00:03:11,610 --> 00:03:13,410
+I'm simply going to delete the main dot.
+
+62
+00:03:13,410 --> 00:03:13,610
+See.
+
+63
+00:03:13,680 --> 00:03:14,040
+Right.
+
+64
+00:03:14,050 --> 00:03:15,810
+Click, click, delete.
+
+65
+00:03:15,930 --> 00:03:16,440
+Over here.
+
+66
+00:03:16,440 --> 00:03:17,040
+Like this.
+
+67
+00:03:17,330 --> 00:03:17,730
+And then.
+
+68
+00:03:17,960 --> 00:03:18,420
+Okay.
+
+69
+00:03:19,690 --> 00:03:22,000
+We don't need the rest, but we can keep them there.
+
+70
+00:03:22,450 --> 00:03:24,600
+I'm going to create a main dot s file.
+
+71
+00:03:24,720 --> 00:03:25,510
+Right, click.
+
+72
+00:03:26,260 --> 00:03:28,330
+New file.
+
+73
+00:03:30,820 --> 00:03:32,950
+I'll give this a name mean, but miss.
+
+74
+00:03:37,090 --> 00:03:37,390
+Right.
+
+75
+00:03:37,480 --> 00:03:38,270
+And this is all me.
+
+76
+00:03:38,540 --> 00:03:38,730
+Yes.
+
+77
+00:03:38,860 --> 00:03:40,750
+So we write the assembly code in here.
+
+78
+00:03:41,900 --> 00:03:42,200
+OK.
+
+79
+00:03:42,340 --> 00:03:45,370
+So to write assembly code, we start with the directives.
+
+80
+00:03:45,430 --> 00:03:48,430
+The directives are not they are not instructions.
+
+81
+00:03:49,680 --> 00:03:53,020
+They they tell the compiler how to compile the code.
+
+82
+00:03:53,530 --> 00:04:00,620
+So in assembly language, you could have two different compilers of the same instruction set to different.
+
+83
+00:04:00,670 --> 00:04:02,520
+They would have this India directives.
+
+84
+00:04:03,460 --> 00:04:07,420
+Well, that's what that means, is that the code we're going to write here should run exactly the same
+
+85
+00:04:07,420 --> 00:04:12,340
+way on the, um, um, compiler or the AB assembler, I should say, our symbol.
+
+86
+00:04:12,420 --> 00:04:14,670
+No compiler, cause the assembly code is assembled.
+
+87
+00:04:14,680 --> 00:04:15,550
+It's not compound.
+
+88
+00:04:16,330 --> 00:04:20,890
+So the ARM assembly will run this, just that the directives would have to change.
+
+89
+00:04:21,400 --> 00:04:26,890
+So over here we're using the GCSE assembler and we start off by using the section direction to say this
+
+90
+00:04:26,890 --> 00:04:27,760
+is a code section.
+
+91
+00:04:27,790 --> 00:04:29,020
+We just see a DOT section.
+
+92
+00:04:29,410 --> 00:04:37,480
+And then we see it of text to say this, who hold a code and then we can use the C.P.U to indicate to
+
+93
+00:04:37,490 --> 00:04:37,790
+ACP.
+
+94
+00:04:38,010 --> 00:04:44,350
+We are using we use in the cortex and forward to another directive that is the C.P.U we are using.
+
+95
+00:04:44,380 --> 00:04:51,520
+And then we can use the DOT global and global without a dot GPL.
+
+96
+00:04:52,090 --> 00:05:00,250
+And then we say mean to make this the subroutine made this label made to make it accessible from a file
+
+97
+00:05:00,340 --> 00:05:01,330
+outside of this one.
+
+98
+00:05:01,840 --> 00:05:07,150
+So I say mean and then I'll come over here and then I'll create to mean so many is label or create to
+
+99
+00:05:07,150 --> 00:05:07,810
+me like this.
+
+100
+00:05:08,500 --> 00:05:21,060
+And then we start off by moving, we're gonna say move into register our five zero x zero x um you're
+
+101
+00:05:21,070 --> 00:05:21,740
+X six four.
+
+102
+00:05:21,820 --> 00:05:23,730
+And I think this is the number hundred.
+
+103
+00:05:24,610 --> 00:05:27,790
+This is just for testing to show that we can write assembly code here.
+
+104
+00:05:28,090 --> 00:05:31,180
+Now we're going to say move into the register.
+
+105
+00:05:31,290 --> 00:05:37,990
+AR4 gonna move less, add a number the number zero.
+
+106
+00:05:38,030 --> 00:05:38,510
+How about that.
+
+107
+00:05:39,250 --> 00:05:42,010
+And then once that is done, we're going to create another label here.
+
+108
+00:05:42,010 --> 00:05:44,740
+We called Loop so that we can jump to this label.
+
+109
+00:05:45,340 --> 00:05:57,670
+And over here we are going to see how well we we say @ @, the content of our five at one at the number
+
+110
+00:05:57,670 --> 00:06:04,690
+one to the content of Register R5 and then start a resort in R5 would do that by writing this.
+
+111
+00:06:05,410 --> 00:06:09,280
+We take this operand we added to this and then this the destination.
+
+112
+00:06:10,000 --> 00:06:13,720
+So the content of this register, add this to it, then store it here.
+
+113
+00:06:14,370 --> 00:06:14,820
+Right.
+
+114
+00:06:15,400 --> 00:06:21,750
+And then we see our for Hobaugh add the content of register our four.
+
+115
+00:06:22,600 --> 00:06:23,470
+I'd want to it.
+
+116
+00:06:24,400 --> 00:06:26,740
+I'm writing it in this way to let you understand.
+
+117
+00:06:26,770 --> 00:06:32,470
+So first we take the content of our four, we add one and then we start a resort back into our four.
+
+118
+00:06:33,610 --> 00:06:34,000
+Right.
+
+119
+00:06:35,440 --> 00:06:37,300
+So we call in this loop.
+
+120
+00:06:39,090 --> 00:06:43,500
+And then, um, let's see, what else can we add to this experiment?
+
+121
+00:06:45,090 --> 00:06:47,370
+Think we can simply test this out?
+
+122
+00:06:47,400 --> 00:06:51,750
+Cause this is simple assembly just to test that we can create and run assembly code.
+
+123
+00:06:52,230 --> 00:06:56,300
+So we're going to end, but we're going to branch to this label here.
+
+124
+00:06:56,370 --> 00:06:58,680
+This label is not accessible yet.
+
+125
+00:06:59,250 --> 00:07:02,970
+So we're going to make sure when we execute this instruction, we execute this next one.
+
+126
+00:07:03,330 --> 00:07:07,170
+And then we would execute a third one that would bring us to this label.
+
+127
+00:07:07,200 --> 00:07:10,230
+So we use the A B instruction, which means branch.
+
+128
+00:07:10,830 --> 00:07:13,080
+And then we passed the name of the label like this.
+
+129
+00:07:13,380 --> 00:07:19,710
+And we use the end directive here to indicate this is the end of our assembly assembly program.
+
+130
+00:07:20,310 --> 00:07:21,640
+So control is to save.
+
+131
+00:07:23,730 --> 00:07:26,280
+And then, um, yeah, we can build and see what we have.
+
+132
+00:07:26,970 --> 00:07:28,140
+Click over here to build.
+
+133
+00:07:33,350 --> 00:07:33,980
+It's built in.
+
+134
+00:07:37,330 --> 00:07:38,020
+It's Putin.
+
+135
+00:07:42,100 --> 00:07:43,730
+We have three errors.
+
+136
+00:07:46,280 --> 00:07:46,850
+Let's see.
+
+137
+00:07:50,190 --> 00:07:52,050
+I'm going to open this up.
+
+138
+00:07:52,140 --> 00:07:52,840
+What does it say?
+
+139
+00:07:56,460 --> 00:07:58,230
+Immediate expression requires.
+
+140
+00:07:58,380 --> 00:07:58,770
+Okay.
+
+141
+00:07:58,890 --> 00:07:59,040
+Yeah.
+
+142
+00:07:59,090 --> 00:08:01,390
+I forgot to put this here, okay.
+
+143
+00:08:01,950 --> 00:08:05,850
+If you're using a number, you have to put the number sign harsh sign like this.
+
+144
+00:08:06,540 --> 00:08:12,590
+So that is one of our era of click to build and see what this is, what created the other arrows build.
+
+145
+00:08:13,880 --> 00:08:14,240
+Okay.
+
+146
+00:08:14,280 --> 00:08:18,120
+It's looking good so far and it's built successfully.
+
+147
+00:08:18,150 --> 00:08:18,840
+No warning.
+
+148
+00:08:18,990 --> 00:08:19,300
+Okay.
+
+149
+00:08:19,350 --> 00:08:21,960
+So now let's go to our debug fuel to check our registers.
+
+150
+00:08:21,990 --> 00:08:27,120
+What indeed we get these values stored in the registers.
+
+151
+00:08:27,210 --> 00:08:27,860
+Click over here.
+
+152
+00:08:27,870 --> 00:08:31,720
+Debug SDM 32 to.
+
+153
+00:08:32,780 --> 00:08:32,900
+Oh.
+
+154
+00:08:33,150 --> 00:08:33,660
+Okay.
+
+155
+00:08:36,870 --> 00:08:38,590
+I'll click okay over here.
+
+156
+00:08:43,880 --> 00:08:44,640
+It's open in.
+
+157
+00:08:49,170 --> 00:08:49,830
+And it's finished.
+
+158
+00:08:49,890 --> 00:08:50,330
+Open it.
+
+159
+00:08:50,940 --> 00:08:52,750
+So we have different views here.
+
+160
+00:08:52,770 --> 00:08:54,910
+We have the live expression, if we have break point.
+
+161
+00:08:54,960 --> 00:08:55,650
+We have juice.
+
+162
+00:08:55,680 --> 00:08:56,600
+We have registers.
+
+163
+00:08:57,210 --> 00:09:03,390
+If you don't have any of these views here, you can come to window, show view and then talk about any
+
+164
+00:09:03,390 --> 00:09:04,020
+of them on.
+
+165
+00:09:04,110 --> 00:09:08,190
+So if you didn't have the Register's view, you can simply click to have it.
+
+166
+00:09:08,790 --> 00:09:12,420
+So click on Registers View and oh, expand this.
+
+167
+00:09:12,960 --> 00:09:15,150
+And this will give us a view of our general purpose.
+
+168
+00:09:15,150 --> 00:09:15,740
+Redish This.
+
+169
+00:09:16,290 --> 00:09:17,390
+So this is our Schiro.
+
+170
+00:09:17,430 --> 00:09:19,420
+This is the value of our zero now.
+
+171
+00:09:19,490 --> 00:09:20,340
+This is our one.
+
+172
+00:09:20,400 --> 00:09:22,470
+Our two are three or four or five.
+
+173
+00:09:23,280 --> 00:09:29,640
+And then the other registers are down the course we have, we have, we are floating point registers.
+
+174
+00:09:29,880 --> 00:09:31,140
+That's why we see the D.
+
+175
+00:09:31,530 --> 00:09:33,470
+But we look not just the R registers.
+
+176
+00:09:33,480 --> 00:09:38,040
+The general purpose registers to use this to execute our instructions line by line.
+
+177
+00:09:38,080 --> 00:09:40,890
+Best means step into this means step over.
+
+178
+00:09:41,100 --> 00:09:42,690
+This means step return.
+
+179
+00:09:43,160 --> 00:09:44,670
+We're going to use this step into.
+
+180
+00:09:45,170 --> 00:09:52,020
+And whenever you see this arrow pointing to a line, it means this is the next instruction to execute.
+
+181
+00:09:52,860 --> 00:09:55,050
+This is what is going to be executed next.
+
+182
+00:09:55,680 --> 00:10:01,400
+So I'm going to click on to step into and it's executed this.
+
+183
+00:10:01,580 --> 00:10:02,350
+What did this do?
+
+184
+00:10:02,430 --> 00:10:06,590
+Did this moved a zero x six four to register our five?
+
+185
+00:10:06,780 --> 00:10:07,110
+Let's see.
+
+186
+00:10:07,110 --> 00:10:07,960
+What are our five.
+
+187
+00:10:07,990 --> 00:10:08,520
+Has this.
+
+188
+00:10:09,240 --> 00:10:11,790
+US can see our five was the number one hundred.
+
+189
+00:10:12,710 --> 00:10:17,940
+One hundred in hexadecimal form is zero x six for the next says.
+
+190
+00:10:18,000 --> 00:10:21,320
+The next instruction says move to number zero to register our four.
+
+191
+00:10:21,450 --> 00:10:24,150
+So let's run this and see what a r four.
+
+192
+00:10:24,150 --> 00:10:24,510
+B zero.
+
+193
+00:10:24,540 --> 00:10:25,980
+Well, our voice currently zero.
+
+194
+00:10:26,010 --> 00:10:27,240
+So there'll be no difference.
+
+195
+00:10:27,270 --> 00:10:29,910
+But let's run it regardless of click over here.
+
+196
+00:10:29,940 --> 00:10:30,610
+Step in two.
+
+197
+00:10:31,840 --> 00:10:32,070
+OK.
+
+198
+00:10:32,520 --> 00:10:33,420
+So nothing has changed.
+
+199
+00:10:33,450 --> 00:10:37,290
+We know that the next instruction says branch to the label loop.
+
+200
+00:10:37,320 --> 00:10:43,260
+So if we execute this, we want to jump to this place branch to this place or click to execute this.
+
+201
+00:10:44,860 --> 00:10:45,050
+OK.
+
+202
+00:10:45,160 --> 00:10:45,910
+And now we are here.
+
+203
+00:10:46,320 --> 00:10:50,270
+So the next instruction says go to the content of register are five.
+
+204
+00:10:51,090 --> 00:10:56,250
+And add one to its content and store the results back into our five.
+
+205
+00:10:56,610 --> 00:11:00,600
+So currently our register AR five has the number one hundred.
+
+206
+00:11:00,630 --> 00:11:05,960
+After this, an instruction we expected to have the number one hundred and one because we are performing
+
+207
+00:11:05,970 --> 00:11:07,080
+one hundred plus one.
+
+208
+00:11:07,890 --> 00:11:08,880
+So click over here.
+
+209
+00:11:08,910 --> 00:11:09,780
+Step into.
+
+210
+00:11:13,160 --> 00:11:14,520
+And I can see are five.
+
+211
+00:11:14,770 --> 00:11:16,530
+One to one, right?
+
+212
+00:11:16,910 --> 00:11:23,950
+So next it says go to register for take it content, add one to it to our four plus one, and then store
+
+213
+00:11:23,950 --> 00:11:25,370
+the resorts back into our four.
+
+214
+00:11:26,240 --> 00:11:28,490
+Click here to step in to.
+
+215
+00:11:31,260 --> 00:11:32,600
+And we just executed.
+
+216
+00:11:33,400 --> 00:11:35,300
+And then I can see her for one.
+
+217
+00:11:35,420 --> 00:11:36,650
+And that's the end of our program.
+
+218
+00:11:37,280 --> 00:11:37,600
+OK.
+
+219
+00:11:38,300 --> 00:11:43,840
+So this shows that we can run our assembly code, which cube idea?
+
+220
+00:11:43,970 --> 00:11:46,400
+And that is how we create an assembly project.
+
+221
+00:11:46,730 --> 00:11:48,110
+You simply create your project.
+
+222
+00:11:48,380 --> 00:11:54,380
+You delete the M the main dot s file demand or C falling creates a main dot s file.
+
+223
+00:11:54,710 --> 00:11:57,170
+And it's important that we call this.
+
+224
+00:11:58,850 --> 00:11:59,320
+Where is it?
+
+225
+00:11:59,490 --> 00:12:00,110
+It's important.
+
+226
+00:12:00,140 --> 00:12:01,310
+We call this main dot.
+
+227
+00:12:01,640 --> 00:12:05,540
+We call this label made because in the in the system.
+
+228
+00:12:05,860 --> 00:12:06,990
+Uh, reset handler.
+
+229
+00:12:07,360 --> 00:12:08,420
+It s looks for this.
+
+230
+00:12:09,170 --> 00:12:12,440
+This subroutine called me as its starting point.
+
+231
+00:12:12,470 --> 00:12:15,020
+So if we give it a different name, it wouldn't work.
+
+232
+00:12:15,380 --> 00:12:17,110
+So let's say I give it a different name.
+
+233
+00:12:17,480 --> 00:12:18,680
+Five, for instance.
+
+234
+00:12:19,160 --> 00:12:24,920
+Let's see, the starting label is called MI five, and I'm making this accessible.
+
+235
+00:12:24,980 --> 00:12:28,850
+If you use the global, it means you want to make it global so the other files can access it.
+
+236
+00:12:29,240 --> 00:12:31,910
+So let's say this is it and I click here to build.
+
+237
+00:12:36,000 --> 00:12:36,480
+OK.
+
+238
+00:12:36,840 --> 00:12:37,680
+What does it say?
+
+239
+00:12:38,250 --> 00:12:40,020
+We have two arrows.
+
+240
+00:12:43,560 --> 00:12:44,960
+What does it say over here?
+
+241
+00:12:47,000 --> 00:12:48,410
+Return exit studies.
+
+242
+00:12:48,650 --> 00:12:52,340
+So basically what is happening is a what quote has no starting point.
+
+243
+00:12:53,510 --> 00:12:55,660
+So that is why we are using the word mean.
+
+244
+00:12:55,760 --> 00:13:01,910
+If we had a main doxie fall, then we can give our label here in your name because the starting point
+
+245
+00:13:01,970 --> 00:13:03,570
+of the program will be in demand.
+
+246
+00:13:03,580 --> 00:13:03,830
+Ötzi.
+
+247
+00:13:04,310 --> 00:13:07,390
+But because we do not have me not see, we use this control.
+
+248
+00:13:07,460 --> 00:13:10,640
+S or build and then the arrows should disappear.
+
+249
+00:13:10,700 --> 00:13:10,930
+No.
+
+250
+00:13:11,850 --> 00:13:14,000
+As you can see, no longer have any arrows.
+
+251
+00:13:15,180 --> 00:13:15,530
+Right.
+
+252
+00:13:15,860 --> 00:13:16,640
+So that's all there is.
+
+253
+00:13:16,700 --> 00:13:22,970
+If you find in the course useful for just, you know, leave it in the in the review area.
+
+254
+00:13:25,420 --> 00:13:25,760
+OK.
+
+255
+00:13:26,510 --> 00:13:27,710
+I just can't help it.
+
+256
+00:13:27,800 --> 00:13:34,190
+Before you go, I would want to show you why Maine is the is the word that we need to use to make it
+
+257
+00:13:34,190 --> 00:13:34,610
+work.
+
+258
+00:13:35,120 --> 00:13:35,480
+Okay.
+
+259
+00:13:35,750 --> 00:13:38,010
+So we need to go to our system d'hote.
+
+260
+00:13:38,120 --> 00:13:42,800
+S fault and take a look at the routine known as the reset handler.
+
+261
+00:13:42,830 --> 00:13:47,060
+And this is the first portion that is executed whenever your boat starts up.
+
+262
+00:13:47,540 --> 00:13:47,860
+Okay.
+
+263
+00:13:47,960 --> 00:13:53,520
+After the boot sequence, of course, um, we come to over, uh, this forward here setup.
+
+264
+00:13:53,690 --> 00:13:55,970
+And then there was this file on, uh, dot.
+
+265
+00:13:56,060 --> 00:13:56,540
+S file.
+
+266
+00:13:56,570 --> 00:14:03,350
+It s called this long name start up on the score, SDM 32 f F4 and then dot s or double click to openness.
+
+267
+00:14:04,390 --> 00:14:06,680
+And what we're looking for is the reset handler.
+
+268
+00:14:07,760 --> 00:14:09,170
+So this is the reset handler.
+
+269
+00:14:09,410 --> 00:14:09,800
+Right.
+
+270
+00:14:10,190 --> 00:14:11,300
+This is how it starts.
+
+271
+00:14:11,870 --> 00:14:12,100
+It's.
+
+272
+00:14:12,500 --> 00:14:14,020
+This to S.P..
+
+273
+00:14:14,020 --> 00:14:16,580
+Espey means stop points, so you'd need not know that.
+
+274
+00:14:16,970 --> 00:14:22,850
+But important thing is, after it's executed, it punches to this other label known as loop copy data
+
+275
+00:14:22,910 --> 00:14:23,330
+in it.
+
+276
+00:14:23,660 --> 00:14:25,880
+So let's go to Leupp, copy data in it and see.
+
+277
+00:14:26,360 --> 00:14:27,840
+This is loop copy data in it.
+
+278
+00:14:27,860 --> 00:14:29,420
+So this is still part of the reset.
+
+279
+00:14:29,450 --> 00:14:34,670
+I'm glad that the reset unluck comes here and then this execute these lies one by one.
+
+280
+00:14:34,970 --> 00:14:39,150
+And this finally branches to loop few zero P.
+
+281
+00:14:39,230 --> 00:14:39,810
+S s.
+
+282
+00:14:40,190 --> 00:14:42,200
+So this is our destination.
+
+283
+00:14:42,500 --> 00:14:43,860
+So let's also branch.
+
+284
+00:14:44,000 --> 00:14:50,660
+Let's find this routine loop feels Europa s as when we take a look at it, we see what happens.
+
+285
+00:14:50,750 --> 00:14:52,940
+It executes this, execute this, this.
+
+286
+00:14:53,360 --> 00:14:53,940
+And then it?
+
+287
+00:14:53,940 --> 00:14:56,510
+S branches two system units to initialize the system.
+
+288
+00:14:56,810 --> 00:15:02,570
+And then finally, it does B l mean it's branches to the applications entry point.
+
+289
+00:15:03,650 --> 00:15:10,010
+So this is why we have to make sure we have the main existing in our application because it's going
+
+290
+00:15:10,010 --> 00:15:12,380
+to branch to a label known as Main.
+
+291
+00:15:13,100 --> 00:15:18,450
+If we have may not see the label will be created, if we have just assembly language.
+
+292
+00:15:18,470 --> 00:15:23,540
+We have to make sure our assembly language has a main in there so that we can branch.
+
+293
+00:15:24,830 --> 00:15:26,270
+So let me show you something.
+
+294
+00:15:26,780 --> 00:15:29,650
+Let's say I change this mean here to mean to.
+
+295
+00:15:30,470 --> 00:15:34,490
+Now let's build our assembly language program and see a click over here to build.
+
+296
+00:15:36,920 --> 00:15:40,500
+And we have two errors, right, cos we have men, two over here.
+
+297
+00:15:40,680 --> 00:15:44,640
+What does it say on defined reference to me too?
+
+298
+00:15:46,500 --> 00:15:50,400
+So we have main two over here.
+
+299
+00:15:52,650 --> 00:15:55,130
+And then let's go to our assembly that?
+
+300
+00:15:55,130 --> 00:15:55,950
+S over here.
+
+301
+00:15:56,100 --> 00:15:58,380
+And then I'm going to change this to mean two.
+
+302
+00:15:58,560 --> 00:16:00,540
+And then this to me to control.
+
+303
+00:16:00,590 --> 00:16:01,280
+S to safe.
+
+304
+00:16:01,410 --> 00:16:02,970
+And then click away to build.
+
+305
+00:16:05,190 --> 00:16:07,650
+And as you can see, because I change it to mean to.
+
+306
+00:16:07,890 --> 00:16:09,070
+We can use it to mean to.
+
+307
+00:16:09,330 --> 00:16:10,610
+We can use mine to hear.
+
+308
+00:16:11,550 --> 00:16:16,230
+So if you want to use a different name, you would have to change it from the reset handler.
+
+309
+00:16:16,680 --> 00:16:18,360
+But, yeah, we don't want to do that.
+
+310
+00:16:18,480 --> 00:16:20,190
+Now you understand why we use me.
+
+311
+00:16:20,250 --> 00:16:20,880
+If you don't.
+
+312
+00:16:21,210 --> 00:16:23,760
+Of course you can live it in the questions and answers area.
+
+313
+00:16:24,190 --> 00:16:24,330
+OK.
+
+314
+00:16:24,510 --> 00:16:25,650
+So I'm going to leave this.
+
+315
+00:16:25,830 --> 00:16:29,480
+I'm going to change it back to me so you can even use the word to start or your name.
+
+316
+00:16:29,550 --> 00:16:32,610
+But the reset handler has to branch to that label.
+
+317
+00:16:33,170 --> 00:16:33,500
+OK.
+
+318
+00:16:33,840 --> 00:16:34,710
+So that's all there is.
+
+319
+00:16:34,870 --> 00:16:36,620
+And have a nice day, my friends.
