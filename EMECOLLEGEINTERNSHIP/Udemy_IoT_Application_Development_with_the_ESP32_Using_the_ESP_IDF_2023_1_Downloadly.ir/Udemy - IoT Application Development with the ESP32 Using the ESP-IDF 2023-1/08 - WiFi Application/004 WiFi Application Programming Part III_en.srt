@@ -1,0 +1,964 @@
+1
+00:00:07,160 --> 00:00:11,000
+OK, let's pick up where we left off and define the event handler in function.
+
+2
+00:00:11,450 --> 00:00:12,170
+So copy it.
+
+3
+00:00:14,630 --> 00:00:15,920
+And let's make a comment here.
+
+4
+00:00:17,640 --> 00:00:19,650
+Initializes the wi fi application.
+
+5
+00:00:22,700 --> 00:00:26,510
+Event handler for Wi-Fi and IP events.
+
+6
+00:00:29,890 --> 00:00:33,610
+And this function will be static void of function name.
+
+7
+00:00:34,760 --> 00:00:36,140
+And it takes no parameters.
+
+8
+00:00:39,310 --> 00:00:42,640
+And he will say event loop for the wife driver.
+
+9
+00:00:44,880 --> 00:00:46,560
+Now, let's SPRO check.
+
+10
+00:00:49,730 --> 00:00:51,410
+ESP event loop creates.
+
+11
+00:00:53,670 --> 00:00:54,900
+And choose create default.
+
+12
+00:01:00,650 --> 00:01:04,250
+And next, we'll create the event handler for the connection.
+
+13
+00:01:06,940 --> 00:01:10,210
+And then we'll need an ESP event handler instance type.
+
+14
+00:01:18,860 --> 00:01:21,080
+And call it instance fire event.
+
+15
+00:01:25,400 --> 00:01:26,870
+And now copy the instance type.
+
+16
+00:01:28,420 --> 00:01:29,140
+And paste it.
+
+17
+00:01:30,270 --> 00:01:32,610
+And now here, call it instance IP event.
+
+18
+00:01:36,010 --> 00:01:37,660
+And next, SPRO check.
+
+19
+00:01:40,500 --> 00:01:41,940
+ESG event handler.
+
+20
+00:01:42,990 --> 00:01:44,100
+Instance registered.
+
+21
+00:01:47,880 --> 00:01:50,130
+And the event base is Wi-Fi event.
+
+22
+00:01:53,610 --> 00:01:56,730
+The event ID is ESP event, any ID.
+
+23
+00:02:01,170 --> 00:02:07,110
+And the event handler is a reference to the function name, which we'll call wi fi app event handler.
+
+24
+00:02:12,650 --> 00:02:14,120
+The handle, the arguments are no.
+
+25
+00:02:16,340 --> 00:02:19,730
+And instance will be a reference to instance why fire event?
+
+26
+00:02:22,180 --> 00:02:23,410
+An now copied this line.
+
+27
+00:02:26,300 --> 00:02:27,170
+And placed below.
+
+28
+00:02:28,890 --> 00:02:30,390
+And now we want IP events.
+
+29
+00:02:35,210 --> 00:02:36,740
+And the ID is the same.
+
+30
+00:02:38,100 --> 00:02:41,100
+The handler is the same, and this is no.
+
+31
+00:02:42,250 --> 00:02:44,800
+And change the reference to instance, IP event.
+
+32
+00:02:47,700 --> 00:02:48,300
+And that's it.
+
+33
+00:02:49,570 --> 00:02:51,490
+So now we need to define this event handler.
+
+34
+00:02:54,070 --> 00:02:54,970
+So let's come here.
+
+35
+00:02:59,160 --> 00:03:03,600
+And let's comment, Wi-Fi application event handler.
+
+36
+00:03:08,120 --> 00:03:10,820
+And the first parameter ARG is data.
+
+37
+00:03:11,120 --> 00:03:12,440
+Aside from event data.
+
+38
+00:03:14,860 --> 00:03:16,330
+That is passed to the handler.
+
+39
+00:03:17,790 --> 00:03:18,720
+When it is called.
+
+40
+00:03:21,220 --> 00:03:24,100
+And the second parameter event base.
+
+41
+00:03:26,040 --> 00:03:30,180
+Is the base aid of the event to register the handler for?
+
+42
+00:03:34,340 --> 00:03:36,580
+And the third parameter event, I.D..
+
+43
+00:03:38,430 --> 00:03:41,370
+Is the idea of the event to register the handler for?
+
+44
+00:03:47,250 --> 00:03:49,620
+And the fourth parameter event data.
+
+45
+00:03:51,210 --> 00:03:52,290
+Is the event data?
+
+46
+00:03:56,890 --> 00:03:58,540
+So this function is static void.
+
+47
+00:03:59,520 --> 00:04:04,930
+WI fi app event handler and the first parameter is a void point to ARG.
+
+48
+00:04:05,890 --> 00:04:08,860
+The next parameter is ESP event based type.
+
+49
+00:04:11,400 --> 00:04:12,480
+And it's even based.
+
+50
+00:04:13,450 --> 00:04:14,980
+The next is in 30 to.
+
+51
+00:04:16,250 --> 00:04:16,930
+Event ID.
+
+52
+00:04:18,589 --> 00:04:21,529
+And the last is a void pointer event data.
+
+53
+00:04:24,210 --> 00:04:25,530
+Then here will say if.
+
+54
+00:04:26,590 --> 00:04:27,520
+Event bass.
+
+55
+00:04:29,170 --> 00:04:30,340
+Is a Wi-Fi event.
+
+56
+00:04:33,800 --> 00:04:34,790
+Then we'll switch.
+
+57
+00:04:35,800 --> 00:04:36,490
+Event ID.
+
+58
+00:04:39,000 --> 00:04:40,350
+And then now we'll open a case.
+
+59
+00:04:42,460 --> 00:04:43,600
+For Wi-Fi event.
+
+60
+00:04:45,550 --> 00:04:46,360
+AP start.
+
+61
+00:04:51,670 --> 00:04:55,780
+And now let's log the message for this case with ESP log info.
+
+62
+00:04:56,810 --> 00:04:57,500
+Our tag.
+
+63
+00:04:59,090 --> 00:05:01,850
+And the Messages Wi-Fi event app start.
+
+64
+00:05:03,870 --> 00:05:04,860
+And then include a break.
+
+65
+00:05:08,290 --> 00:05:10,930
+And this wi fi event here is just one of many.
+
+66
+00:05:11,290 --> 00:05:16,030
+So come here and look over the type of events you can include and just create them in the event handler
+
+67
+00:05:16,450 --> 00:05:18,070
+and you can handle them in your application.
+
+68
+00:05:19,230 --> 00:05:20,400
+So let's copy this event.
+
+69
+00:05:21,720 --> 00:05:22,650
+And we'll create another.
+
+70
+00:05:24,630 --> 00:05:26,430
+For Wi-Fi app, stop.
+
+71
+00:05:29,260 --> 00:05:30,610
+And now let's create another event.
+
+72
+00:05:35,290 --> 00:05:36,550
+For a start.
+
+73
+00:05:41,810 --> 00:05:42,910
+And now let's do the same.
+
+74
+00:05:48,110 --> 00:05:48,980
+Stay connected.
+
+75
+00:05:54,510 --> 00:05:55,650
+Now, let's do another one.
+
+76
+00:05:59,610 --> 00:06:01,080
+For stay disconnected.
+
+77
+00:06:02,030 --> 00:06:03,830
+Let's come back up here and make another one.
+
+78
+00:06:08,230 --> 00:06:10,270
+For AP, stay connected.
+
+79
+00:06:16,240 --> 00:06:17,550
+And now let's make another one.
+
+80
+00:06:20,440 --> 00:06:22,480
+For a stay disconnected.
+
+81
+00:06:30,930 --> 00:06:33,360
+All right, good, so that should cover our basic needs for now.
+
+82
+00:06:34,320 --> 00:06:38,070
+And now let's come down here and say else if.
+
+83
+00:06:39,270 --> 00:06:40,170
+Event bass.
+
+84
+00:06:41,790 --> 00:06:42,900
+Is an IP event.
+
+85
+00:06:46,730 --> 00:06:49,100
+Then say Switch event ID.
+
+86
+00:06:52,500 --> 00:06:53,970
+And let's create a new case here.
+
+87
+00:06:55,620 --> 00:06:57,780
+IP event FDA.
+
+88
+00:06:58,700 --> 00:06:59,590
+Gut IP.
+
+89
+00:07:08,280 --> 00:07:10,140
+And now let's S.P. log info.
+
+90
+00:07:12,530 --> 00:07:13,310
+The message.
+
+91
+00:07:14,560 --> 00:07:16,480
+For the state, got IP event.
+
+92
+00:07:18,280 --> 00:07:19,120
+And then let's break.
+
+93
+00:07:20,910 --> 00:07:22,380
+All right, so that's it for this one.
+
+94
+00:07:24,250 --> 00:07:26,860
+Now we can define the default by faith in IT function.
+
+95
+00:07:30,460 --> 00:07:31,390
+And let's comment.
+
+96
+00:07:32,400 --> 00:07:34,320
+Initializes the TCP stack.
+
+97
+00:07:36,570 --> 00:07:38,400
+In default Wi-Fi configuration.
+
+98
+00:07:42,550 --> 00:07:46,330
+And it's static void of function, and it's void.
+
+99
+00:07:48,060 --> 00:07:51,030
+And first of all, same initialize the TCP stack.
+
+100
+00:07:56,380 --> 00:07:57,820
+And ESPN check.
+
+101
+00:08:00,410 --> 00:08:02,060
+The speed net if.
+
+102
+00:08:03,110 --> 00:08:03,920
+Init function.
+
+103
+00:08:08,120 --> 00:08:10,640
+And next, we'll do the default wi fi config.
+
+104
+00:08:14,020 --> 00:08:17,430
+And I'll just mention that operations must be in this order.
+
+105
+00:08:20,980 --> 00:08:24,130
+Now we need an instance of the wi fi in it config type.
+
+106
+00:08:28,920 --> 00:08:30,900
+And call it white, fly in it, config.
+
+107
+00:08:33,190 --> 00:08:36,340
+And initialize it with wi fi in it config.
+
+108
+00:08:37,520 --> 00:08:38,510
+Default function.
+
+109
+00:08:40,380 --> 00:08:42,299
+And so here, espera check.
+
+110
+00:08:45,260 --> 00:08:46,610
+SPV, I fight in it.
+
+111
+00:08:48,180 --> 00:08:50,910
+And pass a reference to this white fight in it config.
+
+112
+00:08:56,850 --> 00:08:58,590
+And the next bill, SB air check.
+
+113
+00:09:00,720 --> 00:09:05,280
+S.P. Rifai said storage as Wi-Fi, storage RAM.
+
+114
+00:09:11,880 --> 00:09:14,910
+And now let's grab our network interface object.
+
+115
+00:09:18,450 --> 00:09:19,590
+And let's initialize it.
+
+116
+00:09:23,380 --> 00:09:25,090
+Using ISP net if.
+
+117
+00:09:26,280 --> 00:09:27,840
+Create default white by.
+
+118
+00:09:29,100 --> 00:09:29,610
+Stay.
+
+119
+00:09:32,470 --> 00:09:34,570
+Then let's initialize the AP object.
+
+120
+00:09:36,870 --> 00:09:38,520
+Using ESG net if.
+
+121
+00:09:39,880 --> 00:09:40,930
+Create default.
+
+122
+00:09:42,120 --> 00:09:43,260
+WI fi AP.
+
+123
+00:09:45,870 --> 00:09:46,560
+Great, that's it.
+
+124
+00:09:47,740 --> 00:09:49,660
+Now, let's create the soft AP config.
+
+125
+00:09:52,990 --> 00:09:53,860
+And let's comment.
+
+126
+00:09:54,880 --> 00:09:57,130
+Configures the wi fi access point settings.
+
+127
+00:09:59,300 --> 00:10:01,040
+And designs the static IP.
+
+128
+00:10:03,430 --> 00:10:04,570
+To the soft AP.
+
+129
+00:10:08,140 --> 00:10:09,370
+And it's a static void.
+
+130
+00:10:10,150 --> 00:10:12,190
+WI fi apps off the AP config.
+
+131
+00:10:13,090 --> 00:10:13,810
+And it's void.
+
+132
+00:10:15,480 --> 00:10:20,300
+Right now, let's say soft API, Wi-Fi Access Point configuration.
+
+133
+00:10:23,940 --> 00:10:26,310
+And now create the Wi-Fi config structure.
+
+134
+00:10:29,620 --> 00:10:31,150
+And call it AP config.
+
+135
+00:10:34,990 --> 00:10:37,840
+And he will need to specify the access point config.
+
+136
+00:10:43,510 --> 00:10:44,110
+Like so.
+
+137
+00:10:45,610 --> 00:10:46,990
+And then set the aside.
+
+138
+00:10:50,060 --> 00:10:52,190
+To our wi fi AP a suicide.
+
+139
+00:10:57,250 --> 00:10:59,260
+Next, set the seaside length.
+
+140
+00:11:01,240 --> 00:11:03,800
+Using Stalin of wi fi.
+
+141
+00:11:03,820 --> 00:11:04,960
+AP A suicide.
+
+142
+00:11:08,930 --> 00:11:09,950
+And then the password.
+
+143
+00:11:14,510 --> 00:11:16,700
+Will be our wi fi app password.
+
+144
+00:11:20,470 --> 00:11:21,370
+And that's the channel.
+
+145
+00:11:22,800 --> 00:11:24,630
+Will be our wi fi app channel.
+
+146
+00:11:29,210 --> 00:11:30,680
+And then SSD hidden.
+
+147
+00:11:34,180 --> 00:11:36,130
+His wife by AP, a suicide.
+
+148
+00:11:37,090 --> 00:11:37,480
+Hidden.
+
+149
+00:11:38,940 --> 00:11:40,230
+In authorization mode.
+
+150
+00:11:44,090 --> 00:11:45,950
+We'll use Wi-Fi off.
+
+151
+00:11:47,860 --> 00:11:49,150
+WPA two.
+
+152
+00:11:55,800 --> 00:11:57,030
+And now Max connections.
+
+153
+00:12:00,020 --> 00:12:01,670
+We'll be wi fi AP.
+
+154
+00:12:03,130 --> 00:12:04,120
+Max connections.
+
+155
+00:12:07,460 --> 00:12:08,690
+And then beacon interval.
+
+156
+00:12:12,920 --> 00:12:16,100
+We'll be wi fi, AP Beacon interval.
+
+157
+00:12:21,110 --> 00:12:22,760
+This should be actually be a comma here.
+
+158
+00:12:25,600 --> 00:12:26,260
+Now let's.
+
+159
+00:12:27,260 --> 00:12:28,690
+Configure, DHP.
+
+160
+00:12:30,050 --> 00:12:31,100
+For the access point.
+
+161
+00:12:33,550 --> 00:12:37,470
+Now, let's create an instance of the ESPN net if IP info type.
+
+162
+00:12:42,810 --> 00:12:45,330
+And call it AP IP info.
+
+163
+00:12:46,870 --> 00:12:48,430
+And now let's set this.
+
+164
+00:12:50,220 --> 00:12:51,570
+API info.
+
+165
+00:12:55,220 --> 00:12:59,450
+Two zero for the size of the API info.
+
+166
+00:13:01,410 --> 00:13:03,320
+All right, because we want this cleared out first.
+
+167
+00:13:04,570 --> 00:13:06,760
+And now call ESPN net if.
+
+168
+00:13:08,280 --> 00:13:10,260
+DHC Post-up.
+
+169
+00:13:12,540 --> 00:13:15,000
+And that's where our ESG net if app.
+
+170
+00:13:20,480 --> 00:13:27,050
+And this function stops the DHP server that we want to do this before making any DHC related updates.
+
+171
+00:13:28,030 --> 00:13:31,390
+And again, that's fraud, and that if AP object you.
+
+172
+00:13:33,940 --> 00:13:34,600
+And we'll say.
+
+173
+00:13:35,580 --> 00:13:36,750
+Musk called his first.
+
+174
+00:13:37,930 --> 00:13:40,450
+Because we want to call this first before making any changes.
+
+175
+00:13:41,570 --> 00:13:43,640
+And then let's call Annette Piton.
+
+176
+00:13:45,720 --> 00:13:47,370
+And specify if I get.
+
+177
+00:13:49,660 --> 00:13:51,520
+Then why fi a pipe?
+
+178
+00:13:54,020 --> 00:13:56,690
+With a reference to our API info.
+
+179
+00:13:59,160 --> 00:13:59,970
+IP address.
+
+180
+00:14:02,230 --> 00:14:06,190
+Now I'll say here, assign access points, static IP.
+
+181
+00:14:08,790 --> 00:14:10,980
+Gateway and netmask.
+
+182
+00:14:12,140 --> 00:14:17,510
+And what this function does is, is it converts an internet address and it's standard text format into
+
+183
+00:14:17,510 --> 00:14:18,890
+its numeric binary form.
+
+184
+00:14:19,160 --> 00:14:20,180
+And that's what we want here.
+
+185
+00:14:21,020 --> 00:14:25,640
+So now let's copy this line and then let's do the same for Gateway.
+
+186
+00:14:31,520 --> 00:14:32,360
+And Gateway here.
+
+187
+00:14:33,920 --> 00:14:35,210
+And then again, for netmask.
+
+188
+00:14:40,320 --> 00:14:41,280
+And that mask you.
+
+189
+00:14:43,980 --> 00:14:44,580
+All right, Greg.
+
+190
+00:14:47,090 --> 00:14:48,770
+So now let's espero check.
+
+191
+00:14:51,330 --> 00:14:54,600
+ESPN net, if said IP and phone.
+
+192
+00:14:56,750 --> 00:15:01,760
+And specify our ESPN at if AP and a reference to our AP IP info.
+
+193
+00:15:04,510 --> 00:15:05,950
+And now SPRO, check.
+
+194
+00:15:08,720 --> 00:15:09,860
+ESPN that if.
+
+195
+00:15:11,790 --> 00:15:13,410
+DHC GPS start.
+
+196
+00:15:15,350 --> 00:15:19,040
+And again, use our air speed net if AP object.
+
+197
+00:15:22,440 --> 00:15:23,580
+And to you, I'll just comment.
+
+198
+00:15:25,210 --> 00:15:28,240
+Statically configures the network interface.
+
+199
+00:15:31,410 --> 00:15:32,070
+And this one.
+
+200
+00:15:33,410 --> 00:15:34,490
+Starts the AP.
+
+201
+00:15:36,190 --> 00:15:37,510
+DHC server.
+
+202
+00:15:39,320 --> 00:15:40,520
+For connecting stations.
+
+203
+00:15:43,810 --> 00:15:45,730
+E.g., your mobile device.
+
+204
+00:15:49,940 --> 00:15:51,560
+And now let's espero check.
+
+205
+00:15:53,340 --> 00:15:54,540
+ESP set mode.
+
+206
+00:15:58,300 --> 00:16:00,250
+And the mode we want is wifey mode.
+
+207
+00:16:01,300 --> 00:16:01,780
+AP.
+
+208
+00:16:01,990 --> 00:16:02,530
+Stay.
+
+209
+00:16:07,970 --> 00:16:08,840
+And here we are.
+
+210
+00:16:10,290 --> 00:16:13,200
+Setting the mode as access point.
+
+211
+00:16:15,960 --> 00:16:16,680
+Station mode.
+
+212
+00:16:18,750 --> 00:16:20,340
+And then let's SPRO check.
+
+213
+00:16:22,740 --> 00:16:23,790
+ESB Wi-Fi.
+
+214
+00:16:25,760 --> 00:16:26,600
+Said config.
+
+215
+00:16:30,350 --> 00:16:32,210
+For ISP interface.
+
+216
+00:16:34,890 --> 00:16:36,390
+Wi-Fi access point.
+
+217
+00:16:38,270 --> 00:16:39,950
+And reference the AP config.
+
+218
+00:16:43,130 --> 00:16:43,640
+And here.
+
+219
+00:16:44,850 --> 00:16:46,530
+We've set our configuration.
+
+220
+00:16:49,010 --> 00:16:50,480
+And then ESPN check.
+
+221
+00:16:53,710 --> 00:16:55,530
+ESP wi fi said bandwidth.
+
+222
+00:16:56,740 --> 00:16:59,020
+For a Wi-Fi interface access point.
+
+223
+00:17:03,090 --> 00:17:05,220
+And use our wi fi app bandwidth.
+
+224
+00:17:09,980 --> 00:17:11,569
+And that's where our default bandwidth.
+
+225
+00:17:14,119 --> 00:17:15,020
+20 megahertz.
+
+226
+00:17:23,220 --> 00:17:24,869
+And again, let's SPRO check.
+
+227
+00:17:28,580 --> 00:17:29,720
+ESB Wi-Fi.
+
+228
+00:17:30,650 --> 00:17:31,760
+Set power, safe save.
+
+229
+00:17:32,780 --> 00:17:34,820
+To our white five star power save.
+
+230
+00:17:41,680 --> 00:17:43,720
+And that's our power save set to none.
+
+231
+00:17:49,770 --> 00:17:52,800
+Which we had previously defined you in the head of file.
+
+232
+00:17:55,900 --> 00:17:57,490
+OK, so now I'll just inspect this.
+
+233
+00:17:58,360 --> 00:17:59,080
+This looks good.
+
+234
+00:18:01,960 --> 00:18:03,310
+And up here, this message.
+
+235
+00:18:03,700 --> 00:18:04,870
+This should be disconnected.
+
+236
+00:18:05,800 --> 00:18:06,940
+So let's log it correctly.
+
+237
+00:18:07,810 --> 00:18:09,010
+And so just be sure of that.
+
+238
+00:18:10,180 --> 00:18:11,500
+And then now this should be static.
+
+239
+00:18:13,940 --> 00:18:16,400
+OK, now let's build to be sure, there's no errors.
+
+240
+00:18:26,750 --> 00:18:27,700
+OK, that looks good.
+
+241
+00:18:28,390 --> 00:18:30,520
+So let's finalize and test this in the next lesson.
+

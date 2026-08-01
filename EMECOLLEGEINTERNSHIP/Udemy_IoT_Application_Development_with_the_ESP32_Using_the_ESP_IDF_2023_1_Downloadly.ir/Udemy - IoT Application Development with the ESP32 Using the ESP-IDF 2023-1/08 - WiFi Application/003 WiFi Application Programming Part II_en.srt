@@ -1,0 +1,548 @@
+1
+00:00:06,710 --> 00:00:08,660
+All right, so first, the tests come and head off.
+
+2
+00:00:08,810 --> 00:00:13,100
+We're going to find the task information for the Wi-Fi application free, arduous task.
+
+3
+00:00:13,820 --> 00:00:18,020
+OK, so who will define details for the Wi-Fi application task?
+
+4
+00:00:21,220 --> 00:00:25,150
+And we'll define here the wi fi app tests tech sites.
+
+5
+00:00:28,540 --> 00:00:30,220
+As four thousand ninety six bytes.
+
+6
+00:00:32,659 --> 00:00:36,320
+Next to find the wi fi app task priority.
+
+7
+00:00:39,540 --> 00:00:40,590
+And we can make it five.
+
+8
+00:00:41,760 --> 00:00:44,650
+Next to find the Wi-Fi app task Korede.
+
+9
+00:00:48,380 --> 00:00:49,250
+As zero.
+
+10
+00:00:50,670 --> 00:00:56,050
+All right, so that's it, so now we can head over to the wi fi app that see file and we need free auto,
+
+11
+00:00:56,080 --> 00:00:58,110
+so let's include free autos.
+
+12
+00:01:02,100 --> 00:01:03,630
+Slash free autos storage.
+
+13
+00:01:06,350 --> 00:01:09,530
+And will eventually use event groups, so include free autos.
+
+14
+00:01:11,320 --> 00:01:12,910
+Slash event group stage.
+
+15
+00:01:16,340 --> 00:01:18,380
+Next include autos.
+
+16
+00:01:21,010 --> 00:01:26,350
+Task Sturridge will also need to include Espérer Duddridge.
+
+17
+00:01:30,180 --> 00:01:32,610
+Let's also include the ESP luggage.
+
+18
+00:01:36,880 --> 00:01:39,790
+And next include the ESP wi fi.
+
+19
+00:01:42,880 --> 00:01:44,980
+H for wife, driver.
+
+20
+00:01:46,380 --> 00:01:47,610
+And let's also include.
+
+21
+00:01:49,470 --> 00:01:52,440
+Lightweight IP slash net DB storage.
+
+22
+00:01:54,090 --> 00:01:56,250
+And include here, the rugby.
+
+23
+00:01:58,040 --> 00:01:58,310
+LED.
+
+24
+00:02:00,800 --> 00:02:04,130
+We also need our tasks underscore a common Derek.
+
+25
+00:02:06,870 --> 00:02:09,300
+And of course, we need a Wi-Fi uptick.
+
+26
+00:02:11,640 --> 00:02:15,420
+Next will create a tag used for ESP serial console messages.
+
+27
+00:02:18,050 --> 00:02:21,410
+And we'll say static const char tag.
+
+28
+00:02:25,180 --> 00:02:27,310
+And call it wi fi underscore app.
+
+29
+00:02:30,440 --> 00:02:32,180
+And here, let's create a Q handle.
+
+30
+00:02:34,620 --> 00:02:36,870
+Used to manipulate the main cue of events here.
+
+31
+00:02:41,020 --> 00:02:43,030
+And we'll say static to handle.
+
+32
+00:02:46,120 --> 00:02:47,140
+Underscored T.
+
+33
+00:02:48,310 --> 00:02:50,680
+And call it wi fi app to handle.
+
+34
+00:02:55,350 --> 00:02:57,840
+And next, we'll need the network interface objects.
+
+35
+00:02:58,830 --> 00:03:00,780
+For the station and access point.
+
+36
+00:03:03,880 --> 00:03:12,430
+And that'll be ESPN that if underscored T pointer to our external ESPN that if they stay variable.
+
+37
+00:03:13,580 --> 00:03:15,080
+And let's initialize that to now.
+
+38
+00:03:15,920 --> 00:03:19,040
+We also need our ESP unit if a variable.
+
+39
+00:03:25,200 --> 00:03:26,790
+Initialized to null as well.
+
+40
+00:03:27,810 --> 00:03:28,380
+All right, good.
+
+41
+00:03:28,990 --> 00:03:31,260
+So now let's head over to the wife head of file.
+
+42
+00:03:33,080 --> 00:03:34,460
+We can grab our prototypes.
+
+43
+00:03:37,510 --> 00:03:39,530
+Well, let's define them here in the Dead Sea file.
+
+44
+00:03:45,480 --> 00:03:51,810
+So let's first define a Wi-Fi app, start function, and in this function, we'll handle some initialization
+
+45
+00:03:51,810 --> 00:03:53,610
+and also define the Wi-Fi app.
+
+46
+00:03:53,670 --> 00:03:54,630
+Arduous task.
+
+47
+00:03:55,260 --> 00:04:03,840
+So first, we're going to log a message and we're going to use ESP log info and say tag starting wi
+
+48
+00:04:03,840 --> 00:04:04,890
+fi application.
+
+49
+00:04:08,910 --> 00:04:15,180
+OK, so this ESP log information will take our tag and our message string and log it to the serial console.
+
+50
+00:04:16,019 --> 00:04:16,380
+All right.
+
+51
+00:04:17,190 --> 00:04:19,380
+So next we'll start our Wi-Fi started.
+
+52
+00:04:20,890 --> 00:04:25,870
+LED and state rugby led by fire started.
+
+53
+00:04:28,680 --> 00:04:32,010
+And next, we'll need to disable default by logging messages.
+
+54
+00:04:36,390 --> 00:04:43,050
+Because we don't want so many messages log to the console, and for that, we'll say ESP log level.
+
+55
+00:04:47,950 --> 00:04:51,220
+WI fi and the level is ISP log none.
+
+56
+00:04:56,510 --> 00:04:59,030
+All right, so now we'll create a message queue.
+
+57
+00:05:01,810 --> 00:05:04,000
+Using our wi fi app to handle.
+
+58
+00:05:06,860 --> 00:05:08,420
+And use excu create.
+
+59
+00:05:12,630 --> 00:05:15,480
+To create a queue capable of holding the size of three.
+
+60
+00:05:17,760 --> 00:05:23,910
+Of Wi-Fi app message structures, so we can just simply grab our Wi-Fi, a message struck.
+
+61
+00:05:25,130 --> 00:05:25,760
+Place it here.
+
+62
+00:05:27,970 --> 00:05:31,720
+And then let's start the Wi-Fi application task.
+
+63
+00:05:35,030 --> 00:05:37,820
+And for that, will use X to create Penta Core.
+
+64
+00:05:41,150 --> 00:05:44,120
+And he will put a reference to the task function that will create.
+
+65
+00:05:45,280 --> 00:05:47,140
+Call it wi fi app Teske.
+
+66
+00:05:49,480 --> 00:05:51,880
+And here at the name WI app task.
+
+67
+00:05:54,110 --> 00:05:57,440
+Next, will into the wi fi app Stack Size.
+
+68
+00:06:01,580 --> 00:06:05,690
+And here this is no as we're not passing any parameters.
+
+69
+00:06:06,950 --> 00:06:08,330
+And now put the wi fi app.
+
+70
+00:06:09,710 --> 00:06:10,760
+Task priority.
+
+71
+00:06:15,950 --> 00:06:19,460
+And the next one is no, as we aren't using a task handle.
+
+72
+00:06:20,720 --> 00:06:24,080
+And here this is our wi fi app, Task Corps.
+
+73
+00:06:28,510 --> 00:06:31,960
+Right, so now let's head over to the Wi-Fi apps and message function.
+
+74
+00:06:33,400 --> 00:06:37,060
+So first, we'll create an instance of our wi fi epic message struct.
+
+75
+00:06:44,850 --> 00:06:51,480
+And call it message, and then we'll set the message, Heidi, to the message I'd passed into the function.
+
+76
+00:06:54,730 --> 00:07:01,300
+And we're going to return the result of sending to our cue using excuse send.
+
+77
+00:07:04,290 --> 00:07:06,060
+And we have to specify the handle.
+
+78
+00:07:09,000 --> 00:07:10,680
+And the reference to the message.
+
+79
+00:07:11,820 --> 00:07:14,250
+And the time up will be Port Max delay.
+
+80
+00:07:20,260 --> 00:07:25,180
+So here we're going to pass the message to the function and then send it to the queue specifying our
+
+81
+00:07:25,180 --> 00:07:25,600
+handle.
+
+82
+00:07:27,990 --> 00:07:33,450
+And like I said, so far, we're only we only have these messages here available.
+
+83
+00:07:37,470 --> 00:07:41,730
+Right, so now let's define the main task for the Wi-Fi application.
+
+84
+00:07:44,320 --> 00:07:47,440
+And the parameters is a point of variable parameter.
+
+85
+00:07:50,430 --> 00:07:51,840
+Which can be passed to the function.
+
+86
+00:07:54,590 --> 00:07:58,520
+And here we're going to say static void, why fi app task?
+
+87
+00:08:00,780 --> 00:08:03,720
+And it's a void pointer PV parameter.
+
+88
+00:08:06,620 --> 00:08:12,050
+And now this will be our main task for the Wi-Fi application, where we initialize Wi-Fi and receive
+
+89
+00:08:12,050 --> 00:08:14,900
+all key messages which determines the flow of the application.
+
+90
+00:08:15,830 --> 00:08:23,180
+So we'll need to define some set of functions which initialize the event handler and the TCP IP stack
+
+91
+00:08:23,270 --> 00:08:29,990
+in the Wi-Fi config, as well as the soft API config before we start wi fi and send the first message
+
+92
+00:08:29,990 --> 00:08:30,530
+to the queue.
+
+93
+00:08:31,130 --> 00:08:35,960
+So I'll lay them all out right here first and then we'll define them one by one.
+
+94
+00:08:36,260 --> 00:08:41,330
+So let's create an instance of the wi fi up cue message struct and call it message.
+
+95
+00:08:43,690 --> 00:08:46,720
+Then next, we'll initialize the event handler.
+
+96
+00:08:49,650 --> 00:08:53,190
+And we'll create a function called wi fi app Event Handler in it.
+
+97
+00:09:00,280 --> 00:09:03,550
+Also need to initialize the TCP IP stack.
+
+98
+00:09:06,720 --> 00:09:13,080
+And why fi config and we're going to call it wi fi app default wi fi.
+
+99
+00:09:14,160 --> 00:09:14,580
+And it.
+
+100
+00:09:16,660 --> 00:09:19,330
+And the next will do the same for the soft AP config.
+
+101
+00:09:23,000 --> 00:09:25,970
+And call it wi fi, soft AP config.
+
+102
+00:09:29,460 --> 00:09:31,140
+And then here we can start by five.
+
+103
+00:09:35,220 --> 00:09:39,450
+And here, let's SPRO check, so we'll know if the function returns in error.
+
+104
+00:09:45,030 --> 00:09:47,370
+So call ESP wi fi start now.
+
+105
+00:09:54,210 --> 00:09:57,080
+Then next, we can send the first event message.
+
+106
+00:09:59,250 --> 00:10:01,950
+And we'll use a wi fi app, send message.
+
+107
+00:10:03,840 --> 00:10:07,710
+And since the wi fi start HTP server message.
+
+108
+00:10:13,740 --> 00:10:15,990
+All right, so now we can create our endless loop.
+
+109
+00:10:16,410 --> 00:10:17,190
+So come here.
+
+110
+00:10:18,130 --> 00:10:22,330
+And we're going to say four with two semicolons in parentheses.
+
+111
+00:10:24,680 --> 00:10:27,890
+And then say, if execute, receive.
+
+112
+00:10:30,860 --> 00:10:33,380
+And for the first parameter, we need a cue handle.
+
+113
+00:10:37,660 --> 00:10:40,600
+For the second parameter, we need a reference to the message.
+
+114
+00:10:42,530 --> 00:10:44,000
+Our message right here, right?
+
+115
+00:10:45,090 --> 00:10:47,880
+And for the third parameter, it'll be put max delay.
+
+116
+00:10:53,520 --> 00:10:57,880
+And now will say switch message, that message I.D..
+
+117
+00:11:01,740 --> 00:11:05,340
+In the first case will be wi fi app Message Start HTTP Server.
+
+118
+00:11:09,910 --> 00:11:10,570
+OK, great.
+
+119
+00:11:13,020 --> 00:11:16,560
+And here we can log a message using ESP log information.
+
+120
+00:11:18,280 --> 00:11:19,180
+With our tag.
+
+121
+00:11:20,960 --> 00:11:23,750
+And our message, which will be the message genome.
+
+122
+00:11:26,090 --> 00:11:29,630
+And then we'll create a function called FTP Server Start.
+
+123
+00:11:33,950 --> 00:11:37,010
+And will define this later, so just comment it out for now.
+
+124
+00:11:38,820 --> 00:11:43,170
+And then we'll call our IGB led http server started function here.
+
+125
+00:11:44,370 --> 00:11:45,720
+And then we can include a break.
+
+126
+00:11:46,990 --> 00:11:50,530
+And then the next case for why fi message?
+
+127
+00:11:52,330 --> 00:11:58,090
+Connecting from HTP server and then just log a message for this case for now.
+
+128
+00:12:06,740 --> 00:12:07,790
+And then include the break.
+
+129
+00:12:09,050 --> 00:12:12,440
+And the next case will be the wi fi app message.
+
+130
+00:12:13,460 --> 00:12:15,440
+Stay connected, got IP.
+
+131
+00:12:16,880 --> 00:12:17,840
+Log the message here.
+
+132
+00:12:25,990 --> 00:12:29,020
+And then we're going to call be led by five connected.
+
+133
+00:12:33,630 --> 00:12:34,560
+And then we're going to break.
+
+134
+00:12:36,310 --> 00:12:38,320
+And also, we can leave a default break right here.
+
+135
+00:12:44,400 --> 00:12:46,500
+OK, next, we can start defining these functions.
+
+136
+00:12:46,860 --> 00:12:48,640
+But I think now is a good time to take a break.
+
+137
+00:12:49,050 --> 00:12:53,340
+So let's continue with defining the Wi-Fi app event handler and its function in the next lesson.
+

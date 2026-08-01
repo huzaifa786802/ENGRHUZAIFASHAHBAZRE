@@ -1,0 +1,1000 @@
+1
+00:00:06,820 --> 00:00:07,180
+Okay.
+
+2
+00:00:07,180 --> 00:00:10,870
+So we're going to set up the wi fi programming section by adding a few new files.
+
+3
+00:00:11,410 --> 00:00:13,300
+So first, let's add a new source file.
+
+4
+00:00:13,660 --> 00:00:15,700
+So let's add a new source file in the main here.
+
+5
+00:00:20,470 --> 00:00:22,660
+And call it wi fi app dot c.
+
+6
+00:00:25,000 --> 00:00:26,530
+And now let's add a new header file.
+
+7
+00:00:29,870 --> 00:00:32,000
+And call it wi fi app h.
+
+8
+00:00:34,700 --> 00:00:36,170
+And let's add another header file.
+
+9
+00:00:39,040 --> 00:00:40,790
+And call it tasks common.
+
+10
+00:00:43,300 --> 00:00:47,740
+And in this set of file, we'll keep all the information for the free autos tasks that will create throughout
+
+11
+00:00:47,740 --> 00:00:48,220
+the course.
+
+12
+00:00:50,880 --> 00:00:56,070
+And now let's head over to the C make list file and now we're going to add the wi fi app source file.
+
+13
+00:00:59,350 --> 00:00:59,650
+Okay.
+
+14
+00:00:59,650 --> 00:00:59,980
+Great.
+
+15
+00:01:01,400 --> 00:01:06,500
+And now let's head over to the wife of a --, and he will define the wifely application settings
+
+16
+00:01:06,800 --> 00:01:09,500
+and create the network interface objects for the access point.
+
+17
+00:01:09,500 --> 00:01:14,810
+And the station also will add some preliminary message IDs for the application tasks and a structure
+
+18
+00:01:14,810 --> 00:01:15,740
+for the message queue.
+
+19
+00:01:16,010 --> 00:01:20,600
+Additionally, we'll have a prototype for a function to send a message to the cube and another for starting
+
+20
+00:01:20,600 --> 00:01:22,070
+the wi fi application task.
+
+21
+00:01:22,370 --> 00:01:23,750
+So first we need to include.
+
+22
+00:01:25,430 --> 00:01:30,680
+ESPN network interface, and that's necessary for the network interface objects.
+
+23
+00:01:32,190 --> 00:01:34,770
+So here, let's define the Wi-Fi application settings.
+
+24
+00:01:36,780 --> 00:01:39,780
+And let's first define the wi fi app as a side.
+
+25
+00:01:42,770 --> 00:01:45,620
+And we'll call it SB 32 AP.
+
+26
+00:01:48,600 --> 00:01:49,830
+And that's the access point.
+
+27
+00:01:49,860 --> 00:01:50,190
+Name.
+
+28
+00:01:51,560 --> 00:01:57,230
+And in case you need a little clarification, the SSA D is the service set identifier and you'll encounter
+
+29
+00:01:57,230 --> 00:01:59,150
+this when trying to connect to a wireless network.
+
+30
+00:01:59,420 --> 00:02:05,240
+So when we connect later, you'll see the ISP 32 SSI ID to show up in the list of wireless networks
+
+31
+00:02:05,240 --> 00:02:07,130
+on your PC or mobile device.
+
+32
+00:02:07,670 --> 00:02:07,970
+Okay.
+
+33
+00:02:07,970 --> 00:02:11,030
+So next, let's define the wi fi AP password.
+
+34
+00:02:14,950 --> 00:02:20,410
+And this is the password that you'll into when connecting to the ESP via the Asus I.D. we had just defined
+
+35
+00:02:20,750 --> 00:02:24,820
+the now call it password for simplicity, but you can call it whatever you like.
+
+36
+00:02:27,800 --> 00:02:30,860
+So this will be the Wi-Fi access point password.
+
+37
+00:02:33,900 --> 00:02:34,200
+Okay.
+
+38
+00:02:34,200 --> 00:02:36,900
+So now let's define the Wi-Fi app channel.
+
+39
+00:02:40,900 --> 00:02:44,320
+And we'll use Channel one as the Access Point Channel.
+
+40
+00:02:46,850 --> 00:02:53,480
+And regarding Wi-Fi channels, the ISP 32 operates in the 2.4 gigahertz range, where there are 14 channels
+
+41
+00:02:53,480 --> 00:02:57,980
+spaced five megahertz apart, except for a 12 megahertz base before Channel 14.
+
+42
+00:02:58,760 --> 00:03:01,370
+So to guarantee no interference in any circumstances.
+
+43
+00:03:01,520 --> 00:03:07,880
+The Wi-Fi protocol requires 16.25 to 22 megahertz of channel separation, as shown here.
+
+44
+00:03:09,900 --> 00:03:14,490
+And if you check the impressive documentation and the resources that I've provided, it's mentioned
+
+45
+00:03:14,490 --> 00:03:18,540
+that there are some factors that should be considered by the developer when programming channel selection
+
+46
+00:03:18,540 --> 00:03:25,200
+behavior, which are interference concerns, legal considerations and FCC rules and transmit power.
+
+47
+00:03:25,470 --> 00:03:29,340
+For example, one eight or 2.11 transmitter is using Channel one.
+
+48
+00:03:29,580 --> 00:03:35,220
+The other may use Channel five or six, and using Channel two or three is not recommended in about legal
+
+49
+00:03:35,220 --> 00:03:36,150
+considerations.
+
+50
+00:03:36,420 --> 00:03:39,750
+Channels one through 11 may be used safely in most countries in the world.
+
+51
+00:03:39,900 --> 00:03:41,850
+So we went with Channel one in this course.
+
+52
+00:03:42,090 --> 00:03:47,160
+But feel free to check out this document or any other resources for additional information if you have
+
+53
+00:03:47,160 --> 00:03:48,750
+concerns about channel selection.
+
+54
+00:03:49,320 --> 00:03:56,910
+So next, we'll define the wi fi app visibility, which we'll call wi fi app assisted hidden.
+
+55
+00:04:03,140 --> 00:04:04,250
+And this will be zero.
+
+56
+00:04:05,240 --> 00:04:07,520
+And this defines the Wi-Fi access point.
+
+57
+00:04:07,520 --> 00:04:13,520
+Visibility of the ISP 32 and zero makes it visible, which means that you will actually see the ISP
+
+58
+00:04:13,520 --> 00:04:17,510
+32 SSD in your list of networks when trying to connect to it.
+
+59
+00:04:17,930 --> 00:04:18,290
+All right.
+
+60
+00:04:18,290 --> 00:04:19,250
+So let's comment.
+
+61
+00:04:19,279 --> 00:04:20,420
+App visibility.
+
+62
+00:04:22,700 --> 00:04:23,030
+Okay.
+
+63
+00:04:23,030 --> 00:04:26,180
+So next, let's define the FI app.
+
+64
+00:04:27,090 --> 00:04:28,110
+Max connection's.
+
+65
+00:04:30,180 --> 00:04:31,500
+And I'll into five here.
+
+66
+00:04:31,650 --> 00:04:33,090
+But you can make it whatever you like.
+
+67
+00:04:33,270 --> 00:04:35,940
+For example, you may only want to allow one device to connect.
+
+68
+00:04:36,600 --> 00:04:38,910
+All right, so this is our app, max clients.
+
+69
+00:04:42,250 --> 00:04:46,630
+The next will define the wi fi app beacon interval.
+
+70
+00:04:50,470 --> 00:04:52,150
+As 100 milliseconds.
+
+71
+00:04:53,050 --> 00:04:57,880
+And the beacon broadcasts interval is the time lag between each of the beacons sent by your router or
+
+72
+00:04:57,880 --> 00:04:58,630
+access point.
+
+73
+00:04:58,960 --> 00:05:00,940
+In the case it's the ESB 32.
+
+74
+00:05:01,150 --> 00:05:05,740
+So by definition, the lower the value, the smaller the time lag, which means that the beacon is sent
+
+75
+00:05:05,740 --> 00:05:10,300
+more frequently in, the higher the value, the bigger the time lag, which means that the beacon is
+
+76
+00:05:10,300 --> 00:05:11,560
+sent less frequently.
+
+77
+00:05:12,040 --> 00:05:16,270
+So the beacon is needed for your devices to receive information about the particular router.
+
+78
+00:05:16,450 --> 00:05:22,120
+When our case, the ISP in the beacon includes some information such as the side timestamp and other
+
+79
+00:05:22,120 --> 00:05:27,490
+various parameters, and most of the routers out of the box has a default beacon interval function value
+
+80
+00:05:27,500 --> 00:05:33,100
+set at 100 milliseconds, and the implications of the high beacon interval may be that you'll achieve
+
+81
+00:05:33,100 --> 00:05:35,800
+better throughput and thus better speed and performance.
+
+82
+00:05:36,280 --> 00:05:41,410
+And a lower beacon interval allows for faster discovery of the routers because it sends beacons more
+
+83
+00:05:41,410 --> 00:05:42,100
+frequently.
+
+84
+00:05:42,250 --> 00:05:45,430
+And this can help with catching the beacon in poor reception environments.
+
+85
+00:05:45,760 --> 00:05:51,790
+And if we check the impressive documentation, the beacon intervals available range from 100 to 60000
+
+86
+00:05:51,790 --> 00:05:55,120
+milliseconds with the default being 100 milliseconds.
+
+87
+00:05:55,360 --> 00:05:57,700
+So we'll go with 100 milliseconds in this course.
+
+88
+00:05:58,740 --> 00:05:59,130
+Okay.
+
+89
+00:05:59,130 --> 00:06:00,030
+So let's comment.
+
+90
+00:06:00,810 --> 00:06:02,340
+AP Beacon interval.
+
+91
+00:06:03,500 --> 00:06:05,060
+As 100 milliseconds.
+
+92
+00:06:06,440 --> 00:06:07,400
+As recommended.
+
+93
+00:06:09,140 --> 00:06:09,890
+Or default.
+
+94
+00:06:10,640 --> 00:06:11,000
+Okay.
+
+95
+00:06:11,000 --> 00:06:12,140
+So now let's define.
+
+96
+00:06:13,980 --> 00:06:16,500
+The wi fi access point IP address.
+
+97
+00:06:18,430 --> 00:06:22,930
+As 192.168.0.1
+
+98
+00:06:23,830 --> 00:06:25,990
+and this will be our default IP.
+
+99
+00:06:28,910 --> 00:06:34,670
+And again, this is the IP that we assigned to the soft tape and we are statically configuring the interface
+
+100
+00:06:34,670 --> 00:06:35,870
+of the ISP 32.
+
+101
+00:06:39,010 --> 00:06:43,420
+So next, let's define the Wi-Fi app, Gateway.
+
+102
+00:06:48,690 --> 00:06:54,120
+Which is also 192.168.0.1.
+
+103
+00:06:55,630 --> 00:06:57,400
+And that's our AP default.
+
+104
+00:06:58,560 --> 00:06:59,130
+Gateway.
+
+105
+00:07:00,800 --> 00:07:03,890
+Which should be the same as the IP address.
+
+106
+00:07:05,600 --> 00:07:05,930
+Okay.
+
+107
+00:07:05,930 --> 00:07:08,210
+So next, let's define.
+
+108
+00:07:09,130 --> 00:07:10,960
+The wi fi app net mask.
+
+109
+00:07:17,230 --> 00:07:22,180
+As to 55.255.255.0.
+
+110
+00:07:25,750 --> 00:07:27,550
+And that's a peanut mask.
+
+111
+00:07:28,650 --> 00:07:29,850
+So next, let's define.
+
+112
+00:07:31,210 --> 00:07:32,890
+The wi fi app bandwidth.
+
+113
+00:07:35,140 --> 00:07:43,150
+And we can use the wi fi underscore BW underscore HD 20, and that's from the wi fi driver for a 20
+
+114
+00:07:43,150 --> 00:07:44,230
+megahertz bandwidth.
+
+115
+00:07:44,440 --> 00:07:46,420
+And 40 megahertz is also an option.
+
+116
+00:07:46,960 --> 00:07:52,510
+And if you check the impressive documentation, the default bandwidth for station and AP mode is HD
+
+117
+00:07:52,510 --> 00:07:52,990
+40.
+
+118
+00:07:53,230 --> 00:07:59,530
+And in AP mode, the actual bandwidth is negotiated between the AP and the stations that connect to
+
+119
+00:07:59,530 --> 00:08:02,040
+the AP and it is HD 40.
+
+120
+00:08:02,050 --> 00:08:06,820
+If the AP in one of the stations supports HD 40, otherwise it's HD 20.
+
+121
+00:08:07,180 --> 00:08:10,300
+And there are various options for stations slash AP mode.
+
+122
+00:08:10,510 --> 00:08:12,070
+So feel free to read up on that.
+
+123
+00:08:12,460 --> 00:08:18,190
+And I'll just summarize the last paragraph here that theoretically the HD 40 can gain better throughput
+
+124
+00:08:18,340 --> 00:08:25,360
+because the maximum data rate can be up to 150 megabits per second or 72 megabits per second for HD
+
+125
+00:08:25,360 --> 00:08:25,750
+20.
+
+126
+00:08:26,200 --> 00:08:31,510
+So just summarizing and based on what I've read through, out of the resources, 20 megahertz minimizes
+
+127
+00:08:31,510 --> 00:08:35,500
+channel interference but is not suitable for applications with high data rates.
+
+128
+00:08:35,770 --> 00:08:40,179
+So feel free to choose the bandwidth that best suits your application while considering the surrounding
+
+129
+00:08:40,179 --> 00:08:40,690
+environment.
+
+130
+00:08:40,809 --> 00:08:46,360
+But I would go with 20 megahertz, so our AP bandwidth will be 20 megahertz.
+
+131
+00:08:50,530 --> 00:08:52,960
+And 40 megahertz is the other option.
+
+132
+00:08:58,320 --> 00:08:58,620
+Okay.
+
+133
+00:08:58,620 --> 00:09:02,820
+So next let's define the WI by state power save.
+
+134
+00:09:06,220 --> 00:09:08,860
+And from the driver, we'll use wi fi power.
+
+135
+00:09:08,860 --> 00:09:09,730
+Save none.
+
+136
+00:09:12,420 --> 00:09:18,360
+And again, let's go to the documentation and I'll just highlight that when we call S.P. Wife, I said
+
+137
+00:09:18,360 --> 00:09:19,140
+power save.
+
+138
+00:09:19,140 --> 00:09:25,020
+With wi fi power saved, none will disable modem sleep entirely and this has much higher power consumption
+
+139
+00:09:25,200 --> 00:09:28,980
+but provides minimum latency for receiving wi fi data in real time.
+
+140
+00:09:29,430 --> 00:09:35,820
+In the default mode, modem sleep mode is wi fi power save minimum modem, but will use flight five
+
+141
+00:09:35,820 --> 00:09:36,630
+power save none.
+
+142
+00:09:36,990 --> 00:09:37,410
+Okay.
+
+143
+00:09:37,620 --> 00:09:39,780
+So Power Save is not used.
+
+144
+00:09:43,270 --> 00:09:43,660
+Okay.
+
+145
+00:09:43,660 --> 00:09:45,730
+So next, let's provide a definition.
+
+146
+00:09:47,580 --> 00:09:49,710
+For the maximum assisted length.
+
+147
+00:09:51,530 --> 00:09:53,000
+And that length is 32.
+
+148
+00:09:54,580 --> 00:09:57,430
+Which is the I Tripoli standard maximum.
+
+149
+00:10:00,250 --> 00:10:04,590
+Right now, let's define the maximum password length.
+
+150
+00:10:08,270 --> 00:10:09,530
+And that is 64.
+
+151
+00:10:10,650 --> 00:10:12,870
+And that's also the, I believe, standard.
+
+152
+00:10:16,470 --> 00:10:17,610
+And next, we'll define.
+
+153
+00:10:18,650 --> 00:10:20,510
+The maximum connection retrace.
+
+154
+00:10:23,640 --> 00:10:25,380
+And I will use five tries.
+
+155
+00:10:26,400 --> 00:10:28,710
+And this pertains to the retried number.
+
+156
+00:10:29,690 --> 00:10:30,590
+On Disconnect.
+
+157
+00:10:33,320 --> 00:10:35,750
+So this will take care of our basic wildfire settings.
+
+158
+00:10:36,500 --> 00:10:41,660
+And just so you know where this definition comes from, this comes from the ISP, Wi-Fi types header
+
+159
+00:10:41,660 --> 00:10:42,020
+file.
+
+160
+00:10:42,770 --> 00:10:47,240
+And also, just so you're aware, these are the power safe mode options available.
+
+161
+00:10:48,110 --> 00:10:48,440
+Okay.
+
+162
+00:10:48,440 --> 00:10:53,300
+So here, let's create the network interface objects for the station and access point.
+
+163
+00:10:56,080 --> 00:10:58,950
+And we'll extend this so that it's visible everywhere.
+
+164
+00:11:00,070 --> 00:11:07,960
+And that's the ISP network interface structure as a pointer and call it ISP net if I stay.
+
+165
+00:11:09,110 --> 00:11:11,070
+And now we'll do the same for the access point.
+
+166
+00:11:15,030 --> 00:11:17,820
+And call it ESP that if AP.
+
+167
+00:11:20,230 --> 00:11:23,530
+Next we'll create the message IDs for the wi fi application task.
+
+168
+00:11:32,770 --> 00:11:35,950
+And I'll just make a note here for you that you can expand this.
+
+169
+00:11:37,960 --> 00:11:39,760
+Based on your application requirements.
+
+170
+00:11:42,430 --> 00:11:46,990
+And we'll actually expand this in the course and we'll say typedef enum.
+
+171
+00:11:49,200 --> 00:11:50,980
+And we can create a tag here for it.
+
+172
+00:11:51,000 --> 00:11:55,890
+It's really not necessary, but let's tag this as wi fi app message.
+
+173
+00:11:57,910 --> 00:12:00,760
+And say wi fi app message.
+
+174
+00:12:01,930 --> 00:12:03,640
+Start HTTP server.
+
+175
+00:12:06,160 --> 00:12:07,250
+And said, it's zero.
+
+176
+00:12:08,090 --> 00:12:13,070
+And we're going to send this photo SKU message where it will be received by a Wi-Fi application for
+
+177
+00:12:13,070 --> 00:12:14,000
+your autos test.
+
+178
+00:12:14,210 --> 00:12:17,270
+And when it's received, will handle starting the HTP server.
+
+179
+00:12:18,130 --> 00:12:21,290
+Okay, so we'll also have a wi fi app message.
+
+180
+00:12:23,130 --> 00:12:25,170
+Connecting from HTTP server.
+
+181
+00:12:30,000 --> 00:12:34,380
+And that's to let the wife by application know when we are connecting via the HTP server.
+
+182
+00:12:34,980 --> 00:12:35,260
+Okay.
+
+183
+00:12:35,260 --> 00:12:38,010
+And let's also create a wi fi app message.
+
+184
+00:12:40,060 --> 00:12:41,050
+Stay connected.
+
+185
+00:12:42,620 --> 00:12:43,160
+IP.
+
+186
+00:12:44,840 --> 00:12:50,240
+And we'll use this message to let the Wi-Fi application know when the ISP is connected to the external
+
+187
+00:12:50,240 --> 00:12:53,600
+access point or router and has been assigned an IP address.
+
+188
+00:12:53,870 --> 00:12:54,230
+Okay.
+
+189
+00:12:54,770 --> 00:12:57,740
+And let's call this wi fi app message.
+
+190
+00:12:59,500 --> 00:13:01,060
+Underscore E for Enam.
+
+191
+00:13:01,540 --> 00:13:01,870
+All right.
+
+192
+00:13:01,870 --> 00:13:03,760
+So we'll start with these messages for now.
+
+193
+00:13:04,180 --> 00:13:09,100
+And again, these messages will be handled by a Wi-Fi application for your Toast Task State machine
+
+194
+00:13:09,220 --> 00:13:11,440
+and will expand expanded as we progress in the course.
+
+195
+00:13:12,190 --> 00:13:13,150
+So now let's create.
+
+196
+00:13:14,700 --> 00:13:16,010
+A structure for the message.
+
+197
+00:13:16,020 --> 00:13:16,350
+Q.
+
+198
+00:13:20,590 --> 00:13:25,120
+And now we're really not doing much with this structure now other than sending the inner messages.
+
+199
+00:13:25,540 --> 00:13:29,620
+Well, I'll leave a note here for you as a reminder that you can expand it as you like.
+
+200
+00:13:30,430 --> 00:13:33,640
+So expand this based on your application requirements.
+
+201
+00:13:36,190 --> 00:13:40,870
+E.g. add another type and parameter as required.
+
+202
+00:13:44,010 --> 00:13:45,780
+So this will be a type to obstruct.
+
+203
+00:13:48,680 --> 00:13:50,600
+Why fight up Q message.
+
+204
+00:13:54,410 --> 00:13:56,000
+And we'll use our enum here.
+
+205
+00:13:56,300 --> 00:13:58,310
+WI fi app message enum.
+
+206
+00:13:59,610 --> 00:14:00,870
+And call it message ID.
+
+207
+00:14:02,900 --> 00:14:03,230
+All right.
+
+208
+00:14:03,400 --> 00:14:05,270
+Now, let's call it wi fi app.
+
+209
+00:14:07,010 --> 00:14:07,850
+Q message.
+
+210
+00:14:10,240 --> 00:14:11,290
+Underscore team.
+
+211
+00:14:14,380 --> 00:14:14,680
+Okay.
+
+212
+00:14:14,680 --> 00:14:14,970
+Good.
+
+213
+00:14:14,980 --> 00:14:16,510
+So now let's make our prototype.
+
+214
+00:14:19,320 --> 00:14:21,150
+Which sends a message to the Q.
+
+215
+00:14:23,900 --> 00:14:25,940
+Let's add a note about the parameter here.
+
+216
+00:14:27,270 --> 00:14:28,320
+And that's message it.
+
+217
+00:14:29,680 --> 00:14:33,730
+Which is the message idea from the wi fi message enum.
+
+218
+00:14:38,000 --> 00:14:39,950
+And the return will be true.
+
+219
+00:14:41,330 --> 00:14:43,760
+If an item was successfully sent to the queue.
+
+220
+00:14:49,360 --> 00:14:50,830
+Otherwise PD false.
+
+221
+00:14:55,610 --> 00:14:57,740
+And this is actually all caps you.
+
+222
+00:15:00,320 --> 00:15:00,620
+Okay.
+
+223
+00:15:00,650 --> 00:15:04,160
+And let's add a note here, because you may want to expand this on your own.
+
+224
+00:15:05,210 --> 00:15:07,880
+And I will say expand the parameter list.
+
+225
+00:15:09,950 --> 00:15:11,210
+Based on your requirements.
+
+226
+00:15:13,690 --> 00:15:17,800
+E.g. how you've expanded the wi fi app cube message structure.
+
+227
+00:15:29,990 --> 00:15:30,350
+Okay.
+
+228
+00:15:30,350 --> 00:15:30,680
+Good.
+
+229
+00:15:31,130 --> 00:15:34,760
+So for the function prototype, it'll return base type T.
+
+230
+00:15:37,980 --> 00:15:39,960
+And we'll call it wi fi app.
+
+231
+00:15:41,150 --> 00:15:42,080
+Send message.
+
+232
+00:15:44,520 --> 00:15:47,420
+And it'll take the wi fi app message enum.
+
+233
+00:15:49,440 --> 00:15:50,610
+And call it message ID.
+
+234
+00:15:53,430 --> 00:15:53,710
+Okay.
+
+235
+00:15:53,730 --> 00:15:54,240
+It looks good.
+
+236
+00:15:55,490 --> 00:15:56,630
+And the next prototype.
+
+237
+00:15:57,810 --> 00:15:58,620
+It starts the way.
+
+238
+00:15:58,660 --> 00:15:59,050
+Fine.
+
+239
+00:16:00,230 --> 00:16:01,250
+Auto task.
+
+240
+00:16:03,860 --> 00:16:07,430
+And let's say void wi fi app start.
+
+241
+00:16:08,780 --> 00:16:10,130
+And it takes no parameters.
+
+242
+00:16:12,150 --> 00:16:12,450
+All right.
+
+243
+00:16:12,450 --> 00:16:15,180
+So for the head of file, that should be all we need for now.
+
+244
+00:16:15,960 --> 00:16:18,330
+And it looks like there's a typo here, so let's fix that.
+
+245
+00:16:18,630 --> 00:16:24,240
+It should be 2552552550 for the net mask.
+
+246
+00:16:25,630 --> 00:16:25,720
+And.
+
+247
+00:16:25,810 --> 00:16:26,320
+Okay, great.
+
+248
+00:16:26,320 --> 00:16:31,150
+So I'll stop right here and we'll continue programming the wi fi application that C file for the next
+
+249
+00:16:31,150 --> 00:16:31,450
+one.
+
+250
+00:16:31,900 --> 00:16:36,460
+And be sure to check the resources for this lesson if you need further clarification on the topics covered.
+

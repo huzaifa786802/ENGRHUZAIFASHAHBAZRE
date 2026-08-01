@@ -1,0 +1,15 @@
+
+002 WLAN-Channels-Wikipedia
+https://en.wikipedia.org/wiki/List_of_WLAN_channels
+
+002 Channel-Selection-Considerations-Espressif
+https://www.espressif.com/sites/default/files/documentation/esp8266_wi-fi_channel_selection_guidelines_en.pdf
+
+002 AP-Basic-Configuration
+https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-guides/wifi.html#ap-basic-configuration
+
+002 WiFi-Bandwidth-Options
+https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/wifi.html#wi-fi-ht20-40
+
+002 WiFi-Power-saving-Mode
+https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/wifi.html#esp32-wi-fi-power-saving-mode

@@ -1,0 +1,320 @@
+1
+00:00:07,170 --> 00:00:12,330
+Everyone and welcome to the whitefly implementation section will provide an overview of the implementation
+
+2
+00:00:12,330 --> 00:00:16,170
+and some APIs that we'll use from the impressive Viotti development framework.
+
+3
+00:00:18,100 --> 00:00:20,440
+So first, let's take a look at our implementation overview.
+
+4
+00:00:21,840 --> 00:00:26,190
+From a high level perspective, meaning what the Abilify application is supposed to do without getting
+
+5
+00:00:26,190 --> 00:00:32,520
+into too much detail is, first of all, the ESP 32 should start its access point so that other devices
+
+6
+00:00:32,520 --> 00:00:33,270
+can connect to it.
+
+7
+00:00:33,870 --> 00:00:39,720
+This enables users to connect to it in order to access information such as sensor data, device information,
+
+8
+00:00:39,720 --> 00:00:46,140
+connection status and connection information like the IP address, gateway and netmask assigned to the
+
+9
+00:00:46,140 --> 00:00:47,070
+ESP 32.
+
+10
+00:00:47,760 --> 00:00:53,280
+Also, we'll have a user option to connect and disconnect from an access point and to display the local
+
+11
+00:00:53,280 --> 00:00:54,300
+time, etc..
+
+12
+00:00:55,410 --> 00:01:02,190
+Next, the Wi-Fi application will start an HTTP server and will program this after the wi fi programming
+
+13
+00:01:02,190 --> 00:01:07,980
+sections, and that web server will support a web page to do everything that I've just mentioned.
+
+14
+00:01:09,170 --> 00:01:15,410
+Also, the application contains a free autos task that receives cue messages that will use to coordinate
+
+15
+00:01:15,410 --> 00:01:19,230
+Wi-Fi and web server events, and we'll see more about this later.
+
+16
+00:01:19,760 --> 00:01:28,220
+By the way, feel free to check out these photos APIs to create, which creates the Q and Q send to
+
+17
+00:01:28,220 --> 00:01:36,560
+send data to the Q and Q received to receive data which again will use to coordinate the order of events
+
+18
+00:01:36,560 --> 00:01:38,180
+that occur in our application.
+
+19
+00:01:38,930 --> 00:01:43,790
+So I won't go into too much details about these because I'm confident that you'll have a general understanding
+
+20
+00:01:43,790 --> 00:01:44,600
+of how they work.
+
+21
+00:01:44,990 --> 00:01:51,620
+Once we implement them in the application and later in the course will connect the ESP 32 using previously
+
+22
+00:01:51,620 --> 00:01:52,610
+saved credentials.
+
+23
+00:01:53,360 --> 00:01:56,150
+So here's a simplified overview of the Wi-Fi application.
+
+24
+00:01:56,840 --> 00:02:03,000
+Basically, you'll have a connecting device, either your mobile phone or laptop, etc., which becomes
+
+25
+00:02:03,000 --> 00:02:05,750
+the station of the ESB 32 soft tape.
+
+26
+00:02:05,780 --> 00:02:13,970
+When connected, the DHP service from the ESP 32 soft app will dynamically assign an IP to your device
+
+27
+00:02:14,900 --> 00:02:19,880
+and you'll interact with the ESP 32 via the web page served by the web server.
+
+28
+00:02:21,340 --> 00:02:28,960
+Also, the P32 itself will start an access point slash station mode and will statically assign an IP
+
+29
+00:02:28,960 --> 00:02:30,400
+address to the soft API.
+
+30
+00:02:31,180 --> 00:02:38,740
+The DHP service dynamically assigns an IP address for connecting stations also will specify a maximum
+
+31
+00:02:38,740 --> 00:02:40,510
+number of stations that are allowed to connect.
+
+32
+00:02:41,720 --> 00:02:47,690
+And eventually, we'll update the application so that we can connect the SB 32 to an external access
+
+33
+00:02:47,690 --> 00:02:50,480
+point or router where there's an internet connection.
+
+34
+00:02:51,050 --> 00:02:56,420
+And this enables us to get the local time using Simple Network Time Protocol or S&P.
+
+35
+00:02:57,410 --> 00:03:04,280
+And also did keep service from the access point will dynamically assign an IP address to the SPF 30
+
+36
+00:03:04,280 --> 00:03:05,960
+to an hour application.
+
+37
+00:03:06,590 --> 00:03:10,580
+Now let's briefly talk about the Wi-Fi driver APIs from the ESB IDF.
+
+38
+00:03:11,820 --> 00:03:17,340
+So I suggest you visit the impressive documentation here about the Wi-Fi driver and take a couple of
+
+39
+00:03:17,340 --> 00:03:18,600
+minutes to browse through this.
+
+40
+00:03:19,870 --> 00:03:25,120
+Also, take a look at the programming model, as well as the fi events that occur in the background.
+
+41
+00:03:25,840 --> 00:03:28,570
+These events will be picked up by our event handler.
+
+42
+00:03:29,880 --> 00:03:36,150
+Also, check out the API reference here and feel free to browse through it, but I'll talk about selected
+
+43
+00:03:36,150 --> 00:03:37,170
+API shortly.
+
+44
+00:03:38,450 --> 00:03:42,260
+And also look into the network interface documentation here as well.
+
+45
+00:03:42,980 --> 00:03:48,920
+Just try to take note of the idea behind it and the architecture and scroll down to the programmers
+
+46
+00:03:48,920 --> 00:03:53,810
+manual, where the Wi-Fi event modes and default initialization I mentioned.
+
+47
+00:03:54,380 --> 00:03:56,780
+I'll discuss some APIs later from here as well.
+
+48
+00:03:57,690 --> 00:04:02,670
+All right, so we'll start configuring our Wi-Fi application by defining Wi-Fi settings in the header
+
+49
+00:04:02,670 --> 00:04:10,890
+file like the side of the USB to the password, the IP address, gateway and netmask, et cetera.
+
+50
+00:04:11,640 --> 00:04:17,880
+We'll also define the Wi-Fi application for the arduous task, and we can use either API here, but
+
+51
+00:04:17,880 --> 00:04:23,520
+will actually use the PIN to code version here so that we can specify which core that we want to allocate
+
+52
+00:04:23,520 --> 00:04:27,030
+the work to as we have two cores available on the ESB 32.
+
+53
+00:04:27,900 --> 00:04:33,420
+We'll also create an event handler so that certain Wi-Fi and IP events are automatically accounted for
+
+54
+00:04:33,420 --> 00:04:34,620
+by the Wi-Fi driver.
+
+55
+00:04:35,580 --> 00:04:41,010
+And at the start of your Wi-Fi application, we'll set up the default configuration by initializing
+
+56
+00:04:41,010 --> 00:04:46,620
+the TCP IP stack using the ESB network interface and IT function.
+
+57
+00:04:48,290 --> 00:04:54,890
+And will also create the basic Wi-Fi configuration settings by using the ESP Wi-Fi in IT function.
+
+58
+00:04:55,520 --> 00:05:00,470
+And by the way, this one must be called before any other Wi-Fi API is called.
+
+59
+00:05:01,510 --> 00:05:08,170
+Additionally, we'll need to use ISP Wi-Fi set storage, which sets the storage configuration type.
+
+60
+00:05:09,130 --> 00:05:11,830
+In which case will set the storage type to RAM?
+
+61
+00:05:13,100 --> 00:05:18,800
+Will then create the default configurations for both the default app and default station interfaces.
+
+62
+00:05:19,460 --> 00:05:25,190
+Please feel free to follow these links and read up on them in more detail and follow the link for the
+
+63
+00:05:25,190 --> 00:05:27,890
+default app and default station.
+
+64
+00:05:28,430 --> 00:05:33,080
+As the API mentioned, we need these to register the default Wi-Fi handlers.
+
+65
+00:05:34,850 --> 00:05:41,900
+The start of the application also includes defining the SPF 30 to soft day peak configuration will define
+
+66
+00:05:41,900 --> 00:05:49,010
+the AP settings for members of the wi fi config structure, which in this case will want to update selected
+
+67
+00:05:49,220 --> 00:05:51,610
+soft AP structure members listed here.
+
+68
+00:05:53,060 --> 00:06:02,020
+And the ESPN network interface said IP info sets the IP address of the soft AP and ESPN network interface,
+
+69
+00:06:02,030 --> 00:06:11,060
+D.H. CPS starts the DHP service for any connecting stations to the ESPN Thirty two so that IP addresses
+
+70
+00:06:11,060 --> 00:06:13,760
+can be dynamically assigned by the ESPN.
+
+71
+00:06:15,060 --> 00:06:23,430
+Also, S.P. Rifai, I said mode sets the mode, whether it's a mode, station mode or a station mode,
+
+72
+00:06:23,730 --> 00:06:31,920
+which is the mode that we will use and ESP Wi-Fi said Config sets the configuration of the access point
+
+73
+00:06:31,920 --> 00:06:35,730
+based on the Wi-Fi config structure members that we have previously set.
+
+74
+00:06:36,940 --> 00:06:42,160
+And S.P. Wi-Fi set bandwidth will use to set the bandwidth at 20 megahertz.
+
+75
+00:06:42,940 --> 00:06:49,570
+Additionally, we'll use ISP Wi-Fi, said Power Save, and we're going to set it to none because we
+
+76
+00:06:49,570 --> 00:06:52,240
+will not use power saving in this application.
+
+77
+00:06:53,240 --> 00:07:00,620
+Finally, we can call ISP wi fi start once we have done all of this, which starts wi fi in the mode
+
+78
+00:07:00,620 --> 00:07:05,480
+pre-specified, which in our case is wi fi mode app station mode.
+
+79
+00:07:09,510 --> 00:07:14,250
+All right, so feel free to keep this document open as we go through the programming section, if you
+
+80
+00:07:14,250 --> 00:07:17,190
+need to refer back to what's going on and I'll see you there.
+

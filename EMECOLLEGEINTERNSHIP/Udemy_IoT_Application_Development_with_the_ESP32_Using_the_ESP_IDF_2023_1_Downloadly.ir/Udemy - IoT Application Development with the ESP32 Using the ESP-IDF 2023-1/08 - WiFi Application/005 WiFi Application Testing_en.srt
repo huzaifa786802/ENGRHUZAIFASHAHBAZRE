@@ -1,0 +1,236 @@
+1
+00:00:06,990 --> 00:00:10,020
+OK, now we're going to start the Wi-Fi application so we can test it.
+
+2
+00:00:10,620 --> 00:00:13,170
+So first, let's go down to the Wi-Fi upstart function.
+
+3
+00:00:15,220 --> 00:00:18,100
+And copy it and then go to Maine, see?
+
+4
+00:00:20,150 --> 00:00:23,440
+And first, let's clean this up and make a comment.
+
+5
+00:00:24,500 --> 00:00:25,970
+Application entry point.
+
+6
+00:00:30,080 --> 00:00:33,590
+And now let's include envious flash storage.
+
+7
+00:00:36,170 --> 00:00:37,640
+And we also want to include.
+
+8
+00:00:39,560 --> 00:00:41,150
+Our Wi-Fi app that each.
+
+9
+00:00:44,640 --> 00:00:46,150
+And now let's clear out the EP, men.
+
+10
+00:00:47,290 --> 00:00:49,960
+And say Initialise NCVHS.
+
+11
+00:00:52,860 --> 00:00:58,140
+And here we're going to initialize non-volatile storage in the recommended manner because it actually
+
+12
+00:00:58,140 --> 00:01:03,990
+attempts to handle errors by raising the flash and retrying instead of simply aborting as the Espérer
+
+13
+00:01:03,990 --> 00:01:04,739
+check would do.
+
+14
+00:01:05,190 --> 00:01:07,800
+So here, let's say ESP error type.
+
+15
+00:01:09,030 --> 00:01:11,850
+Return equals India's flesh in it.
+
+16
+00:01:15,220 --> 00:01:16,840
+And then say, if return.
+
+17
+00:01:17,860 --> 00:01:20,980
+Is ESB ever envious?
+
+18
+00:01:21,280 --> 00:01:22,390
+No free pages.
+
+19
+00:01:25,110 --> 00:01:26,040
+Or the return?
+
+20
+00:01:27,180 --> 00:01:28,410
+Is ESP error?
+
+21
+00:01:30,160 --> 00:01:30,990
+Envious.
+
+22
+00:01:31,180 --> 00:01:32,230
+New version found.
+
+23
+00:01:36,590 --> 00:01:38,360
+Then will espera check.
+
+24
+00:01:42,270 --> 00:01:43,620
+Envy as fleshy race.
+
+25
+00:01:47,280 --> 00:01:48,600
+And then they'll set the return.
+
+26
+00:01:49,600 --> 00:01:51,700
+To the result of invest flesh in it.
+
+27
+00:01:57,060 --> 00:01:58,770
+Then let's ESB air check.
+
+28
+00:02:01,810 --> 00:02:03,100
+The final return result.
+
+29
+00:02:06,050 --> 00:02:10,550
+And we're only checking for these specific errors, as not all errors can be resolved by flashing and
+
+30
+00:02:10,550 --> 00:02:11,120
+retrying.
+
+31
+00:02:11,750 --> 00:02:12,080
+All right.
+
+32
+00:02:12,080 --> 00:02:14,480
+So if we follow the no free page's error.
+
+33
+00:02:16,400 --> 00:02:21,740
+This happens when the politician doesn't contain any empty pages, and here it's recommended to erase
+
+34
+00:02:21,740 --> 00:02:25,100
+the whole partition and call in flesh in it again.
+
+35
+00:02:29,940 --> 00:02:31,350
+And the new version found.
+
+36
+00:02:32,550 --> 00:02:38,670
+This happens when the envious partition contains data in a new format that's not recognized by this
+
+37
+00:02:38,670 --> 00:02:39,510
+version of code.
+
+38
+00:02:41,830 --> 00:02:44,330
+All right, so now let's start with five.
+
+39
+00:02:45,450 --> 00:02:47,190
+By calling wi fi upstart.
+
+40
+00:02:51,060 --> 00:02:52,110
+And then now let's build.
+
+41
+00:03:01,970 --> 00:03:03,140
+And flesh when you're ready.
+
+42
+00:03:14,470 --> 00:03:18,910
+And now let's keep our event handler messages handy here while we open a terminal.
+
+43
+00:03:20,310 --> 00:03:22,290
+So let's come here and open the terminal.
+
+44
+00:03:31,160 --> 00:03:36,350
+And here the terminal shows a couple of messages from the event handler and also a cue messages here.
+
+45
+00:03:38,540 --> 00:03:39,920
+So there's our AP start.
+
+46
+00:03:44,290 --> 00:03:47,080
+And our start http server Q message as well.
+
+47
+00:03:49,930 --> 00:03:50,320
+All right.
+
+48
+00:03:50,860 --> 00:03:51,220
+Great.
+
+49
+00:03:53,390 --> 00:03:54,620
+So now let's try to connect.
+
+50
+00:03:56,080 --> 00:04:00,370
+So just go to your available Wi-Fi networks and find your SPF 30 to.
+
+51
+00:04:01,440 --> 00:04:02,640
+And then type your password.
+
+52
+00:04:06,310 --> 00:04:08,590
+I just left minus password, so I'll connect.
+
+53
+00:04:11,860 --> 00:04:15,070
+And now we can see that the event handler captured the event for AP.
+
+54
+00:04:15,190 --> 00:04:16,360
+Stay Connected event.
+
+55
+00:04:21,279 --> 00:04:22,570
+Which is the event right here?
+
+56
+00:04:26,200 --> 00:04:31,750
+And also, we can see that our DHP server setup has assigned an IP to our station in the same network.
+
+57
+00:04:34,230 --> 00:04:34,860
+All right, great.
+
+58
+00:04:35,580 --> 00:04:40,560
+So that's it for now, and we'll continue to expand Wi-Fi throughout the course and in the next section,
+
+59
+00:04:40,560 --> 00:04:42,240
+we'll talk about the FTP server.
+
