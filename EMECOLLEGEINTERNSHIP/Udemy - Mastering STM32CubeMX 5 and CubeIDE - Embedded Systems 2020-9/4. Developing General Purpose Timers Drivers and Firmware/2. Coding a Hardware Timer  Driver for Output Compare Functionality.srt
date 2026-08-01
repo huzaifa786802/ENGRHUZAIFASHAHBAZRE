@@ -1,0 +1,1043 @@
+1
+00:00:00,830 --> 00:00:01,070
+Hello.
+
+2
+00:00:01,250 --> 00:00:01,700
+Welcome back.
+
+3
+00:00:01,880 --> 00:00:07,670
+In this lesson, we are going to see how to program the output to compare functionality of the timer
+
+4
+00:00:08,330 --> 00:00:14,180
+and what output compare meters as you shall see us execute in a block of code.
+
+5
+00:00:15,530 --> 00:00:24,800
+When a particular timestamp arrives, we can basically we can have, um, let's say, four different
+
+6
+00:00:24,800 --> 00:00:26,600
+functions that we want to execute.
+
+7
+00:00:26,720 --> 00:00:29,810
+We want to execute one every hundred milliseconds.
+
+8
+00:00:30,230 --> 00:00:33,640
+And let's say we want to execute another one every five hundred milliseconds.
+
+9
+00:00:33,730 --> 00:00:35,770
+A third one every four hundred millisecond.
+
+10
+00:00:36,170 --> 00:00:37,910
+So are these particular timestamps.
+
+11
+00:00:38,450 --> 00:00:44,450
+We can execute our particular functions and we can achieve that by using the output to compare functionality
+
+12
+00:00:44,450 --> 00:00:46,880
+of the time as we want to see how to do that.
+
+13
+00:00:46,910 --> 00:00:47,660
+In this lesson.
+
+14
+00:00:47,720 --> 00:00:50,450
+So I'm going to create my new Cuba mixed project.
+
+15
+00:00:52,780 --> 00:00:53,110
+Right.
+
+16
+00:00:53,200 --> 00:00:57,850
+So this my new project, I start off by Clarinda and topping out, Claire helping out.
+
+17
+00:00:58,690 --> 00:01:10,390
+And then the regular stuff system call says the buck over here, serial wire on the RCC or bypass the
+
+18
+00:01:10,390 --> 00:01:15,040
+high speed external Lopez crystal resonator like this.
+
+19
+00:01:15,940 --> 00:01:21,280
+Okay, I'm gonna enable our LCD for this experiment as well.
+
+20
+00:01:21,410 --> 00:01:25,630
+P five over here on the set STPI you output.
+
+21
+00:01:27,260 --> 00:01:31,020
+I'll rename it to early.
+
+22
+00:01:35,060 --> 00:01:35,420
+Right.
+
+23
+00:01:35,540 --> 00:01:40,850
+So to demonstrate this, because I don't want to be connected, extend or LCD in extend or things to
+
+24
+00:01:40,850 --> 00:01:41,690
+my new clipboard.
+
+25
+00:01:41,780 --> 00:01:48,380
+I'm going to use that discovery board in this experiment because the discard report has for Eltis and
+
+26
+00:01:48,380 --> 00:01:55,490
+I can configure all four LCD for outpoll compare such the one to time auto or kiss that particular LCD
+
+27
+00:01:55,490 --> 00:01:56,290
+is just toggled.
+
+28
+00:01:56,840 --> 00:01:57,080
+Right.
+
+29
+00:01:57,110 --> 00:01:58,310
+So I'm gonna change my board.
+
+30
+00:01:58,580 --> 00:01:59,690
+I'm gonna come over here.
+
+31
+00:02:04,000 --> 00:02:04,640
+I'll say no.
+
+32
+00:02:05,060 --> 00:02:06,750
+I'm going to change to the Discovery Board.
+
+33
+00:02:06,860 --> 00:02:10,160
+And another reason for the Discovery Board is it has more peace.
+
+34
+00:02:10,630 --> 00:02:11,090
+All right.
+
+35
+00:02:11,090 --> 00:02:17,030
+Here we have 64 piece by the Discovery Board, has 100 pins, although he's the same microcontroller
+
+36
+00:02:17,060 --> 00:02:18,440
+by a bigger package.
+
+37
+00:02:19,160 --> 00:02:19,490
+Right.
+
+38
+00:02:19,550 --> 00:02:20,450
+So I'm going to change it.
+
+39
+00:02:20,540 --> 00:02:25,340
+And like I said, is the same microcontroller should work the same way across the concept.
+
+40
+00:02:25,430 --> 00:02:26,360
+Everything is the same.
+
+41
+00:02:26,780 --> 00:02:31,760
+So there shouldn't be anything but just for my demo, for me to demonstrate to you how output to compare
+
+42
+00:02:31,760 --> 00:02:32,210
+works.
+
+43
+00:02:32,780 --> 00:02:37,430
+I need, you know, a lot of multiple pins which have access to times.
+
+44
+00:02:38,270 --> 00:02:42,410
+So I'll do SDM 32 for.
+
+45
+00:02:44,430 --> 00:02:45,060
+One, one.
+
+46
+00:02:51,460 --> 00:02:57,160
+Oh, come over here to MCU selectable, and then I'll search or search the board.
+
+47
+00:02:57,550 --> 00:03:02,530
+SDM 32 for one one over here.
+
+48
+00:03:03,550 --> 00:03:06,100
+And then this is estimated to have for discovery.
+
+49
+00:03:06,130 --> 00:03:08,880
+So if you have just a nuclear abort, you can just watch a lock.
+
+50
+00:03:09,270 --> 00:03:11,380
+And I'm sure you would understand this.
+
+51
+00:03:11,480 --> 00:03:13,060
+It shouldn't be an issue.
+
+52
+00:03:13,690 --> 00:03:16,390
+So we go through the same process.
+
+53
+00:03:20,250 --> 00:03:26,070
+So when we get to a part where the, um, the nuclear hasn't got enough pings, we can use the disco
+
+54
+00:03:26,280 --> 00:03:26,700
+sense.
+
+55
+00:03:26,790 --> 00:03:35,100
+If you know how to program the SDM 32 for one, one is the same, is the same whether you have a pancake
+
+56
+00:03:35,160 --> 00:03:38,940
+with a hundred pins or a package with 64 pins.
+
+57
+00:03:39,380 --> 00:03:41,460
+You can see this is the desperate.
+
+58
+00:03:41,490 --> 00:03:42,790
+We've got 100 pins here.
+
+59
+00:03:42,840 --> 00:03:46,950
+And the disco has more things we can play with, more LCD, et cetera.
+
+60
+00:03:47,460 --> 00:03:51,030
+So I'm going to start over here by Claire and Claire and the pin out.
+
+61
+00:03:53,910 --> 00:04:00,610
+And then do our standard stuff, come over here says Zero Wire and then RACC.
+
+62
+00:04:00,780 --> 00:04:05,600
+We still gonna bypass this and then this CHRISTOULAS later.
+
+63
+00:04:06,320 --> 00:04:06,650
+Okay.
+
+64
+00:04:08,070 --> 00:04:12,040
+So our Eltis are connected to PD.
+
+65
+00:04:12,050 --> 00:04:15,750
+Fifteen people, fourteen PD 13, MPD twelve.
+
+66
+00:04:16,070 --> 00:04:18,030
+The Discovery Board has four Eltis.
+
+67
+00:04:18,150 --> 00:04:26,380
+I'm going to set all of these Eltis, all of these pins which of the Eltis to be hot to be in the outputs.
+
+68
+00:04:26,470 --> 00:04:29,010
+Um Yelp compared mode.
+
+69
+00:04:29,490 --> 00:04:31,660
+So we just use an LDS on example here.
+
+70
+00:04:31,710 --> 00:04:37,830
+If you have the nuclear board and you want a particular thing to or care during the time, or let's
+
+71
+00:04:37,830 --> 00:04:44,250
+say you have a particular, uh, let's see how the buzzer like a speaker that you want to make sound
+
+72
+00:04:44,370 --> 00:04:49,050
+every 50 milliseconds and then every two hundred seconds you want to start a DC motor.
+
+73
+00:04:49,130 --> 00:04:51,930
+In every 400 seconds, you want another output.
+
+74
+00:04:52,470 --> 00:04:58,150
+You can connect those outputs to the corresponding piece.
+
+75
+00:04:58,800 --> 00:05:04,770
+But I'm gonna use OLED to show here cause I have to do this cool boat, lightning round, so I'll come
+
+76
+00:05:04,770 --> 00:05:05,210
+over here.
+
+77
+00:05:05,270 --> 00:05:15,690
+Then I said this to time for S.H. for a speedy 15 and then time for then Tyber for an MPD twelve.
+
+78
+00:05:16,650 --> 00:05:19,050
+So we've got all of our four entities.
+
+79
+00:05:19,260 --> 00:05:21,870
+Right, that we have on the Discovery Board.
+
+80
+00:05:22,560 --> 00:05:22,910
+Okay.
+
+81
+00:05:26,010 --> 00:05:31,350
+So now we have to open the timer module and enable them as output compared with dealing with time off
+
+82
+00:05:31,350 --> 00:05:33,240
+for here as we see time for.
+
+83
+00:05:33,690 --> 00:05:36,680
+So time are for we using Chernow's.
+
+84
+00:05:37,140 --> 00:05:38,340
+One, two, three, four.
+
+85
+00:05:38,910 --> 00:05:42,730
+So of open channel time a for here to expand it.
+
+86
+00:05:42,780 --> 00:05:43,650
+OK, click over here.
+
+87
+00:05:44,130 --> 00:05:45,030
+So Channel one.
+
+88
+00:05:45,120 --> 00:05:46,020
+I'm gonna select.
+
+89
+00:05:47,350 --> 00:05:47,730
+Output.
+
+90
+00:05:47,780 --> 00:05:48,350
+Compare.
+
+91
+00:05:51,780 --> 00:05:53,890
+It's basically this one here article compare.
+
+92
+00:05:54,900 --> 00:05:57,330
+And then Channel two, article compare.
+
+93
+00:05:58,140 --> 00:06:00,560
+Channel three, article compare.
+
+94
+00:06:00,750 --> 00:06:03,330
+Channel four, outspoken pay as well.
+
+95
+00:06:03,720 --> 00:06:08,900
+So we've set all of our four channels here to compare.
+
+96
+00:06:10,840 --> 00:06:14,250
+Next, whenever we're using the time, we've got to provide a clock source.
+
+97
+00:06:14,310 --> 00:06:15,180
+I'm going to click here.
+
+98
+00:06:15,280 --> 00:06:16,150
+Internal clock.
+
+99
+00:06:19,060 --> 00:06:26,760
+So now we've got to set the parameters of our time as so offers divide by forty eight thousand.
+
+100
+00:06:28,170 --> 00:06:33,990
+And then over here, the counter period 1000 like this.
+
+101
+00:06:37,470 --> 00:06:39,740
+Now we've got to configure each channel.
+
+102
+00:06:39,830 --> 00:06:41,390
+So we've got Channel one here.
+
+103
+00:06:42,050 --> 00:06:43,860
+We have to set the demoed.
+
+104
+00:06:44,860 --> 00:06:45,770
+You click over here.
+
+105
+00:06:46,340 --> 00:06:47,780
+So we want toggle on much.
+
+106
+00:06:47,840 --> 00:06:50,420
+We wanted to toggle when the counter is on much.
+
+107
+00:06:50,990 --> 00:06:58,270
+So the pose, let's say counter one or channel one, we can say 200 M.
+
+108
+00:06:58,270 --> 00:07:01,340
+S, we can pass 200 over here.
+
+109
+00:07:01,430 --> 00:07:06,500
+Remember, this is the counter reload help inside out a thousand times, which is one second 200 M.
+
+110
+00:07:06,500 --> 00:07:06,720
+S.
+
+111
+00:07:07,100 --> 00:07:11,710
+We can change Channel two also to toggle on March and Channel two.
+
+112
+00:07:11,750 --> 00:07:15,350
+We can also see maybe something like 500 M.
+
+113
+00:07:15,350 --> 00:07:15,620
+S.
+
+114
+00:07:21,610 --> 00:07:22,990
+And then we have to know three.
+
+115
+00:07:23,170 --> 00:07:25,750
+We changed that also to talk alone much.
+
+116
+00:07:26,560 --> 00:07:27,010
+And then.
+
+117
+00:07:29,810 --> 00:07:30,950
+750 E.M.S..
+
+118
+00:07:37,140 --> 00:07:40,660
+And then we can say Channel four should togo every second.
+
+119
+00:07:40,690 --> 00:07:42,090
+So I'll pass 1000 here.
+
+120
+00:07:42,880 --> 00:07:50,410
+So then we have one fifth of a second half a second three fourth of a second and then one second.
+
+121
+00:07:50,950 --> 00:07:51,400
+Like this.
+
+122
+00:07:51,910 --> 00:07:53,970
+And then we can see article compare preload.
+
+123
+00:07:54,040 --> 00:08:00,940
+We can just enable this enable, enable and then enable.
+
+124
+00:08:01,180 --> 00:08:06,920
+So these players will be talking when the respective time stamps.
+
+125
+00:08:06,970 --> 00:08:07,310
+Okay.
+
+126
+00:08:08,140 --> 00:08:15,520
+So it's like controlling Hardware's different hardware devices connected to different players at specific
+
+127
+00:08:15,520 --> 00:08:16,420
+time periods.
+
+128
+00:08:17,020 --> 00:08:17,430
+Right.
+
+129
+00:08:19,960 --> 00:08:22,900
+So once we are done we can generate the, um, the code.
+
+130
+00:08:23,410 --> 00:08:23,770
+Right.
+
+131
+00:08:24,490 --> 00:08:24,830
+Okay.
+
+132
+00:08:25,930 --> 00:08:26,720
+Minimize this.
+
+133
+00:08:26,980 --> 00:08:28,160
+Come to project manager.
+
+134
+00:08:29,830 --> 00:08:31,120
+I'll give the project a name.
+
+135
+00:08:35,660 --> 00:08:36,550
+Toma output.
+
+136
+00:08:36,610 --> 00:08:37,200
+Compare.
+
+137
+00:08:39,590 --> 00:08:42,280
+Then I'll leave everything the same click over here to generate
+
+138
+00:08:45,550 --> 00:08:46,380
+before I generate.
+
+139
+00:08:46,500 --> 00:08:49,420
+I have to select my Kubi D actually.
+
+140
+00:08:50,740 --> 00:08:51,220
+Okay.
+
+141
+00:08:51,700 --> 00:08:52,990
+No I'll click to generate.
+
+142
+00:08:57,650 --> 00:08:59,040
+And then open a project.
+
+143
+00:09:06,710 --> 00:09:08,120
+So there's our project.
+
+144
+00:09:08,240 --> 00:09:09,190
+Oh, do the cleanup.
+
+145
+00:09:13,760 --> 00:09:14,110
+Okay.
+
+146
+00:09:16,720 --> 00:09:17,020
+Right.
+
+147
+00:09:17,110 --> 00:09:21,800
+So this will or may not see CFR looks like we've got a wild time, a handler.
+
+148
+00:09:21,880 --> 00:09:23,560
+We use in time afore we know that.
+
+149
+00:09:26,760 --> 00:09:27,110
+Right.
+
+150
+00:09:27,610 --> 00:09:33,210
+And we enable how and then system clock GPL you and then time of for.
+
+151
+00:09:33,760 --> 00:09:35,800
+So this time a four in its function.
+
+152
+00:09:37,840 --> 00:09:44,760
+This the code generated for us, given the um, the options we chose as well as the channels the day
+
+153
+00:09:44,770 --> 00:09:47,060
+period or the post we search for the channels.
+
+154
+00:09:47,140 --> 00:09:50,260
+If we want to update that we can change from code.
+
+155
+00:09:50,320 --> 00:09:56,290
+Over here we said two hundred for the first channel and then Channel two we said half a second.
+
+156
+00:09:56,320 --> 00:09:57,370
+Which is five hundred.
+
+157
+00:09:57,820 --> 00:09:59,290
+And then three fourths a second.
+
+158
+00:09:59,320 --> 00:10:00,310
+And then one second.
+
+159
+00:10:00,760 --> 00:10:01,150
+Right.
+
+160
+00:10:03,910 --> 00:10:06,340
+So output compares actually very straightforward.
+
+161
+00:10:06,430 --> 00:10:09,700
+The only thing we need to do is start the timer functions.
+
+162
+00:10:09,940 --> 00:10:10,960
+That's all we have to do.
+
+163
+00:10:12,820 --> 00:10:18,220
+So let's go to a what time a module and see the function we need in order to start the timer channels.
+
+164
+00:10:18,520 --> 00:10:20,260
+So come to drive us over here.
+
+165
+00:10:21,190 --> 00:10:31,010
+All drivers and then source and then time at of C, it's gonna say it wants to open in scalability mode.
+
+166
+00:10:31,060 --> 00:10:33,910
+Oh say do you want to change scalability settings.
+
+167
+00:10:34,180 --> 00:10:34,840
+No I do not.
+
+168
+00:10:35,560 --> 00:10:36,610
+And um the C.
+
+169
+00:10:41,080 --> 00:10:46,960
+Okay, so they function we're looking for is the output to compare thought.
+
+170
+00:10:49,060 --> 00:10:51,270
+So over here, this function is whole.
+
+171
+00:10:51,970 --> 00:10:58,510
+Oh, see in it initializes the timer output compay according to specialized parameters.
+
+172
+00:10:59,890 --> 00:11:00,090
+OK.
+
+173
+00:11:00,160 --> 00:11:02,800
+This the initializes the article compare.
+
+174
+00:11:05,880 --> 00:11:06,080
+OK.
+
+175
+00:11:06,450 --> 00:11:12,430
+So there's the function we need starts the timer output, compare signal generation it takes to document.
+
+176
+00:11:12,450 --> 00:11:19,410
+The first argument is the apparatus of the arm, the time of the time, a handler.
+
+177
+00:11:19,560 --> 00:11:21,690
+And then the next argument is that Cherno.
+
+178
+00:11:21,750 --> 00:11:26,820
+So we need this and we're gonna call this for each Cherno and it returns the, um.
+
+179
+00:11:26,940 --> 00:11:27,210
+Yeah.
+
+180
+00:11:27,510 --> 00:11:28,770
+The status typedef.
+
+181
+00:11:30,360 --> 00:11:31,020
+Copy this.
+
+182
+00:11:31,380 --> 00:11:32,400
+And then come to mean.
+
+183
+00:11:36,630 --> 00:11:41,050
+So we can simply paste on here and the first argument is, oh, what time are.
+
+184
+00:11:42,180 --> 00:11:42,840
+This one here?
+
+185
+00:11:43,100 --> 00:11:48,030
+That should be the address of it almost on here like this.
+
+186
+00:11:48,090 --> 00:11:49,560
+And then the cherno.
+
+187
+00:11:50,280 --> 00:11:52,650
+So let's start with China one.
+
+188
+00:11:52,710 --> 00:11:55,630
+We do time on a school, Cherno.
+
+189
+00:11:56,940 --> 00:11:59,460
+It has to be all Cupps TIAA.
+
+190
+00:12:00,120 --> 00:12:01,560
+And the school, China.
+
+191
+00:12:01,560 --> 00:12:02,490
+What can the school want?
+
+192
+00:12:03,550 --> 00:12:07,590
+Okay, so we have to do this for two, three and four one.
+
+193
+00:12:10,470 --> 00:12:13,190
+So over here we just change this to China.
+
+194
+00:12:13,230 --> 00:12:14,580
+To China with three.
+
+195
+00:12:15,120 --> 00:12:16,140
+And then channel four.
+
+196
+00:12:16,200 --> 00:12:16,740
+Like this.
+
+197
+00:12:22,680 --> 00:12:24,290
+So that's all we have to do, actually.
+
+198
+00:12:24,360 --> 00:12:25,050
+We can build.
+
+199
+00:12:33,520 --> 00:12:34,750
+It's appealed successfully.
+
+200
+00:12:35,650 --> 00:12:37,560
+Let's debug gets you onto the board.
+
+201
+00:12:39,910 --> 00:12:42,580
+So I just click over here to go to the debulked you.
+
+202
+00:12:48,440 --> 00:12:48,980
+Okay.
+
+203
+00:13:00,990 --> 00:13:02,520
+Okay, so click here to run.
+
+204
+00:13:06,850 --> 00:13:08,900
+It's running, but nothing is happening.
+
+205
+00:13:12,130 --> 00:13:15,940
+Oh, I see what's going on right over here.
+
+206
+00:13:16,030 --> 00:13:19,030
+Our preschooler has to be four thousand eight hundred.
+
+207
+00:13:19,810 --> 00:13:20,980
+I'm going to come over here.
+
+208
+00:13:21,500 --> 00:13:22,840
+Worth the time I in it.
+
+209
+00:13:22,930 --> 00:13:24,280
+We don't need to go back to Cuba, Max.
+
+210
+00:13:24,370 --> 00:13:25,600
+We can just change from here.
+
+211
+00:13:26,380 --> 00:13:26,770
+Right.
+
+212
+00:13:28,120 --> 00:13:29,260
+So I've just changed it.
+
+213
+00:13:29,570 --> 00:13:29,890
+Okay.
+
+214
+00:13:30,010 --> 00:13:31,300
+I'll click over here to build.
+
+215
+00:13:37,220 --> 00:13:39,000
+And then click here to go to the debugger.
+
+216
+00:13:48,130 --> 00:13:49,360
+And then click here to run.
+
+217
+00:13:52,510 --> 00:13:53,480
+And as you can see.
+
+218
+00:13:54,960 --> 00:13:59,070
+We have our ladies Torkel in India, all during which we configured.
+
+219
+00:13:59,670 --> 00:14:00,960
+However we miss in one.
+
+220
+00:14:02,040 --> 00:14:03,300
+We have four channels.
+
+221
+00:14:03,450 --> 00:14:05,100
+However, we have just three of them.
+
+222
+00:14:05,100 --> 00:14:07,100
+Torkel in um.
+
+223
+00:14:08,620 --> 00:14:09,510
+Let me see.
+
+224
+00:14:11,480 --> 00:14:11,750
+Right.
+
+225
+00:14:11,800 --> 00:14:13,990
+So this is our Cuba next generation.
+
+226
+00:14:14,140 --> 00:14:18,580
+And the reason we have in just three ladies blinkers, that's Channel four.
+
+227
+00:14:18,650 --> 00:14:21,130
+We've not changed the mode over here.
+
+228
+00:14:21,160 --> 00:14:25,670
+The mode has to be torgau toggle on much just like the others.
+
+229
+00:14:25,750 --> 00:14:28,330
+But I failed to change the mode.
+
+230
+00:14:28,510 --> 00:14:29,770
+That is why it is like this.
+
+231
+00:14:30,370 --> 00:14:31,740
+So I'm going to change it in a code.
+
+232
+00:14:33,340 --> 00:14:34,270
+So over here.
+
+233
+00:14:34,300 --> 00:14:35,220
+Time off for.
+
+234
+00:14:36,100 --> 00:14:36,730
+Let's see.
+
+235
+00:14:36,740 --> 00:14:37,710
+We come down here.
+
+236
+00:14:42,640 --> 00:14:45,310
+We'll see mode over here said, oh, see mode.
+
+237
+00:14:46,890 --> 00:14:47,360
+Okay.
+
+238
+00:14:50,820 --> 00:14:53,270
+So O.S. mode time in a search over here.
+
+239
+00:14:53,310 --> 00:14:59,330
+So I'm simply going to copy O.C. Mode Tokyo cause O.C. Mode, Torgau is the mode for everyone.
+
+240
+00:15:00,480 --> 00:15:03,450
+Either that or I can simply delete this line.
+
+241
+00:15:03,600 --> 00:15:08,610
+And this is important that you understand this because it's a structure right over here.
+
+242
+00:15:08,610 --> 00:15:13,800
+We said the O.C. Mode or C mode member to Tokyo.
+
+243
+00:15:13,920 --> 00:15:21,750
+So anything that we write applies or C more to toggle applies to everything until we change the mode
+
+244
+00:15:21,750 --> 00:15:22,080
+again.
+
+245
+00:15:22,410 --> 00:15:25,850
+So over here we changed it from oh Seymour to Tokyo.
+
+246
+00:15:26,370 --> 00:15:28,460
+So I can simply delete this without change.
+
+247
+00:15:28,500 --> 00:15:32,190
+Want to help in such that all of them would have also moved to Tokyo.
+
+248
+00:15:32,840 --> 00:15:33,130
+Right.
+
+249
+00:15:33,240 --> 00:15:35,730
+So I'm going to come out and then they would again.
+
+250
+00:15:38,000 --> 00:15:39,170
+Click over here to build.
+
+251
+00:15:41,450 --> 00:15:42,060
+To build.
+
+252
+00:15:47,810 --> 00:15:50,200
+It's appeals successfully, quickly to go to debug.
+
+253
+00:15:51,040 --> 00:15:51,460
+Okay.
+
+254
+00:15:52,140 --> 00:15:53,410
+And then click here to run.
+
+255
+00:15:55,410 --> 00:15:56,030
+I can see.
+
+256
+00:15:56,060 --> 00:15:59,440
+No, we have all four LCD torkel in.
+
+257
+00:16:00,210 --> 00:16:00,880
+Yeah, totally.
+
+258
+00:16:01,460 --> 00:16:06,800
+At the rate that we've said it's using in the upper house, the polls that we set in that specific order.
+
+259
+00:16:07,130 --> 00:16:08,340
+So this order is what is lesson.
+
+260
+00:16:08,360 --> 00:16:11,990
+If you have any questions, just live in the Q&amp;A section and I'll see you later.
+
+261
+00:16:12,320 --> 00:16:13,040
+Have a nice day.
