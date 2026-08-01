@@ -1,0 +1,487 @@
+1
+00:00:00,210 --> 00:00:02,370
+To configure our time or for PWI.
+
+2
+00:00:02,970 --> 00:00:04,980
+I'm going to create a new project.
+
+3
+00:00:05,070 --> 00:00:06,270
+You project over here.
+
+4
+00:00:09,290 --> 00:00:10,830
+Or select my brought over here.
+
+5
+00:00:11,550 --> 00:00:12,470
+ASTM 32.
+
+6
+00:00:12,760 --> 00:00:13,760
+Four one one.
+
+7
+00:00:27,930 --> 00:00:30,110
+So let's let it pan out or come over here.
+
+8
+00:00:32,250 --> 00:00:33,090
+Claire Penult.
+
+9
+00:00:38,840 --> 00:00:45,770
+So basically, GWM is an output, will you speed up your home to drive things like servo motors, DC
+
+10
+00:00:45,770 --> 00:00:47,180
+Motors and even LCD?
+
+11
+00:00:47,630 --> 00:00:54,770
+So when we set a pin, when we set it up to him, he has to be connected to a pin such that the output
+
+12
+00:00:54,800 --> 00:00:57,530
+that we want to drive can be connected to that pin.
+
+13
+00:00:58,490 --> 00:01:05,360
+So if we want the pin that our LCD is connected to, which is P five, if we want the pin to have Peter
+
+14
+00:01:05,360 --> 00:01:11,840
+OBM, we have to verify that that pin can also be configured as a timer.
+
+15
+00:01:12,110 --> 00:01:13,590
+Because Peter B.M. is a timer.
+
+16
+00:01:13,640 --> 00:01:15,070
+We use a timer to create P2P.
+
+17
+00:01:15,480 --> 00:01:17,710
+So Peter five is where the ality is.
+
+18
+00:01:17,810 --> 00:01:21,180
+If you want to nominate a different pin, certainly you can use a different thing.
+
+19
+00:01:21,620 --> 00:01:25,190
+But to generate Peter, the PIN has to have a timer capability.
+
+20
+00:01:25,880 --> 00:01:31,730
+And when we click PE five, we realize that one of the options is timer to channel one.
+
+21
+00:01:31,790 --> 00:01:33,560
+So I'm going to select this one over here.
+
+22
+00:01:34,460 --> 00:01:39,050
+So we're going to select five to save us time to Channel one.
+
+23
+00:01:39,560 --> 00:01:44,530
+And then we're going to perform a well fed, a configuration or click.
+
+24
+00:01:44,990 --> 00:01:46,220
+Time is over here.
+
+25
+00:01:48,480 --> 00:01:51,630
+And then time to set a set of other.
+
+26
+00:01:54,070 --> 00:01:57,100
+And then we can, you know, with a configuration.
+
+27
+00:01:58,570 --> 00:02:01,060
+So we start off by enabling the clock source.
+
+28
+00:02:01,090 --> 00:02:02,560
+We're going to use internal clock.
+
+29
+00:02:03,010 --> 00:02:07,000
+And then the channel we use in the fourth time or two is Channel one.
+
+30
+00:02:07,030 --> 00:02:07,540
+So we've got.
+
+31
+00:02:08,340 --> 00:02:10,270
+So like Channel one over here.
+
+32
+00:02:10,510 --> 00:02:12,220
+Click the dropdown for Channel One.
+
+33
+00:02:15,540 --> 00:02:19,480
+And I'm going to select Pete OBM Generator, Pete OBM.
+
+34
+00:02:20,470 --> 00:02:20,770
+What is it?
+
+35
+00:02:20,800 --> 00:02:22,790
+Pete OBM generation Channel one.
+
+36
+00:02:22,890 --> 00:02:23,400
+Each one.
+
+37
+00:02:23,620 --> 00:02:24,030
+Right.
+
+38
+00:02:27,440 --> 00:02:33,740
+Now we need to set a clock configuration or come to the clock configuration tab over here and over here.
+
+39
+00:02:33,800 --> 00:02:35,000
+This is the default clock.
+
+40
+00:02:35,030 --> 00:02:38,240
+When you select nuclear abort in your setup, there's the clock.
+
+41
+00:02:38,260 --> 00:02:38,840
+You come with.
+
+42
+00:02:39,110 --> 00:02:44,340
+But my point is the SDM 32 for one one, ASTM 32.
+
+43
+00:02:44,390 --> 00:02:46,280
+It's written here for one one.
+
+44
+00:02:47,010 --> 00:02:54,080
+The other versions of SDM 32 F, whether it's the Air Force zero one and that one has a default clock
+
+45
+00:02:54,380 --> 00:02:55,700
+of 16 megahertz.
+
+46
+00:02:56,090 --> 00:02:58,010
+Because I don't want us to have any hiccups.
+
+47
+00:02:58,070 --> 00:03:02,900
+I want people to be able to run this code with the F one one and the F zero one.
+
+48
+00:03:03,200 --> 00:03:04,310
+I'm just going to set this to.
+
+49
+00:03:05,000 --> 00:03:10,760
+I'm going to change this to sixteen so that we all have the same clock and you don't need to have issues
+
+50
+00:03:11,090 --> 00:03:13,190
+because you may have a different clock.
+
+51
+00:03:14,590 --> 00:03:14,980
+Right.
+
+52
+00:03:16,030 --> 00:03:20,650
+So it's trying to set it to 16 is searching for the perfect arrangement.
+
+53
+00:03:21,120 --> 00:03:21,320
+Okay.
+
+54
+00:03:21,400 --> 00:03:26,140
+Once he says to 16, then everything here becomes 16.
+
+55
+00:03:28,980 --> 00:03:34,050
+There's one thing I'm going to set APB one per four o'clock here to 216 that will change this.
+
+56
+00:03:34,110 --> 00:03:34,830
+It's 16.
+
+57
+00:03:42,120 --> 00:03:51,690
+Okay, I can get 16 for APB, one perfect clock, but the rest change, I'll come back to 16 over here.
+
+58
+00:03:51,900 --> 00:03:56,430
+I see sometimes you get exactly what you want, sometimes you do not.
+
+59
+00:04:00,410 --> 00:04:01,360
+16 again.
+
+60
+00:04:06,980 --> 00:04:08,780
+So this setup looks fine.
+
+61
+00:04:08,810 --> 00:04:14,150
+We just have to make sure our time up, our timer, um, clocks are the same.
+
+62
+00:04:14,180 --> 00:04:19,700
+So I have my EPB one time clock, 60 megahertz APB to a time, a clock, 16 megahertz.
+
+63
+00:04:20,090 --> 00:04:22,610
+I think time or two is connected to a TV one or two.
+
+64
+00:04:22,700 --> 00:04:23,560
+I don't quite remember.
+
+65
+00:04:23,870 --> 00:04:25,730
+But we have both of them are 60 megahertz.
+
+66
+00:04:25,760 --> 00:04:26,960
+So there shouldn't be an issue.
+
+67
+00:04:27,260 --> 00:04:30,110
+You know how to find this information in the, um, in the user guide.
+
+68
+00:04:30,140 --> 00:04:31,130
+We saw that already.
+
+69
+00:04:31,430 --> 00:04:34,040
+So let's move on over here.
+
+70
+00:04:34,040 --> 00:04:37,900
+We can use one thousand as the pre-schooler 1000.
+
+71
+00:04:38,210 --> 00:04:45,620
+But to be more precise, because we come from zero 1000 becomes one one one like this because you count
+
+72
+00:04:45,620 --> 00:04:46,700
+zero one, two, three.
+
+73
+00:04:47,060 --> 00:04:53,060
+But in order not to confuse you, oh, just per 1000, just know that the more precise way is 1000,
+
+74
+00:04:53,150 --> 00:04:55,630
+minus one for the count up period.
+
+75
+00:04:55,640 --> 00:05:00,710
+We can, um, we can put sixteen thousand over here.
+
+76
+00:05:00,770 --> 00:05:05,300
+So like we explained earlier, you first divide by the pre-schooler and then you divide by the yump
+
+77
+00:05:05,720 --> 00:05:06,650
+to count up period.
+
+78
+00:05:07,160 --> 00:05:07,580
+Right.
+
+79
+00:05:09,170 --> 00:05:12,890
+So next we have to come configure the duty cycle over here.
+
+80
+00:05:12,890 --> 00:05:14,710
+The word true cycle is now used.
+
+81
+00:05:14,720 --> 00:05:16,420
+What is used instead is the polls.
+
+82
+00:05:16,690 --> 00:05:20,450
+We know duty cycle is often written in percentage form.
+
+83
+00:05:20,870 --> 00:05:22,400
+So what a duty cycle is.
+
+84
+00:05:22,460 --> 00:05:28,160
+The, um, the percentage of the posts, uh, is the um, basically the duty cycle.
+
+85
+00:05:29,540 --> 00:05:32,390
+This is our counter period.
+
+86
+00:05:32,630 --> 00:05:38,150
+If I take this count up period, which is sixteen thousand and I pass sixteen thousand to the polls,
+
+87
+00:05:38,690 --> 00:05:41,570
+this will mean this is one hundred percent duty cycle.
+
+88
+00:05:42,050 --> 00:05:46,990
+If I pass half of this value this will mean then it is 50 percent duty cycle.
+
+89
+00:05:47,000 --> 00:05:53,810
+If I pass a quarter of this value it would mean it is twenty five percent duty cycle so you can pass
+
+90
+00:05:53,810 --> 00:05:56,300
+one hundred fifty percent or 20 percent.
+
+91
+00:05:56,840 --> 00:06:07,520
+Well we can start off by just passing 50 percent or pass eighty thousand here like this so we can go
+
+92
+00:06:07,520 --> 00:06:09,790
+ahead and January type project or click over here.
+
+93
+00:06:09,830 --> 00:06:10,730
+General Project.
+
+94
+00:06:10,990 --> 00:06:11,760
+I'll give it a name.
+
+95
+00:06:11,780 --> 00:06:12,830
+Time Paedo p.m..
+
+96
+00:06:20,690 --> 00:06:27,180
+And also like to my to chain steam theory to cube idea and then generate code over here.
+
+97
+00:06:31,320 --> 00:06:32,800
+Click here to open the project.
+
+98
+00:06:35,050 --> 00:06:37,270
+So there's a project of finished the cleanup.
+
+99
+00:06:37,840 --> 00:06:40,960
+So all we have to do is start our timer with Peter.
+
+100
+00:06:41,070 --> 00:06:41,210
+You.
+
+101
+00:06:41,770 --> 00:06:44,420
+Come down here and call the function hall.
+
+102
+00:06:44,970 --> 00:06:45,800
+I'm a school teacher.
+
+103
+00:06:45,800 --> 00:06:47,740
+I am on a school.
+
+104
+00:06:50,450 --> 00:06:57,110
+Start learning to bracket of a sudden it's time to learn.
+
+105
+00:06:57,810 --> 00:07:05,390
+Then we passed the Cherno TMM channel to Channel One is what we use and channel on a school one like
+
+106
+00:07:05,390 --> 00:07:05,690
+this.
+
+107
+00:07:06,520 --> 00:07:11,510
+Okay, so we can build our project or click over here to build.
+
+108
+00:07:22,780 --> 00:07:23,910
+There is an arrow here.
+
+109
+00:07:24,030 --> 00:07:25,500
+This function is wrong.
+
+110
+00:07:25,530 --> 00:07:28,620
+It should be whole time paedo p.m. start.
+
+111
+00:07:29,100 --> 00:07:30,900
+So I have to put Pedo Beom over here.
+
+112
+00:07:31,890 --> 00:07:32,640
+Let's build again.
+
+113
+00:07:32,920 --> 00:07:34,050
+Click over here to build.
+
+114
+00:07:38,670 --> 00:07:39,780
+It's built successfully.
+
+115
+00:07:40,010 --> 00:07:41,470
+Let's debug and click over here.
+
+116
+00:08:03,060 --> 00:08:05,430
+Okay, click here to run.
+
+117
+00:08:07,760 --> 00:08:10,020
+And as you can see, the lady is totally.
+
+118
+00:08:13,210 --> 00:08:13,510
+Right.
+
+119
+00:08:13,570 --> 00:08:15,260
+So it's toggling based on the.
+
+120
+00:08:15,310 --> 00:08:17,270
+Pete OBM duty cycle in frequency.
+
+121
+00:08:17,380 --> 00:08:18,160
+So this or the rest.
+
+122
+00:08:18,190 --> 00:08:21,030
+If you have any questions, just let me know and I'll see you later.
