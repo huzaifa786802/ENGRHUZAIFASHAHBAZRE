@@ -1,0 +1,436 @@
+1
+00:00:07,050 --> 00:00:10,410
+And this lesson will implement the functionality behind the Disconnect button.
+
+2
+00:00:10,860 --> 00:00:15,840
+We'll start off here and abduct James, and under the document ready function, we'll make another on
+
+3
+00:00:15,840 --> 00:00:16,650
+click function.
+
+4
+00:00:17,280 --> 00:00:18,840
+So let's copy this one right here.
+
+5
+00:00:21,160 --> 00:00:22,090
+And pace below.
+
+6
+00:00:24,740 --> 00:00:26,780
+And change it to disconnect, why fine?
+
+7
+00:00:28,620 --> 00:00:31,080
+And change the function name to disconnect by phone.
+
+8
+00:00:34,210 --> 00:00:35,650
+All right, so copy this function.
+
+9
+00:00:38,200 --> 00:00:39,970
+And let's go down to the bottom of the file.
+
+10
+00:00:45,220 --> 00:00:46,540
+And now let's make a comment.
+
+11
+00:00:48,440 --> 00:00:49,670
+Disconnects swipe five.
+
+12
+00:00:51,610 --> 00:00:53,470
+Once the disconnect button is pressed.
+
+13
+00:00:55,380 --> 00:00:56,730
+And reloads the Web page.
+
+14
+00:01:00,480 --> 00:01:01,440
+And it's a function.
+
+15
+00:01:02,430 --> 00:01:03,510
+Disconnect wi fi.
+
+16
+00:01:06,620 --> 00:01:08,060
+And here will use Ajax.
+
+17
+00:01:13,070 --> 00:01:18,380
+And for the Irwell, it's forward slash Wi-Fi disconnect, Jason.
+
+18
+00:01:24,790 --> 00:01:25,660
+And the data type.
+
+19
+00:01:28,510 --> 00:01:29,320
+This, Jason.
+
+20
+00:01:31,560 --> 00:01:32,310
+And the method.
+
+21
+00:01:33,330 --> 00:01:34,080
+Is delete.
+
+22
+00:01:39,760 --> 00:01:40,450
+This false.
+
+23
+00:01:42,390 --> 00:01:42,900
+Data.
+
+24
+00:01:44,970 --> 00:01:46,080
+Is timestamp.
+
+25
+00:01:48,840 --> 00:01:49,770
+Data now.
+
+26
+00:01:52,280 --> 00:01:53,420
+Now at a semicolon.
+
+27
+00:01:54,870 --> 00:01:57,600
+And here will update the Web page.
+
+28
+00:02:00,010 --> 00:02:01,330
+And use set timeout.
+
+29
+00:02:03,040 --> 00:02:04,150
+And just follow me here.
+
+30
+00:02:04,840 --> 00:02:07,130
+Location, don't reload.
+
+31
+00:02:08,860 --> 00:02:11,770
+Is true with a semicolon inside.
+
+32
+00:02:12,730 --> 00:02:17,470
+Then comma, and let's set the page to reload after 20 milliseconds.
+
+33
+00:02:19,720 --> 00:02:20,080
+OK.
+
+34
+00:02:21,070 --> 00:02:26,020
+So when the disconnect button is pressed, this function is invoked and it refreshes the page after
+
+35
+00:02:26,020 --> 00:02:26,770
+two seconds.
+
+36
+00:02:27,400 --> 00:02:33,310
+Meanwhile, in the web server side, Wi-Fi is disconnected and that'll be implemented in the a handler.
+
+37
+00:02:35,170 --> 00:02:39,250
+All right, so let's implement that now and head over to HTP, Server does see.
+
+38
+00:02:41,820 --> 00:02:45,000
+So we'll start by copying this your eye handler information.
+
+39
+00:02:49,210 --> 00:02:50,470
+And let's reuse it below.
+
+40
+00:02:51,890 --> 00:02:54,710
+And first, let's change this to Wi-Fi disconnect.
+
+41
+00:02:55,990 --> 00:02:56,800
+That, Jason.
+
+42
+00:02:58,050 --> 00:03:00,330
+And the structure name to Wi-Fi disconnect.
+
+43
+00:03:05,470 --> 00:03:06,400
+And the urine.
+
+44
+00:03:07,650 --> 00:03:10,200
+Is Wi-Fi disconnect, Jason?
+
+45
+00:03:14,540 --> 00:03:16,640
+The method is HTP delete.
+
+46
+00:03:19,960 --> 00:03:24,310
+And the handler, it's HTP server, Wi-Fi disconnect.
+
+47
+00:03:25,750 --> 00:03:26,680
+Jason Handler.
+
+48
+00:03:29,170 --> 00:03:32,710
+OK, so let's pass the structure name to register that you are a handler.
+
+49
+00:03:33,550 --> 00:03:34,870
+And let's go up and define it.
+
+50
+00:03:37,440 --> 00:03:38,760
+Now, let's copy this comment.
+
+51
+00:03:42,020 --> 00:03:42,770
+And it.
+
+52
+00:03:44,040 --> 00:03:47,190
+And change this to Wi-Fi disconnect, Jason.
+
+53
+00:03:52,680 --> 00:03:57,990
+And we'll say responds by sending a message to the wife by application to disconnect.
+
+54
+00:04:09,660 --> 00:04:10,770
+Then let's grab the name.
+
+55
+00:04:12,430 --> 00:04:13,060
+Copy it.
+
+56
+00:04:16,649 --> 00:04:26,400
+And now say static espérer tape, let's drop the name and its age http request type pointer.
+
+57
+00:04:27,990 --> 00:04:28,650
+Ari Kim.
+
+58
+00:04:30,520 --> 00:04:31,810
+And now S.P. log.
+
+59
+00:04:37,330 --> 00:04:39,790
+Why fi disconnect, Jason requested?
+
+60
+00:04:45,090 --> 00:04:48,480
+In next year's wi fi apps and message.
+
+61
+00:04:50,430 --> 00:04:53,520
+And we'll say here, wi fi message.
+
+62
+00:04:55,480 --> 00:04:57,760
+User requested state disconnect.
+
+63
+00:05:04,970 --> 00:05:06,200
+And will define that later.
+
+64
+00:05:07,280 --> 00:05:09,650
+Now, let's just return ESP, OK?
+
+65
+00:05:15,230 --> 00:05:16,820
+Next, let's copy this.
+
+66
+00:05:17,820 --> 00:05:19,530
+And we'll create a message in the Wi-Fi app.
+
+67
+00:05:20,310 --> 00:05:22,020
+So go to Wi-Fi app Dunwich.
+
+68
+00:05:24,910 --> 00:05:26,370
+And let's just drop it right here.
+
+69
+00:05:29,570 --> 00:05:32,860
+OK, now let's head over to the message handling section of the see file.
+
+70
+00:05:35,120 --> 00:05:37,040
+And now let's copy this case message.
+
+71
+00:05:39,210 --> 00:05:40,170
+And pasted here.
+
+72
+00:05:42,200 --> 00:05:48,930
+And first, let's remove this, and now let's update the case to message user requested stay disconnect.
+
+73
+00:05:49,820 --> 00:05:52,040
+And now let's update the log message as well.
+
+74
+00:05:54,830 --> 00:05:57,740
+And now here will update the global retry number.
+
+75
+00:06:00,760 --> 00:06:03,070
+And we'll set it to Max Connection Retrace.
+
+76
+00:06:06,060 --> 00:06:10,140
+Because we don't want to re attempt to connection when the disconnect button is pressed.
+
+77
+00:06:10,770 --> 00:06:16,500
+OK, so next we're going to call the disconnect function, which will result in the case below and then
+
+78
+00:06:16,500 --> 00:06:21,840
+the failed message to be sent to the web server and we'll need to adjust our state machine here to compensate
+
+79
+00:06:21,840 --> 00:06:22,560
+for this later.
+
+80
+00:06:23,010 --> 00:06:24,600
+For now, let's just continue.
+
+81
+00:06:25,200 --> 00:06:27,360
+And that's espero check.
+
+82
+00:06:29,660 --> 00:06:31,580
+ESP Wi-Fi disconnect.
+
+83
+00:06:35,340 --> 00:06:38,340
+And now let's change the Ogbe led status to.
+
+84
+00:06:39,410 --> 00:06:42,950
+Our GB led FTP server started.
+
+85
+00:06:46,930 --> 00:06:53,410
+OK, so I'm not sure if this name makes sense anymore, so I'll just make a comment for you or to do.
+
+86
+00:06:56,270 --> 00:06:59,690
+To rename this status leaded to a name more meaningful.
+
+87
+00:07:07,730 --> 00:07:08,780
+Or to your liking.
+
+88
+00:07:12,400 --> 00:07:15,040
+So it might be a good idea to change it if you like.
+
+89
+00:07:15,400 --> 00:07:17,290
+For now, let's just build the project.
+
+90
+00:07:26,330 --> 00:07:27,830
+And once you flesh it.
+
+91
+00:07:37,960 --> 00:07:39,630
+Now, connect to the ESPN.
+
+92
+00:07:51,630 --> 00:07:53,430
+Then now I'll head over to the Web page.
+
+93
+00:08:04,070 --> 00:08:06,080
+And now, actually, we want to open the monitor.
+
+94
+00:08:09,520 --> 00:08:12,700
+And also, I did this backwards, so don't do it this way.
+
+95
+00:08:12,820 --> 00:08:15,250
+You'll want to do the monitor first, then go to the web page.
+
+96
+00:08:16,830 --> 00:08:18,980
+Because now I'll probably have to reload the Web page.
+
+97
+00:08:20,890 --> 00:08:21,760
+So let me do that.
+
+98
+00:08:26,590 --> 00:08:28,140
+And then I'll just make sure I'm connected.
+
+99
+00:08:31,140 --> 00:08:31,710
+OK.
+
+100
+00:08:34,809 --> 00:08:36,789
+And now we're back, OK?
+
+101
+00:08:40,390 --> 00:08:42,640
+So let's connect, you know, the password.
+
+102
+00:08:49,930 --> 00:08:50,740
+And connect.
+
+103
+00:09:00,220 --> 00:09:02,290
+All right, good, so now let's reload to test it.
+
+104
+00:09:05,630 --> 00:09:07,090
+OK, so now let's disconnect.
+
+105
+00:09:12,650 --> 00:09:13,170
+Nice.
+
+106
+00:09:13,190 --> 00:09:18,200
+The Page Reloaded and the Connect info is cleared, and we're no longer connected to an access point.
+
+107
+00:09:18,230 --> 00:09:18,770
+Excellent.
+
+108
+00:09:19,370 --> 00:09:19,730
+Great.
+
+109
+00:09:19,730 --> 00:09:21,860
+So let's continue our development in the next lesson.
+
