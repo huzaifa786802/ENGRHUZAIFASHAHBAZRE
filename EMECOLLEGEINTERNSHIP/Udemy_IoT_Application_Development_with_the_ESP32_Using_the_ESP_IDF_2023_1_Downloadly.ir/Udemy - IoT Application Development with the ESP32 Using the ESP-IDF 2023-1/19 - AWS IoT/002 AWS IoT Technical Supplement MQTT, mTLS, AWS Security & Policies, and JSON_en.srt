@@ -1,0 +1,248 @@
+1
+00:00:07,150 --> 00:00:13,080
+In this lesson, we'll review a few technical details about the basic processes of a society, and this
+
+2
+00:00:13,080 --> 00:00:16,170
+will prepare us for the next lessons where we carry out the implementation.
+
+3
+00:00:16,890 --> 00:00:23,880
+So in this briefing, we'll review a bit more about Kuti as well as the basics of a WC Iot authentication.
+
+4
+00:00:24,180 --> 00:00:27,960
+And we'll also take a look at mutual TLS or MTA less for short.
+
+5
+00:00:28,260 --> 00:00:33,030
+And then we'll take a look at a WC security in touch on the device certificates and keys.
+
+6
+00:00:33,480 --> 00:00:38,910
+And that will lead us into the WC Iot policies, which will then segway us into JSON.
+
+7
+00:00:39,150 --> 00:00:40,170
+So let's dive right in.
+
+8
+00:00:41,010 --> 00:00:42,900
+Okay, now back to empty.
+
+9
+00:00:43,320 --> 00:00:46,560
+Empty stands for MQ Telemetry Transport.
+
+10
+00:00:46,920 --> 00:00:51,720
+And again, it's a simple lightweight messaging protocol designed for resource constrained devices on
+
+11
+00:00:51,720 --> 00:00:52,680
+constrained networks.
+
+12
+00:00:53,280 --> 00:00:56,310
+And muted is the standard for Iot messaging.
+
+13
+00:00:57,060 --> 00:01:02,400
+And it's used because it requires minimal resources and network bandwidth while ensuring reliability
+
+14
+00:01:02,400 --> 00:01:04,349
+and some degree of delivery assurance.
+
+15
+00:01:05,099 --> 00:01:11,670
+And this is what makes mq t ideal in machine to machine or internet of Things connected devices where
+
+16
+00:01:11,670 --> 00:01:13,860
+both bandwidth and battery power can be limited.
+
+17
+00:01:15,110 --> 00:01:22,190
+So MQ t uses a client server model where every Iot device is a client and is connected to a server called
+
+18
+00:01:22,190 --> 00:01:26,030
+an NQT broker, like an AWB Stewart, for example.
+
+19
+00:01:26,360 --> 00:01:30,560
+So in this model, clients send messages to an address called a topic.
+
+20
+00:01:30,860 --> 00:01:35,660
+Then the MQ broker will forward that message to all clients subscribed to that topic.
+
+21
+00:01:36,110 --> 00:01:41,330
+For example, here we have Thing X which publishes the lead on status to the lead topic.
+
+22
+00:01:41,660 --> 00:01:46,850
+The MQ broker then forwards the lead on status message to the thing y and things.
+
+23
+00:01:46,850 --> 00:01:50,000
+The clients which are both subscribed to the lead topic.
+
+24
+00:01:51,550 --> 00:01:51,870
+Okay.
+
+25
+00:01:51,880 --> 00:01:59,140
+Now let's take a look at a WSI Iot device authentication basics, a WC Iot devices authenticated using
+
+26
+00:01:59,140 --> 00:02:08,560
+mutual TLS authentication with x509 certificates and then cryptography x509 is an International Telecommunication
+
+27
+00:02:08,560 --> 00:02:12,190
+Union standard defining the format of public key certificates.
+
+28
+00:02:12,610 --> 00:02:17,200
+So once the certificate is provisioned inactivated, it can be installed on a device.
+
+29
+00:02:17,470 --> 00:02:23,710
+The device will then use that certificate for all requests to a society and we're going to generate
+
+30
+00:02:23,710 --> 00:02:28,990
+the required certificates in a WC and embed them into the ESP 32 in the next lesson.
+
+31
+00:02:29,650 --> 00:02:32,400
+Now let's cover mutual TLS MTA.
+
+32
+00:02:32,470 --> 00:02:37,300
+Less is used to establish trust between two parties and ensures that the parties at each end of the
+
+33
+00:02:37,300 --> 00:02:38,920
+network are who they claim to be.
+
+34
+00:02:39,220 --> 00:02:44,230
+By verifying that they both have the correct private key and the information in their respective TLS
+
+35
+00:02:44,230 --> 00:02:46,750
+certificates provides additional verification.
+
+36
+00:02:47,200 --> 00:02:51,970
+And we see later that we did what's called a root certificate, authority certificate, and the root
+
+37
+00:02:51,970 --> 00:02:58,120
+TLS certificate is necessary for MTA less, and this enables an organization to be their own certificate
+
+38
+00:02:58,120 --> 00:02:58,690
+authority.
+
+39
+00:02:59,140 --> 00:03:04,240
+The certificates used by authorized clients and servers have to correspond to the root certificate,
+
+40
+00:03:04,570 --> 00:03:09,520
+and this root certificate is self signed, meaning that the organization creates it themselves.
+
+41
+00:03:10,060 --> 00:03:14,530
+And again, in the next lesson we'll download the root CAA directly from a WC.
+
+42
+00:03:15,220 --> 00:03:21,910
+And in the case of a WC, they provide the device certificates and keys as A.W. as the certificate authority
+
+43
+00:03:21,910 --> 00:03:23,080
+for Iot devices.
+
+44
+00:03:23,410 --> 00:03:28,660
+So in this scenario, the certificates and keys are installed on the device and the device will use
+
+45
+00:03:28,660 --> 00:03:32,950
+that certificate and key to authenticate itself with a society.
+
+46
+00:03:33,310 --> 00:03:39,370
+Additionally, in this scenario, to perform a WSOP operations with your device, you must create an
+
+47
+00:03:39,370 --> 00:03:45,370
+AWG Iot policy and attach it to your device certificate and we'll go through this process in the next
+
+48
+00:03:45,370 --> 00:03:45,790
+lesson.
+
+49
+00:03:45,970 --> 00:03:50,650
+Now let's discuss the policies so about the US Iot policies.
+
+50
+00:03:51,010 --> 00:03:56,830
+These policies are JSON documents that authorize your device for performing AWG Iot operations.
+
+51
+00:03:57,160 --> 00:04:03,190
+IWC IOT defines a set of policy actions describing the operations and resources for which you can grant
+
+52
+00:04:03,190 --> 00:04:04,210
+or deny access.
+
+53
+00:04:04,540 --> 00:04:06,250
+And here are just a couple of examples.
+
+54
+00:04:06,550 --> 00:04:13,300
+Iot Connect represents permission to connect to an Iot message broker and Iot subscribe represents permission
+
+55
+00:04:13,300 --> 00:04:16,360
+to connect to an empty topic or topic filter.
+
+56
+00:04:16,750 --> 00:04:22,900
+So the policy document is in JSON or JavaScript object notation, which is an open standard lightweight
+
+57
+00:04:22,900 --> 00:04:24,280
+data interchange format.
+
+58
+00:04:24,610 --> 00:04:29,470
+And as a text document, it's easier for users to read and write and for machines to parse and generate.
+
+59
+00:04:29,740 --> 00:04:34,690
+And we'll also do this in the next lesson, but we don't have to create the JSON policy document manually.
+
+60
+00:04:35,020 --> 00:04:38,140
+We'll use the builder here and allow each action to then.
+
+61
+00:04:39,410 --> 00:04:39,710
+Okay.
+
+62
+00:04:39,710 --> 00:04:41,180
+So let's continue in the next lesson.
+
