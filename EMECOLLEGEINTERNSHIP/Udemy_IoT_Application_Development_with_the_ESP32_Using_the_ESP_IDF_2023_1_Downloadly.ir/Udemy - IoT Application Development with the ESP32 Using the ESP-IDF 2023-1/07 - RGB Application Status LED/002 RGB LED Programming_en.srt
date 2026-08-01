@@ -1,0 +1,864 @@
+1
+00:00:07,420 --> 00:00:07,660
+All right.
+
+2
+00:00:07,660 --> 00:00:10,870
+So the first thing we need to do here is to create two new files.
+
+3
+00:00:11,350 --> 00:00:13,510
+So let's expand the project folder.
+
+4
+00:00:14,020 --> 00:00:19,990
+And at the main folder, right click and go to new source file.
+
+5
+00:00:20,970 --> 00:00:24,600
+And call it rugby underscore led see.
+
+6
+00:00:25,350 --> 00:00:26,290
+And choose default.
+
+7
+00:00:26,310 --> 00:00:27,240
+See Source.
+
+8
+00:00:29,400 --> 00:00:31,050
+And now create a head of file.
+
+9
+00:00:33,680 --> 00:00:38,810
+And call it rugby underscore led and choose default.
+
+10
+00:00:38,840 --> 00:00:40,340
+See header template.
+
+11
+00:00:42,710 --> 00:00:43,040
+OC.
+
+12
+00:00:43,040 --> 00:00:50,870
+Next, we need to update the C list file and add the GB led source file so be sure that it's the C list
+
+13
+00:00:50,870 --> 00:00:52,640
+file here on the main.
+
+14
+00:00:53,560 --> 00:00:59,470
+And add g B underscore led C and save it.
+
+15
+00:01:00,370 --> 00:01:02,260
+So now let's head over to the header file.
+
+16
+00:01:03,640 --> 00:01:11,320
+So here in the header file, we'll define the rugby led GPO as the number of rugby channels, the configuration
+
+17
+00:01:11,320 --> 00:01:14,150
+structure and the prototypes for the color statuses.
+
+18
+00:01:14,170 --> 00:01:17,950
+So let's start by defining the rugby led GPOs.
+
+19
+00:01:18,900 --> 00:01:20,340
+And we'll say define.
+
+20
+00:01:21,480 --> 00:01:26,580
+GP led read GPIO and will use IO 21.
+
+21
+00:01:28,310 --> 00:01:32,570
+Now define the rugby led green GPIO.
+
+22
+00:01:34,150 --> 00:01:35,680
+As I oh 22.
+
+23
+00:01:36,310 --> 00:01:38,500
+So now let's define the blue one.
+
+24
+00:01:42,600 --> 00:01:44,100
+And we can use 23.
+
+25
+00:01:45,480 --> 00:01:48,000
+So now here we can define the number of channels.
+
+26
+00:01:48,000 --> 00:01:51,900
+So we'll say rugby led colour mix channels.
+
+27
+00:01:54,170 --> 00:01:55,610
+And we'll say define.
+
+28
+00:01:57,350 --> 00:01:59,830
+G b led channel num.
+
+29
+00:02:01,270 --> 00:02:04,600
+And we'll have three, right for red, green and blue.
+
+30
+00:02:04,930 --> 00:02:07,780
+So now let's define the configuration structure.
+
+31
+00:02:08,590 --> 00:02:11,320
+We'll say ruby led configuration.
+
+32
+00:02:14,880 --> 00:02:16,740
+And we'll make it a typedef struct.
+
+33
+00:02:20,370 --> 00:02:22,320
+And we'll have here a channel.
+
+34
+00:02:24,030 --> 00:02:26,910
+It GPIO and INT mode.
+
+35
+00:02:28,030 --> 00:02:29,500
+And timer index.
+
+36
+00:02:32,000 --> 00:02:36,050
+So now let's call it ldl-c info underscore RT.
+
+37
+00:02:36,560 --> 00:02:42,110
+Now copy this and we can create an array with the same length as the number of channels.
+
+38
+00:02:45,810 --> 00:02:49,410
+We could do that using our GP led channel num.
+
+39
+00:02:54,550 --> 00:02:55,290
+Okay, great.
+
+40
+00:02:55,300 --> 00:02:58,390
+So now we need the prototypes for the color statuses.
+
+41
+00:02:58,390 --> 00:03:04,240
+So the first one we can do is the color to indicate that the wi fi application has started.
+
+42
+00:03:05,030 --> 00:03:08,210
+So let's just make a comment here colored to indicate.
+
+43
+00:03:09,690 --> 00:03:12,420
+WI fi application started.
+
+44
+00:03:18,420 --> 00:03:26,160
+And let's say void RG be led wi fi app started and it takes no input parameters.
+
+45
+00:03:27,630 --> 00:03:33,060
+Okay, So the next one will be the color to indicate that the HTTP server has started.
+
+46
+00:03:40,890 --> 00:03:45,990
+And we'll say void our Gbps led http server started.
+
+47
+00:03:46,750 --> 00:03:48,280
+And this is void as well.
+
+48
+00:03:50,990 --> 00:03:57,020
+In the last one is the color to indicate that the ESP 32 is connected to an access point.
+
+49
+00:04:10,040 --> 00:04:11,420
+And this will be void.
+
+50
+00:04:11,540 --> 00:04:17,209
+RG be led wi fi connected and it's void as well.
+
+51
+00:04:18,870 --> 00:04:20,339
+All right, so that's it.
+
+52
+00:04:20,339 --> 00:04:24,210
+So now we can move on to the implementation and the GB LMDC file.
+
+53
+00:04:26,640 --> 00:04:26,910
+Okay.
+
+54
+00:04:26,910 --> 00:04:29,250
+So first let's include std bool.
+
+55
+00:04:31,640 --> 00:04:35,270
+And then also include the driver for DCH.
+
+56
+00:04:38,800 --> 00:04:40,780
+And this is for legacy driver.
+
+57
+00:04:42,270 --> 00:04:46,440
+And also include the rugby LED header file here as well.
+
+58
+00:04:48,560 --> 00:04:53,690
+So first we need to create a function that initializes the rugby led settings per channel.
+
+59
+00:04:55,920 --> 00:04:58,320
+Including the GPIO for each color.
+
+60
+00:05:01,310 --> 00:05:03,800
+The mode and the time of configuration.
+
+61
+00:05:05,620 --> 00:05:12,340
+So this is going to be a static function, meaning it's restricted to this file and it returns void.
+
+62
+00:05:13,720 --> 00:05:18,490
+Call it rg be led p w m in it and it's void.
+
+63
+00:05:20,800 --> 00:05:25,510
+And then I'll here define a variable that we'll use to iterate through the rugby channels and that can
+
+64
+00:05:25,510 --> 00:05:27,700
+be an int, call it rugby underscore.
+
+65
+00:05:29,050 --> 00:05:32,090
+And at this point we can configure the rugby channel structures.
+
+66
+00:05:32,110 --> 00:05:33,640
+Let's do the read first here.
+
+67
+00:05:33,970 --> 00:05:36,150
+So it's C underscore, c.
+
+68
+00:05:36,170 --> 00:05:36,700
+H.
+
+69
+00:05:37,760 --> 00:05:40,450
+Which is the array that we created in the header file.
+
+70
+00:05:40,460 --> 00:05:43,760
+So at the first position, update the channel.
+
+71
+00:05:45,540 --> 00:05:46,590
+And from the LDCs.
+
+72
+00:05:46,620 --> 00:05:49,710
+DRIVER We'll use Channel Zero.
+
+73
+00:05:50,220 --> 00:05:50,520
+All right.
+
+74
+00:05:50,520 --> 00:05:51,870
+So choose Channel Zero.
+
+75
+00:05:53,540 --> 00:05:55,250
+And let's copy this.
+
+76
+00:05:57,190 --> 00:06:05,310
+Update the GPIO as RG be led, read GPIO and set the mode.
+
+77
+00:06:05,320 --> 00:06:06,670
+Here is high speed mode.
+
+78
+00:06:15,540 --> 00:06:16,560
+And the timer.
+
+79
+00:06:17,530 --> 00:06:19,150
+Is going to be time or zero.
+
+80
+00:06:21,690 --> 00:06:24,240
+All right, So choose a time or zero.
+
+81
+00:06:24,840 --> 00:06:27,000
+We can now take care of the Green Channel.
+
+82
+00:06:30,390 --> 00:06:33,480
+So for the Green Channel, this is going to be Channel one.
+
+83
+00:06:33,480 --> 00:06:36,480
+So update all the members to channel one.
+
+84
+00:06:40,830 --> 00:06:42,840
+And that'll be EDC Channel one.
+
+85
+00:06:43,110 --> 00:06:45,150
+And the GPIO should be green.
+
+86
+00:06:47,370 --> 00:06:49,560
+So next, let's update the blue channel.
+
+87
+00:06:50,350 --> 00:06:52,120
+And this is the same story here.
+
+88
+00:06:52,810 --> 00:06:55,510
+So update the channel for each structure member.
+
+89
+00:06:57,900 --> 00:07:00,540
+The channel number as well should be channeled to.
+
+90
+00:07:01,710 --> 00:07:03,210
+The GPIO is blue.
+
+91
+00:07:05,620 --> 00:07:07,960
+And at this point here we can configure the timer.
+
+92
+00:07:08,740 --> 00:07:10,570
+So configure timer zero.
+
+93
+00:07:14,450 --> 00:07:17,750
+And will specify the timer config struct.
+
+94
+00:07:19,360 --> 00:07:20,950
+From the LMDC driver.
+
+95
+00:07:22,740 --> 00:07:23,160
+All right.
+
+96
+00:07:23,160 --> 00:07:25,740
+And call it EDC underscore timer.
+
+97
+00:07:28,480 --> 00:07:31,660
+And we'll update the first member duty resolution.
+
+98
+00:07:35,060 --> 00:07:37,310
+As la EDC timer.
+
+99
+00:07:37,400 --> 00:07:38,330
+Eight bits.
+
+100
+00:07:40,080 --> 00:07:44,670
+And then now the frequency member here, 100 hertz should be fast enough.
+
+101
+00:07:46,470 --> 00:07:47,820
+And for the speed mode.
+
+102
+00:07:50,300 --> 00:07:52,880
+Use led DC high speed mode.
+
+103
+00:07:55,110 --> 00:07:56,430
+And the time a number.
+
+104
+00:07:57,990 --> 00:08:00,900
+Will be led DC Timer zero.
+
+105
+00:08:06,080 --> 00:08:07,850
+All right, so that's all for the timer.
+
+106
+00:08:09,060 --> 00:08:11,730
+And now we can call EDC timer config.
+
+107
+00:08:12,940 --> 00:08:16,270
+This one here and then pass a reference to the structure.
+
+108
+00:08:18,960 --> 00:08:19,200
+All right.
+
+109
+00:08:19,200 --> 00:08:23,580
+So lastly, let's configure the channels based on the rugby channel settings that we've just done.
+
+110
+00:08:23,580 --> 00:08:28,860
+So we'll grab this variable here and we're going to use it to increment through the channels.
+
+111
+00:08:29,370 --> 00:08:32,130
+So here we'll say configure channels.
+
+112
+00:08:35,059 --> 00:08:39,919
+And say for the FF variable equals zero.
+
+113
+00:08:41,220 --> 00:08:44,760
+Four rugby channels less than the total number of channels.
+
+114
+00:08:49,800 --> 00:08:52,380
+We're going to increment through the channels.
+
+115
+00:08:54,490 --> 00:08:58,930
+And here we need to update the EDC channel config struct from the driver.
+
+116
+00:09:04,430 --> 00:09:06,320
+And call it channel.
+
+117
+00:09:09,030 --> 00:09:11,160
+And we're going to update the channel member.
+
+118
+00:09:11,950 --> 00:09:13,930
+Using that increment variable.
+
+119
+00:09:16,110 --> 00:09:17,100
+Like so.
+
+120
+00:09:20,570 --> 00:09:23,030
+And for the duty, we can leave it as zero.
+
+121
+00:09:25,020 --> 00:09:28,860
+And for the H point member, we can make that zero as well.
+
+122
+00:09:29,820 --> 00:09:35,220
+And next, we can update the GPIO number using our settings and the increment variable.
+
+123
+00:09:46,230 --> 00:09:50,850
+And the interrupt type should be disabled, which we can take from the driver.
+
+124
+00:09:53,010 --> 00:09:54,180
+Interrupt, disable.
+
+125
+00:09:55,800 --> 00:09:59,850
+OC and for the speed mode, we could take that from our settings as well.
+
+126
+00:10:00,910 --> 00:10:03,880
+Using the rugby channel variable.
+
+127
+00:10:06,260 --> 00:10:07,850
+Also four timers select.
+
+128
+00:10:10,840 --> 00:10:13,390
+This can be updated using our settings above.
+
+129
+00:10:16,220 --> 00:10:17,720
+From the timer index.
+
+130
+00:10:22,390 --> 00:10:22,900
+Okay, great.
+
+131
+00:10:22,900 --> 00:10:26,350
+So now we can call the DC channel config function.
+
+132
+00:10:28,140 --> 00:10:30,210
+And then pass a reference to the struct.
+
+133
+00:10:32,880 --> 00:10:39,960
+This will be done for each iteration through the loop and next takes care of our p w m GB channels initialization.
+
+134
+00:10:40,560 --> 00:10:43,350
+So next we'll take care of the set colour function.
+
+135
+00:10:46,030 --> 00:10:47,530
+So let's make a comment here.
+
+136
+00:10:49,080 --> 00:10:50,790
+Sets the rugby colour.
+
+137
+00:10:54,300 --> 00:10:57,240
+All right, So here's, say, static void.
+
+138
+00:10:58,140 --> 00:11:07,140
+Rugby led set colour and that's a UNT eight type for the red and also for the green and blue channels
+
+139
+00:11:07,140 --> 00:11:07,770
+as well.
+
+140
+00:11:14,870 --> 00:11:20,150
+So here we specified the input type as you went eight because we've specified the duty resolution is
+
+141
+00:11:20,150 --> 00:11:21,070
+eight bits.
+
+142
+00:11:21,080 --> 00:11:25,220
+Therefore the duty cycle values can range from 0 to 255.
+
+143
+00:11:25,250 --> 00:11:25,820
+All right.
+
+144
+00:11:25,820 --> 00:11:27,740
+So let's make a comment here.
+
+145
+00:11:27,770 --> 00:11:29,060
+Value should be.
+
+146
+00:11:30,370 --> 00:11:33,910
+0 to 255 for an eight bit number.
+
+147
+00:11:35,670 --> 00:11:38,880
+And we'll use the D.C. set duty function.
+
+148
+00:11:39,700 --> 00:11:44,650
+From the driver and for the speed passer, see Channel Zero.
+
+149
+00:11:46,810 --> 00:11:50,980
+For the speed mode and the EDC Channel Zero.
+
+150
+00:11:53,030 --> 00:11:54,080
+As the channel.
+
+151
+00:11:54,810 --> 00:11:56,460
+And this is the Red Channel.
+
+152
+00:11:57,860 --> 00:11:59,900
+OC so now call DC.
+
+153
+00:11:59,960 --> 00:12:01,940
+Update duty from the driver.
+
+154
+00:12:02,790 --> 00:12:06,060
+And for the speed, it's again see Channel Zero.
+
+155
+00:12:08,340 --> 00:12:09,670
+And let's see.
+
+156
+00:12:09,690 --> 00:12:12,450
+Channel zero for the channel as well.
+
+157
+00:12:15,740 --> 00:12:16,200
+Okay.
+
+158
+00:12:16,490 --> 00:12:23,390
+So just copy these two lines and we can take care of Channel one as well and just update the color parameter
+
+159
+00:12:23,420 --> 00:12:26,930
+as green and then the channel as one.
+
+160
+00:12:32,480 --> 00:12:34,410
+So now do the same for the blue channel.
+
+161
+00:12:34,430 --> 00:12:36,170
+Change this to channel two.
+
+162
+00:12:41,350 --> 00:12:42,730
+And now this is for blue.
+
+163
+00:12:44,710 --> 00:12:48,160
+Okay, so that's our GB set color function.
+
+164
+00:12:48,190 --> 00:12:51,220
+Now let's create the status colors that we'll use in the application.
+
+165
+00:12:51,220 --> 00:12:52,570
+So go to the head of file.
+
+166
+00:12:54,570 --> 00:12:56,100
+And copy these prototypes.
+
+167
+00:12:57,870 --> 00:12:59,760
+And then paste them into the C file.
+
+168
+00:13:00,850 --> 00:13:05,410
+Let's get rid of these comments as they're already in the header file so we don't need them here.
+
+169
+00:13:07,330 --> 00:13:13,060
+So for wi fi started we'll call our GB led p w init function.
+
+170
+00:13:14,790 --> 00:13:16,530
+And then we'll set the color.
+
+171
+00:13:19,840 --> 00:13:26,550
+I mentioned in the intro video, and that is 250 5102 and 255.
+
+172
+00:13:28,790 --> 00:13:31,820
+That's the magenta type color that I showed in the intro.
+
+173
+00:13:33,980 --> 00:13:36,420
+And this function, we only need to call it once.
+
+174
+00:13:36,440 --> 00:13:41,150
+So we need a global variable to indicate whether it's already been initialized.
+
+175
+00:13:41,420 --> 00:13:44,450
+So we'll say handle for RGV.
+
+176
+00:13:45,420 --> 00:13:47,280
+Led P.W. and in it.
+
+177
+00:13:48,230 --> 00:13:55,610
+And say bull and call it g, underscore p w and it handle and initialize it to false.
+
+178
+00:13:59,430 --> 00:14:03,180
+And let's use this here and set it to true before the function is completed.
+
+179
+00:14:06,100 --> 00:14:06,580
+All right.
+
+180
+00:14:06,790 --> 00:14:08,530
+And then let's come back here.
+
+181
+00:14:09,360 --> 00:14:11,490
+And check if it hasn't been initialized.
+
+182
+00:14:12,840 --> 00:14:14,010
+And if it hasn't?
+
+183
+00:14:15,010 --> 00:14:18,520
+Then we'll go ahead and initialize by calling the function.
+
+184
+00:14:26,440 --> 00:14:30,250
+So copied the same and do this for the http server started.
+
+185
+00:14:33,170 --> 00:14:34,870
+And then update the color as you like.
+
+186
+00:14:34,880 --> 00:14:38,000
+I'll use the yellowish color that I had shown previously.
+
+187
+00:14:50,510 --> 00:14:50,870
+Again.
+
+188
+00:14:50,870 --> 00:14:52,640
+Set your wi fi connected color.
+
+189
+00:14:53,830 --> 00:14:56,740
+I'll use the blueish greenish colors I had previously shown.
+
+190
+00:15:03,680 --> 00:15:03,920
+All right.
+
+191
+00:15:03,920 --> 00:15:04,160
+Yes.
+
+192
+00:15:04,160 --> 00:15:04,700
+So that's it.
+
+193
+00:15:04,700 --> 00:15:09,350
+You could probably define some macros for these color values when you know what you want, just so you're
+
+194
+00:15:09,350 --> 00:15:12,020
+not using these magic numbers as we're doing here.
+
+195
+00:15:12,020 --> 00:15:15,980
+So for now, let's test these out in the main file.
+
+196
+00:15:19,380 --> 00:15:23,400
+And to do that, we'll need to include the GP led file.
+
+197
+00:15:24,740 --> 00:15:26,750
+And just put the status function here.
+
+198
+00:15:26,780 --> 00:15:30,410
+Say rg be led wi fi up started.
+
+199
+00:15:32,910 --> 00:15:35,640
+And change the delay to 1000 milliseconds.
+
+200
+00:15:37,150 --> 00:15:41,950
+And then now we can put in the GP led HTTP server started.
+
+201
+00:15:43,550 --> 00:15:45,020
+And then add another delay.
+
+202
+00:15:46,750 --> 00:15:50,580
+And then we also want to test the rugby led wi fi connected function.
+
+203
+00:15:57,790 --> 00:15:59,590
+And we can include another delay here.
+
+204
+00:16:01,660 --> 00:16:03,910
+So the color should change at this interval.
+
+205
+00:16:04,210 --> 00:16:06,520
+So now go ahead and build the project.
+
+206
+00:16:09,390 --> 00:16:10,530
+And just give it a minute.
+
+207
+00:16:15,610 --> 00:16:18,520
+So once the build is complete, let's go flash the dev kit.
+
+208
+00:16:23,230 --> 00:16:26,350
+And I've plugged mine into a different port, but that's not a problem.
+
+209
+00:16:26,350 --> 00:16:31,480
+I can update it easily by coming up here and then changing the port from my rover kit.
+
+210
+00:16:33,290 --> 00:16:35,150
+And then we can just hit flash again.
+
+211
+00:16:43,100 --> 00:16:45,320
+All right, so now let's check out the rugby led.
+
+212
+00:16:47,890 --> 00:16:48,190
+Cool.
+
+213
+00:16:48,190 --> 00:16:54,070
+So we have the wi fi up started, web server started and wi fi connected status is all shining, so
+
+214
+00:16:54,070 --> 00:16:56,680
+our status LEDs are good to go in the next section.
+
+215
+00:16:56,680 --> 00:16:58,180
+Let's get wi fi up and running.
+
+216
+00:16:58,180 --> 00:16:59,530
+So I'll see you there.
+

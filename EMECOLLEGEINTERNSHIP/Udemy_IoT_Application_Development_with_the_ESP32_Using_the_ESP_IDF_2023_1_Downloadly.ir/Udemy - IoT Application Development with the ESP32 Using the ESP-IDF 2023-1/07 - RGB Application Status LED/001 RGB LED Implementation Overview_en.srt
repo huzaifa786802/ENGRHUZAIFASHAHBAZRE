@@ -1,0 +1,232 @@
+1
+00:00:06,939 --> 00:00:08,020
+Hi, welcome back, everyone.
+
+2
+00:00:08,410 --> 00:00:12,790
+We're going to begin developments about wireless local area network application by implementing the
+
+3
+00:00:12,820 --> 00:00:14,050
+Ogbe status led.
+
+4
+00:00:14,890 --> 00:00:17,230
+He will briefly review the implementation details.
+
+5
+00:00:18,640 --> 00:00:20,920
+So let's take a look at our implementation overview.
+
+6
+00:00:22,410 --> 00:00:27,360
+We're going to create different colors by using the blood to indicate the application status.
+
+7
+00:00:28,080 --> 00:00:31,830
+First of all, create a function to initialize the Ogbe led settings per channel.
+
+8
+00:00:32,189 --> 00:00:36,060
+The GPIO used for each channel and configure the timer as well.
+
+9
+00:00:36,780 --> 00:00:41,880
+We'll create another function for setting the colors based on the duty cycle for each channel, each
+
+10
+00:00:41,880 --> 00:00:47,850
+channel being the red, green and blue channels will then create functions that set the color of the
+
+11
+00:00:47,850 --> 00:00:52,050
+ogbia led to be used as our application status indicators.
+
+12
+00:00:52,830 --> 00:00:57,990
+Finally, will test these functions in the main that see file, and we'll actually use them later to
+
+13
+00:00:57,990 --> 00:01:05,280
+indicate statuses such as Wi-Fi application started be server started and Wi-Fi connected.
+
+14
+00:01:07,440 --> 00:01:11,190
+Now, let's talk about the alleged control component of the ESB IDF.
+
+15
+00:01:12,210 --> 00:01:18,780
+I suggest you visit the impressive documentation here about the LED component and API reference here
+
+16
+00:01:18,780 --> 00:01:22,230
+you can find all you need to know about Leidy Control using the IDF.
+
+17
+00:01:22,860 --> 00:01:29,460
+You'll find that this component is primarily designed for lead intensity control and GWM signal generation.
+
+18
+00:01:29,970 --> 00:01:31,740
+So just browse through here if you can.
+
+19
+00:01:32,370 --> 00:01:39,030
+Also, you'll find that both high speed and low speed channels are available and there's 16 channels
+
+20
+00:01:39,030 --> 00:01:42,150
+total eight for high speed and eight for low speed.
+
+21
+00:01:43,240 --> 00:01:48,130
+Our configuration steps include three main parts, the timer and channel configurations.
+
+22
+00:01:48,340 --> 00:01:50,530
+And then setting it and updating the duty cycle.
+
+23
+00:01:50,980 --> 00:01:51,970
+So about the timer.
+
+24
+00:01:52,360 --> 00:01:58,330
+Each timer counts up and the bits defined determines the count number before it resets, and the frequency
+
+25
+00:01:58,330 --> 00:02:01,300
+determines the amount of time that it takes to count to the number.
+
+26
+00:02:01,720 --> 00:02:08,050
+For example, three eight bits, the count number is from zero to 255, and for ten bits it'll be from
+
+27
+00:02:08,050 --> 00:02:09,699
+zero to one thousand twenty three.
+
+28
+00:02:10,360 --> 00:02:16,810
+And the bit, number and frequency those are key members of the LED see timer config structure that
+
+29
+00:02:16,810 --> 00:02:21,430
+will set, including other members such as the speed mode and timer number as well.
+
+30
+00:02:21,910 --> 00:02:26,950
+And we'll pass this information to the LED see timer config function to set the config.
+
+31
+00:02:27,890 --> 00:02:34,940
+For the channel configuration, the GPIO pin that the P.W. and output signal appears on a specified
+
+32
+00:02:34,940 --> 00:02:40,850
+to a specific channel along with the timer will set members of the LED see channel config structure
+
+33
+00:02:41,300 --> 00:02:44,690
+and pass the configuration to legacy channel config.
+
+34
+00:02:45,660 --> 00:02:50,670
+And then next, we can create different colors by adjusting the duty cycle, which is the time duration
+
+35
+00:02:50,670 --> 00:02:55,050
+within the period that the GWM output signal will be high before it goes low.
+
+36
+00:02:55,560 --> 00:03:00,720
+And we'll do this using the LEDs set duty and LEDs update duty functions.
+
+37
+00:03:02,680 --> 00:03:06,490
+Now, let's briefly get into the status led colored functions that were going to create.
+
+38
+00:03:08,020 --> 00:03:12,340
+Arrests will have one function that sets the colored by updating to duty cycle per channel.
+
+39
+00:03:12,760 --> 00:03:19,510
+The red, green and blue channels and then the status function will simply call the set color function
+
+40
+00:03:19,900 --> 00:03:24,220
+at the duty cycle that we specified per channel, depending on the color that we want.
+
+41
+00:03:25,060 --> 00:03:28,720
+You can go to this link here or any other similar website.
+
+42
+00:03:28,730 --> 00:03:35,800
+Just search for RGV led color selection and you can customize the status LEDs as you wish.
+
+43
+00:03:36,340 --> 00:03:42,610
+However, for the three statuses Wi-Fi started HTTP server started and Wi-Fi connected.
+
+44
+00:03:43,060 --> 00:03:44,830
+I've chosen the following values.
+
+45
+00:03:45,370 --> 00:03:47,440
+Why if I started, is this color here?
+
+46
+00:03:50,700 --> 00:03:53,130
+And FTP server looks like this.
+
+47
+00:03:55,610 --> 00:03:58,460
+And wife, I connected look similar to this color here.
+
+48
+00:04:02,660 --> 00:04:05,010
+So feel free to set the colors as you wish.
+
+49
+00:04:05,030 --> 00:04:09,500
+Or better yet, create your own satisfactions functions as we develop the application further.
+
+50
+00:04:10,920 --> 00:04:12,840
+Let's briefly talk about the hardware options.
+
+51
+00:04:14,590 --> 00:04:15,750
+There are different flavors of our.
+
+52
+00:04:16,959 --> 00:04:21,550
+You can obtain the package type on a PCB or the common cathode or common A. Type.
+
+53
+00:04:22,150 --> 00:04:23,200
+Whichever you obtain.
+
+54
+00:04:23,230 --> 00:04:27,880
+Be sure to check the data sheet and verify the required resistor values, and you can make the connections
+
+55
+00:04:27,880 --> 00:04:29,590
+based on the GPIO as we define.
+
+56
+00:04:30,430 --> 00:04:36,100
+Also, if you're using the common A. a common cathode type, be sure to follow the diagram and note
+
+57
+00:04:36,100 --> 00:04:39,070
+the long leg difference ground versus positive voltage.
+
+58
+00:04:41,140 --> 00:04:43,690
+All right, so let's get started with programming in the upcoming lesson.
+
