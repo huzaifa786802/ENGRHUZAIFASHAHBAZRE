@@ -1,0 +1,2155 @@
+1
+00:00:00,660 --> 00:00:00,940
+Hello.
+
+2
+00:00:01,290 --> 00:00:05,720
+Welcome to the time I.S. and its very first lesson of the section.
+
+3
+00:00:05,760 --> 00:00:09,420
+We are going to see how to create precise delays using timers.
+
+4
+00:00:09,870 --> 00:00:15,420
+So I'm going to create a new project and this project is going to enable a hardware timer to provide
+
+5
+00:00:15,420 --> 00:00:18,510
+us with delay, basically.
+
+6
+00:00:18,710 --> 00:00:19,950
+So I'm going to select my board.
+
+7
+00:00:20,040 --> 00:00:22,800
+If you have that this call you select the disk will help the new clothes.
+
+8
+00:00:22,970 --> 00:00:24,910
+Also, like this double click.
+
+9
+00:00:25,620 --> 00:00:27,630
+And then I'll do the usual stuff.
+
+10
+00:00:31,200 --> 00:00:34,330
+So first, start off by cleaning everything here.
+
+11
+00:00:34,380 --> 00:00:35,190
+Clipping out.
+
+12
+00:00:37,960 --> 00:00:43,860
+And then this time, Hobaugh, you post the video and initialize the RCC to what we often initialize
+
+13
+00:00:43,860 --> 00:00:47,820
+it to, as well as the, uh, select a zero wire for the debugging.
+
+14
+00:00:48,570 --> 00:00:48,830
+Okay.
+
+15
+00:00:48,870 --> 00:00:51,000
+Once you out, you've done that, you can impose.
+
+16
+00:00:51,090 --> 00:00:51,590
+And then we do.
+
+17
+00:00:53,970 --> 00:00:54,270
+Right.
+
+18
+00:00:54,330 --> 00:00:55,260
+The usual stuff.
+
+19
+00:00:56,380 --> 00:00:56,560
+Here.
+
+20
+00:00:56,710 --> 00:01:00,420
+RACC, HSC, ojars.
+
+21
+00:01:02,290 --> 00:01:02,960
+Bypass.
+
+22
+00:01:03,370 --> 00:01:06,220
+And then lo LSC.
+
+23
+00:01:06,400 --> 00:01:07,960
+Or see you ceramic crystal.
+
+24
+00:01:08,710 --> 00:01:09,100
+And then.
+
+25
+00:01:09,160 --> 00:01:09,540
+Okay.
+
+26
+00:01:09,640 --> 00:01:10,480
+Once that is done.
+
+27
+00:01:10,540 --> 00:01:10,780
+Okay.
+
+28
+00:01:10,840 --> 00:01:13,210
+We said we're going to initialize a time.
+
+29
+00:01:13,300 --> 00:01:14,560
+So we come to timers.
+
+30
+00:01:14,710 --> 00:01:17,470
+We've got a number of times we're going to use timer to.
+
+31
+00:01:17,470 --> 00:01:19,170
+So click time or two over here.
+
+32
+00:01:23,080 --> 00:01:26,290
+So once you click, if it doesn't open, you've got to expand it from here.
+
+33
+00:01:26,650 --> 00:01:29,020
+We need to select the clock source of the time.
+
+34
+00:01:29,080 --> 00:01:30,190
+That's very important.
+
+35
+00:01:30,520 --> 00:01:33,580
+So when I use the internal clock, so I'll click over here to select this.
+
+36
+00:01:36,230 --> 00:01:41,720
+And before we forget, we said we want to do a delay, so be nice to use the delay to talk to our lady.
+
+37
+00:01:41,810 --> 00:01:45,120
+So we are going to enable all ality for the output.
+
+38
+00:01:46,040 --> 00:01:47,240
+So P a five.
+
+39
+00:01:47,420 --> 00:01:48,060
+So LCD.
+
+40
+00:01:48,260 --> 00:01:48,500
+Right.
+
+41
+00:01:48,530 --> 00:01:49,340
+Click over here.
+
+42
+00:01:50,330 --> 00:01:51,470
+Keep your output.
+
+43
+00:01:52,970 --> 00:01:58,100
+And like always, we'd rename it or call it ality.
+
+44
+00:02:00,950 --> 00:02:01,520
+Like this.
+
+45
+00:02:10,220 --> 00:02:10,550
+Right.
+
+46
+00:02:10,800 --> 00:02:14,210
+So we've got to figure out what time I hear the unit, et cetera.
+
+47
+00:02:14,270 --> 00:02:18,620
+But before we do that, let's take a look at the, um, the clock frequency of all time.
+
+48
+00:02:18,620 --> 00:02:22,310
+Of course, we know that to perform this type of configuration.
+
+49
+00:02:22,670 --> 00:02:25,100
+I'm going to come to clock configuration over here.
+
+50
+00:02:25,730 --> 00:02:27,640
+And we said we are using our what time are two.
+
+51
+00:02:27,780 --> 00:02:28,640
+So, all right.
+
+52
+00:02:28,640 --> 00:02:29,790
+Here we have the.
+
+53
+00:02:29,970 --> 00:02:33,620
+Does the default clock, 84 megahertz.
+
+54
+00:02:33,980 --> 00:02:37,880
+And then when we come here, we get a clock for the various peripherals.
+
+55
+00:02:38,270 --> 00:02:45,700
+It says MPB to time our clocks is at eighty four megahertz and then EPB one per four o'clock.
+
+56
+00:02:45,770 --> 00:02:48,270
+And then there's EPB one timer clocks.
+
+57
+00:02:48,950 --> 00:02:51,110
+And then there is EPB to appear before a clock.
+
+58
+00:02:53,000 --> 00:02:53,390
+Right.
+
+59
+00:02:53,750 --> 00:02:59,960
+So the question becomes, is how a timer EPB to Taimur or APB one Tyber that we need to find out?
+
+60
+00:03:02,220 --> 00:03:02,550
+Right.
+
+61
+00:03:02,730 --> 00:03:08,670
+So to find that out, we can go and take a look at the data sheet of the reference of the microcontroller,
+
+62
+00:03:09,240 --> 00:03:10,770
+not the reference manual.
+
+63
+00:03:11,070 --> 00:03:11,840
+This will help us.
+
+64
+00:03:11,880 --> 00:03:13,290
+There are so many documents out there.
+
+65
+00:03:13,980 --> 00:03:18,090
+We can take a look at the, um, the data sheet and then that will tell us what.
+
+66
+00:03:18,630 --> 00:03:18,890
+OK.
+
+67
+00:03:19,920 --> 00:03:21,000
+I know the answer to this.
+
+68
+00:03:21,180 --> 00:03:25,010
+I can just move on and, you know, and then see, OK.
+
+69
+00:03:25,080 --> 00:03:26,010
+This is what time I.
+
+70
+00:03:26,070 --> 00:03:27,070
+It's connected to this puzzle.
+
+71
+00:03:27,200 --> 00:03:29,130
+But I think I should show you.
+
+72
+00:03:29,220 --> 00:03:31,140
+So we have to divert a bit.
+
+73
+00:03:31,230 --> 00:03:34,970
+Let's go back to our best friend, Google and get the data sheet.
+
+74
+00:03:36,130 --> 00:03:36,600
+All right.
+
+75
+00:03:36,660 --> 00:03:39,330
+This the most practical course you would you ever take.
+
+76
+00:03:39,840 --> 00:03:45,610
+So we need SDM 32 F for one one this time, not reference my door data sheet.
+
+77
+00:03:47,380 --> 00:03:48,570
+It's a different document.
+
+78
+00:03:49,510 --> 00:03:52,680
+Okay, let's see who says PDAF.
+
+79
+00:03:54,230 --> 00:03:55,720
+Estimate three to four.
+
+80
+00:03:59,820 --> 00:04:00,060
+OK.
+
+81
+00:04:00,150 --> 00:04:01,080
+Oh, come here.
+
+82
+00:04:01,110 --> 00:04:03,900
+It doesn't say PDAF, but it might lead us to the PDAF.
+
+83
+00:04:05,060 --> 00:04:09,720
+I'll put PDAF in the search PDAF over here.
+
+84
+00:04:11,980 --> 00:04:13,170
+This is reference my No.
+
+85
+00:04:13,200 --> 00:04:14,420
+We need a data sheet.
+
+86
+00:04:15,470 --> 00:04:18,600
+Okay, let's come to the S-T Web site.
+
+87
+00:04:20,780 --> 00:04:25,300
+But for one, one, OK, no problem.
+
+88
+00:04:25,510 --> 00:04:26,290
+Thank you very much.
+
+89
+00:04:26,350 --> 00:04:27,480
+Let's go to Resources.
+
+90
+00:04:38,840 --> 00:04:39,860
+Go for a few.
+
+91
+00:04:42,470 --> 00:04:42,660
+OK.
+
+92
+00:04:42,950 --> 00:04:48,860
+So if we were using call you vision, call you vision has a tap for all the documents you would ever
+
+93
+00:04:48,860 --> 00:04:50,930
+require for a particular microcontroller.
+
+94
+00:04:51,650 --> 00:04:55,670
+But that's not a case we use in Cuba, Max, in Cuba already.
+
+95
+00:04:55,790 --> 00:04:57,200
+So we've got to find this.
+
+96
+00:04:57,720 --> 00:04:58,180
+Okay.
+
+97
+00:04:58,340 --> 00:05:00,140
+So we can try another link.
+
+98
+00:05:08,610 --> 00:05:12,570
+No, this is not official stuff, I'm going to post the video, find the appropriate link, and then
+
+99
+00:05:12,600 --> 00:05:13,560
+we open it together.
+
+100
+00:05:15,540 --> 00:05:19,200
+Could you believe the thing was at the top here all along?
+
+101
+00:05:19,760 --> 00:05:20,430
+There's the link.
+
+102
+00:05:20,460 --> 00:05:23,360
+We're looking for a STEM 32 resource data sheet.
+
+103
+00:05:23,840 --> 00:05:24,070
+Okay.
+
+104
+00:05:24,150 --> 00:05:24,390
+Right.
+
+105
+00:05:24,420 --> 00:05:25,740
+Click open over here.
+
+106
+00:05:26,330 --> 00:05:26,740
+Okay.
+
+107
+00:05:26,910 --> 00:05:32,220
+So what we need here is a block diagram that tells us about the bus connection of the microcontroller,
+
+108
+00:05:32,660 --> 00:05:37,430
+how the various the various peripherals are connected to the bus.
+
+109
+00:05:38,490 --> 00:05:38,930
+Okay.
+
+110
+00:05:39,300 --> 00:05:40,020
+Yeah, we go.
+
+111
+00:05:40,140 --> 00:05:41,290
+This is what we're looking for.
+
+112
+00:05:41,310 --> 00:05:42,430
+Page number 15.
+
+113
+00:05:43,380 --> 00:05:45,700
+And, um, zoom in.
+
+114
+00:05:46,890 --> 00:05:48,540
+So this diagram here is very important.
+
+115
+00:05:48,570 --> 00:05:51,420
+This tells us which bus connects to which peripheral.
+
+116
+00:05:51,930 --> 00:05:59,460
+So in arm, there are basically two buses, four connecting the C.P.U to the other peripherals.
+
+117
+00:06:00,030 --> 00:06:04,950
+And they are two because they have different current characteristics.
+
+118
+00:06:05,070 --> 00:06:06,600
+One is faster than the other.
+
+119
+00:06:06,900 --> 00:06:12,550
+We have the HP bus, which is known as the Advanced High Peripheral Bus.
+
+120
+00:06:12,630 --> 00:06:16,680
+And we have the APB bus, which is I think known as advance prep for a bus.
+
+121
+00:06:16,950 --> 00:06:19,800
+The APB is a legacy version.
+
+122
+00:06:19,830 --> 00:06:20,480
+It's older.
+
+123
+00:06:20,730 --> 00:06:22,020
+The HP is the newer.
+
+124
+00:06:22,580 --> 00:06:28,950
+And the HP allows us to access the various parts or peripherals at a higher frequency.
+
+125
+00:06:29,670 --> 00:06:33,120
+So the APB has a lower frequency compared to the HP.
+
+126
+00:06:33,570 --> 00:06:36,690
+And you can find this out actually as it is written here.
+
+127
+00:06:37,170 --> 00:06:37,710
+Over here.
+
+128
+00:06:38,790 --> 00:06:39,330
+Let's see.
+
+129
+00:06:40,320 --> 00:06:41,970
+It says APB, too.
+
+130
+00:06:42,100 --> 00:06:43,080
+Who are we dealing with?
+
+131
+00:06:43,200 --> 00:06:43,500
+Let's see.
+
+132
+00:06:43,530 --> 00:06:46,290
+Which microcontrollers this esteemed.
+
+133
+00:06:46,360 --> 00:06:47,090
+Three to four.
+
+134
+00:06:47,090 --> 00:06:47,580
+One one.
+
+135
+00:06:47,880 --> 00:06:48,250
+Okay.
+
+136
+00:06:48,630 --> 00:06:52,140
+So this is HP, one hundred megahertz.
+
+137
+00:06:52,980 --> 00:06:54,810
+HP 200 megahertz.
+
+138
+00:06:56,240 --> 00:07:03,650
+APB 150 mega hits, it just so happens that over here we have an APB also with a 100 megahertz, but
+
+139
+00:07:03,740 --> 00:07:04,250
+often.
+
+140
+00:07:05,490 --> 00:07:12,370
+A HB allows for foster access so you can have the same pair for which you can have a single pair for
+
+141
+00:07:12,370 --> 00:07:12,480
+all.
+
+142
+00:07:12,510 --> 00:07:17,670
+And you can either access that single pair for it or by HP or APB.
+
+143
+00:07:18,480 --> 00:07:25,200
+So when you act, when you want to access it faster with less clock cycles, should opt for the AHP.
+
+144
+00:07:25,560 --> 00:07:28,620
+But if regular speed, regular frequency is what you want.
+
+145
+00:07:28,710 --> 00:07:30,030
+You stick to the APB.
+
+146
+00:07:30,420 --> 00:07:32,160
+So that's the difference between the two.
+
+147
+00:07:32,610 --> 00:07:35,040
+So we said we want to know where our time on the time.
+
+148
+00:07:35,040 --> 00:07:36,750
+Are we dealing with where it is connected?
+
+149
+00:07:37,650 --> 00:07:40,880
+So to know where a particular pair fros connected.
+
+150
+00:07:40,980 --> 00:07:42,060
+Which plus it is connected.
+
+151
+00:07:42,090 --> 00:07:45,410
+You just need to follow the arrows like it is said an investigation.
+
+152
+00:07:45,480 --> 00:07:46,320
+Follow the money.
+
+153
+00:07:46,890 --> 00:07:47,880
+This over here.
+
+154
+00:07:47,880 --> 00:07:48,930
+We follow the arrows.
+
+155
+00:07:49,410 --> 00:07:51,460
+So, for instance, we've got G.P.A. reports.
+
+156
+00:07:51,780 --> 00:07:57,870
+When you see there's an arc connecting keuper your ports e to this other bus here and where you take
+
+157
+00:07:57,870 --> 00:07:59,520
+a look at the name of the bus.
+
+158
+00:07:59,610 --> 00:08:00,840
+It is HP one.
+
+159
+00:08:01,200 --> 00:08:06,100
+So if we want to know where G.P.A. ports is connected, it is connected to HP one.
+
+160
+00:08:06,360 --> 00:08:10,200
+And in fact, all the GPL use are connected to HP one bus.
+
+161
+00:08:11,140 --> 00:08:11,290
+OK.
+
+162
+00:08:11,580 --> 00:08:13,830
+So let's run the same experiment for our time.
+
+163
+00:08:13,920 --> 00:08:15,580
+We said we work with time or two.
+
+164
+00:08:16,130 --> 00:08:21,120
+When we take a look at time or two over here, we see the arrow connecting to time or two when we see
+
+165
+00:08:21,120 --> 00:08:22,480
+the other side of the arm.
+
+166
+00:08:22,560 --> 00:08:23,550
+What does it connect to?
+
+167
+00:08:23,900 --> 00:08:25,740
+It connects to APB one.
+
+168
+00:08:26,430 --> 00:08:29,940
+So APB one maximum frequency is 50 megahertz.
+
+169
+00:08:30,630 --> 00:08:33,570
+So as you can see, time two is APB.
+
+170
+00:08:33,570 --> 00:08:36,510
+One frequency is connected to APB, one bus.
+
+171
+00:08:36,840 --> 00:08:38,640
+And we find this in the data sheet.
+
+172
+00:08:38,700 --> 00:08:42,890
+No, the reference nor remember the reference manual or what, 800 pages.
+
+173
+00:08:43,230 --> 00:08:44,730
+This one is just a little over.
+
+174
+00:08:45,330 --> 00:08:48,240
+Or maybe, you know, a hundred and a half pages.
+
+175
+00:08:48,780 --> 00:08:50,580
+One hundred and forty nine pages in total.
+
+176
+00:08:50,610 --> 00:08:55,530
+So let's save this as well so that the next time we require it, we wouldn't go looking for it.
+
+177
+00:08:57,300 --> 00:08:57,680
+Okay.
+
+178
+00:08:57,870 --> 00:08:58,710
+It's downloaded.
+
+179
+00:08:58,830 --> 00:09:00,210
+I'm going to minimize this.
+
+180
+00:09:00,240 --> 00:09:03,660
+So timer two is connected to APB one bus.
+
+181
+00:09:04,510 --> 00:09:11,370
+Okay, so when we come over here, given our current configuration, let's see, it says APB one time
+
+182
+00:09:11,370 --> 00:09:11,790
+a clock.
+
+183
+00:09:12,300 --> 00:09:16,380
+So our APB one time a clock currently is 84 megahertz.
+
+184
+00:09:19,400 --> 00:09:22,690
+Eight people, one time a clock is what we use in.
+
+185
+00:09:23,200 --> 00:09:25,100
+You can put.
+
+186
+00:09:25,500 --> 00:09:25,850
+Yeah.
+
+187
+00:09:28,560 --> 00:09:29,490
+Let's see this again.
+
+188
+00:09:31,710 --> 00:09:33,980
+We cannot debug all of these together.
+
+189
+00:09:38,470 --> 00:09:38,650
+OK.
+
+190
+00:09:39,350 --> 00:09:45,870
+So the reason I'm back here is because it says fifty megahertz, Max.
+
+191
+00:09:46,010 --> 00:09:52,610
+But Cuba, Max here is telling us it's set it's to its default frequency at 84 megahertz.
+
+192
+00:09:53,630 --> 00:09:54,870
+You see it before.
+
+193
+00:09:54,960 --> 00:09:57,410
+So it turns out they're 50 megahertz.
+
+194
+00:09:57,440 --> 00:09:58,980
+Doesn't apply to the time.
+
+195
+00:09:58,990 --> 00:10:04,910
+As you can see, the APB, one bus has other peripherals connected to it as well.
+
+196
+00:10:05,180 --> 00:10:13,050
+We have the eye to see three eye to see two Aspey, three Espey to another of another pair for us.
+
+197
+00:10:13,160 --> 00:10:16,040
+We have the, um, the ROTC, the real time clock as well.
+
+198
+00:10:16,550 --> 00:10:19,600
+So there is this part over here, the card.
+
+199
+00:10:19,620 --> 00:10:28,070
+Yet it says the time is connected to APB to uncloaked from time X clock up to 100 megahertz whilst the
+
+200
+00:10:28,070 --> 00:10:33,710
+time is connected to APB one clock from time X clock up to one hundred megahertz.
+
+201
+00:10:34,070 --> 00:10:38,480
+So this implies that our time is clocked up to one hundred megahertz.
+
+202
+00:10:38,540 --> 00:10:43,990
+That is why we could have time to two on APB bus, which says 50 megahertz max here.
+
+203
+00:10:44,570 --> 00:10:49,610
+But in Cuba makes the default is set us eighty four, which is within the range.
+
+204
+00:10:49,820 --> 00:10:53,180
+If we take this sentence here into account.
+
+205
+00:10:54,110 --> 00:10:54,360
+OK.
+
+206
+00:10:54,490 --> 00:10:54,760
+So.
+
+207
+00:10:55,250 --> 00:10:55,580
+Right.
+
+208
+00:10:55,640 --> 00:10:58,850
+That being said, um, where are we.
+
+209
+00:10:59,180 --> 00:11:00,110
+Back to Cuba, Max.
+
+210
+00:11:01,510 --> 00:11:06,120
+And I hope you find this useful rather than me just telling you it's APB, one bus and then we perform
+
+211
+00:11:06,120 --> 00:11:07,420
+the divisions, so.
+
+212
+00:11:07,560 --> 00:11:07,740
+OK.
+
+213
+00:11:07,820 --> 00:11:12,830
+This is APB, one bus, and it's currently clocked at 84 megahertz.
+
+214
+00:11:15,170 --> 00:11:18,980
+So our goal is to bring our timer into the millisecond unit.
+
+215
+00:11:19,580 --> 00:11:20,240
+It's time.
+
+216
+00:11:20,300 --> 00:11:22,940
+Currently it's eighty four megahertz.
+
+217
+00:11:23,330 --> 00:11:25,190
+Mega implies a million.
+
+218
+00:11:25,380 --> 00:11:28,540
+Eighty four megahertz implies 84 million.
+
+219
+00:11:29,030 --> 00:11:31,760
+This means 84 million.
+
+220
+00:11:32,970 --> 00:11:36,920
+Cycos, uh, executed in a single second.
+
+221
+00:11:37,010 --> 00:11:40,970
+That is warheads applies or Kerans in a second.
+
+222
+00:11:41,300 --> 00:11:43,970
+That implies up implies a second.
+
+223
+00:11:44,540 --> 00:11:49,370
+So meaning 84 megahertz means 84 million.
+
+224
+00:11:49,370 --> 00:11:50,690
+Cycos in a second.
+
+225
+00:11:51,080 --> 00:11:54,440
+So we know in one second gives us eighty four million.
+
+226
+00:11:54,920 --> 00:11:57,650
+Therefore, we can deduce that.
+
+227
+00:11:58,750 --> 00:12:02,560
+One millisecond would require eighty four thousand.
+
+228
+00:12:03,800 --> 00:12:07,610
+Course, we know a thousand milliseconds gives us a second.
+
+229
+00:12:08,320 --> 00:12:13,250
+Eighty four million Cycos in one second.
+
+230
+00:12:14,260 --> 00:12:19,520
+How many psychos in one millisecond, 84000 psychos.
+
+231
+00:12:20,140 --> 00:12:20,560
+Right.
+
+232
+00:12:22,360 --> 00:12:28,840
+I'm gonna come over here and then our time a priest killer, I'm gonna put it to 4000 here.
+
+233
+00:12:30,750 --> 00:12:32,740
+It's you four with three zeros.
+
+234
+00:12:32,950 --> 00:12:33,660
+One, two, three.
+
+235
+00:12:35,730 --> 00:12:43,410
+So what happens is this pre-schooler value is this would divide the time of frequency by this pre-schooler
+
+236
+00:12:43,440 --> 00:12:43,770
+value.
+
+237
+00:12:43,800 --> 00:12:47,340
+So our time frequency is currently at 84 million.
+
+238
+00:12:48,090 --> 00:12:52,170
+And then we had divide in it by eighty four thousand.
+
+239
+00:12:52,800 --> 00:12:56,190
+When we'd performed that division, we would have 1000.
+
+240
+00:12:56,790 --> 00:12:59,550
+Then we've brought it to the millisecond range.
+
+241
+00:12:59,850 --> 00:13:00,990
+That is what we're doing here.
+
+242
+00:13:01,650 --> 00:13:04,110
+Leave a comment in the Q&amp;A section.
+
+243
+00:13:04,140 --> 00:13:05,460
+If you do not understand this.
+
+244
+00:13:07,820 --> 00:13:10,470
+So now our timer is in millisecond range.
+
+245
+00:13:10,490 --> 00:13:14,750
+What we have to set is the time as the counter period, the counter period.
+
+246
+00:13:14,780 --> 00:13:16,990
+This is what would determine the time out.
+
+247
+00:13:17,390 --> 00:13:18,410
+When should the time out?
+
+248
+00:13:18,440 --> 00:13:18,650
+OK.
+
+249
+00:13:19,640 --> 00:13:21,260
+So we have milliseconds.
+
+250
+00:13:22,070 --> 00:13:22,890
+Let's see.
+
+251
+00:13:22,940 --> 00:13:28,540
+We want if we want 10 milliseconds every 10 milliseconds, we'll put 10 over here because.
+
+252
+00:13:28,760 --> 00:13:31,100
+Oh, I forgot this one here.
+
+253
+00:13:31,220 --> 00:13:31,360
+Oh.
+
+254
+00:13:31,370 --> 00:13:32,420
+Forty eight thousand.
+
+255
+00:13:32,810 --> 00:13:33,710
+One, two, three.
+
+256
+00:13:34,370 --> 00:13:35,420
+We need to hit enter.
+
+257
+00:13:36,090 --> 00:13:40,700
+OK, so now our timer is in millisecond range, one millisecond range.
+
+258
+00:13:41,140 --> 00:13:43,670
+And what I mean by one, we derive that by the.
+
+259
+00:13:44,080 --> 00:13:44,360
+The.
+
+260
+00:13:45,120 --> 00:13:45,480
+Sorry.
+
+261
+00:13:45,560 --> 00:13:45,710
+This.
+
+262
+00:13:45,710 --> 00:13:46,230
+Should it be.
+
+263
+00:13:46,250 --> 00:13:47,630
+Forty eight thousand.
+
+264
+00:13:48,110 --> 00:13:49,160
+I'm all over the place.
+
+265
+00:13:49,310 --> 00:13:51,800
+Eighty four thousand just to show you.
+
+266
+00:13:53,570 --> 00:13:54,710
+We went through this.
+
+267
+00:13:55,490 --> 00:14:00,680
+Eighty four million divided by the eighty four thousand gives us 1000 APB.
+
+268
+00:14:00,680 --> 00:14:02,030
+One is at it for me.
+
+269
+00:14:02,070 --> 00:14:02,520
+Go ahead.
+
+270
+00:14:02,630 --> 00:14:05,810
+Which means 84 million to divide that by.
+
+271
+00:14:05,870 --> 00:14:07,670
+Eighty four thousand you get 1000.
+
+272
+00:14:07,910 --> 00:14:12,290
+And this has brought us from second to milliseconds.
+
+273
+00:14:12,680 --> 00:14:15,710
+Cause a thousand milliseconds gives us a second.
+
+274
+00:14:16,400 --> 00:14:16,820
+Right.
+
+275
+00:14:17,840 --> 00:14:20,480
+So then our timer is in milliseconds.
+
+276
+00:14:21,410 --> 00:14:22,220
+When I come here.
+
+277
+00:14:27,840 --> 00:14:28,590
+Oh, I see.
+
+278
+00:14:34,070 --> 00:14:37,140
+The pre-schooler value, it has to be, he has to be.
+
+279
+00:14:38,490 --> 00:14:41,960
+He has to be sixteen, um, a sixteen bit value.
+
+280
+00:14:42,180 --> 00:14:46,980
+So that is why when we put eighty four thousand there, we're not quite getting it.
+
+281
+00:14:47,720 --> 00:14:48,540
+OK, let's see.
+
+282
+00:14:50,940 --> 00:14:54,060
+I'm gonna see whether indeed our clock is what it is.
+
+283
+00:14:58,750 --> 00:14:59,110
+Right.
+
+284
+00:14:59,380 --> 00:15:01,000
+Um, our clock looks fine.
+
+285
+00:15:01,390 --> 00:15:01,610
+Yeah.
+
+286
+00:15:02,120 --> 00:15:09,330
+So, okay, this accept a 16 bit value for it.
+
+287
+00:15:09,460 --> 00:15:13,210
+Um, it's input, the highest number you can enter the sixteen bit.
+
+288
+00:15:13,720 --> 00:15:16,230
+So we cannot enter it in four thousand.
+
+289
+00:15:18,350 --> 00:15:26,110
+See, the largest sixteen bit value is sixty five thousand five hundred and thirty six.
+
+290
+00:15:26,230 --> 00:15:27,220
+That is what that is.
+
+291
+00:15:27,220 --> 00:15:30,070
+Why when we enter eighty four thousand it doesn't accept.
+
+292
+00:15:30,550 --> 00:15:32,960
+So okay we can all use that as a preschooler.
+
+293
+00:15:33,040 --> 00:15:35,290
+So okay we experimented together.
+
+294
+00:15:35,680 --> 00:15:42,490
+So rather than bring our timer down to millisecond range, we can bring it into, um, ten milliseconds
+
+295
+00:15:42,490 --> 00:15:42,940
+range.
+
+296
+00:15:43,270 --> 00:15:43,900
+Tens.
+
+297
+00:15:44,050 --> 00:15:45,220
+Tens of milliseconds.
+
+298
+00:15:45,520 --> 00:15:49,780
+So each unit, rather than being a millisecond, will be 10 milliseconds.
+
+299
+00:15:50,650 --> 00:15:54,880
+And, um, let's see how you would get this.
+
+300
+00:15:55,300 --> 00:15:59,650
+So remember, we set our clock, which we have over here is the same.
+
+301
+00:16:01,440 --> 00:16:01,650
+Oh.
+
+302
+00:16:02,260 --> 00:16:03,880
+If the datasheet information.
+
+303
+00:16:04,060 --> 00:16:06,670
+No, we we collected is accurate.
+
+304
+00:16:07,030 --> 00:16:09,630
+The information we interpret it if it's accurate.
+
+305
+00:16:10,180 --> 00:16:11,830
+And given what we see over here.
+
+306
+00:16:12,620 --> 00:16:12,870
+Oh.
+
+307
+00:16:13,000 --> 00:16:14,590
+EPB one time a clock.
+
+308
+00:16:15,420 --> 00:16:17,460
+It could be one time a clocks is.
+
+309
+00:16:17,580 --> 00:16:18,580
+Eighty four megahertz.
+
+310
+00:16:18,640 --> 00:16:23,890
+If this is indeed the case this means eighty four million.
+
+311
+00:16:25,120 --> 00:16:32,530
+And this further means eighty four million psychos are executed in one second.
+
+312
+00:16:33,040 --> 00:16:34,810
+That is what Hertz implies.
+
+313
+00:16:34,930 --> 00:16:36,700
+Hertz implies a second.
+
+314
+00:16:37,450 --> 00:16:37,660
+So.
+
+315
+00:16:37,700 --> 00:16:40,720
+Eighty four million cycles executed in one second.
+
+316
+00:16:41,140 --> 00:16:45,790
+So the question becomes one or the number of cycles executed.
+
+317
+00:16:45,790 --> 00:16:47,730
+And one second, is it four million?
+
+318
+00:16:49,180 --> 00:16:51,550
+How many cycles will be executed?
+
+319
+00:16:51,560 --> 00:16:55,000
+And let's see, one millisecond.
+
+320
+00:16:56,410 --> 00:16:56,810
+Okay.
+
+321
+00:16:57,340 --> 00:17:00,880
+We know a thousand milliseconds make one second.
+
+322
+00:17:01,000 --> 00:17:03,670
+Therefore, that value is eighty four thousand.
+
+323
+00:17:04,450 --> 00:17:05,960
+So the question is further asked.
+
+324
+00:17:07,040 --> 00:17:09,910
+Eighty four thousand for one millisecond.
+
+325
+00:17:10,040 --> 00:17:16,270
+Then how many cycles do we think will be executed in ten milliseconds.
+
+326
+00:17:17,520 --> 00:17:18,760
+In 10 milliseconds.
+
+327
+00:17:23,890 --> 00:17:30,310
+Actually, um, we can avoid all of this complicated explanation just by bringing our war time down
+
+328
+00:17:30,610 --> 00:17:31,330
+for the range.
+
+329
+00:17:32,040 --> 00:17:32,190
+OK.
+
+330
+00:17:32,440 --> 00:17:34,630
+So I'm gonna change the time frequency here from it.
+
+331
+00:17:34,720 --> 00:17:41,540
+Eighty four gigahertz so that I do not have to start using ten milliseconds as units.
+
+332
+00:17:42,190 --> 00:17:44,050
+And that's very important.
+
+333
+00:17:44,110 --> 00:17:46,060
+Is good that you see this entire process.
+
+334
+00:17:46,540 --> 00:17:51,100
+I could have just, you know, stop this video and then figure it out.
+
+335
+00:17:51,190 --> 00:17:52,930
+What a simple explanation.
+
+336
+00:17:52,930 --> 00:17:56,030
+And they shot a fresh video that moves straight forward.
+
+337
+00:17:56,140 --> 00:17:59,830
+But I want you to appreciate some of the experimentation that goes on.
+
+338
+00:18:00,160 --> 00:18:02,500
+Well, you are dealing with a board and there is no example.
+
+339
+00:18:02,500 --> 00:18:05,140
+And you've got to sort of write it by yourself.
+
+340
+00:18:05,380 --> 00:18:07,060
+So what I'm gonna do here, over here.
+
+341
+00:18:07,130 --> 00:18:08,160
+You're the one timer.
+
+342
+00:18:08,440 --> 00:18:10,990
+The system has set it to eighty four megahertz.
+
+343
+00:18:11,530 --> 00:18:13,630
+I'm gonna put it to forty eight megahertz.
+
+344
+00:18:15,220 --> 00:18:15,550
+Right.
+
+345
+00:18:15,640 --> 00:18:16,560
+So I just had this.
+
+346
+00:18:16,630 --> 00:18:17,740
+Forty eight megahertz.
+
+347
+00:18:17,830 --> 00:18:19,270
+A lot of things have changed as well.
+
+348
+00:18:20,200 --> 00:18:24,950
+Our system clock has changed from its eighty four megahertz to ninety six megahertz.
+
+349
+00:18:25,480 --> 00:18:25,810
+Right.
+
+350
+00:18:25,840 --> 00:18:27,430
+And then other peripherals of change.
+
+351
+00:18:27,460 --> 00:18:29,200
+But time is the only one we interested in.
+
+352
+00:18:29,410 --> 00:18:35,890
+So now our timer is at forty eight megahertz, meaning forty eight million cycles in a second.
+
+353
+00:18:37,250 --> 00:18:39,550
+In a single second, forty eight minute cycles.
+
+354
+00:18:40,340 --> 00:18:41,630
+Therefore, in a millisecond.
+
+355
+00:18:41,660 --> 00:18:48,240
+Then we'll have forty eight thousand cycles so we can simply go and then divide a while.
+
+356
+00:18:48,300 --> 00:18:50,960
+Thirty eight to make ahead by forty eight thousand.
+
+357
+00:18:51,290 --> 00:18:54,500
+To bring our time into the millisecond range.
+
+358
+00:18:56,120 --> 00:18:57,030
+So I'll come over here.
+
+359
+00:18:57,140 --> 00:18:57,580
+Okay.
+
+360
+00:18:58,100 --> 00:18:59,780
+We have forty eight thousand here.
+
+361
+00:19:00,170 --> 00:19:01,150
+This is our killer.
+
+362
+00:19:01,250 --> 00:19:05,060
+The killer is used to divide the time of frequency.
+
+363
+00:19:05,540 --> 00:19:10,550
+So with this preschooler we would have forty eight million divided by forty eight thousand.
+
+364
+00:19:10,970 --> 00:19:12,860
+And when we get will be 1000.
+
+365
+00:19:13,790 --> 00:19:14,120
+Right.
+
+366
+00:19:14,180 --> 00:19:16,370
+So now our time eyes in the millisecond range.
+
+367
+00:19:16,940 --> 00:19:20,090
+So the day count period is.
+
+368
+00:19:21,540 --> 00:19:25,980
+When we want to the time, our tool kit, if we want a timeout, too.
+
+369
+00:19:26,070 --> 00:19:26,320
+Okay.
+
+370
+00:19:26,400 --> 00:19:28,800
+Every 10 milliseconds I can pass 10 over here.
+
+371
+00:19:29,190 --> 00:19:29,760
+If I wanted to.
+
+372
+00:19:29,780 --> 00:19:29,930
+Okay.
+
+373
+00:19:30,090 --> 00:19:35,280
+Over here, every hundred millisecond I can pass one hundred if I want every thousand millisecond.
+
+374
+00:19:35,330 --> 00:19:36,690
+Which means every second.
+
+375
+00:19:36,790 --> 00:19:39,240
+Then I can pass 1000 here.
+
+376
+00:19:39,900 --> 00:19:40,290
+Right.
+
+377
+00:19:40,830 --> 00:19:42,920
+And I hope you appreciate the um.
+
+378
+00:19:42,960 --> 00:19:46,690
+The process, the brainstorming that you know we've done together.
+
+379
+00:19:46,780 --> 00:19:47,940
+Or do you know.
+
+380
+00:19:48,220 --> 00:19:48,880
+Yeah, sure.
+
+381
+00:19:49,470 --> 00:19:51,880
+You've been brainstorming along remotely.
+
+382
+00:19:52,020 --> 00:19:52,680
+I should say.
+
+383
+00:19:53,250 --> 00:19:55,020
+So this is what we going to keep.
+
+384
+00:19:55,050 --> 00:19:58,660
+We could have, you know, kept our 84 million.
+
+385
+00:19:58,800 --> 00:20:03,270
+And then used other units that would fit into our sixteen bit value.
+
+386
+00:20:03,750 --> 00:20:05,520
+But we can just bring the clock down.
+
+387
+00:20:05,550 --> 00:20:11,920
+And then we can use this if you don't understand how to use the pre-schooler in the current period.
+
+388
+00:20:12,680 --> 00:20:14,340
+Um, you can leave in the Q&amp;A section.
+
+389
+00:20:14,710 --> 00:20:15,120
+Right.
+
+390
+00:20:17,390 --> 00:20:20,590
+So another thing we have to do is said the trigger events election.
+
+391
+00:20:21,140 --> 00:20:25,490
+And over here, we're going to keep select updates, events so that you would keep updated.
+
+392
+00:20:25,850 --> 00:20:27,260
+So what are three things we did?
+
+393
+00:20:27,500 --> 00:20:29,450
+Is the pre-schooler the.
+
+394
+00:20:30,970 --> 00:20:32,470
+The auto reload over here.
+
+395
+00:20:32,500 --> 00:20:33,470
+It's just 10.
+
+396
+00:20:33,590 --> 00:20:34,680
+It should be 1000.
+
+397
+00:20:35,320 --> 00:20:37,000
+The auto reload, which is 1000.
+
+398
+00:20:37,240 --> 00:20:38,670
+And then the update event.
+
+399
+00:20:39,790 --> 00:20:40,200
+Right.
+
+400
+00:20:45,380 --> 00:20:49,340
+Over here, we can set the auto reload preload also to enable.
+
+401
+00:20:50,500 --> 00:20:50,680
+Yeah.
+
+402
+00:20:51,260 --> 00:20:51,830
+Let's move on.
+
+403
+00:20:53,750 --> 00:20:58,550
+Once this is done, we come to NVC and then we enable a timer to global interrupt like this.
+
+404
+00:21:01,610 --> 00:21:03,430
+So now we're ready to generate our code.
+
+405
+00:21:03,590 --> 00:21:07,070
+We come to project manager or select my two chain is the.
+
+406
+00:21:07,830 --> 00:21:08,930
+It's the cube idea.
+
+407
+00:21:09,140 --> 00:21:10,840
+And then we can give the project a name.
+
+408
+00:21:12,850 --> 00:21:14,120
+Call this time delay.
+
+409
+00:21:21,530 --> 00:21:21,920
+Right.
+
+410
+00:21:24,280 --> 00:21:26,070
+And then a click here to generate a code.
+
+411
+00:21:28,730 --> 00:21:31,370
+Once this is done, click open project over here.
+
+412
+00:21:36,730 --> 00:21:38,970
+So this project or just clean up a bit.
+
+413
+00:21:41,260 --> 00:21:43,030
+So, OK, that's what we have.
+
+414
+00:21:43,270 --> 00:21:44,410
+So that's our main function.
+
+415
+00:21:44,440 --> 00:21:48,560
+This time we initialised upl you and then we initialise time are to us.
+
+416
+00:21:48,580 --> 00:21:52,240
+Well, the definition of this function is down here, Terma.
+
+417
+00:21:52,600 --> 00:21:54,880
+And this is basically the selections we made.
+
+418
+00:21:55,090 --> 00:21:56,490
+This is our pre-schooler value.
+
+419
+00:21:56,560 --> 00:21:58,810
+If we want to change it, we can change from here.
+
+420
+00:21:59,140 --> 00:22:00,620
+This is the period we set as well.
+
+421
+00:22:00,760 --> 00:22:01,650
+If we want to change the.
+
+422
+00:22:01,900 --> 00:22:03,880
+That also can be changed from here.
+
+423
+00:22:04,690 --> 00:22:05,080
+Right.
+
+424
+00:22:06,180 --> 00:22:06,400
+Okay.
+
+425
+00:22:06,490 --> 00:22:07,690
+So let's see.
+
+426
+00:22:07,920 --> 00:22:09,910
+What we have to do is first start our time.
+
+427
+00:22:09,910 --> 00:22:10,570
+I interrupt.
+
+428
+00:22:11,140 --> 00:22:14,380
+Let's go to our what time I drive up and see the functions available.
+
+429
+00:22:14,710 --> 00:22:16,990
+I'll click over here on Drivers Hall.
+
+430
+00:22:17,620 --> 00:22:19,630
+And then the source over here.
+
+431
+00:22:19,690 --> 00:22:24,790
+I'll click how time I dot h o t i m this one here.
+
+432
+00:22:25,090 --> 00:22:25,940
+I m dot c..
+
+433
+00:22:26,110 --> 00:22:30,400
+Over here I should say that I will click this open in a large file.
+
+434
+00:22:30,430 --> 00:22:33,550
+Scalability mode has been turned on for.
+
+435
+00:22:33,880 --> 00:22:34,210
+Okay.
+
+436
+00:22:34,240 --> 00:22:34,900
+I'll say yes.
+
+437
+00:22:36,390 --> 00:22:37,270
+Applying clues.
+
+438
+00:22:37,900 --> 00:22:38,900
+The file is very large.
+
+439
+00:22:38,920 --> 00:22:39,850
+It says so.
+
+440
+00:22:39,850 --> 00:22:41,530
+Click over here to see the outline.
+
+441
+00:22:43,820 --> 00:22:48,420
+Over here, it says the outline is disabled due to scalability, MODOK, click options.
+
+442
+00:22:52,000 --> 00:22:53,540
+Disable ed, pass in.
+
+443
+00:22:53,680 --> 00:22:56,400
+This is what disable the hotline.
+
+444
+00:22:58,170 --> 00:22:58,530
+OK.
+
+445
+00:22:59,320 --> 00:23:02,080
+So let's not spend time here.
+
+446
+00:23:03,970 --> 00:23:10,710
+We're looking for a function to help us start the, um, the the timer.
+
+447
+00:23:10,960 --> 00:23:16,270
+First, we've got to start the timer interrupt and then we proceed from there so we can do it manually
+
+448
+00:23:16,270 --> 00:23:17,010
+by finding it.
+
+449
+00:23:19,100 --> 00:23:22,600
+Oh, we can go to the, um, the reference manual we downloaded.
+
+450
+00:23:24,560 --> 00:23:28,550
+Okay, so let's look for it next time.
+
+451
+00:23:28,550 --> 00:23:29,720
+I'm not going to open it.
+
+452
+00:23:29,730 --> 00:23:30,510
+Scalability.
+
+453
+00:23:31,640 --> 00:23:31,850
+OK.
+
+454
+00:23:31,970 --> 00:23:35,510
+So this is it starts the time-based generation in interrupt mode.
+
+455
+00:23:35,540 --> 00:23:36,950
+So the whole time bathes in it.
+
+456
+00:23:37,280 --> 00:23:46,940
+So this is the function we pass the time we pass the address of the time, a handler argument and then
+
+457
+00:23:47,000 --> 00:23:49,420
+it returns the time a status typedef.
+
+458
+00:23:50,000 --> 00:23:57,710
+So I'm gonna copy this controversy over here to copy and then I'll come to Main and then over here after
+
+459
+00:23:57,710 --> 00:24:05,760
+we've initialize the time, are we going to the time line defined by here, time out to a.T.M to sort
+
+460
+00:24:05,760 --> 00:24:09,060
+of copy this and then pass it over here.
+
+461
+00:24:13,740 --> 00:24:14,100
+Right.
+
+462
+00:24:15,240 --> 00:24:24,720
+So we have this next, because our timeline is set as an interrupt every second as we configured, we
+
+463
+00:24:24,720 --> 00:24:26,370
+said the time should OK.
+
+464
+00:24:26,610 --> 00:24:27,450
+Every second.
+
+465
+00:24:28,020 --> 00:24:34,080
+So every second a block of code in D callback function is going to be executed.
+
+466
+00:24:34,530 --> 00:24:40,560
+What we need to do next is find the header or the structure of this callback function just like we did.
+
+467
+00:24:40,560 --> 00:24:43,380
+For what other interrupt example for GPL?
+
+468
+00:24:43,380 --> 00:24:44,430
+Your input interrupt.
+
+469
+00:24:44,700 --> 00:24:51,180
+We had a callback function and then we put out what do something like block of code inside a callback
+
+470
+00:24:51,180 --> 00:24:55,560
+such that whenever the interrupt occurs, our piece of code is executed.
+
+471
+00:24:55,590 --> 00:24:58,440
+We've got to do the same thing here whenever the interrupt occurs.
+
+472
+00:24:58,740 --> 00:25:02,460
+The piece of code that we want to execute would would execute.
+
+473
+00:25:02,520 --> 00:25:06,720
+But this time to interrupt that or caires is triggered by the time event.
+
+474
+00:25:06,990 --> 00:25:13,320
+Whereas in the GPL, for example, the interrupt was triggered by that, a rising edge or the fallen
+
+475
+00:25:13,380 --> 00:25:14,340
+edge of the switch.
+
+476
+00:25:14,730 --> 00:25:18,690
+Meaning when we press this switch, something changes from high to low or low to high.
+
+477
+00:25:19,230 --> 00:25:22,120
+And by that detection, we we trigger the interrupt.
+
+478
+00:25:22,230 --> 00:25:25,770
+But this time, it's going to be triggered by time every second.
+
+479
+00:25:29,090 --> 00:25:30,890
+OK, so we go back to our time a module.
+
+480
+00:25:31,640 --> 00:25:38,240
+The function is call a period, a lapse of time, a period elapsed the C.
+
+481
+00:25:43,830 --> 00:25:44,690
+It's over here.
+
+482
+00:25:45,260 --> 00:25:48,440
+Line four thousand eight hundred two such very quickly.
+
+483
+00:25:48,470 --> 00:25:54,020
+You can just to control F and then you search for a keyword just like we do, OK?
+
+484
+00:25:54,170 --> 00:25:54,920
+So it?
+
+485
+00:25:54,920 --> 00:25:56,660
+S also has the weak keyword here.
+
+486
+00:25:56,720 --> 00:25:58,410
+And when we explain what we have.
+
+487
+00:25:58,440 --> 00:26:03,470
+By that we keyword to what we have to do is copy this callback function and then reimplemented.
+
+488
+00:26:03,810 --> 00:26:04,490
+Now what we.
+
+489
+00:26:05,070 --> 00:26:05,350
+OK.
+
+490
+00:26:05,720 --> 00:26:08,490
+So if he has a spirit loves call back in non blocking mode.
+
+491
+00:26:09,110 --> 00:26:09,440
+Right.
+
+492
+00:26:09,470 --> 00:26:11,870
+So I'm going to copy this controversy to copy.
+
+493
+00:26:11,900 --> 00:26:15,440
+Come to Main and then paste this over here.
+
+494
+00:26:16,740 --> 00:26:17,480
+I'll just paste that.
+
+495
+00:26:17,540 --> 00:26:18,630
+You can paste it anywhere.
+
+496
+00:26:20,270 --> 00:26:22,660
+And then in here we can talk about ality.
+
+497
+00:26:23,000 --> 00:26:27,590
+If you have an algorithm that you want to compute every second, you can put it over here.
+
+498
+00:26:27,890 --> 00:26:30,530
+If you have other things you want to do every second.
+
+499
+00:26:30,890 --> 00:26:32,480
+Basically do something.
+
+500
+00:26:33,350 --> 00:26:36,860
+Whenever you have a callback, you can pull whatever you want to do that.
+
+501
+00:26:37,460 --> 00:26:42,230
+Over here, we happen to be using LCD for our sort of computation.
+
+502
+00:26:42,280 --> 00:26:48,650
+We're using the LCD to be like a war complex algorithm that is supposed to be executed when interrupt.
+
+503
+00:26:48,680 --> 00:26:48,870
+OK.
+
+504
+00:26:51,590 --> 00:27:00,940
+So in here we can torgau the LCD by seeing how on a score GPL you should be Cupps all on a score GPA.
+
+505
+00:27:01,020 --> 00:27:04,070
+You on the score torgau pin.
+
+506
+00:27:05,540 --> 00:27:09,380
+And then we need to find the um deport.
+
+507
+00:27:12,150 --> 00:27:13,730
+The early DGP, a port.
+
+508
+00:27:14,150 --> 00:27:15,700
+I don't want to make his Pelin mistake.
+
+509
+00:27:17,470 --> 00:27:19,490
+So the first argument is the port.
+
+510
+00:27:20,410 --> 00:27:24,120
+And then the second argument is the pin, which is simply the lady pin.
+
+511
+00:27:26,950 --> 00:27:27,340
+Right.
+
+512
+00:27:28,090 --> 00:27:29,110
+So this all we have to do
+
+513
+00:27:32,320 --> 00:27:33,550
+so quickly to boot.
+
+514
+00:27:34,870 --> 00:27:35,450
+Well, here.
+
+515
+00:27:41,570 --> 00:27:43,810
+And then we've got some errors.
+
+516
+00:27:48,660 --> 00:27:50,640
+Oh, I still have the weak keyword here.
+
+517
+00:27:52,460 --> 00:27:52,820
+Okay.
+
+518
+00:27:54,780 --> 00:27:55,620
+Click here to build.
+
+519
+00:28:05,250 --> 00:28:06,240
+You still have errors.
+
+520
+00:28:07,380 --> 00:28:07,770
+See?
+
+521
+00:28:14,940 --> 00:28:15,440
+OK.
+
+522
+00:28:24,900 --> 00:28:25,060
+OK.
+
+523
+00:28:25,440 --> 00:28:26,040
+Over here.
+
+524
+00:28:26,610 --> 00:28:34,600
+We had to pass the address, not just this small, I had to bring The Ambersons sign all time base.
+
+525
+00:28:35,340 --> 00:28:37,730
+If you take a look at the function, the function takes the address.
+
+526
+00:28:37,790 --> 00:28:40,980
+So I went to see if this would fix all our problems.
+
+527
+00:28:47,610 --> 00:28:47,970
+OK.
+
+528
+00:28:48,410 --> 00:28:49,610
+We've got problems fixed.
+
+529
+00:28:49,890 --> 00:28:51,730
+Why not run it by clicking here?
+
+530
+00:28:59,540 --> 00:28:59,920
+OK.
+
+531
+00:29:06,450 --> 00:29:10,420
+Says Arrow Initialise in Besty Link.
+
+532
+00:29:11,750 --> 00:29:13,070
+Okay, we'll take a look at that.
+
+533
+00:29:15,800 --> 00:29:17,230
+Of reconnected my boat.
+
+534
+00:29:17,320 --> 00:29:19,210
+I'm going to click here to go back to the debugger.
+
+535
+00:29:28,190 --> 00:29:29,700
+You know, click here to run.
+
+536
+00:29:32,680 --> 00:29:41,500
+And as you can see, my LCD is toppling at a one second toco rate, just like we set our timer configuration.
+
+537
+00:29:41,860 --> 00:29:44,500
+So that's all there is for this lesson, if you have any questions at all.
+
+538
+00:29:44,530 --> 00:29:46,420
+Just let me know and I'll see you later.
+
+539
+00:29:46,570 --> 00:29:47,290
+Have a nice day.
