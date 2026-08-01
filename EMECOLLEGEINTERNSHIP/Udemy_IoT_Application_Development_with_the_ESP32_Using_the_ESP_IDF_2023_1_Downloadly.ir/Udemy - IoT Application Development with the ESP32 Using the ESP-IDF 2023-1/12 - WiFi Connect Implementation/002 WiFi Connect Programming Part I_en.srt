@@ -1,0 +1,808 @@
+1
+00:00:07,070 --> 00:00:11,450
+In order to connect Y5 via the Web page, we need to make a few updates to index HTML.
+
+2
+00:00:11,690 --> 00:00:13,220
+So let's create a new section here.
+
+3
+00:00:15,050 --> 00:00:16,370
+And here, let's create a div.
+
+4
+00:00:18,160 --> 00:00:20,230
+And call it wi fi connect.
+
+5
+00:00:23,190 --> 00:00:24,390
+Then create an H2.
+
+6
+00:00:25,800 --> 00:00:27,540
+That says ESP thirty two.
+
+7
+00:00:27,660 --> 00:00:28,620
+WI fi connect.
+
+8
+00:00:30,390 --> 00:00:31,470
+And close the two.
+
+9
+00:00:33,950 --> 00:00:35,120
+Then let's make a section.
+
+10
+00:00:37,770 --> 00:00:38,520
+And copy it.
+
+11
+00:00:39,600 --> 00:00:40,860
+So we can close the section.
+
+12
+00:00:45,400 --> 00:00:55,060
+And within the section right, input ID equals connect, underscore aside and specify the type as text.
+
+13
+00:00:56,620 --> 00:00:57,670
+And the maxlength.
+
+14
+00:00:58,740 --> 00:00:59,610
+As 32.
+
+15
+00:01:01,030 --> 00:01:03,490
+And the placeholder that says assisted.
+
+16
+00:01:05,750 --> 00:01:07,640
+And the value can be blink.
+
+17
+00:01:11,030 --> 00:01:11,780
+Let's copy that.
+
+18
+00:01:13,520 --> 00:01:16,100
+And paste below for the password information.
+
+19
+00:01:17,960 --> 00:01:19,760
+Change the input ID to pass.
+
+20
+00:01:20,900 --> 00:01:22,580
+And the tape as password.
+
+21
+00:01:23,950 --> 00:01:25,870
+And the Max should be 64.
+
+22
+00:01:26,990 --> 00:01:28,880
+And placeholder as password.
+
+23
+00:01:31,470 --> 00:01:35,670
+All right, now, let's do input type for a checkbox.
+
+24
+00:01:40,860 --> 00:01:43,090
+Which on click shows the password.
+
+25
+00:01:43,110 --> 00:01:48,360
+So let's specify a function here by saying on Click Show Password.
+
+26
+00:01:50,600 --> 00:01:56,840
+Function and now on the Web page, let's write here some text that says Show password.
+
+27
+00:02:00,600 --> 00:02:03,300
+Next, let's use our Div Class four buttons.
+
+28
+00:02:08,650 --> 00:02:10,330
+And first, let's close this div.
+
+29
+00:02:14,280 --> 00:02:16,500
+And within a year, we'll have an input ID.
+
+30
+00:02:19,070 --> 00:02:20,360
+For Connect wi fi.
+
+31
+00:02:22,480 --> 00:02:24,070
+And this tape will be button.
+
+32
+00:02:26,120 --> 00:02:28,100
+And the value will say connect.
+
+33
+00:02:31,740 --> 00:02:33,360
+Then do a divide for.
+
+34
+00:02:34,530 --> 00:02:37,590
+WI fi connect credentials airs.
+
+35
+00:02:42,260 --> 00:02:43,400
+Then making age for.
+
+36
+00:02:46,060 --> 00:02:47,980
+For wi fi connect status.
+
+37
+00:02:52,960 --> 00:02:56,170
+All right, now, we can close our Wi-Fi connectivity.
+
+38
+00:02:57,910 --> 00:02:59,050
+And let's fix that.
+
+39
+00:03:01,030 --> 00:03:02,050
+And now that looks OK.
+
+40
+00:03:02,740 --> 00:03:06,250
+All right, so now we can go to Epcot CSIS and add the styling.
+
+41
+00:03:07,480 --> 00:03:10,750
+And now we want some red and green lettering, so let's come right here.
+
+42
+00:03:12,440 --> 00:03:13,820
+And say your.
+
+43
+00:03:16,800 --> 00:03:17,340
+And right.
+
+44
+00:03:18,230 --> 00:03:20,480
+Color, Colin Green.
+
+45
+00:03:23,130 --> 00:03:23,650
+OK.
+
+46
+00:03:23,700 --> 00:03:25,290
+And let's do one for red.
+
+47
+00:03:27,560 --> 00:03:29,630
+And say color, coal and red.
+
+48
+00:03:33,250 --> 00:03:33,850
+And that's it.
+
+49
+00:03:34,150 --> 00:03:36,160
+So now we can go over to James.
+
+50
+00:03:37,270 --> 00:03:41,470
+And first, let's set up our own click function, and here, just follow me.
+
+51
+00:03:42,250 --> 00:03:48,460
+And that's for a connect underscore Wi-Fi and then say Dot on click.
+
+52
+00:03:50,700 --> 00:03:52,170
+Comma function.
+
+53
+00:03:53,330 --> 00:03:56,330
+And open the curly braces and its check credentials.
+
+54
+00:03:59,450 --> 00:04:00,980
+And they'll close it with the semicolon.
+
+55
+00:04:02,110 --> 00:04:04,180
+OK, so now let's go down to the bottom of the file.
+
+56
+00:04:05,310 --> 00:04:06,780
+And let's create a function here.
+
+57
+00:04:08,350 --> 00:04:10,450
+Which clears the connection status interval.
+
+58
+00:04:13,680 --> 00:04:14,610
+And say function.
+
+59
+00:04:15,900 --> 00:04:18,060
+Stop wi fi connect status interval.
+
+60
+00:04:21,990 --> 00:04:24,420
+And let's not define it yet, because we need a few more.
+
+61
+00:04:24,550 --> 00:04:26,160
+So let's create another function below it.
+
+62
+00:04:29,050 --> 00:04:31,990
+And this one gets the Wi-Fi connection status.
+
+63
+00:04:34,650 --> 00:04:35,610
+So it's a function.
+
+64
+00:04:36,910 --> 00:04:38,650
+Get wi fi connect status.
+
+65
+00:04:42,570 --> 00:04:43,500
+And let's create another.
+
+66
+00:04:45,120 --> 00:04:46,630
+And this one starts the interval.
+
+67
+00:04:47,790 --> 00:04:49,410
+For checking the connection status.
+
+68
+00:04:52,120 --> 00:04:53,020
+And its function.
+
+69
+00:04:54,210 --> 00:04:56,610
+Start Wi-Fi Connect status interval.
+
+70
+00:05:02,680 --> 00:05:03,610
+Now, let's do another.
+
+71
+00:05:05,530 --> 00:05:08,350
+Let's right here, connect Wi-Fi function.
+
+72
+00:05:11,260 --> 00:05:14,770
+Called using the SSA, ID and password.
+
+73
+00:05:15,730 --> 00:05:17,350
+Entered into the text fields.
+
+74
+00:05:20,750 --> 00:05:23,420
+And that's function connect Wi-Fi.
+
+75
+00:05:28,280 --> 00:05:30,110
+Next, let's do the last one.
+
+76
+00:05:32,420 --> 00:05:34,460
+And this one checks credentials.
+
+77
+00:05:35,890 --> 00:05:37,330
+On Connect wi fi.
+
+78
+00:05:38,350 --> 00:05:39,070
+Button, click.
+
+79
+00:05:41,830 --> 00:05:44,470
+And that's a function check credentials.
+
+80
+00:05:48,110 --> 00:05:51,170
+OK, now let's define this one and then work our way up the file.
+
+81
+00:05:51,680 --> 00:05:53,690
+So first, let's say our list.
+
+82
+00:05:55,410 --> 00:05:57,240
+Equals and leave it blank.
+
+83
+00:05:58,260 --> 00:06:01,410
+Then let's write creds, OK, and set it to true.
+
+84
+00:06:02,920 --> 00:06:08,710
+And now selected society equals and just follow what I do here.
+
+85
+00:06:08,890 --> 00:06:13,360
+It's dollar sign from the Connect society.
+
+86
+00:06:14,620 --> 00:06:15,310
+Value.
+
+87
+00:06:15,880 --> 00:06:24,490
+OK, so we want the value from that element and then say password equals the connect pass element value.
+
+88
+00:06:31,820 --> 00:06:35,330
+Now, let's write, if selected, a suicide.
+
+89
+00:06:36,970 --> 00:06:37,830
+Is blank.
+
+90
+00:06:39,920 --> 00:06:41,540
+Then we will set the error list.
+
+91
+00:06:45,570 --> 00:06:47,010
+And just follow what I do here.
+
+92
+00:06:48,060 --> 00:06:49,080
+It's an age for.
+
+93
+00:06:50,860 --> 00:06:56,410
+And let's use our red color and then say a suicide cannot be empty.
+
+94
+00:06:59,550 --> 00:07:00,390
+And then close it.
+
+95
+00:07:04,740 --> 00:07:07,920
+Then creds OK, equals false.
+
+96
+00:07:10,860 --> 00:07:12,330
+Now, copy this block of code.
+
+97
+00:07:14,270 --> 00:07:17,360
+And then let's paste it and then write password here.
+
+98
+00:07:18,770 --> 00:07:19,760
+And password here.
+
+99
+00:07:24,140 --> 00:07:28,460
+Then say, if creds OK equals false.
+
+100
+00:07:30,660 --> 00:07:34,260
+Then we want the wi fi connect credentials errors.
+
+101
+00:07:40,220 --> 00:07:43,100
+We want the credentials heirs to display the error list.
+
+102
+00:07:47,460 --> 00:07:48,900
+All right, so now let's copy this.
+
+103
+00:07:50,270 --> 00:07:51,260
+And then right else.
+
+104
+00:07:53,610 --> 00:07:55,980
+The credentials heirs are blank.
+
+105
+00:07:59,180 --> 00:08:01,790
+And then we can call the Connect Wi-Fi function.
+
+106
+00:08:06,460 --> 00:08:10,990
+OK, so to recap, this function only checks at the site and password are empty.
+
+107
+00:08:11,470 --> 00:08:16,780
+And if they are, we display some error messages and if not, it calls the Connect Wi-Fi function.
+
+108
+00:08:17,320 --> 00:08:22,960
+Also, we're already enforcing the maximum length in the index HTML for the text fields, so we don't
+
+109
+00:08:22,960 --> 00:08:24,100
+have to check for that here.
+
+110
+00:08:24,970 --> 00:08:26,590
+Now let's go to connect Wi-Fi.
+
+111
+00:08:27,700 --> 00:08:30,160
+And say get the SSA, ID and password.
+
+112
+00:08:32,340 --> 00:08:33,840
+And then selected as a side.
+
+113
+00:08:35,360 --> 00:08:38,520
+Equals the value from Connect society.
+
+114
+00:08:44,370 --> 00:08:45,330
+And then password.
+
+115
+00:08:46,780 --> 00:08:48,760
+Is the value from Connect Pass?
+
+116
+00:08:55,830 --> 00:08:58,950
+And now just follow me and we'll use Ajax here.
+
+117
+00:09:02,540 --> 00:09:02,950
+OK.
+
+118
+00:09:03,020 --> 00:09:03,920
+And the URL.
+
+119
+00:09:05,810 --> 00:09:07,940
+His forward slash wife, I connect.
+
+120
+00:09:11,940 --> 00:09:12,840
+And the data type.
+
+121
+00:09:14,980 --> 00:09:15,790
+This, Jason.
+
+122
+00:09:17,360 --> 00:09:18,950
+And the method is post.
+
+123
+00:09:22,410 --> 00:09:24,780
+And Cash said it's a false.
+
+124
+00:09:26,220 --> 00:09:27,060
+And the headers.
+
+125
+00:09:29,360 --> 00:09:32,540
+Are called my connect assisted.
+
+126
+00:09:34,810 --> 00:09:37,420
+From selected as a side.
+
+127
+00:09:39,560 --> 00:09:42,620
+And the password you can call my Connect password.
+
+128
+00:09:44,940 --> 00:09:46,320
+From pWt.
+
+129
+00:09:48,040 --> 00:09:48,790
+And data.
+
+130
+00:09:51,170 --> 00:09:51,950
+Timestamp.
+
+131
+00:09:53,770 --> 00:09:55,630
+Is detente now?
+
+132
+00:09:57,650 --> 00:10:03,200
+All right, then close that with the semicolon, and then now we can call start why fi connect status
+
+133
+00:10:03,200 --> 00:10:03,740
+interval?
+
+134
+00:10:12,460 --> 00:10:14,620
+OK, so connect Wi-Fi calls.
+
+135
+00:10:14,680 --> 00:10:16,810
+Start wi fi connect status interval.
+
+136
+00:10:17,600 --> 00:10:24,400
+Let's go to find that now just above the first, let's go to the top of the file and let's create a
+
+137
+00:10:24,400 --> 00:10:27,190
+variable to hold the Wi-Fi Connect interval.
+
+138
+00:10:29,590 --> 00:10:30,550
+And said it to no.
+
+139
+00:10:33,210 --> 00:10:36,090
+All right, so now let's copy that and let's go back.
+
+140
+00:10:42,780 --> 00:10:51,360
+And in the function, let's say wi fi connect interval equals set interval and past the Get wi fi connect
+
+141
+00:10:51,360 --> 00:10:56,670
+status and let's call it every two point eight seconds.
+
+142
+00:11:00,070 --> 00:11:05,530
+OK, so here was saying call to get wi fi connect status function every 2.8 seconds.
+
+143
+00:11:06,130 --> 00:11:09,130
+So next, let's go to get wi fi connect status.
+
+144
+00:11:09,550 --> 00:11:15,310
+And let's say VR x HBO equals new XML http request.
+
+145
+00:11:18,260 --> 00:11:20,630
+And then VAR requests, you are well.
+
+146
+00:11:22,410 --> 00:11:25,740
+Equals forward slash wi fi connect status.
+
+147
+00:11:29,600 --> 00:11:33,950
+And then let's X8 shortcut open post.
+
+148
+00:11:36,160 --> 00:11:40,180
+Then say request you are well and false.
+
+149
+00:11:41,440 --> 00:11:43,720
+And now let's send.
+
+150
+00:11:44,970 --> 00:11:46,500
+WI fi connect status.
+
+151
+00:11:50,590 --> 00:11:54,310
+And then, right, if experts are ready state.
+
+152
+00:11:57,140 --> 00:11:57,860
+Is for.
+
+153
+00:11:58,900 --> 00:12:03,430
+Meaning that it's been sent and ex HIV status is 200.
+
+154
+00:12:07,450 --> 00:12:08,800
+Meaning that it's OK.
+
+155
+00:12:10,530 --> 00:12:19,380
+Then let's say via response equals, Jason, that parse parentheses x h r Typekit response text.
+
+156
+00:12:21,830 --> 00:12:29,330
+And now we can document don't get element by it for wi fi connect status.
+
+157
+00:12:33,060 --> 00:12:34,490
+Dot inner html.
+
+158
+00:12:36,120 --> 00:12:37,590
+Equals connecting.
+
+159
+00:12:41,060 --> 00:12:45,380
+And then, right, if response start wi fi connect status.
+
+160
+00:12:51,830 --> 00:12:52,580
+Is to.
+
+161
+00:12:54,860 --> 00:12:58,000
+Then we'll say document get element by ID..
+
+162
+00:13:00,910 --> 00:13:02,440
+WI fi connect status.
+
+163
+00:13:05,620 --> 00:13:12,310
+That inner HTML equals, and then we'll write a message and read.
+
+164
+00:13:18,300 --> 00:13:20,220
+That says failed to connect.
+
+165
+00:13:21,850 --> 00:13:25,000
+Please check your AP credentials and compatibility.
+
+166
+00:13:37,530 --> 00:13:41,130
+OK, then stop wi fi connect status interval.
+
+167
+00:13:45,180 --> 00:13:53,370
+All right now, copy this, and let's say else, if response thought wi fi connect status.
+
+168
+00:13:58,700 --> 00:13:59,450
+Is three.
+
+169
+00:14:02,180 --> 00:14:03,530
+Then let's paste below.
+
+170
+00:14:10,360 --> 00:14:11,800
+And now change this to green.
+
+171
+00:14:16,110 --> 00:14:19,800
+And change the message to Connection's success.
+
+172
+00:14:26,220 --> 00:14:26,640
+All right.
+
+173
+00:14:26,790 --> 00:14:31,920
+So here in this function, we are checking the status response on the web server side, and depending
+
+174
+00:14:31,920 --> 00:14:37,860
+on that response, we write a message to the user and stop the connection status interval and we'll
+
+175
+00:14:37,860 --> 00:14:40,350
+create those responses in the web server later.
+
+176
+00:14:42,210 --> 00:14:48,870
+OK, so now let's go to stop Wi-Fi Connect status interval, and we'll say if Wi-Fi Connect interval.
+
+177
+00:14:52,690 --> 00:14:53,620
+Is not no.
+
+178
+00:14:56,320 --> 00:14:58,090
+Then we will use clear interval.
+
+179
+00:15:00,780 --> 00:15:02,280
+For the interval variable.
+
+180
+00:15:08,160 --> 00:15:10,490
+And we will set this variable here.
+
+181
+00:15:13,360 --> 00:15:14,290
+We'll set it to No.
+
+182
+00:15:17,220 --> 00:15:17,610
+OK.
+
+183
+00:15:17,700 --> 00:15:18,450
+Just like that.
+
+184
+00:15:19,170 --> 00:15:21,750
+And lastly, let's define the show password function.
+
+185
+00:15:25,820 --> 00:15:28,820
+And that one shows the Wi-Fi password.
+
+186
+00:15:30,300 --> 00:15:31,500
+If the boxes checked.
+
+187
+00:15:35,290 --> 00:15:37,570
+And it's a function show password.
+
+188
+00:15:41,450 --> 00:15:46,010
+And right, VAR X equals document get element by ID.
+
+189
+00:15:49,550 --> 00:15:50,700
+Connect underscore.
+
+190
+00:15:50,720 --> 00:15:51,200
+Pass.
+
+191
+00:15:54,580 --> 00:15:56,710
+And then say, if X-Type.
+
+192
+00:15:59,260 --> 00:16:00,430
+Is password.
+
+193
+00:16:04,990 --> 00:16:08,290
+Then X-Type equals text.
+
+194
+00:16:11,050 --> 00:16:11,950
+Then say else.
+
+195
+00:16:13,460 --> 00:16:16,670
+X-Type equals password.
+
+196
+00:16:19,200 --> 00:16:19,680
+That's it.
+
+197
+00:16:20,010 --> 00:16:22,200
+So if the box is checked, we show the password.
+
+198
+00:16:22,260 --> 00:16:23,400
+Otherwise, we don't show it.
+
+199
+00:16:23,970 --> 00:16:27,400
+OK, so I have one mistake up here, so let's fix that.
+
+200
+00:16:27,420 --> 00:16:29,190
+This should be in her HTML.
+
+201
+00:16:33,910 --> 00:16:36,430
+All right, so be sure that you don't have any errors here, either.
+
+202
+00:16:36,760 --> 00:16:38,980
+And in the next lesson, we'll program the web server.
+

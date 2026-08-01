@@ -1,0 +1,556 @@
+1
+00:00:07,310 --> 00:00:12,800
+All right, so let's continue and let's grab this message, and then let's head over to wi fi up that
+
+2
+00:00:12,800 --> 00:00:13,160
+scene.
+
+3
+00:00:14,750 --> 00:00:22,820
+And then here under the connecting from HTTP server case, let's make a comment here and say attempt
+
+4
+00:00:22,820 --> 00:00:23,480
+to connection.
+
+5
+00:00:25,330 --> 00:00:28,230
+And then right, we Fayette Connect.
+
+6
+00:00:28,360 --> 00:00:28,870
+Stay.
+
+7
+00:00:30,610 --> 00:00:32,409
+And this function will define that later.
+
+8
+00:00:33,420 --> 00:00:36,630
+All right, now, let's say, set current number of retirees to zero.
+
+9
+00:00:40,680 --> 00:00:42,210
+And the global reach by no.
+
+10
+00:00:43,700 --> 00:00:44,740
+Just set it to zero.
+
+11
+00:00:46,180 --> 00:00:49,000
+OK, next, let's let the FTP server know.
+
+12
+00:00:50,920 --> 00:00:52,150
+About the connection attempt.
+
+13
+00:00:54,930 --> 00:00:57,960
+And then call FTP Server Monitor Send Message.
+
+14
+00:01:02,790 --> 00:01:06,090
+With ADHD, http message, wi fi connect and it.
+
+15
+00:01:13,220 --> 00:01:15,920
+And then next, let's define the Connect function.
+
+16
+00:01:20,510 --> 00:01:24,700
+Now that's coming to you connects the ESB 30 to.
+
+17
+00:01:25,870 --> 00:01:30,370
+To an external access point using the updated station configuration.
+
+18
+00:01:34,220 --> 00:01:35,450
+And it's a static void.
+
+19
+00:01:36,840 --> 00:01:40,050
+WI fi app Connect Stay and it's void.
+
+20
+00:01:41,250 --> 00:01:43,230
+OK, now let's check.
+
+21
+00:01:46,030 --> 00:01:47,650
+ESP Wi-Fi config.
+
+22
+00:01:53,330 --> 00:01:56,420
+And passed the ESP interface, wi fi stay.
+
+23
+00:01:59,590 --> 00:02:03,460
+And for the config, we can call wi fi app, get wi fi config.
+
+24
+00:02:09,330 --> 00:02:14,130
+Next, let's SPRO, check the Spotify Connect.
+
+25
+00:02:18,120 --> 00:02:18,780
+And that's all.
+
+26
+00:02:20,080 --> 00:02:22,030
+All right, so now let's go to the event handler.
+
+27
+00:02:27,260 --> 00:02:29,600
+And under the stay disconnected case.
+
+28
+00:02:30,810 --> 00:02:33,930
+We're going to print some some disconnect error codes.
+
+29
+00:02:35,010 --> 00:02:39,930
+So come here and let's use wi fi event state disconnected type.
+
+30
+00:02:42,980 --> 00:02:47,120
+And that's a pointer Wi-Fi event, stay disconnected.
+
+31
+00:02:49,460 --> 00:02:53,960
+And now let's typecast Wi-Fi event, stay disconnected.
+
+32
+00:02:59,660 --> 00:03:05,210
+And now memory allocate the size of Wi-Fi event, stay disconnected.
+
+33
+00:03:10,440 --> 00:03:13,560
+OK, and then let's set the value that this points to.
+
+34
+00:03:15,720 --> 00:03:17,550
+All right, and then just follow me here.
+
+35
+00:03:18,060 --> 00:03:21,180
+It's a value and we're typecasting.
+
+36
+00:03:26,040 --> 00:03:26,430
+Right.
+
+37
+00:03:26,760 --> 00:03:29,550
+And we want the we want the event data.
+
+38
+00:03:32,910 --> 00:03:35,190
+All right, and now let's just print the information.
+
+39
+00:03:38,220 --> 00:03:39,450
+Stay disconnected.
+
+40
+00:03:42,580 --> 00:03:43,570
+Reason code.
+
+41
+00:03:46,090 --> 00:03:46,870
+Goes here.
+
+42
+00:03:48,760 --> 00:03:54,580
+And it's from Wi-Fi event, stay disconnected, and let's access the reason.
+
+43
+00:03:55,240 --> 00:03:55,930
+Like so?
+
+44
+00:03:58,540 --> 00:03:59,050
+OK.
+
+45
+00:04:00,950 --> 00:04:04,610
+And then, right, if global reach by no.
+
+46
+00:04:05,680 --> 00:04:08,380
+Is less than Max Connection retrace?
+
+47
+00:04:10,140 --> 00:04:12,810
+Then let's call ESP wi fi connect again.
+
+48
+00:04:17,690 --> 00:04:18,140
+OK.
+
+49
+00:04:18,620 --> 00:04:21,019
+And just increment the global retry number here.
+
+50
+00:04:28,760 --> 00:04:32,580
+Else, we're going to send a disconnect message.
+
+51
+00:04:32,960 --> 00:04:35,300
+So do we fight send message?
+
+52
+00:04:36,440 --> 00:04:39,380
+Why fi app message stay disconnected?
+
+53
+00:04:45,170 --> 00:04:47,920
+So let's copy this message, because it's not a message.
+
+54
+00:04:50,400 --> 00:04:52,410
+And let's include it to our message genome.
+
+55
+00:04:55,330 --> 00:04:57,220
+All right, that's it, so now let's go back.
+
+56
+00:04:59,590 --> 00:05:01,510
+Now, let's go on to the gut IP case.
+
+57
+00:05:02,850 --> 00:05:05,190
+Now here we can send our gut IP message.
+
+58
+00:05:05,670 --> 00:05:08,130
+So we fire up, send message.
+
+59
+00:05:09,590 --> 00:05:12,830
+WI fi app Message Stay Connected, got IP.
+
+60
+00:05:18,500 --> 00:05:20,840
+OK, now let's go down to the gut IP case.
+
+61
+00:05:27,450 --> 00:05:30,810
+And here we need to send a message to the FTP server monitor.
+
+62
+00:05:32,160 --> 00:05:34,440
+So we'll say HTP Server Monitor.
+
+63
+00:05:36,450 --> 00:05:37,380
+Send message.
+
+64
+00:05:38,660 --> 00:05:41,270
+HTP message, wi fi connect success.
+
+65
+00:05:49,120 --> 00:05:49,720
+OK, good.
+
+66
+00:05:52,780 --> 00:05:54,190
+So now let's copy this case.
+
+67
+00:05:55,910 --> 00:05:57,260
+Let's paste just below.
+
+68
+00:05:58,970 --> 00:06:01,400
+Let's define the stay disconnected case.
+
+69
+00:06:04,560 --> 00:06:06,210
+So that's just log this message.
+
+70
+00:06:07,110 --> 00:06:09,930
+Let's remove the LED function call.
+
+71
+00:06:13,250 --> 00:06:14,990
+And then now that's in the fail message.
+
+72
+00:06:20,110 --> 00:06:21,790
+So now let's briefly review.
+
+73
+00:06:22,900 --> 00:06:24,430
+What's going on here in the handler?
+
+74
+00:06:25,670 --> 00:06:32,060
+OK, so if there's a disconnect we'll retry from maximum retrace and once we reach the maximum, we
+
+75
+00:06:32,060 --> 00:06:33,290
+seen the disconnect message.
+
+76
+00:06:36,720 --> 00:06:40,050
+Then we let the webserver know about the connection failure.
+
+77
+00:06:41,750 --> 00:06:44,870
+And in the Web server when that happens.
+
+78
+00:06:49,420 --> 00:06:56,560
+The global status variable is updated, and it's also updated for the successor case and an APT charges.
+
+79
+00:06:57,860 --> 00:07:03,290
+Our statuses reflect what happens in the Web server side, back to the user with the messages here.
+
+80
+00:07:06,930 --> 00:07:07,920
+So let's continue.
+
+81
+00:07:11,690 --> 00:07:13,640
+So now go to HGTV server.
+
+82
+00:07:15,320 --> 00:07:17,030
+Let's go down to the other eye handlers.
+
+83
+00:07:21,560 --> 00:07:23,990
+And let's get the Connect status, Jason Handler.
+
+84
+00:07:24,970 --> 00:07:25,810
+So we can define it.
+
+85
+00:07:27,200 --> 00:07:28,550
+And first, let's comment that.
+
+86
+00:07:30,220 --> 00:07:31,990
+WI fi connect status handloom.
+
+87
+00:07:35,630 --> 00:07:37,820
+Updates to connection status for the Web page.
+
+88
+00:07:43,680 --> 00:07:45,930
+And it's a static ESP type.
+
+89
+00:07:47,780 --> 00:07:51,170
+Connects that his handler, which takes the pointer to the request.
+
+90
+00:07:57,310 --> 00:07:58,720
+And first, let's fix this comment.
+
+91
+00:07:59,080 --> 00:08:00,310
+Now, just copy this one.
+
+92
+00:08:01,920 --> 00:08:02,670
+And leave it here.
+
+93
+00:08:08,170 --> 00:08:09,220
+Let's log.
+
+94
+00:08:12,030 --> 00:08:14,070
+That wi fi connect status requested.
+
+95
+00:08:20,080 --> 00:08:21,010
+And we need to care.
+
+96
+00:08:22,290 --> 00:08:25,080
+That is, Jason, of 100 Bytes.
+
+97
+00:08:28,260 --> 00:08:29,970
+And then sprint deaf to it.
+
+98
+00:08:33,280 --> 00:08:34,480
+Our escape sequence.
+
+99
+00:08:38,750 --> 00:08:40,370
+For Wi-Fi Connect status.
+
+100
+00:08:48,120 --> 00:08:51,270
+And here, just give it the global Wi-Fi Connect status variable.
+
+101
+00:08:59,010 --> 00:09:00,300
+Now said the response type.
+
+102
+00:09:04,960 --> 00:09:08,590
+For the request and its application, Jason.
+
+103
+00:09:10,170 --> 00:09:11,490
+Now, let's send the response.
+
+104
+00:09:15,750 --> 00:09:16,590
+For the request.
+
+105
+00:09:18,370 --> 00:09:19,690
+From the status, Jason.
+
+106
+00:09:21,060 --> 00:09:23,460
+For Stalin of status, Jason.
+
+107
+00:09:26,720 --> 00:09:27,770
+And then let's return.
+
+108
+00:09:28,880 --> 00:09:29,870
+ESP, OK.
+
+109
+00:09:31,440 --> 00:09:32,070
+And that's it.
+
+110
+00:09:32,850 --> 00:09:39,390
+And as for a wife, iconic status and the index HTML, that is just right down here.
+
+111
+00:09:41,690 --> 00:09:43,370
+And also, we have the credentials errors.
+
+112
+00:09:47,000 --> 00:09:48,860
+So let's just test it out and build.
+
+113
+00:09:54,260 --> 00:09:55,340
+Right now, we can flesh.
+
+114
+00:10:06,410 --> 00:10:08,270
+OK, now let's open up a monitor.
+
+115
+00:10:19,610 --> 00:10:21,080
+Can now connect the ESP.
+
+116
+00:10:28,860 --> 00:10:30,210
+Now, let's go to the Web page.
+
+117
+00:10:38,440 --> 00:10:39,720
+Right now, if we hit Connect.
+
+118
+00:10:40,740 --> 00:10:43,890
+We get our error messages for both the suicide and the password.
+
+119
+00:10:44,070 --> 00:10:45,930
+And if we type something in the password field.
+
+120
+00:10:48,050 --> 00:10:49,760
+Only the suicide warning shows.
+
+121
+00:10:51,770 --> 00:10:55,610
+OK, and then just the suicide and the password warning appears great.
+
+122
+00:10:58,200 --> 00:11:00,360
+And next, I'll try connecting to an access point.
+
+123
+00:11:05,870 --> 00:11:07,490
+Nail into a fake password here.
+
+124
+00:11:08,950 --> 00:11:09,610
+And I'll show it.
+
+125
+00:11:10,560 --> 00:11:11,550
+And then I'll try to connect.
+
+126
+00:11:16,400 --> 00:11:17,450
+Now it shows connecting.
+
+127
+00:11:19,520 --> 00:11:21,440
+And now it's tempting for each retry.
+
+128
+00:11:23,040 --> 00:11:25,080
+And some reason codes are now printed here.
+
+129
+00:11:26,600 --> 00:11:27,980
+Which you can feel free to look up.
+
+130
+00:11:31,160 --> 00:11:36,960
+And after the Max Retrials, the Web page is updated with a failure message as expected.
+
+131
+00:11:36,980 --> 00:11:37,430
+Nice.
+
+132
+00:11:41,120 --> 00:11:43,310
+OK, so now try to connect with the real password.
+
+133
+00:11:56,270 --> 00:11:57,350
+And I'll try to connect.
+
+134
+00:12:01,220 --> 00:12:01,880
+And.
+
+135
+00:12:03,910 --> 00:12:04,780
+Very nice.
+
+136
+00:12:05,050 --> 00:12:07,210
+We have the connection success message, awesome.
+
+137
+00:12:07,600 --> 00:12:10,030
+And the terminal messages confirm what we expect to see.
+
+138
+00:12:11,510 --> 00:12:12,530
+So that's it for this one.
+
+139
+00:12:12,800 --> 00:12:13,700
+I'll see you in the next.
+
